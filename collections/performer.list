@@ -68,7 +68,7 @@
       <a class="category" href="?category={@|url-encode}">{@}</a>{@}
       </span>&nbsp;
 
-      <squarespace:query collection="events" category="gdfgdfgdf" limit="10">
+      <squarespace:query collection="events" category="{@}" limit="10">
       
       <ol>
         {.repeated section items}
