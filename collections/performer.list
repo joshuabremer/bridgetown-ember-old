@@ -67,13 +67,13 @@
     {.repeated section categories}
 
       <squarespace:query collection="events" category="{@}" limit="10">
-      
+
       <ol>
         {.repeated section items}
             <li><a href="{fullUrl}">{title}</a></li>
         {.end}
       </ol>
-      
+
     </squarespace:query>
 
     {.alternates with}
