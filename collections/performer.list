@@ -67,6 +67,17 @@
       <span class="btn btn-info btn-mini">
       <a class="category" href="?category={@|url-encode}">{@}</a>{@}
       </span>&nbsp;
+
+      <squarespace:query category="gdfgdfgdf" limit="10">
+      
+      <ol>
+        {.repeated section items}
+            <li><a href="{fullUrl}">{title}</a></li>
+        {.end}
+      </ol>
+      
+    </squarespace:query>
+
     {.alternates with}
 
     {.end}
