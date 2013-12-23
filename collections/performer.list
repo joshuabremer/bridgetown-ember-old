@@ -65,7 +65,7 @@
     <div class="catg-tags">
     {.repeated section categories}
       <span class="btn btn-info btn-mini">
-      <a class="category" href="?category={@|url-encode}">{@}</a>
+      <a class="category" href="?category={@|url-encode}">{@}</a>{@}
       </span>&nbsp;
     {.alternates with}
 
