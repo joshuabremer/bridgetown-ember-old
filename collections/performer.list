@@ -63,10 +63,8 @@
 
     <!--CATEGORIES-->
     <div class="catg-tags">
+    <h2>Shows</h2>
     {.repeated section categories}
-      <span class="btn btn-info btn-mini">
-      <a class="category" href="?category={@|url-encode}">{@}</a>{@}
-      </span>&nbsp;
 
       <squarespace:query collection="events" category="{@}" limit="10">
       
