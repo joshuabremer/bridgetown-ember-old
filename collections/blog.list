@@ -63,23 +63,23 @@
 
     <!--CATEGORIES-->
     <div class="catg-tags">
-		{.repeated section categories}
-			<span class="btn btn-info btn-mini">
-			<a class="category" href="?category={@|url-encode}">{@}</a>
-			</span>&nbsp;
-		{.alternates with}
-		
-		{.end}
-		
-		<!--TAGS-->
-		
-		{.repeated section tags}
-			<span class="btn btn-mini">
-			<a class="tag" href="?tag={@|url-encode}">{@}</a>
-			</span>&nbsp;
-		{.alternates with}
-		
-		{.end}
+    {.repeated section categories}
+      <span class="btn btn-info btn-mini">
+      <a class="category" href="?category={@|url-encode}">{@}</a>
+      </span>&nbsp;
+    {.alternates with}
+    
+    {.end}
+    
+    <!--TAGS-->
+    
+    {.repeated section tags}
+      <span class="btn btn-mini">
+      <a class="tag" href="?tag={@|url-encode}">{@}</a>
+      </span>&nbsp;
+    {.alternates with}
+    
+    {.end}
     </div>
     <!--SHARE AND LIKE-->
 
@@ -122,22 +122,22 @@
   
 {.if pagination}
   <nav class="pagination">
-	  <ul>
-	    <!--NEWER PAGE-->
-	
-	    {.if pagination.prevPage}
-	      <li><a href="{pagination.prevPageUrl}">Newer</a></li>
-	    {.or}
-	      
-	    {.end}
-	
-	    <!--OLDER PAGE-->
-	
-	    {.if pagination.nextPage}
-	      <li><a href="{pagination.nextPageUrl}">Older</a></li>
-	    {.or}
-	      
-	    {.end}
-	  </ul>
+    <ul>
+      <!--NEWER PAGE-->
+  
+      {.if pagination.prevPage}
+        <li><a href="{pagination.prevPageUrl}">Newer</a></li>
+      {.or}
+        
+      {.end}
+  
+      <!--OLDER PAGE-->
+  
+      {.if pagination.nextPage}
+        <li><a href="{pagination.nextPageUrl}">Older</a></li>
+      {.or}
+        
+      {.end}
+    </ul>
   </nav>
 {.end}
