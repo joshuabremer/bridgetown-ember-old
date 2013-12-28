@@ -14,9 +14,10 @@
       Backbone.ajax({
         url: this.url
       }).done(function(a,b,c) {
+        console.log('Sync complete.')
         console.log(a,b,c);
       });
-      console.log('Sync')
+
     },
 
   });
