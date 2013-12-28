@@ -9,6 +9,7 @@
     model: Event,
     url: 'https://bridgetown-dev.squarespace.com/events/?format=json',
     initialize: function() {
+      this.listenTo(this.collection, 'add', this.addOne);
     },
     // Modified from default fetch function
     sync: function() {
@@ -17,10 +18,13 @@
         url: this.url
       }).done(function(data) {
         console.log('Sync complete.');
-        _this.add(data.past,{merge:true})
+        _this.add(data.past,{merge:true});
       });
 
     },
+    render: function() {
+      Todos.each(this.addOne, this);
+    }
 
   });
 
@@ -33,4 +37,5 @@
   });
 
   window.eventCollection = new EventCollection();
+  eventCollection.sync();
 }());
