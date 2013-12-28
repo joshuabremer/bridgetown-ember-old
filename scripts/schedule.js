@@ -6,7 +6,9 @@
   var EventCollection = Backbone.Collection.extend({
     model: Event,
     url: 'https://bridgetown-dev.squarespace.com/events/?format=json',
-
+    initialize: function() {
+      this.sync();
+    },
     // Modified from default fetch function
     sync: function() {
       Backbone.ajax({
