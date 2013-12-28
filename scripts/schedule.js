@@ -13,7 +13,7 @@
         url: this.url
       }).done(function(a,b,c) {
         console.log(a,b,c);
-      })
+      });
     },
 
   });
