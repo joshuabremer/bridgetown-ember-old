@@ -7,6 +7,10 @@
 
   });
 
+  var EventView = Backbone.View.extend({
+
+  });
+
   var ScheduleView = Backbone.View.extend({
 
   });
