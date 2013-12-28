@@ -8,20 +8,13 @@
     url: 'https://bridgetown-dev.squarespace.com/events/?format=json',
 
     // Modified from default fetch function
-    fetch: function(options) {
-      options = options ? _.clone(options) : {};
-      if (options.parse === void 0) options.parse = true;
-      var success = options.success;
-      var collection = this;
-      options.success = function(resp) {
-        var method = options.reset ? 'reset' : 'set';
-        collection[method](resp, options);
-        if (success) success(collection, resp, options);
-        collection.trigger('sync', collection, resp, options);
-      };
-      wrapError(this, options);
-      return this.sync('read', this, options);
-    }
+    sync: function() {
+      Backbone.ajax({
+        url: this.url
+      }).done(function(a,b,c) {
+        console.log(a,b,c);
+      })
+    },
 
   });
 
