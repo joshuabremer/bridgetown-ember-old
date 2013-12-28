@@ -1,6 +1,8 @@
 (function() {
   var Event = Backbone.Model.extend({
+    toJSON: function() {
 
+    }
   });
 
   var EventCollection = Backbone.Collection.extend({
@@ -15,7 +17,7 @@
       Backbone.ajax({
         url: this.url
       }).done(function(data) {
-        console.log('Sync complete.')
+        console.log('Sync complete.');
         _this.add(data.past,{merge:true})
       });
 
