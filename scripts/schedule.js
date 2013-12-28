@@ -5,10 +5,7 @@
 
   var EventCollection = Backbone.Collection.extend({
     model: Event,
-    url: 'https://bridgetown-dev.squarespace.com/events/?format=json',
-    sync: function() {
-
-    }
+    url: 'https://bridgetown-dev.squarespace.com/events/?format=json'
 
   });
 
