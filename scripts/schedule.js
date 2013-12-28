@@ -1,5 +1,5 @@
 (function() {
-  var Event = Backbone.View.Model({
+  var Event = Backbone.Model.extend({
 
   });
 
