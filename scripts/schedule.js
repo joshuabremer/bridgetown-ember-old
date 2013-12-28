@@ -4,14 +4,20 @@
   });
 
   var EventCollection = Backbone.View.Collection({
+    url: 'https://bridgetown-dev.squarespace.com/events/?format=json',
+    sync: function() {
+
+    }
 
   });
 
   var EventView = Backbone.View.extend({
-    url: 'https://bridgetown-dev.squarespace.com/events/?format=json'
+    
   });
 
   var ScheduleView = Backbone.View.extend({
 
   });
+
+  window.eventCollection = new EventCollection();
 }());
