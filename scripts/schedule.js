@@ -8,7 +8,7 @@
   });
 
   var EventView = Backbone.View.extend({
-
+    url: 'https://bridgetown-dev.squarespace.com/events/?format=json'
   });
 
   var ScheduleView = Backbone.View.extend({
