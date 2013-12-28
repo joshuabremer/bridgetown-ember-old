@@ -10,4 +10,4 @@
   var ScheduleView = Backbone.View.extend({
 
   });
-}())
+}());
