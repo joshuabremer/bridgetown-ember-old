@@ -1,13 +1,13 @@
 require.config({
   paths : {
-    underscore : 'lib/underscore',
-    backbone   : 'lib/backbone',
-    marionette : 'lib/backbone.marionette',
+    underscore : 'lib_underscore',
+    backbone   : 'lib_backbone',
+    marionette : 'lib_backbone.marionette',
     jquery     : '../../../../assets/jquery.min',
-    tpl        : 'lib/tpl'
+    tpl        : 'lib_tpl'
   },
   shim : {
-    'lib/backbone-localStorage' : ['backbone'],
+    'lib_backbone-localStorage' : ['backbone'],
     underscore : {
       exports : '_'
     },
