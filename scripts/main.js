@@ -3,7 +3,7 @@ require.config({
     underscore : 'lib_underscore',
     backbone   : 'lib_backbone',
     marionette : 'lib_backbone.marionette',
-    jquery     : '../../../../assets/jquery.min',
+    jquery     : 'lib_jquery',
     tpl        : 'lib_tpl'
   },
   shim : {
