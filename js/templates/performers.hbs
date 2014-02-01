@@ -1,0 +1,23 @@
+<h2>Performers</h2>
+
+{{#linkTo "new_performer"}}New Performer{{/linkTo}}
+
+<table>
+  <thead>
+    <th>name</th>
+    <th>headshot</th>
+    <th>bio</th>
+  </thead>
+  <tbody>
+    {{#each performer in controller}}
+    <tr>
+      <td>{{ performer.name }}</td>
+      <td>{{ performer.headshot }}</td>
+      <td>{{ performer.bio }}</td>
+      <td>{{#linkTo "performer" performer }}view{{/linkTo}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
