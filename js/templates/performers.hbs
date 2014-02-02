@@ -11,8 +11,8 @@
   <tbody>
     {{#each performer in controller}}
     <tr>
-      <td>{{ performer.name }}</td>
-      <td>{{ performer.headshot }}</td>
+      <td>{{ performer.title }}</td>
+      <td><img {{bindAttr src="performer.assetUrl" }} /></td>
       <td>{{ performer.bio }}</td>
       <td>{{#linkTo "performer" performer }}view{{/linkTo}}</td>
     </tr>

@@ -7,7 +7,7 @@ require('../vendor/handlebars');
 require('../vendor/ember');
 require('../vendor/ember-data'); // delete if you don't want ember-data
 
-var App = Ember.Application.create();
+var App = Ember.Application.create({LOG_TRANSITIONS: true});
 App.Store = require('./store'); // delete if you don't want ember-data
 
 module.exports = App;
@@ -27,6 +27,7 @@ App.Router.map(function() {
 
 
 });
+
 
 
 },{"./app":1}],3:[function(require,module,exports){
@@ -104,6 +105,8 @@ module.exports = App;
 
 
 },{"./config/app":1,"./config/routes":2,"./controllers/edit_performer_controller":4,"./controllers/new_performer_controller":5,"./controllers/performer_controller":6,"./models/performer":8,"./routes/new_performer_route":9,"./routes/performers_route":10,"./templates":11}],8:[function(require,module,exports){
+//https://bridgetown-dev.squarespace.com/performers/?format=json-pretty
+
 var Performer = DS.Model.extend({
 
   name: DS.attr('string'),
@@ -146,9 +149,14 @@ module.exports = NewPerformerRoute;
 var Performer = require('../models/performer');
 
 var PerformerRoute = Ember.Route.extend({
-
   model: function() {
-    return Performer.find();
+    return $.ajax({
+      url: 'https://bridgetown-dev.squarespace.com/performers/?format=json-pretty',
+      crossDomain: true,
+      dataType: 'JSONP'
+    }).then(function(data) {
+      return data.items;
+    });
   }
 
 });
@@ -311,12 +319,14 @@ function program3(depth0,data) {
   data.buffer.push("\n    <tr>\n      <td>");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.name", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</td>\n      <td>");
-  hashTypes = {};
-  hashContexts = {};
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.headshot", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("</td>\n      <td>");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.title", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</td>\n      <td><img ");
+  hashContexts = {'src': depth0};
+  hashTypes = {'src': "STRING"};
+  data.buffer.push(escapeExpression(helpers.bindAttr.call(depth0, {hash:{
+    'src': ("performer.assetUrl")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" /></td>\n      <td>");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.bio", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
