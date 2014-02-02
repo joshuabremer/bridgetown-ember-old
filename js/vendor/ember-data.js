@@ -2802,7 +2802,7 @@ DS.Store = Ember.Object.extend(DS._Mappable, {
   createReference: function(type, id) {
     var typeMap = this.typeMapFor(type),
         idToReference = typeMap.idToReference;
-
+    console.log(id,type);
     Ember.assert('The id ' + id + ' has already been used with another record of type ' + type.toString() + '.', !id || !idToReference[id]);
 
     var reference = {
