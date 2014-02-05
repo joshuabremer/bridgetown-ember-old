@@ -5,6 +5,6 @@ module.exports = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
-  adapter: require('./adapter').create()
+  adapter: require('./adapter')
 });
 

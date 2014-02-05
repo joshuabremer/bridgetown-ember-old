@@ -8,6 +8,9 @@ require('../vendor/ember-data'); // delete if you don't want ember-data
 
 var App = Ember.Application.create({LOG_TRANSITIONS: true});
 App.Store = require('./store'); // delete if you don't want ember-data
-
+Ember.$.ajaxSetup({
+  dataType: "JSONP",
+  crossDomain: true
+});
 module.exports = App;
 

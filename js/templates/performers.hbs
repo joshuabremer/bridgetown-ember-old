@@ -1,21 +1,11 @@
 <h2>Performers</h2>
-
-{{#linkTo "new_performer"}}New Performer{{/linkTo}}
-
-<table>
-  <thead>
-    <th>name</th>
-    <th>headshot</th>
-    <th>bio</th>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row">
     {{#each performer in controller}}
-    <tr>
-      <td>{{ performer.title }}</td>
-      <td><img {{bindAttr src="performer.assetUrl" }} /></td>
-      <td>{{ performer.bio }}</td>
-      <td>{{#linkTo "performer" performer }}view{{/linkTo}}</td>
-    </tr>
+    <div class="col-sm-3">
+      <p><img {{bindAttr src="performer.headshot" }} /></p>
+      <td>{{#link-to "performer" performer }}{{ performer.name }}{{/link-to}}</td>
+    </div>
     {{/each}}
   </tbody>
 </table>
