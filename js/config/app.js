@@ -1,6 +1,3 @@
-// require other, dependencies here, ie:
-// require('./vendor/moment');
-
 require('../vendor/jquery');
 require('../vendor/handlebars');
 require('../vendor/ember');
@@ -12,5 +9,5 @@ Ember.$.ajaxSetup({
   dataType: "JSONP",
   crossDomain: true
 });
-module.exports = App;
 
+module.exports = App;

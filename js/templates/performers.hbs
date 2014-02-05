@@ -1,9 +1,9 @@
 <h2>Performers</h2>
 <div class="container">
   <div class="row">
-    {{#each news in controller}}
+    {{#each performer in controller}}
     <div class="col-sm-3">
-      <p><img {{bindAttr src="performer.headshot" }} /></p>
+      <p><img {{bind-attr src="performer.headshot" }} /></p>
       <td>{{#link-to "performer" performer }}{{ performer.name }}{{/link-to}}</td>
     </div>
     {{/each}}

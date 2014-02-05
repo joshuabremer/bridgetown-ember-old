@@ -1,5 +1,5 @@
 // by default, persist application data to localStorage.
-require('../vendor/localstorage_adapter');
+//require('../vendor/localstorage_adapter');
 
 module.exports = DS.Store.extend({
   revision: 11,

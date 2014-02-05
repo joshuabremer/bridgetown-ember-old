@@ -2,9 +2,9 @@
 
 DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
   extractArray: function(store, primaryType, payload) {
-    payload = {'performers':payload.items}
-    console.log(payload);
-    return this._super(store, primaryType, payload);
+    newPayload = {};
+    newPayload[primaryType.typeKey + 's'] = payload.items;
+    return this._super(store, primaryType, newPayload);
   },
   normalize: function(type, hash, prop) {
     this.normalizeId(hash);
@@ -25,12 +25,20 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
       hash.bio = hash.body;
       hash.headshot = hash.assetUrl;
       return hash;
+    },
+    newsposts: function(hash) {
+      hash.name = hash.title;
+      hash.bio = hash.body;
+      hash.headshot = hash.assetUrl;
+      return hash;
     }
   }
 });
 
 DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-  host: 'http://bridgetown-dev.squarespace.com',
+  //host: 'http://bridgetown-dev.squarespace.com',
+  //host: '127.0.0.1:8000/',
+  namespace: 'fixtures',
   buildURL: function(type, id) {
     var url = [],
         host = Ember.get(this, 'host'),
@@ -43,12 +51,12 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
 
     url = url.join('/');
     if (!host && url) { url = '/' + url; }
-    url += '?format=json-pretty';
+    url += '.json?format=json-pretty';
     return url;
   },
   ajaxOptions: function(url, type, hash) {
     hash = this._super(url, type, hash);
-    hash.dataType = 'jsonp';
+    //hash.dataType = 'jsonp';
     return hash;
   },
   normalize: function() {
