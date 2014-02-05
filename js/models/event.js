@@ -1,7 +1,5 @@
 App.Event = DS.Model.extend({
 
-  performers: DS.hasMany('performer'),
-
   name: DS.attr('string'),
 
   start_time: DS.attr('date'),

@@ -1,11 +1,27 @@
 
 
 DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
+  extractSingle: function(store, type, payload) {
+    debugger;
+  },
   extractArray: function(store, primaryType, payload) {
     newPayload = {};
+    newPayload.categories = [];
     newPayload[primaryType.typeKey + 's'] = payload.items;
+    _.each(payload.items,function(item,index) {
+      if (item.categories) {
+        item.category_ids = item.categories;
+        _.each(item.categories,function(category) {
+          newPayload.categories.push({id:category, name: category})
+        });
+        newPayload.categories = _.uniq(newPayload.categories);
+      }
+    });
+    console.log(newPayload);
+    debugger;
     return this._super(store, primaryType, newPayload);
   },
+
   normalize: function(type, hash, prop) {
     this.normalizeId(hash);
     this.normalizeAttributes(type, hash);
@@ -39,6 +55,7 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
   //host: 'http://bridgetown-dev.squarespace.com',
   //host: '127.0.0.1:8000/',
   namespace: 'fixtures',
+
   buildURL: function(type, id) {
     var url = [],
         host = Ember.get(this, 'host'),
