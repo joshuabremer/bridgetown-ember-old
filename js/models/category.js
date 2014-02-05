@@ -4,7 +4,7 @@ App.Category = DS.Model.extend({
 
   newspost: DS.belongsTo('newspost'),
 
-  name: DS.attr('string'),
+  name: DS.attr('string')
 
 });
 

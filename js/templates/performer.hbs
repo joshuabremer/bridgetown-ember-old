@@ -12,6 +12,11 @@
   <b>Bio:</b> {{{ body }}}
 </p>
 
+<p>
+  <b>Categories:</b> {{#each category in categories}}
+      {{category.name}}
+      {{/each}}
+</p>
+
 
 {{#link-to "performers"}}←All Performers{{/link-to}}
-<a href="#" {{action "destroy"}}>Destroy</a>

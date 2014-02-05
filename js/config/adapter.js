@@ -8,6 +8,8 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
     newPayload = {};
     newPayload.categories = [];
     newPayload[primaryType.typeKey + 's'] = payload.items;
+
+    // Sideload the categories
     _.each(payload.items,function(item,index) {
       if (item.categories) {
         item.category_ids = item.categories;
@@ -17,8 +19,6 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
         newPayload.categories = _.uniq(newPayload.categories);
       }
     });
-    console.log(newPayload);
-    debugger;
     return this._super(store, primaryType, newPayload);
   },
 
