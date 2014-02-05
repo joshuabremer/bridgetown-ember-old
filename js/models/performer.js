@@ -1,6 +1,4 @@
-//https://bridgetown-dev.squarespace.com/performers/?format=json-pretty
-
-var Performer = DS.Model.extend({
+App.Performer = DS.Model.extend({
 
   events: DS.hasMany('event'),
 
@@ -11,6 +9,4 @@ var Performer = DS.Model.extend({
   bio: DS.attr('string')
 
 });
-
-module.exports = Performer;
 

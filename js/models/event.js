@@ -1,4 +1,4 @@
-var Event = DS.Model.extend({
+App.Event = DS.Model.extend({
 
   performers: DS.hasMany('performer'),
 
@@ -11,6 +11,4 @@ var Event = DS.Model.extend({
   price: DS.attr('number')
 
 });
-
-module.exports = Event;
 

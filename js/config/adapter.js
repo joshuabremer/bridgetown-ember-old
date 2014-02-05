@@ -1,4 +1,4 @@
-//require('../vendor/localstorage_adapter');
+
 
 DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
   extractArray: function(store, primaryType, payload) {
@@ -64,6 +64,3 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
   },
   defaultSerializer: "DS/SquarespaceREST"
 });
-
-
-module.exports = DS.SquarespaceAdapter;

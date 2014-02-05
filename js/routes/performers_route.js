@@ -1,6 +1,4 @@
-var Performer = require('../models/performer');
-
-var PerformersRoute = Ember.Route.extend({
+App.PerformersRoute = Ember.Route.extend({
 
   model: function(params) {
     return this.store.find('performer');
@@ -16,6 +14,4 @@ var PerformersRoute = Ember.Route.extend({
   // }
 
 });
-
-module.exports = PerformersRoute;
 

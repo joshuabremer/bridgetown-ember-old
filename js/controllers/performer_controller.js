@@ -1,4 +1,4 @@
-var PerformerController = Ember.ObjectController.extend({
+App.PerformerController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -8,6 +8,4 @@ var PerformerController = Ember.ObjectController.extend({
   }
 
 });
-
-module.exports = PerformerController;
 

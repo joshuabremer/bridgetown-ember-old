@@ -1,4 +1,4 @@
-var EventsController = Ember.ObjectController.extend({
+App.EventsController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -8,6 +8,4 @@ var EventsController = Ember.ObjectController.extend({
   }
 
 });
-
-module.exports = EventsController;
 

@@ -1,6 +1,4 @@
-var Event = require('../models/event');
-
-var EventsRoute = Ember.Route.extend({
+App.EventsRoute = Ember.Route.extend({
 
   model: function() {
     return Event.find();
@@ -8,5 +6,4 @@ var EventsRoute = Ember.Route.extend({
 
 });
 
-module.exports = EventsRoute;
 

@@ -1,88 +1,27 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-//require('../vendor/localstorage_adapter');
-
-DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
-  extractArray: function(store, primaryType, payload) {
-    newPayload = {};
-    newPayload[primaryType.typeKey + 's'] = payload.items;
-    return this._super(store, primaryType, newPayload);
-  },
-  normalize: function(type, hash, prop) {
-    this.normalizeId(hash);
-    this.normalizeAttributes(type, hash);
-    this.normalizeRelationships(type, hash);
-
-    this.normalizeUsingDeclaredMapping(type, hash);
-
-    if (this.normalizeHash && this.normalizeHash[prop]) {
-      hash = this.normalizeHash[prop](hash);
-    }
-
-    return this._super(type, hash, prop);
-  },
-  normalizeHash: {
-    performers: function(hash) {
-      hash.name = hash.title;
-      hash.bio = hash.body;
-      hash.headshot = hash.assetUrl;
-      return hash;
-    },
-    newsposts: function(hash) {
-      hash.name = hash.title;
-      hash.bio = hash.body;
-      hash.headshot = hash.assetUrl;
-      return hash;
-    }
-  }
-});
-
-DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-  //host: 'http://bridgetown-dev.squarespace.com',
-  //host: '127.0.0.1:8000/',
-  namespace: 'fixtures',
-  buildURL: function(type, id) {
-    var url = [],
-        host = Ember.get(this, 'host'),
-        prefix = this.urlPrefix();
-
-    if (type) { url.push(this.pathForType(type)); }
-    if (id) { url.push(id); }
-
-    if (prefix) { url.unshift(prefix); }
-
-    url = url.join('/');
-    if (!host && url) { url = '/' + url; }
-    url += '.json?format=json-pretty';
-    return url;
-  },
-  ajaxOptions: function(url, type, hash) {
-    hash = this._super(url, type, hash);
-    //hash.dataType = 'jsonp';
-    return hash;
-  },
-  normalize: function() {
-      debugger;
-  },
-  defaultSerializer: "DS/SquarespaceREST"
-});
-
-
-module.exports = DS.SquarespaceAdapter;
-},{}],2:[function(require,module,exports){
 require('../vendor/jquery');
 require('../vendor/handlebars');
 require('../vendor/ember');
 require('../vendor/ember-data'); // delete if you don't want ember-data
 
 var App = Ember.Application.create({LOG_TRANSITIONS: true});
-App.Store = require('./store'); // delete if you don't want ember-data
+App.Store = DS.Store.extend({
+  revision: 11,
+  //adapter: DS.RESTAdapter.create()
+  //adapter: DS.LSAdapter.create()
+  adapter: DS.SquarespaceAdapter
+});
+
+ // delete if you don't want ember-data
+
+
 Ember.$.ajaxSetup({
   dataType: "JSONP",
   crossDomain: true
 });
 
 module.exports = App;
-},{"../vendor/ember":21,"../vendor/ember-data":20,"../vendor/handlebars":22,"../vendor/jquery":23,"./store":4}],3:[function(require,module,exports){
+},{"../vendor/ember":16,"../vendor/ember-data":15,"../vendor/handlebars":17,"../vendor/jquery":18}],2:[function(require,module,exports){
 var App = require('./app');
 
 App.Router.map(function() {
@@ -132,39 +71,8 @@ App.Router.map(function() {
 
 
 
-},{"./app":2}],4:[function(require,module,exports){
-// by default, persist application data to localStorage.
-//require('../vendor/localstorage_adapter');
-
-module.exports = DS.Store.extend({
-  revision: 11,
-  //adapter: DS.RESTAdapter.create()
-  //adapter: DS.LSAdapter.create()
-  adapter: require('./adapter')
-});
-
-
-},{"./adapter":1}],5:[function(require,module,exports){
-var EditEventsController = Ember.ObjectController.extend({
-
-  save: function() {
-    this.get('store').commit();
-    this.redirectToModel();
-  },
-
-  redirectToModel: function() {
-    var router = this.get('target');
-    var model = this.get('model');
-    router.transitionTo('event', model);
-  }
-
-});
-
-module.exports = EditEventsController;
-
-
-},{}],6:[function(require,module,exports){
-var EventsController = Ember.ObjectController.extend({
+},{"./app":1}],3:[function(require,module,exports){
+App.EventsController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -175,20 +83,9 @@ var EventsController = Ember.ObjectController.extend({
 
 });
 
-module.exports = EventsController;
 
-
-},{}],7:[function(require,module,exports){
-var EditEventsController = require('./edit_events_controller');
-
-// inherit from edit controller
-var NewEventsController = EditEventsController.extend();
-
-module.exports = NewEventsController;
-
-
-},{"./edit_events_controller":5}],8:[function(require,module,exports){
-var NewspostController = Ember.ObjectController.extend({
+},{}],4:[function(require,module,exports){
+App.NewspostController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -199,11 +96,9 @@ var NewspostController = Ember.ObjectController.extend({
 
 });
 
-module.exports = NewspostController;
 
-
-},{}],9:[function(require,module,exports){
-var PerformerController = Ember.ObjectController.extend({
+},{}],5:[function(require,module,exports){
+App.PerformerController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -214,10 +109,8 @@ var PerformerController = Ember.ObjectController.extend({
 
 });
 
-module.exports = PerformerController;
 
-
-},{}],10:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 // This file is auto-generated by `ember build`.
 // You should not modify it.
 
@@ -225,9 +118,7 @@ var App = window.App = require('./config/app');
 require('./templates');
 
 
-App.EditEventsController = require('./controllers/edit_events_controller');
 App.EventsController = require('./controllers/events_controller');
-App.NewEventsController = require('./controllers/new_events_controller');
 App.NewspostController = require('./controllers/newspost_controller');
 App.PerformerController = require('./controllers/performer_controller');
 App.Event = require('./models/event');
@@ -235,7 +126,6 @@ App.Newspost = require('./models/newspost');
 App.Performer = require('./models/performer');
 App.EventsRoute = require('./routes/events_route');
 App.IndexRoute = require('./routes/index_route');
-App.NewEventsRoute = require('./routes/new_events_route');
 App.NewspostsRoute = require('./routes/newsposts_route');
 App.PerformersRoute = require('./routes/performers_route');
 App.HeaderView = require('./views/header_view');
@@ -247,8 +137,8 @@ require('./config/routes');
 module.exports = App;
 
 
-},{"./config/app":2,"./config/routes":3,"./controllers/edit_events_controller":5,"./controllers/events_controller":6,"./controllers/new_events_controller":7,"./controllers/newspost_controller":8,"./controllers/performer_controller":9,"./models/event":11,"./models/newspost":12,"./models/performer":13,"./routes/events_route":14,"./routes/index_route":15,"./routes/new_events_route":16,"./routes/newsposts_route":17,"./routes/performers_route":18,"./templates":19,"./views/header_view":24,"./views/newspost_view":25,"./views/newsposts_view":26}],11:[function(require,module,exports){
-var Event = DS.Model.extend({
+},{"./config/app":1,"./config/routes":2,"./controllers/events_controller":3,"./controllers/newspost_controller":4,"./controllers/performer_controller":5,"./models/event":7,"./models/newspost":8,"./models/performer":9,"./routes/events_route":10,"./routes/index_route":11,"./routes/newsposts_route":12,"./routes/performers_route":13,"./templates":14,"./views/header_view":19,"./views/newspost_view":20,"./views/newsposts_view":21}],7:[function(require,module,exports){
+App.Event = DS.Model.extend({
 
   performers: DS.hasMany('performer'),
 
@@ -262,11 +152,9 @@ var Event = DS.Model.extend({
 
 });
 
-module.exports = Event;
 
-
-},{}],12:[function(require,module,exports){
-var Newspost = DS.Model.extend({
+},{}],8:[function(require,module,exports){
+App.Newspost = DS.Model.extend({
 
   name: DS.attr('string'),
 
@@ -276,13 +164,9 @@ var Newspost = DS.Model.extend({
 
 });
 
-module.exports = Newspost;
 
-
-},{}],13:[function(require,module,exports){
-//https://bridgetown-dev.squarespace.com/performers/?format=json-pretty
-
-var Performer = DS.Model.extend({
+},{}],9:[function(require,module,exports){
+App.Performer = DS.Model.extend({
 
   events: DS.hasMany('event'),
 
@@ -294,13 +178,9 @@ var Performer = DS.Model.extend({
 
 });
 
-module.exports = Performer;
 
-
-},{}],14:[function(require,module,exports){
-var Event = require('../models/event');
-
-var EventsRoute = Ember.Route.extend({
+},{}],10:[function(require,module,exports){
+App.EventsRoute = Ember.Route.extend({
 
   model: function() {
     return Event.find();
@@ -311,10 +191,8 @@ var EventsRoute = Ember.Route.extend({
 module.exports = EventsRoute;
 
 
-},{"../models/event":11}],15:[function(require,module,exports){
-var Newspost = require('../models/newspost');
-
-var IndexRoute = Ember.Route.extend({
+},{}],11:[function(require,module,exports){
+App.IndexRoute = Ember.Route.extend({
 
   model: function() {
     return this.store.find('newspost');
@@ -325,35 +203,8 @@ var IndexRoute = Ember.Route.extend({
 module.exports = IndexRoute;
 
 
-},{"../models/newspost":12}],16:[function(require,module,exports){
-var event = require('../models/event');
-
-var NewEventsRoute = Ember.Route.extend({
-
-  renderTemplate: function() {
-    this.render('edit_event', {controller: 'new_events'});
-  },
-
-  model: function() {
-    return event.createRecord();
-  },
-
-  deactivate: function() {
-    var model = this.get('controller.model');
-    if (!model.get('isSaving')) {
-      model.deleteRecord();
-    }
-  }
-
-});
-
-module.exports = NewEventsRoute;
-
-
-},{"../models/event":11}],17:[function(require,module,exports){
-var Newspost = require('../models/newspost');
-
-var NewspostRoute = Ember.Route.extend({
+},{}],12:[function(require,module,exports){
+App.NewspostRoute = Ember.Route.extend({
 
   model: function() {
     return this.store.find('newspost');
@@ -361,13 +212,8 @@ var NewspostRoute = Ember.Route.extend({
 
 });
 
-module.exports = NewspostRoute;
-
-
-},{"../models/newspost":12}],18:[function(require,module,exports){
-var Performer = require('../models/performer');
-
-var PerformersRoute = Ember.Route.extend({
+},{}],13:[function(require,module,exports){
+App.PerformersRoute = Ember.Route.extend({
 
   model: function(params) {
     return this.store.find('performer');
@@ -384,10 +230,8 @@ var PerformersRoute = Ember.Route.extend({
 
 });
 
-module.exports = PerformersRoute;
 
-
-},{"../models/performer":13}],19:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 
 Ember.TEMPLATES['application'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
@@ -797,7 +641,7 @@ function program2(depth0,data) {
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /*!
  * @overview  Ember Data
  * @copyright Copyright 2011-2014 Tilde Inc. and contributors.
@@ -11819,7 +11663,7 @@ define("ember-inflector/lib/system/string",
   });
 global.DS = requireModule('ember-data/lib/main')['default'];
 }(window));
-},{}],21:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*!
  * @overview  Ember - JavaScript Application Framework
  * @copyright Copyright 2011-2014 Tilde Inc. and contributors
@@ -52404,7 +52248,7 @@ Ember.State = generateRemovedClass("Ember.State");
 
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /*
 
 Copyright (C) 2011 by Yehuda Katz
@@ -52768,7 +52612,7 @@ Handlebars.template = Handlebars.VM.template;
 })(Handlebars);
 ;
 
-},{}],23:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v1.9.1
  * http://jquery.com/
@@ -62366,21 +62210,17 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 }
 
 })( window );
-},{}],24:[function(require,module,exports){
-var HeaderView = Ember.View.extend({
+},{}],19:[function(require,module,exports){
+App.HeaderView = Ember.View.extend({
   templateName: 'header'
 });
-
-module.exports = HeaderView;
-},{}],25:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 App.NewsPostView = Ember.View.extend({
   templateName: 'newspost'
 });
-},{}],26:[function(require,module,exports){
-var NewsPostsView = Ember.View.extend({
+},{}],21:[function(require,module,exports){
+App.NewsPostsView = Ember.View.extend({
   templateName: 'newsposts'
 });
-
-module.exports = NewsPostsView;
-},{}]},{},[10])
+},{}]},{},[6])
 ;

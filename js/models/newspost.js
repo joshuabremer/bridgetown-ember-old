@@ -1,4 +1,4 @@
-var Newspost = DS.Model.extend({
+App.Newspost = DS.Model.extend({
 
   name: DS.attr('string'),
 
@@ -7,6 +7,4 @@ var Newspost = DS.Model.extend({
   headshot: DS.attr('string')
 
 });
-
-module.exports = Newspost;
 

@@ -1,4 +1,4 @@
-var NewspostController = Ember.ObjectController.extend({
+App.NewspostController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
@@ -8,6 +8,4 @@ var NewspostController = Ember.ObjectController.extend({
   }
 
 });
-
-module.exports = NewspostController;
 
