@@ -1,0 +1,30 @@
+<h2>Events</h2>
+
+<form {{action save on="submit"}}>
+  
+  <p>
+    <label for="name">Name</label><br>
+    {{view Ember.TextField valueBinding="name" id="name"}}
+  </p>
+  
+  <p>
+    <label for="start_time">Start time</label><br>
+    {{view Ember.TextField valueBinding="start_time" id="start_time"}}
+  </p>
+  
+  <p>
+    <label for="end_time">End time</label><br>
+    {{view Ember.TextField valueBinding="end_time" id="end_time"}}
+  </p>
+  
+  <p>
+    <label for="price">Price</label><br>
+    {{view Ember.TextField valueBinding="price" id="price"}}
+  </p>
+  
+  <p>
+    <button type="submit">Save</button>
+  </p>
+
+</form>
+
