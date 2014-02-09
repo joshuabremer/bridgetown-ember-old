@@ -32,6 +32,8 @@ App.Router.map(function() {
   // this.route('new_performer', {path: '/performers/new'});
   // end generated routes
 
+  this.route('catch_all', { path: '*:' });
+
 
 });
 
