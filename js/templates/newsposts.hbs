@@ -1,23 +1,10 @@
-<h2>Newsposts</h2>
-
-{{#link-to "new_newspost"}}New Newspost{{/link-to}}
-
-<table>
-  <thead>
-    <th>name</th>
-    <th>bio</th>
-    <th>headshot</th>
-  </thead>
-  <tbody>
-    {{#each newspost in controller}}
-    <tr>
-      <td>{{ newspost.name }}</td>
-      <td>{{ newspost.bio }}</td>
-      <td>{{ newspost.headshot }}</td>
-      <td>{{#link-to "newspost" newspost }}view{{/link-to}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+ {{#each newspost in controller}}
+    <div class="newspost">
+      <h3 class="newspost-title">{{#link-to "newspost" newspost }}{{ newspost.name }}{{/link-to}}</h3>
+      <p>{{humanDate newspost.publishOn}}</p>
+      <div class="newspost-content">{{{ createExcerpt newspost.bio 100 "... Read More..." }}}</div>
+    </div>
+    <hr />
+  {{/each}}
 
 
