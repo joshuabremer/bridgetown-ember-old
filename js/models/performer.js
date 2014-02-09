@@ -6,7 +6,9 @@ App.Performer = DS.Model.extend({
 
   headshot: DS.attr('string'),
 
-  bio: DS.attr('string')
+  bio: DS.attr('string'),
+
+  urlId: DS.attr('string')
 
 });
 

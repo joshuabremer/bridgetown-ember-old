@@ -32,7 +32,6 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
     if (this.normalizeHash && this.normalizeHash[prop]) {
       hash = this.normalizeHash[prop](hash);
     }
-
     return this._super(type, hash, prop);
   },
   normalizeHash: {
