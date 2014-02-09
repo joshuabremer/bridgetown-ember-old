@@ -2,7 +2,19 @@
 
 DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
   extractSingle: function(store, type, payload) {
-    debugger;
+    newPayload = {};
+    newPayload.categories = [];
+    newPayload[type.typeKey] = payload.item;
+
+    // Sideload the categories
+    if (payload.item.categories) {
+      payload.item.category_ids = payload.item.categories;
+      _.each(payload.item.categories,function(category) {
+        newPayload.categories.push({id:category, name: category})
+      });
+      newPayload.categories = _.uniq(newPayload.categories);
+    }
+    return this._super(store, type, newPayload);
   },
   extractArray: function(store, primaryType, payload) {
     newPayload = {};
@@ -36,6 +48,14 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
   },
   normalizeHash: {
     performers: function(hash) {
+      hash.id = hash.urlId;
+      hash.name = hash.title;
+      hash.bio = hash.body;
+      hash.headshot = hash.assetUrl;
+      return hash;
+    },
+    performer: function(hash) {
+      hash.id = hash.urlId;
       hash.name = hash.title;
       hash.bio = hash.body;
       hash.headshot = hash.assetUrl;
@@ -51,11 +71,11 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
 });
 
 DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-  //host: 'http://bridgetown-dev.squarespace.com',
+  host: 'http://bridgetown-dev.squarespace.com',
   //host: '127.0.0.1:8000/',
-  namespace: 'fixtures',
+  // namespace: 'fixtures',
 
-  buildURL: function(type, id) {
+  buildURL: function(type, id, params) {
     var url = [],
         host = Ember.get(this, 'host'),
         prefix = this.urlPrefix();
@@ -67,12 +87,13 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
 
     url = url.join('/');
     if (!host && url) { url = '/' + url; }
-    url += '.json?format=json-pretty';
+    url += '?format=json-pretty';
+    //url += '.json?format=json-pretty';
     return url;
   },
   ajaxOptions: function(url, type, hash) {
     hash = this._super(url, type, hash);
-    //hash.dataType = 'jsonp';
+    hash.dataType = 'jsonp';
     return hash;
   },
   normalize: function() {
