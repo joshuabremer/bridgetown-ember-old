@@ -62,9 +62,13 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
       return hash;
     },
     newsposts: function(hash) {
-      hash.name = hash.title;
-      hash.bio = hash.body;
-      hash.headshot = hash.assetUrl;
+      hash.id = hash.urlId;
+      hash.htmlContent = hash.body;
+      return hash;
+    },
+    newspost: function(hash) {
+      hash.id = hash.urlId;
+      hash.htmlContent = hash.body;
       return hash;
     }
   }

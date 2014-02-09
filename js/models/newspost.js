@@ -2,9 +2,11 @@ App.Newspost = DS.Model.extend({
 
   performers: DS.hasMany('performer'),
 
-  name: DS.attr('string'),
+  title: DS.attr('string'),
 
-  bio: DS.attr('string'),
+  htmlContent: DS.attr('string'),
+
+  urlId: DS.attr('string'),
 
   publishOn: DS.attr('string')
 
