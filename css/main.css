@@ -10,6 +10,62 @@
   margin: 0 auto;
 }*/
 
+/* Fix SquareSpace Grid */
+.sqs-layout > .sqs-row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.sqs-col-12 {
+  margin-left: 0 !important;
+}
+
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+#ember-app, .ember-view {
+  height:100%;
+}
+
 img {
   max-width:100%;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+.jumbotron {
+  background-size:cover;
+  background-position:center center;
+}
+
+.jumbotron-dark {
+  color:white;
+}
+
+.jumbotron-bg1 {
+  background: url('/img/jumbotron-bg1.jpg');
+}
+
+#push, #site-footer {
+  height: 60px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #site-footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }

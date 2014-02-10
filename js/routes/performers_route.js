@@ -6,7 +6,7 @@ App.PerformersRoute = Ember.Route.extend({
 
   renderTemplate: function() {
     this.render();
-    this.render('jumbotron_index', { outlet: 'jumbotron' });
+    this.render('jumbotron_performers', { outlet: 'jumbotron' });
   }
 
 });

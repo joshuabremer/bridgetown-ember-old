@@ -19,9 +19,50 @@ App.Router.map(function() {
   // this.route('new_performer', {path: '/performers/new'});
   // end generated routes
 
-  // this.route('catch_all', { path: '*:' });
+  this.route('venues');
+  this.route('shows');
+  this.route('history');
+  this.route('press');
+  this.route('contact');
+
+  this.route('catch_all', { path: '*:' });
 
 
 });
+
+App.VenuesRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('venues');}
+});
+
+App.ShowsRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('shows');}
+});
+
+App.HistoryRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('history');}
+});
+
+App.PressRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('press');}
+});
+
+App.ContactRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('contact');}
+});
+
+function _retrievePageJSON(page) {
+  host = 'http://bridgetown-dev.squarespace.com/';
+  return Ember.$.ajax({
+    url: host + page + '?format=json-pretty',
+    dataType: 'JSONP'
+  }).then(function(data) {
+    return data;
+  })
+}
 
 

@@ -230,19 +230,17 @@ a:after {
 
 
 /* Footer Wrap */
-#f {
+#site-footer {
 	background: #2d2d2d;
-	padding-top: 30px;
-	padding-bottom: 30px;
+  line-height:60px;
 }
 
-#f i {
+#site-footer i {
 	color: #bdbdbd;
 	font-size: 30px;
-	padding: 20px;
 }
 
-#f i:hover {
+#site-footer i:hover {
 	color: #ff7878;
 }
 

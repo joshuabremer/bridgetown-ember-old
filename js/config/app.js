@@ -1,4 +1,7 @@
-var App = Ember.Application.create({LOG_TRANSITIONS: true});
+var App = Ember.Application.create({
+  LOG_TRANSITIONS: true,
+rootElement: '#ember-app'
+});
 App.Store = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
