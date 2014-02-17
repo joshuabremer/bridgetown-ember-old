@@ -1,0 +1,18 @@
+<h2>Performer</h2>
+
+<p>
+  <b>Name:</b> {{ title }}
+</p>
+
+<p>
+  <b>Headshot:</b> <img {{bindAttr src="performer.assetUrl" }} />
+</p>
+
+<p>
+  <b>Bio:</b> {{ body }}
+</p>
+
+
+{{#linkTo "performers"}}←All Performers{{/linkTo}}
+{{#linkTo "edit_performer" model}}Edit{{/linkTo}}
+<a href="#" {{action "destroy"}}>Destroy</a>
