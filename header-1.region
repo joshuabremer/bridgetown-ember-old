@@ -11,57 +11,46 @@
 
     {squarespace-headers}
 
-  <squarespace:script src="vendor_moment.js">
-  <squarespace:script src="vendor_spin.js">
-  <squarespace:script src="vendor_underscore-min.js">
-  <squarespace:script src="vendor_jquery.js">
-  <squarespace:script src="vendor_bootstrap.js">
-  <squarespace:script src="vendor_handlebars.js">
-  <squarespace:script src="vendor_ember.js">
-  <squarespace:script src="vendor_ember-data.js">
+  <squarespace:script src="vendor_moment.js" />
+  <squarespace:script src="vendor_spin.js" />
+  <squarespace:script src="vendor_underscore-min.js" />
+  <squarespace:script src="vendor_jquery.js" />
+  <squarespace:script src="vendor_bootstrap.js" />
+  <squarespace:script src="vendor_handlebars.js" />
+  <squarespace:script src="vendor_ember.js" />
+  <squarespace:script src="vendor_ember-data.js" />
 
-  <squarespace:script src="helpers_moment_helper.js">
-  <squarespace:script src="helpers_excerpt_helper.js">
-  <squarespace:script src="config_adapter.js">
-  <squarespace:script src="config_app.js">
+  <squarespace:script src="helpers_moment_helper.js" />
+  <squarespace:script src="helpers_excerpt_helper.js" />
+  <squarespace:script src="config_adapter.js" />
+  <squarespace:script src="config_app.js" />
 
-  <squarespace:script src="components_spin_component.js">
+  <squarespace:script src="components_spin_component.js" />
 
-  <squarespace:script src="models_category.js">
-  <squarespace:script src="models_event.js">
-  <squarespace:script src="models_newspost.js">
-  <squarespace:script src="models_performer.js">
+  <squarespace:script src="models_category.js" />
+  <squarespace:script src="models_event.js" />
+  <squarespace:script src="models_newspost.js" />
+  <squarespace:script src="models_performer.js" />
 
-  <squarespace:script src="controllers_newspost_controller.js">
-  <squarespace:script src="controllers_performer_controller.js">
-  <squarespace:script src="controllers_catchall_controller.js">
+  <squarespace:script src="controllers_newspost_controller.js" />
+  <squarespace:script src="controllers_performer_controller.js" />
+  <squarespace:script src="controllers_catchall_controller.js" />
 
-  <squarespace:script src="views_index_view.js">
-  <squarespace:script src="views_newspost_view.js">
-  <squarespace:script src="views_newsposts_view.js">
-  <squarespace:script src="views_header_view.js">
+  <squarespace:script src="views_index_view.js" />
+  <squarespace:script src="views_newspost_view.js" />
+  <squarespace:script src="views_newsposts_view.js" />
+  <squarespace:script src="views_header_view.js" />
 
-  <squarespace:script src="templates.js">
+  <script src="/scripts/templates.js"></script>
 
-  <squarespace:script src="config_routes.js">
+  <squarespace:script src="config_routes.js" />
 
-  <squarespace:script src="routes_index_route.js">
-  <squarespace:script src="routes_newsposts_route.js">
-  <squarespace:script src="routes_newspost_route.js">
-  <squarespace:script src="routes_performers_route.js">
-  <squarespace:script src="routes_performer_route.js">
-  <squarespace:script src="routes_catchall_route.js">
+  <squarespace:script src="routes_index_route.js" />
+  <squarespace:script src="routes_newsposts_route.js" />
+  <squarespace:script src="routes_newspost_route.js" />
+  <squarespace:script src="routes_performers_route.js" />
+  <squarespace:script src="routes_performer_route.js" />
+  <squarespace:script src="routes_catchall_route.js" />
   </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
-
-        <!--HEADER-->
-      <header id="header">
-
-        <!--MAIN NAVIGATION-->
-
-        <squarespace:navigation navigationId="mainNav" template="navigation-1" />
-
-      </header>
-
-      <div class="container">
