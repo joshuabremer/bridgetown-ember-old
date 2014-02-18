@@ -9,10 +9,9 @@
 
     <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
 
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     {squarespace-headers}
 
-  <script data-main="scripts/main" src="/scripts/lib_require.js"></script>
+  <squarespace:script src="application.js" combo="true" />
   </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
