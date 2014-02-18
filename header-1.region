@@ -11,7 +11,7 @@
 
     {squarespace-headers}
 
-  <squarespace:script src="application.js" combo="true" />
+  <squarespace:script src="application.js" />
   </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">

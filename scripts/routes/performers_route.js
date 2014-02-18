@@ -1,21 +1,13 @@
-var Performer = require('../models/performer');
+App.PerformersRoute = Ember.Route.extend({
 
-var PerformerRoute = Ember.Route.extend({
+  model: function(params) {
+    return this.store.find('performer');
+  },
 
-  // model: function(params) {
-  //   return Performer.find();
-  // }
-  model: function() {
-    return $.ajax({
-      url: 'https://bridgetown-dev.squarespace.com/performers/?format=json-pretty',
-      crossDomain: true,
-      dataType: 'JSONP'
-    }).then(function(data) {
-      return data.items;
-    });
+  renderTemplate: function() {
+    this.render();
+    this.render('jumbotron_performers', { outlet: 'jumbotron' });
   }
 
 });
-
-module.exports = PerformerRoute;
 

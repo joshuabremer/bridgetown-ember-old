@@ -1,10 +1,10 @@
-App.PerformerController = Ember.ObjectController.extend({
+App.EventsController = Ember.ObjectController.extend({
 
   destroy: function() {
     if (!confirm('Are you sure?')) return;
     this.get('model').deleteRecord();
     this.get('store').commit();
-    this.get('target.router').transitionTo('performers');
+    this.get('target.router').transitionTo('events');
   }
 
 });

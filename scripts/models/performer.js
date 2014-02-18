@@ -1,14 +1,14 @@
-//https://bridgetown-dev.squarespace.com/performers/?format=json-pretty
+App.Performer = DS.Model.extend({
 
-var Performer = DS.Model.extend({
+  categories: DS.hasMany('category'),
 
   name: DS.attr('string'),
 
   headshot: DS.attr('string'),
 
+  urlId: DS.attr('string'),
+
   bio: DS.attr('string')
 
 });
-
-module.exports = Performer;
 

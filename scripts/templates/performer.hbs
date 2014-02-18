@@ -1,18 +1,24 @@
-<h2>Performer</h2>
+<div class="container">
+  <h2>Performer</h2>
 
 <p>
-  <b>Name:</b> {{ title }}
+  <b>Name:</b> {{ name }}
 </p>
 
 <p>
-  <b>Headshot:</b> <img {{bindAttr src="performer.assetUrl" }} />
+  <b>Headshot:</b> <img {{bind-attr src="headshot" }} />
 </p>
 
 <p>
-  <b>Bio:</b> {{ body }}
+  <b>Bio:</b> {{{ bio }}}
+</p>
+
+<p>
+  <b>Categories:</b> {{#each category in categories}}
+      {{category.name}}
+      {{/each}}
 </p>
 
 
-{{#linkTo "performers"}}←All Performers{{/linkTo}}
-{{#linkTo "edit_performer" model}}Edit{{/linkTo}}
-<a href="#" {{action "destroy"}}>Destroy</a>
+{{#link-to "performers"}}←All Performers{{/link-to}}
+</div>
