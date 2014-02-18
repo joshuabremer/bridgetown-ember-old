@@ -11,7 +11,46 @@
 
     {squarespace-headers}
 
-  <squarespace:script src="application.js" />
+  <script src="scripts/vendor/moment.js"></script>
+  <script src="scripts/vendor/spin.js"></script>
+  <script src="scripts/vendor/underscore-min.js"></script>
+  <script src="scripts/vendor/jquery.js"></script>
+  <script src="scripts/vendor/bootstrap.js"></script>
+  <script src="scripts/vendor/handlebars.js"></script>
+  <script src="scripts/vendor/ember.js"></script>
+  <script src="scripts/vendor/ember-data.js"></script>
+
+  <script src="scripts/helpers/moment_helper.js"></script>
+  <script src="scripts/helpers/excerpt_helper.js"></script>
+  <script src="scripts/config/adapter.js"></script>
+  <script src="scripts/config/app.js"></script>
+
+  <script src="scripts/components/spin_component.js"></script>
+
+  <script src="scripts/models/category.js"></script>
+  <script src="scripts/models/event.js"></script>
+  <script src="scripts/models/newspost.js"></script>
+  <script src="scripts/models/performer.js"></script>
+
+  <script src="scripts/controllers/newspost_controller.js"></script>
+  <script src="scripts/controllers/performer_controller.js"></script>
+  <script src="scripts/controllers/catchall_controller.js"></script>
+
+  <script src="scripts/views/index_view.js"></script>
+  <script src="scripts/views/newspost_view.js"></script>
+  <script src="scripts/views/newsposts_view.js"></script>
+  <script src="scripts/views/header_view.js"></script>
+
+  <script src="scripts/templates/templates.js"></script>
+
+  <script src="scripts/config/routes.js"></script>
+
+  <script src="scripts/routes/index_route.js"></script>
+  <script src="scripts/routes/newsposts_route.js"></script>
+  <script src="scripts/routes/newspost_route.js"></script>
+  <script src="scripts/routes/performers_route.js"></script>
+  <script src="scripts/routes/performer_route.js"></script>
+  <script src="scripts/routes/catchall_route.js"></script>
   </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
