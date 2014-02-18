@@ -52,7 +52,9 @@ App.XSpinnerComponent = Ember.Component.extend({
   }.on('didInsertElement'),
 
   teardown: function() {
-    this.spinner.stop();
+    if (this.spinner && this.spinner) {
+      this.spinner.stop();
+    }
   }.on('willDestroyElement')
 
 });
