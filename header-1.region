@@ -10,7 +10,6 @@
     <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
 
     {squarespace-headers}
-    <link type="text/css" href="/assets/main.css" media="all" />
     </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
