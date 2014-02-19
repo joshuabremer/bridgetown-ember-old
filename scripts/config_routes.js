@@ -62,7 +62,7 @@ function _retrievePageJSON(page) {
     dataType: 'JSONP'
   }).then(function(data) {
     return data;
-  })
+  });
 }
 
 

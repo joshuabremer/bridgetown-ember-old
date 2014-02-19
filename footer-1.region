@@ -1,2 +1,43 @@
-    </body>
+    <squarespace:script src="vendor_moment.js" combo="true" />
+    <squarespace:script src="vendor_spin.js" combo="true" />
+    <squarespace:script src="vendor_underscore-min.js" combo="true" />
+    <squarespace:script src="vendor_jquery.js" combo="true" />
+    <squarespace:script src="vendor_bootstrap.js" combo="true" />
+    <squarespace:script src="vendor_handlebars.js" combo="true" />
+    <squarespace:script src="vendor_ember.js" combo="true" />
+    <squarespace:script src="vendor_ember-data.js" combo="true" />
+
+    <squarespace:script src="helpers_moment_helper.js" combo="true" />
+    <squarespace:script src="helpers_excerpt_helper.js" combo="true" />
+    <squarespace:script src="config_adapter.js" combo="true" />
+    <squarespace:script src="config_app.js" combo="true" />
+
+    <squarespace:script src="components_spin_component.js" combo="true" />
+
+    <squarespace:script src="models_category.js" combo="true" />
+    <squarespace:script src="models_event.js" combo="true" />
+    <squarespace:script src="models_newspost.js" combo="true" />
+    <squarespace:script src="models_performer.js" combo="true" />
+
+    <squarespace:script src="controllers_newspost_controller.js" combo="true" />
+    <squarespace:script src="controllers_performer_controller.js" combo="true" />
+    <squarespace:script src="controllers_catchall_controller.js" combo="true" />
+
+    <squarespace:script src="views_index_view.js" combo="true" />
+    <squarespace:script src="views_newspost_view.js" combo="true" />
+    <squarespace:script src="views_newsposts_view.js" combo="true" />
+    <squarespace:script src="views_header_view.js" combo="true" />
+
+    <script src="/scripts/templates.js"></script>
+
+    <squarespace:script src="config_routes.js" combo="true" />
+
+    <squarespace:script src="routes_index_route.js" combo="true" />
+    <squarespace:script src="routes_newsposts_route.js" combo="true" />
+    <squarespace:script src="routes_newspost_route.js" combo="true" />
+    <squarespace:script src="routes_performers_route.js" combo="true" />
+    <squarespace:script src="routes_performer_route.js" combo="true" />
+    <squarespace:script src="routes_catchall_route.js" combo="true" />
+
+        </body>
 </html>

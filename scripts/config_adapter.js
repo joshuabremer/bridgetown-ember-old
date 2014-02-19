@@ -10,7 +10,7 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
     if (payload.item.categories) {
       payload.item.category_ids = payload.item.categories;
       _.each(payload.item.categories,function(category) {
-        newPayload.categories.push({id:category, name: category})
+        newPayload.categories.push({id:category, name: category});
       });
       newPayload.categories = _.uniq(newPayload.categories);
     }
@@ -26,7 +26,7 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
       if (item.categories) {
         item.category_ids = item.categories;
         _.each(item.categories,function(category) {
-          newPayload.categories.push({id:category, name: category})
+          newPayload.categories.push({id:category, name: category});
         });
         newPayload.categories = _.uniq(newPayload.categories);
       }
@@ -101,7 +101,7 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
     return hash;
   },
   normalize: function() {
-      debugger;
+    // Do nothing...
   },
   defaultSerializer: "DS/SquarespaceREST"
 });
