@@ -12,8 +12,8 @@ App.Store = DS.Store.extend({
  // delete if you don't want ember-data
 
 
-Ember.$.ajaxSetup({
-  dataType: "JSONP",
-  crossDomain: true
-});
+// Ember.$.ajaxSetup({
+//   dataType: "JSONP",
+//   crossDomain: true
+// });
 
