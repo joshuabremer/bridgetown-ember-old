@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['Gruntfile.js','scripts/**/*.*', 'index.html','**/*.scss'],
-        tasks: ['jshint','emberhandlebars','uglify','sass'],
+        tasks: ['jshint','clean','emberhandlebars','uglify','sass'],
         options: {
           spawn: false,
           livereload: 1337
@@ -48,6 +48,7 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'scripts/*.js']
     },
+    clean: ["./styles/main.css", "./scripts/templates.js","./scripts/application.js"],
     sass: {
       dist: {
         files: {
@@ -72,13 +73,14 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-ember-template-compiler');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['jshint','emberhandlebars','uglify','sass']);
+  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
 
 
 };
