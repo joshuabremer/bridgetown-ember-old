@@ -1,6 +1,9 @@
 App.PerformersRoute = Ember.Route.extend({
 
   model: function(params) {
+    if (this.store.all('performer').content.length) {
+      return this.store.all('performer');
+    }
     return this.store.find('performer');
   },
 
