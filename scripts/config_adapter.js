@@ -97,7 +97,9 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
   },
   ajaxOptions: function(url, type, hash) {
     hash = this._super(url, type, hash);
-    //hash.dataType = 'jsonp';
+    if (window.location.hostname != "bridgetown-dev.squarespace.com") {
+      hash.dataType = 'jsonp';
+    }
     return hash;
   },
   normalize: function() {

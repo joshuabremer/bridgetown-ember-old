@@ -1,12 +1,14 @@
 App.IndexRoute = Ember.Route.extend({
 
-  model: function() {
+  model: function(params) {
+    if (this.store.all('newspost').content.length) {
+      return this.store.all('newspost');
+    }
     return this.store.find('newspost');
   },
 
   renderTemplate: function() {
     this.render();
-    this.render('jumbotron_index', { outlet: 'jumbotron' });
   }
 
 });

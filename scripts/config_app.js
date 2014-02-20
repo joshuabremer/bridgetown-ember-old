@@ -1,6 +1,6 @@
 var App = Ember.Application.create({
   LOG_TRANSITIONS: true,
-rootElement: '#ember-app'
+  rootElement: '#ember-app'
 });
 App.Store = DS.Store.extend({
   revision: 11,
@@ -11,9 +11,10 @@ App.Store = DS.Store.extend({
 
  // delete if you don't want ember-data
 
-
-// Ember.$.ajaxSetup({
-//   dataType: "JSONP",
-//   crossDomain: true
-// });
+if (window.location.hostname != "bridgetown-dev.squarespace.com") {
+  Ember.$.ajaxSetup({
+    dataType: "JSONP",
+    crossDomain: true
+  });
+}
 

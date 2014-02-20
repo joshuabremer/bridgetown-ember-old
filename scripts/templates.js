@@ -1,17 +1,4 @@
-Ember.TEMPLATES['_front_page_info'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-
-
-  data.buffer.push("<div class=\"container w\">\n    <div class=\"row centered\">\n      <div class=\"col-md-6\">\n        <h4>NEWS</h4>\n        ");
-  data.buffer.push(escapeExpression((helper = helpers.render || (depth0 && depth0.render),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "newsposts", "controller", options) : helperMissing.call(depth0, "render", "newsposts", "controller", options))));
-  data.buffer.push("\n      </div><!-- col-lg-6 -->\n\n      <div class=\"col-md-6 hidden-sm hidden-xs\">\n        <h4>@bridgetown</h4>\n        ");
-  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "recent_tweets", options) : helperMissing.call(depth0, "partial", "recent_tweets", options))));
-  data.buffer.push("\n      </div><!-- col-lg-6 -->\n      <div class=\"clearfix\"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->");
-  return buffer;
-  
-});Ember.TEMPLATES['_recent_tweets'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+Ember.TEMPLATES['_recent_tweets'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
@@ -25,7 +12,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<div id=\"lg\">\n  <div class=\"container w\">\n    <h1>SPONSORS</h1>\n    <div class=\"row centered\">\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c01.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c02.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c03.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c04.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c01.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c02.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c03.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c04.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"/assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n    </div><!-- row -->\n  </div><!-- container -->\n</div>");
+  data.buffer.push("<div id=\"lg\">\n  <div class=\"container w\">\n    <h1>SPONSORS</h1>\n    <div class=\"row centered\">\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c01.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c02.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c03.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c04.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c01.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c02.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c03.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c04.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n\n      <div class=\"col-xs-4 col-sm-3 col-md-2\">\n        <img class=\"img-responsive\" src=\"assets/c05.gif\" alt=\"\">\n      </div><!-- col-xs-4 col-sm-3 col-md-2 -->\n    </div><!-- row -->\n  </div><!-- container -->\n</div>");
   
 });Ember.TEMPLATES['application'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
@@ -235,9 +222,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("\n\n");
-  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "front_page_info", options) : helperMissing.call(depth0, "partial", "front_page_info", options))));
-  data.buffer.push("\n\n");
+  data.buffer.push("\n\n<div class=\"container w\">\n    <div class=\"row centered\">\n      <div class=\"col-md-6\">\n        <h4>NEWS</h4>\n        ");
+  data.buffer.push(escapeExpression((helper = helpers.render || (depth0 && depth0.render),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "newsposts", "controller", options) : helperMissing.call(depth0, "render", "newsposts", "controller", options))));
+  data.buffer.push("\n      </div><!-- col-lg-6 -->\n\n      <div class=\"col-md-6 hidden-sm hidden-xs\">\n        <h4>@bridgetown</h4>\n        ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "recent_tweets", options) : helperMissing.call(depth0, "partial", "recent_tweets", options))));
+  data.buffer.push("\n      </div><!-- col-lg-6 -->\n      <div class=\"clearfix\"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->\n\n\n");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "partial", "sponsors", options))));
   data.buffer.push("\n\n");
   return buffer;
@@ -245,10 +234,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 });Ember.TEMPLATES['jumbotron_index'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  
+  var buffer = '';
 
 
-  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-dark\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Bridgetown Comedy Festival</h1>\n      <h2>May ##, 2014</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->");
+  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-dark\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      \n      <h2>May ##, 2014</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->");
+  return buffer;
   
 });Ember.TEMPLATES['jumbotron_performers'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];

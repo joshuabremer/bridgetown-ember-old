@@ -1,6 +1,22 @@
 
 
-{{partial "front_page_info" }}
+<div class="container w">
+    <div class="row centered">
+      <div class="col-md-6">
+        <h4>NEWS</h4>
+        {{render "newsposts" controller}}
+      </div><!-- col-lg-6 -->
+
+      <div class="col-md-6 hidden-sm hidden-xs">
+        <h4>@bridgetown</h4>
+        {{partial "recent_tweets"}}
+      </div><!-- col-lg-6 -->
+      <div class="clearfix"></div>
+    </div><!-- row -->
+    <br>
+    <br>
+  </div><!-- container -->
+
 
 {{partial "sponsors" }}
 

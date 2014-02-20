@@ -5,6 +5,6 @@ App.NewspostsRoute = Ember.Route.extend({
       return this.store.all('newspost');
     }
     return this.store.find('newspost');
-  },
+  }
 
 });
