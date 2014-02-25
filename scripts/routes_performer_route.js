@@ -1,7 +1,7 @@
 App.PerformerRoute = Ember.Route.extend({
 
   model: function(params) {
-    // var url = 'http://bridgetown-dev.squarespace.com/performers/' + params.urlId + '?format=json-pretty';
+    // var url = 'https://bridgetown-dev.squarespace.com/performers/' + params.urlId + '?format=json-pretty';
     // return Ember.$.ajax({
     //   url: url,
     //   dataType: 'jsonp'

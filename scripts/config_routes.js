@@ -62,7 +62,7 @@ App.ContactRoute = Ember.Route.extend({
 
 
 function _retrievePageJSON(page) {
-  host = 'http://bridgetown-dev.squarespace.com/';
+  host = 'https://bridgetown-dev.squarespace.com/';
   return Ember.$.ajax({
     url: host + page + '?format=json-pretty',
     dataType: 'JSONP'
