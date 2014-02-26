@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['spec/**/*.*','Gruntfile.js','scripts/**/*.*', 'index.html','**/*.scss'],
-        tasks: ['jasmine','jshint','clean','emberhandlebars','uglify','sass'],
+        tasks: ['jasmine','jshint','clean','emberhandlebars','uglify','sass','shell:gitpush','reload'],
         options: {
           spawn: false,
           livereload: 1337
@@ -55,6 +55,12 @@ module.exports = function(grunt) {
             './styles/main.css': './styles/main.scss'
         }
       }
+    },
+    reload: {
+        port: 6001,
+        proxy: {
+            host: 'localhost'
+        }
     },
     emberhandlebars: {
       compile: {
@@ -97,6 +103,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-reload');
 
   grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass','shell:gitpush']);
 
