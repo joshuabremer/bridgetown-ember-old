@@ -2,6 +2,7 @@
   {{#each performer in controller}}
   <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">
     <div class="performer-thumbnail" {{bind-attr style="performer.backgroundImageCSS" }}>
+    </div>
     <legend>{{#link-to "performer" performer }}{{ performer.name }}{{/link-to}}</legend>
   </div>
   {{/each}}
