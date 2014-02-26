@@ -11,7 +11,7 @@ App.Performer = DS.Model.extend({
   bio: DS.attr('string'),
 
   headshot300: function() {
-    return this.get('headshot300') + '?format=300w';
+    return this.get('headshot') + '?format=300w';
   }.property('headshot')
 
 });
