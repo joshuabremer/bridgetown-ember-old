@@ -37,8 +37,8 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['Gruntfile.js','scripts/**/*.*', 'index.html','**/*.scss'],
-        tasks: ['jshint','clean','emberhandlebars','uglify','sass'],
+        files: ['spec/**/*.*','Gruntfile.js','scripts/**/*.*', 'index.html','**/*.scss'],
+        tasks: ['jasmine','jshint','clean','emberhandlebars','uglify','sass'],
         options: {
           spawn: false,
           livereload: 1337
@@ -69,6 +69,15 @@ module.exports = function(grunt) {
         ],
         dest: 'scripts/templates.js'
       }
+    },
+    jasmine: {
+      pivotal: {
+        src: 'scripts/class_redirector.js',
+        options: {
+          specs: 'spec/*_spec.js',
+          helpers: 'spec/*_helper.js'
+        }
+      }
     }
   });
 
@@ -79,6 +88,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-ember-template-compiler');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
 
