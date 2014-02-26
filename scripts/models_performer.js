@@ -12,7 +12,11 @@ App.Performer = DS.Model.extend({
 
   headshot300: function() {
     return this.get('headshot') + '?format=300w';
-  }.property('headshot')
+  }.property('headshot'),
+
+  backgroundImageCSS: function() {
+    return "background-image:url('" + this.get("url") + "?format=300w')";
+  }.property("headshot")
 
 });
 
