@@ -1,7 +1,7 @@
 <div class="row">
   {{#each performer in controller}}
   <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">
-    <img class="img-responsive" data-image-dimensions={300x300} {{bind-attr src="performer.headshot300" }} />
+    <img class="img-responsive" {{bind-attr src="performer.headshot300" }} />
     <legend>{{#link-to "performer" performer }}{{ performer.name }}{{/link-to}}</legend>
   </div>
   {{/each}}
