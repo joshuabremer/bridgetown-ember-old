@@ -8,7 +8,11 @@ App.Performer = DS.Model.extend({
 
   urlId: DS.attr('string'),
 
-  bio: DS.attr('string')
+  bio: DS.attr('string'),
+
+  headshot300: function() {
+    return this.get('headshot300') + '?format=300w';
+  }.property('headshot')
 
 });
 
