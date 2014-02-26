@@ -18,6 +18,7 @@ module.exports = function(grunt) {
           'scripts/vendor_underscore-min.js',
           'scripts/vendor_bootstrap.js',
           'scripts/vendor_handlebars.js',
+          'scripts/vendor_jquery.lazyload.js',
           //'scripts/vendor_jquery.js',
           // 'scripts/vendor_ember.js',
           // 'scripts/vendor_ember-data.js',
