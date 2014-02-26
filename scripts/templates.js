@@ -360,6 +360,16 @@ function program3(depth0,data) {
 });Ember.TEMPLATES['performers'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.Performers", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n\n\n");
+  return buffer;
+  
+});Ember.TEMPLATES['performers_gallery'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
@@ -386,17 +396,7 @@ function program2(depth0,data) {
   data.buffer.push("<div class=\"row\">\n  ");
   stack1 = helpers.each.call(depth0, "performer", "in", "controller", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</div>\n\n\n");
-  return buffer;
-  
-});Ember.TEMPLATES['performers_gallery'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', escapeExpression=this.escapeExpression;
-
-
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.Performers", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n\n\n");
+  data.buffer.push("\n</div>\n\n");
   return buffer;
   
 });Ember.TEMPLATES['press'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
