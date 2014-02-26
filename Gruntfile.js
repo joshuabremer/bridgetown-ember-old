@@ -78,6 +78,13 @@ module.exports = function(grunt) {
           helpers: 'spec/*_helper.js'
         }
       }
+    },
+    shell: {
+      gitpush: {
+        command: function () {
+            return 'git commit -am "Changes";git push ss;';
+        }
+      }
     }
   });
 
@@ -89,8 +96,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ember-template-compiler');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-shell');
 
-  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
+  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass','shell:gitpush']);
 
 
 };
