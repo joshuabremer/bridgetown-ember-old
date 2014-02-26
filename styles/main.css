@@ -5034,5 +5034,4 @@ button.close {
 .performer-thumbnail {
   width: 100%;
   height: 300px;
-  background: transparent no-repeat center center;
-  background-size: cover; }
+  overflow: hidden; }
