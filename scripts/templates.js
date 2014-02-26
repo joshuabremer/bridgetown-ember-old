@@ -365,7 +365,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n  <div class=\"col-sm-6 col-sm-4 col-md-3 col-lg-2\">\n    <div class=\"performer-thumbnail lazy\">\n      <img class=\"img-responsive\" width=\"300\" height=\"300\" ");
+  data.buffer.push("\n  <div class=\"col-sm-6 col-sm-4 col-md-3 col-lg-2\">\n    <div class=\"performer-thumbnail\">\n      <img class=\"lazy img-responsive\" width=\"300\" height=\"300\" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'data-original': ("performer.headshot")
   },hashTypes:{'data-original': "STRING"},hashContexts:{'data-original': depth0},contexts:[],types:[],data:data})));
