@@ -365,10 +365,10 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n  <div class=\"col-sm-6 col-sm-4 col-md-3 col-lg-2\">\n    <div style=\"width:100%;height:300px;background:transparent;");
+  data.buffer.push("\n  <div class=\"col-sm-6 col-sm-4 col-md-3 col-lg-2\">\n    <div style=\"width:100%;height:300px;background:transparent ");
   stack1 = helpers._triageMustache.call(depth0, "performer.headshot300", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("></div>\n    <legend>");
+  data.buffer.push(" no-repeat center center;background-size:cover;\"></div>\n    <legend>");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</legend>\n  </div>\n  ");
