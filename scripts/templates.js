@@ -342,7 +342,7 @@ function program3(depth0,data) {
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n</p>\n\n<p>\n  <b>Headshot:</b> <img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'src': ("headshot")
+    'src': ("headshot300")
   },hashTypes:{'src': "STRING"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" />\n</p>\n\n<p>\n  <b>Bio:</b> ");
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "bio", {hash:{

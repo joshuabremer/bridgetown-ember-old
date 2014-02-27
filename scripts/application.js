@@ -3450,7 +3450,7 @@ App.Store = DS.Store.extend({
     }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n</p>\n\n<p>\n  <b>Headshot:</b> <img "), 
     e.buffer.push(l(c["bind-attr"].call(b, {
         hash: {
-            src: "headshot"
+            src: "headshot300"
         },
         hashTypes: {
             src: "STRING"
