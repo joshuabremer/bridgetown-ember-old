@@ -2907,7 +2907,7 @@ App.Store = DS.Store.extend({
     urlId: DS.attr("string"),
     bio: DS.attr("string"),
     headshot300: function() {
-        return "/assets/" + cleanStr(this.get("name")) + "-300x300.jpg";
+        return "/assets/performer-" + cleanStr(this.get("name")) + "-300x300.jpg";
     }.property("name"),
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("headshot") + "?format=300w')";
