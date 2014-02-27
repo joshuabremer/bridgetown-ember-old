@@ -4191,7 +4191,7 @@ App.Store = DS.Store.extend({
     e = e || {};
     var h, i, j, k = "", l = this.escapeExpression, m = this, n = c.helperMissing;
     return e.buffer.push('<div class="container">\n  <h2>Performer</h2>\n\n<p>\n  <b>Name:</b> '), 
-    h = c._triageMustache.call(b, "name", {
+    h = c._triageMustache.call(b, "Name", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -4212,7 +4212,7 @@ App.Store = DS.Store.extend({
         contexts: [],
         types: [],
         data: e
-    }))), e.buffer.push(" />\n</p>\n\n<p>\n  <b>Bio:</b> "), e.buffer.push(l(c._triageMustache.call(b, "bio", {
+    }))), e.buffer.push(" />\n</p>\n\n<p>\n  <b>Bio:</b> "), e.buffer.push(l(c._triageMustache.call(b, "Bio", {
         hash: {
             unescaped: "true"
         },

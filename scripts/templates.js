@@ -338,14 +338,14 @@ function program3(depth0,data) {
   }
 
   data.buffer.push("<div class=\"container\">\n  <h2>Performer</h2>\n\n<p>\n  <b>Name:</b> ");
-  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers._triageMustache.call(depth0, "Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n</p>\n\n<p>\n  <b>Headshot:</b> <img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'src': ("headshot300")
   },hashTypes:{'src': "STRING"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" />\n</p>\n\n<p>\n  <b>Bio:</b> ");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "bio", {hash:{
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Bio", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n</p>\n\n<p>\n  <b>Categories:</b> ");
