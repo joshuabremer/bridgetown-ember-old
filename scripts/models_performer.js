@@ -11,8 +11,8 @@ App.Performer = DS.Model.extend({
   bio: DS.attr('string'),
 
   headshot300: function() {
-    return this.get('headshot') + '?format=300w';
-  }.property('headshot'),
+    return '/assets/' + cleanStr(this.get('name')) + '-300x300.jpg';
+  }.property('name'),
 
   backgroundImageCSS: function() {
     return "background-image:url('" + this.get("headshot") + "?format=300w')";
@@ -20,3 +20,8 @@ App.Performer = DS.Model.extend({
 
 });
 
+
+
+function cleanStr(string) {
+  return string.replace(/\W/g, '').toLowerCase();
+}
