@@ -2795,10 +2795,10 @@ window.Handlebars = Handlebars, function(a, b) {
     return moment(parseInt(a, 10)).calendar();
 }), DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     extractSingle: function(a, b, c) {
-        return console.log(extractSingle), this._super(a, b, c);
+        return this._super(a, b, c);
     },
     extractArray: function(a, b, c) {
-        return console.log(extractArray), this._super(a, b, c);
+        return this._super(a, b, c);
     },
     normalize: function(a, b, c) {
         return console.log(normalize), this.normalizeId(b), this.normalizeAttributes(a, b), 
