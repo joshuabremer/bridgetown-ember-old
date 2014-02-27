@@ -17,7 +17,7 @@ function _retrievePageJSON(a) {
 }
 
 function preload(a) {
-    a.loadMany(App.Post, [ 10, 11 ], [ {
+    console.log("preload!"), a.loadMany(App.Post, [ 10, 11 ], [ {
         id: 10,
         content: "testcontent",
         author_id: 1
