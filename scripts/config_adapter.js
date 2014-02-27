@@ -1,4 +1,4 @@
-DS.LocalREST = DS.RESTSerializer.extend({
+DS.LocalRESTSerializer = DS.RESTSerializer.extend({
   extractSingle: function(store, type, payload) {
     console.log(extractSingle);
     // newPayload = {};
