@@ -16,21 +16,6 @@ function _retrievePageJSON(a) {
     });
 }
 
-function preload(a) {
-    console.log("preload!"), a.loadMany(App.Post, [ 10, 11 ], [ {
-        id: 10,
-        content: "testcontent",
-        author_id: 1
-    }, {
-        id: 11,
-        content: "testcontent2",
-        author_id: 1
-    } ]), a.load(App.User, {
-        id: 1,
-        username: "supervisor"
-    });
-}
-
 if (function(a) {
     function b() {
         return {
@@ -3690,7 +3675,21 @@ App.Store = DS.Store.extend({
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {
-        preload(store);
+        this.preload(store);
+    },
+    preload: function(a) {
+        console.log("preload!"), a.loadMany(App.Post, [ 10, 11 ], [ {
+            id: 10,
+            content: "testcontent",
+            author_id: 1
+        }, {
+            id: 11,
+            content: "testcontent2",
+            author_id: 1
+        } ]), a.load(App.User, {
+            id: 1,
+            username: "supervisor"
+        });
     }
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
