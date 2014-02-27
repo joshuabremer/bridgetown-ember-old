@@ -35,6 +35,7 @@ DS.LocalREST = DS.RESTSerializer.extend({
   },
 
   normalize: function(type, hash, prop) {
+    console.log(normalize);
     this.normalizeId(hash);
     this.normalizeAttributes(type, hash);
     this.normalizeRelationships(type, hash);
