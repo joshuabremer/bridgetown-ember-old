@@ -7,7 +7,6 @@ App.Store = DS.Store.extend({
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
   adapter: DS.FixtureAdapter
-
 });
 
 
