@@ -2847,7 +2847,7 @@ var App = Ember.Application.create({
 
 App.Store = DS.Store.extend({
     revision: 11,
-    adapter: DS.LocalAdapter,
+    adapter: DS.FixtureAdapter,
     init: function() {
         this._super();
     }

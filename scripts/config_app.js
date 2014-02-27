@@ -6,7 +6,7 @@ App.Store = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
-  adapter: DS.LocalAdapter,
+  adapter: DS.FixtureAdapter,
   init: function() {
         this._super();
   }
