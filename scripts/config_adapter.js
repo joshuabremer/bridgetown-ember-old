@@ -49,17 +49,17 @@ DS.LocalREST = DS.RESTSerializer.extend({
   },
   normalizeHash: {
     performers: function(hash) {
-      hash.id = hash.urlId;
+      hash.id = hash.id;
       hash.name = hash.title;
       hash.bio = hash.body;
       hash.headshot = hash.assetUrl;
       return hash;
     },
     performer: function(hash) {
-      hash.id = hash.urlId;
-      hash.name = hash.title;
-      hash.bio = hash.body;
-      hash.headshot = hash.assetUrl;
+      hash.id = hash.PerformerId;
+      hash.name = hash.Name;
+      hash.bio = hash.Bio;
+      hash.headshot = hash.PhotoUrl;
       return hash;
     },
     newsposts: function(hash) {
