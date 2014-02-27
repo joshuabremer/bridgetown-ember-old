@@ -4260,9 +4260,35 @@ App.Store = DS.Store.extend({
     }))), e.buffer.push("\n\n\n"), f;
 }), Ember.TEMPLATES.performers_gallery = Ember.Handlebars.template(function(a, b, c, d, e) {
     function f(a, b) {
-        var d, e, f, h = "";
-        return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">\n    <div class="performer-thumbnail">\n      <img class="lazy img-responsive" width="300" height="300" '), 
-        b.buffer.push(j(c["bind-attr"].call(a, {
+        var d, e, f, i = "";
+        return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">\n    <div class="performer-thumbnail">\n      '), 
+        e = c["link-to"] || a && a["link-to"], f = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: l.noop,
+            fn: l.program(2, g, b),
+            contexts: [ a, a ],
+            types: [ "STRING", "ID" ],
+            data: b
+        }, d = e ? e.call(a, "performer", "performer", f) : m.call(a, "link-to", "performer", "performer", f), 
+        (d || 0 === d) && b.buffer.push(d), b.buffer.push("\n    </div>\n    <legend>"), 
+        e = c["link-to"] || a && a["link-to"], f = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: l.noop,
+            fn: l.program(4, h, b),
+            contexts: [ a, a ],
+            types: [ "STRING", "ID" ],
+            data: b
+        }, d = e ? e.call(a, "performer", "performer", f) : m.call(a, "link-to", "performer", "performer", f), 
+        (d || 0 === d) && b.buffer.push(d), b.buffer.push("</legend>\n  </div>\n  "), i;
+    }
+    function g(a, b) {
+        var d = "";
+        return b.buffer.push('\n      <img class="lazy img-responsive" width="300" height="300" '), 
+        b.buffer.push(k(c["bind-attr"].call(a, {
             hash: {
                 "data-original": "performer.headshot300"
             },
@@ -4275,20 +4301,9 @@ App.Store = DS.Store.extend({
             contexts: [],
             types: [],
             data: b
-        }))), b.buffer.push(" />\n    </div>\n    <legend>"), e = c["link-to"] || a && a["link-to"], 
-        f = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            inverse: k.noop,
-            fn: k.program(2, g, b),
-            contexts: [ a, a ],
-            types: [ "STRING", "ID" ],
-            data: b
-        }, d = e ? e.call(a, "performer", "performer", f) : l.call(a, "link-to", "performer", "performer", f), 
-        (d || 0 === d) && b.buffer.push(d), b.buffer.push("</legend>\n  </div>\n  "), h;
+        }))), b.buffer.push(" />\n      "), d;
     }
-    function g(a, b) {
+    function h(a, b) {
         var d;
         d = c._triageMustache.call(a, "performer.Name", {
             hash: {},
@@ -4301,17 +4316,17 @@ App.Store = DS.Store.extend({
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var h, i = "", j = this.escapeExpression, k = this, l = c.helperMissing;
-    return e.buffer.push('<div class="row">\n  '), h = c.each.call(b, "performer", "in", "controller", {
+    var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
+    return e.buffer.push('<div class="row">\n  '), i = c.each.call(b, "performer", "in", "controller", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: k.noop,
-        fn: k.program(1, f, e),
+        inverse: l.noop,
+        fn: l.program(1, f, e),
         contexts: [ b, b, b ],
         types: [ "ID", "ID", "ID" ],
         data: e
-    }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n</div>\n\n"), i;
+    }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n</div>\n\n"), j;
 }), Ember.TEMPLATES.press = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
