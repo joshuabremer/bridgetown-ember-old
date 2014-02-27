@@ -15,7 +15,7 @@ DS.LocalAdapter = DS.RESTAdapter.extend({
 
     url = url.join('/');
     if (!host && url) { url = '/' + url; }
-    url += '/json/';
+    url += '.json';
     //url += '.json?format=json-pretty';
     return url;
   },
