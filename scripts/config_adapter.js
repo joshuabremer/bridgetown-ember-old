@@ -17,6 +17,7 @@ DS.LocalAdapter = DS.RESTAdapter.extend({
     if (!host && url) { url = '/' + url; }
     url += '.json';
     //url += '.json?format=json-pretty';
+    console.log(url);
     return url;
   },
   ajaxOptions: function(url, type, hash) {
