@@ -3673,22 +3673,7 @@ App.Store = DS.Store.extend({
     model: function() {
         return _retrievePageJSON("contact");
     }
-}), App.ApplicationRoute = Ember.Route.extend({
-    setupController: function() {
-        store.loadMany(App.Performer, [ 10, 11 ], [ {
-            id: 10,
-            content: "testcontent",
-            author_id: 1
-        }, {
-            id: 11,
-            content: "testcontent2",
-            author_id: 1
-        } ]);
-    },
-    preload: function() {
-        console.log("preload!");
-    }
-}), App.CatchAllRoute = Ember.Route.extend({
+}), App.ApplicationRoute = Ember.Route.extend({}), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
         var b = "https://bridgetown-dev.squarespace.com/";
         return Ember.$.ajax({
