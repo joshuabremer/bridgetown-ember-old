@@ -4290,7 +4290,7 @@ App.Store = DS.Store.extend({
     }
     function g(a, b) {
         var d;
-        d = c._triageMustache.call(a, "performer.name", {
+        d = c._triageMustache.call(a, "performer.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
