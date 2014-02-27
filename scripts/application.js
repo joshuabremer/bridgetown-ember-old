@@ -3648,7 +3648,7 @@ App.Store = DS.Store.extend({
     }), this.resource("newsposts"), this.resource("newspost", {
         path: "/newspost/:urlId"
     }), this.resource("performers"), this.resource("performer", {
-        path: "/performer/:slug"
+        path: "/performer/:id"
     }), this.route("venues"), this.route("shows"), this.route("history"), this.route("press"), 
     this.route("contact"), this.route("catch_all", {
         path: "*:"
