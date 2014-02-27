@@ -2799,7 +2799,7 @@ window.Handlebars = Handlebars, function(a, b) {
     },
     extractArray: function(a, b, c) {
         return console.log("extractArray"), newPayload = {}, newPayload.categories = [], 
-        newPayload[b.typeKey + "s"] = c, this._super(a, b, c);
+        newPayload[b.typeKey + "s"] = c, console.log(newPayload), this._super(a, b, c);
     },
     normalize: function(a, b, c) {
         return console.log("normalize"), this.normalizeId(b), this.normalizeAttributes(a, b), 

@@ -20,7 +20,7 @@ DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     newPayload = {};
     newPayload.categories = [];
     newPayload[primaryType.typeKey + 's'] = payload;
-
+    console.log(newPayload);
     // Sideload the categories
     // _.each(payload.items,function(item,index) {
     //   if (item.categories) {
