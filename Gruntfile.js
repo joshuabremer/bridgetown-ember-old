@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           // 'scripts/vendor_ember.js',
           // 'scripts/vendor_ember-data.js',
           'scripts/helpers_*.js',
-          'scripts/ .js',
+          'scripts/config_adapter.js',
           'scripts/config_app.js',
           'scripts/components_*.js',
           'scripts/models_*.js',
