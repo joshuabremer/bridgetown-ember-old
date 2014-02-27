@@ -3702,7 +3702,7 @@ App.Store = DS.Store.extend({
     }
 }), App.PerformerRoute = Ember.Route.extend({
     model: function(a) {
-        return this.store.find("performer", a.urlId);
+        return this.store.find("performer", a.id);
     }
 }), App.PerformersRoute = Ember.Route.extend({
     model: function(a) {
