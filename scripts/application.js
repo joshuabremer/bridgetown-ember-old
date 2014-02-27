@@ -3675,7 +3675,7 @@ App.Store = DS.Store.extend({
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {
-        store.loadMany(App.Post, [ 10, 11 ], [ {
+        store.loadMany(App.Performer, [ 10, 11 ], [ {
             id: 10,
             content: "testcontent",
             author_id: 1
@@ -3683,7 +3683,7 @@ App.Store = DS.Store.extend({
             id: 11,
             content: "testcontent2",
             author_id: 1
-        } ]), store.load(App.User, {
+        } ]), store.load(App.Performer, {
             id: 1,
             username: "supervisor"
         });
