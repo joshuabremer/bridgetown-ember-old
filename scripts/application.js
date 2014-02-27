@@ -3673,14 +3673,9 @@ App.Store = DS.Store.extend({
     model: function() {
         return _retrievePageJSON("contact");
     }
-}), App.PerformersRoute = Ember.Route.extend({
-    model: function(a) {
-        return console.log(a), this.store.all("performer").content.length ? this.store.all("performer") : this.store.find("performer");
-    },
-    renderTemplate: function() {
-        this.render(), this.render("jumbotron_performers", {
-            outlet: "jumbotron"
-        });
+}), App.ApplicationRoute = Ember.Route.extend({
+    setupController: function() {
+        window.preload(store);
     }
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
