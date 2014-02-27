@@ -2793,39 +2793,25 @@ window.Handlebars = Handlebars, function(a, b) {
     return d = jQuery.trim(d), d.substring(0, b) + c;
 }), Ember.Handlebars.registerBoundHelper("humanDate", function(a) {
     return moment(parseInt(a, 10)).calendar();
-}), DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
+}), DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     extractSingle: function(a, b, c) {
-        return newPayload = {}, newPayload.categories = [], newPayload[b.typeKey] = c.item, 
-        c.item.categories && (c.item.category_ids = c.item.categories, _.each(c.item.categories, function(a) {
-            newPayload.categories.push({
-                id: a,
-                name: a
-            });
-        }), newPayload.categories = _.uniq(newPayload.categories)), this._super(a, b, newPayload);
+        return console.log(extractSingle), this._super(a, b, c);
     },
     extractArray: function(a, b, c) {
-        return newPayload = {}, newPayload.categories = [], newPayload[b.typeKey + "s"] = c.items, 
-        _.each(c.items, function(a) {
-            a.categories && (a.category_ids = a.categories, _.each(a.categories, function(a) {
-                newPayload.categories.push({
-                    id: a,
-                    name: a
-                });
-            }), newPayload.categories = _.uniq(newPayload.categories));
-        }), this._super(a, b, newPayload);
+        return console.log(extractArray), this._super(a, b, c);
     },
     normalize: function(a, b, c) {
-        return this.normalizeId(b), this.normalizeAttributes(a, b), this.normalizeRelationships(a, b), 
-        this.normalizeUsingDeclaredMapping(a, b), this.normalizeHash && this.normalizeHash[c] && (b = this.normalizeHash[c](b)), 
+        return console.log(normalize), this.normalizeId(b), this.normalizeAttributes(a, b), 
+        this.normalizeRelationships(a, b), this.normalizeUsingDeclaredMapping(a, b), this.normalizeHash && this.normalizeHash[c] && (b = this.normalizeHash[c](b)), 
         this._super(a, b, c);
     },
     normalizeHash: {
         performers: function(a) {
-            return a.id = a.urlId, a.name = a.title, a.bio = a.body, a.headshot = a.assetUrl, 
+            return a.id = a.PerformerId, a.name = a.Name, a.bio = a.Bio, a.headshot = a.PhotoUrl, 
             a;
         },
         performer: function(a) {
-            return a.id = a.urlId, a.name = a.title, a.bio = a.body, a.headshot = a.assetUrl, 
+            return a.id = a.PerformerId, a.name = a.Name, a.bio = a.Bio, a.headshot = a.PhotoUrl, 
             a;
         },
         newsposts: function(a) {
@@ -2835,19 +2821,14 @@ window.Handlebars = Handlebars, function(a, b) {
             return a.id = a.urlId, a.htmlContent = a.body, a;
         }
     }
-}), DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-    namespace: "fixtures",
+}), DS.LocalAdapter = DS.RESTAdapter.extend({
+    namespace: "assets",
     buildURL: function(a, b) {
         var c = [], d = Ember.get(this, "host"), e = this.urlPrefix();
         return a && c.push(this.pathForType(a)), b && c.push(b), e && c.unshift(e), c = c.join("/"), 
-        !d && c && (c = "/" + c), c += ".json?format=json-pretty";
+        !d && c && (c = "/" + c), c += ".json", console.log(c), c;
     },
-    ajaxOptions: function(a, b, c) {
-        return c = this._super(a, b, c), "bridgetown-dev.squarespace.com" != window.location.hostname && (c.dataType = "jsonp"), 
-        c;
-    },
-    normalize: function() {},
-    defaultSerializer: "DS/SquarespaceREST"
+    defaultSerializer: "DS/LocalREST"
 });
 
 var App = Ember.Application.create({
