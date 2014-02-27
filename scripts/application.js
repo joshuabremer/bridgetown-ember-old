@@ -16,6 +16,8 @@ function _retrievePageJSON(a) {
     });
 }
 
+function preload() {}
+
 if (function(a) {
     function b() {
         return {
@@ -3675,7 +3677,7 @@ App.Store = DS.Store.extend({
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {
-        window.preload(store);
+        preload(store);
     }
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
