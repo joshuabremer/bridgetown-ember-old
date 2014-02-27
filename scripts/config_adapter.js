@@ -5,13 +5,13 @@ DS.LocalREST = DS.RESTSerializer.extend({
     newPayload[type.typeKey] = payload.item;
 
     // Sideload the categories
-    if (payload.item.categories) {
-      payload.item.category_ids = payload.item.categories;
-      _.each(payload.item.categories,function(category) {
-        newPayload.categories.push({id:category, name: category});
-      });
-      newPayload.categories = _.uniq(newPayload.categories);
-    }
+    // if (payload.item.categories) {
+    //   payload.item.category_ids = payload.item.categories;
+    //   _.each(payload.item.categories,function(category) {
+    //     newPayload.categories.push({id:category, name: category});
+    //   });
+    //   newPayload.categories = _.uniq(newPayload.categories);
+    // }
     return this._super(store, type, newPayload);
   },
   extractArray: function(store, primaryType, payload) {
@@ -20,15 +20,15 @@ DS.LocalREST = DS.RESTSerializer.extend({
     newPayload[primaryType.typeKey + 's'] = payload.items;
 
     // Sideload the categories
-    _.each(payload.items,function(item,index) {
-      if (item.categories) {
-        item.category_ids = item.categories;
-        _.each(item.categories,function(category) {
-          newPayload.categories.push({id:category, name: category});
-        });
-        newPayload.categories = _.uniq(newPayload.categories);
-      }
-    });
+    // _.each(payload.items,function(item,index) {
+    //   if (item.categories) {
+    //     item.category_ids = item.categories;
+    //     _.each(item.categories,function(category) {
+    //       newPayload.categories.push({id:category, name: category});
+    //     });
+    //     newPayload.categories = _.uniq(newPayload.categories);
+    //   }
+    // });
     return this._super(store, primaryType, newPayload);
   },
 
