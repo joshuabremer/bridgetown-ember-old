@@ -106,7 +106,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-reload');
 
-  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass','shell:gitpush']);
+  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
 
 
 };
