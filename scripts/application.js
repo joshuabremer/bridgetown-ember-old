@@ -3683,10 +3683,7 @@ App.Store = DS.Store.extend({
             id: 11,
             content: "testcontent2",
             author_id: 1
-        } ]), store.load(App.Performer, {
-            id: 1,
-            username: "supervisor"
-        });
+        } ]);
     },
     preload: function() {
         console.log("preload!");
