@@ -3513,7 +3513,7 @@ App.Store = DS.Store.extend({
         return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">\n    <div class="performer-thumbnail">\n      <img class="lazy img-responsive" width="300" height="300" '), 
         b.buffer.push(j(c["bind-attr"].call(a, {
             hash: {
-                "data-original": "performer.headshot"
+                "data-original": "performer.headshot300"
             },
             hashTypes: {
                 "data-original": "STRING"

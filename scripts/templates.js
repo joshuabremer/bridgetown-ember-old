@@ -377,7 +377,7 @@ function program1(depth0,data) {
   var buffer = '', stack1, helper, options;
   data.buffer.push("\n  <div class=\"col-sm-6 col-sm-4 col-md-3 col-lg-2\">\n    <div class=\"performer-thumbnail\">\n      <img class=\"lazy img-responsive\" width=\"300\" height=\"300\" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'data-original': ("performer.headshot")
+    'data-original': ("performer.headshot300")
   },hashTypes:{'data-original': "STRING"},hashContexts:{'data-original': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" />\n    </div>\n    <legend>");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
