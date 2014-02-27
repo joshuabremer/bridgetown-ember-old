@@ -23,7 +23,8 @@ App.Performer = DS.Model.extend({
 
 App.PerformerSerializer = DS.RESTSerializer.extend({
   normalizeHash: {
-    lastNameOfPerson: function(hash) {
+    name: function(hash) {
+      //debugger;
       hash.lastName = hash.lastNameOfPerson;
       delete hash.lastNameOfPerson;
       return hash;
