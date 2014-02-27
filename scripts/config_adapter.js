@@ -31,7 +31,7 @@ DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     //     newPayload.categories = _.uniq(newPayload.categories);
     //   }
     // });
-    return this._super(store, primaryType, payload);
+    return this._super(store, primaryType, newPayload);
   },
 
   normalize: function(type, hash, prop) {
