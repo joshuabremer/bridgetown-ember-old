@@ -1,6 +1,6 @@
 DS.LocalAdapter = DS.RESTAdapter.extend({
   //host: 'http://bridgetown.festivalthing.com/export',
-  host: '127.0.0.1:8000/',
+  host: 'http://127.0.0.1:8000/',
   namespace: 'assets',
 
   buildURL: function(type, id, params) {
