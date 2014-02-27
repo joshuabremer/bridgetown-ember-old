@@ -19,12 +19,13 @@ DS.LocalAdapter = DS.RESTAdapter.extend({
     //url += '.json?format=json-pretty';
     console.log(url);
     return url;
-  },
-  ajaxOptions: function(url, type, hash) {
-    hash = this._super(url, type, hash);
-    if (window.location.hostname != "bridgetown.festivalthing.com") {
-      hash.dataType = 'jsonp';
-    }
-    return hash;
   }
+  //,
+  // ajaxOptions: function(url, type, hash) {
+  //   hash = this._super(url, type, hash);
+  //   if (window.location.hostname != "bridgetown.festivalthing.com") {
+  //     hash.dataType = 'jsonp';
+  //   }
+  //   return hash;
+  // }
 });
