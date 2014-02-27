@@ -1,9 +1,9 @@
 DS.LocalREST = DS.RESTSerializer.extend({
   extractSingle: function(store, type, payload) {
     console.log(extractSingle);
-    newPayload = {};
-    newPayload.categories = [];
-    newPayload[type.typeKey] = payload.item;
+    // newPayload = {};
+    // newPayload.categories = [];
+    // newPayload[type.typeKey] = payload.item;
 
     // Sideload the categories
     // if (payload.item.categories) {
@@ -13,7 +13,7 @@ DS.LocalREST = DS.RESTSerializer.extend({
     //   });
     //   newPayload.categories = _.uniq(newPayload.categories);
     // }
-    return this._super(store, type, newPayload);
+    return this._super(store, type, payload);
   },
   extractArray: function(store, primaryType, payload) {
     console.log(extractArray);
@@ -31,7 +31,7 @@ DS.LocalREST = DS.RESTSerializer.extend({
     //     newPayload.categories = _.uniq(newPayload.categories);
     //   }
     // });
-    return this._super(store, primaryType, newPayload);
+    return this._super(store, primaryType, payload);
   },
 
   normalize: function(type, hash, prop) {
