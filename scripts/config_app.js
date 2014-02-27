@@ -9,10 +9,6 @@ App.Store = DS.Store.extend({
   adapter: DS.FixtureAdapter
 });
 
-App.Adapter.map('App.Performer', {
-  primaryKey: 'PerformerId'
-});
-
 
  // delete if you don't want ember-data
 

@@ -2848,8 +2848,6 @@ var App = Ember.Application.create({
 App.Store = DS.Store.extend({
     revision: 11,
     adapter: DS.FixtureAdapter
-}), App.Adapter.map("App.Performer", {
-    primaryKey: "PerformerId"
 }), App.XSpinnerComponent = Ember.Component.extend({
     lines: 12,
     length: 6,
