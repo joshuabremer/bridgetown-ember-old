@@ -2803,9 +2803,6 @@ var App = Ember.Application.create({
 App.Store = DS.Store.extend({
     revision: 11,
     adapter: DS.LocalAdapter
-}), "bridgetown-dev.squarespace.com" != window.location.hostname && Ember.$.ajaxSetup({
-    dataType: "JSONP",
-    crossDomain: !0
 }), App.XSpinnerComponent = Ember.Component.extend({
     lines: 12,
     length: 6,
