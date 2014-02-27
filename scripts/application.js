@@ -3596,7 +3596,7 @@ App.Store = DS.Store.extend({
             PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/5853_570305192056_5104679_n_0.jpg",
             PerformerId: "5919"
         } ];
-        this.pushPayload(App.Performer, a);
+        console.log("preload"), this.pushPayload(App.Performer, a);
     }
 }), App.XSpinnerComponent = Ember.Component.extend({
     lines: 12,
