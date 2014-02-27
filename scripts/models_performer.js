@@ -20,3 +20,13 @@ App.Performer = DS.Model.extend({
 
 });
 
+
+App.PerformerSerializer = DS.RESTSerializer.extend({
+  normalizeHash: {
+    lastNameOfPerson: function(hash) {
+      hash.lastName = hash.lastNameOfPerson;
+      delete hash.lastNameOfPerson;
+      return hash;
+    }
+  }
+});
