@@ -3675,10 +3675,7 @@ App.Store = DS.Store.extend({
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {
-        console.log("preload!"), this.preload(store);
-    },
-    preload: function(a) {
-        console.log("preload!"), a.loadMany(App.Post, [ 10, 11 ], [ {
+        store.loadMany(App.Post, [ 10, 11 ], [ {
             id: 10,
             content: "testcontent",
             author_id: 1
@@ -3686,10 +3683,13 @@ App.Store = DS.Store.extend({
             id: 11,
             content: "testcontent2",
             author_id: 1
-        } ]), a.load(App.User, {
+        } ]), store.load(App.User, {
             id: 1,
             username: "supervisor"
         });
+    },
+    preload: function() {
+        console.log("preload!");
     }
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
