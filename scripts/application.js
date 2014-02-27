@@ -3673,6 +3673,15 @@ App.Store = DS.Store.extend({
     model: function() {
         return _retrievePageJSON("contact");
     }
+}), App.PerformersRoute = Ember.Route.extend({
+    model: function(a) {
+        return console.log(a), this.store.all("performer").content.length ? this.store.all("performer") : this.store.find("performer");
+    },
+    renderTemplate: function() {
+        this.render(), this.render("jumbotron_performers", {
+            outlet: "jumbotron"
+        });
+    }
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
         var b = "https://bridgetown-dev.squarespace.com/";
