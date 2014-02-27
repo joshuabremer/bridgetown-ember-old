@@ -1,5 +1,6 @@
 DS.LocalRESTSerializer = DS.RESTSerializer.extend({
   extractSingle: function(store, type, payload) {
+    console.log('extractSingle');
     // newPayload = {};
     // newPayload.categories = [];
     // newPayload[type.typeKey] = payload.item;
@@ -15,6 +16,7 @@ DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     return this._super(store, type, payload);
   },
   extractArray: function(store, primaryType, payload) {
+    console.log('extractArray');
     // newPayload = {};
     // newPayload.categories = [];
     // newPayload[primaryType.typeKey + 's'] = payload.items;
@@ -33,7 +35,7 @@ DS.LocalRESTSerializer = DS.RESTSerializer.extend({
   },
 
   normalize: function(type, hash, prop) {
-    console.log(normalize);
+    console.log('normalize');
     this.normalizeId(hash);
     this.normalizeAttributes(type, hash);
     this.normalizeRelationships(type, hash);
