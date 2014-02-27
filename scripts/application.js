@@ -3675,7 +3675,7 @@ App.Store = DS.Store.extend({
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {
-        this.preload(store);
+        console.log("preload!"), this.preload(store);
     },
     preload: function(a) {
         console.log("preload!"), a.loadMany(App.Post, [ 10, 11 ], [ {
