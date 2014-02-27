@@ -1,5 +1,5 @@
 DS.LocalAdapter = DS.RESTAdapter.extend({
-  host: 'http://bridgetown.festivalthing.com/export/',
+  host: 'http://bridgetown.festivalthing.com/export',
   //host: '127.0.0.1:8000/',
   // namespace: 'fixtures',
 
