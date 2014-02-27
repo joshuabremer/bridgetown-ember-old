@@ -2793,61 +2793,6 @@ window.Handlebars = Handlebars, function(a, b) {
     return d = jQuery.trim(d), d.substring(0, b) + c;
 }), Ember.Handlebars.registerBoundHelper("humanDate", function(a) {
     return moment(parseInt(a, 10)).calendar();
-}), DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
-    extractSingle: function(a, b, c) {
-        return newPayload = {}, newPayload.categories = [], newPayload[b.typeKey] = c.item, 
-        c.item.categories && (c.item.category_ids = c.item.categories, _.each(c.item.categories, function(a) {
-            newPayload.categories.push({
-                id: a,
-                name: a
-            });
-        }), newPayload.categories = _.uniq(newPayload.categories)), this._super(a, b, newPayload);
-    },
-    extractArray: function(a, b, c) {
-        return newPayload = {}, newPayload.categories = [], newPayload[b.typeKey + "s"] = c.items, 
-        _.each(c.items, function(a) {
-            a.categories && (a.category_ids = a.categories, _.each(a.categories, function(a) {
-                newPayload.categories.push({
-                    id: a,
-                    name: a
-                });
-            }), newPayload.categories = _.uniq(newPayload.categories));
-        }), this._super(a, b, newPayload);
-    },
-    normalize: function(a, b, c) {
-        return this.normalizeId(b), this.normalizeAttributes(a, b), this.normalizeRelationships(a, b), 
-        this.normalizeUsingDeclaredMapping(a, b), this.normalizeHash && this.normalizeHash[c] && (b = this.normalizeHash[c](b)), 
-        this._super(a, b, c);
-    },
-    normalizeHash: {
-        performers: function(a) {
-            return a.id = a.urlId, a.name = a.title, a.bio = a.body, a.headshot = a.assetUrl, 
-            a;
-        },
-        performer: function(a) {
-            return a.id = a.urlId, a.name = a.title, a.bio = a.body, a.headshot = a.assetUrl, 
-            a;
-        },
-        newsposts: function(a) {
-            return a.id = a.urlId, a.htmlContent = a.body, a;
-        },
-        newspost: function(a) {
-            return a.id = a.urlId, a.htmlContent = a.body, a;
-        }
-    }
-}), DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-    host: "https://bridgetown-dev.squarespace.com",
-    buildURL: function(a, b) {
-        var c = [], d = Ember.get(this, "host"), e = this.urlPrefix();
-        return a && c.push(this.pathForType(a)), b && c.push(b), e && c.unshift(e), c = c.join("/"), 
-        !d && c && (c = "/" + c), c += "?format=json-pretty";
-    },
-    ajaxOptions: function(a, b, c) {
-        return c = this._super(a, b, c), "bridgetown-dev.squarespace.com" != window.location.hostname && (c.dataType = "jsonp"), 
-        c;
-    },
-    normalize: function() {},
-    defaultSerializer: "DS/SquarespaceREST"
 });
 
 var App = Ember.Application.create({
