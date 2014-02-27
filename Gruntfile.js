@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['spec/**/*.*','Gruntfile.js','scripts/**/*.*', 'index.html','**/*.scss'],
-        tasks: ['jasmine','jshint','clean','emberhandlebars','uglify','sass','shell:gitpush','reload'],
+        tasks: ['jasmine','jshint','clean','emberhandlebars','uglify','sass','reload'],
         options: {
           spawn: false,
           livereload: 1337
@@ -90,6 +90,11 @@ module.exports = function(grunt) {
       gitpush: {
         command: function () {
             return 'git commit -am "Changes";git push ss;';
+        }
+      },
+      build_fixtures: {
+        command: function () {
+            return 'node build_performer_images.js;';
         }
       }
     }
