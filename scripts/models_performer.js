@@ -6,7 +6,11 @@ App.Performer = DS.Model.extend({
 
   headshot: DS.attr('string'),
 
-  urlId: DS.attr('string'),
+  //urlId: DS.attr('string'),
+
+  slug: function() {
+    return sluggify(this.get('name'));
+  }.property('name'),
 
   bio: DS.attr('string'),
 
@@ -20,7 +24,9 @@ App.Performer = DS.Model.extend({
 
 });
 
-
+function sluggify(string) {
+  return string.replace(/\W/g, '-').toLowerCase();
+}
 
 function cleanStr(string) {
   return string.replace(/\W/g, '').toLowerCase();

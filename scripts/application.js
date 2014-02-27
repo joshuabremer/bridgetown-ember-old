@@ -1,4 +1,8 @@
 /*! my-project-name 2014-02-27 */
+function sluggify(a) {
+    return a.replace(/\W/g, "-").toLowerCase();
+}
+
 function cleanStr(a) {
     return a.replace(/\W/g, "").toLowerCase();
 }
@@ -2904,7 +2908,9 @@ App.Store = DS.Store.extend({
     categories: DS.hasMany("category"),
     name: DS.attr("string"),
     headshot: DS.attr("string"),
-    urlId: DS.attr("string"),
+    slug: function() {
+        return sluggify(this.get("name"));
+    }.property("name"),
     bio: DS.attr("string"),
     headshot300: function() {
         return "/assets/performer-" + cleanStr(this.get("name")) + "-300x300.jpg";
@@ -3642,7 +3648,7 @@ App.Store = DS.Store.extend({
     }), this.resource("newsposts"), this.resource("newspost", {
         path: "/newspost/:urlId"
     }), this.resource("performers"), this.resource("performer", {
-        path: "/performer/:urlId"
+        path: "/performer/:slug"
     }), this.route("venues"), this.route("shows"), this.route("history"), this.route("press"), 
     this.route("contact"), this.route("catch_all", {
         path: "*:"
