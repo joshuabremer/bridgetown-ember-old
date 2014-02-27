@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         //mangle: false,
-        //beautify: true,
+        beautify: true,
         drop_debugger: false,
         drop_console: false
       },
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           // 'scripts/vendor_ember.js',
           // 'scripts/vendor_ember-data.js',
           'scripts/helpers_*.js',
-          'scripts/config_adapter.js',
+          'scripts/config_ss_adapter.js',
           'scripts/config_app.js',
           'scripts/components_*.js',
           'scripts/models_*.js',
