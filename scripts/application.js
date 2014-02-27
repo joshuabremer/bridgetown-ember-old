@@ -16,7 +16,20 @@ function _retrievePageJSON(a) {
     });
 }
 
-function preload() {}
+function preload(a) {
+    a.loadMany(App.Post, [ 10, 11 ], [ {
+        id: 10,
+        content: "testcontent",
+        author_id: 1
+    }, {
+        id: 11,
+        content: "testcontent2",
+        author_id: 1
+    } ]), a.load(App.User, {
+        id: 1,
+        username: "supervisor"
+    });
+}
 
 if (function(a) {
     function b() {
