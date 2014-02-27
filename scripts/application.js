@@ -2802,7 +2802,7 @@ var App = Ember.Application.create({
 
 App.Store = DS.Store.extend({
     revision: 11,
-    adapter: DS.SquarespaceAdapter
+    adapter: DS.LocalAdapter
 }), "bridgetown-dev.squarespace.com" != window.location.hostname && Ember.$.ajaxSetup({
     dataType: "JSONP",
     crossDomain: !0

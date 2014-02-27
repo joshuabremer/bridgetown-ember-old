@@ -6,7 +6,7 @@ App.Store = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
-  adapter: DS.SquarespaceAdapter
+  adapter: DS.LocalAdapter
 });
 
  // delete if you don't want ember-data
