@@ -4529,28 +4529,14 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         return Event.find();
     }
 }), App.IndexRoute = Ember.Route.extend({
-    model: function() {
-        return $.ajax({
-            url: "http://bridgetown-dev.squarespace.com/newsposts/?format=json-pretty",
-            dataType: "jsonp"
-        }).done(function(a) {
-            return a.items;
-        });
-    },
+    model: function() {},
     renderTemplate: function() {
         this.render("index"), this.render("jumbotron_index", {
             outlet: "jumbotron"
         });
     }
 }), App.NewspostsRoute = Ember.Route.extend({
-    model: function() {
-        return $.ajax({
-            url: "http://bridgetown-dev.squarespace.com/newsposts/?format=json-pretty",
-            dataType: "jsonp"
-        }).done(function(a) {
-            return a.items;
-        });
-    }
+    model: function() {}
 }), App.PerformerRoute = Ember.Route.extend({
     model: function(a) {
         return this.store.find("performer", a.id);
