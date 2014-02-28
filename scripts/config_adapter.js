@@ -61,17 +61,17 @@ DS.LocalRESTSerializer = DS.RESTSerializer.extend({
       hash.bio = hash.Bio;
       hash.headshot = hash.PhotoUrl;
       return hash;
-    },
-    newsposts: function(hash) {
-      hash.id = hash.urlId;
-      hash.htmlContent = hash.body;
-      return hash;
-    },
-    newspost: function(hash) {
-      hash.id = hash.urlId;
-      hash.htmlContent = hash.body;
-      return hash;
-    }
+    }//,
+    // newsposts: function(hash) {
+    //   hash.id = hash.urlId;
+    //   hash.htmlContent = hash.body;
+    //   return hash;
+    // },
+    // newspost: function(hash) {
+    //   hash.id = hash.urlId;
+    //   hash.htmlContent = hash.body;
+    //   return hash;
+    // }
   }
 });
 

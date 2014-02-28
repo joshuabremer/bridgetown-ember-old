@@ -581,7 +581,7 @@ pre code {
   margin-right: auto;
   margin-left: auto; }
 
-.row {
+.row, .jumbotron.jumbotron-page-header {
   margin-right: -15px;
   margin-left: -15px; }
 
@@ -4729,6 +4729,9 @@ button.close {
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.container .jumbotron {
+  border-radius: 0; }
+
 .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -5031,7 +5034,87 @@ button.close {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1); }
 
 /*# sourceMappingURL=bootstrap-theme.css.map */
-.performer-thumbnail {
-  width: 100%;
-  height: 300px;
-  overflow: hidden; }
+.row.sqs-row {
+  margin: 0; }
+
+html {
+  min-height: 100%; }
+
+body {
+  background: black url('../assets/bg-portland.jpg') no-repeat top center;
+  background-size: 100% auto; }
+
+.main-content {
+  background-color: #E6E6E6;
+  background: rgba(250, 250, 250, 0.94);
+  color: #6c6c6c;
+  padding-bottom: 20px;
+  margin-top: 80px; }
+
+.jumbotron {
+  color: white; }
+  .jumbotron.jumbotron-default {
+    background: transparent;
+    color: #333; }
+  .jumbotron.jumbotron-minor {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  .jumbotron.jumbotron-tiny {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .jumbotron.jumbotron-tiny h2 {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+  .jumbotron.jumbotron-color-1 {
+    background-color: #c8bf89; }
+  .jumbotron.jumbotron-color-2 {
+    background-color: #695b53; }
+  .jumbotron.jumbotron-color-3 {
+    background-color: #448184; }
+  .jumbotron.jumbotron-color-4 {
+    background-color: #8dd1aa; }
+  .jumbotron.jumbotron-color-5 {
+    background-color: #89e894; }
+
+.jumbotron-index {
+  background: #89e894;
+  color: white; }
+
+.jumbotron-performers {
+  background: #008080;
+  color: white; }
+
+.performer-box img {
+  border: 2px solid #999; }
+.performer-box legend {
+  height: 3em;
+  overflow: hidden;
+  border: 0;
+  text-align: left; }
+
+.single-performer .performer-headshot {
+  border: 2px solid #999; }
+
+.site-footer {
+  text-align: center;
+  background: black;
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 20px;
+  color: #BBB;
+  font-size: 0.85em; }
+  .site-footer .social {
+    margin-bottom: 1em;
+    text-align: center; }
+  .site-footer .social-buttons li {
+    display: inline-block;
+    line-height: 1;
+    padding: 5px 8px;
+    list-style: none; }
+  .site-footer .footer-links {
+    margin-top: 1em;
+    padding-left: 0;
+    color: #999; }
+  .site-footer .footer-links li {
+    display: inline;
+    padding: 0 2px; }

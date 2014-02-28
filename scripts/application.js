@@ -1,4 +1,4 @@
-/*! my-project-name 2014-02-27 */
+/*! my-project-name 2014-02-28 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -2796,7 +2796,13 @@ window.Handlebars = Handlebars, function(a, b) {
             });
         }
     });
-}(jQuery, window, document), Ember.Handlebars.registerBoundHelper("createExcerpt", function(a, b, c) {
+}(jQuery, window, document), Ember.Handlebars.registerBoundHelper("debug", function(a) {
+    console.log("Current Context"), console.log("===================="), console.log(this), 
+    a && (console.log("Value"), console.log("===================="), console.log(a));
+}), Ember.Handlebars.registerBoundHelper("breaklines", function(a) {
+    return a = Handlebars.Utils.escapeExpression(a), a = a.replace(/(\r\n|\n|\r)/gm, "<br>"), 
+    new Handlebars.SafeString(a);
+}), Ember.Handlebars.registerBoundHelper("createExcerpt", function(a, b, c) {
     var d = a.replace(/<\/?[^>]+>/gi, "");
     return d = jQuery.trim(d), d.substring(0, b) + c;
 }), Ember.Handlebars.registerBoundHelper("humanDate", function(a) {
@@ -2822,12 +2828,6 @@ window.Handlebars = Handlebars, function(a, b) {
         performer: function(a) {
             return a.id = a.PerformerId, a.name = a.Name, a.bio = a.Bio, a.headshot = a.PhotoUrl, 
             a;
-        },
-        newsposts: function(a) {
-            return a.id = a.urlId, a.htmlContent = a.body, a;
-        },
-        newspost: function(a) {
-            return a.id = a.urlId, a.htmlContent = a.body, a;
         }
     }
 }), DS.LocalAdapter = DS.RESTAdapter.extend({
@@ -2889,6 +2889,47 @@ App.Store = DS.Store.extend({
     teardown: function() {
         this.spinner && this.spinner && this.spinner.stop();
     }.on("willDestroyElement")
+}), Ember.Handlebars.helper("x-spinner", App.XSpinnerComponent), App.XSpinnerComponent = Ember.Component.extend({
+    lines: 12,
+    length: 6,
+    width: 2,
+    radius: 4,
+    corners: 1,
+    rotate: 0,
+    direction: 1,
+    color: "#000",
+    speed: 1,
+    trail: 60,
+    shadow: !1,
+    hwaccel: !1,
+    className: "spinner",
+    zIndex: 2e9,
+    top: "auto",
+    left: "auto",
+    showSpinner: function() {
+        var a = this.get("element");
+        this.spinner = new Spinner({
+            lines: this.get("lines"),
+            length: this.get("length"),
+            width: this.get("width"),
+            radius: this.get("radius"),
+            corners: this.get("corners"),
+            rotate: this.get("rotate"),
+            direction: this.get("direction"),
+            color: this.get("color"),
+            speed: this.get("speed"),
+            trail: this.get("trail"),
+            shadow: this.get("shadow"),
+            hwaccel: this.get("hwaccel"),
+            className: this.get("className"),
+            zIndex: this.get("zIndex"),
+            top: this.get("top"),
+            left: this.get("left")
+        }), this.spinner.spin(a);
+    }.on("didInsertElement"),
+    teardown: function() {
+        this.spinner && this.spinner && this.spinner.stop();
+    }.on("willDestroyElement")
 }), Ember.Handlebars.helper("x-spinner", App.XSpinnerComponent), App.Category = DS.Model.extend({
     performer: DS.belongsTo("performer"),
     newspost: DS.belongsTo("newspost"),
@@ -2898,12 +2939,6 @@ App.Store = DS.Store.extend({
     start_time: DS.attr("date"),
     end_time: DS.attr("date"),
     price: DS.attr("number")
-}), App.Newspost = DS.Model.extend({
-    performers: DS.hasMany("performer"),
-    title: DS.attr("string"),
-    htmlContent: DS.attr("string"),
-    urlId: DS.attr("string"),
-    publishOn: DS.attr("string")
 }), App.Performer = DS.Model.extend({
     categories: DS.hasMany("category"),
     Name: DS.attr("string"),
@@ -3668,10 +3703,13 @@ App.Store = DS.Store.extend({
         confirm("Are you sure?") && (this.get("model").deleteRecord(), this.get("store").commit(), 
         this.get("target.router").transitionTo("events"));
     }
-}), App.NewspostController = Ember.ObjectController.extend({}), App.PerformerController = Ember.ObjectController.extend({
-    destroy: function() {
-        confirm("Are you sure?") && (this.get("model").deleteRecord(), this.get("store").commit(), 
-        this.get("target.router").transitionTo("performers"));
+}), App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
+App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView = Ember.View.extend({
+    didInsertElement: function() {
+        var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
+        document.getElementById("twitter-wjs") || (a = document.createElement("script"), 
+        a.id = "twitter-wjs", a.src = c + "://platform.twitter.com/widgets.js?" + new Date().getTime(), 
+        b.parentNode.insertBefore(a, b));
     }
 }), App.HeaderView = Ember.View.extend({
     templateName: "header"
@@ -3693,6 +3731,178 @@ App.Store = DS.Store.extend({
             effect: "fadeIn"
         });
     }
+}), Ember.TEMPLATES._footer = Ember.Handlebars.template(function(a, b, c, d, e) {
+    function f(a, b) {
+        b.buffer.push("Home");
+    }
+    function g(a, b) {
+        b.buffer.push("Performers");
+    }
+    function h(a, b) {
+        b.buffer.push("History");
+    }
+    function i(a, b) {
+        b.buffer.push("Press");
+    }
+    function j(a, b) {
+        b.buffer.push("Contact");
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var k, l, m, n = "", o = this, p = c.helperMissing;
+    return e.buffer.push('<!-- FOOTER -->\n  <footer class="site-footer" role="contentinfo">\n  <div class="container">\n    <div class="social">\n  <ul class="social-buttons">\n    <li class="follow-btn">\n      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bridgetown"  data-related="bridgetown" data-hashtags="bridgetowncomedy">Tweet</a>\n    </li>\n    <li class="tweet-btn">\n      <a href="https://twitter.com/bridgetown" class="twitter-follow-button" data-show-count="false" >Follow @bridgetown</a>\n    </li>\n  </ul>\n</div>\n\n\n    <p>Designed and built by <a href="http://twitter.com/joshuabremer" target="_blank">@joshuabremer</a>.</p>\n    <ul class="footer-links muted">\n      <li>'), 
+    l = c["link-to"] || b && b["link-to"], m = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: o.noop,
+        fn: o.program(1, f, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, k = l ? l.call(b, "index", m) : p.call(b, "link-to", "index", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
+    m = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: o.noop,
+        fn: o.program(3, g, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, k = l ? l.call(b, "performers", m) : p.call(b, "link-to", "performers", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
+    m = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: o.noop,
+        fn: o.program(5, h, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, k = l ? l.call(b, "history", m) : p.call(b, "link-to", "history", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
+    m = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: o.noop,
+        fn: o.program(7, i, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, k = l ? l.call(b, "press", m) : p.call(b, "link-to", "press", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push('</li>\n      <li>·</li>\n      <li><a href="../about/">About</a></li>\n      <li>·</li>\n      <li>'), 
+    l = c["link-to"] || b && b["link-to"], m = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: o.noop,
+        fn: o.program(9, j, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, k = l ? l.call(b, "contact", m) : p.call(b, "link-to", "contact", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push("</li>\n    </ul>\n  </div>\n</footer>"), n;
+}), Ember.TEMPLATES._header = Ember.Handlebars.template(function(a, b, c, d, e) {
+    function f(a, b) {
+        b.buffer.push("BCF 2014");
+    }
+    function g(a, b) {
+        b.buffer.push("Home");
+    }
+    function h(a, b) {
+        b.buffer.push("Performers");
+    }
+    function i(a, b) {
+        b.buffer.push("History");
+    }
+    function j(a, b) {
+        b.buffer.push("Press");
+    }
+    function k(a, b) {
+        b.buffer.push("Contact");
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var l, m, n, o = "", p = this, q = c.helperMissing;
+    return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n      '), 
+    m = c["link-to"] || b && b["link-to"], n = {
+        hash: {
+            "class": "navbar-brand"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": b
+        },
+        inverse: p.noop,
+        fn: p.program(1, f, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "", n) : q.call(b, "link-to", "", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li>'), 
+    m = c["link-to"] || b && b["link-to"], n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(3, g, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push("</li>\n        <li>"), m = c["link-to"] || b && b["link-to"], n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(5, h, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "performers", n) : q.call(b, "link-to", "performers", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push("</li>\n       \n        <li>"), m = c["link-to"] || b && b["link-to"], 
+    n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(7, i, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push("</li>\n        <li>"), m = c["link-to"] || b && b["link-to"], n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(9, j, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push("</li>\n        \n\n        <li>"), m = c["link-to"] || b && b["link-to"], 
+    n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(11, k, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "contact", n) : q.call(b, "link-to", "contact", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push("</li>\n        \n      </ul>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>"), 
+    o;
+}), Ember.TEMPLATES._news = Ember.Handlebars.template(function(a, b, c, d, e) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {}, e.buffer.push('\n<div class="newspost">\n  <h3 class="newspost-title">2014 Site is Up!</h3>\n  <p>March, 10th, 2014</p>\n  <div class="newspost-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>\n</div>\n\n\n\n');
 }), Ember.TEMPLATES._recent_tweets = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('<a class="twitter-timeline" href="https://twitter.com/bridgetown" data-widget-id="432300245716713474">Tweets by @bridgetown</a>\n\n\n\n');
@@ -3702,15 +3912,8 @@ App.Store = DS.Store.extend({
 }), Ember.TEMPLATES.application = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var f, g, h, i = "", j = this.escapeExpression, k = c.helperMissing;
-    return e.buffer.push('<div id="wrap">\n  '), e.buffer.push(j(c.view.call(b, "App.HeaderView", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        contexts: [ b ],
-        types: [ "ID" ],
-        data: e
-    }))), e.buffer.push("\n\n  \n  "), e.buffer.push(j((g = c.outlet || b && b.outlet, 
+    var f, g, h, i = "", j = c.helperMissing, k = this.escapeExpression;
+    return e.buffer.push('<div id="wrap">\n  '), e.buffer.push(k((g = c.partial || b && b.partial, 
     h = {
         hash: {},
         hashTypes: {},
@@ -3718,7 +3921,15 @@ App.Store = DS.Store.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, g ? g.call(b, "jumbotron", h) : k.call(b, "outlet", "jumbotron", h)))), e.buffer.push('\n  <div class="container">\n  '), 
+    }, g ? g.call(b, "header", h) : j.call(b, "partial", "header", h)))), e.buffer.push('\n\n  \n\n  <div class="container main-content">\n    <div class="row">\n      '), 
+    e.buffer.push(k((g = c.outlet || b && b.outlet, h = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, g ? g.call(b, "jumbotron", h) : j.call(b, "outlet", "jumbotron", h)))), e.buffer.push("\n    </div>\n  "), 
     f = c._triageMustache.call(b, "outlet", {
         hash: {},
         hashTypes: {},
@@ -3726,20 +3937,30 @@ App.Store = DS.Store.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n\n  </div>\n  <div id="push"></div>\n</div>\n\n<!-- FOOTER -->\n  <div id="site-footer">\n    <div class="container text-center">\n        <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a>\n    </div><!-- container -->\n  </div><!-- Footer -->\n\n\n  <!-- MODAL FOR CONTACT -->\n  <!-- Modal -->\n  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\n    <div class="modal-dialog">\n      <div class="modal-content">\n        <div class="modal-header">\n          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n          <h4 class="modal-title" id="myModalLabel">contact us</h4>\n        </div>\n        <div class="modal-body">\n            <div class="row centered">\n              <p>We are available 24/7, so don\'t hesitate to contact us.</p>\n              <p>\n                Somestreet Ave, 987<br/>\n            London, UK.<br/>\n            +44 8948-4343<br/>\n            hi@blacktie.co\n              </p>\n              <div id="mapwrap">\n   \n          </div>  \n            </div>\n        </div>\n        <div class="modal-footer">\n          <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>\n        </div>\n      </div><!-- /.modal-content -->\n    </div><!-- /.modal-dialog -->\n  </div><!-- /.modal -->\n'), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n\n  </div>\n  <div id="push"></div>\n</div>\n\n'), 
+    e.buffer.push(k((g = c.partial || b && b.partial, h = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, g ? g.call(b, "footer", h) : j.call(b, "partial", "footer", h)))), e.buffer.push('\n\n\n  <!-- MODAL FOR CONTACT -->\n  <!-- Modal -->\n  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\n    <div class="modal-dialog">\n      <div class="modal-content">\n        <div class="modal-header">\n          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>\n          <h4 class="modal-title" id="myModalLabel">contact us</h4>\n        </div>\n        <div class="modal-body">\n            <div class="row centered">\n              <p>We are available 24/7, so don\'t hesitate to contact us.</p>\n              <p>\n                Somestreet Ave, 987<br/>\n            London, UK.<br/>\n            +44 8948-4343<br/>\n            hi@blacktie.co\n              </p>\n              <div id="mapwrap">\n   \n          </div>  \n            </div>\n        </div>\n        <div class="modal-footer">\n          <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>\n        </div>\n      </div><!-- /.modal-content -->\n    </div><!-- /.modal-dialog -->\n  </div><!-- /.modal -->\n'), 
     i;
 }), Ember.TEMPLATES.catch_all = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "collection.title", {
+    return e.buffer.push('<div class="row">\n  <div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-index">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push("</h2>\n\n  "), e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container">\n  '), 
+    e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
         },
@@ -3757,14 +3978,16 @@ App.Store = DS.Store.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "collection.title", {
+    return e.buffer.push('<div class="row">\n  <div class="jumbotron jumbotron-minor jumbotron-color-4">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push("</h2>\n\n  "), e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container">\n  '), 
+    e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
         },
@@ -3853,149 +4076,20 @@ App.Store = DS.Store.extend({
         data: e
     }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </tbody>\n</table>\n\n\n"), 
     l;
-}), Ember.TEMPLATES.header = Ember.Handlebars.template(function(a, b, c, d, e) {
-    function f(a, b) {
-        b.buffer.push("BCF 2014");
-    }
-    function g(a, b) {
-        b.buffer.push("Home");
-    }
-    function h(a, b) {
-        b.buffer.push("Performers");
-    }
-    function i(a, b) {
-        b.buffer.push("Venues");
-    }
-    function j(a, b) {
-        b.buffer.push("Shows");
-    }
-    function k(a, b) {
-        b.buffer.push("History");
-    }
-    function l(a, b) {
-        b.buffer.push("Press");
-    }
-    function m(a, b) {
-        b.buffer.push("Tickets");
-    }
-    function n(a, b) {
-        b.buffer.push("Contact");
-    }
-    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
-    e = e || {};
-    var o, p, q, r = "", s = this, t = c.helperMissing;
-    return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n      '), 
-    p = c["link-to"] || b && b["link-to"], q = {
-        hash: {
-            "class": "navbar-brand"
-        },
-        hashTypes: {
-            "class": "STRING"
-        },
-        hashContexts: {
-            "class": b
-        },
-        inverse: s.noop,
-        fn: s.program(1, f, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "", q) : t.call(b, "link-to", "", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li>'), 
-    p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(3, g, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "index", q) : t.call(b, "link-to", "index", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(5, h, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "performers", q) : t.call(b, "link-to", "performers", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(7, i, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "venues", q) : t.call(b, "link-to", "venues", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(9, j, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "shows", q) : t.call(b, "link-to", "shows", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(11, k, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "history", q) : t.call(b, "link-to", "history", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(13, l, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "press", q) : t.call(b, "link-to", "press", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(15, m, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "performers", q) : t.call(b, "link-to", "performers", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n\n        <li>"), p = c["link-to"] || b && b["link-to"], q = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: s.noop,
-        fn: s.program(17, n, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, o = p ? p.call(b, "contact", q) : t.call(b, "link-to", "contact", q), (o || 0 === o) && e.buffer.push(o), 
-    e.buffer.push("</li>\n        \n      </ul>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>"), 
-    r;
 }), Ember.TEMPLATES.history = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "collection.title", {
+    return e.buffer.push('<div class="row">\n  <div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-3">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push("</h2>\n\n  "), e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container">\n  '), 
+    e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
         },
@@ -4013,16 +4107,15 @@ App.Store = DS.Store.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('\n\n<div class="container w">\n    <div class="row centered">\n      <div class="col-md-6">\n        <h4>NEWS</h4>\n        '), 
-    e.buffer.push(j((f = c.render || b && b.render, g = {
+    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h2>May 8th - May 11th</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n<div class="container">\n    <div class="row centered">\n      <div class="col-sm-6">\n        '), 
+    e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        contexts: [ b, b ],
-        types: [ "STRING", "ID" ],
+        contexts: [ b ],
+        types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "newsposts", "controller", g) : i.call(b, "render", "newsposts", "controller", g)))), 
-    e.buffer.push('\n      </div><!-- col-lg-6 -->\n\n      <div class="col-md-6 hidden-sm hidden-xs">\n        <h4>@bridgetown</h4>\n        '), 
+    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n      </div><!-- col-lg-6 -->\n\n      <div class="col-sm-6 hidden-xs">\n        <h4>@bridgetown</h4>\n        '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4031,7 +4124,7 @@ App.Store = DS.Store.extend({
         types: [ "STRING" ],
         data: e
     }, f ? f.call(b, "recent_tweets", g) : i.call(b, "partial", "recent_tweets", g)))), 
-    e.buffer.push('\n      </div><!-- col-lg-6 -->\n      <div class="clearfix"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->\n\n\n'), 
+    e.buffer.push('\n      </div><!-- col-lg-6 -->\n      <div class="clearfix"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->\n</div>\n\n\n'), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4043,21 +4136,12 @@ App.Store = DS.Store.extend({
     h;
 }), Ember.TEMPLATES.jumbotron_index = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
-    e = e || {};
-    var f = "";
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-dark">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      \n      <h2>May ##, 2014</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->'), 
-    f;
-}), Ember.TEMPLATES.jumbotron_performers = Ember.Handlebars.template(function(a, b, c, d, e) {
-    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
-    e = e || {};
-    var f = "";
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-dark">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->'), 
-    f;
+    e = e || {}, e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-5  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h2>May 8th - May 11th</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->');
 }), Ember.TEMPLATES.loading = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('  <div class="jumbotron" style="background:transparent;">\n \n   <div class="container">\n    <h1 class="text-center">Loading...</h1>\n    <h2>&nbsp;</h2>\n      <h1>'), 
+    return e.buffer.push(' <div class="row"> <div class="jumbotron jumbotron-default">\n \n   <div class="container">\n    <h1 class="text-center">Loading...</h1>\n    <h2>&nbsp;</h2>\n      <h1>'), 
     e.buffer.push(j((f = c["x-spinner"] || b && b["x-spinner"], g = {
         hash: {
             lines: 12,
@@ -4086,7 +4170,7 @@ App.Store = DS.Store.extend({
         contexts: [],
         types: [],
         data: e
-    }, f ? f.call(b, g) : i.call(b, "x-spinner", g)))), e.buffer.push("</h1>\n    </div>\n  </div>"), 
+    }, f ? f.call(b, g) : i.call(b, "x-spinner", g)))), e.buffer.push("</h1>\n    </div>\n  </div>\n</div>"), 
     h;
 }), Ember.TEMPLATES.newspost = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
@@ -4121,13 +4205,13 @@ App.Store = DS.Store.extend({
             hash: {},
             hashTypes: {},
             hashContexts: {},
-            inverse: j.noop,
-            fn: j.program(2, g, b),
+            inverse: l.noop,
+            fn: l.program(2, g, b),
             contexts: [ a, a ],
             types: [ "STRING", "ID" ],
             data: b
-        }, d = e ? e.call(a, "newspost", "newspost", f) : k.call(a, "link-to", "newspost", "newspost", f), 
-        (d || 0 === d) && b.buffer.push(d), b.buffer.push("</h3>\n      <p>"), b.buffer.push(l((e = c.humanDate || a && a.humanDate, 
+        }, d = e ? e.call(a, "newspost", "newspost", f) : m.call(a, "link-to", "newspost", "newspost", f), 
+        (d || 0 === d) && b.buffer.push(d), b.buffer.push("</h3>\n      <p>"), b.buffer.push(n((e = c.humanDate || a && a.humanDate, 
         f = {
             hash: {},
             hashTypes: {},
@@ -4135,7 +4219,7 @@ App.Store = DS.Store.extend({
             contexts: [ a ],
             types: [ "ID" ],
             data: b
-        }, e ? e.call(a, "newspost.publishOn", f) : k.call(a, "humanDate", "newspost.publishOn", f)))), 
+        }, e ? e.call(a, "newspost.publishOn", f) : m.call(a, "humanDate", "newspost.publishOn", f)))), 
         b.buffer.push('</p>\n      <div class="newspost-content">'), e = c.createExcerpt || a && a.createExcerpt, 
         f = {
             hash: {},
@@ -4144,7 +4228,7 @@ App.Store = DS.Store.extend({
             contexts: [ a, a, a ],
             types: [ "ID", "INTEGER", "STRING" ],
             data: b
-        }, d = e ? e.call(a, "newspost.htmlContent", 100, "... Read More...", f) : k.call(a, "createExcerpt", "newspost.htmlContent", 100, "... Read More...", f), 
+        }, d = e ? e.call(a, "newspost.htmlContent", 100, "... Read More...", f) : m.call(a, "createExcerpt", "newspost.htmlContent", 100, "... Read More...", f), 
         (d || 0 === d) && b.buffer.push(d), b.buffer.push("</div>\n    </div>\n    <hr />\n  "), 
         h;
     }
@@ -4161,45 +4245,42 @@ App.Store = DS.Store.extend({
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var h, i = "", j = this, k = c.helperMissing, l = this.escapeExpression;
-    return e.buffer.push(" "), h = c.each.call(b, "newspost", "in", "controller", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: j.noop,
-        fn: j.program(1, f, e),
-        contexts: [ b, b, b ],
-        types: [ "ID", "ID", "ID" ],
-        data: e
-    }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n\n\n"), i;
-}), Ember.TEMPLATES.performer = Ember.Handlebars.template(function(a, b, c, d, e) {
-    function f(a, b) {
-        var d, e = "";
-        return b.buffer.push("\n      "), d = c._triageMustache.call(a, "category.name", {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ a ],
-            types: [ "ID" ],
-            data: b
-        }), (d || 0 === d) && b.buffer.push(d), b.buffer.push("\n      "), e;
-    }
-    function g(a, b) {
-        b.buffer.push("←All Performers");
-    }
-    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
-    e = e || {};
-    var h, i, j, k = "", l = this.escapeExpression, m = this, n = c.helperMissing;
-    return e.buffer.push('<div class="container">\n  <h2>Performer</h2>\n\n<p>\n  <b>Name:</b> '), 
-    h = c._triageMustache.call(b, "Name", {
+    var h, i, j, k = "", l = this, m = c.helperMissing, n = this.escapeExpression;
+    return e.buffer.push(n((i = c.debug || b && b.debug, j = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n</p>\n\n<p>\n  <b>Headshot:</b> <img "), 
-    e.buffer.push(l(c["bind-attr"].call(b, {
+    }, i ? i.call(b, "controller", j) : m.call(b, "debug", "controller", j)))), e.buffer.push("\n "), 
+    h = c.each.call(b, "newspost", "in", "controller", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: l.noop,
+        fn: l.program(1, f, e),
+        contexts: [ b, b, b ],
+        types: [ "ID", "ID", "ID" ],
+        data: e
+    }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n\n\n"), k;
+}), Ember.TEMPLATES.performer = Ember.Handlebars.template(function(a, b, c, d, e) {
+    function f(a, b) {
+        b.buffer.push("← All Performers");
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var g, h, i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h2>'), 
+    g = c._triageMustache.call(b, "Name", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ b ],
+        types: [ "ID" ],
+        data: e
+    }), (g || 0 === g) && e.buffer.push(g), e.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer">\n  <div class="row">\n\n    <div class="col-sm-4 text-center">\n      <p><img class="img-responsive performer-headshot" '), 
+    e.buffer.push(k(c["bind-attr"].call(b, {
         hash: {
             src: "headshot300"
         },
@@ -4212,7 +4293,8 @@ App.Store = DS.Store.extend({
         contexts: [],
         types: [],
         data: e
-    }))), e.buffer.push(" />\n</p>\n\n<p>\n  <b>Bio:</b> "), e.buffer.push(l(c._triageMustache.call(b, "Bio", {
+    }))), e.buffer.push(' /></p>\n    </div>\n    <div class="col-sm-8">\n      <p>\n        '), 
+    e.buffer.push(k(c._triageMustache.call(b, "Bio", {
         hash: {
             unescaped: "true"
         },
@@ -4225,27 +4307,19 @@ App.Store = DS.Store.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }))), e.buffer.push("\n</p>\n\n<p>\n  <b>Categories:</b> "), h = c.each.call(b, "category", "in", "categories", {
+    }))), e.buffer.push("\n      </p>\n      <p>\n        "), h = c["link-to"] || b && b["link-to"], 
+    i = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: m.noop,
-        fn: m.program(1, f, e),
-        contexts: [ b, b, b ],
-        types: [ "ID", "ID", "ID" ],
-        data: e
-    }), (h || 0 === h) && e.buffer.push(h), e.buffer.push("\n</p>\n\n\n"), i = c["link-to"] || b && b["link-to"], 
-    j = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: m.noop,
-        fn: m.program(3, g, e),
+        inverse: l.noop,
+        fn: l.program(1, f, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, h = i ? i.call(b, "performers", j) : n.call(b, "link-to", "performers", j), (h || 0 === h) && e.buffer.push(h), 
-    e.buffer.push("\n</div>"), k;
+    }, g = h ? h.call(b, "performers", i) : m.call(b, "link-to", "performers", i), (g || 0 === g) && e.buffer.push(g), 
+    e.buffer.push("\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n\n\n\n\n\n\n"), 
+    j;
 }), Ember.TEMPLATES.performers = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -4261,7 +4335,7 @@ App.Store = DS.Store.extend({
 }), Ember.TEMPLATES.performers_gallery = Ember.Handlebars.template(function(a, b, c, d, e) {
     function f(a, b) {
         var d, e, f, i = "";
-        return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">\n    <div class="performer-thumbnail">\n      '), 
+        return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">\n    <div class="performer-thumbnail">\n      '), 
         e = c["link-to"] || a && a["link-to"], f = {
             hash: {},
             hashTypes: {},
@@ -4317,7 +4391,8 @@ App.Store = DS.Store.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('<div class="row">\n  '), i = c.each.call(b, "performer", "in", "controller", {
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n  '), 
+    i = c.each.call(b, "performer", "in", "controller", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -4331,14 +4406,16 @@ App.Store = DS.Store.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "collection.title", {
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push("</h2>\n\n  "), e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
         },
@@ -4381,14 +4458,16 @@ App.Store = DS.Store.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "collection.title", {
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-5  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push("</h2>\n\n  "), e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
         },
@@ -4405,14 +4484,16 @@ App.Store = DS.Store.extend({
 }), App.Router.map(function() {
     this.resource("events"), this.resource("events", {
         path: "/events/:events_id"
-    }), this.resource("newsposts"), this.resource("newspost", {
-        path: "/newspost/:urlId"
     }), this.resource("performers"), this.resource("performer", {
         path: "/performer/:id"
     }), this.route("venues"), this.route("shows"), this.route("history"), this.route("press"), 
     this.route("contact"), this.route("catch_all", {
         path: "*:"
     });
+}), Ember.Route.reopen({
+    render: function() {
+        this._super(), window.scrollTo(0, 0);
+    }
 }), App.VenuesRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("venues");
@@ -4449,18 +4530,26 @@ App.Store = DS.Store.extend({
     }
 }), App.IndexRoute = Ember.Route.extend({
     model: function() {
-        return this.store.all("newspost").content.length ? this.store.all("newspost") : this.store.find("newspost");
+        return $.ajax({
+            url: "http://bridgetown-dev.squarespace.com/newsposts/?format=json-pretty",
+            dataType: "jsonp"
+        }).done(function(a) {
+            return a.items;
+        });
     },
     renderTemplate: function() {
-        this.render();
-    }
-}), App.NewspostRoute = Ember.Route.extend({
-    model: function(a) {
-        return this.store.find("newspost", a.urlId);
+        this.render("index"), this.render("jumbotron_index", {
+            outlet: "jumbotron"
+        });
     }
 }), App.NewspostsRoute = Ember.Route.extend({
     model: function() {
-        return this.store.all("newspost").content.length ? this.store.all("newspost") : this.store.find("newspost");
+        return $.ajax({
+            url: "http://bridgetown-dev.squarespace.com/newsposts/?format=json-pretty",
+            dataType: "jsonp"
+        }).done(function(a) {
+            return a.items;
+        });
     }
 }), App.PerformerRoute = Ember.Route.extend({
     model: function(a) {
@@ -4468,11 +4557,6 @@ App.Store = DS.Store.extend({
     }
 }), App.PerformersRoute = Ember.Route.extend({
     model: function(a) {
-        return console.log(a), this.store.all("performer").content.length ? this.store.all("performer") : this.store.find("performer");
-    },
-    renderTemplate: function() {
-        this.render(), this.render("jumbotron_performers", {
-            outlet: "jumbotron"
-        });
+        return console.log(a), this.store.find("performer");
     }
 });

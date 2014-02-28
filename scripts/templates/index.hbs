@@ -1,13 +1,21 @@
-
-
-<div class="container w">
+<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">
+  <div class="container">
     <div class="row centered">
-      <div class="col-md-6">
-        <h4>NEWS</h4>
-        {{render "newsposts" controller}}
+      <div class="col-lg-8 col-lg-offset-2">
+      <h1>Bridgetown Comedy Festival 2014</h1>
+      <h2>May 8th - May 11th</h2>
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- headerwrap -->
+<div class="row">
+<div class="container">
+    <div class="row centered">
+      <div class="col-sm-6">
+        {{partial "news"}}
       </div><!-- col-lg-6 -->
 
-      <div class="col-md-6 hidden-sm hidden-xs">
+      <div class="col-sm-6 hidden-xs">
         <h4>@bridgetown</h4>
         {{partial "recent_tweets"}}
       </div><!-- col-lg-6 -->
@@ -16,6 +24,7 @@
     <br>
     <br>
   </div><!-- container -->
+</div>
 
 
 {{partial "sponsors" }}

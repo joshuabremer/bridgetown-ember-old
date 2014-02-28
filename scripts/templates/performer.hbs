@@ -1,24 +1,42 @@
-<div class="container">
-  <h2>Performer</h2>
 
-<p>
-  <b>Name:</b> {{ Name }}
-</p>
+  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+        <h2>{{ Name }}</h2>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- headerwrap -->
 
-<p>
-  <b>Headshot:</b> <img {{bind-attr src="headshot300" }} />
-</p>
+<div class="container single-performer">
+  <div class="row">
 
-<p>
-  <b>Bio:</b> {{{ Bio }}}
-</p>
+    <div class="col-sm-4 text-center">
+      <p><img class="img-responsive performer-headshot" {{bind-attr src="headshot300" }} /></p>
+    </div>
+    <div class="col-sm-8">
+      <p>
+        {{{ Bio }}}
+      </p>
+      <p>
+        {{#link-to "performers"}}← All Performers{{/link-to}}
+      </p>
+    </div>
+  </div>
+</div>
 
-<p>
+
+
+
+
+
+
+{{!-- <p>
   <b>Categories:</b> {{#each category in categories}}
       {{category.name}}
       {{/each}}
-</p>
+</p> --}}
 
 
-{{#link-to "performers"}}←All Performers{{/link-to}}
-</div>
+

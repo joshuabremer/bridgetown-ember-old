@@ -1,21 +1,19 @@
 <div id="wrap">
-  {{view App.HeaderView}}
+  {{partial "header"}}
 
   {{!-- <div rel="main" class='container'> --}}
-  {{outlet "jumbotron"}}
-  <div class="container">
+
+  <div class="container main-content">
+    <div class="row">
+      {{outlet "jumbotron"}}
+    </div>
   {{outlet}}
 
   </div>
   <div id="push"></div>
 </div>
 
-<!-- FOOTER -->
-  <div id="site-footer">
-    <div class="container text-center">
-        <a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook"></i></a>
-    </div><!-- container -->
-  </div><!-- Footer -->
+{{partial "footer"}}
 
 
   <!-- MODAL FOR CONTACT -->

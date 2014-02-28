@@ -1,14 +1,14 @@
-App.Newspost = DS.Model.extend({
+// App.Newspost = DS.Model.extend({
 
-  performers: DS.hasMany('performer'),
+//   performers: DS.hasMany('performer'),
 
-  title: DS.attr('string'),
+//   title: DS.attr('string'),
 
-  htmlContent: DS.attr('string'),
+//   htmlContent: DS.attr('string'),
 
-  urlId: DS.attr('string'),
+//   urlId: DS.attr('string'),
 
-  publishOn: DS.attr('string')
+//   publishOn: DS.attr('string')
 
-});
+// });
 

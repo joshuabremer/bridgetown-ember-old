@@ -1,6 +1,16 @@
+
+<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2">
+      <h1>Performers</h1>
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!-- headerwrap -->
 <div class="row">
   {{#each performer in controller}}
-  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2">
+  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">
     <div class="performer-thumbnail">
       {{#link-to "performer" performer }}
       <img class="lazy img-responsive" width="300" height="300" {{bind-attr data-original="performer.headshot300" }} />

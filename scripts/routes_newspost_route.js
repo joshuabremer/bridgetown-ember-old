@@ -1,8 +1,8 @@
-App.NewspostRoute = Ember.Route.extend({
+// App.NewspostRoute = Ember.Route.extend({
 
-  model: function(params) {
-    return this.store.find('newspost', params.urlId);
-  }
+//   model: function(params) {
+//     //return this.store.find('newspost', params.urlId);
+//   }
 
-});
+// });
 
