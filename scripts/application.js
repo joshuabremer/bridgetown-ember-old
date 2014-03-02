@@ -3698,12 +3698,8 @@ App.Store = DS.Store.extend({
     Bio: "<p>Zak Toscani is a Portland based comedian who performs regularly in the Pacific Northwest (Helium Comedy Club Portland, Seattle&#039;s Comedy Underground, Bumbershoot, Funny Over Everything). His style melts like an artisan cheese into both the honest and the silly, much like Dom DeLuise&#039;s lasagna recipe.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/5853_570305192056_5104679_n_0.jpg",
     id: "5919"
-} ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({
-    destroy: function() {
-        confirm("Are you sure?") && (this.get("model").deleteRecord(), this.get("store").commit(), 
-        this.get("target.router").transitionTo("events"));
-    }
-}), App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
+} ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
+App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
 App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
         var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
