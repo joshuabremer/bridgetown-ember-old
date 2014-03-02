@@ -1,9 +1,12 @@
 @import "bootstrap";
 @import "bootstrap-theme";
 
-
-// Squarespace clean
-
+$color1: #c8bf89;
+$color2: #695b53;
+$color3: #448184;
+$color4: #8dd1aa;
+$color5: #89e894;
+// Squarespace cleanup
 .row.sqs-row {
   margin:0;
 }
@@ -24,6 +27,36 @@ body {
   margin-top: 80px;
 }
 
+
+//HEADER
+
+.navbar {
+  a.active {
+    color:white;
+  }
+  .nav li span {
+    padding-bottom:3px;
+  }
+  .header-color1 span {
+    border-bottom: 3px $color1 solid;
+  }
+
+  .header-color2 span {
+    border-bottom: 3px $color2 solid;
+  }
+
+  .header-color3 span {
+    border-bottom: 3px $color3 solid;
+  }
+
+  .header-color4 span {
+    border-bottom: 3px $color4 solid;
+  }
+
+  .header-color5 span {
+    border-bottom: 3px $color5 solid;
+  }
+}
 // JUMBOTRON
 .jumbotron {
   color:white;
@@ -47,23 +80,22 @@ body {
     }
   }
   &.jumbotron-color-1 {
-    background-color: #c8bf89;
+    background-color: $color1;
   }
   &.jumbotron-color-2 {
-    background-color: #695b53;
+    background-color: $color2;
   }
   &.jumbotron-color-3 {
-    background-color: #448184;
+    background-color: $color3;
   }
   &.jumbotron-color-4 {
-    background-color: #8dd1aa;
+    background-color: $color4;
   }
   &.jumbotron-color-5 {
-    background-color: #89e894;
+    background-color: $color5;
   }
 }
 //INDEX
-
 .jumbotron-index {
   background: #89e894;
   color:white;

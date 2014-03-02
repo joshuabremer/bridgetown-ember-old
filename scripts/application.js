@@ -1,4 +1,4 @@
-/*! my-project-name 2014-02-28 */
+/*! my-project-name 2014-03-02 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -3811,19 +3811,19 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         b.buffer.push("BCF 2014");
     }
     function g(a, b) {
-        b.buffer.push("Home");
+        b.buffer.push("<span>Home</span>");
     }
     function h(a, b) {
-        b.buffer.push("Performers");
+        b.buffer.push("<span>Performers</span>");
     }
     function i(a, b) {
-        b.buffer.push("History");
+        b.buffer.push("<span>History</span>");
     }
     function j(a, b) {
-        b.buffer.push("Press");
+        b.buffer.push("<span>Press</span>");
     }
     function k(a, b) {
-        b.buffer.push("Contact");
+        b.buffer.push("<span>Contact</span>");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -3845,7 +3845,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "", n) : q.call(b, "link-to", "", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li>'), 
+    e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
     m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
@@ -3856,7 +3856,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push("</li>\n        <li>"), m = c["link-to"] || b && b["link-to"], n = {
+    e.buffer.push('</li>\n        <li class="header-color2">'), m = c["link-to"] || b && b["link-to"], 
+    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -3866,7 +3867,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "performers", n) : q.call(b, "link-to", "performers", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push("</li>\n       \n        <li>"), m = c["link-to"] || b && b["link-to"], 
+    e.buffer.push('</li>\n       \n        <li class="header-color3">'), m = c["link-to"] || b && b["link-to"], 
     n = {
         hash: {},
         hashTypes: {},
@@ -3877,7 +3878,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push("</li>\n        <li>"), m = c["link-to"] || b && b["link-to"], n = {
+    e.buffer.push('</li>\n        <li class="header-color4">'), m = c["link-to"] || b && b["link-to"], 
+    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -3887,7 +3889,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push("</li>\n        \n\n        <li>"), m = c["link-to"] || b && b["link-to"], 
+    e.buffer.push('</li>\n        \n\n        <li class="header-color5">'), m = c["link-to"] || b && b["link-to"], 
     n = {
         hash: {},
         hashTypes: {},
@@ -4107,7 +4109,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h2>May 8th - May 11th</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n<div class="container">\n    <div class="row centered">\n      <div class="col-sm-6">\n        '), 
+    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n<div class="container">\n    <div class="row centered">\n      <div class="col-sm-6">\n        '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4115,7 +4117,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n      </div><!-- col-lg-6 -->\n\n      <div class="col-sm-6 hidden-xs">\n        <h4>@bridgetown</h4>\n        '), 
+    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n      </div><!-- col-lg-6 -->\n\n      <div class="col-sm-6 hidden-xs">\n        <h3>@bridgetown</h3>\n        '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},

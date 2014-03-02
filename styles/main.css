@@ -5051,6 +5051,21 @@ body {
   padding-bottom: 20px;
   margin-top: 80px; }
 
+.navbar a.active {
+  color: white; }
+.navbar .nav li span {
+  padding-bottom: 3px; }
+.navbar .header-color1 span {
+  border-bottom: 3px #c8bf89 solid; }
+.navbar .header-color2 span {
+  border-bottom: 3px #695b53 solid; }
+.navbar .header-color3 span {
+  border-bottom: 3px #448184 solid; }
+.navbar .header-color4 span {
+  border-bottom: 3px #8dd1aa solid; }
+.navbar .header-color5 span {
+  border-bottom: 3px #89e894 solid; }
+
 .jumbotron {
   color: white; }
   .jumbotron.jumbotron-default {
