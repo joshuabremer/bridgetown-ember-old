@@ -11,7 +11,7 @@ App.PerformerRoute = Ember.Route.extend({
     //   data.item.headshot = data.item.assetUrl;
     //   return data.item;
     // });
-    return this.store.find('performer', params.id);
+    return this.store.find('performer', params.slug);
   }
   // model: function() {
   //   return $.ajax({
