@@ -4555,10 +4555,10 @@ App.PerformerController = Ember.ObjectController.extend({
     model: function(a) {
         var b = this;
         return this.store.find("performer", {
-            Name: a.slug
+            Name: a.Name
         }), this.store.find("performer").then(function() {
             return b.store.find("performer", {
-                slug: a.slug
+                Name: a.Name
             });
         });
     }
