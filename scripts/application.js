@@ -3860,7 +3860,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "", n) : q.call(b, "link-to", "", n), (l || 0 === l) && e.buffer.push(l), 
+    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
     e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
     m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
