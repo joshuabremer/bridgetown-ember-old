@@ -3721,7 +3721,7 @@ App.PerformerController = Ember.ObjectController.extend({
     sortAscending: !0
 }), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
-        console.log(twitter);
+        console.log("twitter");
         var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
         document.getElementById("twitter-wjs") || (a = document.createElement("script"), 
         a.id = "twitter-wjs", a.src = c + "://platform.twitter.com/widgets.js?" + new Date().getTime(), 
