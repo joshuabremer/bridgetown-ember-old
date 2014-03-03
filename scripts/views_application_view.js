@@ -1,5 +1,6 @@
 App.ApplicationView = Ember.View.extend({
   didInsertElement: function() {
+    console.log(twitter);
     var js,
       fjs = document.getElementsByTagName("script")[0],
       p = /^http:/.test(document.location) ? 'http' : 'https';
