@@ -29,7 +29,7 @@ App.PerformerRoute = Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
-    for(var performer in b.content) {
+    for(var performer in model.content) {
       if (performer.get('slug') === performer.get('params_slug')) {
         controller.set('model', performer);
         return;

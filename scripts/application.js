@@ -4559,7 +4559,7 @@ App.PerformerController = Ember.ObjectController.extend({
     model: function(a) {
         return this.set("params_slug", a.slug), this.store.find("performer");
     },
-    setupController: function(a) {
+    setupController: function(a, b) {
         for (var c in b.content) if (c.get("slug") === c.get("params_slug")) return void a.set("model", c);
     }
 }), App.PerformersRoute = Ember.Route.extend({
