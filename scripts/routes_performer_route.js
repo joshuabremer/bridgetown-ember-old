@@ -11,13 +11,13 @@ App.PerformerRoute = Ember.Route.extend({
     //   data.item.headshot = data.item.assetUrl;
     //   return data.item;
     // });
-    //return this.store.find('performer', params.id);
-    console.log(params);
-    this.store.find('performer');
-    return this.store.filter(App.Performer, function(record){
-      console.log(record.get('Name') == 'Beth Stelling');
-      return true;
-    });
+    return this.store.find('performer', params.id);
+    // console.log(params);
+    // this.store.find('performer');
+    // return this.store.filter(App.Performer, function(record){
+    //   console.log(record.get('Name') == 'Beth Stelling');
+    //   return true;
+    // });
   }
   // model: function() {
   //   return $.ajax({
