@@ -12,6 +12,7 @@ App.PerformerRoute = Ember.Route.extend({
     //   return data.item;
     // });
     var _this = this;
+    this.store.find('performer', {slug: params.slug});
     return this.store.find('performer').then(function() {
       return _this.store.find('performer', {slug: params.slug});
     });
