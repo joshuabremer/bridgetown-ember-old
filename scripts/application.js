@@ -3707,7 +3707,7 @@ App.PerformerController = Ember.ObjectController.extend({
     sortProperties: [ "Tier" ],
     sortAscending: !0
 }), App.PerformersController = Ember.ArrayController.extend({
-    sortProperties: [ "Tier" ],
+    sortProperties: [ "PhotoUrl" ],
     sortAscending: !0
 }), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
