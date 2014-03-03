@@ -4499,7 +4499,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.resource("events"), this.resource("events", {
         path: "/events/:events_id"
     }), this.resource("performers"), this.resource("performer", {
-        path: "/performer/:slug"
+        path: "/performer/:Name"
     }), this.route("venues"), this.route("shows"), this.route("history"), this.route("press"), 
     this.route("contact"), this.route("catch_all", {
         path: "*:"
