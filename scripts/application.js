@@ -2845,7 +2845,17 @@ var App = Ember.Application.create({
     rootElement: "#ember-app"
 });
 
-App.Store = DS.Store.extend({
+App.FixtureAdapter = DS.FixtureAdapter.extend({
+    queryFixtures: function(a, b) {
+        return a.filter(function(a) {
+            for (var c in b) if (b.hasOwnProperty(c)) {
+                var d = b[c];
+                if (console.log(a[c]), a[c] !== d) return !1;
+            }
+            return !0;
+        });
+    }
+}), App.Store = DS.Store.extend({
     revision: 11,
     adapter: "Fixture"
 }), App.XSpinnerComponent = Ember.Component.extend({
