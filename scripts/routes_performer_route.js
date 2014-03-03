@@ -12,7 +12,7 @@ App.PerformerRoute = Ember.Route.extend({
     //   return data.item;
     // });
     //return this.store.find('performer', params.id);
-    console.log(App.Performer);
+    console.log(params);
     return this.store.filter(App.Performer, function(record){
       console.log(record.get('Name') == 'Beth Stelling');
       return record.get('Name') == 'Beth Stelling';
