@@ -2850,7 +2850,7 @@ App.Store = DS.Store.extend({
     adapter: DS.FixtureAdapter.extend({
         queryFixtures: function(a, b, c) {
             return console.log(b), console.log(c), a.filter(function(a) {
-                for (var c in b) if (console.log(b[c]), a[c] != b[c]) return !1;
+                for (var c in b) if (console.log(a[c]), console.log(b[c]), a[c] != b[c]) return !1;
                 return !0;
             });
         }

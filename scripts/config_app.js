@@ -12,6 +12,7 @@ App.Store = DS.Store.extend({
       console.log(type);
       return fixtures.filter(function(item) {
           for(var prop in query) {
+            console.log(item[prop]);
             console.log(query[prop]);
               if( item[prop] != query[prop]) {
                   return false;
