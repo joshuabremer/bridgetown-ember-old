@@ -1,4 +1,4 @@
-/*! my-project-name 2014-03-02 */
+/*! my-project-name 2014-03-03 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -3766,7 +3766,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var k, l, m, n = "", o = this, p = c.helperMissing;
-    return e.buffer.push('<!-- FOOTER -->\n  <footer class="site-footer" role="contentinfo">\n  <div class="container">\n    <div class="social">\n  <ul class="social-buttons">\n    <li class="follow-btn">\n      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bridgetown"  data-related="bridgetown" data-hashtags="bridgetowncomedy">Tweet</a>\n    </li>\n    <li class="tweet-btn">\n      <a href="https://twitter.com/bridgetown" class="twitter-follow-button" data-show-count="false" >Follow @bridgetown</a>\n    </li>\n  </ul>\n</div>\n\n\n    <p>Designed and built by <a href="http://twitter.com/joshuabremer" target="_blank">@joshuabremer</a>.</p>\n    <ul class="footer-links muted">\n      <li>'), 
+    return e.buffer.push('<!-- FOOTER -->\n  <footer class="site-footer" role="contentinfo">\n  <div class="container">\n    <div class="social">\n  <ul class="social-buttons">\n    <li class="follow-btn">\n      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bridgetown"  data-related="bridgetown" data-hashtags="bridgetowncomedy">Tweet</a>\n    </li>\n    <li class="tweet-btn">\n      <a href="https://twitter.com/bridgetown" class="twitter-follow-button" data-show-count="false" >Follow @bridgetown</a>\n    </li>\n  </ul>\n</div>\n\n\n    <p>Designed and built by <a href="http://twitter.com/joshuabremer" target="_blank">@joshuabremer</a>. Powered by <a target="_blank" href="http://squarespace.com/">Squarespace</a></p>\n    <ul class="footer-links muted">\n      <li>'), 
     l = c["link-to"] || b && b["link-to"], m = {
         hash: {},
         hashTypes: {},
