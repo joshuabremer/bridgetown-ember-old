@@ -2848,9 +2848,9 @@ var App = Ember.Application.create({
 App.Store = DS.Store.extend({
     revision: 11,
     adapter: DS.FixtureAdapter.extend({
-        queryFixtures: function(a, b, c) {
-            return console.log(b), console.log(c), a.filter(function(a) {
-                for (var c in b) if (console.log(a[c]), console.log(b[c]), a[c] != b[c]) return !1;
+        queryFixtures: function(a, b) {
+            return a.filter(function(a) {
+                for (var c in b) if (a[c] != b[c]) return !1;
                 return !0;
             });
         }

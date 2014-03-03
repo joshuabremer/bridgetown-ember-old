@@ -8,12 +8,12 @@ App.Store = DS.Store.extend({
   //adapter: DS.LSAdapter.create()
   adapter: DS.FixtureAdapter.extend({
     queryFixtures: function(fixtures, query, type) {
-      console.log(query);
-      console.log(type);
+      //console.log(query);
+      //console.log(type);
       return fixtures.filter(function(item) {
           for(var prop in query) {
-            console.log(item[prop]);
-            console.log(query[prop]);
+            //console.log(item[prop]);
+            //console.log(query[prop]);
               if( item[prop] != query[prop]) {
                   return false;
               }
