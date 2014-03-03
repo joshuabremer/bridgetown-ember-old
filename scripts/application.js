@@ -4351,7 +4351,7 @@ App.PerformerController = Ember.ObjectController.extend({
 }), Ember.TEMPLATES.performers_gallery = Ember.Handlebars.template(function(a, b, c, d, e) {
     function f(a, b) {
         var d, e, f, i = "";
-        return b.buffer.push('\n  <div class="col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">\n    <div class="performer-thumbnail">\n      '), 
+        return b.buffer.push('\n  <div class="col-xs-6 col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">\n    <div class="performer-thumbnail">\n      '), 
         e = c["link-to"] || a && a["link-to"], f = {
             hash: {},
             hashTypes: {},
