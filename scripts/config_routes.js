@@ -1,12 +1,12 @@
-// if (window.history && window.history.pushState) {
-//     App.Router.reopen({
-//       location: 'history'
-//     });
-// } else {
-//   App.Router.reopen({
-//     location: 'none'
-//   });
-// }
+if (window.history && window.history.pushState) {
+    App.Router.reopen({
+      location: 'history'
+    });
+} else {
+  App.Router.reopen({
+    location: 'none'
+  });
+}
 
 App.Router.map(function() {
 
