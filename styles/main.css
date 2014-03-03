@@ -568,22 +568,22 @@ pre code {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
+.container, .main-content {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
 
 @media (min-width: 768px) {
-  .container {
+  .container, .main-content {
     width: 750px; } }
 
 @media (min-width: 992px) {
-  .container {
+  .container, .main-content {
     width: 970px; } }
 
 @media (min-width: 1200px) {
-  .container {
+  .container, .main-content {
     width: 1170px; } }
 
 .container-fluid {
@@ -3523,7 +3523,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
 .container .jumbotron {
   border-radius: 6px; }
 
-.jumbotron .container {
+.jumbotron .container, .jumbotron .main-content {
   max-width: 100%; }
 
 @media screen and (min-width: 768px) {
