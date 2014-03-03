@@ -1,5 +1,6 @@
 App.IndexView = Ember.View.extend({
   didInsertElement: function() {
+    console.log('twitterindex');
     var js,
       fjs = document.getElementsByTagName("script")[0],
       p = /^http:/.test(document.location) ? 'http' : 'https';
