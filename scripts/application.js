@@ -2838,16 +2838,6 @@ window.Handlebars = Handlebars, function(a, b) {
         !d && c && (c = "/" + c), c += ".json", console.log(c), c;
     },
     defaultSerializer: "DS/LocalREST"
-}), DS.FixtureAdapter = DS.FixtureAdapter.extend({
-    queryFixtures: function(a, b) {
-        return a.filter(function(a) {
-            for (var c in b) if (b.hasOwnProperty(c)) {
-                var d = b[c];
-                if (console.log(a[c]), a[c] !== d) return !1;
-            }
-            return !0;
-        });
-    }
 });
 
 var App = Ember.Application.create({
