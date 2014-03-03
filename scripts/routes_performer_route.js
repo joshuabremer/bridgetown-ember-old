@@ -23,6 +23,10 @@ App.PerformerRoute = Ember.Route.extend({
     //   console.log(record.get('Name') == 'Beth Stelling');
     //   return true;
     // });
+  },
+
+  setupController: function(controller, model) {
+    controller.set('model', model);
   }
   // model: function() {
   //   return $.ajax({
