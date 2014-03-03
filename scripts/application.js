@@ -3706,7 +3706,7 @@ App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsControl
 App.PerformerController = Ember.ObjectController.extend({
     sortProperties: [ "Tier" ],
     sortAscending: !0
-}), App.PerformersController = Ember.ObjectController.extend({
+}), App.PerformersController = Ember.ArrayController.extend({
     sortProperties: [ "Tier" ],
     sortAscending: !0
 }), App.ApplicationView = Ember.View.extend({
