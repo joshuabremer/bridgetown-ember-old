@@ -2,26 +2,25 @@ var App = Ember.Application.create({
   LOG_TRANSITIONS: true,
   rootElement: '#ember-app'
 });
+
+App.FixtureAdapter = DS.FixtureAdapter.extend({
+  queryFixtures: function(records, query, type) {
+    return records.filter(function(record) {
+        for(var key in query) {
+            if (!query.hasOwnProperty(key)) { continue; }
+            var value = query[key];
+            if (record[key] !== value) { return false; }
+        }
+        return true;
+    });
+  }
+});
+
 App.Store = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
-  adapter: DS.FixtureAdapter.extend({
-    queryFixtures: function(fixtures, query, type) {
-      //console.log(query);
-      //console.log(type);
-      return fixtures.filter(function(item) {
-          for(var prop in query) {
-            //console.log(item[prop]);
-            //console.log(query[prop]);
-              if( item[prop] != query[prop]) {
-                  return false;
-              }
-          }
-          return true;
-      });
-    }
-  })
+  adapter: 'Fixture'
 });
 
 
