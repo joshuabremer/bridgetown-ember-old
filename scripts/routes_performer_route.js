@@ -13,7 +13,7 @@ App.PerformerRoute = Ember.Route.extend({
     // });
     var _this = this;
     return this.store.find('performer').then(function() {
-      return _this.store.find('performer', params.id);
+      return _this.store.find('performer', {slug: params.slug});
     });
     // console.log(params);
     // this.store.find('performer');
