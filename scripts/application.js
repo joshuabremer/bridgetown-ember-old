@@ -3724,7 +3724,7 @@ App.PerformerController = Ember.ObjectController.extend({
         var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
         document.getElementById("twitter-wjs") || (a = document.createElement("script"), 
         a.id = "twitter-wjs", a.src = c + "://platform.twitter.com/widgets.js?" + new Date().getTime(), 
-        b.parentNode.insertBefore(a, b)), $(".navbar.nav a").on("click", function() {
+        b.parentNode.insertBefore(a, b)), $(".navbar .nav a").on("click", function() {
             $(window).width() <= 768 && $(".navbar-toggle").click();
         });
     }

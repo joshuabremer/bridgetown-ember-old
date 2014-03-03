@@ -12,7 +12,7 @@ App.ApplicationView = Ember.View.extend({
       fjs.parentNode.insertBefore(js, fjs);
     }
 
-    $('.navbar.nav a').on('click', function(){
+    $('.navbar .nav a').on('click', function(){
       if ($(window).width() <= 768) {
         $(".navbar-toggle").click();
       }
