@@ -14,8 +14,8 @@ App.PerformerRoute = Ember.Route.extend({
     var _this = this;
     //this.store.find('performer', {Name: params.Name});
     //return this.store.find('performer').then(function() {
-      console.log(_this.store.find('performer', {Name: params.Name}));
-    return _this.store.find('performer', {Name: params.Name});
+
+    return this.store.find(App.Performer, {Name: params.Name});
     //});
     // console.log(params);
     // this.store.find('performer');
