@@ -13,6 +13,7 @@ App.PerformerRoute = Ember.Route.extend({
     // });
     var _this = this;
     //this.store.find('performer', {Name: params.Name});
+    this.set('params_slug',params.slug);
     return this.store.find('performer');
 
     // .then(function() {
@@ -28,8 +29,12 @@ App.PerformerRoute = Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
-    console.log(model);
-    controller.set('model', model);
+    for(var performer in b.content) {
+      if (performer.get('slug') === performer.get('params_slug')) {
+        controller.set('model', performer);
+        return;
+      }
+    }
   }
   // model: function() {
   //   return $.ajax({
