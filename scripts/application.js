@@ -4098,7 +4098,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="row">\n  <div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-3">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-3">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
     f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
@@ -4106,7 +4106,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
