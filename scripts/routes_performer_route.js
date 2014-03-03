@@ -14,29 +14,28 @@ App.PerformerRoute = Ember.Route.extend({
     var _this = this;
     //this.store.find('performer', {Name: params.Name});
     this.set('params_slug',params.slug);
-    return this.store.find('performer');
+    return this.store.find('performer').then(function() {
 
-    // .then(function() {
-
-    //   return _this.store.find(App.Performer, params.id);
-    // });
+      return _this.store.find(App.Performer, params.id);
+    });
     // console.log(params);
     // this.store.find('performer');
     // return this.store.filter(App.Performer, function(record){
     //   console.log(record.get('Name') == 'Beth Stelling');
     //   return true;
     // });
-  },
-
-  setupController: function(controller, model) {
-    for(var performer in model.content) {
-      if (!model.content[performer] || !model.content[performer].get) continue;
-      if (model.content[performer].get('slug') === model.content[performer].get('params_slug')) {
-        controller.set('model', model.content[performer]);
-        return;
-      }
-    }
   }
+  //,
+
+  // setupController: function(controller, model) {
+  //   for(var performer in model.content) {
+  //     if (!model.content[performer] || !model.content[performer].get) continue;
+  //     if (model.content[performer].get('slug') === model.content[performer].get('params_slug')) {
+  //       controller.set('model', model.content[performer]);
+  //       return;
+  //     }
+  //   }
+  //}
   // model: function() {
   //   return $.ajax({
   //     url: 'https://bridgetown-dev.squarespace.com/performers/?format=json-pretty',
