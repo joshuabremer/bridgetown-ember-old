@@ -4553,8 +4553,9 @@ App.PerformerController = Ember.ObjectController.extend({
     model: function() {}
 }), App.PerformerRoute = Ember.Route.extend({
     model: function(a) {
+        var b = this;
         return this.store.find("performer").then(function() {
-            return this.store.find(App.Performer, {
+            return b.store.find(App.Performer, {
                 Name: a.Name
             });
         });
