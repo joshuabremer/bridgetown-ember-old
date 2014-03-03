@@ -26,6 +26,7 @@ App.PerformerRoute = Ember.Route.extend({
   },
 
   setupController: function(controller, model) {
+    console.log(model);
     controller.set('model', {});
   }
   // model: function() {

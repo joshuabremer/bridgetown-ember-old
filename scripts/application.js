@@ -4562,8 +4562,8 @@ App.PerformerController = Ember.ObjectController.extend({
             return b.store.find(App.Performer, a.id);
         });
     },
-    setupController: function(a) {
-        a.set("model", {});
+    setupController: function(a, b) {
+        console.log(b), a.set("model", {});
     }
 }), App.PerformersRoute = Ember.Route.extend({
     model: function() {
