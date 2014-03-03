@@ -2850,7 +2850,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
         return a.filter(function(a) {
             for (var c in b) if (b.hasOwnProperty(c)) {
                 var d = b[c];
-                if (console.log(d), a[c] !== d) return !1;
+                if (console.log(a[c]), a[c] !== d) return !1;
             }
             return !0;
         });
