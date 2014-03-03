@@ -6,7 +6,20 @@ App.Store = DS.Store.extend({
   revision: 11,
   //adapter: DS.RESTAdapter.create()
   //adapter: DS.LSAdapter.create()
-  adapter: DS.FixtureAdapter
+  adapter: DS.FixtureAdapter.extend({
+    queryFixtures: function(fixtures, query, type) {
+      console.log(query);
+      console.log(type);
+      return fixtures.filter(function(item) {
+          for(var prop in query) {
+              if( item[prop] != query[prop]) {
+                  return false;
+              }
+          }
+          return true;
+      });
+    }
+  })
 });
 
 

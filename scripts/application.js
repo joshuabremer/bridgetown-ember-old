@@ -2847,7 +2847,14 @@ var App = Ember.Application.create({
 
 App.Store = DS.Store.extend({
     revision: 11,
-    adapter: DS.FixtureAdapter
+    adapter: DS.FixtureAdapter.extend({
+        queryFixtures: function(a, b, c) {
+            return console.log(b), console.log(c), a.filter(function(a) {
+                for (var c in b) if (a[c] != b[c]) return !1;
+                return !0;
+            });
+        }
+    })
 }), App.XSpinnerComponent = Ember.Component.extend({
     lines: 12,
     length: 6,
