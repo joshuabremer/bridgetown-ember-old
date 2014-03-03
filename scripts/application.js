@@ -3939,7 +3939,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, g ? g.call(b, "header", h) : j.call(b, "partial", "header", h)))), e.buffer.push('\n\n  \n\n  <div class="container main-content">\n    <div class="row">\n      '), 
+    }, g ? g.call(b, "header", h) : j.call(b, "partial", "header", h)))), e.buffer.push('\n\n  \n  <div class="main-content">\n    <div class="container">\n      <div class="row">\n        '), 
     e.buffer.push(k((g = c.outlet || b && b.outlet, h = {
         hash: {},
         hashTypes: {},
@@ -3947,7 +3947,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, g ? g.call(b, "jumbotron", h) : j.call(b, "outlet", "jumbotron", h)))), e.buffer.push("\n    </div>\n  "), 
+    }, g ? g.call(b, "jumbotron", h) : j.call(b, "outlet", "jumbotron", h)))), e.buffer.push("\n      </div>\n    </div>\n  "), 
     f = c._triageMustache.call(b, "outlet", {
         hash: {},
         hashTypes: {},
@@ -3955,7 +3955,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n\n  </div>\n  <div id="push"></div>\n</div>\n\n'), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n  </div>\n  <div id="push"></div>\n</div>\n\n'), 
     e.buffer.push(k((g = c.partial || b && b.partial, h = {
         hash: {},
         hashTypes: {},
