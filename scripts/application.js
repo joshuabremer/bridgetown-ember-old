@@ -2943,6 +2943,9 @@ App.Store = DS.Store.extend({
     categories: DS.hasMany("category"),
     Name: DS.attr("string"),
     PhotoUrl: DS.attr("string"),
+    Tier: function() {
+        return Math.random();
+    },
     slug: function() {
         return sluggify(this.get("Name"));
     }.property("Name"),
@@ -3700,7 +3703,10 @@ App.Store = DS.Store.extend({
     id: "5919"
 } ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
 App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
-App.PerformerController = Ember.ObjectController.extend({}), App.ApplicationView = Ember.View.extend({
+App.PerformerController = Ember.ObjectController.extend({
+    sortProperties: [ "Tier" ],
+    sortAscending: !0
+}), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
         var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
         document.getElementById("twitter-wjs") || (a = document.createElement("script"), 

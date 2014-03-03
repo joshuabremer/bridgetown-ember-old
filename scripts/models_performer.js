@@ -6,7 +6,9 @@ App.Performer = DS.Model.extend({
 
   PhotoUrl: DS.attr('string'),
 
-  //urlId: DS.attr('string'),
+  Tier: function() {
+    return Math.random();
+  },
 
   slug: function() {
     return sluggify(this.get('Name'));
