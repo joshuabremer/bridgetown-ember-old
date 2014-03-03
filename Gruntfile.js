@@ -49,11 +49,11 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'scripts/*.js']
     },
-    clean: ["./styles/main.css", "./scripts/templates.js","./scripts/application.js"],
+    clean: ["./styles/style.css", "./scripts/templates.js","./scripts/application.js"],
     sass: {
       dist: {
         files: {
-            './styles/main.css': './styles/main.scss'
+            './styles/style.css': './styles/style.scss'
         }
       }
     },
