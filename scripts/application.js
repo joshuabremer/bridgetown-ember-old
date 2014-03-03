@@ -4545,8 +4545,10 @@ App.PerformerController = Ember.ObjectController.extend({
 }), App.NewspostsRoute = Ember.Route.extend({
     model: function() {}
 }), App.PerformerRoute = Ember.Route.extend({
-    model: function(a) {
-        return this.store.find("performer", a.id);
+    model: function() {
+        this.get("store").filter("Name", function(a) {
+            return "Beth Stelling" == a.get("Name");
+        });
     }
 }), App.PerformersRoute = Ember.Route.extend({
     model: function() {

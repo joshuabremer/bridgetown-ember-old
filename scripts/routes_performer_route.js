@@ -11,7 +11,11 @@ App.PerformerRoute = Ember.Route.extend({
     //   data.item.headshot = data.item.assetUrl;
     //   return data.item;
     // });
-    return this.store.find('performer', params.id);
+    //return this.store.find('performer', params.id);
+
+    this.get('store').filter('Name', function(record){
+      return record.get('Name') == 'Beth Stelling';
+    });
   }
   // model: function() {
   //   return $.ajax({
