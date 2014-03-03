@@ -1,158 +1,121 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+******************************************************************/
+
+
+//
+// IMPORTING STYLES
+//
+
+// import normalize
+
+// import mixins
 @import "bootstrap";
 @import "bootstrap-theme";
+@import "mixins";
 
-$color1: #c8bf89;
-$color2: #695b53;
-$color3: #448184;
-$color4: #8dd1aa;
-$color5: #89e894;
-// Squarespace cleanup
-.row.sqs-row {
-  margin:0;
+/*
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*/
+
+// styles in base.scss
+@import "base";
+
+/*
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*/
+@media only screen and (min-width: 481px) {
+
+  // styles in 481up.scss
+  @import "481up";
+
+} // end of media query
+
+/*
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 768px) {
+
+  // import grids
+  //@import "grid";
+
+  // styles in 768up.scss
+  @import "768up";
+
+} // end of media query
+
+/*
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*/
+@media only screen and (min-width: 992px) {
+
+  // styles in 992up.scss
+  @import "992up";
+
+} // end of media query
+
+/*
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*/
+@media only screen and (min-width: 1200px) {
+
+  // styles in 1200up.scss
+  @import "1200up";
+
+} // end of media query
+
+/*
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+
+  // styles in 2x.scss
+  @import "2x";
+
+} // end of media query
+
+/*
+iPHONE 5 MEDIA QUERY
+Want to get fancy for no good reason? Knock yourself out.
+*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  
+  // iPhone 5 or iPod Touch 5th generation styles (you can include your own file if you want)
+  
 }
 
-html {
-  min-height: 100%;
-}
-body {
-  background: black url('../assets/bg-portland.jpg') no-repeat top center;
-  background-size:100% auto;
-}
-
-.main-content {
-  background-color: #E6E6E6;
-  background: rgba(250,250,250,.94);
-  color:#6c6c6c;
-  padding-bottom:20px;
-  margin-top: 80px;
-}
-
-
-//HEADER
-
-.navbar {
-  a.active {
-    color:white;
-  }
-  .nav li span {
-    padding-bottom:3px;
-  }
-  .header-color1 span {
-    border-bottom: 3px $color1 solid;
-  }
-
-  .header-color2 span {
-    border-bottom: 3px $color2 solid;
-  }
-
-  .header-color3 span {
-    border-bottom: 3px $color3 solid;
-  }
-
-  .header-color4 span {
-    border-bottom: 3px $color4 solid;
-  }
-
-  .header-color5 span {
-    border-bottom: 3px $color5 solid;
-  }
-}
-// JUMBOTRON
-.jumbotron {
-  color:white;
-  &.jumbotron-page-header {
-    @extend .row;
-  }
-  &.jumbotron-default {
-    background:transparent;
-    color:#333;
-  }
-  &.jumbotron-minor {
-    padding-top:20px;
-    padding-bottom:20px;
-  }
-  &.jumbotron-tiny {
-    padding-top:10px;
-    padding-bottom:10px;
-    h2 {
-      margin-top:10px;
-      margin-bottom:10px;
-    }
-  }
-  &.jumbotron-color-1 {
-    background-color: $color1;
-  }
-  &.jumbotron-color-2 {
-    background-color: $color2;
-  }
-  &.jumbotron-color-3 {
-    background-color: $color3;
-  }
-  &.jumbotron-color-4 {
-    background-color: $color4;
-  }
-  &.jumbotron-color-5 {
-    background-color: $color5;
-  }
-}
-//INDEX
-.jumbotron-index {
-  background: #89e894;
-  color:white;
-}
-
-// PERFORMERS
-.jumbotron-performers {
-  background: #008080;
-  color:white;
-}
-.performer-box {
-  img {
-    border:2px solid #999;
-  }
-  legend {
-    height: 3em;
-    overflow: hidden;
-    border:0;
-    text-align:left;
-  }
-}
-
-.single-performer {
-  .performer-headshot {
-    border:2px solid #999;
-  }
-}
-
-
-
-// FOOTER
-
-.site-footer {
-  text-align:center;
-  background: black;
-  border-top: 1px solid #444;
-  margin-top: 20px;
-  padding-top: 20px;
-  color:#BBB;
-  font-size:.85em;
-  .social {
-    margin-bottom: 1em;
-    text-align: center;
-  }
-  .social-buttons li {
-    display: inline-block;
-    line-height: 1;
-    padding: 5px 8px;
-    list-style:none;
-    }
-    .footer-links {
-      margin-top: 1em;
-      padding-left: 0;
-      color: #999;
-    }
-    .footer-links li {
-      display: inline;
-      padding: 0 2px;
-    }
+/*
+PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print {
+  @import "print";
 }

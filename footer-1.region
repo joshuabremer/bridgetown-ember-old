@@ -4,7 +4,5 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.6/ember-data.min.js"></script>
   <script src="/scripts/application.js"></script>
 
-  <script>__reloadServerUrl="ws://localhost:1337";</script>
-  <script type="text/javascript" src="http://localhost:1337/__reload/client.js"></script>
   </body>
 </html>
