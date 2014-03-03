@@ -13,10 +13,12 @@ App.PerformerRoute = Ember.Route.extend({
     // });
     var _this = this;
     //this.store.find('performer', {Name: params.Name});
-    return this.store.find('performer').then(function() {
+    return this.store.find('performer');
 
-      return _this.store.find(App.Performer, params.id);
-    });
+    // .then(function() {
+
+    //   return _this.store.find(App.Performer, params.id);
+    // });
     // console.log(params);
     // this.store.find('performer');
     // return this.store.filter(App.Performer, function(record){
@@ -27,7 +29,7 @@ App.PerformerRoute = Ember.Route.extend({
 
   setupController: function(controller, model) {
     console.log(model);
-    controller.set('model', {});
+    controller.set('model', model);
   }
   // model: function() {
   //   return $.ajax({

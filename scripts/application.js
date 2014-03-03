@@ -4556,14 +4556,11 @@ App.PerformerController = Ember.ObjectController.extend({
 }), App.NewspostsRoute = Ember.Route.extend({
     model: function() {}
 }), App.PerformerRoute = Ember.Route.extend({
-    model: function(a) {
-        var b = this;
-        return this.store.find("performer").then(function() {
-            return b.store.find(App.Performer, a.id);
-        });
+    model: function() {
+        return this.store.find("performer");
     },
     setupController: function(a, b) {
-        console.log(b), a.set("model", {});
+        console.log(b), a.set("model", b);
     }
 }), App.PerformersRoute = Ember.Route.extend({
     model: function() {
