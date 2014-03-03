@@ -4546,7 +4546,7 @@ App.PerformerController = Ember.ObjectController.extend({
     model: function() {}
 }), App.PerformerRoute = Ember.Route.extend({
     model: function() {
-        this.get("store").filter("Name", function(a) {
+        this.get("store").filter(App.Performer, function(a) {
             return "Beth Stelling" == a.get("Name");
         });
     }
