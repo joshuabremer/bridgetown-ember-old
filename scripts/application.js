@@ -2838,7 +2838,7 @@ window.Handlebars = Handlebars, function(a, b) {
         !d && c && (c = "/" + c), c += ".json", console.log(c), c;
     },
     defaultSerializer: "DS/LocalREST"
-}), App.FixtureAdapter = DS.FixtureAdapter.extend({
+}), DS.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(a, b) {
         return a.filter(function(a) {
             for (var c in b) if (b.hasOwnProperty(c)) {

@@ -111,7 +111,7 @@ DS.LocalAdapter = DS.RESTAdapter.extend({
 
 
 
-App.FixtureAdapter = DS.FixtureAdapter.extend({
+DS.FixtureAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(records, query, type) {
     return records.filter(function(record) {
         for(var key in query) {
