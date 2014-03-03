@@ -11,8 +11,10 @@ App.PerformerRoute = Ember.Route.extend({
     //   data.item.headshot = data.item.assetUrl;
     //   return data.item;
     // });
-this.store.find('performer');
-    return this.store.find('performer', params.id);
+    var _this = this;
+    return this.store.find('performer').then(function() {
+      return _this.store.find('performer', params.id);
+    });
     // console.log(params);
     // this.store.find('performer');
     // return this.store.filter(App.Performer, function(record){
