@@ -4513,27 +4513,35 @@ App.PerformerController = Ember.ObjectController.extend({
 }), Ember.Route.reopen({
     render: function() {
         this._super(), window.scrollTo(0, 0);
+    },
+    activate: function() {
+        this._super(), console.log(this.get("title")), document.title = this.get("title") ? this.get("title") + " | Bridgetown Comedy Festival" : "Bridgetown Comedy Festival";
     }
 }), App.VenuesRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("venues");
-    }
+    },
+    title: "Venues"
 }), App.ShowsRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("shows");
-    }
+    },
+    title: "Shows"
 }), App.HistoryRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("history");
-    }
+    },
+    title: "History"
 }), App.PressRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("press");
-    }
+    },
+    title: "Press"
 }), App.ContactRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("contact");
-    }
+    },
+    title: "Contact"
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {}
 }), App.CatchAllRoute = Ember.Route.extend({
@@ -4563,9 +4571,11 @@ App.PerformerController = Ember.ObjectController.extend({
         return this.set("params_slug", a.slug), this.store.find("performer").then(function() {
             return b.store.find(App.Performer, a.id);
         });
-    }
+    },
+    title: "Performer"
 }), App.PerformersRoute = Ember.Route.extend({
     model: function() {
         return this.store.find("performer");
-    }
+    },
+    title: "Performers"
 });

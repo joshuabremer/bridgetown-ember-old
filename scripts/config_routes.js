@@ -44,32 +44,47 @@ Ember.Route.reopen({
   render: function(controller, model) {
     this._super();
     window.scrollTo(0, 0);
+  },
+  activate: function() {
+    this._super();
+    console.log(this.get('title'));
+    if (this.get('title')) {
+      document.title = this.get('title') + ' | Bridgetown Comedy Festival';
+    } else {
+      document.title = 'Bridgetown Comedy Festival';
+    }
+    
   }
 });
 
 App.VenuesRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
-    model: function() {return _retrievePageJSON('venues');}
+    model: function() {return _retrievePageJSON('venues');},
+    title: 'Venues'
 });
 
 App.ShowsRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
-    model: function() {return _retrievePageJSON('shows');}
+    model: function() {return _retrievePageJSON('shows');},
+    title: 'Shows'
 });
 
 App.HistoryRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
-    model: function() {return _retrievePageJSON('history');}
+    model: function() {return _retrievePageJSON('history');},
+    title: 'History'
 });
 
 App.PressRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
-    model: function() {return _retrievePageJSON('press');}
+    model: function() {return _retrievePageJSON('press');},
+    title: 'Press'
 });
 
 App.ContactRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
-    model: function() {return _retrievePageJSON('contact');}
+    model: function() {return _retrievePageJSON('contact');},
+    title: 'Contact'
 });
 
 
