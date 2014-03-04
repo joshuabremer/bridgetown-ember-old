@@ -93,6 +93,8 @@ h6,
 .jumbotron {
   color:white;
   &.jumbotron-page-header {
+    background-image: url('../assets/header-lights-bg.png');
+    background-size:cover;
   }
   &.jumbotron-default {
     background:transparent;
