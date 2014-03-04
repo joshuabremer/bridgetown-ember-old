@@ -14,18 +14,38 @@ getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
 
 
 function getPerformerJSON(url, callback) {
-  var file = fs.createWriteStream("assets/performers.json");
+  //var file = fs.createWriteStream("assets/performers.json");
+  fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
+  fs.writeFileSync("assets/raw_performers.json",'','utf8');
   var request = http.get(url, function(response) {
-    response.pipe(file);
-    response.on('end', function () {
-      buildImages("assets/performers.json");
-      console.log("Created: " + "assets/performers.json");
+    //response.pipe(file);
+    response.on('data', function (chunk) {
+      fs.appendFileSync("scripts/fixtures_performer.js",chunk);
+      fs.appendFileSync("assets/raw_performers.json",chunk);
+    });
+    response.on('end', function (data) {
+      fs.appendFileSync("scripts/fixtures_performer.js",";");
+      replacePerformerIdWithId("scripts/fixtures_performer.js");
+      console.log("Created: " + "scripts/fixtures_performer.js");
+      buildImages("assets/raw_performers.json");
+    });
+  });
+}
+
+function replacePerformerIdWithId(filepath, callback) {
+  fs.readFile(filepath, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    var result = data.replace(/PerformerId/g, "id");
+    fs.writeFile(filepath, result, 'utf8', function (err) {
+       if (err) return console.log(err);
     });
   });
 }
 
 function buildImages(path) {
-  fs.mkdir('tmp');
+  fs.mkdir('tmp', function() {});
   fs.readFile(path, 'utf8', function(err,data) {
       var performers = eval(data);
       performers.forEach(function(performer) {
@@ -47,22 +67,21 @@ function buildImageFromURL(name,url) {
 }
 
 function buildThumbnail(imgSrc, imgDest) {
-    easyimg.thumbnail(
-      {
-         src: imgSrc,
-         dst: imgDest,
-         width:300, height:300,
-         x:0, y:0
-         },
-      function(err, image) {
-         if (err) throw err;
-         console.log("Resized and cropped: " + image.width + " x " + image.height);
-         fs.unlink(imgSrc, function() {
-          console.log("Deleted tmp file: " + imgSrc);
-         });
-         
-      }
-    );
+  easyimg.thumbnail(
+    {
+     src: imgSrc,
+     dst: imgDest,
+     width:300, height:300,
+     x:0, y:0
+     },
+    function(err, image) {
+     if (err) throw err;
+     console.log("Resized and cropped: " + image.width + " x " + image.height);
+     fs.unlink(imgSrc, function() {
+      console.log("Deleted tmp file: " + imgSrc);
+     });
+    }
+  );
 }
 
 function cleanStr(string) {

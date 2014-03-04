@@ -27,6 +27,7 @@ module.exports = function(grunt) {
           'scripts/config_app.js',
           'scripts/components_*.js',
           'scripts/models_*.js',
+          'scripts/fixtures_*.js',
           'scripts/controllers_*.js',
           'scripts/views_*.js',
           'scripts/templates.js',
@@ -118,7 +119,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-imageoptim');
 
   grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
-  grunt.registerTask('build', ['build_fixtures','imageoptim','jshint','clean','emberhandlebars','uglify','sass']);
+  grunt.registerTask('build', ['shell:build_fixtures','imageoptim','jshint','clean','emberhandlebars','uglify','sass']);
 
 
 };
