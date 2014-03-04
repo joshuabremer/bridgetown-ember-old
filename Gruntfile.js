@@ -57,6 +57,11 @@ module.exports = function(grunt) {
         }
       }
     },
+    imageoptim: {
+      myTask: {
+        src: ['assets']
+      }
+    },
     reload: {
         port: 6001,
         proxy: {
@@ -110,8 +115,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-reload');
+  grunt.loadNpmTasks('grunt-imageoptim');
 
   grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
+  grunt.registerTask('build', ['build_fixtures','imageoptim','jshint','clean','emberhandlebars','uglify','sass']);
 
 
 };
