@@ -1,4 +1,4 @@
-/*! my-project-name 2014-03-03 */
+/*! my-project-name 2014-03-04 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -4409,7 +4409,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n  '), 
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container">\n<div class="row">\n  '), 
     i = c.each.call(b, "performer", "in", "controller", {
         hash: {},
         hashTypes: {},
@@ -4419,7 +4419,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b, b, b ],
         types: [ "ID", "ID", "ID" ],
         data: e
-    }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n</div>\n\n"), j;
+    }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n</div>\n</div>\n\n"), j;
 }), Ember.TEMPLATES.press = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
