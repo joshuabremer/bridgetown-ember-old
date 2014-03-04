@@ -4125,7 +4125,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="row">\n<div class="container">\n    <div class="row centered">\n      <div class="col-sm-6">\n        '), 
+    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="container">\n  <div class="row centered">\n    <div class="col-sm-6">\n      '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4133,7 +4133,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n      </div><!-- col-lg-6 -->\n\n      <div class="col-sm-6 hidden-xs">\n        <h3>@bridgetown</h3>\n        '), 
+    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n    </div><!-- col-lg-6 -->\n\n    <div class="col-sm-6 hidden-xs">\n      <h3>@bridgetown</h3>\n      '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4142,7 +4142,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, f ? f.call(b, "recent_tweets", g) : i.call(b, "partial", "recent_tweets", g)))), 
-    e.buffer.push('\n      </div><!-- col-lg-6 -->\n      <div class="clearfix"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->\n</div>\n\n\n'), 
+    e.buffer.push('\n    </div><!-- col-lg-6 -->\n    <div class="clearfix"></div>\n  </div><!-- row -->\n  <br>\n  <br>\n</div><!-- container -->\n\n\n\n'), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},

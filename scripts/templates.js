@@ -258,11 +258,11 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class=\"row\">\n<div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-sm-6\">\n        ");
+  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class=\"container\">\n  <div class=\"row centered\">\n    <div class=\"col-sm-6\">\n      ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "news", options) : helperMissing.call(depth0, "partial", "news", options))));
-  data.buffer.push("\n      </div><!-- col-lg-6 -->\n\n      <div class=\"col-sm-6 hidden-xs\">\n        <h3>@bridgetown</h3>\n        ");
+  data.buffer.push("\n    </div><!-- col-lg-6 -->\n\n    <div class=\"col-sm-6 hidden-xs\">\n      <h3>@bridgetown</h3>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "recent_tweets", options) : helperMissing.call(depth0, "partial", "recent_tweets", options))));
-  data.buffer.push("\n      </div><!-- col-lg-6 -->\n      <div class=\"clearfix\"></div>\n    </div><!-- row -->\n    <br>\n    <br>\n  </div><!-- container -->\n</div>\n\n\n");
+  data.buffer.push("\n    </div><!-- col-lg-6 -->\n    <div class=\"clearfix\"></div>\n  </div><!-- row -->\n  <br>\n  <br>\n</div><!-- container -->\n\n\n\n");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "partial", "sponsors", options))));
   data.buffer.push("\n\n");
   return buffer;
