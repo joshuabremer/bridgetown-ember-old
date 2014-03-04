@@ -11,6 +11,10 @@ and will be used across all viewports.
 
 ******************************************************************/
 
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
 $color1: #c8bf89;
 $color2: #695b53;
 $color3: #448184;
@@ -27,6 +31,7 @@ html {
 
 body {
   background:black;
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
 }
 
 .main-content {
