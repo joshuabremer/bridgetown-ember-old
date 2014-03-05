@@ -11,8 +11,10 @@ and will be used across all viewports.
 
 ******************************************************************/
 
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
 
 $color1: #c8bf89;
@@ -31,7 +33,7 @@ html {
 
 body {
   background:black;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', sans-serif;
 }
 h1,
 h2,
@@ -45,7 +47,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Bitter', sans-serif;
 }
 
 .main-content {

@@ -1,4 +1,4 @@
-/*! my-project-name 2014-03-04 */
+/*! my-project-name 2014-03-05 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }

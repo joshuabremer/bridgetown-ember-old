@@ -9,6 +9,7 @@
     <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
 
     {squarespace-headers}
+    <script src="/scripts/vendor_respond.js"></script>
     </head>
 
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
