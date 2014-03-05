@@ -4133,7 +4133,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n    </div><!-- col-lg-6 -->\n\n    <div class="col-sm-6 hidden-xs">\n      <h3>@bridgetown</h3>\n      '), 
+    }, f ? f.call(b, "news", g) : i.call(b, "partial", "news", g)))), e.buffer.push('\n    </div><!-- col-lg-6 -->\n\n    <div class="col-sm-6">\n      <h3>@bridgetown</h3>\n      '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4150,7 +4150,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "sponsors", g) : i.call(b, "partial", "sponsors", g)))), e.buffer.push("\n\n"), 
+    }, f ? f.call(b, "sponsors", g) : i.call(b, "partial", "sponsors", g)))), e.buffer.push("\n"), 
     h;
 }), Ember.TEMPLATES.jumbotron_index = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
