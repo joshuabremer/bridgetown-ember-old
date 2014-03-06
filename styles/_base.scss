@@ -12,9 +12,6 @@ and will be used across all viewports.
 ******************************************************************/
 
 
-//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-
-
 $color1: #c8bf89;
 $color2: #695b53;
 $color3: #448184;
@@ -31,21 +28,27 @@ html {
 
 body {
   background:black;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Cantarell', sans-serif;
 }
-h1,
+h1.h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;}
+// h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-.h1,
+// .h1,
 .h2,
 .h3,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .main-content {
