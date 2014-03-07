@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-03-06 */
+/*! bridgetowncomedy.com 2014-03-07 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -4380,7 +4380,7 @@ App.PerformerController = Ember.ObjectController.extend({
             types: [ "STRING", "ID" ],
             data: b
         }, d = e ? e.call(a, "performer", "performer", f) : m.call(a, "link-to", "performer", "performer", f), 
-        (d || 0 === d) && b.buffer.push(d), b.buffer.push("\n      </div>\n      <legend>"), 
+        (d || 0 === d) && b.buffer.push(d), b.buffer.push("\n      </div>\n      <legend>\n        "), 
         e = c["link-to"] || a && a["link-to"], f = {
             hash: {},
             hashTypes: {},
@@ -4391,7 +4391,7 @@ App.PerformerController = Ember.ObjectController.extend({
             types: [ "STRING", "ID" ],
             data: b
         }, d = e ? e.call(a, "performer", "performer", f) : m.call(a, "link-to", "performer", "performer", f), 
-        (d || 0 === d) && b.buffer.push(d), b.buffer.push("</legend>\n    </div>\n    "), 
+        (d || 0 === d) && b.buffer.push(d), b.buffer.push("\n      </legend>\n    </div>\n    "), 
         i;
     }
     function g(a, b) {
@@ -4413,15 +4413,21 @@ App.PerformerController = Ember.ObjectController.extend({
         }))), b.buffer.push(" />\n        "), d;
     }
     function h(a, b) {
-        var d;
-        d = c._triageMustache.call(a, "performer.Name", {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
+        var d = "";
+        return b.buffer.push("\n          "), b.buffer.push(k(c._triageMustache.call(a, "performer.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: a
+            },
             contexts: [ a ],
             types: [ "ID" ],
             data: b
-        }), b.buffer.push(d || 0 === d ? d : "");
+        }))), b.buffer.push("\n        "), d;
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -4436,8 +4442,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b, b, b ],
         types: [ "ID", "ID", "ID" ],
         data: e
-    }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </div>\n</div>\n\n"), 
-    j;
+    }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </div>\n</div>\n"), j;
 }), Ember.TEMPLATES.press = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};

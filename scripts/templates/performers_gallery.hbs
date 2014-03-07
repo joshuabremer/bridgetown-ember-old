@@ -17,9 +17,12 @@
         <img class="lazy img-responsive" width="300" height="300" {{bind-attr data-original="performer.headshot300" }} />
         {{/link-to}}
       </div>
-      <legend>{{#link-to "performer" performer }}{{ performer.Name }}{{/link-to}}</legend>
+      <legend>
+        {{#link-to "performer" performer }}
+          {{{ performer.Name }}}
+        {{/link-to}}
+      </legend>
     </div>
     {{/each}}
   </div>
 </div>
-
