@@ -77,19 +77,19 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   
-  data.buffer.push("<span>History</span>");
+  data.buffer.push("<span>Shows</span>");
   }
 
 function program9(depth0,data) {
   
   
-  data.buffer.push("<span>Press</span>");
+  data.buffer.push("<span>History</span>");
   }
 
 function program11(depth0,data) {
   
   
-  data.buffer.push("<span>Schedule (In Development)</span>");
+  data.buffer.push("<span>Press</span>");
   }
 
 function program13(depth0,data) {
@@ -109,16 +109,16 @@ function program13(depth0,data) {
   data.buffer.push("</li>\n        <li class=\"header-color2\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "performers", options) : helperMissing.call(depth0, "link-to", "performers", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</li>\n        <li class=\"header-color2\">");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "shows", options) : helperMissing.call(depth0, "link-to", "shows", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n       \n        <li class=\"header-color3\">");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "history", options) : helperMissing.call(depth0, "link-to", "history", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "history", options) : helperMissing.call(depth0, "link-to", "history", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n        <li class=\"header-color4\">");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "press", options) : helperMissing.call(depth0, "link-to", "press", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "press", options) : helperMissing.call(depth0, "link-to", "press", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n        <li class=\"header-color1\">");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "schedule", options) : helperMissing.call(depth0, "link-to", "schedule", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n\n\n        <li class=\"header-color5\">");
+  data.buffer.push("</li>\n        \n\n\n        <li class=\"header-color5\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "contact", options) : helperMissing.call(depth0, "link-to", "contact", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n        \n      </ul>\n      <div class=\"navbar-form navbar-right\">\n        <a class=\"btn btn-default\" target=\"_blank\" href=\"http://google.com\">Tickets</a>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n");
@@ -267,7 +267,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class=\"container\">\n  <div class=\"row centered\">\n    <div class=\"col-sm-6\">\n      ");
+  data.buffer.push("<div class=\"jumbotron jumbotron-bg1 jumbotron-color-5 jumbotron-page-header\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class=\"container\">\n  <div class=\"row centered\">\n    <div class=\"col-sm-6\">\n      ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "news", options) : helperMissing.call(depth0, "partial", "news", options))));
   data.buffer.push("\n    </div><!-- col-lg-6 -->\n\n    <div class=\"col-sm-6\">\n      <h3>@bridgetown</h3>\n      ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "recent_tweets", options) : helperMissing.call(depth0, "partial", "recent_tweets", options))));
@@ -467,17 +467,56 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 });Ember.TEMPLATES['shows'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression;
+  var buffer = '', escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push("<div class=\"container\">\n  <h2>");
-  stack1 = helpers._triageMustache.call(depth0, "collection.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "App.ShowsView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n\n\n");
+  return buffer;
+  
+});Ember.TEMPLATES['shows_gallery'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n    <div class=\"col-xs-6 col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box\">\n      <div class=\"performer-thumbnail\">\n        ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "show", "show", options) : helperMissing.call(depth0, "link-to", "show", "show", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h2>\n\n  ");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "mainContent", {hash:{
+  data.buffer.push("\n      </div>\n      <legend>\n        ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "show", "show", options) : helperMissing.call(depth0, "link-to", "show", "show", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n      </legend>\n    </div>\n    ");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = '';
+  data.buffer.push("\n        <img class=\"lazy img-responsive\" width=\"300\" height=\"300\" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'data-original': ("show.headshot300")
+  },hashTypes:{'data-original': "STRING"},hashContexts:{'data-original': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" />\n        ");
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  var buffer = '';
+  data.buffer.push("\n          ");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "show.Name", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n</div>\n\n\n");
+  data.buffer.push("\n        ");
+  return buffer;
+  }
+
+  data.buffer.push("\n<div class=\"jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header\">\n  <div class=\"container\">\n    <div class=\"row centered\">\n      <div class=\"col-lg-8 col-lg-offset-2\">\n      <h1>Shows</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class=\"container\">\n  <div class=\"row\">\n    ");
+  stack1 = helpers.each.call(depth0, "show", "in", "controller", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </div>\n</div>\n");
   return buffer;
   
 });Ember.TEMPLATES['venues'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
