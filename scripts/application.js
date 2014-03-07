@@ -1,4 +1,4 @@
-/*! my-project-name 2014-03-05 */
+/*! bridgetowncomedy.com 2014-03-06 */
 function sluggify(a) {
     return a.replace(/\W/g, "-").toLowerCase();
 }
@@ -2945,12 +2945,10 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     newspost: DS.belongsTo("newspost"),
     name: DS.attr("string")
 }), App.Event = DS.Model.extend({
-    name: DS.attr("string"),
-    start_time: DS.attr("date"),
-    end_time: DS.attr("date"),
-    price: DS.attr("number")
+    performers: DS.hasMany("performer"),
+    Name: DS.attr("string")
 }), App.Performer = DS.Model.extend({
-    categories: DS.hasMany("category"),
+    events: DS.hasMany("event"),
     Name: DS.attr("string"),
     PhotoUrl: DS.attr("string"),
     Tier: function() {
@@ -2966,7 +2964,11 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
     }.property("PhotoUrl")
-}), App.Performer.FIXTURES = [], App.Performer.FIXTURES = [ {
+}), App.Performer.FIXTURES = [], App.Event.FIXTURES = [ {
+    id: 1,
+    Name: "Sample Event",
+    performer: [ 6159 ]
+} ], App.Performer.FIXTURES = [ {
     Name: "Aaron Weaver",
     Bio: "<p>Aaron Weaver started doing stand-up in Chicago in 2008, with a point-of-view so specific, so original, and so hilarious that the rest of the Chicago comedy scene quickly took notice. He rapidly became one of Chicago’s most heralded stand-ups, due to his custom brand of absurd soulfulness and his way of exploring all the smartest and stupidest thoughts that go through all of our heads. Aaron has performed regularly at every comedy club, showcase, and pancake house in Chicago, including the Laugh Factory, Zanies, and The Lincoln Lodge. He has also performed at the TBS Just For Laughs Festival (twice), as well as the Boston Comedy Festival.  Since moving to LA in 2013 he was named one of Comedy Central’s “Comics to Watch” by making it to the final round of their nationwide Up Next competition. Aaron’s positive stage persona is a breath of fresh air, particularly if you like breathing things that are really, really funny.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/aaron_weaver_head_shot1.jpg",
@@ -3839,13 +3841,16 @@ App.PerformerController = Ember.ObjectController.extend({
         b.buffer.push("<span>Press</span>");
     }
     function k(a, b) {
+        b.buffer.push("<span>Schedule (In Development)</span>");
+    }
+    function l(a, b) {
         b.buffer.push("<span>Contact</span>");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var l, m, n, o = "", p = this, q = c.helperMissing;
+    var m, n, o, p = "", q = this, r = c.helperMissing;
     return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n      '), 
-    m = c["link-to"] || b && b["link-to"], n = {
+    n = c["link-to"] || b && b["link-to"], o = {
         hash: {
             "class": "navbar-brand"
         },
@@ -3855,69 +3860,80 @@ App.PerformerController = Ember.ObjectController.extend({
         hashContexts: {
             "class": b
         },
-        inverse: p.noop,
-        fn: p.program(1, f, e),
+        inverse: q.noop,
+        fn: q.program(1, f, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
+    }, m = n ? n.call(b, "index", o) : r.call(b, "link-to", "index", o), (m || 0 === m) && e.buffer.push(m), 
     e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
-    m = c["link-to"] || b && b["link-to"], n = {
+    n = c["link-to"] || b && b["link-to"], o = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(3, g, e),
+        inverse: q.noop,
+        fn: q.program(3, g, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        <li class="header-color2">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, m = n ? n.call(b, "index", o) : r.call(b, "link-to", "index", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push('</li>\n        <li class="header-color2">'), n = c["link-to"] || b && b["link-to"], 
+    o = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(5, h, e),
+        inverse: q.noop,
+        fn: q.program(5, h, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "performers", n) : q.call(b, "link-to", "performers", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n       \n        <li class="header-color3">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, m = n ? n.call(b, "performers", o) : r.call(b, "link-to", "performers", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push('</li>\n       \n        <li class="header-color3">'), n = c["link-to"] || b && b["link-to"], 
+    o = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(7, i, e),
+        inverse: q.noop,
+        fn: q.program(7, i, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        <li class="header-color4">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, m = n ? n.call(b, "history", o) : r.call(b, "link-to", "history", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push('</li>\n        <li class="header-color4">'), n = c["link-to"] || b && b["link-to"], 
+    o = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(9, j, e),
+        inverse: q.noop,
+        fn: q.program(9, j, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        \n\n        <li class="header-color5">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, m = n ? n.call(b, "press", o) : r.call(b, "link-to", "press", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push('</li>\n        <li class="header-color1">'), n = c["link-to"] || b && b["link-to"], 
+    o = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(11, k, e),
+        inverse: q.noop,
+        fn: q.program(11, k, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "contact", n) : q.call(b, "link-to", "contact", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push("</li>\n        \n      </ul>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>"), 
-    o;
+    }, m = n ? n.call(b, "schedule", o) : r.call(b, "link-to", "schedule", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push('</li>\n\n\n        <li class="header-color5">'), n = c["link-to"] || b && b["link-to"], 
+    o = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: q.noop,
+        fn: q.program(13, l, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, m = n ? n.call(b, "contact", o) : r.call(b, "link-to", "contact", o), (m || 0 === m) && e.buffer.push(m), 
+    e.buffer.push("</li>\n        \n      </ul>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n"), 
+    p;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('\n<div class="newspost">\n  <h3 class="newspost-title">2014 Site is Up!</h3>\n  <p>March, 10th, 2014</p>\n  <div class="newspost-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>\n</div>\n\n\n\n');
@@ -4449,6 +4465,25 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: e
     }))), e.buffer.push("\n</div>\n\n\n"), g;
+}), Ember.TEMPLATES.schedule = Ember.Handlebars.template(function(a, b, c, d, e) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var f = "", g = this.escapeExpression;
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    e.buffer.push(g(c._triageMustache.call(b, "mainContent", {
+        hash: {
+            unescaped: "true"
+        },
+        hashTypes: {
+            unescaped: "STRING"
+        },
+        hashContexts: {
+            unescaped: b
+        },
+        contexts: [ b ],
+        types: [ "ID" ],
+        data: e
+    }))), e.buffer.push("\n</div>\n"), f;
 }), Ember.TEMPLATES.shows = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -4506,8 +4541,8 @@ App.PerformerController = Ember.ObjectController.extend({
         path: "/events/:events_id"
     }), this.resource("performers"), this.resource("performer", {
         path: "/performer/:id"
-    }), this.route("venues"), this.route("shows"), this.route("history"), this.route("press"), 
-    this.route("contact"), this.route("catch_all", {
+    }), this.route("schedule"), this.route("venues"), this.route("shows"), this.route("history"), 
+    this.route("press"), this.route("contact"), this.route("catch_all", {
         path: "*:"
     });
 }), Ember.Route.reopen({
@@ -4578,4 +4613,9 @@ App.PerformerController = Ember.ObjectController.extend({
         return this.store.find("performer");
     },
     title: "Performers"
+}), App.ScheduleRoute = Ember.Route.extend({
+    model: function() {
+        return this.store.find("event"), this.store.find("performer");
+    },
+    title: "Schedule"
 });

@@ -29,6 +29,7 @@ App.Router.map(function() {
   // this.route('new_performer', {path: '/performers/new'});
   // end generated routes
 
+  this.route('schedule');
   this.route('venues');
   this.route('shows');
   this.route('history');
@@ -53,7 +54,7 @@ Ember.Route.reopen({
     } else {
       document.title = 'Bridgetown Comedy Festival';
     }
-    
+
   }
 });
 
@@ -98,5 +99,3 @@ function _retrievePageJSON(page) {
     return data;
   });
 }
-
-

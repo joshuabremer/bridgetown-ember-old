@@ -1,6 +1,6 @@
 App.Performer = DS.Model.extend({
 
-  categories: DS.hasMany('category'),
+  events: DS.hasMany('event'),
 
   Name: DS.attr('string'),
 

@@ -1,12 +1,9 @@
 App.Event = DS.Model.extend({
 
-  name: DS.attr('string'),
+  performers: DS.hasMany('performer'),
 
-  start_time: DS.attr('date'),
+  Name: DS.attr('string'),
 
-  end_time: DS.attr('date'),
 
-  price: DS.attr('number')
 
 });
-
