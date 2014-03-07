@@ -5292,12 +5292,18 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   padding-bottom: 20px;
   margin-top: 80px; }
 
+.navbar-brand {
+  padding: 0; }
+
+.navbar-brand img {
+  height: 45px; }
+
 .navbar a.active {
   color: white; }
 .navbar .nav li span {
   padding-bottom: 3px; }
 .navbar .header-color1 span {
-  border-bottom: 3px #c8bf89 solid; }
+  border-bottom: 3px #67923d solid; }
 .navbar .header-color2 span {
   border-bottom: 3px #695b53 solid; }
 .navbar .header-color3 span {
@@ -5309,7 +5315,6 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 
 .jumbotron {
   color: white;
-  background-image: url('../assets/header-lights-bg.png');
   background-size: cover; }
   .jumbotron.jumbotron-default {
     background: transparent;
@@ -5324,7 +5329,7 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
       margin-top: 10px;
       margin-bottom: 10px; }
   .jumbotron.jumbotron-color-1 {
-    background-color: #c8bf89; }
+    background-color: #67923d; }
   .jumbotron.jumbotron-color-2 {
     background-color: #695b53; }
   .jumbotron.jumbotron-color-3 {

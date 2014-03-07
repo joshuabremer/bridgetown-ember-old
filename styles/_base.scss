@@ -12,7 +12,7 @@ and will be used across all viewports.
 ******************************************************************/
 
 
-$color1: #c8bf89;
+$color1: #67923d;
 $color2: #695b53;
 $color3: #448184;
 $color4: #8dd1aa;
@@ -66,6 +66,13 @@ h6,
 
 //HEADER
 
+.navbar-brand {
+  padding:0;
+}
+.navbar-brand img {
+  height:45px;
+}
+
 .navbar {
   a.active {
     color:white;
@@ -96,7 +103,7 @@ h6,
 // JUMBOTRON
 .jumbotron {
   color:white;
-  background-image: url('../assets/header-lights-bg.png');
+  //background-image: url('../assets/header-lights-bg.png');
   background-size:cover;
   &.jumbotron-page-header {
 
