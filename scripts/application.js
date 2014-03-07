@@ -3932,7 +3932,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, m = n ? n.call(b, "contact", o) : r.call(b, "link-to", "contact", o), (m || 0 === m) && e.buffer.push(m), 
-    e.buffer.push("</li>\n        \n      </ul>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n"), 
+    e.buffer.push('</li>\n        \n      </ul>\n      <div class="navbar-form navbar-right">\n        <a class="btn btn-default" target="_blank" href="http://google.com">Tickets</a>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
     p;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 

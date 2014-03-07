@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       },
     },
     jshint: {
-      all: ['Gruntfile.js', 'scripts/*.js']
+      src: ['Gruntfile.js', 'scripts/*.js']
     },
     clean: ["./styles/style.css", "./scripts/templates.js","./scripts/application.js"],
     sass: {

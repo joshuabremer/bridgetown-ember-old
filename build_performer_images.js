@@ -25,8 +25,10 @@ function getPerformerJSON(url, callback) {
     });
     response.on('end', function (data) {
       fs.appendFileSync("scripts/fixtures_performer.js",";");
-      replacePerformerIdWithId("scripts/fixtures_performer.js");
-      replaceApostrophes("scripts/fixtures_performer.js");
+      replacePerformerIdWithId("scripts/fixtures_performer.js",function() {
+        replaceApostrophes("scripts/fixtures_performer.js");
+      });
+      
       
       console.log("Created: " + "scripts/fixtures_performer.js");
       buildImages("assets/raw_performers.json");
@@ -53,15 +55,18 @@ function replaceApostrophes(filepath, callback) {
     }
 
     var result = data;
-    result = result.replace(/\\u2018/g, "'");
-    result = result.replace(/\\u2019/g, "'");
-    result = result.replace(/\\u201c/g, "\"");
-    result = result.replace(/\\u2033/g, "\"");
-    result = result.replace(/\\u201d/g, "\"");
+    result = result.replace(/\\u2018/g, "&#x2018;");
+    result = result.replace(/\\u2019/g, "&#x2019;");
+    result = result.replace(/\\u201c/g, "&#x201c;");
+    result = result.replace(/\\u2033/g, "&#x2033;");
+    result = result.replace(/\\u201d/g, "&#x201d;");
     result = result.replace(/\\u00a0/g, " ");
-    result = result.replace(/\\u2026/g, "...");
-    result = result.replace(/\\u2013/g, "-");
-    result = result.replace(/\\u2014/g, "-");
+    result = result.replace(/\\u2026/g, "&#x2026;");
+    result = result.replace(/\\u2013/g, "&#x2013;");
+    result = result.replace(/\\u2014/g, "&#x2014;");
+    result = result.replace(/\\u00e9/g, "&#x00e9;");
+    result = result.replace(/\\u00e1/g, "&#x00e1;");
+
 
     fs.writeFile(filepath, result, 'utf8', function (err) {
        if (err) return console.log(err);
