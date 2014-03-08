@@ -2981,6 +2981,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     slug: function() {
         return sluggify(this.get("Name"));
     }.property("Name"),
+    Bio: DS.attr("string"),
     Copy: DS.attr("string"),
     headshot300: function() {
         return "/assets/show-" + cleanStr(this.get("Name")) + "-300x300.jpg";
@@ -4639,6 +4640,19 @@ App.PerformerController = Ember.ObjectController.extend({
         data: e
     }))), e.buffer.push(' /></p>\n    </div>\n    <div class="col-sm-8">\n      <p>\n        '), 
     e.buffer.push(k(c._triageMustache.call(b, "Copy", {
+        hash: {
+            unescaped: "true"
+        },
+        hashTypes: {
+            unescaped: "STRING"
+        },
+        hashContexts: {
+            unescaped: b
+        },
+        contexts: [ b ],
+        types: [ "ID" ],
+        data: e
+    }))), e.buffer.push("\n        "), e.buffer.push(k(c._triageMustache.call(b, "Bio", {
         hash: {
             unescaped: "true"
         },

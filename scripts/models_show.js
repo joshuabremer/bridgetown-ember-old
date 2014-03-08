@@ -12,6 +12,7 @@ App.Show = DS.Model.extend({
     return sluggify(this.get('Name'));
   }.property('Name'),
 
+  Bio: DS.attr('string'),
   Copy: DS.attr('string'),
 
   headshot300: function() {
