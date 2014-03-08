@@ -4075,7 +4075,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, g ? g.call(b, "header", h) : j.call(b, "partial", "header", h)))), e.buffer.push('\n\n  \n  <div class="main-content">\n    <div class="container">\n      <div class="row">\n        '), 
+    }, g ? g.call(b, "header", h) : j.call(b, "partial", "header", h)))), e.buffer.push('\n\n  \n  <div class="main"><div class="row">\n    <div class="container">\n      <div class="row">\n        '), 
     e.buffer.push(k((g = c.outlet || b && b.outlet, h = {
         hash: {},
         hashTypes: {},
@@ -4091,7 +4091,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n  </div>\n  <div id="push"></div>\n</div>\n\n'), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('\n  </div>\n  <div id="push"></div>\n</div></div>\n\n'), 
     e.buffer.push(k((g = c.partial || b && b.partial, h = {
         hash: {},
         hashTypes: {},
@@ -4113,7 +4113,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n</div>\n<div class="container main-content">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
@@ -4140,7 +4140,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
@@ -4234,7 +4234,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('\n  <div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-3">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
     f = c._triageMustache.call(b, "collection.title", {
         hash: {},
         hashTypes: {},
@@ -4242,7 +4242,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
@@ -4261,7 +4261,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img src="/assets/logo-inverse.png" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="container">\n  <div class="row centered">\n    <div class="col-sm-6">\n      '), 
+    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img src="/assets/logo-inverse.png" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="container main-content">\n  <div class="row centered">\n    <div class="col-sm-6">\n      '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4295,7 +4295,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push(' <div class="row"> <div class="jumbotron jumbotron-default">\n \n   <div class="container">\n    <h1 class="text-center">Loading...</h1>\n    <h2>&nbsp;</h2>\n      <h1>'), 
+    return e.buffer.push(' <div class="row"> <div class="jumbotron jumbotron-default">\n \n   <div class="container main-content">\n    <h1 class="text-center">Loading...</h1>\n      <h2>&nbsp;</h2>\n      <h1>'), 
     e.buffer.push(j((f = c["x-spinner"] || b && b["x-spinner"], g = {
         hash: {
             lines: 12,
@@ -4324,13 +4324,13 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [],
         types: [],
         data: e
-    }, f ? f.call(b, g) : i.call(b, "x-spinner", g)))), e.buffer.push("</h1>\n    </div>\n  </div>\n</div>"), 
+    }, f ? f.call(b, g) : i.call(b, "x-spinner", g)))), e.buffer.push("</h1>\n      <h2>&nbsp;</h2>\n    </div>\n  </div>\n</div>"), 
     h;
 }), Ember.TEMPLATES.newspost = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g = "", h = this.escapeExpression;
-    return e.buffer.push('<div class="container">\n  <h2>'), f = c._triageMustache.call(b, "title", {
+    return e.buffer.push('<div class="container main-content">\n  <h2>'), f = c._triageMustache.call(b, "title", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -4433,7 +4433,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (g || 0 === g) && e.buffer.push(g), e.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer">\n  <div class="row">\n\n    <div class="col-sm-4 text-center">\n      <p><img class="img-responsive performer-headshot" '), 
+    }), (g || 0 === g) && e.buffer.push(g), e.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer main-content">\n  <div class="row">\n\n    <div class="col-sm-4 text-center">\n      <p><img class="img-responsive performer-headshot" '), 
     e.buffer.push(k(c["bind-attr"].call(b, {
         hash: {
             src: "headshot300"
@@ -4552,7 +4552,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container">\n  <div class="row">\n    '), 
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <div class="row">\n    '), 
     i = c.each.call(b, "performer", "in", "controller", {
         hash: {},
         hashTypes: {},
@@ -4575,7 +4575,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
@@ -4594,7 +4594,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f = "", g = this.escapeExpression;
-    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
     e.buffer.push(g(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"
@@ -4624,7 +4624,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (g || 0 === g) && e.buffer.push(g), e.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer">\n  <div class="row">\n\n    <div class="col-sm-4 text-center">\n      <p><img class="img-responsive performer-headshot" '), 
+    }), (g || 0 === g) && e.buffer.push(g), e.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer main-content">\n  <div class="row">\n\n    <div class="col-sm-4 text-center">\n      <p><img class="img-responsive performer-headshot" '), 
     e.buffer.push(k(c["bind-attr"].call(b, {
         hash: {
             src: "headshot300"
@@ -4756,7 +4756,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Shows</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container">\n  <div class="row">\n    '), 
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Shows</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <div class="row">\n    '), 
     i = c.each.call(b, "show", "in", "controller", {
         hash: {},
         hashTypes: {},
@@ -4779,7 +4779,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container">\n  '), 
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
     e.buffer.push(h(c._triageMustache.call(b, "mainContent", {
         hash: {
             unescaped: "true"

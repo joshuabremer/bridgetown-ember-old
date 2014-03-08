@@ -568,22 +568,22 @@ pre code {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .main-content {
+.container, .main {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
 
 @media (min-width: 768px) {
-  .container, .main-content {
+  .container, .main {
     width: 750px; } }
 
 @media (min-width: 992px) {
-  .container, .main-content {
+  .container, .main {
     width: 970px; } }
 
 @media (min-width: 1200px) {
-  .container, .main-content {
+  .container, .main {
     width: 1170px; } }
 
 .container-fluid {
@@ -3523,7 +3523,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
 .container .jumbotron {
   border-radius: 6px; }
 
-.jumbotron .container, .jumbotron .main-content {
+.jumbotron .container, .jumbotron .main {
   max-width: 100%; }
 
 @media screen and (min-width: 768px) {
@@ -5283,14 +5283,15 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 700;
   text-transform: uppercase; }
 
+.main {
+  margin-top: 80px; }
+
 .main-content {
-  padding-left: 0;
-  padding-right: 0;
   background-color: #E6E6E6;
   background: rgba(250, 250, 250, 0.94);
   color: #6c6c6c;
   padding-bottom: 20px;
-  margin-top: 80px; }
+  padding-top: 20px; }
 
 .navbar-brand {
   padding: 0; }
@@ -5303,19 +5304,21 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 .navbar .nav li span {
   padding-bottom: 3px; }
 .navbar .header-color1 span {
-  border-bottom: 3px #67923d solid; }
+  border-bottom: 3px rgba(103, 146, 61, 0.8) solid; }
 .navbar .header-color2 span {
-  border-bottom: 3px #695b53 solid; }
+  border-bottom: 3px rgba(105, 91, 83, 0.8) solid; }
 .navbar .header-color3 span {
-  border-bottom: 3px #448184 solid; }
+  border-bottom: 3px rgba(68, 129, 132, 0.8) solid; }
 .navbar .header-color4 span {
-  border-bottom: 3px #8dd1aa solid; }
+  border-bottom: 3px rgba(141, 209, 170, 0.8) solid; }
 .navbar .header-color5 span {
-  border-bottom: 3px #89e894 solid; }
+  border-bottom: 3px rgba(137, 232, 148, 0.8) solid; }
 
 .jumbotron {
   color: white;
   background-size: cover; }
+  .jumbotron.jumbotron-page-header {
+    margin-bottom: 0; }
   .jumbotron.jumbotron-default {
     background: transparent;
     color: #333; }
@@ -5329,15 +5332,15 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
       margin-top: 10px;
       margin-bottom: 10px; }
   .jumbotron.jumbotron-color-1 {
-    background-color: #67923d; }
+    background-color: rgba(103, 146, 61, 0.8); }
   .jumbotron.jumbotron-color-2 {
-    background-color: #695b53; }
+    background-color: rgba(105, 91, 83, 0.8); }
   .jumbotron.jumbotron-color-3 {
-    background-color: #448184; }
+    background-color: rgba(68, 129, 132, 0.8); }
   .jumbotron.jumbotron-color-4 {
-    background-color: #8dd1aa; }
+    background-color: rgba(141, 209, 170, 0.8); }
   .jumbotron.jumbotron-color-5 {
-    background-color: #89e894; }
+    background-color: rgba(137, 232, 148, 0.8); }
 
 .jumbotron-index {
   background: #89e894;

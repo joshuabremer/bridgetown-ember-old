@@ -12,11 +12,11 @@ and will be used across all viewports.
 ******************************************************************/
 
 
-$color1: #67923d;
-$color2: #695b53;
-$color3: #448184;
-$color4: #8dd1aa;
-$color5: #89e894;
+$color1: rgba(#67923d,.8);
+$color2: rgba(#695b53,.8);
+$color3: rgba(#448184,.8);
+$color4: rgba(#8dd1aa,.8);
+$color5: rgba(#89e894,.8);
 // Squarespace cleanup
 .row.sqs-row {
   margin:0;
@@ -52,15 +52,26 @@ h6,
   text-transform: uppercase;
 }
 
-.main-content {
+.main {
   @extend .container;
-  padding-left:0;
-  padding-right:0;
+  // padding-left:0;
+  // padding-right:0;
+  // background-color: #E6E6E6;
+  // background: rgba(250,250,250,.94);
+  // color:#6c6c6c;
+  // padding-bottom:20px;
+  margin-top: 80px;
+}
+
+.main-content {
+  // @extend .container;
+  // padding-left:0;
+  // padding-right:0;
   background-color: #E6E6E6;
   background: rgba(250,250,250,.94);
   color:#6c6c6c;
   padding-bottom:20px;
-  margin-top: 80px;
+  padding-top: 20px;
 }
 
 
@@ -106,7 +117,7 @@ h6,
   //background-image: url('../assets/header-lights-bg.png');
   background-size:cover;
   &.jumbotron-page-header {
-
+    margin-bottom:0;
   }
   &.jumbotron-default {
     background:transparent;
