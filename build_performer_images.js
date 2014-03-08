@@ -5,13 +5,32 @@ var easyimg = require("easyimage");
 
 
 getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
+getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
 
 
 
+http://bridgetown.festivalthing.com/export/submitted-shows/json
 
-
-
-
+function getShowJSON(url, callback) {
+  //var file = fs.createWriteStream("assets/performers.json");
+  fs.writeFileSync("scripts/fixtures_show.js","/*jshint -W100 */\nApp.Show.FIXTURES = ",'utf8');
+  fs.writeFileSync("assets/raw_shows.json",'','utf8');
+  var request = http.get(url, function(response) {
+    //response.pipe(file);
+    response.on('data', function (chunk) {
+      fs.appendFileSync("scripts/fixtures_show.js",chunk);
+      fs.appendFileSync("assets/raw_shows.json",chunk);
+    });
+    response.on('end', function (data) {
+      fs.appendFileSync("scripts/fixtures_show.js",";");
+      replaceSubmittedIdWithId("scripts/fixtures_show.js");
+      
+      
+      console.log("Created: " + "scripts/fixtures_show.js");
+      buildImages("assets/raw_shows.json","show");
+    });
+  });
+}
 
 function getPerformerJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
@@ -31,7 +50,19 @@ function getPerformerJSON(url, callback) {
       
       
       console.log("Created: " + "scripts/fixtures_performer.js");
-      buildImages("assets/raw_performers.json");
+      buildImages("assets/raw_performers.json","performer");
+    });
+  });
+}
+
+function replaceSubmittedIdWithId(filepath, callback) {
+  fs.readFile(filepath, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    var result = data.replace(/SubmittedId/g, "id");
+    fs.writeFile(filepath, result, 'utf8', function (err) {
+       if (err) return console.log(err);
     });
   });
 }
@@ -75,24 +106,24 @@ function replaceApostrophes(filepath, callback) {
 }
 
 
-function buildImages(path) {
+function buildImages(path,prefix) {
   fs.mkdir('tmp', function() {});
   fs.readFile(path, 'utf8', function(err,data) {
       var performers = eval(data);
       performers.forEach(function(performer) {
-        buildImageFromURL(performer.Name,performer.PhotoUrl);
+        buildImageFromURL(performer.Name,performer.PhotoUrl,prefix);
       });
   });
 }
 
-function buildImageFromURL(name,url) {
+function buildImageFromURL(name,url,prefix) {
   var filename = url.replace(/^.*[\\\/]/, '');
   var file = fs.createWriteStream("tmp/" + filename);
   var request = http.get(url, function(response) {
     console.log("Created: " + "tmp/" + filename);
     response.pipe(file);
     response.on('end', function () {
-      buildThumbnail("tmp/" + filename, "assets/performer-" + cleanStr(name) + "-300x300.jpg");
+      buildThumbnail("tmp/" + filename, "assets/" + prefix + "-" + cleanStr(name) + "-300x300.jpg");
     });
   });
 }
