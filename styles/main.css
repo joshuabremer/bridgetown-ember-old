@@ -5304,15 +5304,15 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 .navbar .nav li span {
   padding-bottom: 3px; }
 .navbar .header-color1 span {
-  border-bottom: 3px rgba(103, 146, 61, 0.8) solid; }
+  border-bottom: 3px rgba(103, 146, 61, 0.9) solid; }
 .navbar .header-color2 span {
-  border-bottom: 3px rgba(105, 91, 83, 0.8) solid; }
+  border-bottom: 3px rgba(105, 91, 83, 0.9) solid; }
 .navbar .header-color3 span {
-  border-bottom: 3px rgba(68, 129, 132, 0.8) solid; }
+  border-bottom: 3px rgba(68, 129, 132, 0.9) solid; }
 .navbar .header-color4 span {
-  border-bottom: 3px rgba(141, 209, 170, 0.8) solid; }
+  border-bottom: 3px rgba(141, 209, 170, 0.9) solid; }
 .navbar .header-color5 span {
-  border-bottom: 3px rgba(137, 232, 148, 0.8) solid; }
+  border-bottom: 3px rgba(137, 232, 148, 0.9) solid; }
 
 .jumbotron {
   color: white;
@@ -5332,15 +5332,15 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
       margin-top: 10px;
       margin-bottom: 10px; }
   .jumbotron.jumbotron-color-1 {
-    background-color: rgba(103, 146, 61, 0.8); }
+    background-color: rgba(103, 146, 61, 0.9); }
   .jumbotron.jumbotron-color-2 {
-    background-color: rgba(105, 91, 83, 0.8); }
+    background-color: rgba(105, 91, 83, 0.9); }
   .jumbotron.jumbotron-color-3 {
-    background-color: rgba(68, 129, 132, 0.8); }
+    background-color: rgba(68, 129, 132, 0.9); }
   .jumbotron.jumbotron-color-4 {
-    background-color: rgba(141, 209, 170, 0.8); }
+    background-color: rgba(141, 209, 170, 0.9); }
   .jumbotron.jumbotron-color-5 {
-    background-color: rgba(137, 232, 148, 0.8); }
+    background-color: rgba(137, 232, 148, 0.9); }
 
 .jumbotron-index {
   background: #89e894;

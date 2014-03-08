@@ -4261,7 +4261,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f, g, h = "", i = c.helperMissing, j = this.escapeExpression;
-    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img src="/assets/logo-inverse.png" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="container main-content">\n  <div class="row centered">\n    <div class="col-sm-6">\n      '), 
+    return e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img src="/assets/logo-inverse.png" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="main-content">\n<div class="container">\n  <div class="row centered">\n    <div class="col-sm-6">\n      '), 
     e.buffer.push(j((f = c.partial || b && b.partial, g = {
         hash: {},
         hashTypes: {},
@@ -4286,7 +4286,7 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "sponsors", g) : i.call(b, "partial", "sponsors", g)))), e.buffer.push("\n"), 
+    }, f ? f.call(b, "sponsors", g) : i.call(b, "partial", "sponsors", g)))), e.buffer.push("\n</div>"), 
     h;
 }), Ember.TEMPLATES.jumbotron_index = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
