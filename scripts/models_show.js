@@ -15,7 +15,7 @@ App.Show = DS.Model.extend({
   Copy: DS.attr('string'),
 
   headshot300: function() {
-    return '/assets/performer-' + cleanStr(this.get('Name')) + '-300x300.jpg';
+    return '/assets/show-' + cleanStr(this.get('Name')) + '-300x300.jpg';
   }.property('Name'),
 
   backgroundImageCSS: function() {

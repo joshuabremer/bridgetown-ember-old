@@ -2983,7 +2983,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     }.property("Name"),
     Copy: DS.attr("string"),
     headshot300: function() {
-        return "/assets/performer-" + cleanStr(this.get("Name")) + "-300x300.jpg";
+        return "/assets/show-" + cleanStr(this.get("Name")) + "-300x300.jpg";
     }.property("Name"),
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
