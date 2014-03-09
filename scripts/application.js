@@ -15,6 +15,10 @@ function cleanStr(a) {
     return a.replace(/\W/g, "").toLowerCase();
 }
 
+function isProduction() {
+    return location.hostname.match("bridgetown");
+}
+
 function _retrievePageJSON(a) {
     return host = "https://bridgetown-dev.squarespace.com/", Ember.$.ajax({
         url: host + a + "?format=json-pretty",
@@ -4794,6 +4798,10 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: e
     }))), e.buffer.push("\n</div>\n\n\n"), g;
+}), App.Router.reopen(window.history && window.history.pushState && isProduction() ? {
+    location: "history"
+} : {
+    location: "none"
 }), App.Router.map(function() {
     this.resource("events"), this.resource("events", {
         path: "/events/:events_id"

@@ -1,12 +1,16 @@
-// if (window.history && window.history.pushState) {
-//     App.Router.reopen({
-//       location: 'history'
-//     });
-// } else {
-//   App.Router.reopen({
-//     location: 'none'
-//   });
-// }
+if (window.history && window.history.pushState && isProduction()) {
+    App.Router.reopen({
+      location: 'history'
+    });
+} else {
+  App.Router.reopen({
+    location: 'none'
+  });
+}
+
+function isProduction() {
+  return location.hostname.match('bridgetown');
+}
 
 App.Router.map(function() {
 
