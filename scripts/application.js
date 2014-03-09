@@ -4045,8 +4045,30 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        \n\n\n        <li class="header-color5">'), m = c["link-to"] || b && b["link-to"], 
+    e.buffer.push('</li>\n\n        <li class="dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bridgetown <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            <li class="header-color3">'), 
+    m = c["link-to"] || b && b["link-to"], n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(7, i, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n            <li class="header-color4">'), m = c["link-to"] || b && b["link-to"], 
     n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(9, j, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n          </ul>\n        </li>\n\n\n        \n\n\n        <li class="header-color5">'), 
+    m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
