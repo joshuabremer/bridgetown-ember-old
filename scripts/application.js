@@ -3970,7 +3970,7 @@ App.PerformerController = Ember.ObjectController.extend({
     e.buffer.push("</li>\n    </ul>\n  </div>\n</footer>"), n;
 }), Ember.TEMPLATES._header = Ember.Handlebars.template(function(a, b, c, d, e) {
     function f(a, b) {
-        b.buffer.push("<span>Home</span>");
+        b.buffer.push(' <span class="navbar-brand"><img src="/assets/logo-long-inverse.png" /></span>');
     }
     function g(a, b) {
         b.buffer.push("<span>Performers</span>");
@@ -3990,7 +3990,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var l, m, n, o = "", p = this, q = c.helperMissing;
-    return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n        <span class="navbar-brand"><img src="/assets/logo-long-inverse.png" /></span>\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
+    return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n       '), 
     m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
@@ -4001,8 +4001,8 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        <li class="header-color2">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
+    m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},

@@ -6,12 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <span class="navbar-brand"><img src="/assets/logo-long-inverse.png" /></span>
+       {{#link-to 'index'}} <span class="navbar-brand"><img src="/assets/logo-long-inverse.png" /></span>{{/link-to}}
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="header-color1">{{#link-to 'index'}}<span>Home</span>{{/link-to}}</li>
-        <li class="header-color2">{{#link-to 'performers'}}<span>Performers</span>{{/link-to}}</li>
+        <li class="header-color1">{{#link-to 'performers'}}<span>Performers</span>{{/link-to}}</li>
         <li class="header-color2">{{#link-to 'shows'}}<span>Shows</span>{{/link-to}}</li>
        {{!--  <li>{{#link-to 'venues'}}<span>Venues</span>{{/link-to}}</li>
         <li>{{#link-to 'shows'}}<span>Shows</span>{{/link-to}}</li> --}}
