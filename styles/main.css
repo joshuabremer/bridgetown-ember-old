@@ -5361,6 +5361,9 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 .single-performer .performer-headshot {
   border: 2px solid #999; }
 
+.sponsors-container img {
+  margin-bottom: 20px; }
+
 .site-footer {
   text-align: center;
   background: black;
