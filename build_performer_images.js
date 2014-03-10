@@ -4,12 +4,16 @@ var easyimg = require("easyimage");
 
 
 
-getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
-getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
+// getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
+// getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
 
+cropSponsorImages();
 
-
-http://bridgetown.festivalthing.com/export/submitted-shows/json
+function cropSponsorImages() {
+  buildThumbnail('assets/sponsor-images/taxi-magic.png','assets/sponsor-taxi-magic.png',true);
+  buildThumbnail('assets/sponsor-images/all-things-comedy.png','assets/sponsor-all-things-comedy.png',true);
+  buildThumbnail('assets/sponsor-images/squarespace.png','assets/sponsor-squarespace.png',true);
+}
 
 function getShowJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
@@ -128,20 +132,22 @@ function buildImageFromURL(name,url,prefix) {
   });
 }
 
-function buildThumbnail(imgSrc, imgDest) {
+function buildThumbnail(imgSrc, imgDest, fill) {
+  fill = fill || false;
   easyimg.thumbnail(
     {
      src: imgSrc,
      dst: imgDest,
      width:300, height:300,
-     x:0, y:0
+     x:0, y:0,
+     fill: fill
      },
     function(err, image) {
      if (err) throw err;
      console.log("Resized and cropped: " + image.width + " x " + image.height);
-     fs.unlink(imgSrc, function() {
-      console.log("Deleted tmp file: " + imgSrc);
-     });
+     // fs.unlink(imgSrc, function() {
+     //  console.log("Deleted tmp file: " + imgSrc);
+     // });
     }
   );
 }
