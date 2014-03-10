@@ -10,9 +10,15 @@ var easyimg = require("easyimage");
 cropSponsorImages();
 
 function cropSponsorImages() {
-  buildThumbnail('assets/sponsor-images/taxi-magic.png','assets/sponsor-taxi-magic.png',true);
-  buildThumbnail('assets/sponsor-images/all-things-comedy.png','assets/sponsor-all-things-comedy.png',true);
-  buildThumbnail('assets/sponsor-images/squarespace.png','assets/sponsor-squarespace.png',true);
+  var dir = 'assets/sponsor-images';
+  var files = fs.readdirSync(dir);
+  for(var i in files){
+      if (!files.hasOwnProperty(i)) continue;
+      var fullPath = dir+'/'+files[i];
+      if (!fs.statSync(fullPath).isDirectory()){
+        buildThumbnail(dir + '/' + files[i],'assets/sponsor-' + files[i]);
+      }
+  }
 }
 
 function getShowJSON(url, callback) {
@@ -143,7 +149,10 @@ function buildThumbnail(imgSrc, imgDest, fill) {
      fill: fill
      },
     function(err, image) {
-     if (err) throw err;
+     if (err) {
+      console.log("Error resizing: " + imgSrc);
+      return;
+     };
      console.log("Resized and cropped: " + image.width + " x " + image.height);
      // fs.unlink(imgSrc, function() {
      //  console.log("Deleted tmp file: " + imgSrc);
