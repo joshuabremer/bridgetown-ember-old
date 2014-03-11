@@ -4891,7 +4891,7 @@ App.PerformerController = Ember.ObjectController.extend({
     title: "Contact"
 }), App.fourOhFourRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render("fourohfour");
+        this.render("fourOhFour");
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {}

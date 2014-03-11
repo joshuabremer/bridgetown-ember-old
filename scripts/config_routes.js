@@ -90,7 +90,7 @@ App.ContactRoute = Ember.Route.extend({
 });
 
 App.fourOhFourRoute = Ember.Route.extend({
-  renderTemplate: function() {this.render('fourohfour');},
+  renderTemplate: function() {this.render('fourOhFour');},
 });
 
 
