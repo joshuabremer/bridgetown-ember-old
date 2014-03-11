@@ -4889,7 +4889,11 @@ App.PerformerController = Ember.ObjectController.extend({
         return _retrievePageJSON("contact");
     },
     title: "Contact"
-}), App.fourOhFourRoute = Ember.Route.extend({}), App.ApplicationRoute = Ember.Route.extend({
+}), App.fourOhFourRoute = Ember.Route.extend({
+    renderTemplate: function() {
+        this.render("fourohfour");
+    }
+}), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {}
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
