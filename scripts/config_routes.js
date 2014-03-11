@@ -2,10 +2,6 @@ if (window.history && window.history.pushState && isProduction()) {
     App.Router.reopen({
       location: 'history'
     });
-} else {
-  App.Router.reopen({
-    location: 'none'
-  });
 }
 
 function isProduction() {
