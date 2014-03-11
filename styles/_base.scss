@@ -79,9 +79,6 @@ h6,
 
 .navbar-brand {
   padding:0;
-  .img-responsive {
-    margin:0 auto;
-  }
 }
 .navbar-brand img {
   height:45px;
@@ -114,6 +111,7 @@ h6,
     border-bottom: 3px $color5 solid;
   }
 }
+
 // JUMBOTRON
 .jumbotron {
   color:white;
@@ -152,6 +150,11 @@ h6,
   }
   &.jumbotron-color-5 {
     background-color: $color5;
+  }
+  .header-logo {
+    .img-responsive {
+      margin:0 auto;
+    }
   }
 }
 //INDEX

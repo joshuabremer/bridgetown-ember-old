@@ -5295,8 +5295,6 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 
 .navbar-brand {
   padding: 0; }
-  .navbar-brand .img-responsive {
-    margin: 0 auto; }
 
 .navbar-brand img {
   height: 45px; }
@@ -5343,6 +5341,8 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
     background-color: rgba(141, 209, 170, 0.95); }
   .jumbotron.jumbotron-color-5 {
     background-color: rgba(137, 232, 148, 0.95); }
+  .jumbotron .header-logo .img-responsive {
+    margin: 0 auto; }
 
 .jumbotron-index {
   background: #89e894;
