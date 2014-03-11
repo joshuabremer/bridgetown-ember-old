@@ -4261,7 +4261,7 @@ App.PerformerController = Ember.ObjectController.extend({
         data: e
     }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </tbody>\n</table>\n\n\n"), 
     l;
-}), Ember.TEMPLATES.fourohfour = Ember.Handlebars.template(function(a, b, c, d, e) {
+}), Ember.TEMPLATES.four_oh_four = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var f = "", g = this.escapeExpression;
@@ -4891,7 +4891,7 @@ App.PerformerController = Ember.ObjectController.extend({
     title: "Contact"
 }), App.fourOhFourRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render("fourOhFour");
+        this.render("four_oh_four");
     }
 }), App.ApplicationRoute = Ember.Route.extend({
     setupController: function() {}
