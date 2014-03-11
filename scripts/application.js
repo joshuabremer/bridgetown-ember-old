@@ -4825,8 +4825,6 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: e
     }))), e.buffer.push("\n</div>\n\n\n"), g;
-}), window.history && window.history.pushState && isProduction() && App.Router.reopen({
-    location: "history"
 }), App.Router.map(function() {
     this.resource("events"), this.resource("events", {
         path: "/events/:events_id"

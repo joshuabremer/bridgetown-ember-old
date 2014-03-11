@@ -1,8 +1,8 @@
-if (window.history && window.history.pushState && isProduction()) {
-    App.Router.reopen({
-      location: 'history'
-    });
-}
+// if (window.history && window.history.pushState && isProduction()) {
+//     App.Router.reopen({
+//       location: 'history'
+//     });
+// }
 
 function isProduction() {
   return location.hostname.match('bridgetown');
