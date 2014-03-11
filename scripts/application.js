@@ -4261,6 +4261,25 @@ App.PerformerController = Ember.ObjectController.extend({
         data: e
     }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </tbody>\n</table>\n\n\n"), 
     l;
+}), Ember.TEMPLATES.fourohfour = Ember.Handlebars.template(function(a, b, c, d, e) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var f = "", g = this.escapeExpression;
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Page Not Found</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
+    e.buffer.push(g(c._triageMustache.call(b, "mainContent", {
+        hash: {
+            unescaped: "true"
+        },
+        hashTypes: {
+            unescaped: "STRING"
+        },
+        hashContexts: {
+            unescaped: b
+        },
+        contexts: [ b ],
+        types: [ "ID" ],
+        data: e
+    }))), e.buffer.push("\n</div>\n"), f;
 }), Ember.TEMPLATES.history = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
