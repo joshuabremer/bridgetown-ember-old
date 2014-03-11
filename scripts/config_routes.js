@@ -89,6 +89,7 @@ App.ContactRoute = Ember.Route.extend({
     title: 'Contact'
 });
 
+App.fourOhFourRoute = Ember.Route.extend({});
 
 
 function _retrievePageJSON(page) {
