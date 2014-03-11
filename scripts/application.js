@@ -4835,8 +4835,8 @@ App.PerformerController = Ember.ObjectController.extend({
     }), this.resource("shows"), this.resource("show", {
         path: "/show/:id"
     }), this.route("schedule"), this.route("venues"), this.route("history"), this.route("press"), 
-    this.route("contact"), this.route("catch_all", {
-        path: "*:"
+    this.route("contact"), this.route("fourOhFour", {
+        path: "*path"
     });
 }), Ember.Route.reopen({
     render: function() {

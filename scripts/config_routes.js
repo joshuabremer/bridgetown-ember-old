@@ -37,7 +37,7 @@ App.Router.map(function() {
   this.route('press');
   this.route('contact');
 
-  this.route('catch_all', { path: '*:' });
+  this.route('fourOhFour', { path: '*path' });
 
 
 });
