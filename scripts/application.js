@@ -4126,19 +4126,8 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        \n        <li class="hidden-xs dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bridgetown <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            <li class="header-color3">'), 
+    e.buffer.push('</li>\n        \n        <li class="hidden-xs dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bridgetown <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            \n            <li class="header-color4">'), 
     m = c["link-to"] || b && b["link-to"], n = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(7, i, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n            <li class="header-color4">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -4662,7 +4651,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <p>Performers subject to change...</p>\n  <div class="row">\n    '), 
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Performers</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <p class="lead">Performers subject to change...</p>\n  <div class="row">\n    '), 
     i = c.each.call(b, "performer", "in", "controller", {
         hash: {},
         hashTypes: {},
@@ -4853,7 +4842,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
     var i, j = "", k = this.escapeExpression, l = this, m = c.helperMissing;
-    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Shows</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <p>Shows subject to change...</p>\n  <div class="row">\n    '), 
+    return e.buffer.push('\n<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-performers jumbotron-color-2  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Shows</h1>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n<div class="container main-content">\n  <p class="lead">Shows subject to change...</p>\n  <div class="row">\n    '), 
     i = c.each.call(b, "show", "in", "controller", {
         hash: {},
         hashTypes: {},
