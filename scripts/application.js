@@ -2963,9 +2963,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: DS.hasMany("event"),
     Name: DS.attr("string"),
     PhotoUrl: DS.attr("string"),
-    Tier: function() {
-        return Math.random();
-    },
+    Tier: DS.attr("number"),
     slug: function() {
         return sluggify(this.get("Name"));
     }.property("Name"),
@@ -4011,7 +4009,7 @@ App.PerformerController = Ember.ObjectController.extend({
     sortProperties: [ "Tier" ],
     sortAscending: !0
 }), App.PerformersController = Ember.ArrayController.extend({
-    sortProperties: [ "PhotoUrl" ],
+    sortProperties: [ "Tier" ],
     sortAscending: !0
 }), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
