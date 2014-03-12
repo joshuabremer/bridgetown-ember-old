@@ -5305,6 +5305,9 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 .navbar-brand img {
   width: 170px; }
 
+.navbar .navbar-nav > li > a {
+  padding-left: 13px;
+  padding-right: 13px; }
 .navbar .navbar-nav > li > a.active {
   color: white; }
 .navbar .nav li span {

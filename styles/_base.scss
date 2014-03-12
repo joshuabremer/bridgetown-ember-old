@@ -91,6 +91,10 @@ h6,
 }
 
 .navbar {
+  .navbar-nav > li > a {
+    padding-left:13px;
+    padding-right:13px;
+  }
   .navbar-nav > li > a.active {
     color:white;
   }
