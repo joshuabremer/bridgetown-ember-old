@@ -3982,73 +3982,59 @@ App.PerformerController = Ember.ObjectController.extend({
         b.buffer.push("Performers");
     }
     function h(a, b) {
-        b.buffer.push("History");
-    }
-    function i(a, b) {
         b.buffer.push("Press");
     }
-    function j(a, b) {
+    function i(a, b) {
         b.buffer.push("Contact");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var k, l, m, n = "", o = this, p = c.helperMissing;
+    var j, k, l, m = "", n = this, o = c.helperMissing;
     return e.buffer.push('<!-- FOOTER -->\n  <footer class="site-footer" role="contentinfo">\n  <div class="container">\n    <div class="social">\n  <ul class="social-buttons">\n    <li class="follow-btn">\n      <a href="https://twitter.com/share" class="twitter-share-button" data-via="bridgetown"  data-related="bridgetown" data-hashtags="bridgetowncomedy">Tweet</a>\n    </li>\n    <li class="tweet-btn">\n      <a href="https://twitter.com/bridgetown" class="twitter-follow-button" data-show-count="false" >Follow @bridgetown</a>\n    </li>\n  </ul>\n</div>\n\n\n    <p>Designed and built by <a href="http://twitter.com/joshuabremer" target="_blank">@joshuabremer</a>. Powered by <a target="_blank" href="http://squarespace.com/">Squarespace</a></p>\n    <ul class="footer-links muted">\n      <li>'), 
-    l = c["link-to"] || b && b["link-to"], m = {
+    k = c["link-to"] || b && b["link-to"], l = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(1, f, e),
+        inverse: n.noop,
+        fn: n.program(1, f, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "index", m) : p.call(b, "link-to", "index", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
-    m = {
+    }, j = k ? k.call(b, "index", l) : o.call(b, "link-to", "index", l), (j || 0 === j) && e.buffer.push(j), 
+    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), k = c["link-to"] || b && b["link-to"], 
+    l = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(3, g, e),
+        inverse: n.noop,
+        fn: n.program(3, g, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "performers", m) : p.call(b, "link-to", "performers", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
-    m = {
+    }, j = k ? k.call(b, "performers", l) : o.call(b, "link-to", "performers", l), (j || 0 === j) && e.buffer.push(j), 
+    e.buffer.push("</li>\n      <li>·</li>\n      \n      <li>"), k = c["link-to"] || b && b["link-to"], 
+    l = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(5, h, e),
+        inverse: n.noop,
+        fn: n.program(5, h, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "history", m) : p.call(b, "link-to", "history", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), l = c["link-to"] || b && b["link-to"], 
-    m = {
+    }, j = k ? k.call(b, "press", l) : o.call(b, "link-to", "press", l), (j || 0 === j) && e.buffer.push(j), 
+    e.buffer.push("</li>\n      <li>·</li>\n      <li>"), k = c["link-to"] || b && b["link-to"], 
+    l = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(7, i, e),
+        inverse: n.noop,
+        fn: n.program(7, i, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "press", m) : p.call(b, "link-to", "press", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n      <li>·</li>\n      <li><a href="../about/">About</a></li>\n      <li>·</li>\n      <li>'), 
-    l = c["link-to"] || b && b["link-to"], m = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(9, j, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, k = l ? l.call(b, "contact", m) : p.call(b, "link-to", "contact", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push("</li>\n    </ul>\n  </div>\n</footer>"), n;
+    }, j = k ? k.call(b, "contact", l) : o.call(b, "link-to", "contact", l), (j || 0 === j) && e.buffer.push(j), 
+    e.buffer.push("</li>\n    </ul>\n  </div>\n</footer>"), m;
 }), Ember.TEMPLATES._header = Ember.Handlebars.template(function(a, b, c, d, e) {
     function f(a, b) {
         b.buffer.push(' <span class="navbar-brand"><img src="/assets/logo-long-inverse.png" /></span>');
