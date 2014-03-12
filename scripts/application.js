@@ -4101,7 +4101,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, k = l ? l.call(b, "shows", m) : p.call(b, "link-to", "shows", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n       \n        \n        <li class="header-color4">'), l = c["link-to"] || b && b["link-to"], 
+    e.buffer.push('</li>\n       \n        \n        <li class="header-color3">'), l = c["link-to"] || b && b["link-to"], 
     m = {
         hash: {},
         hashTypes: {},
@@ -4112,7 +4112,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: e
     }, k = l ? l.call(b, "press", m) : p.call(b, "link-to", "press", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n        \n        \n\n\n        \n\n\n        <li class="header-color5">'), 
+    e.buffer.push('</li>\n        \n        \n\n\n        \n\n\n        <li class="header-color4">'), 
     l = c["link-to"] || b && b["link-to"], m = {
         hash: {},
         hashTypes: {},
