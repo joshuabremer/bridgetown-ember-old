@@ -3,7 +3,7 @@ var fs = require("fs");
 var easyimg = require("easyimage");
 
 
-
+getPerformerJSON('http://127.0.0.1:8000/fixtures/performers.json');
 //getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
 //getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
 
