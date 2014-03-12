@@ -75,7 +75,7 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
 });
 
 DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-  //host: 'https://bridgetown-dev.squarespace.com',
+  //host: 'https://bridgetowncomedy.com',
   //host: '127.0.0.1:8000/',
   namespace: 'fixtures',
 
@@ -97,7 +97,7 @@ DS.SquarespaceAdapter = DS.RESTAdapter.extend({
   },
   ajaxOptions: function(url, type, hash) {
     hash = this._super(url, type, hash);
-    if (window.location.hostname != "bridgetown-dev.squarespace.com") {
+    if (window.location.hostname != "bridgetowncomedy.com") {
       hash.dataType = 'jsonp';
     }
     return hash;

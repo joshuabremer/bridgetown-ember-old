@@ -29,7 +29,7 @@ App.Store = DS.Store.extend({
 
  // delete if you don't want ember-data
 
-// if (window.location.hostname != "bridgetown-dev.squarespace.com") {
+// if (window.location.hostname != "bridgetowncomedy.com") {
 //   Ember.$.ajaxSetup({
 //     dataType: "JSONP",
 //     crossDomain: true
