@@ -31,6 +31,7 @@ App.Router.map(function() {
   // this.route('new_performer', {path: '/performers/new'});
   // end generated routes
 
+  this.route('sponsors');
   this.route('schedule');
   this.route('venues');
   this.route('history');
@@ -81,6 +82,11 @@ App.PressRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
     model: function() {return _retrievePageJSON('press');},
     title: 'Press'
+});
+
+App.SponsorsRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    title: 'Sponsors'
 });
 
 App.ContactRoute = Ember.Route.extend({

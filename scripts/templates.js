@@ -74,6 +74,12 @@ function program7(depth0,data) {
 function program9(depth0,data) {
   
   
+  data.buffer.push("<span>Sponsors</span>");
+  }
+
+function program11(depth0,data) {
+  
+  
   data.buffer.push("<span>Contact</span>");
   }
 
@@ -89,8 +95,11 @@ function program9(depth0,data) {
   data.buffer.push("</li>\n       \n        \n        <li class=\"header-color3\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "press", options) : helperMissing.call(depth0, "link-to", "press", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n        \n        \n\n\n        \n\n\n        <li class=\"header-color4\">");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "contact", options) : helperMissing.call(depth0, "link-to", "contact", options));
+  data.buffer.push("</li>\n        <li class=\"header-color4\">");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "link-to", "sponsors", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</li>\n        \n\n\n        \n\n\n        <li class=\"header-color5\">");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "contact", options) : helperMissing.call(depth0, "link-to", "contact", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</li>\n        \n      </ul>\n      <div class=\"navbar-form navbar-right\">\n        <strong>\n          <a class=\"btn btn-default\" target=\"_blank\" href=\"http://www.laughstub.com/event.cfm?id=308381\">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n");
   return buffer;
@@ -111,13 +120,13 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
   data.buffer.push("<a class=\"twitter-timeline\" href=\"https://twitter.com/bridgetown\" data-widget-id=\"432300245716713474\">Tweets by @bridgetown</a>\n\n\n\n");
   
-});Ember.TEMPLATES['_sponsors'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+});Ember.TEMPLATES['_sponsors_front_page'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 
 
-  data.buffer.push("<div id=\"lg\">\n  <div class=\"container sponsors-container text-center\">\n    <h2>SPONSORED BY</h2>\n    <div class=\"row\">\n      <div class=\"col-sm-8 col-sm-offset-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-squarespace-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-taxi-magic-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-mailchimp-long.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-crater-lake.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-deschutes.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-ground-kontrol.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-8 col-sm-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-jupiter-long.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-kind-bar.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-montage.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-tonkin.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-sizzle-pie.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-voodoo.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-zachs-shack.png\" alt=\"\">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n</div>");
+  data.buffer.push("<div id=\"lg\">\n  <div class=\"container sponsors-container text-center\">\n    <h2>SPONSORED BY</h2>\n    <div class=\"row\">\n      <div class=\"col-sm-8 col-sm-offset-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-squarespace-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-taxi-magic-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-mailchimp-long.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-oldies.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-z100.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-brew.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-deschutes.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-sizzle-pie.png\" alt=\"\">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n</div>");
   
 });Ember.TEMPLATES['application'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
@@ -251,7 +260,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push("\n    </div><!-- col-lg-6 -->\n\n    <div class=\"col-sm-6\">\n      <h3>@bridgetown</h3>\n      <div class=\"panel panel-default\">\n\n        <div class=\"panel-body\">\n          \n        ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "recent_tweets", options) : helperMissing.call(depth0, "partial", "recent_tweets", options))));
   data.buffer.push("\n        </div>\n      </div>\n    </div><!-- col-lg-6 -->\n    <div class=\"clearfix\"></div>\n  </div><!-- row -->\n  <br>\n  <br>\n</div><!-- container -->\n\n\n\n");
-  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "partial", "sponsors", options))));
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "sponsors_front_page", options) : helperMissing.call(depth0, "partial", "sponsors_front_page", options))));
   data.buffer.push("\n</div>");
   return buffer;
   
@@ -524,6 +533,18 @@ function program4(depth0,data) {
   stack1 = helpers.each.call(depth0, "show", "in", "controller", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </div>\n</div>\n");
+  return buffer;
+  
+});Ember.TEMPLATES['sponsors'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1;
+
+
+  data.buffer.push("\n  <div class=\"jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header\">\n    <div class=\"container\">\n      <div class=\"row centered\">\n        <div class=\"col-lg-8 col-lg-offset-2\">\n        <h1>");
+  stack1 = helpers._triageMustache.call(depth0, "collection.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class=\"container main-content sponsors-container text-center\">\n    <h2>SPONSORED BY</h2>\n    <div class=\"row\">\n      <div class=\"col-sm-8 col-sm-offset-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-squarespace-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-taxi-magic-big.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-mailchimp-long.png\" alt=\"\">\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-oldies.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-z100.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-brew.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-deschutes.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-sizzle-pie.png\" alt=\"\">\n      </div>\n   \n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-crater-lake.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-ground-kontrol.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-8 col-sm-4\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-jupiter-long.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-kind-bar.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-montage.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-tonkin.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-voodoo.png\" alt=\"\">\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <img class=\"img-responsive\" src=\"/assets/sponsor-zachs-shack.png\" alt=\"\">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n");
   return buffer;
   
 });Ember.TEMPLATES['venues'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {

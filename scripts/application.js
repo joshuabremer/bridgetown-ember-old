@@ -4225,77 +4225,91 @@ App.PerformerController = Ember.ObjectController.extend({
         b.buffer.push("<span>2013 Press</span>");
     }
     function j(a, b) {
+        b.buffer.push("<span>Sponsors</span>");
+    }
+    function k(a, b) {
         b.buffer.push("<span>Contact</span>");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var k, l, m, n = "", o = this, p = c.helperMissing;
+    var l, m, n, o = "", p = this, q = c.helperMissing;
     return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n       '), 
-    l = c["link-to"] || b && b["link-to"], m = {
+    m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(1, f, e),
+        inverse: p.noop,
+        fn: p.program(1, f, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "index", m) : p.call(b, "link-to", "index", m), (k || 0 === k) && e.buffer.push(k), 
+    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
     e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
-    l = c["link-to"] || b && b["link-to"], m = {
+    m = c["link-to"] || b && b["link-to"], n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(3, g, e),
+        inverse: p.noop,
+        fn: p.program(3, g, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "performers", m) : p.call(b, "link-to", "performers", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n        <li class="header-color2">'), l = c["link-to"] || b && b["link-to"], 
-    m = {
+    }, l = m ? m.call(b, "performers", n) : q.call(b, "link-to", "performers", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n        <li class="header-color2">'), m = c["link-to"] || b && b["link-to"], 
+    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(5, h, e),
+        inverse: p.noop,
+        fn: p.program(5, h, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "shows", m) : p.call(b, "link-to", "shows", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n       \n        \n        <li class="header-color3">'), l = c["link-to"] || b && b["link-to"], 
-    m = {
+    }, l = m ? m.call(b, "shows", n) : q.call(b, "link-to", "shows", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n       \n        \n        <li class="header-color3">'), m = c["link-to"] || b && b["link-to"], 
+    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(7, i, e),
+        inverse: p.noop,
+        fn: p.program(7, i, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "press", m) : p.call(b, "link-to", "press", m), (k || 0 === k) && e.buffer.push(k), 
-    e.buffer.push('</li>\n        \n        \n\n\n        \n\n\n        <li class="header-color4">'), 
-    l = c["link-to"] || b && b["link-to"], m = {
+    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n        <li class="header-color4">'), m = c["link-to"] || b && b["link-to"], 
+    n = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: o.noop,
-        fn: o.program(9, j, e),
+        inverse: p.noop,
+        fn: p.program(9, j, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, k = l ? l.call(b, "contact", m) : p.call(b, "link-to", "contact", m), (k || 0 === k) && e.buffer.push(k), 
+    }, l = m ? m.call(b, "sponsors", n) : q.call(b, "link-to", "sponsors", n), (l || 0 === l) && e.buffer.push(l), 
+    e.buffer.push('</li>\n        \n\n\n        \n\n\n        <li class="header-color5">'), 
+    m = c["link-to"] || b && b["link-to"], n = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: p.noop,
+        fn: p.program(11, k, e),
+        contexts: [ b ],
+        types: [ "STRING" ],
+        data: e
+    }, l = m ? m.call(b, "contact", n) : q.call(b, "link-to", "contact", n), (l || 0 === l) && e.buffer.push(l), 
     e.buffer.push('</li>\n        \n      </ul>\n      <div class="navbar-form navbar-right">\n        <strong>\n          <a class="btn btn-default" target="_blank" href="http://www.laughstub.com/event.cfm?id=308381">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
-    n;
+    o;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('\n<div class="newspost" style="margin-top:50px;">\n  <h3 class="newspost-title">2014 Site is Up!</h3>\n  <p>March, 12th, 2014</p>\n  <div class="newspost-content">\n<p>Bridgetown Comedy Festival has a new look for 2014! We\'re excited to unveil our new logo, new website, and <a href="https://bridgetowncomedy.com/performers">over 100 performers never before seen at Bridgetown</a>. Our lineup is a solid collection of fresh faces and old favorites, and we\'re not done yet. Buy your tickets now, and stay tuned for big announcements to come.</p>\n\n<p>For the first time ever we are offering a limited number of <a href="http://bridgetown.laughstub.com/event.cfm?id=308381">Bridgetown Fantasy Camp passes</a>. For years Bridgetown has built a reputation as "summer camp for comics," and this year a few lucky fans will get to find out why. <a href="http://www.jupiterhotel.com/default-en.html">Stay at the same hotel</a>, go to the same parties, and live Bridgetown like your favorite comic (heartburn and hangovers optional).</p>\n\n<p>Get your Bridgetown 2014 passes now at <a href="http://bridgetown.laughstub.com/event.cfm?id=308381">http://bridgetown.laughstub.com/event.cfm?id=308381</a></p>\n</div>\n</div>\n\n\n');
 }), Ember.TEMPLATES._recent_tweets = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('<a class="twitter-timeline" href="https://twitter.com/bridgetown" data-widget-id="432300245716713474">Tweets by @bridgetown</a>\n\n\n\n');
-}), Ember.TEMPLATES._sponsors = Ember.Handlebars.template(function(a, b, c, d, e) {
+}), Ember.TEMPLATES._sponsors_front_page = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
-    e = e || {}, e.buffer.push('<div id="lg">\n  <div class="container sponsors-container text-center">\n    <h2>SPONSORED BY</h2>\n    <div class="row">\n      <div class="col-sm-8 col-sm-offset-2">\n        <img class="img-responsive" src="/assets/sponsor-squarespace-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-taxi-magic-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-mailchimp-long.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-crater-lake.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-deschutes.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-ground-kontrol.png" alt="">\n      </div>\n      <div class="col-xs-8 col-sm-4">\n        <img class="img-responsive" src="/assets/sponsor-jupiter-long.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-kind-bar.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-montage.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-tonkin.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-sizzle-pie.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-voodoo.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-zachs-shack.png" alt="">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n</div>');
+    e = e || {}, e.buffer.push('<div id="lg">\n  <div class="container sponsors-container text-center">\n    <h2>SPONSORED BY</h2>\n    <div class="row">\n      <div class="col-sm-8 col-sm-offset-2">\n        <img class="img-responsive" src="/assets/sponsor-squarespace-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-taxi-magic-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-mailchimp-long.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-oldies.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-z100.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-brew.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-deschutes.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-sizzle-pie.png" alt="">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n</div>');
 }), Ember.TEMPLATES.application = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -4522,8 +4536,8 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, f ? f.call(b, "sponsors", g) : i.call(b, "partial", "sponsors", g)))), e.buffer.push("\n</div>"), 
-    h;
+    }, f ? f.call(b, "sponsors_front_page", g) : i.call(b, "partial", "sponsors_front_page", g)))), 
+    e.buffer.push("\n</div>"), h;
 }), Ember.TEMPLATES.jumbotron_index = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('<div class="jumbotron jumbotron-bg1 jumbotron-dark jumbotron-color-5  jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2">\n      <h1>Bridgetown Comedy Festival 2014</h1>\n      <h2>May 8th - May 11th</h2>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->');
@@ -4990,6 +5004,20 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID", "ID", "ID" ],
         data: e
     }), (i || 0 === i) && e.buffer.push(i), e.buffer.push("\n  </div>\n</div>\n"), j;
+}), Ember.TEMPLATES.sponsors = Ember.Handlebars.template(function(a, b, c, d, e) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
+    e = e || {};
+    var f, g = "";
+    return e.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    f = c._triageMustache.call(b, "collection.title", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ b ],
+        types: [ "ID" ],
+        data: e
+    }), (f || 0 === f) && e.buffer.push(f), e.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content sponsors-container text-center">\n    <h2>SPONSORED BY</h2>\n    <div class="row">\n      <div class="col-sm-8 col-sm-offset-2">\n        <img class="img-responsive" src="/assets/sponsor-squarespace-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-taxi-magic-big.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <img class="img-responsive" src="/assets/sponsor-mailchimp-long.png" alt="">\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-oldies.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-z100.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-brew.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-deschutes.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-sizzle-pie.png" alt="">\n      </div>\n   \n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-crater-lake.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-ground-kontrol.png" alt="">\n      </div>\n      <div class="col-xs-8 col-sm-4">\n        <img class="img-responsive" src="/assets/sponsor-jupiter-long.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-kind-bar.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-montage.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-tonkin.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-voodoo.png" alt="">\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <img class="img-responsive" src="/assets/sponsor-zachs-shack.png" alt="">\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n'), 
+    g;
 }), Ember.TEMPLATES.venues = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
@@ -5026,8 +5054,8 @@ App.PerformerController = Ember.ObjectController.extend({
         path: "/performer/:id"
     }), this.resource("shows"), this.resource("show", {
         path: "/show/:id"
-    }), this.route("schedule"), this.route("venues"), this.route("history"), this.route("press"), 
-    this.route("contact"), this.route("tickets"), this.route("fourOhFour", {
+    }), this.route("sponsors"), this.route("schedule"), this.route("venues"), this.route("history"), 
+    this.route("press"), this.route("contact"), this.route("tickets"), this.route("fourOhFour", {
         path: "*path"
     });
 }), Ember.Route.reopen({
@@ -5057,6 +5085,8 @@ App.PerformerController = Ember.ObjectController.extend({
         return _retrievePageJSON("press");
     },
     title: "Press"
+}), App.SponsorsRoute = Ember.Route.extend({
+    title: "Sponsors"
 }), App.ContactRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("contact");
