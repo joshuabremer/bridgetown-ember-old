@@ -4,9 +4,7 @@ App.Show = DS.Model.extend({
 
   PhotoUrl: DS.attr('string'),
 
-  Tier: function() {
-    return Math.random();
-  },
+  Tier: DS.attr('number'),
 
   slug: function() {
     return sluggify(this.get('Name'));

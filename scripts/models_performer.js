@@ -6,7 +6,7 @@ App.Performer = DS.Model.extend({
 
   PhotoUrl: DS.attr('string'),
 
-  Tier: DS.attr('string'),
+  Tier: DS.attr('number'),
 
   slug: function() {
     return sluggify(this.get('Name'));
