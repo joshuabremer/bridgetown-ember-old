@@ -4105,10 +4105,7 @@ App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsControl
 App.PerformerController = Ember.ObjectController.extend({
     sortProperties: [ "Tier" ],
     sortAscending: !0
-}), App.PerformersController = Ember.ArrayController.extend({
-    sortProperties: [ "Tier" ],
-    sortAscending: !0
-}), App.ApplicationView = Ember.View.extend({
+}), App.PerformersController = Ember.ArrayController.extend({}), App.ApplicationView = Ember.View.extend({
     didInsertElement: function() {
         var a, b = document.getElementsByTagName("script")[0], c = /^http:/.test(document.location) ? "http" : "https";
         document.getElementById("twitter-wjs") || (a = document.createElement("script"), 
