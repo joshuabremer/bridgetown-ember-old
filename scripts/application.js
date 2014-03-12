@@ -4834,19 +4834,6 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ b ],
         types: [ "ID" ],
         data: e
-    }))), e.buffer.push("\n        "), e.buffer.push(k(c._triageMustache.call(b, "Bio", {
-        hash: {
-            unescaped: "true"
-        },
-        hashTypes: {
-            unescaped: "STRING"
-        },
-        hashContexts: {
-            unescaped: b
-        },
-        contexts: [ b ],
-        types: [ "ID" ],
-        data: e
     }))), e.buffer.push("\n      </p>\n      <p>\n        "), h = c["link-to"] || b && b["link-to"], 
     i = {
         hash: {},
