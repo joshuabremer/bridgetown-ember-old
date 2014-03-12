@@ -75,17 +75,23 @@ h6,
 }
 
 
-//HEADER
+// HEADER
+.navbar-fixed-top {
+  border-bottom: 1px solid #333;
+  box-shadow: 3px 2px 5px rgba(0,0,0,.3)
+}
 
 .navbar-brand {
+  line-height: 45px;
   padding:0;
+  margin-right: 30px;
 }
 .navbar-brand img {
-  height:45px;
+  width: 170px;
 }
 
 .navbar {
-  a.active {
+  .navbar-nav > li > a.active {
     color:white;
   }
   .nav li span {
@@ -191,6 +197,8 @@ h6,
 .sponsors-container {
   img {
     margin-bottom:20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

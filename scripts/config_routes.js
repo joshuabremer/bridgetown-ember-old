@@ -36,6 +36,7 @@ App.Router.map(function() {
   this.route('history');
   this.route('press');
   this.route('contact');
+  this.route('tickets');
 
   this.route('fourOhFour', { path: '*path' });
 
@@ -49,7 +50,6 @@ Ember.Route.reopen({
   },
   activate: function() {
     this._super();
-    console.log(this.get('title'));
     if (this.get('title')) {
       document.title = this.get('title') + ' | Bridgetown Comedy Festival';
     } else {
