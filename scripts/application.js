@@ -4060,96 +4060,71 @@ App.PerformerController = Ember.ObjectController.extend({
         b.buffer.push("<span>Shows</span>");
     }
     function i(a, b) {
-        b.buffer.push("<span>History</span>");
+        b.buffer.push("<span>2013 Press</span>");
     }
     function j(a, b) {
-        b.buffer.push("<span>Press</span>");
-    }
-    function k(a, b) {
         b.buffer.push("<span>Contact</span>");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {};
-    var l, m, n, o = "", p = this, q = c.helperMissing;
+    var k, l, m, n = "", o = this, p = c.helperMissing;
     return e.buffer.push('<div class="navbar navbar-inverse navbar-fixed-top">\n  <div class="container">\n    <div class="navbar-header">\n      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n        <span class="icon-bar"></span>\n      </button>\n       '), 
-    m = c["link-to"] || b && b["link-to"], n = {
+    l = c["link-to"] || b && b["link-to"], m = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(1, f, e),
+        inverse: o.noop,
+        fn: o.program(1, f, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "index", n) : q.call(b, "link-to", "index", n), (l || 0 === l) && e.buffer.push(l), 
+    }, k = l ? l.call(b, "index", m) : p.call(b, "link-to", "index", m), (k || 0 === k) && e.buffer.push(k), 
     e.buffer.push('\n    </div>\n    <div class="navbar-collapse collapse">\n      <ul class="nav navbar-nav">\n        <li class="header-color1">'), 
-    m = c["link-to"] || b && b["link-to"], n = {
+    l = c["link-to"] || b && b["link-to"], m = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(3, g, e),
+        inverse: o.noop,
+        fn: o.program(3, g, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "performers", n) : q.call(b, "link-to", "performers", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        <li class="header-color2">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, k = l ? l.call(b, "performers", m) : p.call(b, "link-to", "performers", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push('</li>\n        <li class="header-color2">'), l = c["link-to"] || b && b["link-to"], 
+    m = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(5, h, e),
+        inverse: o.noop,
+        fn: o.program(5, h, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "shows", n) : q.call(b, "link-to", "shows", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n       \n        <li class="visible-xs header-color3">'), 
-    m = c["link-to"] || b && b["link-to"], n = {
+    }, k = l ? l.call(b, "shows", m) : p.call(b, "link-to", "shows", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push('</li>\n       \n        \n        <li class="header-color4">'), l = c["link-to"] || b && b["link-to"], 
+    m = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(7, i, e),
+        inverse: o.noop,
+        fn: o.program(7, i, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "history", n) : q.call(b, "link-to", "history", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        <li class="visible-xs header-color4">'), m = c["link-to"] || b && b["link-to"], 
-    n = {
+    }, k = l ? l.call(b, "press", m) : p.call(b, "link-to", "press", m), (k || 0 === k) && e.buffer.push(k), 
+    e.buffer.push('</li>\n        \n        \n\n\n        \n\n\n        <li class="header-color5">'), 
+    l = c["link-to"] || b && b["link-to"], m = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(9, j, e),
+        inverse: o.noop,
+        fn: o.program(9, j, e),
         contexts: [ b ],
         types: [ "STRING" ],
         data: e
-    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n        \n        <li class="hidden-xs dropdown">\n          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Bridgetown <b class="caret"></b></a>\n          <ul class="dropdown-menu">\n            \n            <li class="header-color4">'), 
-    m = c["link-to"] || b && b["link-to"], n = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(9, j, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, l = m ? m.call(b, "press", n) : q.call(b, "link-to", "press", n), (l || 0 === l) && e.buffer.push(l), 
-    e.buffer.push('</li>\n          </ul>\n        </li>\n\n\n        \n\n\n        <li class="header-color5">'), 
-    m = c["link-to"] || b && b["link-to"], n = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: p.noop,
-        fn: p.program(11, k, e),
-        contexts: [ b ],
-        types: [ "STRING" ],
-        data: e
-    }, l = m ? m.call(b, "contact", n) : q.call(b, "link-to", "contact", n), (l || 0 === l) && e.buffer.push(l), 
+    }, k = l ? l.call(b, "contact", m) : p.call(b, "link-to", "contact", m), (k || 0 === k) && e.buffer.push(k), 
     e.buffer.push('</li>\n        \n      </ul>\n      <div class="navbar-form navbar-right">\n        <strong>\n          <a class="btn btn-default" target="_blank" href="http://www.laughstub.com/event.cfm?id=308381">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
-    o;
+    n;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(a, b, c, d, e) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], c = this.merge(c, Ember.Handlebars.helpers), 
     e = e || {}, e.buffer.push('\n<div class="newspost">\n  <h3 class="newspost-title">2014 Site is Up!</h3>\n  <p>March, 10th, 2014</p>\n  <div class="newspost-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>\n</div>\n\n\n\n');
