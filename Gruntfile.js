@@ -53,6 +53,9 @@ module.exports = function(grunt) {
     clean: ["./styles/style.css", "./scripts/templates.js","./scripts/application.js"],
     sass: {
       dist: {
+        options: {                       // Target options
+          style: 'compressed'
+        },
         files: {
             './styles/main.css': './styles/main.scss'
         }
