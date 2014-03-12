@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           'scripts/config_routes.js',
           'scripts/routes_*.js'
         ],
-        dest: 'scripts/application.js'
+        dest: 'scripts/application-0312.js'
       }
     },
     watch: {
