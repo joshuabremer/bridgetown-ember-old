@@ -75,7 +75,7 @@ DS.SquarespaceRESTSerializer = DS.RESTSerializer.extend({
 });
 
 DS.SquarespaceAdapter = DS.RESTAdapter.extend({
-  //host: 'https://bridgetowncomedy.com',
+  //host: 'http://bridgetowncomedy.com',
   //host: '127.0.0.1:8000/',
   namespace: 'fixtures',
 

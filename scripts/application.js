@@ -20,7 +20,7 @@ function isProduction() {
 }
 
 function _retrievePageJSON(a) {
-    return host = "https://bridgetowncomedy.com/", Ember.$.ajax({
+    return host = "http://bridgetowncomedy.com/", Ember.$.ajax({
         url: host + a + "?format=json-pretty",
         dataType: "JSONP"
     }).then(function(a) {
@@ -5070,7 +5070,7 @@ App.PerformerController = Ember.ObjectController.extend({
     setupController: function() {}
 }), App.CatchAllRoute = Ember.Route.extend({
     model: function(a) {
-        var b = "https://bridgetowncomedy.com/";
+        var b = "http://bridgetowncomedy.com/";
         return Ember.$.ajax({
             url: b + a[":"] + "?format=json-pretty",
             dataType: "JSONP"

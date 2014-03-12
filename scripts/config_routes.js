@@ -95,7 +95,7 @@ App.fourOhFourRoute = Ember.Route.extend({
 
 
 function _retrievePageJSON(page) {
-  host = 'https://bridgetowncomedy.com/';
+  host = 'http://bridgetowncomedy.com/';
   return Ember.$.ajax({ 
     url: host + page + '?format=json-pretty',
     dataType: 'JSONP'
