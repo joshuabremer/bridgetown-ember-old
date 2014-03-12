@@ -81,6 +81,9 @@ function replacePerformerIdWithId(filepath, callback) {
       return console.log(err);
     }
     var result = data.replace(/PerformerId/g, "id");
+    result = result.replace('"Tier":"', '"Tier":');
+    result = result.replace('"}', '}');
+    
     fs.writeFile(filepath, result, 'utf8', function (err) {
        if (err) return console.log(err);
     });
