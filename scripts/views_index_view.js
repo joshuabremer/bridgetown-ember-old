@@ -9,5 +9,9 @@ App.IndexView = Ember.View.extend({
       js.src = p + "://platform.twitter.com/widgets.js?" + new Date().getTime();
       fjs.parentNode.insertBefore(js, fjs);
     //}
+
+    $("img.lazy").lazyload({
+      effect : "fadeIn"
+    });
   }
 });

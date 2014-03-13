@@ -56,8 +56,15 @@ Ember.Route.reopen({
     } else {
       document.title = 'Bridgetown Comedy Festival';
     }
-
-  }
+    try {
+      ga(
+        'send', 
+        'pageview',
+        window.location.protocol +'//' + window.location.hostname + window.location.pathname + window.location.search
+      );
+    }
+    catch(e){}
+    }
 });
 
 App.VenuesRoute = Ember.Route.extend({
