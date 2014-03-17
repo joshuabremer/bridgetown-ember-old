@@ -7,11 +7,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Bridgetown Comedy Festival 2014</title>
+  <script src="scripts/vendor_tracekit.js"></script>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link href="//fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="styles/main.css">
-
+  <script>
+  TraceKit.report.subscribe(function yourLogger(errorReport) {
+  //send via ajax to server, or use console.error in development
+  //to get you started see: https://gist.github.com/4491219
+  console.log(errorReport)
+  });
+  try {
+  /*
+   * your application code here
+   *
+   */
+  throw new Error('oops');
+  } catch (e) {
+    TraceKit.report(e); //error with stack trace gets normalized and sent to subscriber
+  }
+  </script>
 </head>
 <body>
   <div id="ember-app">
