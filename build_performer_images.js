@@ -38,6 +38,9 @@ function getShowJSON(url, callback) {
       buildImages("assets/raw_shows.json","show");
     });
   });
+  request.on('error', function(e) {
+    console.log("Got error: " + e.message);
+  });
 }
 
 function getPerformerJSON(url, callback) {
@@ -60,6 +63,9 @@ function getPerformerJSON(url, callback) {
       console.log("Created: " + "scripts/fixtures_performer.js");
       buildImages("assets/raw_performers.json","performer");
     });
+  });
+  request.on('error', function(e) {
+    console.log("Got error: " + e.message);
   });
 }
 
@@ -137,6 +143,9 @@ function buildImageFromURL(name,url,prefix) {
       buildThumbnail("tmp/" + filename, "assets/" + prefix + "-" + cleanStr(name) + "-300x300.jpg");
     });
   });
+  request.on('error', function(e) {
+    console.log("Got error: " + e.message);
+  });
 }
 
 function buildThumbnail(imgSrc, imgDest, fill) {
@@ -153,7 +162,7 @@ function buildThumbnail(imgSrc, imgDest, fill) {
      if (err) {
       console.log("Error resizing: " + imgSrc);
       return;
-     };
+     }
      console.log("Resized and cropped: " + image.width + " x " + image.height + " | " + imgDest);
      // fs.unlink(imgSrc, function() {
      //  console.log("Deleted tmp file: " + imgSrc);
