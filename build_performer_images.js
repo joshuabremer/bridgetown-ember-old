@@ -1,6 +1,7 @@
 var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
+var smushit = require('node-smushit');
 
 getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
 
@@ -160,6 +161,7 @@ function buildThumbnail(imgSrc, imgDest, fill) {
       console.log("Error resizing: " + imgSrc);
       return;
      }
+     smushit.smushit(imgDest);
      console.log("Resized and cropped: " + image.width + " x " + image.height + " | " + imgDest);
      // fs.unlink(imgSrc, function() {
      //  console.log("Deleted tmp file: " + imgSrc);
