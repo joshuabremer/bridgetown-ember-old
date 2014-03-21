@@ -2,7 +2,8 @@ var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
 
-getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
+getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
+
 
 function cropSponsorImages() {
   var dir = 'assets/sponsor-images';
