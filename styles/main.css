@@ -5269,7 +5269,8 @@ html {
 
 body {
   background: black;
-  font-family: 'Cantarell', sans-serif; }
+  font-family: 'Cantarell', sans-serif;
+  font-size: 16px; }
 
 h1, .h1 {
   font-family: 'Fjalla One', sans-serif;
@@ -5362,7 +5363,7 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 .performer-box img {
   border: 2px solid #999; }
 .performer-box legend {
-  height: 3em;
+  height: 4em;
   overflow: hidden;
   border: 0;
   text-align: left; }
