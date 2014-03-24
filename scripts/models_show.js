@@ -13,6 +13,8 @@ App.Show = DS.Model.extend({
   Bio: DS.attr('string'),
   Copy: DS.attr('string'),
 
+  pageUrl: DS.attr('string'),
+
   headshot300: function() {
     return '/assets/show-' + cleanStr(this.get('Name')) + '-300x300.jpg';
   }.property('Name'),

@@ -9,7 +9,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
         for(var key in query) {
             if (!query.hasOwnProperty(key)) { continue; }
             var value = query[key];
-            console.log(record[key]);
+            //console.log(record[key]);
             if (record[key] !== value) { return false; }
         }
         return true;

@@ -12,22 +12,6 @@
   <meta name="viewport" content="width=device-width">
   <link href="//fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="styles/main.css">
-  <script>
-  TraceKit.report.subscribe(function yourLogger(errorReport) {
-  //send via ajax to server, or use console.error in development
-  //to get you started see: https://gist.github.com/4491219
-  console.log(errorReport)
-  });
-  try {
-  /*
-   * your application code here
-   *
-   */
-  throw new Error('oops');
-  } catch (e) {
-    TraceKit.report(e); //error with stack trace gets normalized and sent to subscriber
-  }
-  </script>
 </head>
 <body>
   <div id="ember-app">
@@ -35,7 +19,7 @@
   <!--<script src="scripts/application.js"></script>-->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.runtime.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.3.1/ember.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.3.1/ember.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.6/ember-data.js"></script>
   <script src="scripts/application.js"></script>
 

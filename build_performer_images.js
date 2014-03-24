@@ -5,61 +5,30 @@ var smushit = require('node-smushit');
 
 getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
 
-function cropSponsorImages() {
-  var dir = 'assets/sponsor-images';
-  var files = fs.readdirSync(dir);
-  for(var i in files){
-      if (!files.hasOwnProperty(i)) continue;
-      var fullPath = dir+'/'+files[i];
-      if (!fs.statSync(fullPath).isDirectory()){
-        buildThumbnail(dir + '/' + files[i],'assets/sponsor-' + files[i]);
-      }
-  }
-}
-
-function getShowJSON(url, callback) {
-  //var file = fs.createWriteStream("assets/performers.json");
-  fs.writeFileSync("scripts/fixtures_show.js","/*jshint -W100 */\nApp.Show.FIXTURES = ",'utf8');
-  fs.writeFileSync("assets/raw_shows.json",'','utf8');
-  var request = http.get(url, function(response) {
-    //response.pipe(file);
-    response.on('data', function (chunk) {
-      fs.appendFileSync("scripts/fixtures_show.js",chunk);
-      fs.appendFileSync("assets/raw_shows.json",chunk);
-    });
-    response.on('end', function (data) {
-      fs.appendFileSync("scripts/fixtures_show.js",";");
-      replaceSubmittedIdWithId("scripts/fixtures_show.js");
-      
-      
-      console.log("Created: " + "scripts/fixtures_show.js");
-      buildImages("assets/raw_shows.json","show");
-    });
-  });
-  request.on('error', function(e) {
-    console.log("Got error: " + e.message);
-  });
-}
-
 function getPerformerJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
-  fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
+
   fs.writeFileSync("assets/raw_performers.json",'','utf8');
   var request = http.get(url, function(response) {
     //response.pipe(file);
     response.on('data', function (chunk) {
-      fs.appendFileSync("scripts/fixtures_performer.js",chunk);
       fs.appendFileSync("assets/raw_performers.json",chunk);
     });
     response.on('end', function (data) {
-      fs.appendFileSync("scripts/fixtures_performer.js",";");
-      replacePerformerIdWithId("scripts/fixtures_performer.js",function() {
-        replaceApostrophes("scripts/fixtures_performer.js");
+      replacePerformerIdWithId("assets/raw_performers.json",function() {
+        replaceApostrophes("assets/raw_performers.json",function() {
+          createPageUrls("assets/raw_performers.json",function() {
+            fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
+            fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
+            fs.appendFileSync("scripts/fixtures_performer.js",";");
+            console.log("Created: " + "scripts/fixtures_performer.js");
+            buildImages("assets/raw_performers.json","performer");
+          });
+        });
       });
       
       
-      console.log("Created: " + "scripts/fixtures_performer.js");
-      buildImages("assets/raw_performers.json","performer");
+      
     });
   });
   request.on('error', function(e) {
@@ -67,29 +36,42 @@ function getPerformerJSON(url, callback) {
   });
 }
 
-function replaceSubmittedIdWithId(filepath, callback) {
-  fs.readFile(filepath, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
-    }
-    var result = data.replace(/SubmittedId/g, "id");
-    fs.writeFile(filepath, result, 'utf8', function (err) {
-       if (err) return console.log(err);
-    });
-  });
+
+function getPerformerObject() {
+  return eval(fs.readFileSync('assets/raw_performers.json', 'utf8'));
 }
+
+function getPerformerData() {
+  return fs.readFileSync('assets/raw_performers.json', 'utf8');
+}
+
+function createPageUrls(filepath,callback) {
+  var performerObj = getPerformerObject();
+  for (var key in performerObj) {
+    performerObj[key].pageUrl = performerObj[key].id + '-' + convertToSlug(performerObj[key].Name);
+  }
+  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
+  
+  
+}
+
 
 function replacePerformerIdWithId(filepath, callback) {
   fs.readFile(filepath, 'utf8', function (err,data) {
     if (err) {
       return console.log(err);
     }
+
     var result = data.replace(/PerformerId/g, "id");
     result = result.replace(/"Tier":"/g, '"Tier":');
     result = result.replace(/"}/g, '}');
     
     fs.writeFile(filepath, result, 'utf8', function (err) {
        if (err) return console.log(err);
+       callback();
     });
   });
 }
@@ -116,6 +98,7 @@ function replaceApostrophes(filepath, callback) {
 
     fs.writeFile(filepath, result, 'utf8', function (err) {
        if (err) return console.log(err);
+       callback();
     });
   });
 }
@@ -124,9 +107,9 @@ function replaceApostrophes(filepath, callback) {
 function buildImages(path,prefix) {
   fs.mkdir('tmp', function() {});
   fs.readFile(path, 'utf8', function(err,data) {
-      var performers = eval(data);
-      performers.forEach(function(performer) {
-        buildImageFromURL(performer.Name,performer.PhotoUrl,prefix);
+      var items = JSON.parse(data);
+      items.forEach(function(item) {
+        buildImageFromURL(item.Name,item.PhotoUrl,prefix);
       });
   });
 }
@@ -174,5 +157,14 @@ function cleanStr(string) {
   return string.replace(/\W/g, '').toLowerCase();
 }
 
+
+function convertToSlug(Text)
+{
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'')
+        ;
+}
 
 

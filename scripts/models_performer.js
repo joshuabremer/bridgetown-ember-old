@@ -14,6 +14,8 @@ App.Performer = DS.Model.extend({
 
   Bio: DS.attr('string'),
 
+  pageUrl: DS.attr('string'),
+
   headshot300: function() {
     return '/assets/performer-' + cleanStr(this.get('Name')) + '-300x300.jpg';
   }.property('Name'),
