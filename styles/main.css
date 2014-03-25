@@ -5324,7 +5324,8 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
 
 .jumbotron {
   color: white;
-  background-size: cover; }
+  background-size: cover;
+  background-color: #67923d; }
   .jumbotron.jumbotron-page-header {
     margin-bottom: 0; }
   .jumbotron.jumbotron-default {
