@@ -5301,7 +5301,8 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   margin-right: 30px; }
 
 .navbar-brand img {
-  width: 170px; }
+  width: 170px;
+  max-width: 100%; }
 
 .navbar .navbar-nav > li > a {
   padding-left: 13px;
