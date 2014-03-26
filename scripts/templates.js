@@ -50,7 +50,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push(" <span class=\"navbar-brand\"><img src=\"/assets/logo-long-inverse.png\" /></span>");
+  data.buffer.push(" <span class=\"navbar-brand\"><img class=\"navbar-brand-logo\" src=\"/assets/logo-long-inverse.png\" /></span>");
   }
 
 function program3(depth0,data) {

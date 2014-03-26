@@ -5300,7 +5300,7 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   padding: 0;
   margin-right: 30px; }
 
-.navbar-brand img {
+.navbar-brand-logo {
   width: 170px;
   max-width: 100%; }
 
@@ -5351,7 +5351,6 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   .jumbotron.jumbotron-color-5 {
     background-color: rgba(137, 232, 148, 0.95); }
   .jumbotron .header-logo .img-responsive {
-    width: 100%;
     max-width: 100%;
     margin: 0 auto; }
 
