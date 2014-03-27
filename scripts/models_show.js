@@ -4,7 +4,7 @@ App.Show = DS.Model.extend({
 
   PhotoUrl: DS.attr('string'),
 
-  Tier: DS.attr('number'),
+  SortOrder: DS.attr('number'),
 
   slug: function() {
     return sluggify(this.get('Name'));

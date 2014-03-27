@@ -1,5 +1,5 @@
 App.PerformersController = Ember.ArrayController.extend({
-  sortProperties: ['Tier'],
+  sortProperties: ['SortOrder'],
   sortAscending: true
 });
 

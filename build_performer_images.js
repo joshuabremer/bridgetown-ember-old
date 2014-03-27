@@ -38,10 +38,11 @@ function getPerformerJSON(url, callback) {
 
 
 function getPerformerObject() {
-  return eval(fs.readFileSync('assets/raw_performers.json', 'utf8'));
+  return eval(getPerformerData());
 }
 
 function getPerformerData() {
+  console.log(fs.readFileSync('assets/raw_performers.json', 'utf8'));
   return fs.readFileSync('assets/raw_performers.json', 'utf8');
 }
 
@@ -66,7 +67,7 @@ function replacePerformerIdWithId(filepath, callback) {
     }
 
     var result = data.replace(/PerformerId/g, "id");
-    result = result.replace(/"Tier":"/g, '"Tier":');
+    result = result.replace(/"SortOrder":"/g, '"SortOrder":');
     result = result.replace(/"}/g, '}');
     
     fs.writeFile(filepath, result, 'utf8', function (err) {
