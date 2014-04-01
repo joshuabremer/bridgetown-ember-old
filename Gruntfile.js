@@ -103,10 +103,22 @@ module.exports = function(grunt) {
       },
       build_fixtures: {
         command: function () {
-            return 'node build_performer_images.js;';
+            return 'node build_performer_images.js;node build_show_images.js;';
         }
       }
-    }
+    },
+    template: {
+            'process-html-template': {
+                options: {
+                    data: {
+                        fingerprint: new Date().getTime()
+                    }
+                },
+                files: {
+                    'footer-1.region': ['footer-1.region.tpl']
+                }
+            }
+        }
   });
 
   // Default task(s).
@@ -119,10 +131,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-reload');
-  grunt.loadNpmTasks('grunt-imageoptim');
+  grunt.loadNpmTasks('grunt-template');
 
-  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass']);
-  grunt.registerTask('build', ['shell:build_fixtures','imageoptim','jshint','clean','emberhandlebars','uglify','sass']);
+  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass', 'template']);
+  // grunt.registerTask('build', ['shell:build_fixtures','jshint','clean','emberhandlebars','uglify','sass', 'template']);
 
 
 };
