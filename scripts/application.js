@@ -2966,6 +2966,9 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
         embedded: "always",
         async: !0
     }),
+    venue: DS.belongsTo("venue", {
+        async: !0
+    }),
     Name: DS.attr("string"),
     getPerformers: function() {
         return this.get("performers").get("content");
@@ -3007,15 +3010,43 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
     }.property("PhotoUrl")
+}), App.Venue = DS.Model.extend({
+    events: DS.hasMany("event", {
+        async: !0
+    }),
+    Name: DS.attr("string")
 }), App.Event.FIXTURES = [ {
     id: 1,
     Name: "Sample Event",
     performers: [ 6159, 6859, 7595 ],
-    nest: [ {
-        Name: 1
-    }, {
-        Name: 2
-    } ]
+    venue: 1,
+    start_time: "2014-04-03T04:10:16.357Z",
+    duration: 1.5,
+    price: 30
+}, {
+    id: 2,
+    Name: "Sample Event 2",
+    performers: [ 6159, 6859, 7595 ],
+    venue: 1,
+    start_time: "2014-04-03T04:10:16.357Z",
+    duration: 1.5,
+    price: 30
+}, {
+    id: 3,
+    Name: "Sample Event 3",
+    performers: [ 6159, 6859, 7595 ],
+    venue: 1,
+    start_time: "2014-04-03T04:10:16.357Z",
+    duration: 1.5,
+    price: 30
+}, {
+    id: 4,
+    Name: "Sample Event 4",
+    performers: [ 6159, 6859, 7595 ],
+    venue: 1,
+    start_time: "2014-04-03T04:10:16.357Z",
+    duration: 1.5,
+    price: 30
 } ], App.Performer.FIXTURES = [ {
     Name: "Sean Patton",
     Bio: "<p>Sean Patton is a comedian based in Los Angeles and New York, by way of New Orleans. Sean began doing standup in the Crescent City, and has since performed in comedy clubs across the US and Canada. Sean also performed at The Melbourne International Comedy Festival (2011), and twice at Montreal&#x2019;s Just for Laughs Comedy Festival (2008, 2010). In the TV world, Sean has appeared on Comedy Central's Live at Gotham (2009), Late night with Jimmy Fallon (2010), and twice on Conan (2011, 2013). 2013 also marked the release of his own Comedy Central Half Hour Special. As for acting, Sean played a guest starring role on IFC&#x2019;s Maron and a co-starring role on Comedy Central&#x2019;s Inside Amy Schumer. Sean also shot an unscripted travel pilot in 2013 for The Esquire Network, entitled Best Bars in America. The show has been picked up for 10 episodes and will shoot over spring 2014.</p>\n",
@@ -4378,6 +4409,22 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6682",
     SortOrder: "300",
     pageUrl: "6682-weird-and-awesome-with-emmett-montgomery"
+} ], App.Venue.FIXTURES = [ {
+    id: 1,
+    Name: "Hawthorne",
+    events: [ 1 ]
+}, {
+    id: 2,
+    Name: "Bossanova",
+    events: [ 2 ]
+}, {
+    id: 3,
+    Name: "Hollywood",
+    events: [ 3 ]
+}, {
+    id: 4,
+    Name: "Mt. Tabor",
+    events: [ 4 ]
 } ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
 App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
 App.PerformerController = Ember.ObjectController.extend({
@@ -4425,28 +4472,44 @@ App.PerformerController = Ember.ObjectController.extend({
     }
 }), Ember.TEMPLATES._event_list_item = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n	<li>\n    "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </li>\n"), 
+        buffer;
+    }
+    function program2(depth0, data) {
         var stack1, buffer = "";
-        return data.buffer.push("\n	<h2>"), stack1 = helpers._triageMustache.call(depth0, "performer.Name", {
+        return data.buffer.push("\n      "), stack1 = helpers._triageMustache.call(depth0, "performer.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
             contexts: [ depth0 ],
             types: [ "ID" ],
             data: data
-        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</h2>\n"), 
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n    "), 
         buffer;
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, buffer = "", self = this;
-    return data.buffer.push("<h1><strong>"), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
+    var stack1, buffer = "", self = this, helperMissing = helpers.helperMissing;
+    return data.buffer.push("\n<p><strong>"), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ depth0 ],
         types: [ "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong></h1>\n"), 
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong></p>\n<ul>\n"), 
     stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {
         hash: {},
         hashTypes: {},
@@ -4456,7 +4519,8 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), buffer;
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n</ul>\n\n"), 
+    buffer;
 }), Ember.TEMPLATES._footer = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         data.buffer.push("Home");
@@ -4629,6 +4693,73 @@ App.PerformerController = Ember.ObjectController.extend({
 }), Ember.TEMPLATES._recent_tweets = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {}, data.buffer.push('<a class="twitter-timeline" href="https://twitter.com/bridgetown" data-widget-id="432300245716713474">Tweets by @bridgetown</a>\n\n\n\n');
+}), Ember.TEMPLATES._schedule_table = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   "), stack1 = helpers._triageMustache.call(depth0, "debug", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n   <tr>\n    <th>"), 
+        stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n    "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.events", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var helper, options, buffer = "";
+        return data.buffer.push("\n      <td>\n        "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "STRING" ],
+            data: data
+        }, helper ? helper.call(depth0, "event_list_item", options) : helperMissing.call(depth0, "partial", "event_list_item", options)))), 
+        data.buffer.push("\n      </td>\n    "), buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
+    return data.buffer.push("<table>\n  <thead>\n  <tr>\n  <th>Venue</th>\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers._triageMustache.call(depth0, "debug", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
 }), Ember.TEMPLATES._sponsors_front_page = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {}, data.buffer.push('<div id="lg">\n  <div class="container sponsors-container text-center">\n    <h2>SPONSORED BY</h2>\n    <div class="row">\n      <div class="col-sm-8 col-sm-offset-2">\n        <a target="_blank" href="http://squarespace.com/?channel=events&subchannel=comedy&source=bridgetown14"><img class="img-responsive" src="/assets/sponsor-squarespace-big.png" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <a target="_blank" href="https://taximagic.com"><img class="img-responsive" src="/assets/sponsor-taxi-magic-big.png" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <a target="_blank" href="http://mailchimp.com"><img class="img-responsive" src="/assets/sponsor-mailchimp-long.png" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.portlandoldies.com"><img class="img-responsive" src="/assets/sponsor-oldies.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.z100portland.com"><img class="img-responsive" src="/assets/sponsor-z100.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.1059thebrew.com"><img class="img-responsive" src="/assets/sponsor-brew.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.deschutesbrewery.com"><img class="img-responsive" src="/assets/sponsor-deschutes.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://sizzlepie.com"><img class="img-responsive" src="/assets/sponsor-sizzle-pie.png" alt=""></a>\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n</div>');
@@ -5177,34 +5308,20 @@ App.PerformerController = Ember.ObjectController.extend({
         data: data
     }))), data.buffer.push("\n</div>\n\n\n"), buffer;
 }), Ember.TEMPLATES.schedule = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
-    function program1(depth0, data) {
-        var helper, options, buffer = "";
-        return data.buffer.push("\n    "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
-        options = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ depth0 ],
-            types: [ "STRING" ],
-            data: data
-        }, helper ? helper.call(depth0, "event_list_item", options) : helperMissing.call(depth0, "partial", "event_list_item", options)))), 
-        data.buffer.push("\n  "), buffer;
-    }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
+    var helper, options, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
     return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
-    stack1 = helpers.each.call(depth0, "event", "in", "controller.events", {
+    data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    options = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: self.noop,
-        fn: self.program(1, program1, data),
-        contexts: [ depth0, depth0, depth0 ],
-        types: [ "ID", "ID", "ID" ],
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n    \n</div>\n\n\n\n\n\n"), 
-    buffer;
+    }, helper ? helper.call(depth0, "schedule_table", options) : helperMissing.call(depth0, "partial", "schedule_table", options)))), 
+    data.buffer.push("\n</div>\n\n\n\n\n\n"), buffer;
 }), Ember.TEMPLATES.show = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         data.buffer.push("← All Shows");
@@ -5490,6 +5607,7 @@ App.PerformerController = Ember.ObjectController.extend({
 }), App.ScheduleRoute = Ember.Route.extend({
     model: function() {
         return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
             performers: this.store.find("performer"),
             events: this.store.find("event")
         });
