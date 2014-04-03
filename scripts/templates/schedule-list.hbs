@@ -1,0 +1,13 @@
+<ul>
+  {{#each event in controller.events}}
+  <li>
+   <h3>{{event.Name}}</h3>
+   <p>{{fullDate event.start_time}}</p>
+   <p>${{event.price}}</p>
+   <ul>
+   {{#each performer in event.performers}}
+    <li>{{performer.Name}}</li>
+    {{/each}}  
+    </ul>
+    </li>
+  {{/each}}

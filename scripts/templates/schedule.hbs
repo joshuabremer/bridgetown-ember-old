@@ -1,4 +1,3 @@
-
   <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">
     <div class="container">
       <div class="row centered">
@@ -10,5 +9,18 @@
   </div><!-- headerwrap -->
 
 <div class="container main-content">
-  {{{mainContent}}}
+  <div class="btn-group">
+    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
+    <button type="button" class="btn btn-default" {{action "filterFriday"}}>Friday</button>
+    <button type="button" class="btn btn-default" {{action "filterSaturday"}}>Saturday</button>
+    <button type="button" class="btn btn-default" {{action "filterSunday"}}>Sunday</button>
+  </div>
+  <div id="schedules" {{bind-attr class="scheduleClass"}}>
+  {{partial "schedule_list"}}
+  </div>
 </div>
+
+
+
+
+

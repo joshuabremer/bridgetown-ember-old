@@ -1,8 +1,15 @@
-<h2>Events</h2>
+  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-8 col-lg-offset-2">
+        <h1>{{collection.title}}</h1>
+        </div>
+      </div><!-- row -->
+    </div><!-- container -->
+  </div><!-- headerwrap -->
 
-{{#linkTo "new_events"}}New Event{{/linkTo}}
-
-<table>
+<div class="container main-content">
+  <table>
   <thead>
     <th>name</th>
     <th>start_time</th>
@@ -21,5 +28,9 @@
     {{/each}}
   </tbody>
 </table>
+</div>
+
+
+
 
 

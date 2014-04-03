@@ -1,7 +1,25 @@
 App.ScheduleRoute = Ember.Route.extend({
-  model: function(params) {
-    this.store.find('event');
-    return this.store.find('performer');
+  model: function() {
+      return Ember.RSVP.hash({
+          venues: this.store.find('venue'),
+          performers: this.store.find('performer'),
+          events: this.store.find('event'),
+          venues: this.store.find('venue')
+      });
   },
-  title: 'Schedule'
+  title: 'Schedule',
+
+
+
+  actions: {
+    filterThursday: function() {
+      var newModel = Ember.RSVP.hash({
+          venues: this.store.find('venue'),
+          performers: this.store.find('performer'),
+          events: this.store.find('event'),
+          venues: this.store.find('venue')
+      });
+      this.set('model',newModel)
+    }
+  }
 });

@@ -5378,6 +5378,28 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   margin-left: auto;
   margin-right: auto; }
 
+.schedule-list {
+  list-style: none; }
+
+
+.schedule-list__item-date {
+  display: inline; }
+
+.filter-items .schedule-list_item {
+  display: none; }
+
+.filter-thursday .schedule-list_item.thursday {
+  display: block; }
+
+.filter-friday .schedule-list_item.friday {
+  display: block; }
+
+.filter-saturday .schedule-list_item.saturday {
+  display: block; }
+
+.filter-sunday .schedule-list_item.sunday {
+  display: block; }
+
 .site-footer {
   text-align: center;
   background: black;
