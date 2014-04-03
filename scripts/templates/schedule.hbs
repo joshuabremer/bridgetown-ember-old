@@ -10,11 +10,8 @@
 
 <div class="container main-content">
   {{#each event in controller.events}}
-    <p><strong>{{event.Name}}</strong></p>
-    {{#each bird in event.nest}}
-      {{bird.Name}}
-    {{/each}}
-    {{/each}}
+    {{partial "event_list_item"}}
+  {{/each}}
     
 </div>
 
