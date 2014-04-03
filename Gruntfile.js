@@ -6,8 +6,8 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-        mangle: true,
-        beautify: false,
+        mangle: false,
+        beautify: true,
         drop_debugger: false,
         drop_console: false
       },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
           'scripts/controllers_*.js',
           'scripts/views_*.js',
           'scripts/templates.js',
-          'scripts/config_routes.js',
+          'scripts/config_router.js',
           'scripts/routes_*.js'
         ],
         dest: 'scripts/application.js'
