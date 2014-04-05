@@ -12,7 +12,6 @@ App.ScheduleRoute = Ember.Route.extend({
 
   actions: {
     filterThursday: function() {
-      debugger;
       var newModel = Ember.RSVP.hash({
           venues: this.store.find('venue'),
           performers: this.store.find('performer'),

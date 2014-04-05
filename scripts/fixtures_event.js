@@ -5,7 +5,7 @@ App.Event.FIXTURES = ﻿[
     "Name":"Sample Event",
     "performers":[6159,6859,7595],
     "venue": 1,
-    "start_time":"2014-04-08T04:10:16.357Z",
+    "start_time":"2014-05-08T04:30:00.357Z",
     "duration": 1.5,
     "price": 30
   },
@@ -15,7 +15,7 @@ App.Event.FIXTURES = ﻿[
     "Name":"Sample Event 2",
     "performers":[6159,6859,7595],
     "venue": 1,
-    "start_time":"2014-04-09T04:10:16.357Z",
+    "start_time":"2014-05-09T04:30:00.357Z",
     "duration": 1.5,
     "price": 30
   },
@@ -25,7 +25,7 @@ App.Event.FIXTURES = ﻿[
     "Name":"Sample Event 3",
     "performers":[6159,6859,7595],
     "venue": 1,
-    "start_time":"2014-04-10T04:10:16.357Z",
+    "start_time":"2014-05-10T04:30:00.357Z",
     "duration": 1.5,
     "price": 30
   },
@@ -35,9 +35,49 @@ App.Event.FIXTURES = ﻿[
     "Name":"Sample Event 4",
     "performers":[6159,6859,7595],
     "venue": 1,
-    "start_time":"2014-04-11T04:10:16.357Z",
+    "start_time":"2014-05-11T04:30:00.357Z",
     "duration": 1.5,
     "price": 30
-  }
+  },
+
+  {
+    "id":5,
+    "Name":"Sample Event",
+    "performers":[6159,6859,7595],
+    "venue": 1,
+    "start_time":"2014-05-08T04:30:00.357Z",
+    "duration": 1.5,
+    "price": 30
+  },
+
+  {
+    "id":6,
+    "Name":"Sample Event 2",
+    "performers":[6159,6859,7595],
+    "venue": 1,
+    "start_time":"2014-05-09T04:30:00.357Z",
+    "duration": 1.5,
+    "price": 30
+  },
+
+  {
+    "id":7,
+    "Name":"Sample Event 3",
+    "performers":[6159,6859,7595],
+    "venue": 1,
+    "start_time":"2014-05-10T04:30:00.357Z",
+    "duration": 1.5,
+    "price": 30
+  },
+
+  {
+    "id":8,
+    "Name":"Sample Event 4",
+    "performers":[6159,6859,7595],
+    "venue": 1,
+    "start_time":"2014-05-11T04:30:00.357Z",
+    "duration": 1.5,
+    "price": 30
+  },
 
 ];

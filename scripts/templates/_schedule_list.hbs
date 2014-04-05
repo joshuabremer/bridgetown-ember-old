@@ -1,13 +1,5 @@
-<ul>
+<ul class="schedule-list list-group">
   {{#each event in controller.events}}
-  <li>
-   <h3>{{event.Name}}</h3>
-   <p>{{fullDate event.start_time}}</p>
-   <p>${{event.price}}</p>
-   <ul>
-   {{#each performer in event.performers}}
-    <li>{{performer.Name}}</li>
-    {{/each}}  
-    </ul>
-    </li>
+ {{partial "schedule_list_item"}}
   {{/each}}
+  </ul>

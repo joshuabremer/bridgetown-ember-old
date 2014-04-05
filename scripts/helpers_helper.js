@@ -26,9 +26,24 @@ Ember.Handlebars.registerBoundHelper('fullDate', function(dateString) {
   return moment(dateString).calendar();
 });
 
-Ember.Handlebars.registerBoundHelper('humanDate', function(dateString) {
-  return moment(parseInt(dateString,10)).calendar();
+Ember.Handlebars.registerBoundHelper('getWeekday', function(dateString) {
+  return moment(dateString).format('dddd');
 });
+
+Ember.Handlebars.registerBoundHelper('getMonth', function(dateString) {
+  return moment(dateString).format('MMM');
+});
+
+Ember.Handlebars.registerBoundHelper('getDayOfMonth', function(dateString) {
+  return moment(dateString).format('D');
+});
+
+Ember.Handlebars.registerBoundHelper('getTime', function(dateString) {
+  return moment(dateString).format('h:mm a');
+});
+
+
+
 
 Ember.Handlebars.registerBoundHelper('scheduleTableRow', function(events) {
   var html;

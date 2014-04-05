@@ -9,7 +9,13 @@
   </div><!-- headerwrap -->
 
 <div class="container main-content">
-  <button class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
+    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Friday</button>
+    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Saturday</button>
+    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Sunday</button>
+  </div>
+  
   {{partial "schedule_list"}}
 </div>
 
