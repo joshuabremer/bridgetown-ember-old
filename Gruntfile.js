@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    uglify: {
+    concat: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         mangle: false,
@@ -122,6 +122,7 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -133,7 +134,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-reload');
   grunt.loadNpmTasks('grunt-template');
 
-  grunt.registerTask('default', ['jshint','clean','emberhandlebars','uglify','sass', 'template']);
+  grunt.registerTask('default', ['clean','emberhandlebars','concat','sass', 'template']);
   // grunt.registerTask('build', ['shell:build_fixtures','jshint','clean','emberhandlebars','uglify','sass', 'template']);
 
 

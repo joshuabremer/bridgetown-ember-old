@@ -22,6 +22,37 @@ Ember.Handlebars.registerBoundHelper('createExcerpt', function(html, length, mor
   return item_html.substring(0,length) + more_text;
 });
 
+Ember.Handlebars.registerBoundHelper('fullDate', function(dateString) {
+  return moment(dateString).calendar();
+});
+
 Ember.Handlebars.registerBoundHelper('humanDate', function(dateString) {
   return moment(parseInt(dateString,10)).calendar();
 });
+
+Ember.Handlebars.registerBoundHelper('scheduleTableRow', function(events) {
+  var html;
+  var timeArray = getTimeArray();
+  $.each(timeArray,function() {
+    var $el = $('<tr><td>1</td></tr>');
+    html += $el.html();
+    // $.each(events.toArray(),function(i,event){
+    //   console.log(event.get('Name'));
+    // });
+  });
+  return html;
+});
+
+
+function getTimeArray() {
+  var timeArray = [];
+  for(i=0;i<24;i++) {
+    timeArray.push(moment("2014-04-04T07:00:00.818Z").add(i*30,'minutes'));
+  }
+  return timeArray;
+  
+}
+
+
+
+

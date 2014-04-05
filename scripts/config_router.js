@@ -33,6 +33,7 @@ App.Router.map(function() {
 
   this.route('sponsors');
   this.route('schedule');
+
   this.route('venues');
   this.route('history');
   this.route('press');

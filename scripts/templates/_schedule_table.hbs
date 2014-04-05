@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <thead>
   <tr>
   <th>Venue</th>
@@ -10,11 +10,7 @@
    {{debug}}
    <tr>
     <th>{{venue.Name}}</th>
-    {{#each event in venue.events}}
-      <td>
-        {{partial "event_list_item"}}
-      </td>
-    {{/each}}
+      {{{scheduleTableRow venue.events}}}
     </tr>
   {{/each}}
   </tbody>

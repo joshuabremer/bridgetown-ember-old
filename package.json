@@ -17,7 +17,9 @@
     "grunt-reload": "~0.2.0",
     "grunt-imageoptim": "^1.4.1",
     "easyimage": "^0.1.6",
-    "grunt-template": "~0.2.3"
+    "grunt-template": "~0.2.3",
+    "concat": "^0.2.4",
+    "grunt-contrib-concat": "^0.4.0"
   },
   "repository": {
     "type": "git",
