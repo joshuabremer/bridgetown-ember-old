@@ -204,7 +204,11 @@ function program2(depth0,data) {
   else { data.buffer.push(''); }
   }
 
-  data.buffer.push("  <li class=\"schedule-list_item list-group-item\">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <div class=\"schedule-list__item-date\">");
+  data.buffer.push("  <li ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":schedule-list_item :list-group-item event.weekday")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <div class=\"schedule-list__item-date\">");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
   data.buffer.push("</div>\n          <div class=\"schedule-list__item-date\">");
   data.buffer.push(escapeExpression((helper = helpers.getWeekday || (depth0 && depth0.getWeekday),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getWeekday", "event.start_time", options))));

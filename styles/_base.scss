@@ -17,6 +17,7 @@ $color2: rgba(#695b53,0.95);
 $color3: rgba(#448184,0.95);
 $color4: rgba(#8dd1aa,0.95);
 $color5: rgba(#89e894,0.95);
+
 // Squarespace cleanup
 .row.sqs-row {
   margin:0;
@@ -221,6 +222,26 @@ h6,
 
 .schedule-list__item-date {
   display:inline;
+}
+
+.filter-items .schedule-list_item {
+  display:none;
+}
+
+.filter-thursday .schedule-list_item.thursday {
+  display:block;
+}
+
+.filter-friday .schedule-list_item.friday {
+  display:block;
+}
+
+.filter-saturday .schedule-list_item.saturday {
+  display:block;
+}
+
+.filter-sunday .schedule-list_item.sunday {
+  display:block;
 }
 
 // FOOTER

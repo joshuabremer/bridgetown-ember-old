@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-04-05 */
+/*! bridgetowncomedy.com 2014-04-06 */
 function getTimeArray() {
     var timeArray = [];
     for (i = 0; 24 > i; i++) timeArray.push(moment("2014-04-04T07:00:00.818Z").add(30 * i, "minutes"));
@@ -2993,6 +2993,9 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     start_time: DS.attr("string"),
     price: DS.attr("string"),
     duration: DS.attr("string"),
+    weekday: function() {
+        return moment(this.get("start_time")).format("dddd").toLowerCase();
+    }.property("start_time"),
     getPerformers: function() {
         return this.get("performers").get("content");
     }.property(),
@@ -4493,16 +4496,16 @@ App.PerformerController = Ember.ObjectController.extend({
     sortAscending: !0,
     actions: {
         filterThursday: function() {
-            this.set("scheduleClass", "filter-thursday");
+            this.set("scheduleClass", "filter-items filter-thursday");
         },
         filterFriday: function() {
-            this.set("scheduleClass", "filter-friday");
+            this.set("scheduleClass", "filter-items filter-friday");
         },
         filterSaturday: function() {
-            this.set("scheduleClass", "filter-saturday");
+            this.set("scheduleClass", "filter-items filter-saturday");
         },
         filterSunday: function() {
-            this.set("scheduleClass", "filter-sunday");
+            this.set("scheduleClass", "filter-items filter-sunday");
         }
     },
     scheduleClass: "",
@@ -4831,7 +4834,20 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var stack1, helper, options, buffer = "", self = this, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
-    return data.buffer.push('  <li class="schedule-list_item list-group-item">\n    <div class="container-fluid">\n      <div class="row">\n        <div class="col-sm-2">\n          <div class="schedule-list__item-date">'), 
+    return data.buffer.push("  <li "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+        hash: {
+            "class": ":schedule-list_item :list-group-item event.weekday"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": depth0
+        },
+        contexts: [],
+        types: [],
+        data: data
+    }))), data.buffer.push('>\n    <div class="container-fluid">\n      <div class="row">\n        <div class="col-sm-2">\n          <div class="schedule-list__item-date">'), 
     data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
     options = {
         hash: {},

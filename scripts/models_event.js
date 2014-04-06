@@ -12,6 +12,10 @@ App.Event = DS.Model.extend({
 
   duration: DS.attr('string'),
 
+  weekday: function() {
+    return moment(this.get("start_time")).format('dddd').toLowerCase();
+  }.property("start_time"),
+
   getPerformers: function() {
     return this.get("performers").get('content');
   }.property(),

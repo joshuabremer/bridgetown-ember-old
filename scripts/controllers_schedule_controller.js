@@ -4,16 +4,16 @@ App.ScheduleController = Ember.ObjectController.extend({
 
   actions: {
     filterThursday: function() {
-      this.set('scheduleClass','filter-thursday');
+      this.set('scheduleClass','filter-items filter-thursday');
     },
     filterFriday: function() {
-      this.set('scheduleClass','filter-friday');
+      this.set('scheduleClass','filter-items filter-friday');
     },
     filterSaturday: function() {
-      this.set('scheduleClass','filter-saturday');
+      this.set('scheduleClass','filter-items filter-saturday');
     },
     filterSunday: function() {
-      this.set('scheduleClass','filter-sunday');
+      this.set('scheduleClass','filter-items filter-sunday');
     }
   },
 
