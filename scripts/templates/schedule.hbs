@@ -11,12 +11,13 @@
 <div class="container main-content">
   <div class="btn-group">
     <button type="button" class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
-    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Friday</button>
-    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Saturday</button>
-    <button type="button" class="btn btn-default" {{action "filterThursday"}}>Sunday</button>
+    <button type="button" class="btn btn-default" {{action "filterFriday"}}>Friday</button>
+    <button type="button" class="btn btn-default" {{action "filterSaturday"}}>Saturday</button>
+    <button type="button" class="btn btn-default" {{action "filterSunday"}}>Sunday</button>
   </div>
-  
+  <div id="schedules" {{bind-attr class="scheduleClass"}}>
   {{partial "schedule_list"}}
+  </div>
 </div>
 
 

@@ -2,9 +2,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
-          <p>{{getTime event.start_time}}</p>
-          <p>{{getWeekday event.start_time}}</p>
-          <p>{{getMonth event.start_time}} {{getDayOfMonth event.start_time}}</p>
+          <div class="schedule-list__item-date">{{getTime event.start_time}}</div>
+          <div class="schedule-list__item-date">{{getWeekday event.start_time}}</div>
+          <div class="schedule-list__item-date">{{getMonth event.start_time}} {{getDayOfMonth event.start_time}}</div>
         </div>
         <div class="col-xs-4">
           <p>{{event.venue.Name}}</p>

@@ -4493,9 +4493,19 @@ App.PerformerController = Ember.ObjectController.extend({
     sortAscending: !0,
     actions: {
         filterThursday: function() {
-            alert(1);
+            this.set("scheduleClass", "filter-thursday");
+        },
+        filterFriday: function() {
+            this.set("scheduleClass", "filter-friday");
+        },
+        filterSaturday: function() {
+            this.set("scheduleClass", "filter-saturday");
+        },
+        filterSunday: function() {
+            this.set("scheduleClass", "filter-sunday");
         }
     },
+    scheduleClass: "",
     events: function() {
         return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
             sortProperties: [ "start_time" ],
@@ -4821,7 +4831,7 @@ App.PerformerController = Ember.ObjectController.extend({
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var stack1, helper, options, buffer = "", self = this, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
-    return data.buffer.push('  <li class="schedule-list_item list-group-item">\n    <div class="container-fluid">\n      <div class="row">\n        <div class="col-sm-2">\n          <p>'), 
+    return data.buffer.push('  <li class="schedule-list_item list-group-item">\n    <div class="container-fluid">\n      <div class="row">\n        <div class="col-sm-2">\n          <div class="schedule-list__item-date">'), 
     data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
     options = {
         hash: {},
@@ -4831,7 +4841,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: data
     }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
-    data.buffer.push("</p>\n          <p>"), data.buffer.push(escapeExpression((helper = helpers.getWeekday || depth0 && depth0.getWeekday, 
+    data.buffer.push('</div>\n          <div class="schedule-list__item-date">'), data.buffer.push(escapeExpression((helper = helpers.getWeekday || depth0 && depth0.getWeekday, 
     options = {
         hash: {},
         hashTypes: {},
@@ -4840,7 +4850,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: data
     }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getWeekday", "event.start_time", options)))), 
-    data.buffer.push("</p>\n          <p>"), data.buffer.push(escapeExpression((helper = helpers.getMonth || depth0 && depth0.getMonth, 
+    data.buffer.push('</div>\n          <div class="schedule-list__item-date">'), data.buffer.push(escapeExpression((helper = helpers.getMonth || depth0 && depth0.getMonth, 
     options = {
         hash: {},
         hashTypes: {},
@@ -4858,7 +4868,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "ID" ],
         data: data
     }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getDayOfMonth", "event.start_time", options)))), 
-    data.buffer.push('</p>\n        </div>\n        <div class="col-xs-4">\n          <p>'), 
+    data.buffer.push('</div>\n        </div>\n        <div class="col-xs-4">\n          <p>'), 
     stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {
         hash: {},
         hashTypes: {},
@@ -5504,7 +5514,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: data
     }))), data.buffer.push('>Thursday</button>\n    <button type="button" class="btn btn-default" '), 
-    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {
+    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterFriday", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -5512,7 +5522,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: data
     }))), data.buffer.push('>Friday</button>\n    <button type="button" class="btn btn-default" '), 
-    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {
+    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
@@ -5520,14 +5530,27 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: data
     }))), data.buffer.push('>Saturday</button>\n    <button type="button" class="btn btn-default" '), 
-    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {
+    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push(">Sunday</button>\n  </div>\n  \n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    }))), data.buffer.push('>Sunday</button>\n  </div>\n  <div id="schedules" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+        hash: {
+            "class": "scheduleClass"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": depth0
+        },
+        contexts: [],
+        types: [],
+        data: data
+    }))), data.buffer.push(">\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
     options = {
         hash: {},
         hashTypes: {},
@@ -5536,7 +5559,7 @@ App.PerformerController = Ember.ObjectController.extend({
         types: [ "STRING" ],
         data: data
     }, helper ? helper.call(depth0, "schedule_list", options) : helperMissing.call(depth0, "partial", "schedule_list", options)))), 
-    data.buffer.push("\n</div>\n\n\n\n\n\n"), buffer;
+    data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
 }), Ember.TEMPLATES.show = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         data.buffer.push("← All Shows");
