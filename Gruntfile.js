@@ -50,7 +50,7 @@ module.exports = function(grunt) {
     jshint: {
       src: ['Gruntfile.js', 'scripts/*.js']
     },
-    clean: ["./styles/style.css", "./scripts/templates.js","./scripts/application.js"],
+    clean: ["footer-1.region","./styles/style.css", "./scripts/templates.js","./scripts/application.js"],
     sass: {
       dist: {
         options: {                       // Target options
