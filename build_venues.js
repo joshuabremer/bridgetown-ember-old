@@ -8,28 +8,27 @@ getVenueJSON('http://bridgetown.festivalthing.com/export/venues/json');
 function getVenueJSON(url, callback) {
   //var file = fs.createWriteStream("assets/venues.json");
 
-  fs.writeFileSync("assets/raw_venues.json",'','utf8');
-  var request = http.get(url, function(response) {
-    //response.pipe(file);
-    response.on('data', function (chunk) {
-      fs.appendFileSync("assets/raw_venues.json",chunk);
-    });
-    response.on('end', function (data) {
+  // fs.writeFileSync("assets/raw_venues.json",'','utf8');
+  // var request = http.get(url, function(response) {
+  //   //response.pipe(file);
+  //   response.on('data', function (chunk) {
+  //     fs.appendFileSync("assets/raw_venues.json",chunk);
+  //   });
+  //   response.on('end', function (data) {
       replaceVenueIdWithId("assets/raw_venues.json",function() {
             fs.writeFileSync("scripts/fixtures_venue.js","/*jshint -W100 */\nApp.Venue.FIXTURES = ",'utf8');
             fs.appendFileSync("scripts/fixtures_venue.js",getVenueData(),{encoding:'utf8'});
             fs.appendFileSync("scripts/fixtures_venue.js",";");
             console.log("Created: " + "scripts/fixtures_venue.js");
-            buildImages("assets/raw_venues.json","venue");
       });
       
       
       
-    });
-  });
-  request.on('error', function(e) {
-    console.log("Got error: " + e.message);
-  });
+  //   });
+  // });
+  // request.on('error', function(e) {
+  //   console.log("Got error: " + e.message);
+  // });
 }
 
 
