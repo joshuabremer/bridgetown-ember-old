@@ -1,12 +1,7 @@
 App.IndexRoute = Ember.Route.extend({
 
-  model: function(params) {
-    // return $.ajax({
-    //   url: 'http://bridgetowncomedy.com/newsposts/?format=json-pretty',
-    //   dataType:'jsonp'
-    // }).done(function(data) {
-    //   return data.items;
-    // });
+  model: function() {
+    return _retrievePageJSON('front-page');
   },
 
   renderTemplate: function() {
@@ -15,3 +10,14 @@ App.IndexRoute = Ember.Route.extend({
   }
 
 });
+
+function _retrievePageJSON(page) {
+  host = 'http://bridgetowncomedy.com/';
+  return Ember.$.ajax({ 
+    url: host + page + '?format=json-pretty',
+    dataType: 'JSONP'
+  }).then(function(data) {
+    console.log(data);
+    return data;
+  });
+}
