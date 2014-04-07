@@ -17,7 +17,6 @@ function _retrievePageJSON(page) {
     url: host + page + '?format=json-pretty',
     dataType: 'JSONP'
   }).then(function(data) {
-    console.log(data);
     return data;
   });
 }
