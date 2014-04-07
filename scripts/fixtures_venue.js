@@ -2,6 +2,7 @@
 App.Venue.FIXTURES = ﻿[
   {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "id":1,
     "Name": "Hawthorne",
     "events":[1]
@@ -26,6 +27,8 @@ App.Venue.FIXTURES = ﻿[
   }
 ];
 =======
+=======
+>>>>>>> Stashed changes
   Name: "Alhambra Theater Lounge",
   id: "7608"
   },
@@ -77,5 +80,9 @@ App.Venue.FIXTURES = ﻿[
   Name: "White Owl Social Club",
   id: "7618"
   }
+<<<<<<< Updated upstream
+];
+>>>>>>> Stashed changes
+=======
 ];
 >>>>>>> Stashed changes
