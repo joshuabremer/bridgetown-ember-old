@@ -15,14 +15,22 @@ function getPerformerJSON(url, callback) {
       fs.appendFileSync("assets/raw_performers.json",chunk);
     });
     response.on('end', function (data) {
-      replacePerformerIdWithId("assets/raw_performers.json",function() {
-        replaceApostrophes("assets/raw_performers.json",function() {
-          createPageUrls("assets/raw_performers.json",function() {
-            fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
-            fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
-            fs.appendFileSync("scripts/fixtures_performer.js",";");
-            console.log("Created: " + "scripts/fixtures_performer.js");
-            buildImages("assets/raw_performers.json","performer");
+      stringifyPerformerJSON("assets/raw_performers.json",function() {
+        replacePerformerIdWithId("assets/raw_performers.json",function() {
+          console.log('Done replacing ID');
+          replaceApostrophes("assets/raw_performers.json",function() {
+            console.log('Done replacing Apostrophes');
+            createPageUrls("assets/raw_performers.json",function() {
+              console.log('Done creating page URLs');
+              addEventIds("assets/raw_performers.json",function() {
+                console.log('Done adding Event IDs');
+                fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
+                fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
+                fs.appendFileSync("scripts/fixtures_performer.js",";");
+                console.log("Created: " + "scripts/fixtures_performer.js");
+                buildImages("assets/raw_performers.json","performer");
+              });
+            });
           });
         });
       });
@@ -38,12 +46,27 @@ function getPerformerJSON(url, callback) {
 
 
 function getPerformerObject() {
-  return eval(getPerformerData());
+  return eval(JSON.parse(getPerformerData()));
 }
 
 function getPerformerData() {
-  console.log(fs.readFileSync('assets/raw_performers.json', 'utf8'));
   return fs.readFileSync('assets/raw_performers.json', 'utf8');
+}
+
+function getScheduleObject() {
+  return eval(JSON.parse(getScheduleData()));
+}
+
+function getScheduleData() {
+  return fs.readFileSync('assets/raw_schedules.json', 'utf8');
+}
+
+function stringifyPerformerJSON(filepath,callback) {
+  var rawPerformerData = fs.readFileSync('assets/raw_performers.json', 'utf8');
+  fs.writeFile(filepath, JSON.stringify(rawPerformerData), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
 }
 
 function createPageUrls(filepath,callback) {
@@ -55,55 +78,69 @@ function createPageUrls(filepath,callback) {
      if (err) return console.log(err);
      callback();
   });
-  
-  
+}
+
+function addEventIds(filepath,callback) {
+  var performerObj = getPerformerObject();
+  var scheduleObj = getScheduleData();
+
+  for (var key in performerObj) {
+    performerObj[key].events = getEventsForPerformer(performerObj[key].id)
+  }
+  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
+}
+
+function getEventsForPerformer(id) {
+  var scheduleObj = getScheduleObject();
+  var returnArray = [];
+  for (var key in scheduleObj) {
+    var idCheck = parseInt(scheduleObj[key].PerformerId,10);
+    if (idCheck === parseInt(id,10)) {
+      returnArray.push(scheduleObj[key].EventId);
+    }
+  }
+  return returnArray;
 }
 
 
 function replacePerformerIdWithId(filepath, callback) {
-  fs.readFile(filepath, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
-    }
+  var performerObj = getPerformerObject();
 
-    var result = data.replace(/PerformerId/g, "id");
-    result = result.replace(/"SortOrder":"/g, '"SortOrder":');
-    result = result.replace(/"}/g, '}');
-    
-    fs.writeFile(filepath, result, 'utf8', function (err) {
-       if (err) return console.log(err);
-       callback();
-    });
+  for (var key in performerObj) {
+    performerObj[key].id = performerObj[key].PerformerId
+  }
+
+  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
   });
 }
 
 function replaceApostrophes(filepath, callback) {
-  fs.readFile(filepath, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
-    }
+  var performerObj = getPerformerObject();
+  for (var key in performerObj) {
+    performerObj[key].Bio = performerObj[key].Bio || "";
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2018/g, "&#x2018;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2019/g, "&#x2019;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u201c/g, "&#x201c;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2033/g, "&#x2033;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u201d/g, "&#x201d;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00a0/g, " ");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2026/g, "&#x2026;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2013/g, "&#x2013;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2014/g, "&#x2014;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e9/g, "&#x00e9;");
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e1/g, "&#x00e1;");
+  }
 
-    var result = data;
-    result = result.replace(/\\u2018/g, "&#x2018;");
-    result = result.replace(/\\u2019/g, "&#x2019;");
-    result = result.replace(/\\u201c/g, "&#x201c;");
-    result = result.replace(/\\u2033/g, "&#x2033;");
-    result = result.replace(/\\u201d/g, "&#x201d;");
-    result = result.replace(/\\u00a0/g, " ");
-    result = result.replace(/\\u2026/g, "&#x2026;");
-    result = result.replace(/\\u2013/g, "&#x2013;");
-    result = result.replace(/\\u2014/g, "&#x2014;");
-    result = result.replace(/\\u00e9/g, "&#x00e9;");
-    result = result.replace(/\\u00e1/g, "&#x00e1;");
-
-
-    fs.writeFile(filepath, result, 'utf8', function (err) {
-       if (err) return console.log(err);
-       callback();
-    });
+  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
   });
 }
-
 
 function buildImages(path,prefix) {
   fs.mkdir('tmp', function() {});

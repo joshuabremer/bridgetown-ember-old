@@ -7,20 +7,27 @@ getEventJSON('http://bridgetown.festivalthing.com/export/events/json');
 
 function getEventJSON(url, callback) {
   //var file = fs.createWriteStream("assets/events.json");
-
-  //fs.writeFileSync("assets/raw_events.json",'','utf8');
+  var ajaxStub = fs.readFileSync('assets/ajax_events.json', 'utf8');
+  fs.writeFileSync("assets/raw_events.json",ajaxStub,'utf8');
   // var request = http.get(url, function(response) {
   //   //response.pipe(file);
   //   response.on('data', function (chunk) {
   //     fs.appendFileSync("assets/raw_events.json",chunk);
   //   });
   //   response.on('end', function (data) {
+    stringifyEventJSON("assets/raw_events.json",function() {
+      console.log("Stringified file");
       replaceEventIdWithId("assets/raw_events.json",function() {
+        console.log("Replaced event Id");
+        addEventIds("assets/raw_events.json",function() {
+          console.log("Grabbed performers");
             fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
             fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
             fs.appendFileSync("scripts/fixtures_event.js",";");
             console.log("Created: " + "scripts/fixtures_event.js");
+        });
       });
+    });
       
       
       
@@ -31,14 +38,28 @@ function getEventJSON(url, callback) {
   // });
 }
 
-
 function getEventObject() {
-  return eval(getEventData());
+  return eval(JSON.parse(getEventData()));
 }
 
 function getEventData() {
-  console.log(fs.readFileSync('assets/raw_events.json', 'utf8'));
   return fs.readFileSync('assets/raw_events.json', 'utf8');
+}
+
+function getScheduleObject() {
+  return eval(JSON.parse(getScheduleData()));
+}
+
+function getScheduleData() {
+  return fs.readFileSync('assets/raw_schedules.json', 'utf8');
+}
+
+function stringifyEventJSON(filepath,callback) {
+  var rawEventData = fs.readFileSync('assets/raw_events.json', 'utf8');
+  fs.writeFile(filepath, JSON.stringify(rawEventData), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
 }
 
 function createPageUrls(filepath,callback) {
@@ -55,19 +76,42 @@ function createPageUrls(filepath,callback) {
 }
 
 
-function replaceEventIdWithId(filepath, callback) {
-  fs.readFile(filepath, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
-    }
+function addEventIds(filepath,callback) {
+  var eventObj = getEventObject();
+  var scheduleObj = getScheduleData();
 
-    var result = data.replace(/EventId/g, "id");
-    //result = result.replace(/"}/g, '}');
-    
-    fs.writeFile(filepath, result, 'utf8', function (err) {
-       if (err) return console.log(err);
-       callback();
-    });
+  for (var key in eventObj) {
+    eventObj[key].performers = getPerformersForEvents(eventObj[key].id)
+  }
+  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
+}
+
+function getPerformersForEvents(id) {
+  var scheduleObj = getScheduleObject();
+  var returnArray = [];
+  for (var key in scheduleObj) {
+    var idCheck = parseInt(scheduleObj[key].EventId,10);
+    if (idCheck === parseInt(id,10)) {
+      returnArray.push(scheduleObj[key].PerformerId);
+    }
+  }
+  return returnArray;
+}
+
+
+function replaceEventIdWithId(filepath, callback) {
+  var eventObj = getEventObject();
+
+  for (var key in eventObj) {
+    eventObj[key].id = eventObj[key].EventId;
+  }
+
+  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
   });
 }
 
