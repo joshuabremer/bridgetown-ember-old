@@ -9,8 +9,6 @@ App.ScheduleRoute = Ember.Route.extend({
   },
   title: 'Schedule',
 
-
-
   actions: {
     filterThursday: function() {
       var newModel = Ember.RSVP.hash({

@@ -8,7 +8,7 @@ App.Event = DS.Model.extend({
 
   start_time: DS.attr('string'),
 
-  price: DS.attr('string'),
+  Cost: DS.attr('string'),
 
   duration: DS.attr('string'),
 
