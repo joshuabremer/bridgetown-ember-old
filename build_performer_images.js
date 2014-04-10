@@ -3,7 +3,8 @@ var fs = require("fs");
 var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 
-getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
+//getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
+getPerformerJSON('http://127.0.0.1:8000/fixtures/ajax-performer.json');
 
 function getPerformerJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
@@ -18,7 +19,7 @@ function getPerformerJSON(url, callback) {
       stringifyPerformerJSON("assets/raw_performers.json",function() {
         replacePerformerIdWithId("assets/raw_performers.json",function() {
           console.log('Done replacing ID');
-          replaceApostrophes("assets/raw_performers.json",function() {
+          sanitizeData("assets/raw_performers.json",function() {
             console.log('Done replacing Apostrophes');
             createPageUrls("assets/raw_performers.json",function() {
               console.log('Done creating page URLs');
@@ -119,7 +120,7 @@ function replacePerformerIdWithId(filepath, callback) {
   });
 }
 
-function replaceApostrophes(filepath, callback) {
+function sanitizeData(filepath, callback) {
   var performerObj = getPerformerObject();
   for (var key in performerObj) {
     performerObj[key].Bio = performerObj[key].Bio || "";
@@ -134,6 +135,9 @@ function replaceApostrophes(filepath, callback) {
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2014/g, "&#x2014;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e9/g, "&#x00e9;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e1/g, "&#x00e1;");
+
+    performerObj[key].SortOrder = parseInt(performerObj[key].SortOrder,10);
+
   }
 
   fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {

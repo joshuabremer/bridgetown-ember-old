@@ -19,7 +19,8 @@
     "easyimage": "^0.1.6",
     "grunt-template": "~0.2.3",
     "concat": "^0.2.4",
-    "grunt-contrib-concat": "^0.4.0"
+    "grunt-contrib-concat": "^0.4.0",
+    "moment": "^2.5.1"
   },
   "repository": {
     "type": "git",
