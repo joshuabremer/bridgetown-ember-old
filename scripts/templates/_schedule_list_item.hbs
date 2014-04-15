@@ -1,25 +1,24 @@
-  <li {{bind-attr class=":schedule-list_item :list-group-item event.weekday"}}>
+  <li {{bind-attr data-start-time="event.start_time"}} {{bind-attr class=":schedule-list__item :list-group-item event.weekday"}}>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-2">
-          <div class="schedule-list__item-date">{{getTime event.start_time}}</div>
-          <div class="schedule-list__item-date">{{getWeekday event.start_time}}</div>
-          <div class="schedule-list__item-date">{{getMonth event.start_time}} {{getDayOfMonth event.start_time}}</div>
+       <div class="col-sm-3">
+          <p class="lead">{{{event.Name}}} </p>
         </div>
-        <div class="col-xs-4">
-          <p>{{event.venue.Name}}</p>
-          <h3>{{event.Name}}</h3>
+        <div class="col-xs-4 col-sm-3">
+          <p><span class="schedule-list__item-venue-label label label-default">{{event.venue.Name}}</span></p>
         </div>
-        <div class="col-xs-5">
-          <strong>Performers</strong>
+        <div class="col-xs-4 col-sm-3">
           <ul>
          {{#each performer in event.performers}}
-            <li>{{#link-to "performer" performer }}{{performer.Name}}{{/link-to}}</li>
+            <li>{{#link-to "performer" performer }}{{{performer.Name}}}{{/link-to}}</li>
           {{/each}}  
           </ul>
+          &nbsp;
         </div>
-        <div class="col-xs-1">
-          <p><span class="badge">{{event.Cost}}</span></p>
+        <div class="col-xs-4 col-sm-3">
+          <div class="schedule-list__item-date">
+          <span style="white-space:nowrap">{{getTime event.start_time}} - </span>
+          <span style="white-space:nowrap">{{getTime event.end_time}}</span></div>
         </div>
       </div>
     </div>

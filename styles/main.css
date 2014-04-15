@@ -5384,22 +5384,32 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
     margin: 0; }
 
 
+.schedule-list__item-venue-label {
+  display: inline-block;
+  white-space: normal;
+  line-height: 1.4em; }
+
+.schedule-list__spacer {
+  background-color: #999;
+  color: #FFFFFF;
+  font-weight: bold; }
+
 .schedule-list__item-date {
   display: inline; }
 
-.filter-items .schedule-list_item {
+.filter-items .schedule-list__item, .filter-items .schedule-list__spacer {
   display: none; }
 
-.filter-thursday .schedule-list_item.thursday {
+.filter-thursday .schedule-list__item.thursday, .filter-thursday .schedule-list__spacer.thursday {
   display: block; }
 
-.filter-friday .schedule-list_item.friday {
+.filter-friday .schedule-list__item.friday, .filter-friday .schedule-list__spacer.friday {
   display: block; }
 
-.filter-saturday .schedule-list_item.saturday {
+.filter-saturday .schedule-list__item.saturday, .filter-saturday .schedule-list__spacer.saturday {
   display: block; }
 
-.filter-sunday .schedule-list_item.sunday {
+.filter-sunday .schedule-list__item.sunday, .filter-sunday .schedule-list__spacer.sunday {
   display: block; }
 
 .site-footer {

@@ -190,7 +190,7 @@ function program1(depth0,data) {
 });Ember.TEMPLATES['_schedule_list_item'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -203,37 +203,35 @@ function program1(depth0,data) {
   }
 function program2(depth0,data) {
   
-  var stack1;
-  stack1 = helpers._triageMustache.call(depth0, "performer.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
+  
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   }
 
   data.buffer.push("  <li ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'class': (":schedule-list_item :list-group-item event.weekday")
-  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push(">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n        <div class=\"col-sm-2\">\n          <div class=\"schedule-list__item-date\">");
-  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
-  data.buffer.push("</div>\n          <div class=\"schedule-list__item-date\">");
-  data.buffer.push(escapeExpression((helper = helpers.getWeekday || (depth0 && depth0.getWeekday),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getWeekday", "event.start_time", options))));
-  data.buffer.push("</div>\n          <div class=\"schedule-list__item-date\">");
-  data.buffer.push(escapeExpression((helper = helpers.getMonth || (depth0 && depth0.getMonth),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getMonth", "event.start_time", options))));
+    'data-start-time': ("event.start_time")
+  },hashTypes:{'data-start-time': "STRING"},hashContexts:{'data-start-time': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(" ");
-  data.buffer.push(escapeExpression((helper = helpers.getDayOfMonth || (depth0 && depth0.getDayOfMonth),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getDayOfMonth", "event.start_time", options))));
-  data.buffer.push("</div>\n        </div>\n        <div class=\"col-xs-4\">\n          <p>");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":schedule-list__item :list-group-item event.weekday")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n    <div class=\"container-fluid\">\n      <div class=\"row\">\n       <div class=\"col-sm-3\">\n          <p class=\"lead\">");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(" </p>\n        </div>\n        <div class=\"col-xs-4 col-sm-3\">\n          <p><span class=\"schedule-list__item-venue-label label label-default\">");
   stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n          <h3>");
-  stack1 = helpers._triageMustache.call(depth0, "event.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h3>\n        </div>\n        <div class=\"col-xs-5\">\n          <strong>Performers</strong>\n          <ul>\n         ");
+  data.buffer.push("</span></p>\n        </div>\n        <div class=\"col-xs-4 col-sm-3\">\n          <ul>\n         ");
   stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("  \n          </ul>\n        </div>\n        <div class=\"col-xs-1\">\n          <p><span class=\"badge\">");
-  stack1 = helpers._triageMustache.call(depth0, "event.Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</span></p>\n        </div>\n      </div>\n    </div>\n    </li>\n\n");
+  data.buffer.push("  \n          </ul>\n          &nbsp;\n        </div>\n        <div class=\"col-xs-4 col-sm-3\">\n          <div class=\"schedule-list__item-date\">\n          <span style=\"white-space:nowrap\">");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
+  data.buffer.push(" - </span>\n          <span style=\"white-space:nowrap\">");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
+  data.buffer.push("</span></div>\n        </div>\n      </div>\n    </div>\n    </li>\n\n");
   return buffer;
   
 });Ember.TEMPLATES['_schedule_table-row'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
