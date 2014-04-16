@@ -2,9 +2,10 @@ var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
 var smushit = require('node-smushit');
-
+var JSONUrl = process.argv[2] || 'http://127.0.0.1:8000/fixtures/ajax-performers.json';
 // getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
-getPerformerJSON('http://127.0.0.1:8000/fixtures/ajax-performers.json');
+console.log('Downloading performers from: ' + JSONUrl);
+getPerformerJSON(JSONUrl);
 
 function getPerformerJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
