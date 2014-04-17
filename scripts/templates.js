@@ -234,54 +234,6 @@ function program2(depth0,data) {
   data.buffer.push("</span></div>\n        </div>\n      </div>\n    </div>\n    </li>\n\n");
   return buffer;
   
-});Ember.TEMPLATES['_schedule_table-row'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = '', helper, options;
-  data.buffer.push("\n  <td>\n    ");
-  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "event_list_item", options) : helperMissing.call(depth0, "partial", "event_list_item", options))));
-  data.buffer.push("\n  </td>\n");
-  return buffer;
-  }
-
-  stack1 = helpers.each.call(depth0, "event", "in", "venue.events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
-  
-});Ember.TEMPLATES['_schedule_table'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helperMissing=helpers.helperMissing, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n   ");
-  stack1 = helpers._triageMustache.call(depth0, "debug", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n   <tr>\n    <th>");
-  stack1 = helpers._triageMustache.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</th>\n      ");
-  stack1 = (helper = helpers.scheduleTableRow || (depth0 && depth0.scheduleTableRow),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "venue.events", options) : helperMissing.call(depth0, "scheduleTableRow", "venue.events", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    </tr>\n  ");
-  return buffer;
-  }
-
-  data.buffer.push("<table class=\"table\">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  </tr>\n  </thead>\n  <tbody>\n  ");
-  stack1 = helpers._triageMustache.call(depth0, "debug", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  ");
-  stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n  </tbody>\n</table>");
-  return buffer;
-  
 });Ember.TEMPLATES['_sponsors_front_page'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -597,13 +549,79 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(">Saturday</button>\n    <button type=\"button\" class=\"btn btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Sunday</button>\n  </div>\n  <div id=\"schedules\" ");
+  data.buffer.push(">Sunday</button>\n  </div>\n\n  <div class=\"btn-group\" style=\"float:right;\">\n    <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterGrid", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push("><i class=\"fa fa-th\"></i> Show Grid View</button>\n    <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterList", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push("><i class=\"fa fa-list\"></i> Show List View</button>\n  </div>\n  <br />\n  <br />\n  <div id=\"schedules\" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("scheduleClass")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">\n  ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "schedule_table", options) : helperMissing.call(depth0, "partial", "schedule_table", options))));
+  data.buffer.push("\n  ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "schedule_list", options) : helperMissing.call(depth0, "partial", "schedule_list", options))));
   data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n");
+  return buffer;
+  
+});Ember.TEMPLATES['schedule_table'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n   <tr>\n    <th>");
+  stack1 = helpers._triageMustache.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</th>\n      ");
+  stack1 = helpers.each.call(depth0, "event", "in", "venue.events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("  \n    </tr>\n  ");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n        <td class=\"schedule-table__cell\" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'data-start-time': ("event.start_time")
+  },hashTypes:{'data-start-time': "STRING"},hashContexts:{'data-start-time': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'data-end-time': ("event.end_time")
+  },hashTypes:{'data-end-time': "STRING"},hashContexts:{'data-end-time': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n        ");
+  stack1 = helpers._triageMustache.call(depth0, "event.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" - ");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
+  data.buffer.push(" - ");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
+  data.buffer.push("\n        <br />\n        ");
+  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n        </td>\n      ");
+  return buffer;
+  }
+function program3(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n          <span class=\"label label-default\">");
+  stack1 = helpers._triageMustache.call(depth0, "performer.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</span>\n        ");
+  return buffer;
+  }
+
+  data.buffer.push("<table class=\"schedule-table responsive\" style=\"display:none;\">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  ");
+  stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  ");
+  stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </tbody>\n</table>");
   return buffer;
   
 });Ember.TEMPLATES['show'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {

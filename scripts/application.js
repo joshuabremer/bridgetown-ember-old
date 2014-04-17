@@ -1,7 +1,7 @@
-/*! bridgetowncomedy.com 2014-04-14 */
+/*! bridgetowncomedy.com 2014-04-17 */
 function getTimeArray() {
     var timeArray = [];
-    for (i = 0; 24 > i; i++) timeArray.push(moment("2014-04-04T07:00:00.818Z").add(30 * i, "minutes"));
+    for (i = 0; 192 > i; i++) timeArray.push(moment(FESTIVAL_START_TIME).add(30 * i, "minutes"));
     return timeArray;
 }
 
@@ -2845,12 +2845,12 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     return moment(dateString).format("D");
 }), Ember.Handlebars.registerBoundHelper("getTime", function(dateString) {
     return moment(dateString).format("h:mm a");
-}), Ember.Handlebars.registerBoundHelper("scheduleTableRow", function() {
-    var html, timeArray = getTimeArray();
-    return $.each(timeArray, function() {
-        var $el = $("<tr><td>1</td></tr>");
+}), Ember.Handlebars.registerHelper("scheduleTableHeaderRow", function() {
+    var html = "", timeArray = getTimeArray();
+    return $.each(timeArray, function(index, time) {
+        var $el = $('<tr><th class="schedule-table__time-header" data-start-time"' + time.toISOString() + '">' + time.format("MMM Do, h:mm a") + "</th></tr>");
         html += $el.html();
-    }), html;
+    }), console.log(html), new Handlebars.SafeString(html);
 }), DS.LocalRESTSerializer = DS.RESTSerializer.extend({
     extractSingle: function(store, type, payload) {
         return console.log("extractSingle"), this._super(store, type, payload);
@@ -2889,7 +2889,7 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
 var App = Ember.Application.create({
     LOG_TRANSITIONS: !0,
     rootElement: "#ember-app"
-});
+}), FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z";
 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
@@ -3052,20 +3052,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     }),
     Name: DS.attr("string")
 }), App.Event.FIXTURES = [ {
-    EventId: "7688",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Opening Show",
-    StartTime: "2014-05-08 19:00:00 to 2014-05-08 20:30:00",
-    EndTime: "2014-05-08 19:00:00 to 2014-05-08 20:30:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7688",
-    venue: "7614",
-    start_time: "2014-05-09T02:00:00.000Z",
-    end_time: "2014-05-09T03:30:00.000Z",
-    performers: []
-}, {
     EventId: "7704",
     VenueId: "7619",
     Name: "Northwest Young Guns",
@@ -3078,7 +3064,63 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7619",
     start_time: "2014-05-09T02:00:00.000Z",
     end_time: "2014-05-09T03:30:00.000Z",
-    performers: []
+    performers: [ "6629", "6686", "6702", "6542", "5983", "6483", "5919", "6534", "6174" ]
+}, {
+    EventId: "7688",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Opening Show",
+    StartTime: "2014-05-08 19:00:00 to 2014-05-08 20:30:00",
+    EndTime: "2014-05-08 19:00:00 to 2014-05-08 20:30:00",
+    MCId: "6717",
+    Cost: "$10",
+    ShowId: "",
+    id: "7688",
+    venue: "7614",
+    start_time: "2014-05-09T02:00:00.000Z",
+    end_time: "2014-05-09T03:30:00.000Z",
+    performers: [ "6608", "6456", "6704", "5787", "5876", "7785" ]
+}, {
+    EventId: "7663",
+    VenueId: "7612",
+    Name: "Squarespace Opening Show: Headliner",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6410",
+    Cost: "$25",
+    ShowId: "",
+    id: "7663",
+    venue: "7612",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "6032", "7580", "6745", "5739", "5856" ]
+}, {
+    EventId: "7679",
+    VenueId: "7613",
+    Name: "Eagles Lodge Opening Show",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6425",
+    Cost: "$15",
+    ShowId: "",
+    id: "7679",
+    venue: "7613",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "5938", "6004", "6102", "6092", "5728", "5845" ]
+}, {
+    EventId: "7740",
+    VenueId: "7620",
+    Name: "Analog Lounge Opening Show",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "5742",
+    Cost: "",
+    ShowId: "",
+    id: "7740",
+    venue: "7620",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "5889", "6860", "5998", "6611", "6157", "6864", "6835" ]
 }, {
     EventId: "7657",
     VenueId: "7611",
@@ -3099,56 +3141,56 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Hawthorne Theatre Opening Show",
     StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
     EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "",
+    MCId: "5999",
     Cost: "$15",
     ShowId: "",
     id: "7698",
     venue: "7615",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
-    performers: []
+    performers: [ "6144", "6150", "6408", "6163", "6681" ]
 }, {
     EventId: "7637",
     VenueId: "7609",
     Name: "Taxi Magic Stage Opening Show",
     StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
     EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "",
+    MCId: "6118",
     Cost: "$15",
     ShowId: "",
     id: "7637",
     venue: "7609",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
-    performers: []
+    performers: [ "6337", "6049", "5906", "6429", "6298" ]
 }, {
     EventId: "7730",
     VenueId: "7618",
     Name: "White Owl Opening Show",
     StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
     EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "",
+    MCId: "6647",
     Cost: "$15",
     ShowId: "",
     id: "7730",
     venue: "7618",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
-    performers: []
+    performers: [ "6203", "5987", "6352", "6305", "6284", "6839" ]
 }, {
-    EventId: "7663",
-    VenueId: "7612",
-    Name: "Squarespace Opening Show: Headliner",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "",
-    Cost: "$25",
+    EventId: "7653",
+    VenueId: "7610",
+    Name: "Surprise Me! ",
+    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    MCId: "6312",
+    Cost: "$10",
     ShowId: "",
-    id: "7663",
-    venue: "7612",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: []
+    id: "7653",
+    venue: "7610",
+    start_time: "2014-05-09T04:00:00.000Z",
+    end_time: "2014-05-09T05:30:00.000Z",
+    performers: [ "5777", "5774", "5879", "6215", "5932", "6690", "5755" ]
 }, {
     EventId: "7747",
     VenueId: "7619",
@@ -3162,7 +3204,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7619",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
-    performers: []
+    performers: [ "5811" ]
 }, {
     EventId: "7739",
     VenueId: "7616",
@@ -3176,7 +3218,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
-    performers: [ "6014" ]
+    performers: [ "7798", "6808", "6609", "6189", "6509" ]
 }, {
     EventId: "7716",
     VenueId: "7617",
@@ -3197,98 +3239,56 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Alhambra Lounge Primetime",
     StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
     EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    MCId: "",
+    MCId: "6674",
     Cost: "$10",
     ShowId: "",
     id: "7621",
     venue: "7608",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
-    performers: []
+    performers: [ "7566", "6413", "5951", "6834", "6365", "6858", "7581" ]
 }, {
     EventId: "7689",
     VenueId: "7614",
     Name: "Hawthorne Lounge Primetime",
     StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
     EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    MCId: "",
+    MCId: "5973",
     Cost: "$15",
     ShowId: "",
     id: "7689",
     venue: "7614",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7653",
-    VenueId: "7610",
-    Name: "Surprise Me! ",
-    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7653",
-    venue: "7610",
-    start_time: "2014-05-09T04:00:00.000Z",
-    end_time: "2014-05-09T05:30:00.000Z",
-    performers: []
+    performers: [ "6476", "6409", "5730", "7786", "6646", "6766" ]
 }, {
     EventId: "7748",
     VenueId: "7609",
     Name: "Taxi Magic Stage Late Show",
     StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
     EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
+    MCId: "6561",
     Cost: "",
     ShowId: "",
     id: "7748",
     venue: "7609",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
+    performers: [ "6275", "6699", "6354", "6153", "5962" ]
 }, {
-    EventId: "7679",
-    VenueId: "7613",
-    Name: "Eagles Lodge Opening Show",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
-    Cost: "$15",
-    ShowId: "",
-    id: "7679",
-    venue: "7613",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: [ "6527" ]
-}, {
-    EventId: "7740",
+    EventId: "7918",
     VenueId: "7620",
-    Name: "Analog Lounge Opening Show",
+    Name: "Analog Lounge Primetime",
     StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
     EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
+    MCId: "6727",
     Cost: "",
     ShowId: "",
-    id: "7740",
+    id: "7918",
     venue: "7620",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7658",
-    VenueId: "7611",
-    Name: "Bossanova Late Night",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7658",
-    venue: "7611",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
+    performers: [ "6825", "6069", "6379", "6822", "6861", "6014", "6824" ]
 }, {
     EventId: "7810",
     VenueId: "7612",
@@ -3302,7 +3302,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
+    performers: [ "6527", "6855", "7579", "6823", "6818" ]
+}, {
+    EventId: "7658",
+    VenueId: "7611",
+    Name: "Bossanova Primetime",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "6271",
+    Cost: "$20",
+    ShowId: "",
+    id: "7658",
+    venue: "7611",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "6659", "6857", "6804", "6833", "7568", "6614", "6371" ]
+}, {
+    EventId: "7919",
+    VenueId: "7613",
+    Name: "Eagles Lodge Primetime",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "6536",
+    Cost: "",
+    ShowId: "",
+    id: "7919",
+    venue: "7613",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "6687", "5806", "5805", "5783", "5867", "6591" ]
 }, {
     EventId: "7717",
     VenueId: "7617",
@@ -3318,33 +3346,47 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-09T06:00:00.000Z",
     performers: []
 }, {
-    EventId: "7699",
+    EventId: "7701",
     VenueId: "7615",
-    Name: "Hawthorne Theatre Late Show",
+    Name: "Baron Vaughn Presents: The New Negroes",
     StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
     EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
+    MCId: "6849",
     Cost: "$20",
     ShowId: "",
-    id: "7699",
+    id: "7701",
     venue: "7615",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
+    performers: [ "6134", "6474", "6074", "5918", "5813", "6276", "6805", "6795", "7595" ]
 }, {
     EventId: "7731",
     VenueId: "7618",
-    Name: "White Owl Late Show",
+    Name: "White Owl Primetime",
     StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
     EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "",
+    MCId: "6735",
     Cost: "$15",
     ShowId: "",
     id: "7731",
     venue: "7618",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
-    performers: []
+    performers: [ "6162", "6564", "5976", "5895" ]
+}, {
+    EventId: "7699",
+    VenueId: "7619",
+    Name: "Analog Theater Late Night",
+    StartTime: "2014-05-08 23:00:00 to 2014-05-09 00:30:00",
+    EndTime: "2014-05-08 23:00:00 to 2014-05-09 00:30:00",
+    MCId: "6058",
+    Cost: "$20",
+    ShowId: "",
+    id: "7699",
+    venue: "7619",
+    start_time: "2014-05-09T06:00:00.000Z",
+    end_time: "2014-05-09T07:30:00.000Z",
+    performers: [ "6374", "6800", "6029", "6816", "6280", "7777", "6723" ]
 }, {
     EventId: "7718",
     VenueId: "7617",
@@ -3365,14 +3407,28 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Alhambra Lounge Late Night",
     StartTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
     EndTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
-    MCId: "",
+    MCId: "6110",
     Cost: "$10",
     ShowId: "",
     id: "7622",
     venue: "7608",
     start_time: "2014-05-09T06:00:00.000Z",
     end_time: "2014-05-09T07:00:00.000Z",
-    performers: []
+    performers: [ "6123", "6325", "6696", "6065", "6363", "6205", "6859" ]
+}, {
+    EventId: "7665",
+    VenueId: "7612",
+    Name: "Squarespace Early Show",
+    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    MCId: "6542",
+    Cost: "$20",
+    ShowId: "",
+    id: "7665",
+    venue: "7612",
+    start_time: "2014-05-10T02:00:00.000Z",
+    end_time: "2014-05-10T03:30:00.000Z",
+    performers: [ "6352", "6354", "5987", "6702", "6275" ]
 }, {
     EventId: "7706",
     VenueId: "7616",
@@ -3386,21 +3442,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
-    performers: [ "6429" ]
+    performers: [ "6429", "6284", "6735", "6298", "6410", "6699", "6527", "6859" ]
 }, {
     EventId: "7680",
     VenueId: "7613",
     Name: "Eagles Lodge Early Show",
     StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
     EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    MCId: "",
+    MCId: "6150",
     Cost: "$15",
     ShowId: "",
     id: "7680",
     venue: "7613",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
-    performers: []
+    performers: [ "6110", "5951", "5805", "5894", "5730", "6409" ]
 }, {
     EventId: "7639",
     VenueId: "7609",
@@ -3421,56 +3477,28 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Hawthorne Lounge Early Show",
     StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
     EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    MCId: "",
+    MCId: "6608",
     Cost: "$15",
     ShowId: "",
     id: "7690",
     venue: "7614",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7665",
-    VenueId: "7612",
-    Name: "Squarespace Early Show",
-    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7665",
-    venue: "7612",
-    start_time: "2014-05-10T02:00:00.000Z",
-    end_time: "2014-05-10T03:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7701",
-    VenueId: "7615",
-    Name: "Baron Vaughn Presents: The New Negroes",
-    StartTime: "2014-05-09 19:30:00 to 2014-05-09 21:00:00",
-    EndTime: "2014-05-09 19:30:00 to 2014-05-09 21:00:00",
-    MCId: "6849",
-    Cost: "$20",
-    ShowId: "",
-    id: "7701",
-    venue: "7615",
-    start_time: "2014-05-10T02:30:00.000Z",
-    end_time: "2014-05-10T04:00:00.000Z",
-    performers: []
+    performers: [ "6591", "5813", "6564", "6118", "6483", "5962" ]
 }, {
     EventId: "7623",
     VenueId: "7608",
     Name: "Alhambra Lounge Early Show",
     StartTime: "2014-05-09 19:30:00 to 2014-05-09 21:00:00",
     EndTime: "2014-05-09 19:30:00 to 2014-05-09 21:00:00",
-    MCId: "",
+    MCId: "6456",
     Cost: "$15",
     ShowId: "",
     id: "7623",
     venue: "7608",
     start_time: "2014-05-10T02:30:00.000Z",
     end_time: "2014-05-10T04:00:00.000Z",
-    performers: []
+    performers: [ "6065", "6766", "6696", "6029", "6509", "6069", "7828" ]
 }, {
     EventId: "7807",
     VenueId: "7618",
@@ -3484,7 +3512,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7618",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
-    performers: []
+    performers: [ "6731", "6824", "6102", "5983", "6659", "6808", "7881" ]
 }, {
     EventId: "7741",
     VenueId: "7619",
@@ -3512,49 +3540,49 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7611",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
-    performers: [ "6862" ]
+    performers: [ "6862", "6823", "6859", "6860" ]
+}, {
+    EventId: "7640",
+    VenueId: "7609",
+    Name: "Taxi Magic Stage Primetime Show",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    MCId: "7570",
+    Cost: "$20",
+    ShowId: "",
+    id: "7640",
+    venue: "7609",
+    start_time: "2014-05-10T04:00:00.000Z",
+    end_time: "2014-05-10T05:30:00.000Z",
+    performers: []
+}, {
+    EventId: "7691",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Primetime",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    MCId: "5976",
+    Cost: "$15",
+    ShowId: "",
+    id: "7691",
+    venue: "7614",
+    start_time: "2014-05-10T04:00:00.000Z",
+    end_time: "2014-05-10T05:30:00.000Z",
+    performers: [ "6312", "6681", "6163", "6315", "6534", "6128" ]
 }, {
     EventId: "7641",
     VenueId: "7616",
     Name: "Jupiter Tent Primetime",
     StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
     EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
+    MCId: "5856",
     Cost: "$20",
     ShowId: "",
     id: "7641",
     venue: "7616",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7654",
-    VenueId: "7610",
-    Name: "Surprise Me!",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7654",
-    venue: "7610",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7666",
-    VenueId: "7612",
-    Name: "Rooftop Presents: W. Kamau Bell and Friends",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7666",
-    venue: "7612",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
+    performers: [ "6337", "6305", "5879", "6474", "6276", "6159" ]
 }, {
     EventId: "7806",
     VenueId: "7613",
@@ -3568,21 +3596,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7613",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
+    performers: [ "5787", "6849", "5906", "6629", "6363", "7881" ]
+}, {
+    EventId: "7654",
+    VenueId: "7610",
+    Name: "Surprise Me!",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    MCId: "6049",
+    Cost: "$10",
+    ShowId: "",
+    id: "7654",
+    venue: "7610",
+    start_time: "2014-05-10T04:00:00.000Z",
+    end_time: "2014-05-10T05:30:00.000Z",
+    performers: [ "5895" ]
 }, {
     EventId: "7749",
     VenueId: "7620",
     Name: "Analog Lounge Primetime Show",
     StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
     EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
+    MCId: "5845",
     Cost: "",
     ShowId: "",
     id: "7749",
     venue: "7620",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
+    performers: [ "6816", "6092", "6151", "6822", "6365", "6004", "6374" ]
 }, {
     EventId: "7719",
     VenueId: "7617",
@@ -3598,47 +3640,19 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-10T05:00:00.000Z",
     performers: []
 }, {
-    EventId: "7640",
-    VenueId: "7609",
-    Name: "Taxi Magic Stage Primetime Show",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7640",
-    venue: "7609",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7691",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Primetime",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "",
-    Cost: "$15",
-    ShowId: "",
-    id: "7691",
-    venue: "7614",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: []
-}, {
     EventId: "7624",
     VenueId: "7608",
     Name: "Alhambra Lounge Primetime",
     StartTime: "2014-05-09 21:30:00 to 2014-05-09 23:00:00",
     EndTime: "2014-05-09 21:30:00 to 2014-05-09 23:00:00",
-    MCId: "",
+    MCId: "7786",
     Cost: "$10",
     ShowId: "",
     id: "7624",
     venue: "7608",
     start_time: "2014-05-10T04:30:00.000Z",
     end_time: "2014-05-10T06:00:00.000Z",
-    performers: []
+    performers: [ "6723", "5867", "5806", "6805", "6189", "7579", "6825" ]
 }, {
     EventId: "7811",
     VenueId: "7619",
@@ -3652,7 +3666,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7619",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
-    performers: []
+    performers: [ "6687", "6402", "6834", "6858", "5876", "6379" ]
 }, {
     EventId: "7660",
     VenueId: "7611",
@@ -3682,20 +3696,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-10T06:00:00.000Z",
     performers: []
 }, {
-    EventId: "7733",
-    VenueId: "7618",
-    Name: "Baron Vaughn Presents: The New Negroes",
-    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    MCId: "6849",
-    Cost: "$15",
-    ShowId: "",
-    id: "7733",
-    venue: "7618",
-    start_time: "2014-05-10T05:00:00.000Z",
-    end_time: "2014-05-10T06:30:00.000Z",
-    performers: []
-}, {
     EventId: "7804",
     VenueId: "7615",
     Name: "PERSONA! with Tony Sam",
@@ -3708,6 +3708,34 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7615",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
+    performers: [ "7775", "6804", "5998", "6659", "6808", "7883", "6425" ]
+}, {
+    EventId: "7733",
+    VenueId: "7618",
+    Name: "Baron Vaughn Presents: The New Negroes",
+    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    MCId: "6849",
+    Cost: "$15",
+    ShowId: "",
+    id: "7733",
+    venue: "7618",
+    start_time: "2014-05-10T05:00:00.000Z",
+    end_time: "2014-05-10T06:30:00.000Z",
+    performers: [ "6410", "6561", "6153", "5876", "6690", "5999", "6839", "6865" ]
+}, {
+    EventId: "7721",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
+    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7721",
+    venue: "7617",
+    start_time: "2014-05-10T06:00:00.000Z",
+    end_time: "2014-05-10T07:00:00.000Z",
     performers: []
 }, {
     EventId: "7692",
@@ -3715,14 +3743,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Hawthorne Lounge Late Night",
     StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
     EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    MCId: "",
+    MCId: "6162",
     Cost: "$20",
     ShowId: "",
     id: "7692",
     venue: "7614",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
-    performers: []
+    performers: [ "6762", "6203", "5755", "5774", "6032", "6647" ]
 }, {
     EventId: "7667",
     VenueId: "7612",
@@ -3743,28 +3771,28 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Analog Lounge Late Show",
     StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
     EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    MCId: "",
+    MCId: "6704",
     Cost: "",
     ShowId: "",
     id: "7750",
     venue: "7620",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
-    performers: []
+    performers: [ "6800", "6014", "6157", "7777", "5919", "5889", "6614" ]
 }, {
     EventId: "7682",
     VenueId: "7613",
     Name: "Eagles Lodge Late Show",
     StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
     EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    MCId: "",
+    MCId: "6174",
     Cost: "$15",
     ShowId: "",
     id: "7682",
     venue: "7613",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
-    performers: []
+    performers: [ "6536", "5728", "6727", "5783", "6476", "6717" ]
 }, {
     EventId: "7742",
     VenueId: "7609",
@@ -3778,21 +3806,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7721",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
-    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7721",
-    venue: "7617",
-    start_time: "2014-05-10T06:00:00.000Z",
-    end_time: "2014-05-10T07:00:00.000Z",
-    performers: []
+    performers: [ "6858", "6205", "6859", "5739" ]
 }, {
     EventId: "7722",
     VenueId: "7617",
@@ -3813,28 +3827,56 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Alhambra Lounge Late Show",
     StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
     EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
-    MCId: "",
+    MCId: "6674",
     Cost: "$15",
     ShowId: "",
     id: "7625",
     venue: "7608",
     start_time: "2014-05-10T06:30:00.000Z",
     end_time: "2014-05-10T08:00:00.000Z",
-    performers: []
+    performers: [ "6818", "6640", "7785", "7568", "6058", "6835", "6280" ]
+}, {
+    EventId: "7915",
+    VenueId: "7619",
+    Name: "Analog Late Night Placeholder",
+    StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    MCId: "6319",
+    Cost: "",
+    ShowId: "",
+    id: "7915",
+    venue: "7619",
+    start_time: "2014-05-10T06:30:00.000Z",
+    end_time: "2014-05-10T08:00:00.000Z",
+    performers: [ "5938", "6611", "6864", "6857", "7566", "7802", "6833" ]
+}, {
+    EventId: "7916",
+    VenueId: "7611",
+    Name: "Bossanova Late Night Placeholder",
+    StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    MCId: "6325",
+    Cost: "",
+    ShowId: "",
+    id: "7916",
+    venue: "7611",
+    start_time: "2014-05-10T06:30:00.000Z",
+    end_time: "2014-05-10T08:00:00.000Z",
+    performers: [ "5973", "6413", "6795", "6855", "6861", "6271" ]
 }, {
     EventId: "7702",
     VenueId: "7615",
     Name: "Hawthorne Theatre Late Show",
     StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
     EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
-    MCId: "",
+    MCId: "6134",
     Cost: "$25",
     ShowId: "",
     id: "7702",
     venue: "7615",
     start_time: "2014-05-10T06:30:00.000Z",
     end_time: "2014-05-10T08:00:00.000Z",
-    performers: []
+    performers: [ "5918", "6686", "6215", "5777", "7580" ]
 }, {
     EventId: "7668",
     VenueId: "7612",
@@ -3848,7 +3890,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-10T20:00:00.000Z",
     end_time: "2014-05-10T21:30:00.000Z",
-    performers: [ "6092", "6833", "6065", "5938" ]
+    performers: [ "6092", "6833", "6065" ]
 }, {
     EventId: "7642",
     VenueId: "7609",
@@ -3862,21 +3904,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-10T21:00:00.000Z",
     end_time: "2014-05-10T22:30:00.000Z",
-    performers: []
+    performers: [ "6855", "6861", "6365" ]
 }, {
     EventId: "7669",
     VenueId: "7612",
     Name: "Jonah Raydio",
     StartTime: "2014-05-10 15:00:00 to 2014-05-10 16:30:00",
     EndTime: "2014-05-10 15:00:00 to 2014-05-10 16:30:00",
-    MCId: "6863",
+    MCId: "",
     Cost: "$20",
     ShowId: "6869",
     id: "7669",
     venue: "7612",
     start_time: "2014-05-10T22:00:00.000Z",
     end_time: "2014-05-10T23:30:00.000Z",
-    performers: []
+    performers: [ "6863", "7882" ]
 }, {
     EventId: "7648",
     VenueId: "7609",
@@ -3890,7 +3932,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-10T23:00:00.000Z",
     end_time: "2014-05-11T00:30:00.000Z",
-    performers: []
+    performers: [ "6102", "6824", "6865" ]
 }, {
     EventId: "7816",
     VenueId: "7616",
@@ -3932,7 +3974,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-11T01:00:00.000Z",
     end_time: "2014-05-11T02:30:00.000Z",
-    performers: []
+    performers: [ "7893", "7894" ]
 }, {
     EventId: "7678",
     VenueId: "7616",
@@ -3946,35 +3988,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
-    performers: []
+    performers: [ "6379", "6696", "6157", "6402", "5867", "6123" ]
 }, {
     EventId: "7693",
     VenueId: "7614",
     Name: "Hawthorne Lounge Early Show",
     StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
     EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "",
+    MCId: "6118",
     Cost: "$15",
     ShowId: "",
     id: "7693",
     venue: "7614",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
-    performers: []
+    performers: [ "6410", "6629", "6534", "6215", "6203", "6134" ]
 }, {
     EventId: "7626",
     VenueId: "7608",
     Name: "Alhambra Lounge Early Show",
     StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
     EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "",
+    MCId: "5728",
     Cost: "$15",
     ShowId: "",
     id: "7626",
     venue: "7608",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
-    performers: []
+    performers: [ "5938", "6151", "6325", "7581", "6687", "7568", "6834" ]
 }, {
     EventId: "7808",
     VenueId: "7619",
@@ -3988,49 +4030,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7619",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
-    performers: []
+    performers: [ "6074", "6723", "7823", "7825", "6857", "6864" ]
 }, {
     EventId: "7743",
     VenueId: "7613",
     Name: "Eagles Lodge Early Show",
     StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
     EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "",
+    MCId: "6483",
     Cost: "",
     ShowId: "",
     id: "7743",
     venue: "7613",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
-    performers: []
+    performers: [ "5856", "5983", "6561", "6312", "6163", "6305" ]
 }, {
-    EventId: "7645",
-    VenueId: "7609",
-    Name: "The Live Read",
-    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    MCId: "7590",
-    Cost: "$25",
-    ShowId: "7605",
-    id: "7645",
-    venue: "7609",
-    start_time: "2014-05-11T03:00:00.000Z",
-    end_time: "2014-05-11T04:30:00.000Z",
-    performers: [ "6816" ]
-}, {
-    EventId: "7671",
-    VenueId: "7612",
-    Name: "Set List: Stand-Up Without a Net",
-    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    MCId: "7802",
-    Cost: "$25",
-    ShowId: "6868",
-    id: "7671",
-    venue: "7612",
-    start_time: "2014-05-11T03:00:00.000Z",
-    end_time: "2014-05-11T04:30:00.000Z",
-    performers: []
+    EventId: "7911",
+    VenueId: "7620",
+    Name: "Analog Lounge Early Show",
+    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    MCId: "6150",
+    Cost: "$10",
+    ShowId: "",
+    id: "7911",
+    venue: "7620",
+    start_time: "2014-05-11T02:00:00.000Z",
+    end_time: "2014-05-11T03:30:00.000Z",
+    performers: [ "6614", "5845", "5805", "5973", "6640", "5919" ]
 }, {
     EventId: "7734",
     VenueId: "7618",
@@ -4044,7 +4072,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7618",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
-    performers: []
+    performers: [ "6102", "7595", "7579", "6319", "6425", "6857", "6402" ]
+}, {
+    EventId: "7645",
+    VenueId: "7609",
+    Name: "The Live Read",
+    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    MCId: "7590",
+    Cost: "$25",
+    ShowId: "7605",
+    id: "7645",
+    venue: "7609",
+    start_time: "2014-05-11T03:00:00.000Z",
+    end_time: "2014-05-11T04:30:00.000Z",
+    performers: [ "6816", "6863", "6824", "6860", "6374", "7777", "6823", "6014" ]
+}, {
+    EventId: "7671",
+    VenueId: "7612",
+    Name: "Set List: Stand-Up Without a Net",
+    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    MCId: "7802",
+    Cost: "$25",
+    ShowId: "6868",
+    id: "7671",
+    venue: "7612",
+    start_time: "2014-05-11T03:00:00.000Z",
+    end_time: "2014-05-11T04:30:00.000Z",
+    performers: [ "6509", "7775", "6791", "6609", "6365", "6723" ]
 }, {
     EventId: "7723",
     VenueId: "7617",
@@ -4062,10 +4118,10 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
 }, {
     EventId: "7655",
     VenueId: "7610",
-    Name: "Surprise Me!",
+    Name: "Surprise Me! Primetime",
     StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
     EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "",
+    MCId: "7570",
     Cost: "$10",
     ShowId: "",
     id: "7655",
@@ -4086,49 +4142,63 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
-    performers: []
+    performers: [ "5774", "6275", "5906", "6058", "5987", "5879", "6402", "7566" ]
 }, {
     EventId: "7694",
     VenueId: "7614",
     Name: "Hawthorne Lounge Primetime",
     StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
     EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "",
+    MCId: "6839",
     Cost: "$10",
     ShowId: "",
     id: "7694",
     venue: "7614",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
-    performers: []
+    performers: [ "6527", "6276", "5777", "5962", "6284", "6681" ]
 }, {
     EventId: "7627",
     VenueId: "7608",
     Name: "Alhambra Lounge Primetime",
     StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
     EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "",
+    MCId: "7785",
     Cost: "$15",
     ShowId: "",
     id: "7627",
     venue: "7608",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
-    performers: []
+    performers: [ "6800", "5894", "6674", "6029", "5806", "6611", "6280" ]
 }, {
     EventId: "7751",
     VenueId: "7620",
     Name: "Analog Lounge Primetime Show",
     StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
     EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "",
+    MCId: "6409",
     Cost: "",
     ShowId: "",
     id: "7751",
     venue: "7620",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
-    performers: []
+    performers: [ "6144", "6130", "6413", "6704", "6727", "5787" ]
+}, {
+    EventId: "7744",
+    VenueId: "7619",
+    Name: "The Show That Dare Not Speak Its Name",
+    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    MCId: "5879",
+    Cost: "$20",
+    ShowId: "",
+    id: "7744",
+    venue: "7619",
+    start_time: "2014-05-11T04:00:00.000Z",
+    end_time: "2014-05-11T05:30:00.000Z",
+    performers: [ "6647", "6699", "6731", "5895", "6157", "5876", "6696", "6359", "6476", "6189", "7881" ]
 }, {
     EventId: "7638",
     VenueId: "7613",
@@ -4144,20 +4214,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6659", "6849", "6858", "5998" ]
 }, {
-    EventId: "7744",
-    VenueId: "7619",
-    Name: "The Show That Dare Not Speak Its Name",
-    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "5879",
-    Cost: "$20",
-    ShowId: "",
-    id: "7744",
-    venue: "7619",
-    start_time: "2014-05-11T04:00:00.000Z",
-    end_time: "2014-05-11T05:30:00.000Z",
-    performers: []
-}, {
     EventId: "7805",
     VenueId: "7618",
     Name: "Brew Haha: The Comedy Show Drinking Game",
@@ -4170,7 +4226,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7618",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
-    performers: []
+    performers: [ "6810", "6805", "5730", "5742", "6859", "6825" ]
+}, {
+    EventId: "7666",
+    VenueId: "7612",
+    Name: "Pivot Presents W. Kamau Bell &amp; Friends",
+    StartTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
+    EndTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
+    MCId: "",
+    Cost: "$20",
+    ShowId: "",
+    id: "7666",
+    venue: "7612",
+    start_time: "2014-05-11T05:00:00.000Z",
+    end_time: "2014-05-11T06:30:00.000Z",
+    performers: [ "6731", "6298", "6835", "7895" ]
 }, {
     EventId: "7724",
     VenueId: "7617",
@@ -4198,21 +4268,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
-    performers: [ "5889", "6824", "6536", "6402", "6189", "6065", "6014", "6808", "6865", "6823" ]
-}, {
-    EventId: "7672",
-    VenueId: "7612",
-    Name: "Squarespace Late Show",
-    StartTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
-    EndTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7672",
-    venue: "7612",
-    start_time: "2014-05-11T05:00:00.000Z",
-    end_time: "2014-05-11T06:30:00.000Z",
-    performers: []
+    performers: [ "5889", "6824", "6536", "6402", "6189", "6065", "6808", "6271", "6823", "6609" ]
 }, {
     EventId: "7725",
     VenueId: "7617",
@@ -4233,84 +4289,84 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Hawthorne Lounge Late Night",
     StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
     EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
+    MCId: "5813",
     Cost: "$20",
     ShowId: "",
     id: "7695",
     venue: "7614",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
-    performers: []
+    performers: [ "6702", "6745", "6354", "6159", "5976", "6564" ]
 }, {
     EventId: "7628",
     VenueId: "7608",
     Name: "Alhambra Lounge Late Night",
     StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
     EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
+    MCId: "6456",
     Cost: "$10",
     ShowId: "",
     id: "7628",
     venue: "7608",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7685",
-    VenueId: "7613",
-    Name: "Eagles Lodge Late Show",
-    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
-    Cost: "$15",
-    ShowId: "",
-    id: "7685",
-    venue: "7613",
-    start_time: "2014-05-11T06:00:00.000Z",
-    end_time: "2014-05-11T07:30:00.000Z",
-    performers: []
+    performers: [ "6371", "6591", "6717", "6004", "5999", "6069", "7828" ]
 }, {
     EventId: "7752",
     VenueId: "7620",
     Name: "Analog Lounge Late Show",
     StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
     EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
+    MCId: "6408",
     Cost: "",
     ShowId: "",
     id: "7752",
     venue: "7620",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
-    performers: []
+    performers: [ "6608", "6174", "6363", "6766", "5783", "6110" ]
+}, {
+    EventId: "7685",
+    VenueId: "7613",
+    Name: "Eagles Lodge Late Show",
+    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    MCId: "6474",
+    Cost: "$15",
+    ShowId: "",
+    id: "7685",
+    venue: "7613",
+    start_time: "2014-05-11T06:00:00.000Z",
+    end_time: "2014-05-11T07:30:00.000Z",
+    performers: [ "6735", "6686", "7580", "6762", "6032", "5739" ]
 }, {
     EventId: "7745",
     VenueId: "7619",
     Name: "Analog Theater Late Show",
     StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
     EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
+    MCId: "6646",
     Cost: "",
     ShowId: "",
     id: "7745",
     venue: "7619",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
-    performers: []
+    performers: [ "5918", "5951", "6162", "6392", "6337" ]
 }, {
-    EventId: "7735",
-    VenueId: "7618",
-    Name: "White Owl Late Show",
-    StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
-    EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
-    MCId: "",
-    Cost: "$15",
+    EventId: "7912",
+    VenueId: "7610",
+    Name: "Surprise Me! Late Night",
+    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    MCId: "5932",
+    Cost: "",
     ShowId: "",
-    id: "7735",
-    venue: "7618",
-    start_time: "2014-05-11T06:30:00.000Z",
-    end_time: "2014-05-11T08:30:00.000Z",
-    performers: []
+    id: "7912",
+    venue: "7610",
+    start_time: "2014-05-11T06:00:00.000Z",
+    end_time: "2014-05-11T07:30:00.000Z",
+    performers: [ "6429" ]
 }, {
     EventId: "7726",
     VenueId: "7617",
@@ -4327,7 +4383,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: []
 }, {
     EventId: "7815",
-    VenueId: "7612",
+    VenueId: "7618",
     Name: "Blam! Blam! Blam! Presents &quot;Black Milk&quot;",
     StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
     EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
@@ -4335,14 +4391,28 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Cost: "$15",
     ShowId: "7814",
     id: "7815",
-    venue: "7612",
+    venue: "7618",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T08:30:00.000Z",
-    performers: []
+    performers: [ "6659", "6205", "5755", "6795", "6835", "6319", "6849", "6402" ]
+}, {
+    EventId: "7672",
+    VenueId: "7612",
+    Name: "Squarespace Late Show",
+    StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
+    EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
+    MCId: "6542",
+    Cost: "$20",
+    ShowId: "",
+    id: "7672",
+    venue: "7612",
+    start_time: "2014-05-11T06:30:00.000Z",
+    end_time: "2014-05-11T08:00:00.000Z",
+    performers: [ "6315", "6153", "6049", "6352", "6128" ]
 }, {
     EventId: "7796",
     VenueId: "7609",
-    Name: "Midnight Run",
+    Name: "Midnight Run/ The Andy Haynes Album Release Party!",
     StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
     EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
     MCId: "6804",
@@ -4352,7 +4422,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T08:30:00.000Z",
-    performers: []
+    performers: [ "6825", "6014", "6822", "7881", "7595" ]
 }, {
     EventId: "7675",
     VenueId: "7612",
@@ -4380,21 +4450,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-11T23:00:00.000Z",
     end_time: "2014-05-12T00:30:00.000Z",
-    performers: [ "6762", "6865" ]
-}, {
-    EventId: "7649",
-    VenueId: "7609",
-    Name: "Totally Biased Writers Panel",
-    StartTime: "2014-05-11 18:00:00 to 2014-05-11 19:30:00",
-    EndTime: "2014-05-11 18:00:00 to 2014-05-11 19:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7649",
-    venue: "7609",
-    start_time: "2014-05-12T01:00:00.000Z",
-    end_time: "2014-05-12T02:30:00.000Z",
-    performers: []
+    performers: [ "7896", "6762", "6865", "6823" ]
 }, {
     EventId: "7676",
     VenueId: "7612",
@@ -4410,6 +4466,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T02:30:00.000Z",
     performers: []
 }, {
+    EventId: "7649",
+    VenueId: "7609",
+    Name: "Totally Biased Writers Panel",
+    StartTime: "2014-05-11 18:00:00 to 2014-05-11 19:30:00",
+    EndTime: "2014-05-11 18:00:00 to 2014-05-11 19:30:00",
+    MCId: "",
+    Cost: "$20",
+    ShowId: "",
+    id: "7649",
+    venue: "7609",
+    start_time: "2014-05-12T01:00:00.000Z",
+    end_time: "2014-05-12T02:30:00.000Z",
+    performers: [ "6823", "6835", "6696" ]
+}, {
     EventId: "7710",
     VenueId: "7616",
     Name: "Best Kept Secret",
@@ -4422,7 +4492,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
-    performers: []
+    performers: [ "6315", "6731", "6681", "5918", "6032", "5856", "6337", "7579" ]
 }, {
     EventId: "7809",
     VenueId: "7614",
@@ -4436,21 +4506,49 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7614",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
-    performers: []
+    performers: [ "6315", "6392", "5755", "6163" ]
 }, {
     EventId: "7632",
     VenueId: "7608",
     Name: "Ahambra Lounge Early Show",
     StartTime: "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
     EndTime: "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
-    MCId: "",
+    MCId: "6425",
     Cost: "$15",
     ShowId: "",
     id: "7632",
     venue: "7608",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
-    performers: []
+    performers: [ "6659", "6687", "5999", "6065", "7518", "6723", "6805" ]
+}, {
+    EventId: "7703",
+    VenueId: "7611",
+    Name: "Bossanova Primetime",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 22:00:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 22:00:00",
+    MCId: "5867",
+    Cost: "$20",
+    ShowId: "",
+    id: "7703",
+    venue: "7611",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T05:00:00.000Z",
+    performers: [ "5938", "7777", "6004", "6379", "5876", "6704" ]
+}, {
+    EventId: "7746",
+    VenueId: "7619",
+    Name: "Analog Theater Early Show",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    MCId: "6174",
+    Cost: "",
+    ShowId: "",
+    id: "7746",
+    venue: "7619",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T04:30:00.000Z",
+    performers: [ "6849", "6069", "6280", "6611", "5889", "6029", "6857" ]
 }, {
     EventId: "7677",
     VenueId: "7609",
@@ -4464,35 +4562,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
-    performers: []
+    performers: [ "7803" ]
 }, {
     EventId: "7737",
     VenueId: "7618",
     Name: "White Owl Early Show",
     StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
     EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "",
+    MCId: "6564",
     Cost: "$10",
     ShowId: "",
     id: "7737",
     venue: "7618",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7753",
-    VenueId: "7620",
-    Name: "Analog Lounge Closing Show",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "",
-    Cost: "",
-    ShowId: "",
-    id: "7753",
-    venue: "7620",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:30:00.000Z",
-    performers: []
+    performers: [ "6735", "6275", "6352", "6128", "6629", "6203" ]
 }, {
     EventId: "7650",
     VenueId: "7615",
@@ -4506,7 +4590,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7615",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
-    performers: []
+    performers: [ "6818", "7568", "6864", "6795", "6408" ]
 }, {
     EventId: "7651",
     VenueId: "7613",
@@ -4520,7 +4604,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7613",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
-    performers: []
+    performers: [ "7579", "6823", "6762", "6536" ]
 }, {
     EventId: "7662",
     VenueId: "7612",
@@ -4536,103 +4620,117 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T04:30:00.000Z",
     performers: []
 }, {
-    EventId: "7703",
-    VenueId: "7611",
-    Name: "Bossanova Primetime",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 22:00:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 22:00:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7703",
-    venue: "7611",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T05:00:00.000Z",
-    performers: []
-}, {
     EventId: "7656",
     VenueId: "7610",
     Name: "Surprise Me!",
-    StartTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    EndTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    MCId: "",
+    StartTime: "2014-05-11 21:00:00 to 2014-05-11 23:00:00",
+    EndTime: "2014-05-11 21:00:00 to 2014-05-11 23:00:00",
+    MCId: "6745",
     Cost: "$10",
     ShowId: "",
     id: "7656",
     venue: "7610",
     start_time: "2014-05-12T04:00:00.000Z",
-    end_time: "2014-05-12T05:30:00.000Z",
-    performers: []
+    end_time: "2014-05-12T06:00:00.000Z",
+    performers: [ "6527", "6429", "6153", "6134", "6702", "6312", "6839" ]
 }, {
     EventId: "7711",
     VenueId: "7616",
     Name: "Jupiter Tent Closing Show",
     StartTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
     EndTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    MCId: "",
+    MCId: "7785",
     Cost: "$25",
     ShowId: "",
     id: "7711",
     venue: "7616",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
-    performers: []
+    performers: [ "5783", "6110", "6130", "6319", "7786", "6150" ]
 }, {
     EventId: "7697",
     VenueId: "7614",
     Name: "Hawthorne Lounge Closing Show",
     StartTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
     EndTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    MCId: "",
+    MCId: "5787",
     Cost: "$10",
     ShowId: "",
     id: "7697",
     venue: "7614",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
-    performers: []
+    performers: [ "6271", "6717", "6855", "5919", "6189", "6646" ]
 }, {
     EventId: "7633",
     VenueId: "7608",
     Name: "Ahambra Lounge Closing Show",
     StartTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
     EndTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    MCId: "",
+    MCId: "6157",
     Cost: "$15",
     ShowId: "",
     id: "7633",
     venue: "7608",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
-    performers: []
+    performers: [ "6205", "5806", "6325", "6833", "6413", "6824", "6859" ]
 }, {
-    EventId: "7746",
-    VenueId: "7619",
-    Name: "Analog Theater Closing Show",
+    EventId: "7753",
+    VenueId: "7620",
+    Name: "Analog Lounge Primetime",
     StartTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
     EndTime: "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-    MCId: "",
-    Cost: "",
+    MCId: "5742",
+    Cost: "$15",
     ShowId: "",
-    id: "7746",
-    venue: "7619",
+    id: "7753",
+    venue: "7620",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
-    performers: []
+    performers: [ "5845", "6509", "6822", "6365" ]
+}, {
+    EventId: "7913",
+    VenueId: "7615",
+    Name: "Hawthorne Theatre Closing Show",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "6409",
+    Cost: "",
+    ShowId: "",
+    id: "7913",
+    venue: "7615",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "6591", "6476", "6640", "6456", "6674", "6614", "6860", "7881" ]
+}, {
+    EventId: "7914",
+    VenueId: "7619",
+    Name: "Analog Theater Closing Show",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "6144",
+    Cost: "",
+    ShowId: "",
+    id: "7914",
+    venue: "7619",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "6123", "6014", "6825", "6816", "6374", "6371", "6800" ]
 }, {
     EventId: "7738",
     VenueId: "7618",
     Name: "White Owl Closing Show",
     StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
     EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "",
+    MCId: "6542",
     Cost: "$10",
     ShowId: "",
     id: "7738",
     venue: "7618",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: []
+    performers: [ "6159", "5983", "6215", "6298", "6534", "6049" ]
 }, {
     EventId: "7727",
     VenueId: "7617",
@@ -4653,28 +4751,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Eagles Lodge Closing Show",
     StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
     EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "",
+    MCId: "6727",
     Cost: "$15",
     ShowId: "",
     id: "7687",
     venue: "7613",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: []
-}, {
-    EventId: "7661",
-    VenueId: "7611",
-    Name: "Prompter",
-    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "7802",
-    Cost: "$20",
-    ShowId: "6891",
-    id: "7661",
-    venue: "7611",
-    start_time: "2014-05-12T05:00:00.000Z",
-    end_time: "2014-05-12T06:30:00.000Z",
-    performers: []
+    performers: [ "5894", "5805", "5728", "6608", "6861", "5951" ]
 }, {
     EventId: "7783",
     VenueId: "7612",
@@ -4688,21 +4772,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: []
+    performers: [ "7882" ]
+}, {
+    EventId: "7661",
+    VenueId: "7611",
+    Name: "Prompter",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "7802",
+    Cost: "$20",
+    ShowId: "6891",
+    id: "7661",
+    venue: "7611",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "7775", "6863", "6808", "6858", "7595", "6791", "7883" ]
 }, {
     EventId: "7652",
     VenueId: "7609",
     Name: "Taxi Magic Stage Closing Show",
     StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
     EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "",
+    MCId: "6474",
     Cost: "$25",
     ShowId: "",
     id: "7652",
     venue: "7609",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: []
+    performers: [ "5813", "5906", "5774", "6483", "5895", "7581", "6804" ]
 }, {
     EventId: "7728",
     VenueId: "7617",
@@ -6553,43 +6651,69 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "7776-whiskey-tango"
 } ], App.Venue.FIXTURES = [ {
     Name: "Alhambra Theater Lounge",
-    id: 7608
+    VenueId: "7608",
+    id: "7608",
+    events: [ "7621", "7622", "7623", "7624", "7625", "7626", "7627", "7628", "7632", "7633" ]
 }, {
     Name: "Alhambra Theater Main",
-    id: 7609
+    VenueId: "7609",
+    id: "7609",
+    events: [ "7637", "7748", "7639", "7640", "7742", "7642", "7648", "7644", "7645", "7646", "7796", "7649", "7677", "7652" ]
 }, {
     Name: "Analog Lounge",
-    id: 7620
+    VenueId: "7620",
+    id: "7620",
+    events: [ "7740", "7918", "7749", "7750", "7911", "7751", "7752", "7753" ]
 }, {
     Name: "Analog Theater",
-    id: 7619
+    VenueId: "7619",
+    id: "7619",
+    events: [ "7704", "7747", "7699", "7741", "7811", "7915", "7808", "7744", "7745", "7746", "7914" ]
 }, {
     Name: "Bar of the Gods",
-    id: 7610
+    VenueId: "7610",
+    id: "7610",
+    events: [ "7653", "7654", "7655", "7912", "7656" ]
 }, {
     Name: "Bossanova",
-    id: 7611
+    VenueId: "7611",
+    id: "7611",
+    events: [ "7657", "7658", "7659", "7660", "7916", "7703", "7661" ]
 }, {
     Name: "Doug Fir",
-    id: 7612
+    VenueId: "7612",
+    id: "7612",
+    events: [ "7663", "7810", "7665", "7667", "7668", "7669", "7670", "7671", "7666", "7672", "7675", "7674", "7676", "7662", "7783" ]
 }, {
     Name: "Eagles Lodge",
-    id: 7613
+    VenueId: "7613",
+    id: "7613",
+    events: [ "7679", "7919", "7680", "7806", "7682", "7743", "7638", "7685", "7651", "7687" ]
 }, {
     Name: "Hawthorne Theatre Lounge",
-    id: 7614
+    VenueId: "7614",
+    id: "7614",
+    events: [ "7688", "7689", "7690", "7691", "7692", "7693", "7694", "7695", "7809", "7697" ]
 }, {
     Name: "Hawthorne Theatre Main",
-    id: 7615
+    VenueId: "7615",
+    id: "7615",
+    events: [ "7698", "7701", "7804", "7702", "7650", "7913" ]
 }, {
     Name: "Jupiter Tent",
-    id: 7616
+    VenueId: "7616",
+    id: "7616",
+    events: [ "7739", "7706", "7641", "7816", "7678", "7708", "7710", "7711" ]
 }, {
     Name: "The Tanker",
-    id: 7617
+    VenueId: "7617",
+    id: "7617",
+    events: [ "7716", "7717", "7718", "7719", "7720", "7721", "7722", "7723", "7724", "7725", "7726", "7727", "7728" ]
 }, {
     Name: "White Owl Social Club",
-    id: 7618
+    VenueId: "7618",
+    id: "7618",
+    events: [ "7730", "7731", "7807", "7733", "7734", "7805", "7815", "7737", "7738" ]
 } ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
 App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
 App.PerformerController = Ember.ObjectController.extend({
@@ -6613,6 +6737,12 @@ App.PerformerController = Ember.ObjectController.extend({
         },
         filterSunday: function() {
             this.set("scheduleClass", "filter-items filter-sunday");
+        },
+        filterGrid: function() {
+            $(".schedule-table").show(), $(".schedule-list").hide();
+        },
+        filterList: function() {
+            $(".schedule-table").hide(), $(".schedule-list").show();
         }
     },
     scheduleClass: "",
@@ -6654,7 +6784,8 @@ App.PerformerController = Ember.ObjectController.extend({
     }
 }), App.ScheduleView = Ember.View.extend({
     didInsertElement: function() {
-        Ember.run.scheduleOnce("afterRender", this, this.addListDividers);
+        Ember.run.scheduleOnce("afterRender", this, this.addListDividers), Ember.run.scheduleOnce("afterRender", this, this.addTableColspans), 
+        Ember.run.scheduleOnce("afterRender", this, this.makeTableResponsive);
     },
     addListDividers: function() {
         $(".schedule-list__spacer").remove();
@@ -6667,6 +6798,48 @@ App.PerformerController = Ember.ObjectController.extend({
                 currentTime = $(this).data("start-time"), $(this).before('<div class="list-group-item schedule-list__spacer ' + weekday + '"><div class="container-fluid"><div class="row"><div class="col-xs-12">' + dateString + "</div></div></div></div>");
             }
         });
+    },
+    addTableColspans: function() {
+        $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
+            var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
+            $(this).attr("colspan", duration);
+            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIME, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+            $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
+        });
+    },
+    makeTableResponsive: function() {
+        function splitTable(original) {
+            original.wrap("<div class='table-wrapper' />");
+            var copy = original.clone();
+            copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none"), 
+            copy.removeClass("responsive"), original.closest(".table-wrapper").append(copy), 
+            copy.wrap("<div class='pinned' />"), original.wrap("<div class='scrollable' />"), 
+            setCellHeights(original, copy);
+        }
+        function unsplitTable(original) {
+            original.closest(".table-wrapper").find(".pinned").remove(), original.unwrap(), 
+            original.unwrap();
+        }
+        function setCellHeights(original, copy) {
+            var tr = original.find("tr"), tr_copy = copy.find("tr"), heights = [];
+            tr.each(function(index) {
+                var self = $(this), tx = self.find("th, td");
+                tx.each(function() {
+                    var height = $(this).outerHeight(!0);
+                    heights[index] = heights[index] || 0, height > heights[index] && (heights[index] = height);
+                });
+            }), tr_copy.each(function(index) {
+                $(this).height(heights[index]);
+            });
+        }
+        var switched = !1, updateTables = function() {
+            return $(window).width() < 9999999 && !switched ? (switched = !0, $("table.responsive").each(function(i, element) {
+                splitTable($(element));
+            }), !0) : void (switched && $(window).width() > 9999999 && (switched = !1, $("table.responsive").each(function(i, element) {
+                unsplitTable($(element));
+            })));
+        };
+        updateTables();
     }
 }), App.ShowsView = Ember.View.extend({
     templateName: "shows_gallery",
@@ -7056,86 +7229,6 @@ App.PerformerController = Ember.ObjectController.extend({
         data: data
     }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
     data.buffer.push("</span></div>\n        </div>\n      </div>\n    </div>\n    </li>\n\n"), 
-    buffer;
-}), Ember.TEMPLATES["_schedule_table-row"] = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
-    function program1(depth0, data) {
-        var helper, options, buffer = "";
-        return data.buffer.push("\n  <td>\n    "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
-        options = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ depth0 ],
-            types: [ "STRING" ],
-            data: data
-        }, helper ? helper.call(depth0, "event_list_item", options) : helperMissing.call(depth0, "partial", "event_list_item", options)))), 
-        data.buffer.push("\n  </td>\n"), buffer;
-    }
-    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
-    data = data || {};
-    var stack1, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
-    stack1 = helpers.each.call(depth0, "event", "in", "venue.events", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: self.noop,
-        fn: self.program(1, program1, data),
-        contexts: [ depth0, depth0, depth0 ],
-        types: [ "ID", "ID", "ID" ],
-        data: data
-    }), data.buffer.push(stack1 || 0 === stack1 ? stack1 : "");
-}), Ember.TEMPLATES._schedule_table = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
-    function program1(depth0, data) {
-        var stack1, helper, options, buffer = "";
-        return data.buffer.push("\n   "), stack1 = helpers._triageMustache.call(depth0, "debug", {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ depth0 ],
-            types: [ "ID" ],
-            data: data
-        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n   <tr>\n    <th>"), 
-        stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ depth0 ],
-            types: [ "ID" ],
-            data: data
-        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
-        helper = helpers.scheduleTableRow || depth0 && depth0.scheduleTableRow, options = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
-            contexts: [ depth0 ],
-            types: [ "ID" ],
-            data: data
-        }, stack1 = helper ? helper.call(depth0, "venue.events", options) : helperMissing.call(depth0, "scheduleTableRow", "venue.events", options), 
-        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n    </tr>\n  "), 
-        buffer;
-    }
-    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
-    data = data || {};
-    var stack1, buffer = "", helperMissing = helpers.helperMissing, self = this;
-    return data.buffer.push('<table class="table">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  </tr>\n  </thead>\n  <tbody>\n  '), 
-    stack1 = helpers._triageMustache.call(depth0, "debug", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        contexts: [ depth0 ],
-        types: [ "ID" ],
-        data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  "), 
-    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: self.noop,
-        fn: self.program(1, program1, data),
-        contexts: [ depth0, depth0, depth0 ],
-        types: [ "ID", "ID", "ID" ],
-        data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
     buffer;
 }), Ember.TEMPLATES._sponsors_front_page = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -7690,7 +7783,24 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push('>Sunday</button>\n  </div>\n  <div id="schedules" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+    }))), data.buffer.push('>Sunday</button>\n  </div>\n\n  <div class="btn-group" style="float:right;">\n    <button type="button" class="btn btn-default" '), 
+    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterGrid", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }))), data.buffer.push('><i class="fa fa-th"></i> Show Grid View</button>\n    <button type="button" class="btn btn-default" '), 
+    data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterList", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }))), data.buffer.push('><i class="fa fa-list"></i> Show List View</button>\n  </div>\n  <br />\n  <br />\n  <div id="schedules" '), 
+    data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
         hash: {
             "class": "scheduleClass"
         },
@@ -7711,8 +7821,141 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
+    }, helper ? helper.call(depth0, "schedule_table", options) : helperMissing.call(depth0, "partial", "schedule_table", options)))), 
+    data.buffer.push("\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
     }, helper ? helper.call(depth0, "schedule_list", options) : helperMissing.call(depth0, "partial", "schedule_list", options)))), 
     data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
+}), Ember.TEMPLATES.schedule_table = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.events", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n        <td class="schedule-table__cell" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-start-time": "event.start_time"
+            },
+            hashTypes: {
+                "data-start-time": "STRING"
+            },
+            hashContexts: {
+                "data-start-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(" "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-end-time": "event.end_time"
+            },
+            hashTypes: {
+                "data-end-time": "STRING"
+            },
+            hashContexts: {
+                "data-end-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(">\n        "), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push(" - "), 
+        data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push("\n        <br />\n        "), stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(3, program3, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
+        buffer;
+    }
+    function program3(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('\n          <span class="label label-default">'), stack1 = helpers._triageMustache.call(depth0, "performer.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>\n        "), 
+        buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing, self = this;
+    return data.buffer.push('<table class="schedule-table responsive" style="display:none;">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  '), 
+    stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
 }), Ember.TEMPLATES.show = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         data.buffer.push("← All Shows");

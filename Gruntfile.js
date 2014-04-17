@@ -13,6 +13,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: [
+          'vendor_responsive_tables.js',
           'scripts/vendor_moment.js',
           'scripts/vendor_spin.js',
           'scripts/vendor_underscore-min.js',
@@ -103,7 +104,7 @@ module.exports = function(grunt) {
       },
       build_fixtures: {
         command: function () {
-            return 'node build_performer_images.js;node build_show_images.js;';
+            return 'node build_venues.js && node build_events.js && node build_performer_images.js && node build_show_images.js';
         }
       }
     },
@@ -135,7 +136,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-template');
 
   grunt.registerTask('default', ['clean','emberhandlebars','uglify','sass', 'template']);
-  // grunt.registerTask('build', ['shell:build_fixtures','jshint','clean','emberhandlebars','uglify','sass', 'template']);
+  grunt.registerTask('build', ['shell:build_fixtures','default']);
 
 
 };

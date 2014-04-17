@@ -14,6 +14,14 @@ App.ScheduleController = Ember.ObjectController.extend({
     },
     filterSunday: function() {
       this.set('scheduleClass','filter-items filter-sunday');
+    },
+    filterGrid: function() {
+      $('.schedule-table').show();
+      $('.schedule-list').hide();
+    },
+    filterList: function() {
+      $('.schedule-table').hide();
+      $('.schedule-list').show();
     }
   },
 

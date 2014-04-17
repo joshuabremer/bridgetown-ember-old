@@ -210,6 +210,28 @@ h6,
   }
 }
 
+// SCHEDULE TABLE
+
+.schedule-table {
+  overflow:hidden;
+  table-layout: fixed;
+
+  .schedule-table__time-header {
+    width:100px;
+    max-width:100px;
+    white-space: normal;
+    overflow: auto;
+  }
+  .schedule-table__cell {
+    background:#67923d;
+    color:white;  
+    border-radius: 5px;
+    border: 1px solid #DDD;
+    box-shadow:3px 3px 3px rgba(0,0,0,.2);
+  }
+}
+
+
 // SCHEDULE LIST
 
 .schedule-list {

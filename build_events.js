@@ -20,8 +20,8 @@ function getEventJSON(url, callback) {
     stringifyEventJSON("assets/raw_events.json",function() {
       console.log("Stringified file");
       sanitizeData("assets/raw_events.json",function() {
-        console.log("Replaced event Id");
-        addEventIds("assets/raw_events.json",function() {
+        console.log("Replaced event Ids");
+        addPerformerIds("assets/raw_events.json",function() {
           console.log("Grabbed performers");
             fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
             fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
@@ -49,7 +49,7 @@ function getEventData() {
 }
 
 function getScheduleObject() {
-  return eval(JSON.parse(getScheduleData()));
+  return eval(getScheduleData());
 }
 
 function getScheduleData() {
@@ -78,7 +78,7 @@ function createPageUrls(filepath,callback) {
 }
 
 
-function addEventIds(filepath,callback) {
+function addPerformerIds(filepath,callback) {
   var eventObj = getEventObject();
   var scheduleObj = getScheduleData();
 

@@ -45,24 +45,25 @@ Ember.Handlebars.registerBoundHelper('getTime', function(dateString) {
 
 
 
-Ember.Handlebars.registerBoundHelper('scheduleTableRow', function(events) {
-  var html;
+Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(events) {
+  var html = "";
   var timeArray = getTimeArray();
-  $.each(timeArray,function() {
-    var $el = $('<tr><td>1</td></tr>');
+  $.each(timeArray,function(index, time) {
+    var $el = $('<tr><th class="schedule-table__time-header" data-start-time"' + time.toISOString() + '">' + time.format('MMM Do, h:mm a') + '</th></tr>');
     html += $el.html();
     // $.each(events.toArray(),function(i,event){
     //   console.log(event.get('Name'));
     // });
   });
-  return html;
+  console.log(html);
+  return new Handlebars.SafeString(html);
 });
 
 
 function getTimeArray() {
   var timeArray = [];
-  for(i=0;i<24;i++) {
-    timeArray.push(moment("2014-04-04T07:00:00.818Z").add(i*30,'minutes'));
+  for(i=0;i<48*4;i++) {
+    timeArray.push(moment(FESTIVAL_START_TIME).add(i*30,'minutes'));
   }
   return timeArray;
   

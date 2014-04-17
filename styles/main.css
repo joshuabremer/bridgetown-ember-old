@@ -5243,6 +5243,76 @@ BUTTONS
     background-image: -o-linear-gradient(top, #1682c4, #1990db);
     background-image: linear-gradient(to bottom, #1682c4, #1990db); }
 
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+table th {
+  font-weight: bold; }
+
+table td, table th {
+  padding: 9px 10px;
+  text-align: left; }
+
+/* Mobile */
+table.responsive {
+  margin-bottom: 0; }
+
+.pinned {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  width: 35%;
+  overflow: hidden;
+  overflow-x: scroll;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc; }
+
+.pinned table {
+  border-right: none;
+  border-left: none;
+  width: 100%; }
+
+.pinned table th, .pinned table td {
+  white-space: nowrap; }
+
+.pinned td:last-child {
+  border-bottom: 0; }
+
+div.table-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-right: 1px solid #ccc; }
+
+div.table-wrapper div.scrollable {
+  margin-left: 35%; }
+
+div.table-wrapper div.scrollable {
+  overflow: scroll;
+  overflow-y: hidden; }
+
+table.responsive td {
+  position: relative;
+  overflow: hidden; }
+
+table.responsive th {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden; }
+
+table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td {
+  display: none; }
+
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
@@ -5377,6 +5447,21 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto; }
+
+.schedule-table {
+  overflow: hidden;
+  table-layout: fixed; }
+  .schedule-table .schedule-table__time-header {
+    width: 100px;
+    max-width: 100px;
+    white-space: normal;
+    overflow: auto; }
+  .schedule-table .schedule-table__cell {
+    background: #67923d;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); }
 
 .schedule-list {
   list-style: none; }

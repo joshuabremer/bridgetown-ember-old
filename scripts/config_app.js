@@ -3,6 +3,8 @@ var App = Ember.Application.create({
   rootElement: '#ember-app'
 });
 
+var FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z";
+
 App.FixtureAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(records, query, type) {
     return records.filter(function(record) {
