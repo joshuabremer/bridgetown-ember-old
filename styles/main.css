@@ -5446,6 +5446,7 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   margin-right: auto; }
 
 .schedule__label-performer {
+  white-space: normal;
   margin-bottom: 2px;
   display: inline-block; }
   .schedule__label-performer:hover {
@@ -5470,6 +5471,10 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   .schedule-list h3 {
     margin: 0; }
 
+
+.schedule-list__performer-list {
+  padding-left: 0;
+  list-style: none; }
 
 .schedule-list__item-venue-label {
   display: inline-block;

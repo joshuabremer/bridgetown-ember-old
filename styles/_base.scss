@@ -214,6 +214,7 @@ h6,
 // SCHEDULE PAGE
 
 .schedule__label-performer {
+    white-space:normal;
     margin-bottom: 2px;
     display: inline-block;
     &:hover {
@@ -262,6 +263,11 @@ h6,
   //  display:table-cell;
   //  vertical-align: middle;
   //}
+}
+
+.schedule-list__performer-list {
+  padding-left:0;
+  list-style:none;
 }
 
 .schedule-list__item-venue-label  {
