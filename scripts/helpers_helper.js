@@ -26,6 +26,10 @@ Ember.Handlebars.registerBoundHelper('fullDate', function(dateString) {
   return moment(dateString).calendar();
 });
 
+Ember.Handlebars.registerBoundHelper('niceDate', function(dateString) {
+  return moment(dateString).format("dddd, MMMM Do YYYY");
+});
+
 Ember.Handlebars.registerBoundHelper('getWeekday', function(dateString) {
   return moment(dateString).format('dddd');
 });

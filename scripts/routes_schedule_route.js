@@ -3,8 +3,7 @@ App.ScheduleRoute = Ember.Route.extend({
       return Ember.RSVP.hash({
           venues: this.store.find('venue'),
           performers: this.store.find('performer'),
-          events: this.store.find('event'),
-          venues: this.store.find('venue')
+          events: this.store.find('event')
       });
   },
   title: 'Schedule',
@@ -14,8 +13,7 @@ App.ScheduleRoute = Ember.Route.extend({
       var newModel = Ember.RSVP.hash({
           venues: this.store.find('venue'),
           performers: this.store.find('performer'),
-          events: this.store.find('event'),
-          venues: this.store.find('venue')
+          events: this.store.find('event')
       });
       this.set('model',newModel)
     }

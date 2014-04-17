@@ -31,5 +31,6 @@ function sluggify(string) {
 }
 
 function cleanStr(string) {
+  string = string || "";
   return string.replace(/\W/g, '').toLowerCase();
 }
