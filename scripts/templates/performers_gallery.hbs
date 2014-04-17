@@ -12,7 +12,6 @@
   <p class="lead">Performers subject to change...</p>
   <div class="row">
     {{#each performer in controller}}
-    {{#if performer.Name }}
     <div class="col-xs-6 col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">
       <div class="performer-thumbnail">
         {{#link-to "performer" performer }}
@@ -25,7 +24,6 @@
         {{/link-to}}
       </legend>
     </div>
-     {{/if}}
     {{/each}}
   </div>
 </div>

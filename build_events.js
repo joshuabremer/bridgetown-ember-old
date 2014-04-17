@@ -22,11 +22,13 @@ function getEventJSON(url, callback) {
       sanitizeData("assets/raw_events.json",function() {
         console.log("Replaced event Ids");
         addPerformerIds("assets/raw_events.json",function() {
+          addMCsIfTheyExist("assets/raw_events.json",function() {
           console.log("Grabbed performers");
             fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
             fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
             fs.appendFileSync("scripts/fixtures_event.js",";");
             console.log("Created: " + "scripts/fixtures_event.js");
+          });
         });
       });
     });
@@ -46,6 +48,14 @@ function getEventObject() {
 
 function getEventData() {
   return fs.readFileSync('assets/raw_events.json', 'utf8');
+}
+
+function getPerformerObject() {
+  return eval(JSON.parse(getPerformerData()));
+}
+
+function getPerformerData() {
+  return fs.readFileSync('assets/raw_performers.json', 'utf8');
 }
 
 function getScheduleObject() {
@@ -96,7 +106,7 @@ function getPerformersForEvents(id) {
   var returnArray = [];
   for (var key in scheduleObj) {
     var idCheck = parseInt(scheduleObj[key].EventId,10);
-    if (idCheck === parseInt(id,10)) {
+    if (idCheck === parseInt(id,10) && doesPerformerExistForId(scheduleObj[key].PerformerId)) {
       returnArray.push(scheduleObj[key].PerformerId);
     }
   }
@@ -110,10 +120,6 @@ function sanitizeData(filepath, callback) {
   for (var key in eventObj) {
     eventObj[key].id = eventObj[key].EventId;
     eventObj[key].venue = eventObj[key].VenueId;
-    eventObj[key].MCId = (eventObj[key].MCId === "7570" ? "" : eventObj[key].MCId)
-    eventObj[key].emcees = [];
-    if (parseInt(eventObj[key].MCId,10)) eventObj[key].emcees.push(parseInt(eventObj[key].MCId,10))
-    
     eventObj[key].start_time = moment(eventObj[key].StartTime.split(' to ')[0],'YYYY-MM-DD h:m:s').toISOString();
     eventObj[key].end_time = moment(eventObj[key].StartTime.split(' to ')[1],'YYYY-MM-DD h:m:s').toISOString();
   }
@@ -125,6 +131,44 @@ function sanitizeData(filepath, callback) {
      callback();
   });
 }
+
+function addMCsIfTheyExist(filepath, callback) {
+  var eventObj = getEventObject();
+  
+
+  for (var key in eventObj) {
+    var MCId = eventObj[key].MCId;
+    if (!doesPerformerExistForId(MCId)) {
+      console.log("Squelching MC: " + MCId);
+      continue;
+    }
+    eventObj[key].MCId = eventObj[key].MCId;
+    eventObj[key].emcees = [];
+    if (parseInt(eventObj[key].MCId,10)) eventObj[key].emcees.push(parseInt(eventObj[key].MCId,10))
+  }
+
+  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
+}
+
+function doesPerformerExistForId(id) {
+  var performerObj = getPerformerObject();
+  id = parseInt(id,10);
+  for (var key in performerObj) {
+    var performerId = parseInt(performerObj[key].id,10);
+
+    if (performerId === id) {
+      return true;
+    }
+  }
+  return
+}
+
+
+    
+
 
 function cleanStr(string) {
   return string.replace(/\W/g, '').toLowerCase();
