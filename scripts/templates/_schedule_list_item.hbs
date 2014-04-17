@@ -12,11 +12,23 @@
             
           {{#each performer in event.performers}}
 
-              <li>{{#link-to "performer" performer }}{{{performer.Name}}}{{/link-to}}</li>
+              <li>
+                {{#link-to "performer" performer }}
+                <span class="label label-default schedule__label-performer">
+                  {{{performer.Name}}}
+                </span>
+                {{/link-to}}
+              </li>
 
           {{/each}}  
           {{#each emcee in event.emcees}}
-            <li>MC: {{#link-to "performer" emcee }}{{{emcee.Name}}}{{/link-to}}</li>
+              <li><strong>MC: </strong>
+                {{#link-to "performer" emcee }}
+                <span class="label label-default schedule__label-performer">
+                  {{{emcee.Name}}}
+                </span>
+                {{/link-to}}
+              </li>
            {{/each}} 
           </ul>
           &nbsp;

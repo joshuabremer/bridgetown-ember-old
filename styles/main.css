@@ -5282,9 +5282,6 @@ table.responsive {
   border-left: none;
   width: 100%; }
 
-.pinned table th, .pinned table td {
-  white-space: nowrap; }
-
 .pinned td:last-child {
   border-bottom: 0; }
 
@@ -5448,13 +5445,18 @@ h2, h3, h4, h5, h6, .h2, .h3, .h4, .h5, .h6 {
   margin-left: auto;
   margin-right: auto; }
 
+.schedule__label-performer {
+  margin-bottom: 2px;
+  display: inline-block; }
+  .schedule__label-performer:hover {
+    background-color: #777; }
+
 .schedule-table {
-  overflow: hidden;
   table-layout: fixed; }
   .schedule-table .schedule-table__time-header {
-    width: 100px;
-    max-width: 100px;
-    white-space: normal;
+    width: 150px;
+    max-width: 150px;
+    white-space: nowrap;
     overflow: auto; }
   .schedule-table .schedule-table__cell {
     background: #67923d;

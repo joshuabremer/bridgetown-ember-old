@@ -195,35 +195,41 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n\n              <li>");
+  data.buffer.push("\n\n              <li>\n                ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n\n          ");
+  data.buffer.push("\n              </li>\n\n          ");
   return buffer;
   }
 function program2(depth0,data) {
   
-  
+  var buffer = '';
+  data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n                </span>\n                ");
+  return buffer;
   }
 
 function program4(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n            <li>MC: ");
+  data.buffer.push("\n              <li><strong>MC: </strong>\n                ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n           ");
+  data.buffer.push("\n              </li>\n           ");
   return buffer;
   }
 function program5(depth0,data) {
   
-  
+  var buffer = '';
+  data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "emcee.Name", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n                </span>\n                ");
+  return buffer;
   }
 
   data.buffer.push("  <li ");
@@ -614,7 +620,9 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("scheduleClass")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push(">\n  \n  ");
+  data.buffer.push(">\n  ");
+  data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "schedule_table", options) : helperMissing.call(depth0, "partial", "schedule_table", options))));
+  data.buffer.push("\n  ");
   data.buffer.push(escapeExpression((helper = helpers.partial || (depth0 && depth0.partial),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "schedule_list", options) : helperMissing.call(depth0, "partial", "schedule_list", options))));
   data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n");
   return buffer;
@@ -650,7 +658,7 @@ function program2(depth0,data) {
   data.buffer.push(">\n        ");
   stack1 = helpers._triageMustache.call(depth0, "event.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" - ");
+  data.buffer.push("\n        <br />\n        ");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
   data.buffer.push(" - ");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
@@ -675,7 +683,7 @@ function program3(depth0,data) {
 function program4(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("<span class=\"label label-default\">");
+  data.buffer.push("<span class=\"label label-default schedule__label-performer\">");
   stack1 = helpers._triageMustache.call(depth0, "performer.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</span>");
@@ -694,14 +702,14 @@ function program6(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("<span class=\"label label-default\">MC: ");
+  data.buffer.push("<span class=\"label label-default schedule__label-performer\">MC: ");
   stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</span>");
   return buffer;
   }
 
-  data.buffer.push("<table class=\"schedule-table responsive\" style=\"display:none;\">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  ");
+  data.buffer.push("<table class=\"schedule-table responsive\">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  ");
   stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  ");

@@ -37,7 +37,7 @@ App.ScheduleView = Ember.View.extend({
   },
 
   makeTableResponsive: function() {
-    //$(document).ready(function() {
+    $("table.schedule-table").css('visibility','hidden');
       var switched = false;
       var updateTables = function() {
         if (($(window).width() < 9999999) && !switched ){
@@ -55,6 +55,7 @@ App.ScheduleView = Ember.View.extend({
         }
       };
       updateTables();
+      $("table.schedule-table").css('visibility','visible').hide();
       // $(window).load(updateTables);
       // $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
       // $(window).on("resize", updateTables);

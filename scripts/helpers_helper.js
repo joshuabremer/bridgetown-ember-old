@@ -53,7 +53,7 @@ Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(events) {
   var html = "";
   var timeArray = getTimeArray();
   $.each(timeArray,function(index, time) {
-    var $el = $('<tr><th class="schedule-table__time-header" data-start-time"' + time.toISOString() + '">' + time.format('MMM Do, h:mm a') + '</th></tr>');
+    var $el = $('<tr><th class="schedule-table__time-header" data-start-time"' + time.toISOString() + '">' + time.format('MMM Do') + '<br />' + time.format('h:mm a') + '</th></tr>');
     html += $el.html();
     // $.each(events.toArray(),function(i,event){
     //   console.log(event.get('Name'));
