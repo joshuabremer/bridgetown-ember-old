@@ -7935,6 +7935,20 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }))), data.buffer.push("\n\n\n"), buffer;
 }), Ember.TEMPLATES.performers_gallery = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n    "), stack1 = helpers["if"].call(depth0, "performer.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n    "), 
+        buffer;
+    }
+    function program2(depth0, data) {
         var stack1, helper, options, buffer = "";
         return data.buffer.push('\n    <div class="col-xs-6 col-sm-6 col-sm-4 col-md-3 col-lg-2 performer-box">\n      <div class="performer-thumbnail">\n        '), 
         helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
@@ -7942,7 +7956,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashTypes: {},
             hashContexts: {},
             inverse: self.noop,
-            fn: self.program(2, program2, data),
+            fn: self.program(3, program3, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
@@ -7953,15 +7967,15 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashTypes: {},
             hashContexts: {},
             inverse: self.noop,
-            fn: self.program(4, program4, data),
+            fn: self.program(5, program5, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
         }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
-        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n      </legend>\n    </div>\n    "), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n      </legend>\n    </div>\n     "), 
         buffer;
     }
-    function program2(depth0, data) {
+    function program3(depth0, data) {
         var buffer = "";
         return data.buffer.push('\n        <img class="lazy img-responsive" width="300" height="300" '), 
         data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
@@ -7979,7 +7993,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             data: data
         }))), data.buffer.push(" />\n        "), buffer;
     }
-    function program4(depth0, data) {
+    function program5(depth0, data) {
         var buffer = "";
         return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
             hash: {
