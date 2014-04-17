@@ -2997,6 +2997,9 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
         embedded: "always",
         async: !0
     }),
+    emcee: DS.belongsTo("performer", {
+        async: !0
+    }),
     venue: DS.belongsTo("venue", {
         async: !0
     }),
@@ -3064,6 +3067,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7688",
     venue: "7614",
+    emcee: "6717",
     start_time: "2014-05-09T02:00:00.000Z",
     end_time: "2014-05-09T03:30:00.000Z",
     performers: [ "6608", "6456", "6704", "5787", "5876", "7785" ]
@@ -3078,6 +3082,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7704",
     venue: "7619",
+    emcee: "6128",
     start_time: "2014-05-09T02:00:00.000Z",
     end_time: "2014-05-09T03:30:00.000Z",
     performers: [ "6629", "6686", "6702", "6542", "5983", "6483", "5919", "6534", "6174" ]
@@ -3092,6 +3097,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7679",
     venue: "7613",
+    emcee: "6425",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "5938", "6004", "6102", "6092", "5728", "5845" ]
@@ -3106,6 +3112,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7782",
     id: "7657",
     venue: "7611",
+    emcee: "",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "7588" ]
@@ -3120,6 +3127,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7698",
     venue: "7615",
+    emcee: "5999",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "6144", "6150", "6408", "6163", "6681" ]
@@ -3134,6 +3142,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7730",
     venue: "7618",
+    emcee: "6647",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "6203", "5987", "6352", "6305", "6284", "6839" ]
@@ -3148,6 +3157,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7637",
     venue: "7609",
+    emcee: "6118",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "6337", "6049", "5906", "6429", "6298" ]
@@ -3162,6 +3172,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7663",
     venue: "7612",
+    emcee: "6410",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "6032", "7580", "6745", "5739", "5856" ]
@@ -3176,6 +3187,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7748",
     venue: "7620",
+    emcee: "6561",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
     performers: [ "6275", "6699", "6354", "6153", "5962" ]
@@ -3190,6 +3202,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6801",
     id: "7739",
     venue: "7616",
+    emcee: "7797",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "7798", "6808", "6609", "6189", "6509" ]
@@ -3204,6 +3217,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7716",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:00:00.000Z",
     performers: []
@@ -3218,6 +3232,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7689",
     venue: "7614",
+    emcee: "5973",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "6476", "6409", "5730", "7786", "6646", "6766" ]
@@ -3232,6 +3247,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7621",
     venue: "7608",
+    emcee: "6674",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "7566", "6413", "5951", "6834", "6365", "6858", "7581" ]
@@ -3246,6 +3262,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7653",
     venue: "7610",
+    emcee: "6312",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "5777", "5774", "5879", "6215", "5932", "6690", "5755" ]
@@ -3260,6 +3277,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7776",
     id: "7747",
     venue: "7619",
+    emcee: "",
     start_time: "2014-05-09T04:00:00.000Z",
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "5811" ]
@@ -3274,6 +3292,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7740",
     venue: "7609",
+    emcee: "5742",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "5889", "6860", "5998", "6611", "6157", "6864", "6835" ]
@@ -3288,6 +3307,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7918",
     venue: "7620",
+    emcee: "6727",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6825", "6069", "6379", "6822", "6861", "6014", "6824" ]
@@ -3302,6 +3322,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6585",
     id: "7810",
     venue: "7612",
+    emcee: "6006",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6527", "6855", "7579", "6823", "6818" ]
@@ -3316,6 +3337,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7658",
     venue: "7611",
+    emcee: "6271",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6659", "6857", "6804", "6833", "7568", "6614", "6371" ]
@@ -3330,6 +3352,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7919",
     venue: "7613",
+    emcee: "6536",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6687", "5806", "5805", "5783", "5867", "6591" ]
@@ -3344,6 +3367,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7717",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:00:00.000Z",
     performers: []
@@ -3358,6 +3382,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7701",
     venue: "7615",
+    emcee: "6849",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6134", "6474", "6074", "5918", "5813", "6276", "6805", "6795", "7595" ]
@@ -3372,6 +3397,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7622",
     venue: "7618",
+    emcee: "6110",
     start_time: "2014-05-09T05:00:00.000Z",
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6123", "6325", "6696", "6065", "6363", "6205", "6859" ]
@@ -3386,6 +3412,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7699",
     venue: "7619",
+    emcee: "6058",
     start_time: "2014-05-09T06:00:00.000Z",
     end_time: "2014-05-09T07:30:00.000Z",
     performers: [ "6374", "6800", "6029", "6816", "6280", "7777", "6723" ]
@@ -3400,6 +3427,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7718",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-09T06:00:00.000Z",
     end_time: "2014-05-09T07:00:00.000Z",
     performers: []
@@ -3414,6 +3442,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7731",
     venue: "7608",
+    emcee: "6735",
     start_time: "2014-05-09T06:00:00.000Z",
     end_time: "2014-05-09T07:30:00.000Z",
     performers: [ "6162", "6564", "5976", "5895" ]
@@ -3428,6 +3457,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7680",
     venue: "7613",
+    emcee: "6150",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
     performers: [ "6110", "5951", "5805", "5894", "5730", "6409" ]
@@ -3442,6 +3472,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7690",
     venue: "7614",
+    emcee: "6608",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
     performers: [ "6591", "5813", "6564", "6118", "6483", "5962" ]
@@ -3456,6 +3487,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6300",
     id: "7639",
     venue: "7609",
+    emcee: "7590",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
     performers: [ "7581", "6123", "6823", "6834" ]
@@ -3470,6 +3502,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7665",
     venue: "7612",
+    emcee: "6542",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
     performers: [ "6352", "6354", "5987", "6702", "6275" ]
@@ -3484,6 +3517,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7706",
     venue: "7616",
+    emcee: "6646",
     start_time: "2014-05-10T02:00:00.000Z",
     end_time: "2014-05-10T03:30:00.000Z",
     performers: [ "6429", "6284", "6735", "6298", "6410", "6699", "6527", "6859" ]
@@ -3498,6 +3532,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7623",
     venue: "7608",
+    emcee: "6456",
     start_time: "2014-05-10T02:30:00.000Z",
     end_time: "2014-05-10T04:00:00.000Z",
     performers: [ "6065", "6766", "6696", "6029", "6509", "6069", "7828" ]
@@ -3512,6 +3547,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "5899",
     id: "7741",
     venue: "7619",
+    emcee: "7773",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
     performers: [ "5998", "6808", "6863", "6371", "6130", "6858", "6609", "6745", "6659" ]
@@ -3526,6 +3562,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6866",
     id: "7659",
     venue: "7611",
+    emcee: "6863",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
     performers: [ "6862", "6823", "6859", "6860" ]
@@ -3540,6 +3577,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "5936",
     id: "7807",
     venue: "7618",
+    emcee: "5932",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
     performers: [ "6731", "6824", "6102", "5983", "6659", "6808", "7881" ]
@@ -3554,6 +3592,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7915",
     venue: "7615",
+    emcee: "6319",
     start_time: "2014-05-10T03:00:00.000Z",
     end_time: "2014-05-10T04:30:00.000Z",
     performers: [ "5938", "6611", "6864", "6857", "7566", "7802", "6833" ]
@@ -3568,6 +3607,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7749",
     venue: "7609",
+    emcee: "5845",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "6816", "6092", "6151", "6822", "6365", "6004", "6374" ]
@@ -3582,6 +3622,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7750",
     venue: "7620",
+    emcee: "6704",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "6800", "6014", "6157", "7777", "5919", "5889", "6614" ]
@@ -3596,6 +3637,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7719",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:00:00.000Z",
     performers: []
@@ -3610,6 +3652,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7691",
     venue: "7614",
+    emcee: "5976",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "6312", "6681", "6163", "6315", "6534", "6128" ]
@@ -3624,6 +3667,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7641",
     venue: "7616",
+    emcee: "5856",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "6337", "6305", "5879", "6474", "6276", "6159" ]
@@ -3638,6 +3682,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6734",
     id: "7806",
     venue: "7613",
+    emcee: "6042",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "5787", "6849", "5906", "6629", "6363", "7881" ]
@@ -3652,6 +3697,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7654",
     venue: "7610",
+    emcee: "6049",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "5895" ]
@@ -3666,6 +3712,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7624",
     venue: "7612",
+    emcee: "7786",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
     performers: [ "6723", "5867", "5806", "6805", "6189", "7579", "6825" ]
@@ -3680,6 +3727,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7682",
     venue: "7608",
+    emcee: "6174",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "6536", "5728", "6727", "5783", "6476", "6717" ]
@@ -3694,6 +3742,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "5871",
     id: "7811",
     venue: "7619",
+    emcee: "7885",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "6687", "6402", "6834", "6858", "5876", "6379" ]
@@ -3708,6 +3757,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7660",
     venue: "7611",
+    emcee: "",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "7595" ]
@@ -3722,6 +3772,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7720",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:00:00.000Z",
     performers: []
@@ -3736,6 +3787,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6131",
     id: "7804",
     venue: "7615",
+    emcee: "6130",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "7775", "6804", "5998", "6659", "6808", "7883", "6425" ]
@@ -3750,6 +3802,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7733",
     venue: "7618",
+    emcee: "6849",
     start_time: "2014-05-10T05:00:00.000Z",
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "6410", "6561", "6153", "5876", "6690", "5999", "6839", "6865" ]
@@ -3764,6 +3817,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7625",
     venue: "7613",
+    emcee: "6674",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
     performers: [ "6818", "6640", "7785", "7568", "6058", "6835", "6280" ]
@@ -3778,6 +3832,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7790",
     id: "7667",
     venue: "7612",
+    emcee: "6408",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
     performers: [ "6392", "6810", "5742", "6379", "6858", "6609", "6824", "6074" ]
@@ -3792,6 +3847,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6143",
     id: "7742",
     venue: "7609",
+    emcee: "6144",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
     performers: [ "6858", "6205", "6859", "5739" ]
@@ -3806,6 +3862,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7721",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:00:00.000Z",
     performers: []
@@ -3820,6 +3877,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7692",
     venue: "7614",
+    emcee: "6162",
     start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:30:00.000Z",
     performers: [ "6762", "6203", "5755", "5774", "6032", "6647" ]
@@ -3834,6 +3892,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7916",
     venue: "7611",
+    emcee: "6325",
     start_time: "2014-05-10T06:30:00.000Z",
     end_time: "2014-05-10T08:00:00.000Z",
     performers: [ "5973", "6413", "6795", "6855", "6861", "6271" ]
@@ -3848,6 +3907,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7702",
     venue: "7615",
+    emcee: "6134",
     start_time: "2014-05-10T06:30:00.000Z",
     end_time: "2014-05-10T08:00:00.000Z",
     performers: [ "5918", "6686", "6215", "5777", "7580" ]
@@ -3862,6 +3922,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7722",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-10T06:30:00.000Z",
     end_time: "2014-05-10T07:00:00.000Z",
     performers: []
@@ -3876,6 +3937,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6811",
     id: "7668",
     venue: "7612",
+    emcee: "6810",
     start_time: "2014-05-10T20:00:00.000Z",
     end_time: "2014-05-10T21:30:00.000Z",
     performers: [ "6092", "6833", "6065" ]
@@ -3890,6 +3952,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7781",
     id: "7642",
     venue: "7609",
+    emcee: "",
     start_time: "2014-05-10T21:00:00.000Z",
     end_time: "2014-05-10T22:30:00.000Z",
     performers: [ "6855", "6861", "6365" ]
@@ -3904,6 +3967,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6869",
     id: "7669",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-10T22:00:00.000Z",
     end_time: "2014-05-10T23:30:00.000Z",
     performers: [ "6863", "7882" ]
@@ -3918,6 +3982,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6836",
     id: "7648",
     venue: "7609",
+    emcee: "6818",
     start_time: "2014-05-10T23:00:00.000Z",
     end_time: "2014-05-11T00:30:00.000Z",
     performers: [ "6102", "6824", "6865" ]
@@ -3932,6 +3997,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7816",
     venue: "7616",
+    emcee: "7802",
     start_time: "2014-05-11T00:00:00.000Z",
     end_time: "2014-05-11T01:30:00.000Z",
     performers: []
@@ -3946,6 +4012,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6867",
     id: "7670",
     venue: "7612",
+    emcee: "6854",
     start_time: "2014-05-11T00:30:00.000Z",
     end_time: "2014-05-11T02:00:00.000Z",
     performers: [ "6856" ]
@@ -3960,6 +4027,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "5909",
     id: "7644",
     venue: "7609",
+    emcee: "",
     start_time: "2014-05-11T01:00:00.000Z",
     end_time: "2014-05-11T02:30:00.000Z",
     performers: [ "7893", "7894" ]
@@ -3974,6 +4042,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7822",
     id: "7808",
     venue: "7619",
+    emcee: "7824",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "6074", "6723", "7823", "7825", "6857", "6864" ]
@@ -3988,6 +4057,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7626",
     venue: "7608",
+    emcee: "5728",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "5938", "6151", "6325", "7581", "6687", "7568", "6834" ]
@@ -4002,6 +4072,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7743",
     venue: "7613",
+    emcee: "6483",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "5856", "5983", "6561", "6312", "6163", "6305" ]
@@ -4016,6 +4087,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7911",
     venue: "7620",
+    emcee: "6150",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "6614", "5845", "5805", "5973", "6640", "5919" ]
@@ -4030,6 +4102,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6356",
     id: "7678",
     venue: "7616",
+    emcee: "6359",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "6379", "6696", "6157", "6402", "5867", "6123" ]
@@ -4044,6 +4117,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7693",
     venue: "7614",
+    emcee: "6118",
     start_time: "2014-05-11T02:00:00.000Z",
     end_time: "2014-05-11T03:30:00.000Z",
     performers: [ "6410", "6629", "6534", "6215", "6203", "6134" ]
@@ -4058,6 +4132,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7605",
     id: "7645",
     venue: "7609",
+    emcee: "7590",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
     performers: [ "6816", "6863", "6824", "6860", "6374", "7777", "6823", "6014" ]
@@ -4072,6 +4147,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6868",
     id: "7671",
     venue: "7612",
+    emcee: "7802",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
     performers: [ "6509", "7775", "6791", "6609", "6365", "6723" ]
@@ -4086,6 +4162,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7734",
     venue: "7618",
+    emcee: "6818",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
     performers: [ "6102", "7595", "7579", "6319", "6425", "6857", "6402" ]
@@ -4100,6 +4177,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7708",
     venue: "7616",
+    emcee: "5867",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "5774", "6275", "5906", "6058", "5987", "5879", "6402", "7566" ]
@@ -4114,6 +4192,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7694",
     venue: "7614",
+    emcee: "6839",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6527", "6276", "5777", "5962", "6284", "6681" ]
@@ -4128,6 +4207,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7751",
     venue: "7620",
+    emcee: "6409",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6144", "6130", "6413", "6704", "6727", "5787" ]
@@ -4142,6 +4222,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7744",
     venue: "7619",
+    emcee: "5879",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6647", "6699", "6731", "5895", "6157", "5876", "6696", "6359", "6476", "6189", "7881" ]
@@ -4156,6 +4237,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7745",
     venue: "7608",
+    emcee: "6646",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "5918", "5951", "6162", "6392", "6337" ]
@@ -4170,6 +4252,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7519",
     id: "7638",
     venue: "7613",
+    emcee: "7518",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6659", "6849", "6858", "5998" ]
@@ -4184,6 +4267,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7723",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:00:00.000Z",
     performers: []
@@ -4198,6 +4282,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7655",
     venue: "7610",
+    emcee: "7570",
     start_time: "2014-05-11T04:00:00.000Z",
     end_time: "2014-05-11T05:30:00.000Z",
     performers: []
@@ -4212,6 +4297,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7724",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:00:00.000Z",
     performers: []
@@ -4226,6 +4312,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "5903",
     id: "7646",
     venue: "7609",
+    emcee: "6379",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
     performers: [ "5889", "6824", "6536", "6402", "6189", "6065", "6808", "6271", "6823", "6609" ]
@@ -4240,6 +4327,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6347",
     id: "7805",
     venue: "7618",
+    emcee: "",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
     performers: [ "6810", "6805", "5730", "5742", "6859", "6825" ]
@@ -4254,6 +4342,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7666",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
     performers: [ "6731", "6298", "6835", "7895" ]
@@ -4268,6 +4357,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7725",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:00:00.000Z",
     performers: []
@@ -4282,6 +4372,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7695",
     venue: "7614",
+    emcee: "5813",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6702", "6745", "6354", "6159", "5976", "6564" ]
@@ -4296,6 +4387,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7627",
     venue: "7619",
+    emcee: "7785",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6800", "5894", "6674", "6029", "5806", "6611", "6280" ]
@@ -4310,6 +4402,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7628",
     venue: "7608",
+    emcee: "6456",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6371", "6591", "6717", "6004", "5999", "6069", "7828" ]
@@ -4324,6 +4417,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7752",
     venue: "7620",
+    emcee: "6408",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6608", "6174", "6363", "6766", "5783", "6110" ]
@@ -4338,6 +4432,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7685",
     venue: "7613",
+    emcee: "6474",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6735", "6686", "7580", "6762", "6032", "5739" ]
@@ -4352,6 +4447,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7912",
     venue: "7610",
+    emcee: "5932",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
     performers: [ "6429" ]
@@ -4366,6 +4462,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7726",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T07:00:00.000Z",
     performers: []
@@ -4380,6 +4477,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7814",
     id: "7815",
     venue: "7618",
+    emcee: "7786",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T08:30:00.000Z",
     performers: [ "6659", "6205", "5755", "6795", "6835", "6319", "6849", "6402" ]
@@ -4394,6 +4492,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7672",
     venue: "7612",
+    emcee: "6542",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T08:00:00.000Z",
     performers: [ "6315", "6153", "6049", "6352", "6128" ]
@@ -4408,6 +4507,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7796",
     venue: "7609",
+    emcee: "6804",
     start_time: "2014-05-11T06:30:00.000Z",
     end_time: "2014-05-11T08:30:00.000Z",
     performers: [ "6825", "6014", "6822", "7881", "7595" ]
@@ -4422,6 +4522,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7589",
     id: "7675",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-11T21:00:00.000Z",
     end_time: "2014-05-11T22:30:00.000Z",
     performers: [ "6834", "7580", "5998" ]
@@ -4436,6 +4537,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7779",
     id: "7674",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-11T23:00:00.000Z",
     end_time: "2014-05-12T00:30:00.000Z",
     performers: [ "7896", "6762", "6865", "6823" ]
@@ -4450,6 +4552,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7649",
     venue: "7609",
+    emcee: "",
     start_time: "2014-05-12T01:00:00.000Z",
     end_time: "2014-05-12T02:30:00.000Z",
     performers: [ "6823", "6835", "6696" ]
@@ -4464,6 +4567,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "7780",
     id: "7676",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-12T01:00:00.000Z",
     end_time: "2014-05-12T02:30:00.000Z",
     performers: []
@@ -4478,6 +4582,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7710",
     venue: "7616",
+    emcee: "5730",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
     performers: [ "6315", "6731", "6681", "5918", "6032", "5856", "6337", "7579" ]
@@ -4492,6 +4597,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7809",
     venue: "7614",
+    emcee: "6102",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
     performers: [ "6315", "6392", "5755", "6163" ]
@@ -4506,6 +4612,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7632",
     venue: "7608",
+    emcee: "6425",
     start_time: "2014-05-12T02:00:00.000Z",
     end_time: "2014-05-12T03:30:00.000Z",
     performers: [ "6659", "6687", "5999", "6065", "7518", "6723", "6805" ]
@@ -4520,6 +4627,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6537",
     id: "7650",
     venue: "7615",
+    emcee: "7566",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "6818", "7568", "6864", "6795", "6408" ]
@@ -4534,6 +4642,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6682",
     id: "7651",
     venue: "7613",
+    emcee: "6351",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "7579", "6823", "6762", "6536" ]
@@ -4548,6 +4657,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7662",
     venue: "7612",
+    emcee: "7800",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: []
@@ -4562,6 +4672,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7746",
     venue: "7619",
+    emcee: "6174",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "6849", "6069", "6280", "6611", "5889", "6029", "6857" ]
@@ -4576,6 +4687,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7703",
     venue: "7611",
+    emcee: "5867",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T05:00:00.000Z",
     performers: [ "5938", "7777", "6004", "6379", "5876", "6704" ]
@@ -4590,6 +4702,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6890",
     id: "7677",
     venue: "7609",
+    emcee: "",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "7803" ]
@@ -4604,6 +4717,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7737",
     venue: "7618",
+    emcee: "6564",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "6735", "6275", "6352", "6128", "6629", "6203" ]
@@ -4618,6 +4732,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7656",
     venue: "7610",
+    emcee: "6745",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T06:00:00.000Z",
     performers: [ "6527", "6429", "6153", "6134", "6702", "6312", "6839" ]
@@ -4632,6 +4747,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7711",
     venue: "7616",
+    emcee: "7785",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
     performers: [ "5783", "6110", "6130", "6319", "7786", "6150" ]
@@ -4646,6 +4762,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7697",
     venue: "7614",
+    emcee: "5787",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
     performers: [ "6271", "6717", "6855", "5919", "6189", "6646" ]
@@ -4660,6 +4777,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7753",
     venue: "7620",
+    emcee: "5742",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
     performers: [ "5845", "6509", "6822", "6365" ]
@@ -4674,6 +4792,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7633",
     venue: "7608",
+    emcee: "6157",
     start_time: "2014-05-12T04:00:00.000Z",
     end_time: "2014-05-12T05:30:00.000Z",
     performers: [ "6205", "5806", "6325", "6833", "6413", "6824", "6859" ]
@@ -4688,6 +4807,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7727",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:00:00.000Z",
     performers: []
@@ -4702,6 +4822,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7687",
     venue: "7613",
+    emcee: "6727",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "5894", "5805", "5728", "6608", "6861", "5951" ]
@@ -4716,6 +4837,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7783",
     venue: "7612",
+    emcee: "",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "7882" ]
@@ -4730,6 +4852,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "6891",
     id: "7661",
     venue: "7611",
+    emcee: "7802",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "7775", "6863", "6808", "6858", "7595", "6791", "7883" ]
@@ -4744,6 +4867,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7652",
     venue: "7609",
+    emcee: "6474",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "5813", "5906", "5774", "6483", "5895", "7581", "6804" ]
@@ -4758,6 +4882,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7913",
     venue: "7615",
+    emcee: "6409",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "6591", "6476", "6640", "6456", "6674", "6614", "6860", "7881" ]
@@ -4772,6 +4897,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7914",
     venue: "7619",
+    emcee: "6144",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "6123", "6014", "6825", "6816", "6374", "6371", "6800" ]
@@ -4786,6 +4912,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7738",
     venue: "7618",
+    emcee: "6542",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "6159", "5983", "6215", "6298", "6534", "6049" ]
@@ -4800,6 +4927,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     ShowId: "",
     id: "7728",
     venue: "7617",
+    emcee: "",
     start_time: "2014-05-12T06:00:00.000Z",
     end_time: "2014-05-12T07:00:00.000Z",
     performers: []
@@ -7253,6 +7381,33 @@ App.PerformerController = Ember.ObjectController.extend({
             data: data
         })));
     }
+    function program4(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          <li>MC: "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(5, program5, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</li>\n          "), 
+        buffer;
+    }
+    function program5(depth0, data) {
+        var stack1;
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), data.buffer.push(stack1 || 0 === stack1 ? stack1 : "");
+    }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
@@ -7314,7 +7469,17 @@ App.PerformerController = Ember.ObjectController.extend({
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('  \n          </ul>\n          &nbsp;\n        </div>\n        <div class="col-xs-4 col-sm-3">\n          <div class="schedule-list__item-date">\n          <span style="white-space:nowrap">'), 
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n          "), 
+    stack1 = helpers["if"].call(depth0, "event.emcee", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(4, program4, data),
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n          </ul>\n          &nbsp;\n        </div>\n        <div class="col-xs-4 col-sm-3">\n          <div class="schedule-list__item-date">\n          <span style="white-space:nowrap">'), 
     data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
     options = {
         hash: {},
@@ -8083,6 +8248,16 @@ App.PerformerController = Ember.ObjectController.extend({
             contexts: [ depth0, depth0, depth0 ],
             types: [ "ID", "ID", "ID" ],
             data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        stack1 = helpers["if"].call(depth0, "event.emcee", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(5, program5, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
         }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
         buffer;
     }
@@ -8098,9 +8273,36 @@ App.PerformerController = Ember.ObjectController.extend({
         }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>\n        "), 
         buffer;
     }
+    function program5(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          MC: "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(6, program6, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n          "), 
+        buffer;
+    }
+    function program6(depth0, data) {
+        var stack1;
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), data.buffer.push(stack1 || 0 === stack1 ? stack1 : "");
+    }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing, self = this;
+    var stack1, buffer = "", self = this, helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
     return data.buffer.push('<table class="schedule-table responsive" style="display:none;">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  '), 
     stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {
         hash: {},

@@ -110,6 +110,8 @@ function sanitizeData(filepath, callback) {
   for (var key in eventObj) {
     eventObj[key].id = eventObj[key].EventId;
     eventObj[key].venue = eventObj[key].VenueId;
+    eventObj[key].emcee = eventObj[key].MCId;
+    
     console.log(eventObj[key].StartTime.split(' to ')[0]);
     eventObj[key].start_time = moment(eventObj[key].StartTime.split(' to ')[0],'YYYY-MM-DD h:m:s').toISOString();
     eventObj[key].end_time = moment(eventObj[key].StartTime.split(' to ')[1],'YYYY-MM-DD h:m:s').toISOString();

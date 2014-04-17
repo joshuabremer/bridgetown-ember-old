@@ -12,6 +12,9 @@
          {{#each performer in event.performers}}
             <li>{{#link-to "performer" performer }}{{{performer.Name}}}{{/link-to}}</li>
           {{/each}}  
+          {{#if event.emcee }}
+          <li>MC: {{#link-to "performer" event.emcee }}{{event.emcee.Name}}{{/link-to}}</li>
+          {{/if}}
           </ul>
           &nbsp;
         </div>

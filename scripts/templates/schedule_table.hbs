@@ -16,6 +16,9 @@
         {{#each performer in event.performers}}
           <span class="label label-default">{{performer.Name}}</span>
         {{/each}}
+        {{#if event.emcee }}
+          MC: {{#link-to "performer" event.emcee }}{{event.emcee.Name}}{{/link-to}}
+          {{/if}}
         </td>
       {{/each}}  
     </tr>
