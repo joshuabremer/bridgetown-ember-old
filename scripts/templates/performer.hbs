@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row centered">
         <div class="col-lg-8 col-lg-offset-2">
-        <h2>{{ Name }}</h2>
+        <h2>{{{ Name }}}</h2>
         </div>
       </div><!-- row -->
     </div><!-- container -->
@@ -21,7 +21,7 @@
       </p>
       <p><strong>Shows</strong></p>
       <ul>
-        {{#each event in events}}
+        {{#each event in sortedEvents}}
           <li><strong>{{event.Name}}</strong> - {{event.venue.Name}}
             <br /> ({{niceDate event.start_time}} {{getTime event.start_time}} - {{getTime event.end_time}})
           </li>

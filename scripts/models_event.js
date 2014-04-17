@@ -2,9 +2,11 @@ App.Event = DS.Model.extend({
 
   performers: DS.hasMany('performer', {embedded: 'always', async: true}),
 
-  emcee: DS.belongsTo('performer', {async: true}),
+  emcees: DS.hasMany('performer', {async: true}),
 
   venue: DS.belongsTo('venue', {async: true}),
+
+  hasEmcee: DS.attr('string'),
 
   Name: DS.attr('string'),
 
@@ -26,6 +28,17 @@ App.Event = DS.Model.extend({
 
   getPerformerCount: function() {
     return this.get("performers");
-  }.property()
+  }.property(),
+
+  
+
+
+
+  sortedPerformers: function () {
+    var performers = this.get('performers').toArray();
+    return performers.sort(function (lhs, rhs) {
+      return lhs.get('SortOrder') > rhs.get('SortOrder');
+    });
+  }.property('performers.@each.isLoaded')
 
 });

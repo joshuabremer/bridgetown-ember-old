@@ -59,7 +59,6 @@ Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(events) {
     //   console.log(event.get('Name'));
     // });
   });
-  console.log(html);
   return new Handlebars.SafeString(html);
 });
 

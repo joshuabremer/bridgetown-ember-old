@@ -13,12 +13,12 @@
         <td class="schedule-table__cell" {{bind-attr data-start-time="event.start_time"}} {{bind-attr data-end-time="event.end_time"}}>
         {{event.Name}} - {{getTime event.start_time}} - {{getTime event.end_time}}
         <br />
-        {{#each performer in event.performers}}
-          <span class="label label-default">{{performer.Name}}</span>
+        {{#each performer in event.sortedPerformers}}
+          {{#link-to "performer" performer }}<span class="label label-default">{{performer.Name}}</span>{{/link-to}}
         {{/each}}
         {{#if event.emcee }}
-          MC: {{#link-to "performer" event.emcee }}{{event.emcee.Name}}{{/link-to}}
-          {{/if}}
+          {{#link-to "performer" event.emcee }}<span class="label label-default">MC: {{event.emcee.Name}}</span>{{/link-to}}
+        {{/if}}
         </td>
       {{/each}}  
     </tr>

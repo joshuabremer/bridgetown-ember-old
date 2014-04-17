@@ -19,8 +19,6 @@ function getPerformerJSON(url, callback) {
       stringifyPerformerJSON("assets/raw_performers.json",function() {
           sanitizeData("assets/raw_performers.json",function() {
             console.log('Done replacing Apostrophes');
-            createPageUrls("assets/raw_performers.json",function() {
-              console.log('Done creating page URLs');
               addEventIds("assets/raw_performers.json",function() {
                 console.log('Done adding Event IDs');
                 fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
@@ -29,7 +27,6 @@ function getPerformerJSON(url, callback) {
                 console.log("Created: " + "scripts/fixtures_performer.js");
                 buildImages("assets/raw_performers.json","performer");
               });
-          });
         });
       });
       
@@ -67,17 +64,6 @@ function stringifyPerformerJSON(filepath,callback) {
   });
 }
 
-function createPageUrls(filepath,callback) {
-  var performerObj = getPerformerObject();
-  for (var key in performerObj) {
-    performerObj[key].pageUrl = performerObj[key].id + '-' + convertToSlug(performerObj[key].Name);
-  }
-  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
-     if (err) return console.log(err);
-     callback();
-  });
-}
-
 function addEventIds(filepath,callback) {
   var performerObj = getPerformerObject();
   var scheduleObj = getScheduleData();
@@ -108,6 +94,9 @@ function sanitizeData(filepath, callback) {
   for (var key in performerObj) {
     performerObj[key].id = performerObj[key].PerformerId;
 
+    // Create page URLs
+    performerObj[key].pageUrl = performerObj[key].id + '-' + convertToSlug(performerObj[key].Name);
+
     performerObj[key].Bio = performerObj[key].Bio || "";
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2018/g, "&#x2018;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2019/g, "&#x2019;");
@@ -124,6 +113,8 @@ function sanitizeData(filepath, callback) {
     performerObj[key].SortOrder = parseInt(performerObj[key].SortOrder,10);
 
   }
+
+  performerObj = sortArray(performerObj,"SortOrder");
 
   fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
      if (err) return console.log(err);
@@ -192,6 +183,18 @@ function convertToSlug(Text)
         .replace(/ /g,'-')
         .replace(/[^\w-]+/g,'')
         ;
+}
+
+function sortArray(arr,key) {
+  arr.sort(function(a, b){
+    var keyA = a[key],
+    keyB = b[key];
+    // Compare the 2 dates
+    if(keyA < keyB) return -1;
+    if(keyA > keyB) return 1;
+    return 0;
+  });
+  return arr;
 }
 
 

@@ -22,7 +22,14 @@ App.Performer = DS.Model.extend({
 
   backgroundImageCSS: function() {
     return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
-  }.property("PhotoUrl")
+  }.property("PhotoUrl"),
+
+  sortedEvents: function () {
+    var events = this.get('events').toArray();
+    return events.sort(function (lhs, rhs) {
+      return lhs.get('start_time') > rhs.get('start_time');
+    });
+  }.property('events.@each.isLoaded')
 
 });
 

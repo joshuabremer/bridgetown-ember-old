@@ -1,7 +1,4 @@
 App.ScheduleController = Ember.ObjectController.extend({
-  sortProperties: ['start_time'],
-  sortAscending: true,
-
   actions: {
     filterThursday: function() {
       this.set('scheduleClass','filter-items filter-thursday');

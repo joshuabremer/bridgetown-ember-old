@@ -9,12 +9,15 @@
         </div>
         <div class="col-xs-4 col-sm-3">
           <ul>
-         {{#each performer in event.performers}}
-            <li>{{#link-to "performer" performer }}{{{performer.Name}}}{{/link-to}}</li>
+            
+          {{#each performer in event.performers}}
+
+              <li>{{#link-to "performer" performer }}{{{performer.Name}}}{{/link-to}}</li>
+
           {{/each}}  
-          {{#if event.emcee }}
-          <li>MC: {{#link-to "performer" event.emcee }}{{event.emcee.Name}}{{/link-to}}</li>
-          {{/if}}
+{{!--           {{#each emcee in event.emcees}}
+            <li>MC: {{#link-to "performer" emcee }}{{{emcee.Name}}}{{/link-to}}</li>
+           {{/each}}  --}}
           </ul>
           &nbsp;
         </div>

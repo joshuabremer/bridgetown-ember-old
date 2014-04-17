@@ -110,12 +110,15 @@ function sanitizeData(filepath, callback) {
   for (var key in eventObj) {
     eventObj[key].id = eventObj[key].EventId;
     eventObj[key].venue = eventObj[key].VenueId;
-    eventObj[key].emcee = eventObj[key].MCId;
+    eventObj[key].MCId = (eventObj[key].MCId === "7570" ? "" : eventObj[key].MCId)
+    eventObj[key].emcees = [];
+    if (parseInt(eventObj[key].MCId,10)) eventObj[key].emcees.push(parseInt(eventObj[key].MCId,10))
     
-    console.log(eventObj[key].StartTime.split(' to ')[0]);
     eventObj[key].start_time = moment(eventObj[key].StartTime.split(' to ')[0],'YYYY-MM-DD h:m:s').toISOString();
     eventObj[key].end_time = moment(eventObj[key].StartTime.split(' to ')[1],'YYYY-MM-DD h:m:s').toISOString();
   }
+
+  eventObj = sortArray(eventObj,"start_time");
 
   fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
      if (err) return console.log(err);
@@ -137,4 +140,15 @@ function convertToSlug(Text)
         ;
 }
 
+function sortArray(arr,key) {
+  arr.sort(function(a, b){
+    var keyA = a[key],
+    keyB = b[key];
+    // Compare the 2 dates
+    if(keyA < keyB) return -1;
+    if(keyA > keyB) return 1;
+    return 0;
+  });
+  return arr;
+}
 
