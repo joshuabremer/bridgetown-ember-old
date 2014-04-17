@@ -1,0 +1,24 @@
+<table class="schedule-table responsive" style="display:none;">
+  <thead>
+  <tr>
+  <th>Venue</th>
+  {{scheduleTableHeaderRow}}
+  </tr>
+  </thead>
+  <tbody>
+  {{#each venue in controller.venues}}
+   <tr>
+    <th>{{venue.Name}}</th>
+      {{#each event in venue.events}}
+        <td class="schedule-table__cell" {{bind-attr data-start-time="event.start_time"}} {{bind-attr data-end-time="event.end_time"}}>
+        {{event.Name}} - {{getTime event.start_time}} - {{getTime event.end_time}}
+        <br />
+        {{#each performer in event.performers}}
+          <span class="label label-default">{{performer.Name}}</span>
+        {{/each}}
+        </td>
+      {{/each}}  
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
