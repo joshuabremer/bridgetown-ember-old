@@ -34,6 +34,7 @@ App.Performer = DS.Model.extend({
 });
 
 function sluggify(string) {
+  string = string || "";
   return string.replace(/\W/g, '-').toLowerCase();
 }
 

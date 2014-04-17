@@ -26,9 +26,11 @@ App.Show = DS.Model.extend({
 });
 
 function sluggify(string) {
+  string = string || "";
   return string.replace(/\W/g, '-').toLowerCase();
 }
 
 function cleanStr(string) {
+  string = string || "";
   return string.replace(/\W/g, '').toLowerCase();
 }

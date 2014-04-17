@@ -6,7 +6,7 @@ function getTimeArray() {
 }
 
 function sluggify(string) {
-    return string.replace(/\W/g, "-").toLowerCase();
+    return string = string || "", string.replace(/\W/g, "-").toLowerCase();
 }
 
 function cleanStr(string) {
@@ -14,11 +14,11 @@ function cleanStr(string) {
 }
 
 function sluggify(string) {
-    return string.replace(/\W/g, "-").toLowerCase();
+    return string = string || "", string.replace(/\W/g, "-").toLowerCase();
 }
 
 function cleanStr(string) {
-    return string.replace(/\W/g, "").toLowerCase();
+    return string = string || "", string.replace(/\W/g, "").toLowerCase();
 }
 
 function isProduction() {
@@ -7389,6 +7389,38 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             data: data
         })));
     }
+    function program4(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n            <li>MC: "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(5, program5, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</li>\n           "), 
+        buffer;
+    }
+    function program5(depth0, data) {
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "emcee.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        })));
+    }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
@@ -7450,7 +7482,17 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('  \n\n          </ul>\n          &nbsp;\n        </div>\n        <div class="col-xs-4 col-sm-3">\n          <div class="schedule-list__item-date">\n          <span style="white-space:nowrap">'), 
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n          "), 
+    stack1 = helpers.each.call(depth0, "emcee", "in", "event.emcees", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(4, program4, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push(' \n          </ul>\n          &nbsp;\n        </div>\n        <div class="col-xs-4 col-sm-3">\n          <div class="schedule-list__item-date">\n          <span style="white-space:nowrap">'), 
     data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
     options = {
         hash: {},
@@ -8596,7 +8638,13 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     title: "Performer"
 }), App.PerformersRoute = Ember.Route.extend({
     model: function() {
-        return this.store.find("performer");
+        return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
+            performers: this.store.find("performer"),
+            events: this.store.find("event")
+        }).then(function(data) {
+            return data.performers;
+        });
     },
     title: "Performers"
 }), App.ScheduleRoute = Ember.Route.extend({
