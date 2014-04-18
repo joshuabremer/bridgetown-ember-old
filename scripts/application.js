@@ -8738,10 +8738,10 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashContexts: {},
             inverse: self.noop,
             fn: self.program(2, program2, data),
-            contexts: [ depth0 ],
-            types: [ "STRING" ],
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
             data: data
-        }, stack1 = helper ? helper.call(depth0, "event event", options) : helperMissing.call(depth0, "link-to", "event event", options), 
+        }, stack1 = helper ? helper.call(depth0, "event", "event", options) : helperMissing.call(depth0, "link-to", "event", "event", options), 
         (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
         buffer;
     }
