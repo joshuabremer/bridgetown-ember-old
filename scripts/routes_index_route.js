@@ -12,7 +12,7 @@ App.IndexRoute = Ember.Route.extend({
 });
 
 function _retrievePageJSON(page) {
-  host = 'http://bridgetowncomedy.com/';
+  host = 'http://www.bridgetowncomedy.com/';
   return Ember.$.ajax({ 
     url: host + page + '?format=json-pretty',
     dataType: 'JSONP'
