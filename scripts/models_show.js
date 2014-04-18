@@ -1,5 +1,7 @@
 App.Show = DS.Model.extend({
 
+  events: DS.hasMany('event', {async: true}),
+
   Name: DS.attr('string'),
 
   PhotoUrl: DS.attr('string'),

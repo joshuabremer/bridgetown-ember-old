@@ -2,8 +2,11 @@ App.ShowRoute = Ember.Route.extend({
   model: function(params) {
     var _this = this;
     this.set('params_slug',params.slug);
-    return this.store.find('show').then(function() {
-      //return _this.store.find(App.Show, params.id);
+    return Ember.RSVP.hash({
+        shows: this.store.find('show'),
+        performers: this.store.find('performer'),
+        events: this.store.find('event')
+    }).then(function(data) {
       return _this.store.find('show',params.pageUrl.split('-')[0]);
     });
   },

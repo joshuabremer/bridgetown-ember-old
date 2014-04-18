@@ -19,6 +19,17 @@
       <p>
         {{{ Copy }}}
       </p>
+{{!--       <p><strong>Shows</strong></p>
+      <ul>
+        {{#each event in sortedEvents}}
+          <li><strong>{{event.Name}}</strong> - {{event.venue.Name}}
+            <br /> ({{niceDate event.start_time}} {{getTime event.start_time}} - {{getTime event.end_time}})
+          </li>
+        {{else}}
+          <li>No shows scheduled yet...</li>
+        {{/each}}
+
+      </ul> --}}
       <p>
         {{#link-to "shows"}}← All Shows{{/link-to}}
       </p>

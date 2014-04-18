@@ -2,7 +2,13 @@
     <div class="container-fluid">
       <div class="row">
        <div class="col-sm-4">
-          <p class="lead">{{{event.Name}}}
+
+          <p class="lead">
+            {{#if event.show}}
+              {{#link-to "show" event.show }}{{{ event.show.Name }}}{{/link-to}}
+            {{else}}
+              {{{ event.Name }}}
+            {{/if}}
             <br/>
           <small>(<span style="white-space:nowrap">{{getTime event.start_time}} - </span>
           <span style="white-space:nowrap">{{getTime event.end_time}}</span>)</small>
@@ -14,7 +20,7 @@
         <div class="col-xs-7 col-sm-4">
           <ul class="schedule-list__performer-list">
             
-          {{#each performer in event.performers}}
+          {{#each performer in event.performers }}
 
               <li>
                 {{#link-to "performer" performer }}

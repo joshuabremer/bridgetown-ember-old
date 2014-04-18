@@ -3,15 +3,15 @@ var fs = require("fs");
 var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 
-getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
-
-
+//getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
+getShowJSON('http://127.0.0.1:8000/fixtures/ajax-shows.json');
 
 
 function getShowJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
   
   fs.writeFileSync("assets/raw_shows.json",'','utf8');
+  
   var request = http.get(url, function(response) {
     //response.pipe(file);
     response.on('data', function (chunk) {
@@ -20,17 +20,18 @@ function getShowJSON(url, callback) {
     });
     response.on('end', function (data) {
       //fs.appendFileSync("scripts/fixtures_show.js",";");
-
+      removeGremlins("assets/raw_shows.json", function() {
       replaceSubmittedIdWithId("assets/raw_shows.json",function() {
         createPageUrls("assets/raw_shows.json",function() {
+          addEventIds("assets/raw_shows.json",function() {
           fs.writeFileSync("scripts/fixtures_show.js","/*jshint -W100 */\nApp.Show.FIXTURES = ",'utf8');
           fs.appendFileSync("scripts/fixtures_show.js",getShowData(),{encoding:'utf8'});
           fs.appendFileSync("scripts/fixtures_show.js",";");
           buildImages("assets/raw_shows.json","show");
         });
       });
-      
-      
+      });
+      });
     
     });
   });
@@ -40,11 +41,33 @@ function getShowJSON(url, callback) {
 }
 
 function getShowObject() {
-  return eval(fs.readFileSync('assets/raw_shows.json', 'utf8'));
+  return eval(getShowData());
 }
 
 function getShowData() {
   return fs.readFileSync('assets/raw_shows.json', 'utf8');
+}
+
+function getEventObject() {
+  return eval(JSON.parse(getEventData()));
+}
+
+function getEventData() {
+  return fs.readFileSync('assets/raw_events.json', 'utf8');
+}
+
+function removeGremlins(file, callback) {
+  fs.readFile(file, 'utf8', function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    var result = data.replace(/u2028/g, '');
+
+    fs.writeFile(file, result, 'utf8', function (err) {
+       if (err) return console.log(err);
+       callback();
+    });
+  });
 }
 
 function createPageUrls(filepath,callback) {
@@ -56,21 +79,42 @@ function createPageUrls(filepath,callback) {
      if (err) return console.log(err);
      callback();
   });
-  
-  
 }
 
 function replaceSubmittedIdWithId(filepath, callback) {
-  fs.readFile(filepath, 'utf8', function (err,data) {
-    if (err) {
-      return console.log(err);
-    }
-    var result = data.replace(/SubmittedId/g, "id");
-    fs.writeFile(filepath, result, 'utf8', function (err) {
-       if (err) return console.log(err);
-       callback();
-    });
+  var showObj = getShowObject();
+  for (var key in showObj) {
+    showObj[key].id = showObj[key].SubmittedId;
+  }
+  fs.writeFile(filepath, JSON.stringify(showObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
   });
+}
+
+function addEventIds(filepath,callback) {
+  var showObj = getShowObject();
+  var eventObj = getEventData();
+
+  for (var key in showObj) {
+    showObj[key].events = getEventsForShow(showObj[key].id)
+  }
+  fs.writeFile(filepath, JSON.stringify(showObj), 'utf8', function (err) {
+     if (err) return console.log(err);
+     callback();
+  });
+}
+
+function getEventsForShow(id) {
+  var eventObj = getEventObject();
+  var returnArray = [];
+  for (var key in eventObj) {
+    var idCheck = parseInt(eventObj[key].ShowId,10);
+    if (idCheck === parseInt(id,10)) {
+      returnArray.push(idCheck);
+    }
+  }
+  return returnArray;
 }
 
 function buildImages(path,prefix) {

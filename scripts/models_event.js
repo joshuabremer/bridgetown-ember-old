@@ -6,6 +6,8 @@ App.Event = DS.Model.extend({
 
   venue: DS.belongsTo('venue', {async: true}),
 
+  show: DS.belongsTo('show', {async: true}),
+
   hasEmcee: DS.attr('string'),
 
   Name: DS.attr('string'),
