@@ -9070,7 +9070,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     model: function() {
         return Ember.RSVP.hash({
             venues: this.store.find("venue"),
-            events: this.store.find("event")
+            events: this.store.find("event"),
+            performers: this.store.find("performer")
         });
     },
     title: "Schedule"
