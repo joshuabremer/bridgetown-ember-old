@@ -10,6 +10,7 @@
 
     <link href="//fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="/scripts/vendor_html5shiv.js"></script>
 
 <!--INCLUDE SQS SCRIPTS, META TAGS AND USER CONTENT FROM THE CODE INJECTION TAB-->
     <link rel="shortcut icon" type="image/png" href="/assets/favicon.png" />
