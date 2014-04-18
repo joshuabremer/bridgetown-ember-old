@@ -5,7 +5,7 @@ App.EventRoute = Ember.Route.extend({
         shows: this.store.find('show'),
         performers: this.store.find('performer'),
         events: this.store.find('event'),
-        shows: this.store.find('show')
+        venues: this.store.find('venue')
     }).then(function(data) {
       return _this.store.find('event',params.events_id);
     });

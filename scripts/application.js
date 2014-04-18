@@ -9047,7 +9047,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             shows: this.store.find("show"),
             performers: this.store.find("performer"),
             events: this.store.find("event"),
-            shows: this.store.find("show")
+            venues: this.store.find("venue")
         }).then(function() {
             return _this.store.find("event", params.events_id);
         });
