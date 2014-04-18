@@ -40,6 +40,7 @@ App.Router.map(function() {
   this.route('contact');
   this.route('tickets');
 
+
   this.route('fourOhFour', { path: '*path' });
 
 
@@ -67,6 +68,9 @@ Ember.Route.reopen({
   render: function(controller, model) {
     this._super();
     window.scrollTo(0, 0);
+    $('[data-type="image"]').each(function() {
+      $(this).attr('src',$(this).data('src'));
+    });
   },
   activate: function() {
     this._super();
