@@ -7041,7 +7041,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Alhambra Theater Main",
     VenueId: "7609",
     id: "7609",
-    events: [ "7637", "7740", "7639", "7749", "7742", "7642", "7648", "7644", "7645", "7646", "7796", "7649", "7677", "7652" ]
+    events: [ "7637", "7740", "7639", "7749", "7742", "7642", "7648", "7644", "7645", "7646", "7796", "7677", "7652" ]
 }, {
     Name: "Analog Lounge",
     VenueId: "7620",
@@ -7051,7 +7051,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Analog Theater",
     VenueId: "7619",
     id: "7619",
-    events: [ "7704", "7747", "7699", "7741", "7811", "7808", "7744", "7627", "7746", "7914" ]
+    events: [ "7704", "7747", "7699", "7741", "7811", "7808", "7744", "7627", "7746", "7738" ]
 }, {
     Name: "Bar of the Gods",
     VenueId: "7610",
@@ -7081,7 +7081,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Hawthorne Theatre Main",
     VenueId: "7615",
     id: "7615",
-    events: [ "7698", "7701", "7915", "7804", "7702", "7650", "7913" ]
+    events: [ "7698", "7701", "7915", "7702", "7804", "7650", "7913" ]
 }, {
     Name: "Jupiter Tent",
     VenueId: "7616",
@@ -7096,7 +7096,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "White Owl Social Club",
     VenueId: "7618",
     id: "7618",
-    events: [ "7730", "7622", "7807", "7733", "7734", "7805", "7815", "7737", "7738" ]
+    events: [ "7730", "7622", "7807", "7733", "7734", "7805", "7815", "7737", "7914" ]
 } ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
 App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
 App.PerformerController = Ember.ObjectController.extend({}), App.PerformersController = Ember.ArrayController.extend({
