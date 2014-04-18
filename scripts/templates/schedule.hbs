@@ -10,10 +10,10 @@
 
 <div class="container main-content">
   <p>Performers, shows and prices subject to change.</p>
-      <p><button type="button" class="btn btn-default" {{action "filterGrid"}}><i class="fa fa-th"></i> Show Grid View</button>
-      <button type="button" class="btn btn-default" {{action "filterList"}}><i class="fa fa-list"></i> Show List View</button></p>
+{{!--       <p><button type="button" class="btn btn-default" {{action "filterGrid"}}><i class="fa fa-th"></i> Show Grid View</button>
+      <button type="button" class="btn btn-default" {{action "filterList"}}><i class="fa fa-list"></i> Show List View</button></p> --}}
   <div id="schedules" {{bind-attr class="scheduleClass"}}>
-  {{partial "schedule_table"}}
+{{!--   {{partial "schedule_table"}} --}}
   {{partial "schedule_list"}}
   </div>
 </div>
