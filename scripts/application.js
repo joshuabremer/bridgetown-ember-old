@@ -3165,7 +3165,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7616",
     start_time: "2014-05-09T03:00:00.000Z",
     end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "7798", "6808", "6609", "6189", "6509" ]
+    performers: [ "6808", "6609", "6189", "6509" ]
 }, {
     EventId: "7657",
     VenueId: "7611",
@@ -4049,7 +4049,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7609",
     start_time: "2014-05-11T01:00:00.000Z",
     end_time: "2014-05-11T02:30:00.000Z",
-    performers: [ "7893", "7894" ]
+    performers: []
 }, {
     EventId: "7678",
     VenueId: "7616",
@@ -4366,7 +4366,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
-    performers: [ "6731", "6298", "6835", "7895" ]
+    performers: [ "6731", "6298", "6835" ]
 }, {
     EventId: "7725",
     VenueId: "7617",
@@ -4560,7 +4560,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-11T23:00:00.000Z",
     end_time: "2014-05-12T00:30:00.000Z",
-    performers: [ "7896", "6762", "6865", "6823" ]
+    performers: [ "6762", "6865", "6823" ]
 }, {
     EventId: "7676",
     VenueId: "7612",
@@ -4725,8 +4725,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7612",
     start_time: "2014-05-12T03:00:00.000Z",
     end_time: "2014-05-12T04:30:00.000Z",
-    performers: [],
-    emcees: [ 7800 ]
+    performers: []
 }, {
     EventId: "7633",
     VenueId: "7608",
