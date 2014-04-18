@@ -69,11 +69,24 @@ function getEventsForVenue(id) {
   var returnArray = [];
   for (var key in eventObj) {
     var idCheck = parseInt(eventObj[key].VenueId,10);
-    if (idCheck === parseInt(id,10)) {
+    if (idCheck === parseInt(id,10) && doesEventExistForId(eventObj[key].EventId)) {
       returnArray.push(eventObj[key].EventId);
     }
   }
   return returnArray;
+}
+
+function doesEventExistForId(id) {
+  var eventObj = getEventObject();
+  id = parseInt(id,10);
+  for (var key in eventObj) {
+    var eventId = parseInt(eventObj[key].id,10);
+
+    if (eventId === id) {
+      return true;
+    }
+  }
+  return
 }
 
 
