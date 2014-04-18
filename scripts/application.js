@@ -3069,7 +3069,13 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     }.property("Name"),
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
-    }.property("PhotoUrl")
+    }.property("PhotoUrl"),
+    sortedEvents: function() {
+        var events = this.get("events").toArray();
+        return events.sort(function(lhs, rhs) {
+            return lhs.get("start_time") > rhs.get("start_time");
+        });
+    }.property("events.@each.isLoaded")
 }), App.Venue = DS.Model.extend({
     events: DS.hasMany("event", {
         async: !0
@@ -8506,11 +8512,61 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     buffer;
 }), Ember.TEMPLATES.show = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n          <li class="list-group-item"><strong>'), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong> - "), 
+        stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n            <br /> ("), 
+        data.buffer.push(escapeExpression((helper = helpers.niceDate || depth0 && depth0.niceDate, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "niceDate", "event.start_time", options)))), 
+        data.buffer.push(" "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push(")\n          </li>\n        "), buffer;
+    }
+    function program3(depth0, data) {
+        data.buffer.push("\n          <li>No shows scheduled yet...</li>\n        ");
+    }
+    function program5(depth0, data) {
         data.buffer.push("← All Shows");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    var stack1, helper, options, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
     return data.buffer.push('\n  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h2>'), 
     stack1 = helpers._triageMustache.call(depth0, "Name", {
         hash: {},
@@ -8547,13 +8603,23 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "ID" ],
         data: data
-    }))), data.buffer.push("\n      </p>\n\n      <p>\n        "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
-    options = {
+    }))), data.buffer.push('\n      </p>\n      <ul class="list-group">\n        <li class="list-group-item active" style="background:#695b53;">\n        <h4 class="list-group-item-heading" style="background:#695b53;color:white">Shows</h4>\n        </li>\n        '), 
+    stack1 = helpers.each.call(depth0, "event", "in", "sortedEvents", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.program(3, program3, data),
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      <p>\n        "), 
+    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(1, program1, data),
+        fn: self.program(5, program5, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
