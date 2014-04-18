@@ -7226,6 +7226,12 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             effect: "fadeIn"
         });
     }
+}), App.VenuesView = Ember.View.extend({
+    didInsertElement: function() {
+        $("[data-src]").each(function() {
+            $(this).attr("src", $(this).attr("data-src"));
+        });
+    }
 }), Ember.TEMPLATES._event_list_item = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var stack1, helper, options, buffer = "";
