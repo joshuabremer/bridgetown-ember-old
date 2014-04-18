@@ -8731,6 +8731,22 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
 }), Ember.TEMPLATES.show = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0 ],
+            types: [ "STRING" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "event event", options) : helperMissing.call(depth0, "link-to", "event event", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
         return data.buffer.push('\n          <li class="list-group-item"><strong>'), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
             hash: {},
             hashTypes: {},
@@ -8774,12 +8790,12 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             types: [ "ID" ],
             data: data
         }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
-        data.buffer.push(")\n          </li>\n        "), buffer;
+        data.buffer.push(")\n          </li>\n          "), buffer;
     }
-    function program3(depth0, data) {
+    function program4(depth0, data) {
         data.buffer.push('\n          <li class="list-group-item">No shows scheduled yet...</li>\n        ');
     }
-    function program5(depth0, data) {
+    function program6(depth0, data) {
         data.buffer.push("← All Shows");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -8832,7 +8848,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hash: {},
         hashTypes: {},
         hashContexts: {},
-        inverse: self.program(3, program3, data),
+        inverse: self.program(4, program4, data),
         fn: self.program(1, program1, data),
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
@@ -8843,7 +8859,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(5, program5, data),
+        fn: self.program(6, program6, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
