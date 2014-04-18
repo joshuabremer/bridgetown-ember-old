@@ -7734,7 +7734,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         data: data
     }, stack1 = helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n          </p>\n        </div>\n        <div class="col-xs-7 col-sm-4">\n          <ul class="schedule-list__performer-list">\n            \n          '), 
-    stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {
+    stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
