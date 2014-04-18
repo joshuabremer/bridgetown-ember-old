@@ -7878,6 +7878,39 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         buffer;
     }
     function program3(depth0, data) {
+        var buffer = "";
+        return data.buffer.push('\n          <div class="row">\n            <div class="col-sm-4">\n              <p>\n                <img class="img-responsive performer-headshot" '), 
+        data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                src: "show.headshot300"
+            },
+            hashTypes: {
+                src: "STRING"
+            },
+            hashContexts: {
+                src: depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(' />\n              </p>\n            </div>\n            \n            <div class="col-sm-8">\n              <p>\n                '), 
+        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "show.Copy", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push("\n              </p>\n            </div>\n          </div>\n            "), 
+        buffer;
+    }
+    function program5(depth0, data) {
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n                \n                "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
         options = {
@@ -7891,7 +7924,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
                 classNames: depth0
             },
             inverse: self.noop,
-            fn: self.program(4, program4, data),
+            fn: self.program(6, program6, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
@@ -7899,7 +7932,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n               \n              "), 
         buffer;
     }
-    function program4(depth0, data) {
+    function program6(depth0, data) {
         var buffer = "";
         return data.buffer.push("\n                  "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
             hash: {
@@ -7916,7 +7949,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             data: data
         }))), data.buffer.push("\n                "), buffer;
     }
-    function program6(depth0, data) {
+    function program8(depth0, data) {
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n                "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
         options = {
@@ -7930,7 +7963,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
                 classNames: depth0
             },
             inverse: self.noop,
-            fn: self.program(7, program7, data),
+            fn: self.program(9, program9, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
@@ -7938,7 +7971,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n               "), 
         buffer;
     }
-    function program7(depth0, data) {
+    function program9(depth0, data) {
         var buffer = "";
         return data.buffer.push("\n                  <strong>MC: </strong> "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "emcee.Name", {
             hash: {
@@ -7959,20 +7992,14 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     data = data || {};
     var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
     return data.buffer.push('\n  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h2>'), 
-    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {
-        hash: {
-            unescaped: "true"
-        },
-        hashTypes: {
-            unescaped: "STRING"
-        },
-        hashContexts: {
-            unescaped: depth0
-        },
+    stack1 = helpers._triageMustache.call(depth0, "Name", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
         contexts: [ depth0 ],
         types: [ "ID" ],
         data: data
-    }))), data.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer main-content">\n\n          <p class="lead">\n            '), 
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container single-performer main-content">\n\n          <p class="lead">\n            '), 
     data.buffer.push(escapeExpression((helper = helpers.niceDate || depth0 && depth0.niceDate, 
     options = {
         hash: {},
@@ -8007,17 +8034,27 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashContexts: {},
         inverse: self.noop,
         fn: self.program(1, program1, data),
-        contexts: [ depth0, depth0 ],
-        types: [ "STRING", "ID" ],
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
         data: data
-    }, stack1 = helper ? helper.call(depth0, "venue", "venue", options) : helperMissing.call(depth0, "link-to", "venue", "venue", options), 
-    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n          </p>\n          \n\n          <ul class="list-group">\n            <li class="list-group-item active" style="background:#695b53;">\n            <h4 class="list-group-item-heading" style="background:#695b53;color:white">Performers</h4>\n            </li>\n              '), 
-    stack1 = helpers.each.call(depth0, "performer", "in", "sortedPerformers", {
+    }, stack1 = helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n          </p>\n          \n          "), 
+    stack1 = helpers["if"].call(depth0, "show", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
         fn: self.program(3, program3, data),
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n\n          <ul class="list-group">\n            <li class="list-group-item active" style="background:#695b53;">\n            <h4 class="list-group-item-heading" style="background:#695b53;color:white">Performers</h4>\n            </li>\n              '), 
+    stack1 = helpers.each.call(depth0, "performer", "in", "sortedPerformers", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(5, program5, data),
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
@@ -8027,7 +8064,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(6, program6, data),
+        fn: self.program(8, program8, data),
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
