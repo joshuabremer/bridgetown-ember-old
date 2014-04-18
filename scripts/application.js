@@ -7037,7 +7037,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7608",
     events: [ "7621", "7731", "7623", "7682", "7626", "7745", "7628", "7632", "7633" ]
 }, {
-    Name: "Taxi Magic stage at Alhambra Theater",
+    Name: "Taxi Magic Stage Stage at Alhambra Theater Main",
     VenueId: "7609",
     id: "7609",
     events: [ "7637", "7740", "7639", "7749", "7742", "7642", "7648", "7644", "7645", "7646", "7796", "7677", "7652" ]
@@ -7062,12 +7062,12 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7611",
     events: [ "7657", "7658", "7659", "7660", "7916", "7703", "7661" ]
 }, {
-    Name: "Squarespace Stage at the Doug Fir",
+    Name: "Squarespace Stage Stage at Doug Fir",
     VenueId: "7612",
     id: "7612",
     events: [ "7663", "7810", "7665", "7624", "7667", "7668", "7669", "7670", "7671", "7666", "7672", "7675", "7674", "7676", "7662", "7783" ]
 }, {
-    Name: "Sizzle Pie Stage at the Eagles Lodge",
+    Name: "Sizzle Pie Stage Stage at Eagles Lodge",
     VenueId: "7613",
     id: "7613",
     events: [ "7679", "7919", "7680", "7806", "7625", "7743", "7638", "7685", "7651", "7687" ]
@@ -7092,7 +7092,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7617",
     events: [ "7716", "7717", "7718", "7719", "7720", "7721", "7722", "7723", "7724", "7725", "7726", "7727", "7728" ]
 }, {
-    Name: "MailChimp Stage at the White Owl Social Club",
+    Name: "MailChimp Stage Stage at White Owl Social Club",
     VenueId: "7618",
     id: "7618",
     events: [ "7730", "7622", "7807", "7733", "7734", "7805", "7815", "7737", "7914" ]
