@@ -55,10 +55,17 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {                       // Target options
-          style: 'compressed'
+          style: 'nested'
         },
         files: {
             './styles/main.css': './styles/main.scss'
+        }
+      }
+    },
+    cssmin: {
+      combine: {
+        files: {
+          './styles/main.css': ['./styles/main.css']
         }
       }
     },
@@ -134,8 +141,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-reload');
   grunt.loadNpmTasks('grunt-template');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-  grunt.registerTask('default', ['clean','emberhandlebars','uglify','sass', 'template']);
+  grunt.registerTask('default', ['clean','emberhandlebars','uglify','sass', 'template','cssmin']);
   grunt.registerTask('build', ['shell:build_fixtures','default']);
 
 

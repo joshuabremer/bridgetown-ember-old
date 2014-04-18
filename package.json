@@ -21,7 +21,8 @@
     "concat": "^0.2.4",
     "grunt-contrib-concat": "^0.4.0",
     "moment": "^2.5.1",
-    "node-smushit": "^0.5.1"
+    "node-smushit": "^0.5.1",
+    "grunt-contrib-cssmin": "~0.9.0"
   },
   "repository": {
     "type": "git",
