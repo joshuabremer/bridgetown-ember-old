@@ -7575,23 +7575,6 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         }))), data.buffer.push("\n            "), buffer;
     }
     function program6(depth0, data) {
-        var buffer = "";
-        return data.buffer.push('\n          <span class="badge">'), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Cost", {
-            hash: {
-                unescaped: "true"
-            },
-            hashTypes: {
-                unescaped: "STRING"
-            },
-            hashContexts: {
-                unescaped: depth0
-            },
-            contexts: [ depth0 ],
-            types: [ "ID" ],
-            data: data
-        }))), data.buffer.push("</span>\n          "), buffer;
-    }
-    function program8(depth0, data) {
         var stack1, buffer = "";
         return data.buffer.push('\n            <span class="schedule-list__item-venue-label label label-default">'), 
         stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {
@@ -7604,7 +7587,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>\n            "), 
         buffer;
     }
-    function program10(depth0, data) {
+    function program8(depth0, data) {
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n\n              <li>\n                "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
         options = {
@@ -7612,7 +7595,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashTypes: {},
             hashContexts: {},
             inverse: self.noop,
-            fn: self.program(11, program11, data),
+            fn: self.program(9, program9, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
@@ -7620,7 +7603,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n              </li>\n\n          "), 
         buffer;
     }
-    function program11(depth0, data) {
+    function program9(depth0, data) {
         var buffer = "";
         return data.buffer.push('\n                <span class="label label-default schedule__label-performer">\n                  '), 
         data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
@@ -7638,7 +7621,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             data: data
         }))), data.buffer.push("\n                </span>\n                "), buffer;
     }
-    function program13(depth0, data) {
+    function program11(depth0, data) {
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n              <li><strong>MC: </strong>\n                "), 
         helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
@@ -7646,7 +7629,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashTypes: {},
             hashContexts: {},
             inverse: self.noop,
-            fn: self.program(14, program14, data),
+            fn: self.program(12, program12, data),
             contexts: [ depth0, depth0 ],
             types: [ "STRING", "ID" ],
             data: data
@@ -7654,7 +7637,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n              </li>\n           "), 
         buffer;
     }
-    function program14(depth0, data) {
+    function program12(depth0, data) {
         var buffer = "";
         return data.buffer.push('\n                <span class="label label-default schedule__label-performer">\n                  '), 
         data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "emcee.Name", {
@@ -7730,22 +7713,13 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         types: [ "ID" ],
         data: data
     }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
-    data.buffer.push("</span>)</small>\n          "), stack1 = helpers["if"].call(depth0, "event.Cost", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: self.noop,
-        fn: self.program(6, program6, data),
-        contexts: [ depth0 ],
-        types: [ "ID" ],
-        data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n          </p>\n        </div>\n        <div class="col-xs-5 col-sm-4">\n          <p>'), 
+    data.buffer.push('</span>)</small>\n\n          </p>\n        </div>\n        <div class="col-xs-5 col-sm-4">\n          <p>'), 
     helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(8, program8, data),
+        fn: self.program(6, program6, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
@@ -7756,7 +7730,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(10, program10, data),
+        fn: self.program(8, program8, data),
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
@@ -7766,7 +7740,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(13, program13, data),
+        fn: self.program(11, program11, data),
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data

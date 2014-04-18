@@ -230,17 +230,6 @@ function program4(depth0,data) {
 
 function program6(depth0,data) {
   
-  var buffer = '';
-  data.buffer.push("\n          <span class=\"badge\">");
-  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Cost", {hash:{
-    'unescaped': ("true")
-  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("</span>\n          ");
-  return buffer;
-  }
-
-function program8(depth0,data) {
-  
   var buffer = '', stack1;
   data.buffer.push("\n            <span class=\"schedule-list__item-venue-label label label-default\">");
   stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
@@ -249,16 +238,16 @@ function program8(depth0,data) {
   return buffer;
   }
 
-function program10(depth0,data) {
+function program8(depth0,data) {
   
   var buffer = '', stack1, helper, options;
   data.buffer.push("\n\n              <li>\n                ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n              </li>\n\n          ");
   return buffer;
   }
-function program11(depth0,data) {
+function program9(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
@@ -269,16 +258,16 @@ function program11(depth0,data) {
   return buffer;
   }
 
-function program13(depth0,data) {
+function program11(depth0,data) {
   
   var buffer = '', stack1, helper, options;
   data.buffer.push("\n              <li><strong>MC: </strong>\n                ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(14, program14, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(12, program12, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n              </li>\n           ");
   return buffer;
   }
-function program14(depth0,data) {
+function program12(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
@@ -304,17 +293,14 @@ function program14(depth0,data) {
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
   data.buffer.push(" - </span>\n          <span style=\"white-space:nowrap\">");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
-  data.buffer.push("</span>)</small>\n          ");
-  stack1 = helpers['if'].call(depth0, "event.Cost", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n          </p>\n        </div>\n        <div class=\"col-xs-5 col-sm-4\">\n          <p>");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options));
+  data.buffer.push("</span>)</small>\n\n          </p>\n        </div>\n        <div class=\"col-xs-5 col-sm-4\">\n          <p>");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n          </p>\n        </div>\n        <div class=\"col-xs-7 col-sm-4\">\n          <ul class=\"schedule-list__performer-list\">\n            \n          ");
-  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("  \n          ");
-  stack1 = helpers.each.call(depth0, "emcee", "in", "event.emcees", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "emcee", "in", "event.emcees", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push(" \n          </ul>\n          &nbsp;\n        </div>\n      </div>\n    </div>\n    </li>\n\n");
   return buffer;
