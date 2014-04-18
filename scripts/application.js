@@ -7230,7 +7230,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     didInsertElement: function() {
         Ember.run.scheduleOnce("afterRender", this, function() {
             $("[data-src]").each(function() {
-                $(this).attr("src", $(this).attr("data-src")), $(this).parent().css("padding", "");
+                $(this).attr("src", $(this).attr("data-src")), $(this).parent().css("padding", "").removeClass();
             });
         });
     }
