@@ -144,7 +144,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask('default', ['clean','emberhandlebars','uglify','sass', 'template','cssmin']);
-  grunt.registerTask('build', ['shell:build_fixtures','default']);
 
 
 };

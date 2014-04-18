@@ -23,27 +23,27 @@ Ember.Handlebars.registerBoundHelper('createExcerpt', function(html, length, mor
 });
 
 Ember.Handlebars.registerBoundHelper('fullDate', function(dateString) {
-  return moment(dateString).calendar();
+  return moment(dateString).zone('-07:00').calendar();
 });
 
 Ember.Handlebars.registerBoundHelper('niceDate', function(dateString) {
-  return moment(dateString).format("dddd, MMMM Do YYYY");
+  return moment(dateString).zone('-07:00').format("dddd, MMMM Do YYYY");
 });
 
 Ember.Handlebars.registerBoundHelper('getWeekday', function(dateString) {
-  return moment(dateString).format('dddd');
+  return moment(dateString).zone('-07:00').format('dddd');
 });
 
 Ember.Handlebars.registerBoundHelper('getMonth', function(dateString) {
-  return moment(dateString).format('MMM');
+  return moment(dateString).zone('-07:00').format('MMM');
 });
 
 Ember.Handlebars.registerBoundHelper('getDayOfMonth', function(dateString) {
-  return moment(dateString).format('D');
+  return moment(dateString).zone('-07:00').format('D');
 });
 
 Ember.Handlebars.registerBoundHelper('getTime', function(dateString) {
-  return moment(dateString).format('h:mm a');
+  return moment(dateString).zone('-07:00').format('h:mm a');
 });
 
 

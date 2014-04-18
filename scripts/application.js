@@ -2836,17 +2836,17 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     var item_html = html.replace(/<\/?[^>]+>/gi, "");
     return item_html = jQuery.trim(item_html), item_html.substring(0, length) + more_text;
 }), Ember.Handlebars.registerBoundHelper("fullDate", function(dateString) {
-    return moment(dateString).calendar();
+    return moment(dateString).zone("-07:00").calendar();
 }), Ember.Handlebars.registerBoundHelper("niceDate", function(dateString) {
-    return moment(dateString).format("dddd, MMMM Do YYYY");
+    return moment(dateString).zone("-07:00").format("dddd, MMMM Do YYYY");
 }), Ember.Handlebars.registerBoundHelper("getWeekday", function(dateString) {
-    return moment(dateString).format("dddd");
+    return moment(dateString).zone("-07:00").format("dddd");
 }), Ember.Handlebars.registerBoundHelper("getMonth", function(dateString) {
-    return moment(dateString).format("MMM");
+    return moment(dateString).zone("-07:00").format("MMM");
 }), Ember.Handlebars.registerBoundHelper("getDayOfMonth", function(dateString) {
-    return moment(dateString).format("D");
+    return moment(dateString).zone("-07:00").format("D");
 }), Ember.Handlebars.registerBoundHelper("getTime", function(dateString) {
-    return moment(dateString).format("h:mm a");
+    return moment(dateString).zone("-07:00").format("h:mm a");
 }), Ember.Handlebars.registerHelper("scheduleTableHeaderRow", function() {
     var html = "", timeArray = getTimeArray();
     return $.each(timeArray, function(index, time) {
@@ -3008,7 +3008,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Cost: DS.attr("string"),
     duration: DS.attr("string"),
     weekday: function() {
-        return moment(this.get("start_time")).format("dddd").toLowerCase();
+        return moment(this.get("start_time")).zone("-07:00").format("dddd").toLowerCase();
     }.property("start_time"),
     getPerformers: function() {
         return this.get("performers").get("content");
@@ -7166,12 +7166,12 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     },
     addListDividers: function() {
         $(".schedule-list__spacer").remove();
-        var currentTime = moment().subtract(100, "years").toISOString();
+        var currentTime = moment().zone("-07:00").subtract(100, "years").toISOString();
         $(".list-group-item").each(function() {
             var rowTime = $(this).data("start-time");
             if (rowTime !== currentTime) {
                 currentTime = rowTime;
-                var dateString = moment(currentTime).format("h:mm a - dddd MMMM Do YYYY"), weekday = moment(currentTime).format("dddd").toLowerCase();
+                var dateString = moment(currentTime).zone("-07:00").format("h:mm a - dddd MMMM Do YYYY"), weekday = moment(currentTime).zone("-07:00").format("dddd").toLowerCase();
                 currentTime = $(this).data("start-time"), $(this).before('<div class="list-group-item schedule-list__spacer ' + weekday + '"><div class="container-fluid"><div class="row"><div class="col-xs-12">' + dateString + "</div></div></div></div>");
             }
         });
