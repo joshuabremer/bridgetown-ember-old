@@ -8987,12 +8987,9 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     function program4(depth0, data) {
         data.buffer.push('\n          <li class="list-group-item">No shows scheduled yet...</li>\n        ');
     }
-    function program6(depth0, data) {
-        data.buffer.push("← All Performers");
-    }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing, self = this;
+    var stack1, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing, self = this;
     return data.buffer.push('\n  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h2>'), 
     data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {
         hash: {
@@ -9031,18 +9028,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      <p>\n        "), 
-    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: self.noop,
-        fn: self.program(6, program6, data),
-        contexts: [ depth0 ],
-        types: [ "STRING" ],
-        data: data
-    }, stack1 = helper ? helper.call(depth0, "performers", options) : helperMissing.call(depth0, "link-to", "performers", options), 
-    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n"), 
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n\n    </div>\n  </div>\n</div>\n\n\n\n\n\n"), 
     buffer;
 }), Ember.TEMPLATES.venues = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
