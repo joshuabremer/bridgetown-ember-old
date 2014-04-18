@@ -297,7 +297,7 @@ function program12(depth0,data) {
   stack1 = helpers._triageMustache.call(depth0, "event.Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</p>\n        </div>\n        <div class=\"col-xs-5 col-sm-4\">\n          <p>");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "venue", "event.venue", options) : helperMissing.call(depth0, "link-to", "venue", "event.venue", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n          </p>\n        </div>\n        <div class=\"col-xs-7 col-sm-4\">\n          <ul class=\"schedule-list__performer-list\">\n            \n          ");
   stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
@@ -930,6 +930,68 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   stack1 = helpers._triageMustache.call(depth0, "collection.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class=\"container main-content sponsors-container text-center\">\n    <h2>SPONSORED BY</h2>\n    <div class=\"row\">\n      <div class=\"col-sm-8 col-sm-offset-2\">\n        <a target=\"_blank\" href=\"http://squarespace.com/?channel=events&subchannel=comedy&source=bridgetown14\"><img class=\"img-responsive\" src=\"/assets/sponsor-squarespace-big.png\" alt=\"\"></a>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <a target=\"_blank\" href=\"https://taximagic.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-taxi-magic-big.png\" alt=\"\"></a>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4\">\n        <a target=\"_blank\" href=\"http://mailchimp.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-mailchimp-long.png?1\" alt=\"\"></a>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.portlandoldies.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-oldies.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.z100portland.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-z100.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.1059thebrew.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-brew.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.deschutesbrewery.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-deschutes.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://sizzlepie.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-sizzle-pie.png\" alt=\"\"></a>\n      </div>\n   \n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.bendistillery.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-crater-lake.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.eastsidedistilling.com/\"><img class=\"img-responsive\" src=\"/assets/sponsor-eastside-distillery.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://elevenpdx.com/\"><img class=\"img-responsive\" src=\"/assets/sponsor-eleven.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://funemploymentradio.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-funemployment.png\" alt=\"\"></a>\n      </div>\n      \n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://groundkontrol.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-ground-kontrol.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://imeldas.com/store?utm_source=BTC14&utm_medium=BTCsponsorpage&utm_campaign=logo\"><img class=\"img-responsive\" src=\"/assets/sponsor-imeldas.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-8 col-sm-4\">\n        <a target=\"_blank\" href=\"http://www.jupiterhotel.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-jupiter-long.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.kindsnacks.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-kind-bar.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.montageportland.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-montage.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://pabstblueribbon.com/\"><img class=\"img-responsive\" src=\"/assets/sponsor-pabst.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.pivot.tv/?cmpid=bridgetown\"><img class=\"img-responsive\" src=\"/assets/sponsor-pivot.png?1\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.portlandmercury.com/\"><img class=\"img-responsive\" src=\"/assets/sponsor-mercury.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"https://soundcloud.com/wandertown\">\n          <img class=\"img-responsive\" src=\"/assets/sponsor-soundcloud.png\" alt=\"\">\n        </a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.standupfordowns.org/\">\n          <img class=\"img-responsive\" src=\"/assets/sponsor-stand-up-for-downs.png\" alt=\"\">\n        </a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.tonkin.com/\">\n          <img class=\"img-responsive\" src=\"/assets/sponsor-tonkin.png\" alt=\"\">\n        </a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://voodoodoughnut.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-voodoo.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://voodoodoughnut.com/recordings\"><img class=\"img-responsive\" src=\"/assets/sponsor-voodoo-recordings.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://zachsshack.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-zachs-shack.png\" alt=\"\"></a>\n      </div>\n      <div class=\"col-xs-4 col-sm-2\">\n        <a target=\"_blank\" href=\"http://www.yelp.com\"><img class=\"img-responsive\" src=\"/assets/sponsor-yelp.png\" alt=\"\"></a>\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n");
+  return buffer;
+  
+});Ember.TEMPLATES['venue'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n          ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{
+    'classNames': ("list-group-item")
+  },hashTypes:{'classNames': "STRING"},hashContexts:{'classNames': depth0},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "event", "event", options) : helperMissing.call(depth0, "link-to", "event", "event", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n        ");
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = '', helper, options;
+  data.buffer.push("\n            <strong>");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("</strong>\n              <br /> (");
+  data.buffer.push(escapeExpression((helper = helpers.niceDate || (depth0 && depth0.niceDate),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "niceDate", "event.start_time", options))));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
+  data.buffer.push(" - ");
+  data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
+  data.buffer.push(")\n          ");
+  return buffer;
+  }
+
+function program4(depth0,data) {
+  
+  
+  data.buffer.push("\n          <li class=\"list-group-item\">No shows scheduled yet...</li>\n        ");
+  }
+
+function program6(depth0,data) {
+  
+  
+  data.buffer.push("← All Performers");
+  }
+
+  data.buffer.push("\n  <div class=\"jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header\">\n    <div class=\"container\">\n      <div class=\"row centered\">\n        <div class=\"col-lg-8 col-lg-offset-2\">\n        <h2>");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("</h2>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class=\"container single-performer main-content\">\n  <div class=\"row\">\n\n    <div class=\"col-sm-12\">\n      <p>\n        ");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Bio", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n      </p>\n      \n      <ul class=\"list-group\">\n        <li class=\"list-group-item active\" style=\"background:#695b53;\">\n        <h4 class=\"list-group-item-heading\" style=\"background:#695b53;color:white\">Shows</h4>\n        </li>\n        ");
+  stack1 = helpers.each.call(depth0, "event", "in", "events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(4, program4, data),fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n\n      </ul>\n      <p>\n        ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "performers", options) : helperMissing.call(depth0, "link-to", "performers", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n");
   return buffer;
   
 });Ember.TEMPLATES['venues'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {

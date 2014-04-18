@@ -19,7 +19,7 @@
           <p>Price: {{event.Cost}}</p>
         </div>
         <div class="col-xs-5 col-sm-4">
-          <p>{{#link-to 'venues'}}
+          <p>{{#link-to 'venue' event.venue}}
             <span class="schedule-list__item-venue-label label label-default">{{event.venue.Name}}</span>
             {{/link-to}}
           </p>
