@@ -31,6 +31,10 @@ body {
   background:black;
   font-family: 'Cantarell', sans-serif;
 }
+
+img {
+  max-width:100%;
+}
 h1,.h1 {
   font-family: 'Fjalla One', sans-serif;
   font-weight: normal;
@@ -210,6 +214,11 @@ h6,
   }
 }
 
+// VENUE PAGE
+
+//Map width
+
+iframe, object, embed{max-width: 100%;}
 
 // SCHEDULE PAGE
 
