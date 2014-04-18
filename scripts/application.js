@@ -8231,15 +8231,20 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     function program2(depth0, data) {
         var stack1, helper, options, buffer = "";
-        return data.buffer.push("\n            <strong>"), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
+        return data.buffer.push("\n            <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
             contexts: [ depth0 ],
             types: [ "ID" ],
             data: data
-        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong> - "), 
-        stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {
+        }))), data.buffer.push("</strong> - "), stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
@@ -8284,7 +8289,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, helper, options, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing, self = this;
     return data.buffer.push('\n  <div class="jumbotron jumbotron-tiny jumbotron-color-2 jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h2>'), 
     data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {
         hash: {

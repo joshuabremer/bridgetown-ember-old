@@ -26,7 +26,7 @@
         </li>
         {{#each event in sortedEvents}}
           {{#link-to "event" event classNames="list-group-item"}}
-            <strong>{{event.Name}}</strong> - {{event.venue.Name}}
+            <strong>{{{event.Name}}}</strong> - {{event.venue.Name}}
               <br /> ({{niceDate event.start_time}} {{getTime event.start_time}} - {{getTime event.end_time}})
           {{/link-to}}
         {{else}}
