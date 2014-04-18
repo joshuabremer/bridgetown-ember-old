@@ -181,7 +181,15 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<ul class=\"schedule-list list-group\">\n  ");
+  data.buffer.push("<div class=\"schedule-list\">\n  <div class=\"text-left\">\n      <p><button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Thursday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterFriday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Friday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Saturday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">Sunday</button>\n    </p>\n  </div>\n  <ul class=\"list-group\">\n  ");
   stack1 = helpers.each.call(depth0, "event", "in", "controller.events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </ul>\n");
@@ -222,14 +230,35 @@ function program4(depth0,data) {
 
 function program6(depth0,data) {
   
+  var buffer = '';
+  data.buffer.push("\n          <span class=\"badge\">");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Cost", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("</span>\n          ");
+  return buffer;
+  }
+
+function program8(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n            <span class=\"schedule-list__item-venue-label label label-default\">");
+  stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</span>\n            ");
+  return buffer;
+  }
+
+function program10(depth0,data) {
+  
   var buffer = '', stack1, helper, options;
   data.buffer.push("\n\n              <li>\n                ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n              </li>\n\n          ");
   return buffer;
   }
-function program7(depth0,data) {
+function program11(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
@@ -240,16 +269,16 @@ function program7(depth0,data) {
   return buffer;
   }
 
-function program9(depth0,data) {
+function program13(depth0,data) {
   
   var buffer = '', stack1, helper, options;
   data.buffer.push("\n              <li><strong>MC: </strong>\n                ");
-  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(14, program14, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "performer", "emcee", options) : helperMissing.call(depth0, "link-to", "performer", "emcee", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n              </li>\n           ");
   return buffer;
   }
-function program10(depth0,data) {
+function program14(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n                <span class=\"label label-default schedule__label-performer\">\n                  ");
@@ -275,14 +304,17 @@ function program10(depth0,data) {
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options))));
   data.buffer.push(" - </span>\n          <span style=\"white-space:nowrap\">");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options))));
-  data.buffer.push("</span>)</small>\n          </p>\n        </div>\n        <div class=\"col-xs-5 col-sm-4\">\n          <p><span class=\"schedule-list__item-venue-label label label-default\">");
-  stack1 = helpers._triageMustache.call(depth0, "event.venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("</span>)</small>\n          ");
+  stack1 = helpers['if'].call(depth0, "event.Cost", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</span></p>\n        </div>\n        <div class=\"col-xs-7 col-sm-4\">\n          <ul class=\"schedule-list__performer-list\">\n            \n          ");
-  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  data.buffer.push("\n          </p>\n        </div>\n        <div class=\"col-xs-5 col-sm-4\">\n          <p>");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n          </p>\n        </div>\n        <div class=\"col-xs-7 col-sm-4\">\n          <ul class=\"schedule-list__performer-list\">\n            \n          ");
+  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(10, program10, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("  \n          ");
-  stack1 = helpers.each.call(depth0, "emcee", "in", "event.emcees", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(9, program9, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "emcee", "in", "event.emcees", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push(" \n          </ul>\n          &nbsp;\n        </div>\n      </div>\n    </div>\n    </li>\n\n");
   return buffer;
@@ -467,7 +499,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, helper, options;
-  data.buffer.push("\n          <li><strong>");
+  data.buffer.push("\n          <li class=\"list-group-item\"><strong>");
   stack1 = helpers._triageMustache.call(depth0, "event.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</strong> - ");
@@ -507,7 +539,7 @@ function program5(depth0,data) {
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Bio", {hash:{
     'unescaped': ("true")
   },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
-  data.buffer.push("\n      </p>\n      <p><strong>Shows</strong></p>\n      <ul>\n        ");
+  data.buffer.push("\n      </p>\n      \n      <ul class=\"list-group\">\n        <li class=\"list-group-item active\" style=\"background:#695b53;\">\n        <h4 class=\"list-group-item-heading\" style=\"background:#695b53;color:white\">Shows</h4>\n        </li>\n        ");
   stack1 = helpers.each.call(depth0, "event", "in", "sortedEvents", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n\n      </ul>\n      <p>\n        ");
@@ -587,63 +619,17 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push("\n</div>\n\n\n");
   return buffer;
   
-});Ember.TEMPLATES['schedule-list'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n  <li>\n   <h3>");
-  stack1 = helpers._triageMustache.call(depth0, "event.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h3>\n   <p>");
-  data.buffer.push(escapeExpression((helper = helpers.fullDate || (depth0 && depth0.fullDate),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "fullDate", "event.start_time", options))));
-  data.buffer.push("</p>\n   <p>$");
-  stack1 = helpers._triageMustache.call(depth0, "event.price", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n   <ul>\n   ");
-  stack1 = helpers.each.call(depth0, "performer", "in", "event.performers", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(2, program2, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("  \n    </ul>\n    </li>\n  ");
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = '', stack1;
-  data.buffer.push("\n    <li>");
-  stack1 = helpers._triageMustache.call(depth0, "performer.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n    ");
-  return buffer;
-  }
-
-  data.buffer.push("<ul>\n  ");
-  stack1 = helpers.each.call(depth0, "event", "in", "controller.events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
-  return buffer;
-  
 });Ember.TEMPLATES['schedule'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var buffer = '', helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
 
 
-  data.buffer.push("  <div class=\"jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header\">\n    <div class=\"container\">\n      <div class=\"row centered\">\n        <div class=\"col-lg-8 col-lg-offset-2\">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class=\"container main-content\">\n  <div class=\"controls row\">\n    <div class=\"col-sm-6 text-center\">\n      <p><button type=\"button\" class=\"btn btn-default\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Thursday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterFriday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Friday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Saturday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Sunday</button>\n    </p>\n    </div>\n    <div class=\"col-sm-6 text-center\">\n      <p><button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push("  <div class=\"jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header\">\n    <div class=\"container\">\n      <div class=\"row centered\">\n        <div class=\"col-lg-8 col-lg-offset-2\">\n        <h1>Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class=\"container main-content\">\n  <div class=\"controls\">\n      <p><button type=\"button\" class=\"btn btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterGrid", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push("><i class=\"fa fa-th\"></i> Show Grid View</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterList", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push("><i class=\"fa fa-list\"></i> Show List View</button></p>\n    </div>\n  </div>\n  <br />\n  <div id=\"schedules\" ");
+  data.buffer.push("><i class=\"fa fa-list\"></i> Show List View</button></p>\n  </div>\n  <br />\n  <div id=\"schedules\" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("scheduleClass")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
@@ -657,7 +643,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 });Ember.TEMPLATES['schedule_table'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -709,11 +695,12 @@ function program3(depth0,data) {
   }
 function program4(depth0,data) {
   
-  var buffer = '', stack1;
-  data.buffer.push("<span class=\"label label-default schedule__label-performer\">");
-  stack1 = helpers._triageMustache.call(depth0, "performer.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</span>");
+  var buffer = '';
+  data.buffer.push("\n          <span class=\"label label-default schedule__label-performer\">\n          ");
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n        </span>\n          ");
   return buffer;
   }
 
@@ -736,7 +723,7 @@ function program7(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<table class=\"schedule-table responsive\">\n  <thead>\n  <tr>\n  <th>Venue</th>\n  ");
+  data.buffer.push("<table class=\"schedule-table responsive\">\n  <thead>\n  <tr>\n  <th style=\"display:none;\">Venue</th>\n  ");
   stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  ");

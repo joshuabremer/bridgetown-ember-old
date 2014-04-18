@@ -12,10 +12,16 @@
             <br/>
           <small>(<span style="white-space:nowrap">{{getTime event.start_time}} - </span>
           <span style="white-space:nowrap">{{getTime event.end_time}}</span>)</small>
+          {{#if event.Cost}}
+          <span class="badge">{{{ event.Cost }}}</span>
+          {{/if}}
           </p>
         </div>
         <div class="col-xs-5 col-sm-4">
-          <p><span class="schedule-list__item-venue-label label label-default">{{event.venue.Name}}</span></p>
+          <p>{{#link-to 'venues'}}
+            <span class="schedule-list__item-venue-label label label-default">{{event.venue.Name}}</span>
+            {{/link-to}}
+          </p>
         </div>
         <div class="col-xs-7 col-sm-4">
           <ul class="schedule-list__performer-list">

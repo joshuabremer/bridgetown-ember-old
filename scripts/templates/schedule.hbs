@@ -9,18 +9,9 @@
   </div><!-- headerwrap -->
 
 <div class="container main-content">
-  <div class="controls row">
-    <div class="col-sm-6 text-center">
-      <p><button type="button" class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
-      <button type="button" class="btn btn-default" {{action "filterFriday"}}>Friday</button>
-      <button type="button" class="btn btn-default" {{action "filterSaturday"}}>Saturday</button>
-      <button type="button" class="btn btn-default" {{action "filterSunday"}}>Sunday</button>
-    </p>
-    </div>
-    <div class="col-sm-6 text-center">
+  <div class="controls">
       <p><button type="button" class="btn btn-default" {{action "filterGrid"}}><i class="fa fa-th"></i> Show Grid View</button>
       <button type="button" class="btn btn-default" {{action "filterList"}}><i class="fa fa-list"></i> Show List View</button></p>
-    </div>
   </div>
   <br />
   <div id="schedules" {{bind-attr class="scheduleClass"}}>

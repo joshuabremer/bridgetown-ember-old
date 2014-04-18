@@ -1,4 +1,12 @@
-<ul class="schedule-list list-group">
+<div class="schedule-list">
+  <div class="text-left">
+      <p><button type="button" class="btn btn-default" {{action "filterThursday"}}>Thursday</button>
+      <button type="button" class="btn btn-default" {{action "filterFriday"}}>Friday</button>
+      <button type="button" class="btn btn-default" {{action "filterSaturday"}}>Saturday</button>
+      <button type="button" class="btn btn-default" {{action "filterSunday"}}>Sunday</button>
+    </p>
+  </div>
+  <ul class="list-group">
   {{#each event in controller.events}}
  {{partial "schedule_list_item"}}
   {{/each}}

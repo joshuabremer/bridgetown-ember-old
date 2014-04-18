@@ -1,7 +1,7 @@
 <table class="schedule-table responsive">
   <thead>
   <tr>
-  <th>Venue</th>
+  <th style="display:none;">Venue</th>
   {{scheduleTableHeaderRow}}
   </tr>
   </thead>
@@ -16,7 +16,11 @@
         {{getTime event.start_time}} - {{getTime event.end_time}}
         <br />
         {{#each performer in event.sortedPerformers}}
-          {{#link-to "performer" performer }}<span class="label label-default schedule__label-performer">{{performer.Name}}</span>{{/link-to}}
+          {{#link-to "performer" performer }}
+          <span class="label label-default schedule__label-performer">
+          {{{performer.Name}}}
+        </span>
+          {{/link-to}}
         {{/each}}
         {{#if event.emcee }}
           {{#link-to "performer" event.emcee }}<span class="label label-default schedule__label-performer">MC: {{event.emcee.Name}}</span>{{/link-to}}
