@@ -5,7 +5,7 @@ var smushit = require('node-smushit');
 var moment = require('moment');
 
 //getEventJSON('http://bridgetown.festivalthing.com/export/events/json');
-getEventJSON('http://127.0.0.1:8000/fixtures/ajax-events.json');
+getEventJSON('http://127.0.0.1:8000/fixtures/festivalthing-events.json');
 
 function getEventJSON(url, callback) {
   var file = fs.createWriteStream("assets/raw_events.json");
@@ -23,18 +23,15 @@ function getEventJSON(url, callback) {
         console.log("Replaced event Ids");
         addPerformerIds("assets/raw_events.json",function() {
           addMCsIfTheyExist("assets/raw_events.json",function() {
-          console.log("Grabbed performers");
-            fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
-            fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
-            fs.appendFileSync("scripts/fixtures_event.js",";");
-            console.log("Created: " + "scripts/fixtures_event.js");
+            console.log("Grabbed performers");
+              fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
+              fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
+              fs.appendFileSync("scripts/fixtures_event.js",";");
+              console.log("Created: " + "scripts/fixtures_event.js");
+            });
           });
         });
       });
-    });
-      
-      
-      
     });
   });
   request.on('error', function(e) {
@@ -63,7 +60,7 @@ function getScheduleObject() {
 }
 
 function getScheduleData() {
-  return fs.readFileSync('fixtures/ajax-schedule.json', 'utf8');
+  return fs.readFileSync('fixtures/festivalthing-schedule.json', 'utf8');
 }
 
 function stringifyEventJSON(filepath,callback) {

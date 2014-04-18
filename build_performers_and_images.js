@@ -4,7 +4,7 @@ var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 
 getPerformerJSON('http://bridgetown.festivalthing.com/export/performers/json');
-//getPerformerJSON('http://127.0.0.1:8000/fixtures/ajax-performer.json');
+//getPerformerJSON('http://127.0.0.1:8000/fixtures/festivalthing-performer.json');
 
 function getPerformerJSON(url, callback) {
   //var file = fs.createWriteStream("assets/performers.json");
@@ -60,7 +60,7 @@ function getScheduleObject() {
 }
 
 function getScheduleData() {
-  return fs.readFileSync('fixtures/ajax-schedule.json', 'utf8');
+  return fs.readFileSync('fixtures/festivalthing-schedule.json', 'utf8');
 }
 
 function stringifyPerformerJSON(filepath,callback) {

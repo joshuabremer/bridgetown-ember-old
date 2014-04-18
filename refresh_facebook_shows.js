@@ -39,11 +39,11 @@ function curlFacebookLinter() {
 }
 
 function getShowObject() {
-  return eval(fs.readFileSync('fixtures/ajax-shows.json', 'utf8'));
+  return eval(fs.readFileSync('fixtures/festivalthing-shows.json', 'utf8'));
 }
 
 function getShowData() {
-  return fs.readFileSync('fixtures/ajax-shows.json', 'utf8');
+  return fs.readFileSync('fixtures/festivalthing-shows.json', 'utf8');
 }
 
 

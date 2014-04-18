@@ -4,7 +4,7 @@ var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 
 //getShowJSON('http://bridgetown.festivalthing.com/export/submitted-shows/json');
-getShowJSON('http://127.0.0.1:8000/fixtures/ajax-shows.json');
+getShowJSON('http://127.0.0.1:8000/fixtures/festivalthing-shows.json');
 
 
 function getShowJSON(url, callback) {

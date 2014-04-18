@@ -4,7 +4,7 @@ var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 
 //getVenueJSON('http://bridgetown.festivalthing.com/export/venues/json');
-getVenueJSON('http://127.0.0.1:8000/fixtures/ajax-venues.json');
+getVenueJSON('http://127.0.0.1:8000/fixtures/festivalthing-venues.json');
 
 function getVenueJSON(url, callback) {
   var file = fs.createWriteStream("assets/venues.json");
