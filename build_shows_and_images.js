@@ -111,7 +111,7 @@ function getEventsForShow(id) {
   for (var key in eventObj) {
     var idCheck = parseInt(eventObj[key].ShowId,10);
     if (idCheck === parseInt(id,10)) {
-      returnArray.push(idCheck);
+      returnArray.push(eventObj[key].id);
     }
   }
   return returnArray;
