@@ -7714,7 +7714,14 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         types: [ "ID" ],
         data: data
     }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
-    data.buffer.push('</span>)</small>\n\n          </p>\n        </div>\n        <div class="col-xs-5 col-sm-4">\n          <p>'), 
+    data.buffer.push("</span>)</small>\n\n          </p>\n          <p>Price: "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</p>\n        </div>\n        <div class="col-xs-5 col-sm-4">\n          <p>'), 
     helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
         hash: {},
         hashTypes: {},
