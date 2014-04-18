@@ -60,7 +60,7 @@ function getScheduleObject() {
 }
 
 function getScheduleData() {
-  return fs.readFileSync('assets/raw_schedules.json', 'utf8');
+  return fs.readFileSync('fixtures/ajax-schedule.json', 'utf8');
 }
 
 function stringifyPerformerJSON(filepath,callback) {
@@ -74,7 +74,7 @@ function stringifyPerformerJSON(filepath,callback) {
 function addEventIds(filepath,callback) {
   var performerObj = getPerformerObject();
   var scheduleObj = getScheduleData();
-
+  
   for (var key in performerObj) {
     performerObj[key].events = getEventsForPerformer(performerObj[key].id)
   }

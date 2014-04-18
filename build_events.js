@@ -63,7 +63,7 @@ function getScheduleObject() {
 }
 
 function getScheduleData() {
-  return fs.readFileSync('assets/raw_schedules.json', 'utf8');
+  return fs.readFileSync('fixtures/ajax-schedule.json', 'utf8');
 }
 
 function stringifyEventJSON(filepath,callback) {
