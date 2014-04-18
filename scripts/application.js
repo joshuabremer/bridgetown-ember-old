@@ -7228,8 +7228,10 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
 }), App.VenuesView = Ember.View.extend({
     didInsertElement: function() {
-        $("[data-src]").each(function() {
-            $(this).attr("src", $(this).attr("data-src")), $(this).parent().css("padding", "");
+        Ember.run.scheduleOnce("afterRender", this, function() {
+            $("[data-src]").each(function() {
+                $(this).attr("src", $(this).attr("data-src")), $(this).parent().css("padding", "");
+            });
         });
     }
 }), Ember.TEMPLATES._event_list_item = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
