@@ -2988,11 +2988,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     teardown: function() {
         this.spinner && this.spinner && this.spinner.stop();
     }.on("willDestroyElement")
-}), Ember.Handlebars.helper("x-spinner", App.XSpinnerComponent), App.Category = DS.Model.extend({
-    performer: DS.belongsTo("performer"),
-    newspost: DS.belongsTo("newspost"),
-    name: DS.attr("string")
-}), App.Event = DS.Model.extend({
+}), Ember.Handlebars.helper("x-spinner", App.XSpinnerComponent), App.Event = DS.Model.extend({
     performers: DS.hasMany("performer", {
         embedded: "always",
         async: !0
@@ -8869,7 +8865,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         return Ember.RSVP.hash({
             venues: this.store.find("venue"),
             performers: this.store.find("performer"),
-            events: this.store.find("event")
+            events: this.store.find("event"),
+            shows: this.store.find("show")
         });
     },
     title: "Schedule"
