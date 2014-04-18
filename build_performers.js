@@ -38,6 +38,14 @@ function getPerformerJSON(url, callback) {
   });
 }
 
+function getEventObject() {
+  return eval(JSON.parse(getEventData()));
+}
+
+function getEventData() {
+  return fs.readFileSync('assets/raw_events.json', 'utf8');
+}
+
 
 function getPerformerObject() {
   return eval(JSON.parse(getPerformerData()));
@@ -81,7 +89,7 @@ function getEventsForPerformer(id) {
   var returnArray = [];
   for (var key in scheduleObj) {
     var idCheck = parseInt(scheduleObj[key].PerformerId,10);
-    if (idCheck === parseInt(id,10)) {
+    if (idCheck === parseInt(id,10) && doesEventExistForId(scheduleObj[key].EventId)) {
       returnArray.push(scheduleObj[key].EventId);
     }
   }
@@ -119,6 +127,20 @@ function sanitizeData(filepath, callback) {
      if (err) return console.log(err);
      callback();
   });
+}
+
+
+function doesEventExistForId(id) {
+  var eventObj = getEventObject();
+  id = parseInt(id,10);
+  for (var key in eventObj) {
+    var eventId = parseInt(eventObj[key].id,10);
+
+    if (eventId === id) {
+      return true;
+    }
+  }
+  return
 }
 
 function cleanStr(string) {
