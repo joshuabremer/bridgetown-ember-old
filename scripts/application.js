@@ -8733,9 +8733,15 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
         options = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
+            hash: {
+                classNames: "list-group-item"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
             inverse: self.noop,
             fn: self.program(2, program2, data),
             contexts: [ depth0, depth0 ],
@@ -8747,7 +8753,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     function program2(depth0, data) {
         var stack1, helper, options, buffer = "";
-        return data.buffer.push('\n          <li class="list-group-item"><strong>'), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
+        return data.buffer.push("\n          <strong>"), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
@@ -8790,7 +8796,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             types: [ "ID" ],
             data: data
         }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
-        data.buffer.push(")\n          </li>\n          "), buffer;
+        data.buffer.push(")\n          \n          "), buffer;
     }
     function program4(depth0, data) {
         data.buffer.push('\n          <li class="list-group-item">No shows scheduled yet...</li>\n        ');
