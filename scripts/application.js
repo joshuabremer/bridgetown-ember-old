@@ -8083,10 +8083,10 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashContexts: {},
         inverse: self.noop,
         fn: self.program(1, program1, data),
-        contexts: [ depth0 ],
-        types: [ "STRING" ],
+        contexts: [ depth0, depth0 ],
+        types: [ "STRING", "ID" ],
         data: data
-    }, stack1 = helper ? helper.call(depth0, "venues", options) : helperMissing.call(depth0, "link-to", "venues", options), 
+    }, stack1 = helper ? helper.call(depth0, "venue", "venue", options) : helperMissing.call(depth0, "link-to", "venue", "venue", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n          </p>\n          \n          "), 
     stack1 = helpers["if"].call(depth0, "show", {
         hash: {},
