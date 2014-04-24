@@ -4,8 +4,8 @@ var easyimg = require("easyimage");
 var smushit = require('node-smushit');
 var moment = require('moment');
 
-//getEventJSON('http://bridgetown.festivalthing.com/export/events/json');
-getEventJSON('http://127.0.0.1:8000/fixtures/festivalthing-events.json');
+getEventJSON('http://bridgetown.festivalthing.com/export/events/json');
+//getEventJSON('http://127.0.0.1:8000/fixtures/festivalthing-events.json');
 
 function getEventJSON(url, callback) {
   var file = fs.createWriteStream("assets/raw_events.json");
