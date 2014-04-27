@@ -22,6 +22,18 @@ Ember.Handlebars.registerBoundHelper('createExcerpt', function(html, length, mor
   return item_html.substring(0,length) + more_text;
 });
 
+Ember.Handlebars.registerBoundHelper('MCBadge', function(performerId,eventEmcees) {
+    var badge = '<span class="badge">MC</span>';
+    console.log(eventEmcees)
+    //console.log(performerId , eventEmcees , performerId !== eventEmcees)
+    if (performerId && eventEmcees && performerId !== eventEmcees) {
+      return "";
+    }
+    
+    return new Handlebars.SafeString(badge);
+    
+});
+
 Ember.Handlebars.registerBoundHelper('fullDate', function(dateString) {
   return moment(dateString).zone('-07:00').calendar();
 });

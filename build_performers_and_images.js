@@ -77,6 +77,7 @@ function addEventIds(filepath,callback) {
   
   for (var key in performerObj) {
     performerObj[key].events = getEventsForPerformer(performerObj[key].id)
+    performerObj[key].mc_events = getMCEventsForPerformer(performerObj[key].id)
   }
   fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
      if (err) return console.log(err);
@@ -91,6 +92,18 @@ function getEventsForPerformer(id) {
     var idCheck = parseInt(scheduleObj[key].PerformerId,10);
     if (idCheck === parseInt(id,10) && doesEventExistForId(scheduleObj[key].EventId)) {
       returnArray.push(scheduleObj[key].EventId);
+    }
+  }
+  return returnArray;
+}
+
+function getMCEventsForPerformer(id) {
+  var eventObj = getEventObject();
+  var returnArray = [];
+  for (var key in eventObj) {
+    var idCheck = parseInt(eventObj[key].MCId,10);
+    if (idCheck === parseInt(id,10) && doesEventExistForId(eventObj[key].EventId)) {
+      returnArray.push(eventObj[key].EventId);
     }
   }
   return returnArray;

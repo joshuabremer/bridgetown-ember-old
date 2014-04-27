@@ -2,19 +2,15 @@
     <div class="container-fluid">
       <div class="row">
        <div class="col-sm-4">
-
           <p class="lead">
             {{#if event.show}}
               {{#link-to "show" event.show }}{{{ event.show.Name }}}{{/link-to}}
             {{else}}
-              {{{ event.Name }}}
+              {{#link-to "event" event }}{{{ event.Name }}}{{/link-to}}
             {{/if}}
             <br/>
-          <small>(<span style="white-space:nowrap">{{getTime event.start_time}} - </span>
-          <span style="white-space:nowrap">{{getTime event.end_time}}</span>)</small>
-{{!--           {{#if event.Cost}}
-          <span class="badge">{{{ event.Cost }}}</span>
-          {{/if}} --}}
+            <small>(<span style="white-space:nowrap">{{getTime event.start_time}} - </span>
+            <span style="white-space:nowrap">{{getTime event.end_time}}</span>)</small>
           </p>
           <p>Price: {{event.Cost}}</p>
         </div>

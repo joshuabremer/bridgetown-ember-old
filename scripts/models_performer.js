@@ -2,6 +2,8 @@ App.Performer = DS.Model.extend({
 
   events: DS.hasMany('event', {async: true}),
 
+  mc_events:  DS.hasMany('event', {async: true}),
+
   Name: DS.attr('string'),
 
   PhotoUrl: DS.attr('string'),
@@ -29,8 +31,17 @@ App.Performer = DS.Model.extend({
     return events.sort(function (lhs, rhs) {
       return lhs.get('start_time') > rhs.get('start_time');
     });
-  }.property('events.@each.isLoaded')
+  }.property('events.@each.isLoaded'),
 
+  allSortedEvents: function () {
+    var events = this.get('events').toArray().slice(0);
+    var mc_events = this.get('mc_events').toArray();
+    var all_events = events.clone().concat(mc_events);
+
+    return all_events.sort(function (lhs, rhs) {
+      return lhs.get('start_time') > rhs.get('start_time');
+    });
+  }.property('events.@each.isLoaded','mc_events.@each.isLoaded')
 });
 
 function sluggify(string) {
@@ -42,3 +53,5 @@ function cleanStr(string) {
   string = string || "";
   return string.replace(/\W/g, '').toLowerCase();
 }
+
+Array.prototype.clone = function() { return this.slice(0); };
