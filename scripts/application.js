@@ -7367,6 +7367,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             effect: "fadeIn"
         });
     }
+}), App.LoadingView = Ember.View.extend({
+    didInsertElement: function() {}
 }), App.NewsPostView = Ember.View.extend({
     templateName: "newspost"
 }), App.NewsPostsView = Ember.View.extend({
