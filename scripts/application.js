@@ -8429,6 +8429,33 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         data: data
     }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>\n</div>\n\n\n\n\n\n"), 
     buffer;
+}), Ember.TEMPLATES.faqs = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, buffer = "", escapeExpression = this.escapeExpression;
+    return data.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>'), 
+    stack1 = helpers._triageMustache.call(depth0, "collection.title", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n  '), 
+    data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "mainContent", {
+        hash: {
+            unescaped: "true"
+        },
+        hashTypes: {
+            unescaped: "STRING"
+        },
+        hashContexts: {
+            unescaped: depth0
+        },
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }))), data.buffer.push("\n</div>\n\n\n"), buffer;
 }), Ember.TEMPLATES.four_oh_four = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {}, data.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Page Not Found</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n  <div class="container main-content">\n    <div class="row">\n      <div class="col-md-8 col-md-offset-2">\n        <div class="">\n          <h2>The page cannot be found...</h2>\n          <p>Perhaps you are here because:</p>\n          <ul>\n            <li>The page has moved</li>\n            <li>The page no longer exists</li>\n            <li>You were looking for your puppy and got lost</li>\n            <li>You like 404 pages</li>\n          </ul>\n          <p><a class="btn btn-block btn-primary" href="/">Return to homepage </a></p>\n        </div>\n      </div>\n    </div>\n  </div>\n');
