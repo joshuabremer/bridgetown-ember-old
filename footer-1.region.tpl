@@ -29,11 +29,6 @@ window.onload=function(){
   window.onerror = function(message, file, line) {
     ga('send', 'event', 'Global', 'Exception', file + "(" + line + "): " + message);
   }
-  setTimeout(function() {
-    aksdl;
-  },2000)
-
-</script>
 </script>
   </body>
 </html>
