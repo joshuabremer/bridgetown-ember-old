@@ -8,8 +8,6 @@ App.Event = DS.Model.extend({
 
   show: DS.belongsTo('show', {async: true}),
 
-  hasEmcee: DS.attr('string'),
-
   Name: DS.attr('string'),
 
   start_time: DS.attr('string'),

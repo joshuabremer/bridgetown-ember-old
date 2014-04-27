@@ -3004,7 +3004,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     show: DS.belongsTo("show", {
         async: !0
     }),
-    hasEmcee: DS.attr("string"),
     Name: DS.attr("string"),
     start_time: DS.attr("string"),
     end_time: DS.attr("string"),
@@ -9499,13 +9498,13 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
 }), App.NewspostsRoute = Ember.Route.extend({}), App.PerformerRoute = Ember.Route.extend({
     model: function(params) {
+        var _this = this;
         return this.set("params_slug", params.slug), Ember.RSVP.hash({
             venues: this.store.find("venue"),
             performers: this.store.find("performer"),
-            events: this.store.find("event"),
-            performer: this.store.find("performer", params.pageUrl.split("-")[0])
-        }).then(function(data) {
-            return data.performer;
+            events: this.store.find("event")
+        }).then(function() {
+            return _this.store.find("performer", params.pageUrl.split("-")[0]);
         });
     },
     title: "Performer"

@@ -7,10 +7,9 @@ App.PerformerRoute = Ember.Route.extend({
     return Ember.RSVP.hash({
         venues: this.store.find('venue'),
         performers: this.store.find('performer'),
-        events: this.store.find('event'),
-        performer: this.store.find('performer',params.pageUrl.split('-')[0])
+        events: this.store.find('event')
     }).then(function(data) {
-      return data.performer;
+      return _this.store.find('performer',params.pageUrl.split('-')[0]);
     });
   },
   title: 'Performer'
