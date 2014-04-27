@@ -25,7 +25,6 @@ window.onload=function(){
   ga('create', 'UA-48946042-1', 'bridgetowncomedy.com');
   ga('send', 'pageview');
 </script>
-<script>
 <script type='text/javascript'>
     window.Muscula = { settings:{
         logId:"e0f38f0d-f0b1-4917-a6bf-7ff90f764b81", suppressErrors: false
