@@ -8596,7 +8596,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     function program6(depth0, data) {
         var stack1, buffer = "";
-        return data.buffer.push('\n      <ul class="list-group">\n        <li class="list-group-item active" style="background:#695b53;">\n        <h4 class="list-group-item-heading" style="background:#695b53;color:white">MC Shows</h4>\n        </li>\n        '), 
+        return data.buffer.push('\n      <ul class="list-group">\n        <li class="list-group-item active" style="background:#695b53;">\n        <h4 class="list-group-item-heading" style="background:#695b53;color:white">Show MC</h4>\n        </li>\n        '), 
         stack1 = helpers.each.call(depth0, "event", "in", "mc_events", {
             hash: {},
             hashTypes: {},
