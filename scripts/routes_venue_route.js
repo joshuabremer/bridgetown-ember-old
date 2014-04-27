@@ -8,7 +8,7 @@ App.VenueRoute = Ember.Route.extend({
         events: this.store.find('event'),
         venues: this.store.find('venue')
     }).then(function(data) {
-      return _this.store.find('venue',params.venues_id);
+      return _this.store.find('venue',params.pageUrl.split('-')[0]);
     });
   },
   title: 'Venue'

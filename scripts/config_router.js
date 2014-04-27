@@ -35,7 +35,7 @@ App.Router.map(function() {
   this.route('schedule');
 
   this.route('venues');
-  this.resource('venue', {path: '/venue/:venues_id'});
+  this.resource('venue', {path: '/venue/:pageUrl'});
   this.route('history');
   this.route('press');
   this.route('contact');

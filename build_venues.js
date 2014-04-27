@@ -95,6 +95,7 @@ function sanitizeData(filepath, callback) {
 
   for (var key in venueObj) {
     venueObj[key].id = venueObj[key].VenueId;
+    venueObj[key].pageUrl = venueObj[key].id + '-' + convertToSlug(venueObj[key].Name);
     console.log(venueObj[key])
   }
   //console.log(venueObj);

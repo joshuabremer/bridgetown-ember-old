@@ -3091,7 +3091,8 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: DS.hasMany("event", {
         async: !0
     }),
-    Name: DS.attr("string")
+    Name: DS.attr("string"),
+    pageUrl: DS.attr("string")
 }), App.Event.FIXTURES = [ {
     EventId: "7688",
     VenueId: "7614",
@@ -7228,76 +7229,91 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     Name: "Alhambra Theater Lounge",
     VenueId: "7608",
     id: "7608",
+    pageUrl: "7608-alhambra-theater-lounge",
     events: [ "7621", "7623", "7806", "7678", "7745", "7628", "7952", "7632" ]
 }, {
     Name: "Taxi Magic Stage at Alhambra Theater Main",
     VenueId: "7609",
     id: "7609",
+    pageUrl: "7609-taxi-magic-stage-at-alhambra-theater-main",
     events: [ "7637", "7740", "7639", "7749", "7742", "7642", "7648", "7644", "7645", "7646", "7796", "7677", "7652" ]
 }, {
     Name: "Analog Cafe",
     VenueId: "7620",
     id: "7620",
+    pageUrl: "7620-analog-cafe",
     events: [ "7748", "7918", "7750", "7911", "7751", "7752", "7753" ]
 }, {
     Name: "Analog Theater",
     VenueId: "7619",
     id: "7619",
+    pageUrl: "7619-analog-theater",
     events: [ "7704", "7747", "7699", "7741", "7811", "7808", "7744", "7627", "7746", "7738" ]
 }, {
     Name: "Bar of the Gods",
     VenueId: "7610",
     id: "7610",
+    pageUrl: "7610-bar-of-the-gods",
     events: [ "7653", "7654", "7655", "7912", "7656" ]
 }, {
     Name: "Bossanova",
     VenueId: "7611",
     id: "7611",
+    pageUrl: "7611-bossanova",
     events: [ "7657", "7658", "7659", "7660", "7916", "7703", "7661" ]
 }, {
     Name: "Curious Comedy Theater",
     VenueId: "8571",
     id: "8571",
+    pageUrl: "8571-curious-comedy-theater",
     events: []
 }, {
     Name: "Squarespace Stage at Doug Fir",
     VenueId: "7612",
     id: "7612",
+    pageUrl: "7612-squarespace-stage-at-doug-fir",
     events: [ "7663", "7810", "7665", "7624", "7667", "7668", "7669", "7670", "7671", "7666", "7672", "7675", "7674", "7676", "7662", "7783" ]
 }, {
     Name: "Sizzle Pie Stage at Eagles Lodge",
     VenueId: "7613",
     id: "7613",
+    pageUrl: "7613-sizzle-pie-stage-at-eagles-lodge",
     events: [ "7679", "7919", "7680", "7951", "7625", "7743", "7638", "7685", "7651", "7687" ]
 }, {
     Name: "Ground Kontrol",
     VenueId: "7966",
     id: "7966",
+    pageUrl: "7966-ground-kontrol",
     events: [ "7967" ]
 }, {
     Name: "Hawthorne Theatre Lounge",
     VenueId: "7614",
     id: "7614",
+    pageUrl: "7614-hawthorne-theatre-lounge",
     events: [ "7688", "7689", "7690", "7691", "7692", "7693", "7694", "7695", "7809", "7697" ]
 }, {
     Name: "Hawthorne Theatre Main",
     VenueId: "7615",
     id: "7615",
+    pageUrl: "7615-hawthorne-theatre-main",
     events: [ "7698", "7701", "7915", "7702", "7804", "7650", "7913" ]
 }, {
     Name: "Jupiter Tent",
     VenueId: "7616",
     id: "7616",
+    pageUrl: "7616-jupiter-tent",
     events: [ "7739", "7706", "7641", "7816", "7708", "7710", "7711" ]
 }, {
     Name: "The Tanker",
     VenueId: "7617",
     id: "7617",
+    pageUrl: "7617-the-tanker",
     events: [ "7716", "7717", "7718", "7719", "7720", "7721", "7722", "7723", "7724", "7725", "7726", "7727", "7728" ]
 }, {
     Name: "MailChimp Stage Stage at White Owl Social Club",
     VenueId: "7618",
     id: "7618",
+    pageUrl: "7618-mailchimp-stage-stage-at-white-owl-social-club",
     events: [ "7730", "7622", "7807", "7733", "7734", "7805", "7815", "7737", "7914" ]
 } ], App.CatchAllController = Ember.ObjectController.extend({}), App.EventsController = Ember.ObjectController.extend({}), 
 App.NewspostController = Ember.ObjectController.extend({}), App.NewspostsController = Ember.ArrayController.extend({}), 
@@ -8005,7 +8021,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0, depth0 ],
         types: [ "STRING", "ID" ],
         data: data
-    }, stack1 = helper ? helper.call(depth0, "venue", "event.venue", options) : helperMissing.call(depth0, "link-to", "venue", "event.venue", options), 
+    }, stack1 = helper ? helper.call(depth0, "venue", "event.venue.pageUrl", options) : helperMissing.call(depth0, "link-to", "venue", "event.venue.pageUrl", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n          </p>\n        </div>\n        <div class="col-xs-7 col-sm-4">\n          <ul class="schedule-list__performer-list">\n            \n          '), 
     stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
         hash: {},
@@ -9407,7 +9423,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }), this.resource("shows"), this.resource("show", {
         path: "/show/:pageUrl"
     }), this.route("sponsors"), this.route("schedule"), this.route("venues"), this.resource("venue", {
-        path: "/venue/:venues_id"
+        path: "/venue/:pageUrl"
     }), this.route("history"), this.route("press"), this.route("contact"), this.route("tickets"), 
     this.route("fourOhFour", {
         path: "*path"
@@ -9555,7 +9571,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             events: this.store.find("event"),
             venues: this.store.find("venue")
         }).then(function() {
-            return _this.store.find("venue", params.venues_id);
+            return _this.store.find("venue", params.pageUrl.split("-")[0]);
         });
     },
     title: "Venue"
