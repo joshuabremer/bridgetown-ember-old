@@ -3046,6 +3046,9 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     backgroundImageCSS: function() {
         return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
     }.property("PhotoUrl"),
+    isAnMC: function() {
+        return this.get("mc_events").get("length");
+    }.property("mc_events.@each.isLoaded"),
     sortedEvents: function() {
         var events = this.get("events").toArray();
         return events.sort(function(lhs, rhs) {
@@ -8593,6 +8596,21 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         data.buffer.push('\n          <li class="list-group-item">No shows scheduled yet...</li>\n        ');
     }
     function program6(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('\n      <ul class="list-group">\n        <li class="list-group-item active" style="background:#695b53;">\n        <h4 class="list-group-item-heading" style="background:#695b53;color:white">MC Shows</h4>\n        </li>\n        '), 
+        stack1 = helpers.each.call(depth0, "event", "in", "mc_events", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.program(4, program4, data),
+            fn: self.program(1, program1, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      "), 
+        buffer;
+    }
+    function program8(depth0, data) {
         data.buffer.push("← All Performers");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -8650,23 +8668,23 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0, depth0, depth0 ],
         types: [ "ID", "ID", "ID" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('\n\n      </ul>\n\n      <ul class="list-group">\n        <li class="list-group-item active" style="background:#695b53;">\n        <h4 class="list-group-item-heading" style="background:#695b53;color:white">MC Shows</h4>\n        </li>\n        '), 
-    stack1 = helpers.each.call(depth0, "event", "in", "mc_events", {
-        hash: {},
-        hashTypes: {},
-        hashContexts: {},
-        inverse: self.program(4, program4, data),
-        fn: self.program(1, program1, data),
-        contexts: [ depth0, depth0, depth0 ],
-        types: [ "ID", "ID", "ID" ],
-        data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      <p>\n        "), 
-    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      "), 
+    stack1 = helpers["if"].call(depth0, "isAnMC", {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
         fn: self.program(6, program6, data),
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n      <p>\n        "), 
+    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(8, program8, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data

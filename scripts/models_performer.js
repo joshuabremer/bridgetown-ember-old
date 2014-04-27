@@ -26,6 +26,10 @@ App.Performer = DS.Model.extend({
     return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
   }.property("PhotoUrl"),
 
+  isAnMC: function() {
+    return this.get('mc_events').get('length');
+  }.property('mc_events.@each.isLoaded'),
+
   sortedEvents: function () {
     var events = this.get('events').toArray();
     return events.sort(function (lhs, rhs) {

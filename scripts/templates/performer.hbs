@@ -34,7 +34,7 @@
         {{/each}}
 
       </ul>
-
+      {{#if isAnMC}}
       <ul class="list-group">
         <li class="list-group-item active" style="background:#695b53;">
         <h4 class="list-group-item-heading" style="background:#695b53;color:white">MC Shows</h4>
@@ -49,6 +49,7 @@
         {{/each}}
 
       </ul>
+      {{/if}}
       <p>
         {{#link-to "performers"}}← All Performers{{/link-to}}
       </p>
