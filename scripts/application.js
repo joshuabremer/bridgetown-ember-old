@@ -9374,7 +9374,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }), this.route("sponsors"), this.route("schedule"), this.route("venues"), this.resource("venue", {
         path: "/venue/:pageUrl"
     }), this.route("history"), this.route("press"), this.route("contact"), this.route("tickets"), 
-    this.route("fourOhFour", {
+    this.route("faqs"), this.route("fourOhFour", {
         path: "*path"
     });
 }), App.Router.reopen({
@@ -9421,6 +9421,11 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         return _retrievePageJSON("contact");
     },
     title: "Contact"
+}), App.FaqsRoute = Ember.Route.extend({
+    model: function() {
+        return _retrievePageJSON("faqs");
+    },
+    title: "Faqs"
 }), App.fourOhFourRoute = Ember.Route.extend({
     renderTemplate: function() {
         this.render("four_oh_four");

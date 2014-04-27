@@ -40,6 +40,7 @@ App.Router.map(function() {
   this.route('press');
   this.route('contact');
   this.route('tickets');
+  this.route('faqs');
 
 
   this.route('fourOhFour', { path: '*path' });
@@ -116,6 +117,12 @@ App.ContactRoute = Ember.Route.extend({
     // renderTemplate: function() {this.render('catch_all');},
     model: function() {return _retrievePageJSON('contact');},
     title: 'Contact'
+});
+
+App.FaqsRoute = Ember.Route.extend({
+    // renderTemplate: function() {this.render('catch_all');},
+    model: function() {return _retrievePageJSON('faqs');},
+    title: 'Faqs'
 });
 
 App.fourOhFourRoute = Ember.Route.extend({
