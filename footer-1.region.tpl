@@ -38,7 +38,7 @@ window.onload=function(){
         window.Muscula.errors=[];window.onerror=function(){window.Muscula.errors.push(arguments);
         return window.Muscula.settings.suppressErrors===undefined;}
     })();
-</script>
+    lasds;
 </script>
 
   </body>
