@@ -24,11 +24,23 @@ window.onload=function(){
 
   ga('create', 'UA-48946042-1', 'bridgetowncomedy.com');
   ga('send', 'pageview');
-
-
-  window.onerror = function(message, file, line) {
-    ga('send', 'event', 'Global', 'Exception', file + "(" + line + "): " + message);
-  }
 </script>
+<script>
+<script type='text/javascript'>
+    window.Muscula = { settings:{
+        logId:"e0f38f0d-f0b1-4917-a6bf-7ff90f764b81", suppressErrors: false
+    }};
+    (function () {
+        var m = document.createElement('script'); m.type = 'text/javascript'; m.async = true;
+        m.src = (window.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//musculahq.appspot.com/Muscula6.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(m, s);
+        window.Muscula.run=function(){var a;eval(arguments[0]);window.Muscula.run=function(){};};
+        window.Muscula.errors=[];window.onerror=function(){window.Muscula.errors.push(arguments);
+        return window.Muscula.settings.suppressErrors===undefined;}
+    })();
+</script>
+</script>
+
   </body>
 </html>
