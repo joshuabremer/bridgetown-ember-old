@@ -5,7 +5,8 @@ App.ShowRoute = Ember.Route.extend({
     return Ember.RSVP.hash({
         shows: this.store.find('show'),
         performers: this.store.find('performer'),
-        events: this.store.find('event')
+        events: this.store.find('event'),
+        venues: this.store.find('venue')
     }).then(function(data) {
       return _this.store.find('show',params.pageUrl.split('-')[0]);
     });
