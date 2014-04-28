@@ -110,6 +110,9 @@ though, go for it.
       tr:nth-child(odd) {
         background:#FBFBFB !important;
       }
+      .cell-spacer {
+        border: 0 !important;
+      }
     }
     .schedule-table__cell {
       padding:3px !important;

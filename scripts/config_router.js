@@ -33,7 +33,10 @@ App.Router.map(function() {
 
   this.route('sponsors');
   this.route('schedule');
+  this.route('thursday_schedule');
+  this.route('friday_schedule');
   this.route('saturday_schedule');
+  this.route('sunday_schedule');
 
   this.route('venues');
   this.resource('venue', {path: '/venue/:pageUrl'});

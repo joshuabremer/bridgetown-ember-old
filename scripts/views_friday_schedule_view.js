@@ -1,4 +1,4 @@
-App.SaturdayScheduleView = Ember.View.extend({
+App.FridayScheduleView = Ember.View.extend({
   didInsertElement:function(){
     Ember.run.scheduleOnce('afterRender', this, this.addTableColspans);
     
@@ -13,7 +13,7 @@ App.SaturdayScheduleView = Ember.View.extend({
     $(this).attr('colspan',duration);
 
 
-    var previousTime = $(this).prevAll('.schedule-table__cell:eq(0)').data('end-time') || FESTIVAL_START_TIMES.Saturday;
+    var previousTime = $(this).prevAll('.schedule-table__cell:eq(0)').data('end-time') || FESTIVAL_START_TIMES.Friday;
     var durationBefore = moment(startTime).diff(moment(previousTime),'minutes') / 30;
     $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>')
     });

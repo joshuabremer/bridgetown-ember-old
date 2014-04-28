@@ -1,7 +1,7 @@
 /*! bridgetowncomedy.com 2014-04-28 */
-function getTimeArray() {
+function getTimeArray(day) {
     var timeArray = [];
-    for (i = 0; 28 > i; i++) timeArray.push(moment(FESTIVAL_SATURDAY_START_TIME).add(30 * i, "minutes"));
+    for (i = 0; 28 > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
     return timeArray;
 }
 
@@ -2850,8 +2850,8 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     return moment(dateString).zone("-07:00").format("D");
 }), Ember.Handlebars.registerBoundHelper("getTime", function(dateString) {
     return moment(dateString).zone("-07:00").format("h:mm a");
-}), Ember.Handlebars.registerHelper("scheduleTableHeaderRow", function() {
-    var html = "<th>Venue</th>", timeArray = getTimeArray();
+}), Ember.Handlebars.registerHelper("scheduleTableHeaderRow", function(day) {
+    var html = "<th>Venue</th>", timeArray = getTimeArray(day);
     return $.each(timeArray, function(index, time) {
         var $el = $('<tr><th class="schedule-table__time-header" data-start-time="' + time.toISOString() + '">' + time.format("MM/DD ") + "<br />" + time.format("h:mm a") + "</th></tr>");
         html += $el.html();
@@ -2894,8 +2894,10 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
 var App = Ember.Application.create({
     LOG_TRANSITIONS: !0,
     rootElement: "#ember-app"
-}), FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z", FESTIVAL_SATURDAY_START_TIME = "2014-05-09T23:00:00.000Z";
+}), FESTIVAL_START_TIMES = {};
 
+FESTIVAL_START_TIMES.Thursday = "2014-05-08T23:30:00.000Z", FESTIVAL_START_TIMES.Friday = "2014-05-09T23:00:00.000Z", 
+FESTIVAL_START_TIMES.Saturday = "2014-05-10T20:00:00.000Z", FESTIVAL_START_TIMES.Sunday = "2014-05-11T20:00:00.000Z", 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
         return records.filter(function(record) {
@@ -3093,11 +3095,29 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     }),
     Name: DS.attr("string"),
     pageUrl: DS.attr("string"),
+    thursdayEvents: function() {
+        var events = this.get("events").toArray(), thursdayEvents = [];
+        return $.each(events, function(index, event) {
+            console.log(moment(event.get("start_time")).format("dddd")), "Thursday" === moment(event.get("start_time")).format("dddd") && thursdayEvents.push(event);
+        }), thursdayEvents;
+    }.property("events.@each.isLoaded"),
+    fridayEvents: function() {
+        var events = this.get("events").toArray(), fridayEvents = [];
+        return $.each(events, function(index, event) {
+            console.log(moment(event.get("start_time")).format("dddd")), "Friday" === moment(event.get("start_time")).format("dddd") && fridayEvents.push(event);
+        }), fridayEvents;
+    }.property("events.@each.isLoaded"),
     saturdayEvents: function() {
         var events = this.get("events").toArray(), saturdayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Friday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
+            console.log(moment(event.get("start_time")).format("dddd")), "Saturday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
         }), saturdayEvents;
+    }.property("events.@each.isLoaded"),
+    sundayEvents: function() {
+        var events = this.get("events").toArray(), sundayEvents = [];
+        return $.each(events, function(index, event) {
+            console.log(moment(event.get("start_time")).format("dddd")), "Sunday" === moment(event.get("start_time")).format("dddd") && sundayEvents.push(event);
+        }), sundayEvents;
     }.property("events.@each.isLoaded")
 }), App.Event.FIXTURES = [ {
     EventId: "7688",
@@ -7363,6 +7383,18 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             $(window).width() <= 768 && $(".navbar-toggle").click();
         });
     }
+}), App.FridayScheduleView = Ember.View.extend({
+    didInsertElement: function() {
+        Ember.run.scheduleOnce("afterRender", this, this.addTableColspans);
+    },
+    addTableColspans: function() {
+        $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
+            var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
+            $(this).attr("colspan", duration);
+            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES.Friday, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+            $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
+        });
+    }
 }), App.HeaderView = Ember.View.extend({
     templateName: "header"
 }), App.IndexView = Ember.View.extend({
@@ -7394,7 +7426,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
             var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
             $(this).attr("colspan", duration);
-            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_SATURDAY_START_TIME, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES.Saturday, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
             $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
         });
     }
@@ -7464,6 +7496,30 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     didInsertElement: function() {
         $("img.lazy").lazyload({
             effect: "fadeIn"
+        });
+    }
+}), App.SundayScheduleView = Ember.View.extend({
+    didInsertElement: function() {
+        Ember.run.scheduleOnce("afterRender", this, this.addTableColspans);
+    },
+    addTableColspans: function() {
+        $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
+            var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
+            $(this).attr("colspan", duration);
+            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES.Sunday, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+            $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
+        });
+    }
+}), App.ThursdayScheduleView = Ember.View.extend({
+    didInsertElement: function() {
+        Ember.run.scheduleOnce("afterRender", this, this.addTableColspans);
+    },
+    addTableColspans: function() {
+        $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
+            var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
+            $(this).attr("colspan", duration);
+            var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES.Thursday, durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+            $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
         });
     }
 }), App.VenuesView = Ember.View.extend({
@@ -8487,6 +8543,34 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
 }), Ember.TEMPLATES.four_oh_four = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {}, data.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Page Not Found</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n  <div class="container main-content">\n    <div class="row">\n      <div class="col-md-8 col-md-offset-2">\n        <div class="">\n          <h2>The page cannot be found...</h2>\n          <p>Perhaps you are here because:</p>\n          <ul>\n            <li>The page has moved</li>\n            <li>The page no longer exists</li>\n            <li>You were looking for your puppy and got lost</li>\n            <li>You like 404 pages</li>\n          </ul>\n          <p><a class="btn btn-block btn-primary" href="/">Return to homepage </a></p>\n        </div>\n      </div>\n    </div>\n  </div>\n');
+}), Ember.TEMPLATES.friday_schedule = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing;
+    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Friday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
+    data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+        hash: {
+            "class": "scheduleClass"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": depth0
+        },
+        contexts: [],
+        types: [],
+        data: data
+    }))), data.buffer.push(">\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, helper ? helper.call(depth0, "schedule_table_friday", options) : helperMissing.call(depth0, "partial", "schedule_table_friday", options)))), 
+    data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
 }), Ember.TEMPLATES.history = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
@@ -8906,7 +8990,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing;
-    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Friday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
+    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Saturday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
     data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
         hash: {
             "class": "scheduleClass"
@@ -8928,7 +9012,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }, helper ? helper.call(depth0, "schedule_table", options) : helperMissing.call(depth0, "partial", "schedule_table", options)))), 
+    }, helper ? helper.call(depth0, "schedule_table_saturday", options) : helperMissing.call(depth0, "partial", "schedule_table_saturday", options)))), 
     data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
 }), Ember.TEMPLATES.schedule = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -8958,7 +9042,212 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         data: data
     }, helper ? helper.call(depth0, "schedule_list", options) : helperMissing.call(depth0, "partial", "schedule_list", options)))), 
     data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
-}), Ember.TEMPLATES.schedule_table = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+}), Ember.TEMPLATES.schedule_table_friday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.fridayEvents", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n        <td class="schedule-table__cell" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-start-time": "event.start_time"
+            },
+            hashTypes: {
+                "data-start-time": "STRING"
+            },
+            hashContexts: {
+                "data-start-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(" "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-end-time": "event.end_time"
+            },
+            hashTypes: {
+                "data-end-time": "STRING"
+            },
+            hashContexts: {
+                "data-end-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(">\n        <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push(" - "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong>\n        <br />\n        "), 
+        data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push("\n        <br />\n        "), stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(3, program3, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        stack1 = helpers["if"].call(depth0, "event.emcee", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(6, program6, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
+        buffer;
+    }
+    function program3(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {
+                classNames: "comma-list"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
+            inverse: self.noop,
+            fn: self.program(4, program4, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program4(depth0, data) {
+        var buffer = "";
+        return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push("\n          "), buffer;
+    }
+    function program6(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(7, program7, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program7(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('<span class="label label-default schedule__label-performer">MC: '), 
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>"), 
+        buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    return data.buffer.push('<table class="schedule-table">\n  <thead>\n  <tr>\n  <th style="display:none;">Venue</th>\n  '), 
+    helper = helpers.scheduleTableHeaderRow || depth0 && depth0.scheduleTableHeaderRow, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "Friday", options) : helperMissing.call(depth0, "scheduleTableHeaderRow", "Friday", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
+}), Ember.TEMPLATES.schedule_table_saturday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var stack1, buffer = "";
         return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
@@ -9140,16 +9429,633 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
-    var stack1, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
     return data.buffer.push('<table class="schedule-table">\n  <thead>\n  <tr>\n  <th style="display:none;">Venue</th>\n  '), 
-    stack1 = helpers._triageMustache.call(depth0, "scheduleTableHeaderRow", {
+    helper = helpers.scheduleTableHeaderRow || depth0 && depth0.scheduleTableHeaderRow, 
+    options = {
         hash: {},
         hashTypes: {},
         hashContexts: {},
         contexts: [ depth0 ],
-        types: [ "ID" ],
+        types: [ "STRING" ],
         data: data
-    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    }, stack1 = helper ? helper.call(depth0, "Saturday", options) : helperMissing.call(depth0, "scheduleTableHeaderRow", "Saturday", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
+}), Ember.TEMPLATES.schedule_table_sunday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.sundayEvents", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n        <td class="schedule-table__cell" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-start-time": "event.start_time"
+            },
+            hashTypes: {
+                "data-start-time": "STRING"
+            },
+            hashContexts: {
+                "data-start-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(" "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-end-time": "event.end_time"
+            },
+            hashTypes: {
+                "data-end-time": "STRING"
+            },
+            hashContexts: {
+                "data-end-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(">\n        <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push(" - "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong>\n        <br />\n        "), 
+        data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push("\n        <br />\n        "), stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(3, program3, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        stack1 = helpers["if"].call(depth0, "event.emcee", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(6, program6, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
+        buffer;
+    }
+    function program3(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {
+                classNames: "comma-list"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
+            inverse: self.noop,
+            fn: self.program(4, program4, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program4(depth0, data) {
+        var buffer = "";
+        return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push("\n          "), buffer;
+    }
+    function program6(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(7, program7, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program7(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('<span class="label label-default schedule__label-performer">MC: '), 
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>"), 
+        buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    return data.buffer.push('<table class="schedule-table">\n  <thead>\n  <tr>\n  <th style="display:none;">Venue</th>\n  '), 
+    helper = helpers.scheduleTableHeaderRow || depth0 && depth0.scheduleTableHeaderRow, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "Sunday", options) : helperMissing.call(depth0, "scheduleTableHeaderRow", "Sunday", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
+}), Ember.TEMPLATES.schedule_table_thursday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.thursdayEvents", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n        <td class="schedule-table__cell" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-start-time": "event.start_time"
+            },
+            hashTypes: {
+                "data-start-time": "STRING"
+            },
+            hashContexts: {
+                "data-start-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(" "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-end-time": "event.end_time"
+            },
+            hashTypes: {
+                "data-end-time": "STRING"
+            },
+            hashContexts: {
+                "data-end-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(">\n        <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push(" - "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong>\n        <br />\n        "), 
+        data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push("\n        <br />\n        "), stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(3, program3, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        stack1 = helpers["if"].call(depth0, "event.emcee", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(6, program6, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
+        buffer;
+    }
+    function program3(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {
+                classNames: "comma-list"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
+            inverse: self.noop,
+            fn: self.program(4, program4, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program4(depth0, data) {
+        var buffer = "";
+        return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push("\n          "), buffer;
+    }
+    function program6(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(7, program7, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program7(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('<span class="label label-default schedule__label-performer">MC: '), 
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>"), 
+        buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    return data.buffer.push('<table class="schedule-table">\n  <thead>\n  <tr>\n  <th style="display:none;">Venue</th>\n  '), 
+    helper = helpers.scheduleTableHeaderRow || depth0 && depth0.scheduleTableHeaderRow, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "Thursday", options) : helperMissing.call(depth0, "scheduleTableHeaderRow", "Thursday", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
+    stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(1, program1, data),
+        contexts: [ depth0, depth0, depth0 ],
+        types: [ "ID", "ID", "ID" ],
+        data: data
+    }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tbody>\n</table>"), 
+    buffer;
+}), Ember.TEMPLATES.schedule_table_tsunday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    function program1(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</th>\n      "), 
+        stack1 = helpers.each.call(depth0, "event", "in", "venue.thursdayEvents", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("  \n    </tr>\n  "), 
+        buffer;
+    }
+    function program2(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push('\n        <td class="schedule-table__cell" '), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-start-time": "event.start_time"
+            },
+            hashTypes: {
+                "data-start-time": "STRING"
+            },
+            hashContexts: {
+                "data-start-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(" "), data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+            hash: {
+                "data-end-time": "event.end_time"
+            },
+            hashTypes: {
+                "data-end-time": "STRING"
+            },
+            hashContexts: {
+                "data-end-time": depth0
+            },
+            contexts: [],
+            types: [],
+            data: data
+        }))), data.buffer.push(">\n        <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push(" - "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong>\n        <br />\n        "), 
+        data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.start_time", options) : helperMissing.call(depth0, "getTime", "event.start_time", options)))), 
+        data.buffer.push(" - "), data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }, helper ? helper.call(depth0, "event.end_time", options) : helperMissing.call(depth0, "getTime", "event.end_time", options)))), 
+        data.buffer.push("\n        <br />\n        "), stack1 = helpers.each.call(depth0, "performer", "in", "event.sortedPerformers", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(3, program3, data),
+            contexts: [ depth0, depth0, depth0 ],
+            types: [ "ID", "ID", "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        stack1 = helpers["if"].call(depth0, "event.emcee", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(6, program6, data),
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        </td>\n      "), 
+        buffer;
+    }
+    function program3(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {
+                classNames: "comma-list"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
+            inverse: self.noop,
+            fn: self.program(4, program4, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "performer", options) : helperMissing.call(depth0, "link-to", "performer", "performer", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program4(depth0, data) {
+        var buffer = "";
+        return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push("\n          "), buffer;
+    }
+    function program6(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            inverse: self.noop,
+            fn: self.program(7, program7, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "performer", "event.emcee", options) : helperMissing.call(depth0, "link-to", "performer", "event.emcee", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program7(depth0, data) {
+        var stack1, buffer = "";
+        return data.buffer.push('<span class="label label-default schedule__label-performer">MC: '), 
+        stack1 = helpers._triageMustache.call(depth0, "event.emcee.Name", {
+            hash: {},
+            hashTypes: {},
+            hashContexts: {},
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</span>"), 
+        buffer;
+    }
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var stack1, helper, options, buffer = "", escapeExpression = this.escapeExpression, self = this, helperMissing = helpers.helperMissing;
+    return data.buffer.push('<table class="schedule-table">\n  <thead>\n  <tr>\n  <th style="display:none;">Venue</th>\n  '), 
+    helper = helpers.scheduleTableHeaderRow || depth0 && depth0.scheduleTableHeaderRow, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "Thursday", options) : helperMissing.call(depth0, "scheduleTableHeaderRow", "Thursday", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n  </tr>\n  </thead>\n  <tbody>\n  "), 
     stack1 = helpers.each.call(depth0, "venue", "in", "controller.venues", {
         hash: {},
         hashTypes: {},
@@ -9398,6 +10304,62 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
 }), Ember.TEMPLATES.sponsors = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {}, data.buffer.push('\n  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Sponsors</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content sponsors-container text-center">\n    <div class="row">\n      <div class="col-sm-8 col-sm-offset-2">\n        <a target="_blank" href="http://squarespace.com/?channel=events&subchannel=comedy&source=bridgetown14"><img class="img-responsive" src="/assets/sponsor-squarespace-big.png" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <a target="_blank" href="https://taximagic.com"><img class="img-responsive" src="/assets/sponsor-taxi-magic-big.png" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">\n        <a target="_blank" href="http://mailchimp.com"><img class="img-responsive" src="/assets/sponsor-mailchimp-long.png?1" alt=""></a>\n      </div>\n    </div>\n    <div class="row">\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.portlandoldies.com"><img class="img-responsive" src="/assets/sponsor-oldies.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.z100portland.com"><img class="img-responsive" src="/assets/sponsor-z100.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.1059thebrew.com"><img class="img-responsive" src="/assets/sponsor-brew.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.cremabakery.com/"><img class="img-responsive" src="/assets/sponsor-crema.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.deschutesbrewery.com"><img class="img-responsive" src="/assets/sponsor-deschutes.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://sizzlepie.com"><img class="img-responsive" src="/assets/sponsor-sizzle-pie.png" alt=""></a>\n      </div>\n   \n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.bendistillery.com"><img class="img-responsive" src="/assets/sponsor-crater-lake.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.eastsidedistilling.com/"><img class="img-responsive" src="/assets/sponsor-eastside-distillery.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://elevenpdx.com/"><img class="img-responsive" src="/assets/sponsor-eleven.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://funemploymentradio.com"><img class="img-responsive" src="/assets/sponsor-funemployment.png" alt=""></a>\n      </div>\n      \n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://groundkontrol.com"><img class="img-responsive" src="/assets/sponsor-ground-kontrol.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://ifc.com"><img class="img-responsive" src="/assets/sponsor-ifc.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://imeldas.com/store?utm_source=BTC14&utm_medium=BTCsponsorpage&utm_campaign=logo"><img class="img-responsive" src="/assets/sponsor-imeldas.png" alt=""></a>\n      </div>\n      <div class="col-xs-8 col-sm-4">\n        <a target="_blank" href="http://www.jupiterhotel.com"><img class="img-responsive" src="/assets/sponsor-jupiter-long.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.kindsnacks.com"><img class="img-responsive" src="/assets/sponsor-kind-bar.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://laughingplanetcafe.com/"><img class="img-responsive" src="/assets/sponsor-laughing-planet.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.montageportland.com"><img class="img-responsive" src="/assets/sponsor-montage.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://pabstblueribbon.com/"><img class="img-responsive" src="/assets/sponsor-pabst.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.pivot.tv/?cmpid=bridgetown"><img class="img-responsive" src="/assets/sponsor-pivot.png?1" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.portlandmercury.com/"><img class="img-responsive" src="/assets/sponsor-mercury.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="https://soundcloud.com/wandertown">\n          <img class="img-responsive" src="/assets/sponsor-soundcloud.png" alt="">\n        </a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.standupfordowns.org/">\n          <img class="img-responsive" src="/assets/sponsor-stand-up-for-downs.png" alt="">\n        </a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.tonkin.com/">\n          <img class="img-responsive" src="/assets/sponsor-tonkin.png" alt="">\n        </a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://voodoodoughnut.com"><img class="img-responsive" src="/assets/sponsor-voodoo.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://voodoodoughnut.com/recordings"><img class="img-responsive" src="/assets/sponsor-voodoo-recordings.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://zachsshack.com"><img class="img-responsive" src="/assets/sponsor-zachs-shack.png" alt=""></a>\n      </div>\n      <div class="col-xs-4 col-sm-2">\n        <a target="_blank" href="http://www.yelp.com"><img class="img-responsive" src="/assets/sponsor-yelp.png" alt=""></a>\n      </div>\n   \n    </div><!-- row -->\n  </div><!-- container -->\n');
+}), Ember.TEMPLATES.sunday_schedule = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing;
+    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Sunday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
+    data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+        hash: {
+            "class": "scheduleClass"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": depth0
+        },
+        contexts: [],
+        types: [],
+        data: data
+    }))), data.buffer.push(">\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, helper ? helper.call(depth0, "schedule_table_sunday", options) : helperMissing.call(depth0, "partial", "schedule_table_sunday", options)))), 
+    data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
+}), Ember.TEMPLATES.thursday_schedule = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
+    this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
+    data = data || {};
+    var helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing;
+    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Thursday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
+    data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
+        hash: {
+            "class": "scheduleClass"
+        },
+        hashTypes: {
+            "class": "STRING"
+        },
+        hashContexts: {
+            "class": depth0
+        },
+        contexts: [],
+        types: [],
+        data: data
+    }))), data.buffer.push(">\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, helper ? helper.call(depth0, "schedule_table_thursday", options) : helperMissing.call(depth0, "partial", "schedule_table_thursday", options)))), 
+    data.buffer.push("\n  </div>\n</div>\n\n\n\n\n\n"), buffer;
 }), Ember.TEMPLATES.venue = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var helper, options, buffer = "";
@@ -9494,7 +10456,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         path: "/performer/:pageUrl"
     }), this.resource("shows"), this.resource("show", {
         path: "/show/:pageUrl"
-    }), this.route("sponsors"), this.route("schedule"), this.route("saturday_schedule"), 
+    }), this.route("sponsors"), this.route("schedule"), this.route("thursday_schedule"), 
+    this.route("friday_schedule"), this.route("saturday_schedule"), this.route("sunday_schedule"), 
     this.route("venues"), this.resource("venue", {
         path: "/venue/:pageUrl"
     }), this.route("history"), this.route("press"), this.route("contact"), this.route("tickets"), 
@@ -9581,6 +10544,16 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     model: function() {
         return Event.find();
     }
+}), App.FridayScheduleRoute = Ember.Route.extend({
+    model: function() {
+        return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
+            events: this.store.find("event"),
+            performers: this.store.find("performer"),
+            shows: this.store.find("show")
+        });
+    },
+    title: "Friday Schedule"
 }), App.IndexRoute = Ember.Route.extend({
     model: function() {
         return _retrievePageJSON("front-page");
@@ -9622,7 +10595,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             shows: this.store.find("show")
         });
     },
-    title: "Schedule"
+    title: "Saturday Schedule"
 }), App.ScheduleRoute = Ember.Route.extend({
     model: function() {
         return Ember.RSVP.hash({
@@ -9651,6 +10624,26 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         return this.store.find("show");
     },
     title: "Shows"
+}), App.SundayScheduleRoute = Ember.Route.extend({
+    model: function() {
+        return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
+            events: this.store.find("event"),
+            performers: this.store.find("performer"),
+            shows: this.store.find("show")
+        });
+    },
+    title: "Sunday Schedule"
+}), App.ThursdayScheduleRoute = Ember.Route.extend({
+    model: function() {
+        return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
+            events: this.store.find("event"),
+            performers: this.store.find("performer"),
+            shows: this.store.find("show")
+        });
+    },
+    title: "Thursday Schedule"
 }), App.VenueRoute = Ember.Route.extend({
     model: function(params) {
         var _this = this;

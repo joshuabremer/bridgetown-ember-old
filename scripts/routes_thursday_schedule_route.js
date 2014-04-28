@@ -1,4 +1,4 @@
-App.SaturdayScheduleRoute = Ember.Route.extend({
+App.ThursdayScheduleRoute = Ember.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
       venues: this.store.find('venue'),
@@ -7,5 +7,5 @@ App.SaturdayScheduleRoute = Ember.Route.extend({
       shows: this.store.find('show')
     });
   },
-  title: 'Saturday Schedule'
+  title: 'Thursday Schedule'
 });

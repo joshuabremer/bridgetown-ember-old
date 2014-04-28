@@ -61,9 +61,9 @@ Ember.Handlebars.registerBoundHelper('getTime', function(dateString) {
 
 
 
-Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(events) {
+Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(day) {
   var html = "<th>Venue</th>";
-  var timeArray = getTimeArray();
+  var timeArray = getTimeArray(day);
   $.each(timeArray,function(index, time) {
     var $el = $('<tr><th class="schedule-table__time-header" data-start-time="' + time.toISOString() + '">' + time.format('MM/DD ') + '<br />' + time.format('h:mm a') + '</th></tr>');
     html += $el.html();
@@ -75,10 +75,10 @@ Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(events) {
 });
 
 
-function getTimeArray() {
+function getTimeArray(day) {
   var timeArray = [];
   for(i=0;i<7*4;i++) {
-    timeArray.push(moment(FESTIVAL_SATURDAY_START_TIME).add(i*30,'minutes'));
+    timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(i*30,'minutes'));
   }
   return timeArray;
   
