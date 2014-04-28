@@ -6,4 +6,16 @@ App.Venue = DS.Model.extend({
 
   pageUrl: DS.attr('string'),
 
+  saturdayEvents: function() {
+    var events = this.get('events').toArray();
+    var saturdayEvents = [];
+    $.each(events,function(index,event) {
+      console.log(moment(event.get('start_time')).format('dddd'));
+      if (moment(event.get('start_time')).format('dddd') === 'Saturday') {
+        saturdayEvents.push(event);
+      }
+    })
+    return saturdayEvents;
+  }.property('events.@each.isLoaded')  
+
 });

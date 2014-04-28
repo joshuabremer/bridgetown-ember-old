@@ -5,6 +5,8 @@ var App = Ember.Application.create({
 
 var FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z";
 
+var FESTIVAL_SATURDAY_START_TIME = "2014-05-10T20:00:00.000Z";
+
 App.FixtureAdapter = DS.FixtureAdapter.extend({
   queryFixtures: function(records, query, type) {
     return records.filter(function(record) {

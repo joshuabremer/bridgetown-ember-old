@@ -9,7 +9,7 @@
               {{#link-to "event" event }}{{{ event.Name }}}{{/link-to}}
             {{/if}}
             <br/>
-            <small>(<span style="white-space:nowrap">{{getTime event.start_time}} - </span>
+            <small>({{getWeekday event.start_time}} <span style="white-space:nowrap">{{getTime event.start_time}} - </span>
             <span style="white-space:nowrap">{{getTime event.end_time}}</span>)</small>
           </p>
           <p>Price: {{event.Cost}}</p>

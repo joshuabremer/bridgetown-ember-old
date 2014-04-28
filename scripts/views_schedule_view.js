@@ -1,4 +1,5 @@
 App.ScheduleView = Ember.View.extend({
+  templateName: 'schedule',
   didInsertElement:function(){
     Ember.run.scheduleOnce('afterRender', this, this.addListDividers);
     Ember.run.scheduleOnce('afterRender', this, this.addTableColspans);
