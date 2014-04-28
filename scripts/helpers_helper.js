@@ -24,7 +24,6 @@ Ember.Handlebars.registerBoundHelper('createExcerpt', function(html, length, mor
 
 Ember.Handlebars.registerBoundHelper('MCBadge', function(performerId,eventEmcees) {
     var badge = '<span class="badge">MC</span>';
-    console.log(eventEmcees)
     //console.log(performerId , eventEmcees , performerId !== eventEmcees)
     if (performerId && eventEmcees && performerId !== eventEmcees) {
       return "";
@@ -67,9 +66,6 @@ Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(day) {
   $.each(timeArray,function(index, time) {
     var $el = $('<tr><th class="schedule-table__time-header" data-start-time="' + time.toISOString() + '">' + time.format('MM/DD ') + '<br />' + time.format('h:mm a') + '</th></tr>');
     html += $el.html();
-    // $.each(events.toArray(),function(i,event){
-    //   console.log(event.get('Name'));
-    // });
   });
   return new Handlebars.SafeString(html);
 });
@@ -77,7 +73,8 @@ Ember.Handlebars.registerHelper('scheduleTableHeaderRow', function(day) {
 
 function getTimeArray(day) {
   var timeArray = [];
-  for(i=0;i<7*4;i++) {
+  var duration = moment(FESTIVAL_END_TIMES[day]).diff(FESTIVAL_START_TIMES[day],'hours');
+  for(i=0;i<duration*2;i++) {
     timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(i*30,'minutes'));
   }
   return timeArray;

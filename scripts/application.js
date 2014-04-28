@@ -1,7 +1,7 @@
 /*! bridgetowncomedy.com 2014-04-28 */
 function getTimeArray(day) {
-    var timeArray = [];
-    for (i = 0; 28 > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
+    var timeArray = [], duration = moment(FESTIVAL_END_TIMES[day]).diff(FESTIVAL_START_TIMES[day], "hours");
+    for (i = 0; 2 * duration > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
     return timeArray;
 }
 
@@ -2837,7 +2837,7 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     return item_html = jQuery.trim(item_html), item_html.substring(0, length) + more_text;
 }), Ember.Handlebars.registerBoundHelper("MCBadge", function(performerId, eventEmcees) {
     var badge = '<span class="badge">MC</span>';
-    return console.log(eventEmcees), performerId && eventEmcees && performerId !== eventEmcees ? "" : new Handlebars.SafeString(badge);
+    return performerId && eventEmcees && performerId !== eventEmcees ? "" : new Handlebars.SafeString(badge);
 }), Ember.Handlebars.registerBoundHelper("fullDate", function(dateString) {
     return moment(dateString).zone("-07:00").calendar();
 }), Ember.Handlebars.registerBoundHelper("niceDate", function(dateString) {
@@ -2896,8 +2896,13 @@ var App = Ember.Application.create({
     rootElement: "#ember-app"
 }), FESTIVAL_START_TIMES = {};
 
-FESTIVAL_START_TIMES.Thursday = "2014-05-08T23:30:00.000Z", FESTIVAL_START_TIMES.Friday = "2014-05-09T23:00:00.000Z", 
-FESTIVAL_START_TIMES.Saturday = "2014-05-10T20:00:00.000Z", FESTIVAL_START_TIMES.Sunday = "2014-05-11T20:00:00.000Z", 
+FESTIVAL_START_TIMES.Thursday = "2014-05-09T01:30:00.000Z", FESTIVAL_START_TIMES.Friday = "2014-05-09T23:00:00.000Z", 
+FESTIVAL_START_TIMES.Saturday = "2014-05-10T20:00:00.000Z", FESTIVAL_START_TIMES.Sunday = "2014-05-11T20:00:00.000Z";
+
+var FESTIVAL_END_TIMES = {};
+
+FESTIVAL_END_TIMES.Thursday = "2014-05-09T14:30:00.000Z", FESTIVAL_END_TIMES.Friday = "2014-05-10T13:00:00.000Z", 
+FESTIVAL_END_TIMES.Saturday = "2014-05-11T10:00:00.000Z", FESTIVAL_END_TIMES.Sunday = "2014-05-12T10:00:00.000Z", 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
         return records.filter(function(record) {
@@ -3098,25 +3103,25 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     thursdayEvents: function() {
         var events = this.get("events").toArray(), thursdayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Thursday" === moment(event.get("start_time")).format("dddd") && thursdayEvents.push(event);
+            "Thursday" === moment(event.get("start_time")).format("dddd") && thursdayEvents.push(event);
         }), thursdayEvents;
     }.property("events.@each.isLoaded"),
     fridayEvents: function() {
         var events = this.get("events").toArray(), fridayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Friday" === moment(event.get("start_time")).format("dddd") && fridayEvents.push(event);
+            "Friday" === moment(event.get("start_time")).format("dddd") && fridayEvents.push(event);
         }), fridayEvents;
     }.property("events.@each.isLoaded"),
     saturdayEvents: function() {
         var events = this.get("events").toArray(), saturdayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Saturday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
+            "Saturday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
         }), saturdayEvents;
     }.property("events.@each.isLoaded"),
     sundayEvents: function() {
         var events = this.get("events").toArray(), sundayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Sunday" === moment(event.get("start_time")).format("dddd") && sundayEvents.push(event);
+            "Sunday" === moment(event.get("start_time")).format("dddd") && sundayEvents.push(event);
         }), sundayEvents;
     }.property("events.@each.isLoaded")
 }), App.Event.FIXTURES = [ {

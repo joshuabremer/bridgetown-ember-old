@@ -10,7 +10,6 @@ App.Venue = DS.Model.extend({
     var events = this.get('events').toArray();
     var thursdayEvents = [];
     $.each(events,function(index,event) {
-      console.log(moment(event.get('start_time')).format('dddd'));
       if (moment(event.get('start_time')).format('dddd') === 'Thursday') {
         thursdayEvents.push(event);
       }
@@ -22,7 +21,6 @@ App.Venue = DS.Model.extend({
     var events = this.get('events').toArray();
     var fridayEvents = [];
     $.each(events,function(index,event) {
-      console.log(moment(event.get('start_time')).format('dddd'));
       if (moment(event.get('start_time')).format('dddd') === 'Friday') {
         fridayEvents.push(event);
       }
@@ -34,7 +32,6 @@ App.Venue = DS.Model.extend({
     var events = this.get('events').toArray();
     var saturdayEvents = [];
     $.each(events,function(index,event) {
-      console.log(moment(event.get('start_time')).format('dddd'));
       if (moment(event.get('start_time')).format('dddd') === 'Saturday') {
         saturdayEvents.push(event);
       }
@@ -46,7 +43,6 @@ App.Venue = DS.Model.extend({
     var events = this.get('events').toArray();
     var sundayEvents = [];
     $.each(events,function(index,event) {
-      console.log(moment(event.get('start_time')).format('dddd'));
       if (moment(event.get('start_time')).format('dddd') === 'Sunday') {
         sundayEvents.push(event);
       }
