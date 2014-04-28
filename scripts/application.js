@@ -8647,14 +8647,36 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             hashTypes: {},
             hashContexts: {},
             inverse: self.program(4, program4, data),
-            fn: self.program(1, program1, data),
+            fn: self.program(7, program7, data),
             contexts: [ depth0, depth0, depth0 ],
             types: [ "ID", "ID", "ID" ],
             data: data
         }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n\n      </ul>\n      "), 
         buffer;
     }
-    function program8(depth0, data) {
+    function program7(depth0, data) {
+        var stack1, helper, options, buffer = "";
+        return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
+        options = {
+            hash: {
+                classNames: "list-group-item"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
+            inverse: self.noop,
+            fn: self.program(2, program2, data),
+            contexts: [ depth0, depth0 ],
+            types: [ "STRING", "ID" ],
+            data: data
+        }, stack1 = helper ? helper.call(depth0, "event", "event.id", options) : helperMissing.call(depth0, "link-to", "event", "event.id", options), 
+        (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        "), 
+        buffer;
+    }
+    function program9(depth0, data) {
         data.buffer.push("← All Performers");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -8728,7 +8750,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(8, program8, data),
+        fn: self.program(9, program9, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data

@@ -40,7 +40,7 @@
         <h4 class="list-group-item-heading" style="background:#695b53;color:white">Show MC</h4>
         </li>
         {{#each event in mc_events}}
-          {{#link-to "event" event classNames="list-group-item"}}
+          {{#link-to "event" event.id classNames="list-group-item"}}
             <strong>{{{event.Name}}}</strong> - {{event.venue.Name}}
               <br /> ({{niceDate event.start_time}} {{getTime event.start_time}} - {{getTime event.end_time}})
           {{/link-to}}
