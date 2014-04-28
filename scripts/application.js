@@ -7207,6 +7207,26 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "6836-hang-out-with-me-live-podcast-taping-with-myq-kaplan",
     events: [ "7648" ]
 }, {
+    Name: "All Jane, No Dick",
+    Copy: "",
+    Bio: "All Jane, No Dick is a a carefully curated Portland festival that blends of the best up-and-coming comedic performers and nationally headlining comics from New York, Los Angeles, San Francisco, Austin, Chicago, and beyond. The goal of this festival is to celebrate the unique voices of women in comedy, providing inspiration and increasing visibility for the top performers of today and tomorrow. It encourages collaboration and dialogue and highlights the great diversity of artistic approaches amidst female comedic performers today. Programming for All Jane No Dick includes stand-up showcases, improv, sketches, podcasts, panel discussions, workshops, and documentaries. Find out more at http://www.alljanenodick.com/.\r\n\r\nThursday night&#039;s show will be held at Curious Comedy Theater, 5225 NE Martin Luther King Blvd., Portland, OR 97211.",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/ajnd.jpg",
+    SubmittedId: "8577",
+    SortOrder: "900",
+    id: "8577",
+    pageUrl: "8577-all-jane-no-dick",
+    events: []
+}, {
+    Name: "Best Kept Secret",
+    Copy: "",
+    Bio: "The Bridgetown selection committee got together and hand-picked the best and the brightest from this year&#039;s submissions. They may not be on your radar just yet, but keep an eye out for them. These comics may very well be the next big thing!",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/sound_recordings_and_containers_no_words.png",
+    SubmittedId: "8580",
+    SortOrder: "900",
+    id: "8580",
+    pageUrl: "8580-best-kept-secret",
+    events: []
+}, {
     Name: "Blam! Blam! Blam! Presents &quot;Black Milk&quot;",
     Copy: "",
     Bio: "Sprung from LA&#039;s 7 year-old comedy show &quot;Blam! Blam! Blam!&quot;, &quot;BLACK MILK&quot; (or &quot;Leite Preto&quot; in Portugese) is a delicious compendium of crisp  comedic  performances and surprising late-night weirdness. \r\n\r\nOn it&#039;s surface, here is a sturdy-walled show with a firm foundation -- solid pedigree. Inside however, it&#039;s Knucklehead City. Straight bananas. The walls will stay up and the roof won&#039;t come crashing but outside of that....\r\nSo, precisely what will go down?\r\nExactly.",
