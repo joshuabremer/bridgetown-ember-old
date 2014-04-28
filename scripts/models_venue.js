@@ -11,7 +11,7 @@ App.Venue = DS.Model.extend({
     var saturdayEvents = [];
     $.each(events,function(index,event) {
       console.log(moment(event.get('start_time')).format('dddd'));
-      if (moment(event.get('start_time')).format('dddd') === 'Saturday') {
+      if (moment(event.get('start_time')).format('dddd') === 'Friday') {
         saturdayEvents.push(event);
       }
     })

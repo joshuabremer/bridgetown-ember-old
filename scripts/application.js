@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-04-27 */
+/*! bridgetowncomedy.com 2014-04-28 */
 function getTimeArray() {
     var timeArray = [];
     for (i = 0; 28 > i; i++) timeArray.push(moment(FESTIVAL_SATURDAY_START_TIME).add(30 * i, "minutes"));
@@ -2853,7 +2853,7 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
 }), Ember.Handlebars.registerHelper("scheduleTableHeaderRow", function() {
     var html = "<th>Venue</th>", timeArray = getTimeArray();
     return $.each(timeArray, function(index, time) {
-        var $el = $('<tr><th class="schedule-table__time-header" data-start-time="' + time.toISOString() + '">' + time.format("MM/D") + "<br />" + time.format("h:mm a") + "</th></tr>");
+        var $el = $('<tr><th class="schedule-table__time-header" data-start-time="' + time.toISOString() + '">' + time.format("MM/DD ") + "<br />" + time.format("h:mm a") + "</th></tr>");
         html += $el.html();
     }), new Handlebars.SafeString(html);
 }), DS.LocalRESTSerializer = DS.RESTSerializer.extend({
@@ -2894,7 +2894,7 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
 var App = Ember.Application.create({
     LOG_TRANSITIONS: !0,
     rootElement: "#ember-app"
-}), FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z", FESTIVAL_SATURDAY_START_TIME = "2014-05-10T20:00:00.000Z";
+}), FESTIVAL_START_TIME = "2014-05-09T01:30:00.000Z", FESTIVAL_SATURDAY_START_TIME = "2014-05-09T23:00:00.000Z";
 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
@@ -3096,7 +3096,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     saturdayEvents: function() {
         var events = this.get("events").toArray(), saturdayEvents = [];
         return $.each(events, function(index, event) {
-            console.log(moment(event.get("start_time")).format("dddd")), "Saturday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
+            console.log(moment(event.get("start_time")).format("dddd")), "Friday" === moment(event.get("start_time")).format("dddd") && saturdayEvents.push(event);
         }), saturdayEvents;
     }.property("events.@each.isLoaded")
 }), App.Event.FIXTURES = [ {
@@ -8906,7 +8906,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var helper, options, buffer = "", escapeExpression = this.escapeExpression, helperMissing = helpers.helperMissing;
-    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Saturday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
+    return data.buffer.push('  <div class="jumbotron jumbotron-minor jumbotron-color-1  jumbotron-page-header">\n    <div class="container">\n      <div class="row centered">\n        <div class="col-lg-8 col-lg-offset-2">\n        <h1>Friday Schedule</h1>\n        </div>\n      </div><!-- row -->\n    </div><!-- container -->\n  </div><!-- headerwrap -->\n\n<div class="container main-content">\n\n  <div id="schedules" '), 
     data.buffer.push(escapeExpression(helpers["bind-attr"].call(depth0, {
         hash: {
             "class": "scheduleClass"
@@ -9009,14 +9009,27 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             contexts: [],
             types: [],
             data: data
-        }))), data.buffer.push(">\n        "), stack1 = helpers._triageMustache.call(depth0, "event.Name", {
+        }))), data.buffer.push(">\n        <strong>"), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "event.Name", {
+            hash: {
+                unescaped: "true"
+            },
+            hashTypes: {
+                unescaped: "STRING"
+            },
+            hashContexts: {
+                unescaped: depth0
+            },
+            contexts: [ depth0 ],
+            types: [ "ID" ],
+            data: data
+        }))), data.buffer.push(" - "), stack1 = helpers._triageMustache.call(depth0, "event.Cost", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
             contexts: [ depth0 ],
             types: [ "ID" ],
             data: data
-        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n        <br />\n        "), 
+        }), (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("</strong>\n        <br />\n        "), 
         data.buffer.push(escapeExpression((helper = helpers.getTime || depth0 && depth0.getTime, 
         options = {
             hash: {},
@@ -9061,9 +9074,15 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         var stack1, helper, options, buffer = "";
         return data.buffer.push("\n          "), helper = helpers["link-to"] || depth0 && depth0["link-to"], 
         options = {
-            hash: {},
-            hashTypes: {},
-            hashContexts: {},
+            hash: {
+                classNames: "comma-list"
+            },
+            hashTypes: {
+                classNames: "STRING"
+            },
+            hashContexts: {
+                classNames: depth0
+            },
             inverse: self.noop,
             fn: self.program(4, program4, data),
             contexts: [ depth0, depth0 ],
@@ -9075,8 +9094,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     }
     function program4(depth0, data) {
         var buffer = "";
-        return data.buffer.push('\n          <span class="label label-default schedule__label-performer">\n          '), 
-        data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
+        return data.buffer.push("\n          "), data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "performer.Name", {
             hash: {
                 unescaped: "true"
             },
@@ -9089,7 +9107,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             contexts: [ depth0 ],
             types: [ "ID" ],
             data: data
-        }))), data.buffer.push("\n        </span>\n          "), buffer;
+        }))), data.buffer.push("\n          "), buffer;
     }
     function program6(depth0, data) {
         var stack1, helper, options, buffer = "";

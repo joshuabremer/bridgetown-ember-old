@@ -107,6 +107,9 @@ though, go for it.
 
     .schedule-table {
       font-size:8px;
+      tr:nth-child(odd) {
+        background:#FBFBFB !important;
+      }
     }
     .schedule-table__cell {
       padding:3px !important;
