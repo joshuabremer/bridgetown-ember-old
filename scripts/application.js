@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-04-28 */
+/*! bridgetowncomedy.com 2014-04-29 */
 function getTimeArray(day) {
     var timeArray = [], duration = moment(FESTIVAL_END_TIMES[day]).diff(FESTIVAL_START_TIMES[day], "hours");
     for (i = 0; 2 * duration > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
@@ -2896,13 +2896,13 @@ var App = Ember.Application.create({
     rootElement: "#ember-app"
 }), FESTIVAL_START_TIMES = {};
 
-FESTIVAL_START_TIMES.Thursday = "2014-05-09T01:30:00.000Z", FESTIVAL_START_TIMES.Friday = "2014-05-09T23:00:00.000Z", 
+FESTIVAL_START_TIMES.Thursday = "2014-05-09T01:30:00.000Z", FESTIVAL_START_TIMES.Friday = "2014-05-10T01:00:00.000Z", 
 FESTIVAL_START_TIMES.Saturday = "2014-05-10T20:00:00.000Z", FESTIVAL_START_TIMES.Sunday = "2014-05-11T20:00:00.000Z";
 
 var FESTIVAL_END_TIMES = {};
 
-FESTIVAL_END_TIMES.Thursday = "2014-05-09T14:30:00.000Z", FESTIVAL_END_TIMES.Friday = "2014-05-10T13:00:00.000Z", 
-FESTIVAL_END_TIMES.Saturday = "2014-05-11T10:00:00.000Z", FESTIVAL_END_TIMES.Sunday = "2014-05-12T10:00:00.000Z", 
+FESTIVAL_END_TIMES.Thursday = "2014-05-09T08:30:00.000Z", FESTIVAL_END_TIMES.Friday = "2014-05-10T09:00:00.000Z", 
+FESTIVAL_END_TIMES.Saturday = "2014-05-11T10:00:00.000Z", FESTIVAL_END_TIMES.Sunday = "2014-05-12T08:00:00.000Z", 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
         return records.filter(function(record) {
@@ -3155,6 +3155,97 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6735", "5932", "6731", "6704", "5876", "6835" ],
     emcees: [ 5739 ]
 }, {
+    EventId: "7637",
+    VenueId: "7609",
+    Name: "Taxi Magic Stage at Alhambra Theater Opening Show",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6118",
+    Cost: "$20",
+    ShowId: "",
+    id: "7637",
+    venue: "7609",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "6337", "6049", "6727", "6298", "7895", "6858" ],
+    emcees: [ 6118 ]
+}, {
+    EventId: "7739",
+    VenueId: "7616",
+    Name: "Before You Were Funny",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "7797",
+    Cost: "$15",
+    ShowId: "6801",
+    show: "6801",
+    id: "7739",
+    venue: "7616",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "7798", "6509", "7777", "6609" ]
+}, {
+    EventId: "7698",
+    VenueId: "7615",
+    Name: "Hawthorne Theatre Opening Show",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6717",
+    Cost: "$20",
+    ShowId: "",
+    id: "7698",
+    venue: "7615",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "5999", "6144", "6163", "6157", "6150", "6365", "7566", "7581" ],
+    emcees: [ 6717 ]
+}, {
+    EventId: "7657",
+    VenueId: "7611",
+    Name: "The Dead Authors Podcast",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "",
+    Cost: "$20",
+    ShowId: "7782",
+    show: "7782",
+    id: "7657",
+    venue: "7611",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "7588", "6808" ]
+}, {
+    EventId: "8579",
+    VenueId: "8571",
+    Name: "All Jane, No Dick",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6527",
+    Cost: "",
+    ShowId: "8577",
+    show: "8577",
+    id: "8579",
+    venue: "8571",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "6745", "8015", "6723", "6205", "6611" ],
+    emcees: [ 6527 ]
+}, {
+    EventId: "7730",
+    VenueId: "7618",
+    Name: "MailChimp Stage at the White Owl Social Club Opening Show",
+    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
+    MCId: "6203",
+    Cost: "$15",
+    ShowId: "",
+    id: "7730",
+    venue: "7618",
+    start_time: "2014-05-09T03:00:00.000Z",
+    end_time: "2014-05-09T04:30:00.000Z",
+    performers: [ "6647", "6352", "6305", "6284", "6456", "6839", "6804", "6280" ],
+    emcees: [ 6203 ]
+}, {
     EventId: "7748",
     VenueId: "7620",
     Name: "Analog Cafe Opening Show",
@@ -3200,141 +3291,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6687", "6092", "6102", "5962", "6315", "5845", "6823", "5938" ],
     emcees: [ 6425 ]
 }, {
-    EventId: "7657",
-    VenueId: "7611",
-    Name: "The Dead Authors Podcast",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "7782",
-    show: "7782",
-    id: "7657",
-    venue: "7611",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "7588", "6808" ]
-}, {
-    EventId: "7698",
-    VenueId: "7615",
-    Name: "Hawthorne Theatre Opening Show",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "6717",
-    Cost: "$20",
-    ShowId: "",
-    id: "7698",
-    venue: "7615",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "5999", "6144", "6163", "6157", "6150", "6365", "7566", "7581" ],
-    emcees: [ 6717 ]
-}, {
-    EventId: "7730",
-    VenueId: "7618",
-    Name: "MailChimp Stage at the White Owl Social Club Opening Show",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "6203",
-    Cost: "$15",
-    ShowId: "",
-    id: "7730",
-    venue: "7618",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "6647", "6352", "6305", "6284", "6456", "6839", "6804", "6280" ],
-    emcees: [ 6203 ]
-}, {
-    EventId: "8579",
-    VenueId: "8571",
-    Name: "All Jane, No Dick",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "6527",
-    Cost: "",
-    ShowId: "8577",
-    show: "8577",
-    id: "8579",
-    venue: "8571",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "6745", "8015", "6681", "6402", "6611" ],
-    emcees: [ 6527 ]
-}, {
-    EventId: "7637",
-    VenueId: "7609",
-    Name: "Taxi Magic Stage at Alhambra Theater Opening Show",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "6118",
-    Cost: "$20",
-    ShowId: "",
-    id: "7637",
-    venue: "7609",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "6337", "6049", "6727", "6298", "7895", "6858" ],
-    emcees: [ 6118 ]
-}, {
-    EventId: "7739",
-    VenueId: "7616",
-    Name: "Before You Were Funny",
-    StartTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    EndTime: "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-    MCId: "7797",
-    Cost: "$15",
-    ShowId: "6801",
-    show: "6801",
-    id: "7739",
-    venue: "7616",
-    start_time: "2014-05-09T03:00:00.000Z",
-    end_time: "2014-05-09T04:30:00.000Z",
-    performers: [ "7798", "6509", "7777", "6609" ]
-}, {
-    EventId: "7653",
-    VenueId: "7610",
-    Name: "Surprise Me! ",
-    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    MCId: "6215",
-    Cost: "$10",
-    ShowId: "",
-    id: "7653",
-    venue: "7610",
-    start_time: "2014-05-09T04:00:00.000Z",
-    end_time: "2014-05-09T05:30:00.000Z",
-    performers: [ "5777", "5774", "5879", "6312", "6690", "5755" ],
-    emcees: [ 6215 ]
-}, {
-    EventId: "7716",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
-    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7716",
-    venue: "7617",
-    start_time: "2014-05-09T04:00:00.000Z",
-    end_time: "2014-05-09T05:00:00.000Z",
-    performers: []
-}, {
-    EventId: "7747",
-    VenueId: "7619",
-    Name: "Portland Improv (Whiskey Tango and Curious Comedy Playas)",
-    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-    MCId: "",
-    Cost: "$15",
-    ShowId: "7776",
-    show: "7776",
-    id: "7747",
-    venue: "7619",
-    start_time: "2014-05-09T04:00:00.000Z",
-    end_time: "2014-05-09T05:30:00.000Z",
-    performers: [ "5811", "8578" ]
-}, {
     EventId: "7621",
     VenueId: "7608",
     Name: "Alhambra Lounge Primetime",
@@ -3349,6 +3305,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-09T05:30:00.000Z",
     performers: [ "6564", "5895", "5951", "5976", "6408", "6608", "7579" ],
     emcees: [ 6674 ]
+}, {
+    EventId: "7747",
+    VenueId: "7619",
+    Name: "Portland Improv w/ Curious Comedy Players and Whiskey Tango",
+    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    MCId: "",
+    Cost: "$15",
+    ShowId: "7776",
+    show: "7776",
+    id: "7747",
+    venue: "7619",
+    start_time: "2014-05-09T04:00:00.000Z",
+    end_time: "2014-05-09T05:30:00.000Z",
+    performers: [ "8578", "5811" ]
+}, {
+    EventId: "7716",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
+    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7716",
+    venue: "7617",
+    start_time: "2014-05-09T04:00:00.000Z",
+    end_time: "2014-05-09T05:00:00.000Z",
+    performers: []
 }, {
     EventId: "7689",
     VenueId: "7614",
@@ -3365,79 +3350,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5806", "6476", "5730", "6153", "6409", "6646", "7566" ],
     emcees: [ 5973 ]
 }, {
-    EventId: "7622",
-    VenueId: "7618",
-    Name: "MailChimp Stage at the White Owl Social Club Primetime",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "6681",
-    Cost: "$15",
-    ShowId: "",
-    id: "7622",
-    venue: "7618",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: [ "6162", "6413", "6325", "6363", "7568", "6110", "6123", "6205", "6859" ],
-    emcees: [ 6681 ]
-}, {
-    EventId: "7810",
-    VenueId: "7612",
-    Name: "Late Night Action w/ Alex Falcone and Bri Pruett",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "6006",
-    Cost: "$20",
-    ShowId: "6585",
-    show: "6585",
-    id: "7810",
-    venue: "7612",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: [ "6527", "6855", "7579", "6823", "6818" ]
-}, {
-    EventId: "7919",
-    VenueId: "7613",
-    Name: "Sizzle Pie Stage at the Eagles Lodge Primetime",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "5787",
-    Cost: "$15",
-    ShowId: "",
-    id: "7919",
-    venue: "7613",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: [ "5805", "6536", "5867", "6766", "5894", "6860", "6611" ],
-    emcees: [ 5787 ]
-}, {
-    EventId: "7658",
-    VenueId: "7611",
-    Name: "Bossanova Primetime",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-    MCId: "6271",
-    Cost: "$20",
-    ShowId: "",
-    id: "7658",
-    venue: "7611",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:30:00.000Z",
-    performers: [ "6696", "6371", "6857", "6659", "6833", "6614", "6834" ],
-    emcees: [ 6271 ]
-}, {
-    EventId: "7717",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
-    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
-    MCId: "",
+    EventId: "7653",
+    VenueId: "7610",
+    Name: "Surprise Me! ",
+    StartTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    EndTime: "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+    MCId: "6215",
     Cost: "$10",
     ShowId: "",
-    id: "7717",
-    venue: "7617",
-    start_time: "2014-05-09T05:00:00.000Z",
-    end_time: "2014-05-09T06:00:00.000Z",
-    performers: []
+    id: "7653",
+    venue: "7610",
+    start_time: "2014-05-09T04:00:00.000Z",
+    end_time: "2014-05-09T05:30:00.000Z",
+    performers: [ "5777", "5774", "5879", "6312", "6690", "5755" ],
+    emcees: [ 6215 ]
 }, {
     EventId: "7740",
     VenueId: "7609",
@@ -3454,6 +3380,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5906", "6157", "5889", "5998", "6864", "6065", "6808", "6835" ],
     emcees: [ 5742 ]
 }, {
+    EventId: "7919",
+    VenueId: "7613",
+    Name: "Sizzle Pie Stage at the Eagles Lodge Primetime",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "5787",
+    Cost: "$15",
+    ShowId: "",
+    id: "7919",
+    venue: "7613",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "5805", "6536", "5867", "6766", "5894", "6860", "6611" ],
+    emcees: [ 5787 ]
+}, {
+    EventId: "7717",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7717",
+    venue: "7617",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:00:00.000Z",
+    performers: []
+}, {
     EventId: "7918",
     VenueId: "7620",
     Name: "Analog Cafe Primetime",
@@ -3468,6 +3423,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-09T06:30:00.000Z",
     performers: [ "6745", "5987", "6379", "7580", "6861", "6804", "6822" ],
     emcees: [ 6402 ]
+}, {
+    EventId: "7658",
+    VenueId: "7611",
+    Name: "Bossanova Primetime",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "6271",
+    Cost: "$20",
+    ShowId: "",
+    id: "7658",
+    venue: "7611",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "6696", "6371", "6857", "6659", "6833", "6614", "6834" ],
+    emcees: [ 6271 ]
 }, {
     EventId: "7701",
     VenueId: "7615",
@@ -3484,19 +3454,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6134", "6474", "5918", "6276", "5813", "6074", "6805", "6795", "7595" ],
     emcees: [ 6849 ]
 }, {
-    EventId: "7718",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
-    EndTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
-    MCId: "",
-    Cost: "$10",
+    EventId: "7810",
+    VenueId: "7612",
+    Name: "Late Night Action w/ Alex Falcone and Bri Pruett",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "6006",
+    Cost: "$20",
+    ShowId: "6585",
+    show: "6585",
+    id: "7810",
+    venue: "7612",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "6527", "6855", "7579", "6823", "6818" ]
+}, {
+    EventId: "7622",
+    VenueId: "7618",
+    Name: "MailChimp Stage at the White Owl Social Club Primetime",
+    StartTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    EndTime: "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+    MCId: "6681",
+    Cost: "$15",
     ShowId: "",
-    id: "7718",
-    venue: "7617",
-    start_time: "2014-05-09T06:00:00.000Z",
-    end_time: "2014-05-09T07:00:00.000Z",
-    performers: []
+    id: "7622",
+    venue: "7618",
+    start_time: "2014-05-09T05:00:00.000Z",
+    end_time: "2014-05-09T06:30:00.000Z",
+    performers: [ "6162", "6413", "6325", "6363", "7568", "6110", "6123", "6205", "6859" ],
+    emcees: [ 6681 ]
 }, {
     EventId: "7699",
     VenueId: "7619",
@@ -3513,35 +3499,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5919", "6816", "7777", "6723", "6029", "6004", "6374" ],
     emcees: [ 6058 ]
 }, {
-    EventId: "7690",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Early Show",
-    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    MCId: "6640",
+    EventId: "7718",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
+    EndTime: "2014-05-08 23:00:00 to 2014-05-09 00:00:00",
+    MCId: "",
     Cost: "$10",
     ShowId: "",
-    id: "7690",
-    venue: "7614",
-    start_time: "2014-05-10T02:00:00.000Z",
-    end_time: "2014-05-10T03:30:00.000Z",
-    performers: [ "6483", "5813", "6564", "6118", "5962", "6857" ],
-    emcees: [ 6640 ]
+    id: "7718",
+    venue: "7617",
+    start_time: "2014-05-09T06:00:00.000Z",
+    end_time: "2014-05-09T07:00:00.000Z",
+    performers: []
 }, {
-    EventId: "7915",
-    VenueId: "7615",
-    Name: "Hawthorne Theatre Early Show",
-    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-    MCId: "6319",
-    Cost: "$15",
-    ShowId: "",
-    id: "7915",
-    venue: "7615",
-    start_time: "2014-05-10T02:00:00.000Z",
-    end_time: "2014-05-10T03:30:00.000Z",
-    performers: [ "6425", "5728", "7580", "7566", "5938", "6864", "6611", "6833" ],
-    emcees: [ 6319 ]
+    EventId: "8635",
+    VenueId: "7614",
+    Name: "Set List: Stand-Up Without a Net",
+    StartTime: "2014-05-08 23:00:00 to 2014-05-09 00:30:00",
+    EndTime: "2014-05-08 23:00:00 to 2014-05-09 00:30:00",
+    MCId: "7802",
+    Cost: "",
+    ShowId: "6868",
+    show: "6868",
+    id: "8635",
+    venue: "7614",
+    start_time: "2014-05-09T06:00:00.000Z",
+    end_time: "2014-05-09T07:30:00.000Z",
+    performers: [ "6509", "5739" ],
+    emcees: [ 7802 ]
 }, {
     EventId: "7706",
     VenueId: "7616",
@@ -3605,21 +3591,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6409", "6058", "7568", "6150", "6174", "6818" ],
     emcees: [ 6134 ]
 }, {
-    EventId: "7807",
-    VenueId: "7618",
-    Name: "The Comedy Bull",
-    StartTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
-    EndTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
-    MCId: "5932",
+    EventId: "7690",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Early Show",
+    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    MCId: "6640",
+    Cost: "$10",
+    ShowId: "",
+    id: "7690",
+    venue: "7614",
+    start_time: "2014-05-10T02:00:00.000Z",
+    end_time: "2014-05-10T03:30:00.000Z",
+    performers: [ "6483", "5813", "6564", "6118", "5962", "6857" ],
+    emcees: [ 6640 ]
+}, {
+    EventId: "7915",
+    VenueId: "7615",
+    Name: "Hawthorne Theatre Early Show",
+    StartTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    EndTime: "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+    MCId: "6319",
     Cost: "$15",
-    ShowId: "5936",
-    show: "5936",
-    id: "7807",
-    venue: "7618",
-    start_time: "2014-05-10T03:00:00.000Z",
-    end_time: "2014-05-10T04:30:00.000Z",
-    performers: [ "5983", "6731", "6824", "6102", "7881" ],
-    emcees: [ 5932 ]
+    ShowId: "",
+    id: "7915",
+    venue: "7615",
+    start_time: "2014-05-10T02:00:00.000Z",
+    end_time: "2014-05-10T03:30:00.000Z",
+    performers: [ "6425", "5728", "7580", "7566", "5938", "6864", "6611", "6833" ],
+    emcees: [ 6319 ]
 }, {
     EventId: "7623",
     VenueId: "7608",
@@ -3636,21 +3636,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6702", "6536", "6766", "6696", "6065", "6029" ],
     emcees: [ 6456 ]
 }, {
-    EventId: "7659",
-    VenueId: "7611",
-    Name: "The Meltdown with Jonah and Kumail",
-    StartTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
-    EndTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
-    MCId: "",
-    Cost: "$25",
-    ShowId: "6866",
-    show: "6866",
-    id: "7659",
-    venue: "7611",
-    start_time: "2014-05-10T03:00:00.000Z",
-    end_time: "2014-05-10T04:30:00.000Z",
-    performers: [ "6863", "6862", "6823", "6859", "6860" ]
-}, {
     EventId: "7741",
     VenueId: "7619",
     Name: "The Very Important Show ",
@@ -3666,34 +3651,36 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-10T04:30:00.000Z",
     performers: [ "5998", "7773", "6371", "6130", "6858", "6609", "6745", "6659", "7786" ]
 }, {
-    EventId: "7719",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:00:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:00:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7719",
-    venue: "7617",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:00:00.000Z",
-    performers: []
+    EventId: "7807",
+    VenueId: "7618",
+    Name: "The Comedy Bull",
+    StartTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
+    EndTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
+    MCId: "5932",
+    Cost: "$15",
+    ShowId: "5936",
+    show: "5936",
+    id: "7807",
+    venue: "7618",
+    start_time: "2014-05-10T03:00:00.000Z",
+    end_time: "2014-05-10T04:30:00.000Z",
+    performers: [ "5983", "6731", "6824", "6102", "7881" ],
+    emcees: [ 5932 ]
 }, {
-    EventId: "7691",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Primetime",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "5976",
-    Cost: "$10",
-    ShowId: "",
-    id: "7691",
-    venue: "7614",
-    start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: [ "6312", "6163", "6315", "5856", "6128", "6004" ],
-    emcees: [ 5976 ]
+    EventId: "7659",
+    VenueId: "7611",
+    Name: "The Meltdown with Jonah and Kumail",
+    StartTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
+    EndTime: "2014-05-09 20:00:00 to 2014-05-09 21:30:00",
+    MCId: "",
+    Cost: "$25",
+    ShowId: "6866",
+    show: "6866",
+    id: "7659",
+    venue: "7611",
+    start_time: "2014-05-10T03:00:00.000Z",
+    end_time: "2014-05-10T04:30:00.000Z",
+    performers: [ "6863", "6862", "6823", "6859", "6860" ]
 }, {
     EventId: "7749",
     VenueId: "7609",
@@ -3722,23 +3709,23 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     venue: "7610",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
-    performers: [ "5895", "6686", "6359" ],
+    performers: [ "6686", "6359", "6058", "5895", "5739", "6735", "6861" ],
     emcees: [ 6049 ]
 }, {
-    EventId: "7750",
-    VenueId: "7620",
-    Name: "Analog Cafe Primetime",
+    EventId: "7951",
+    VenueId: "7613",
+    Name: "Sizzle Pie Stage at the Eagles Lodge Primetime",
     StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
     EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "6704",
-    Cost: "$10",
+    MCId: "6476",
+    Cost: "$15",
     ShowId: "",
-    id: "7750",
-    venue: "7620",
+    id: "7951",
+    venue: "7613",
     start_time: "2014-05-10T04:00:00.000Z",
     end_time: "2014-05-10T05:30:00.000Z",
-    performers: [ "5919", "6157", "7777", "6151", "6723", "6189", "5906" ],
-    emcees: [ 6704 ]
+    performers: [ "6337", "6717", "6800", "5783", "6029", "6280", "6069" ],
+    emcees: [ 6476 ]
 }, {
     EventId: "7641",
     VenueId: "7616",
@@ -3755,20 +3742,19 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6534", "6159", "6305", "6474", "5879", "6823" ],
     emcees: [ 6276 ]
 }, {
-    EventId: "7951",
-    VenueId: "7613",
-    Name: "Sizzle Pie Stage at the Eagles Lodge Primetime",
-    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-    MCId: "6476",
-    Cost: "$15",
+    EventId: "7719",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:00:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:00:00",
+    MCId: "",
+    Cost: "$10",
     ShowId: "",
-    id: "7951",
-    venue: "7613",
+    id: "7719",
+    venue: "7617",
     start_time: "2014-05-10T04:00:00.000Z",
-    end_time: "2014-05-10T05:30:00.000Z",
-    performers: [ "6337", "6717", "6800", "5783", "6029", "6280", "6069" ],
-    emcees: [ 6476 ]
+    end_time: "2014-05-10T05:00:00.000Z",
+    performers: []
 }, {
     EventId: "7624",
     VenueId: "7612",
@@ -3800,49 +3786,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5918", "6215", "6857", "5777", "7895", "5755", "6791" ],
     emcees: [ 6527 ]
 }, {
-    EventId: "7720",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
-    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
-    MCId: "",
+    EventId: "7691",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Primetime",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    MCId: "5976",
     Cost: "$10",
     ShowId: "",
-    id: "7720",
-    venue: "7617",
-    start_time: "2014-05-10T05:00:00.000Z",
-    end_time: "2014-05-10T06:00:00.000Z",
-    performers: []
+    id: "7691",
+    venue: "7614",
+    start_time: "2014-05-10T04:00:00.000Z",
+    end_time: "2014-05-10T05:30:00.000Z",
+    performers: [ "6312", "6163", "6315", "5856", "6128", "6004" ],
+    emcees: [ 5976 ]
 }, {
-    EventId: "7660",
-    VenueId: "7611",
-    Name: "IFC Presents Reggie Watts and Friends",
-    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    MCId: "5894",
-    Cost: "$25",
+    EventId: "7750",
+    VenueId: "7620",
+    Name: "Analog Cafe Primetime",
+    StartTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    EndTime: "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+    MCId: "6704",
+    Cost: "$10",
     ShowId: "",
-    id: "7660",
-    venue: "7611",
-    start_time: "2014-05-10T05:00:00.000Z",
-    end_time: "2014-05-10T06:30:00.000Z",
-    performers: [ "6727", "6816", "7777", "6123", "7595" ],
-    emcees: [ 5894 ]
-}, {
-    EventId: "7811",
-    VenueId: "7619",
-    Name: "The Mystery Box Show ",
-    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
-    MCId: "7885",
-    Cost: "$15",
-    ShowId: "5871",
-    show: "5871",
-    id: "7811",
-    venue: "7619",
-    start_time: "2014-05-10T05:00:00.000Z",
-    end_time: "2014-05-10T06:30:00.000Z",
-    performers: [ "6687", "6402", "6834", "7896" ]
+    id: "7750",
+    venue: "7620",
+    start_time: "2014-05-10T04:00:00.000Z",
+    end_time: "2014-05-10T05:30:00.000Z",
+    performers: [ "5919", "6157", "7777", "6151", "6723", "6189", "5906" ],
+    emcees: [ 6704 ]
 }, {
     EventId: "7733",
     VenueId: "7618",
@@ -3859,6 +3831,50 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6410", "6561", "6690", "5999", "8015", "6839", "5876", "6153", "7895" ],
     emcees: [ 6849 ]
 }, {
+    EventId: "7660",
+    VenueId: "7611",
+    Name: "IFC Presents Reggie Watts and Friends",
+    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    MCId: "5894",
+    Cost: "$25",
+    ShowId: "",
+    id: "7660",
+    venue: "7611",
+    start_time: "2014-05-10T05:00:00.000Z",
+    end_time: "2014-05-10T06:30:00.000Z",
+    performers: [ "6727", "6816", "7777", "6123", "7595" ],
+    emcees: [ 5894 ]
+}, {
+    EventId: "7720",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
+    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7720",
+    venue: "7617",
+    start_time: "2014-05-10T05:00:00.000Z",
+    end_time: "2014-05-10T06:00:00.000Z",
+    performers: []
+}, {
+    EventId: "7811",
+    VenueId: "7619",
+    Name: "The Mystery Box Show ",
+    StartTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    EndTime: "2014-05-09 22:00:00 to 2014-05-09 23:30:00",
+    MCId: "7885",
+    Cost: "$15",
+    ShowId: "5871",
+    show: "5871",
+    id: "7811",
+    venue: "7619",
+    start_time: "2014-05-10T05:00:00.000Z",
+    end_time: "2014-05-10T06:30:00.000Z",
+    performers: [ "6687", "6402", "6834", "7896" ]
+}, {
     EventId: "7806",
     VenueId: "7608",
     Name: "Hot Comedy with the Spicy News",
@@ -3874,19 +3890,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-10T06:30:00.000Z",
     performers: [ "5787", "6629", "6363", "6319", "6818", "7881" ]
 }, {
-    EventId: "7721",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
-    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
-    MCId: "",
+    EventId: "7692",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Late Show",
+    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+    MCId: "6162",
     Cost: "$10",
     ShowId: "",
-    id: "7721",
-    venue: "7617",
+    id: "7692",
+    venue: "7614",
     start_time: "2014-05-10T06:00:00.000Z",
-    end_time: "2014-05-10T07:00:00.000Z",
-    performers: []
+    end_time: "2014-05-10T07:30:00.000Z",
+    performers: [ "5774", "6647", "5805", "6032", "6203", "6762" ],
+    emcees: [ 6162 ]
 }, {
     EventId: "7742",
     VenueId: "7609",
@@ -3903,22 +3920,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-10T07:30:00.000Z",
     performers: [ "6858", "6205", "6859", "5739" ],
     emcees: [ 6144 ]
-}, {
-    EventId: "7667",
-    VenueId: "7612",
-    Name: "Voodoo Doughnut Recordings Presents Ian Karmel and Nathan Brannon",
-    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    MCId: "6408",
-    Cost: "$20",
-    ShowId: "7790",
-    show: "7790",
-    id: "7667",
-    venue: "7612",
-    start_time: "2014-05-10T06:00:00.000Z",
-    end_time: "2014-05-10T07:30:00.000Z",
-    performers: [ "6392", "6810", "5742", "6379", "6609", "6824", "6074" ],
-    emcees: [ 6408 ]
 }, {
     EventId: "7804",
     VenueId: "7615",
@@ -3951,49 +3952,64 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6681", "7785", "5730", "6825", "6110", "6065", "6863", "7579" ],
     emcees: [ 6591 ]
 }, {
-    EventId: "7692",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Late Show",
-    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-    MCId: "6162",
-    Cost: "$10",
-    ShowId: "",
-    id: "7692",
-    venue: "7614",
-    start_time: "2014-05-10T06:00:00.000Z",
-    end_time: "2014-05-10T07:30:00.000Z",
-    performers: [ "5774", "6647", "5805", "6032", "6203", "6762" ],
-    emcees: [ 6162 ]
-}, {
-    EventId: "7722",
+    EventId: "7721",
     VenueId: "7617",
     Name: "Tanker Open Mic",
-    StartTime: "2014-05-09 23:30:00 to 2014-05-10 00:00:00",
-    EndTime: "2014-05-09 23:30:00 to 2014-05-10 00:00:00",
+    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
+    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:00:00",
     MCId: "",
     Cost: "$10",
     ShowId: "",
-    id: "7722",
+    id: "7721",
     venue: "7617",
-    start_time: "2014-05-10T06:30:00.000Z",
+    start_time: "2014-05-10T06:00:00.000Z",
     end_time: "2014-05-10T07:00:00.000Z",
     performers: []
+}, {
+    EventId: "7667",
+    VenueId: "7612",
+    Name: "Voodoo Doughnut Recordings Presents Ian Karmel and Nathan Brannon",
+    StartTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+    EndTime: "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+    MCId: "6408",
+    Cost: "$20",
+    ShowId: "7790",
+    show: "7790",
+    id: "7667",
+    venue: "7612",
+    start_time: "2014-05-10T06:00:00.000Z",
+    end_time: "2014-05-10T07:30:00.000Z",
+    performers: [ "6392", "6810", "5742", "6379", "6609", "6824", "6074" ],
+    emcees: [ 6408 ]
 }, {
     EventId: "7916",
     VenueId: "7611",
     Name: "Bossanova Late Show",
-    StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
-    EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:30:00",
+    EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:30:00",
     MCId: "6325",
     Cost: "$15",
     ShowId: "",
     id: "7916",
     venue: "7611",
     start_time: "2014-05-10T06:30:00.000Z",
-    end_time: "2014-05-10T08:00:00.000Z",
+    end_time: "2014-05-10T08:30:00.000Z",
     performers: [ "5973", "6271", "6413", "6795", "6608", "6861", "6456", "7566", "6835" ],
     emcees: [ 6325 ]
+}, {
+    EventId: "7722",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    EndTime: "2014-05-09 23:30:00 to 2014-05-10 01:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7722",
+    venue: "7617",
+    start_time: "2014-05-10T06:30:00.000Z",
+    end_time: "2014-05-10T08:00:00.000Z",
+    performers: []
 }, {
     EventId: "7668",
     VenueId: "7612",
@@ -4101,51 +4117,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T02:30:00.000Z",
     performers: [ "7893", "7894" ]
 }, {
-    EventId: "7693",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Early Show",
-    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "6312",
-    Cost: "$10",
-    ShowId: "",
-    id: "7693",
-    venue: "7614",
-    start_time: "2014-05-11T02:00:00.000Z",
-    end_time: "2014-05-11T03:30:00.000Z",
-    performers: [ "6410", "6629", "6534", "5976", "6215", "6134", "6144" ],
-    emcees: [ 6312 ]
-}, {
-    EventId: "7743",
-    VenueId: "7613",
-    Name: "Sizzle Pie Stage at the Eagles Lodge Early Show",
-    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "6483",
-    Cost: "$15",
-    ShowId: "",
-    id: "7743",
-    venue: "7613",
-    start_time: "2014-05-11T02:00:00.000Z",
-    end_time: "2014-05-11T03:30:00.000Z",
-    performers: [ "5856", "6561", "6163", "6305", "6456", "6805", "6834", "6614" ],
-    emcees: [ 6483 ]
-}, {
-    EventId: "7911",
-    VenueId: "7620",
-    Name: "Analog Cafe Early Show",
-    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
-    MCId: "6150",
-    Cost: "$10",
-    ShowId: "",
-    id: "7911",
-    venue: "7620",
-    start_time: "2014-05-11T02:00:00.000Z",
-    end_time: "2014-05-11T03:30:00.000Z",
-    performers: [ "5805", "5739", "6203", "6640", "5973", "6280" ],
-    emcees: [ 6150 ]
-}, {
     EventId: "7808",
     VenueId: "7619",
     Name: "Portland Masters",
@@ -4178,34 +4149,66 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6379", "6696", "6157", "6402", "5867", "6123" ],
     emcees: [ 6359 ]
 }, {
-    EventId: "7734",
-    VenueId: "7618",
-    Name: "Myq Kaplan and Friends",
-    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    MCId: "6818",
-    Cost: "$20",
+    EventId: "7743",
+    VenueId: "7613",
+    Name: "Sizzle Pie Stage at the Eagles Lodge Early Show",
+    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    MCId: "6483",
+    Cost: "$15",
     ShowId: "",
-    id: "7734",
-    venue: "7618",
-    start_time: "2014-05-11T03:00:00.000Z",
-    end_time: "2014-05-11T04:30:00.000Z",
-    performers: [ "6102", "7579", "6319", "6425", "6857", "7828", "7595" ],
-    emcees: [ 6818 ]
+    id: "7743",
+    venue: "7613",
+    start_time: "2014-05-11T02:00:00.000Z",
+    end_time: "2014-05-11T03:30:00.000Z",
+    performers: [ "5856", "6561", "6163", "6305", "6456", "6805", "6834", "6614" ],
+    emcees: [ 6483 ]
 }, {
-    EventId: "7655",
-    VenueId: "7610",
-    Name: "Surprise Me! Primetime",
-    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    MCId: "7570",
+    EventId: "7911",
+    VenueId: "7620",
+    Name: "Analog Cafe Early Show",
+    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    MCId: "6150",
     Cost: "$10",
     ShowId: "",
-    id: "7655",
-    venue: "7610",
+    id: "7911",
+    venue: "7620",
+    start_time: "2014-05-11T02:00:00.000Z",
+    end_time: "2014-05-11T03:30:00.000Z",
+    performers: [ "5805", "5739", "6203", "6640", "5973", "6280" ],
+    emcees: [ 6150 ]
+}, {
+    EventId: "7693",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Early Show",
+    StartTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    EndTime: "2014-05-10 19:00:00 to 2014-05-10 20:30:00",
+    MCId: "6312",
+    Cost: "$10",
+    ShowId: "",
+    id: "7693",
+    venue: "7614",
+    start_time: "2014-05-11T02:00:00.000Z",
+    end_time: "2014-05-11T03:30:00.000Z",
+    performers: [ "6410", "6629", "6534", "5976", "6215", "6134", "6144" ],
+    emcees: [ 6312 ]
+}, {
+    EventId: "7671",
+    VenueId: "7612",
+    Name: "Set List: Stand-Up Without a Net",
+    StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
+    MCId: "7803",
+    Cost: "$25",
+    ShowId: "6868",
+    show: "6868",
+    id: "7671",
+    venue: "7612",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
-    performers: [ "5894" ]
+    performers: [ "6609", "6723", "6365", "6791", "7775", "6859", "6833" ],
+    emcees: [ 7803 ]
 }, {
     EventId: "7645",
     VenueId: "7609",
@@ -4223,35 +4226,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6816", "6863", "6824", "6860", "6374", "7777", "6823", "6014", "7820", "7881", "7786", "6065", "6674" ],
     emcees: [ 7590 ]
 }, {
-    EventId: "7671",
-    VenueId: "7612",
-    Name: "Set List: Stand-Up Without a Net",
+    EventId: "7734",
+    VenueId: "7618",
+    Name: "Myq Kaplan and Friends",
     StartTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
     EndTime: "2014-05-10 20:00:00 to 2014-05-10 21:30:00",
-    MCId: "7802",
-    Cost: "$25",
-    ShowId: "6868",
-    show: "6868",
-    id: "7671",
-    venue: "7612",
+    MCId: "6818",
+    Cost: "$20",
+    ShowId: "",
+    id: "7734",
+    venue: "7618",
     start_time: "2014-05-11T03:00:00.000Z",
     end_time: "2014-05-11T04:30:00.000Z",
-    performers: [ "6609", "6723", "6365", "6791", "7775", "6859", "6833" ],
-    emcees: [ 7802 ]
-}, {
-    EventId: "7723",
-    VenueId: "7617",
-    Name: "Tanker Open Mic",
-    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:00:00",
-    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:00:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7723",
-    venue: "7617",
-    start_time: "2014-05-11T04:00:00.000Z",
-    end_time: "2014-05-11T05:00:00.000Z",
-    performers: []
+    performers: [ "6102", "7579", "6319", "6425", "6857", "7828", "7595" ],
+    emcees: [ 6818 ]
 }, {
     EventId: "7708",
     VenueId: "7616",
@@ -4268,21 +4256,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6032", "5774", "5906", "5919", "6275", "5987", "7566" ],
     emcees: [ 5867 ]
-}, {
-    EventId: "7694",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Primetime",
-    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "6839",
-    Cost: "$10",
-    ShowId: "",
-    id: "7694",
-    venue: "7614",
-    start_time: "2014-05-11T04:00:00.000Z",
-    end_time: "2014-05-11T05:30:00.000Z",
-    performers: [ "5777", "6276", "6681", "5951", "5962", "6527", "5938" ],
-    emcees: [ 6839 ]
 }, {
     EventId: "7751",
     VenueId: "7620",
@@ -4315,6 +4288,65 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6659", "6849", "6858", "5998" ],
     emcees: [ 7518 ]
 }, {
+    EventId: "7694",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Primetime",
+    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    MCId: "6839",
+    Cost: "$10",
+    ShowId: "",
+    id: "7694",
+    venue: "7614",
+    start_time: "2014-05-11T04:00:00.000Z",
+    end_time: "2014-05-11T05:30:00.000Z",
+    performers: [ "5777", "6276", "6681", "5951", "5962", "6527", "5938" ],
+    emcees: [ 6839 ]
+}, {
+    EventId: "7723",
+    VenueId: "7617",
+    Name: "Tanker Open Mic",
+    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:00:00",
+    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:00:00",
+    MCId: "",
+    Cost: "$10",
+    ShowId: "",
+    id: "7723",
+    venue: "7617",
+    start_time: "2014-05-11T04:00:00.000Z",
+    end_time: "2014-05-11T05:00:00.000Z",
+    performers: []
+}, {
+    EventId: "7912",
+    VenueId: "7610",
+    Name: "Surprise Me! ",
+    StartTime: "2014-05-10 21:00:00 to 2014-05-11 22:30:00",
+    EndTime: "2014-05-10 21:00:00 to 2014-05-11 22:30:00",
+    MCId: "6629",
+    Cost: "$10",
+    ShowId: "",
+    id: "7912",
+    venue: "7610",
+    start_time: "2014-05-11T04:00:00.000Z",
+    end_time: "2014-05-12T05:30:00.000Z",
+    performers: [ "6717", "5932", "5983", "5845", "6271", "6762", "5894" ],
+    emcees: [ 6629 ]
+}, {
+    EventId: "8632",
+    VenueId: "7619",
+    Name: "Pivot Presents: W. Kamau Bell &amp; Friends",
+    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
+    MCId: "",
+    Cost: "",
+    ShowId: "8634",
+    show: "8634",
+    id: "8632",
+    venue: "7619",
+    start_time: "2014-05-11T04:00:00.000Z",
+    end_time: "2014-05-11T05:30:00.000Z",
+    performers: [ "6731", "6298", "8015", "6835", "7895" ]
+}, {
     EventId: "7745",
     VenueId: "7608",
     Name: "Alhambra Lounge Primetime",
@@ -4329,36 +4361,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T05:30:00.000Z",
     performers: [ "6686", "7581", "5728", "6325", "7568", "6069" ],
     emcees: [ 6337 ]
-}, {
-    EventId: "7744",
-    VenueId: "7619",
-    Name: "The Show That Dare Not Speak Its Name",
-    StartTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    EndTime: "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-    MCId: "5879",
-    Cost: "$20",
-    ShowId: "",
-    id: "7744",
-    venue: "7619",
-    start_time: "2014-05-11T04:00:00.000Z",
-    end_time: "2014-05-11T05:30:00.000Z",
-    performers: [ "6699", "6647", "5895", "6476", "6157", "5876", "6189", "7881" ],
-    emcees: [ 5879 ]
-}, {
-    EventId: "7805",
-    VenueId: "7618",
-    Name: "Brew Haha: The Comedy Show Drinking Game",
-    StartTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
-    EndTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "6347",
-    show: "6347",
-    id: "7805",
-    venue: "7618",
-    start_time: "2014-05-11T05:00:00.000Z",
-    end_time: "2014-05-11T06:30:00.000Z",
-    performers: [ "6810", "6805", "5730", "5742", "6859", "6825" ]
 }, {
     EventId: "7724",
     VenueId: "7617",
@@ -4390,63 +4392,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5889", "6824", "6536", "6189", "6065", "6808", "6271", "6823", "6609" ],
     emcees: [ 6379 ]
 }, {
-    EventId: "7666",
+    EventId: "8633",
     VenueId: "7612",
-    Name: "Pivot Presents W. Kamau Bell &amp; Friends",
+    Name: "Squarespace Stage at Doug Fir Primetime",
+    StartTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
+    EndTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
+    MCId: "5999",
+    Cost: "",
+    ShowId: "",
+    id: "8633",
+    venue: "7612",
+    start_time: "2014-05-11T05:00:00.000Z",
+    end_time: "2014-05-11T06:30:00.000Z",
+    performers: [ "6674", "5894", "6704", "6029", "6646", "6611", "6123" ],
+    emcees: [ 5999 ]
+}, {
+    EventId: "7805",
+    VenueId: "7618",
+    Name: "Brew Haha: The Comedy Show Drinking Game",
     StartTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
     EndTime: "2014-05-10 22:00:00 to 2014-05-10 23:30:00",
     MCId: "",
     Cost: "$20",
-    ShowId: "",
-    id: "7666",
-    venue: "7612",
+    ShowId: "6347",
+    show: "6347",
+    id: "7805",
+    venue: "7618",
     start_time: "2014-05-11T05:00:00.000Z",
     end_time: "2014-05-11T06:30:00.000Z",
-    performers: [ "6731", "6298", "8015", "6835", "7895" ]
-}, {
-    EventId: "7912",
-    VenueId: "7610",
-    Name: "Surprise Me! Late Night",
-    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "",
-    Cost: "$10",
-    ShowId: "",
-    id: "7912",
-    venue: "7610",
-    start_time: "2014-05-11T06:00:00.000Z",
-    end_time: "2014-05-11T07:30:00.000Z",
-    performers: [ "6717", "5932", "5845" ]
-}, {
-    EventId: "7628",
-    VenueId: "7608",
-    Name: "Alhambra Lounge Late Show",
-    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "5918",
-    Cost: "$10",
-    ShowId: "",
-    id: "7628",
-    venue: "7608",
-    start_time: "2014-05-11T06:00:00.000Z",
-    end_time: "2014-05-11T07:30:00.000Z",
-    performers: [ "6162", "6049", "6591", "6392", "5938", "6371" ],
-    emcees: [ 5918 ]
-}, {
-    EventId: "7695",
-    VenueId: "7614",
-    Name: "Hawthorne Lounge Late Show",
-    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "5813",
-    Cost: "$10",
-    ShowId: "",
-    id: "7695",
-    venue: "7614",
-    start_time: "2014-05-11T06:00:00.000Z",
-    end_time: "2014-05-11T07:30:00.000Z",
-    performers: [ "6702", "6745", "6354", "6159", "6564", "6800", "6374" ],
-    emcees: [ 5813 ]
+    performers: [ "6810", "6805", "5730", "5742", "6859", "6825" ]
 }, {
     EventId: "7752",
     VenueId: "7620",
@@ -4463,6 +4437,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6766", "6363", "5783", "6110", "6608", "6174", "6408" ],
     emcees: [ 5983 ]
 }, {
+    EventId: "7695",
+    VenueId: "7614",
+    Name: "Hawthorne Lounge Late Show",
+    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    MCId: "5813",
+    Cost: "$10",
+    ShowId: "",
+    id: "7695",
+    venue: "7614",
+    start_time: "2014-05-11T06:00:00.000Z",
+    end_time: "2014-05-11T07:30:00.000Z",
+    performers: [ "6702", "6745", "6354", "6159", "6564", "6800", "6374" ],
+    emcees: [ 5813 ]
+}, {
     EventId: "7685",
     VenueId: "7613",
     Name: "Sizzle Pie Stage at the Eagles Lodge Late Show",
@@ -4478,20 +4467,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6735", "6474", "7580", "6762", "6004", "6860" ],
     emcees: [ 6032 ]
 }, {
-    EventId: "7627",
+    EventId: "8631",
     VenueId: "7619",
-    Name: "Analog Theater Late Show",
+    Name: "The Show That Dare Not Speak Its Name",
     StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
     EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-    MCId: "5999",
-    Cost: "$15",
+    MCId: "5879",
+    Cost: "",
     ShowId: "",
-    id: "7627",
+    id: "8631",
     venue: "7619",
     start_time: "2014-05-11T06:00:00.000Z",
     end_time: "2014-05-11T07:30:00.000Z",
-    performers: [ "6674", "5894", "6704", "6029", "6646", "6611", "6123" ],
-    emcees: [ 5999 ]
+    performers: [ "6699", "6647", "5895", "6476", "6157", "5876", "6189", "7881" ],
+    emcees: [ 5879 ]
+}, {
+    EventId: "7628",
+    VenueId: "7608",
+    Name: "Alhambra Lounge Late Show",
+    StartTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    EndTime: "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+    MCId: "5918",
+    Cost: "$10",
+    ShowId: "",
+    id: "7628",
+    venue: "7608",
+    start_time: "2014-05-11T06:00:00.000Z",
+    end_time: "2014-05-11T07:30:00.000Z",
+    performers: [ "6162", "6049", "6591", "6392", "5938", "6371" ],
+    emcees: [ 5918 ]
 }, {
     EventId: "7725",
     VenueId: "7617",
@@ -4507,33 +4511,18 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T07:00:00.000Z",
     performers: []
 }, {
-    EventId: "7672",
-    VenueId: "7612",
-    Name: "Squarespace Stage at the Doug Fir Late Show",
-    StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
-    EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
-    MCId: "6542",
-    Cost: "$20",
-    ShowId: "",
-    id: "7672",
-    venue: "7612",
-    start_time: "2014-05-11T06:30:00.000Z",
-    end_time: "2014-05-11T08:00:00.000Z",
-    performers: [ "6315", "5787", "6128", "6687", "6153", "6151", "6858", "7828" ],
-    emcees: [ 6542 ]
-}, {
     EventId: "7726",
     VenueId: "7617",
     Name: "Tanker Open Mic",
-    StartTime: "2014-05-10 23:30:00 to 2014-05-11 00:00:00",
-    EndTime: "2014-05-10 23:30:00 to 2014-05-11 00:00:00",
+    StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
+    EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:00:00",
     MCId: "",
     Cost: "$10",
     ShowId: "",
     id: "7726",
     venue: "7617",
     start_time: "2014-05-11T06:30:00.000Z",
-    end_time: "2014-05-11T07:00:00.000Z",
+    end_time: "2014-05-11T08:00:00.000Z",
     performers: []
 }, {
     EventId: "7815",
@@ -4565,6 +4554,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-11T08:30:00.000Z",
     performers: [ "6825", "6014", "6822", "7881", "7595" ],
     emcees: [ 6804 ]
+}, {
+    EventId: "7672",
+    VenueId: "7612",
+    Name: "Squarespace Stage at the Doug Fir Late Show",
+    StartTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
+    EndTime: "2014-05-10 23:30:00 to 2014-05-11 01:30:00",
+    MCId: "6542",
+    Cost: "$20",
+    ShowId: "",
+    id: "7672",
+    venue: "7612",
+    start_time: "2014-05-11T06:30:00.000Z",
+    end_time: "2014-05-11T08:30:00.000Z",
+    performers: [ "6315", "5787", "6128", "6687", "6153", "6151", "6858", "7828" ],
+    emcees: [ 6542 ]
 }, {
     EventId: "7675",
     VenueId: "7612",
@@ -4673,6 +4677,21 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T03:30:00.000Z",
     performers: [ "6425", "6659" ]
 }, {
+    EventId: "7737",
+    VenueId: "7618",
+    Name: "MailChimp Stage at the White Owl Social Club Early Show",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    MCId: "6564",
+    Cost: "$15",
+    ShowId: "",
+    id: "7737",
+    venue: "7618",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T04:30:00.000Z",
+    performers: [ "6629", "6128", "6275", "6203", "6834", "6029" ],
+    emcees: [ 6564 ]
+}, {
     EventId: "7650",
     VenueId: "7615",
     Name: "Mary Mack&#039;s North Star Comedy Hour &amp; Meat Raffle",
@@ -4689,20 +4708,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6818", "7568", "6864", "6408", "6858" ],
     emcees: [ 7566 ]
 }, {
-    EventId: "7746",
-    VenueId: "7619",
-    Name: "Analog Theater Early Show",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "6647",
-    Cost: "$15",
-    ShowId: "",
-    id: "7746",
-    venue: "7619",
+    EventId: "7662",
+    VenueId: "7612",
+    Name: "Nathan For You: Screening and Q&amp;A",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:00:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:00:00",
+    MCId: "",
+    Cost: "$20",
+    ShowId: "7936",
+    show: "7936",
+    id: "7662",
+    venue: "7612",
     start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:30:00.000Z",
-    performers: [ "6049", "5889", "6527", "6413", "6822", "6280", "6857", "6849" ],
-    emcees: [ 6647 ]
+    end_time: "2014-05-12T04:00:00.000Z",
+    performers: [ "7800" ]
 }, {
     EventId: "7651",
     VenueId: "7613",
@@ -4719,51 +4738,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "7579", "6823", "6762", "6536" ]
 }, {
-    EventId: "7703",
-    VenueId: "7611",
-    Name: "Bossanova Primetime",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "5938",
-    Cost: "$20",
-    ShowId: "",
-    id: "7703",
-    venue: "7611",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:30:00.000Z",
-    performers: [ "7777", "6379", "7518", "5867", "6004", "5876", "6833", "6859" ],
-    emcees: [ 5938 ]
-}, {
-    EventId: "7662",
-    VenueId: "7612",
-    Name: "Nathan For You: Screening and Q&amp;A",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:00:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:00:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "7936",
-    show: "7936",
-    id: "7662",
-    venue: "7612",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:00:00.000Z",
-    performers: [ "7800" ]
-}, {
-    EventId: "7737",
-    VenueId: "7618",
-    Name: "MailChimp Stage at the White Owl Social Club Early Show",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "6564",
-    Cost: "$15",
-    ShowId: "",
-    id: "7737",
-    venue: "7618",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:30:00.000Z",
-    performers: [ "6629", "6128", "6275", "6203", "6834", "6029" ],
-    emcees: [ 6564 ]
-}, {
     EventId: "7677",
     VenueId: "7609",
     Name: "The Green Room with Paul Provenza",
@@ -4779,21 +4753,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "7803" ]
 }, {
-    EventId: "7656",
-    VenueId: "7610",
-    Name: "Surprise Me!",
-    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-    MCId: "6745",
-    Cost: "$10",
-    ShowId: "",
-    id: "7656",
-    venue: "7610",
-    start_time: "2014-05-12T03:00:00.000Z",
-    end_time: "2014-05-12T04:30:00.000Z",
-    performers: [ "6702", "6134", "6542", "6410", "6305", "6153", "6839" ],
-    emcees: [ 6745 ]
-}, {
     EventId: "7753",
     VenueId: "7620",
     Name: "Analog Cafe Closing Show",
@@ -4808,6 +4767,51 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T04:30:00.000Z",
     performers: [ "5932", "5879", "5777", "5845", "6509", "6402", "6365", "5742" ],
     emcees: [ 5962 ]
+}, {
+    EventId: "7656",
+    VenueId: "7610",
+    Name: "Surprise Me!",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    MCId: "6745",
+    Cost: "$10",
+    ShowId: "",
+    id: "7656",
+    venue: "7610",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T04:30:00.000Z",
+    performers: [ "6702", "6542", "5906", "6410", "6305", "6153" ],
+    emcees: [ 6745 ]
+}, {
+    EventId: "7746",
+    VenueId: "7619",
+    Name: "Analog Theater Early Show",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    MCId: "6647",
+    Cost: "$15",
+    ShowId: "",
+    id: "7746",
+    venue: "7619",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T04:30:00.000Z",
+    performers: [ "6049", "5889", "6527", "6413", "6822", "6280", "6857", "6849" ],
+    emcees: [ 6647 ]
+}, {
+    EventId: "7703",
+    VenueId: "7611",
+    Name: "Bossanova Primetime",
+    StartTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    EndTime: "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+    MCId: "5938",
+    Cost: "$20",
+    ShowId: "",
+    id: "7703",
+    venue: "7611",
+    start_time: "2014-05-12T03:00:00.000Z",
+    end_time: "2014-05-12T04:30:00.000Z",
+    performers: [ "7777", "6379", "7518", "5867", "6839", "6004", "5876", "6833", "6859" ],
+    emcees: [ 5938 ]
 }, {
     EventId: "7632",
     VenueId: "7608",
@@ -4854,36 +4858,20 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "6319", "5987", "5976", "8015", "6561", "6110", "5783", "6130", "6150" ],
     emcees: [ 6354 ]
 }, {
-    EventId: "7661",
-    VenueId: "7611",
-    Name: "Prompter",
+    EventId: "7738",
+    VenueId: "7619",
+    Name: "Analog Theater Closing Show",
     StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
     EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "7802",
-    Cost: "$20",
-    ShowId: "6891",
-    show: "6891",
-    id: "7661",
-    venue: "7611",
-    start_time: "2014-05-12T05:00:00.000Z",
-    end_time: "2014-05-12T06:30:00.000Z",
-    performers: [ "7775", "6858", "7595", "7883" ],
-    emcees: [ 7802 ]
-}, {
-    EventId: "7913",
-    VenueId: "7615",
-    Name: "Hawthorne Theatre Closing Show",
-    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "6409",
-    Cost: "$20",
+    MCId: "6534",
+    Cost: "$15",
     ShowId: "",
-    id: "7913",
-    venue: "7615",
+    id: "7738",
+    venue: "7619",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: [ "6640", "6476", "6591", "6674", "6456", "6614", "6860", "7579" ],
-    emcees: [ 6409 ]
+    performers: [ "5983", "6159", "6215", "6352", "6298", "6174", "6069", "6818" ],
+    emcees: [ 6534 ]
 }, {
     EventId: "7652",
     VenueId: "7609",
@@ -4900,35 +4888,19 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     performers: [ "5813", "5906", "5774", "6483", "5895", "7581", "6804", "6611" ],
     emcees: [ 6474 ]
 }, {
-    EventId: "7914",
-    VenueId: "7618",
-    Name: "MailChimp Stage at the White Owl Social Club Closing Show",
+    EventId: "7783",
+    VenueId: "7612",
+    Name: "Lance Bangs Presents: Come Laugh With Us",
     StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
     EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "6144",
+    MCId: "",
     Cost: "$20",
     ShowId: "",
-    id: "7914",
-    venue: "7618",
+    id: "7783",
+    venue: "7612",
     start_time: "2014-05-12T05:00:00.000Z",
     end_time: "2014-05-12T06:30:00.000Z",
-    performers: [ "6735", "7785", "6123", "6014", "6825", "6816", "6371" ],
-    emcees: [ 6144 ]
-}, {
-    EventId: "7738",
-    VenueId: "7619",
-    Name: "Analog Theater Closing Show",
-    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "6534",
-    Cost: "$15",
-    ShowId: "",
-    id: "7738",
-    venue: "7619",
-    start_time: "2014-05-12T05:00:00.000Z",
-    end_time: "2014-05-12T06:30:00.000Z",
-    performers: [ "5983", "6159", "6215", "6352", "6298", "6174", "6069", "6818" ],
-    emcees: [ 6534 ]
+    performers: [ "7882", "6312", "7896", "6824", "7881", "7595" ]
 }, {
     EventId: "7727",
     VenueId: "7617",
@@ -4944,20 +4916,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T06:00:00.000Z",
     performers: []
 }, {
-    EventId: "7783",
-    VenueId: "7612",
-    Name: "Lance Bangs Presents: Come Laugh With Us",
-    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-    MCId: "",
-    Cost: "$20",
-    ShowId: "",
-    id: "7783",
-    venue: "7612",
-    start_time: "2014-05-12T05:00:00.000Z",
-    end_time: "2014-05-12T06:30:00.000Z",
-    performers: [ "7882", "6312", "7896", "6824", "7881", "7595" ]
-}, {
     EventId: "7687",
     VenueId: "7613",
     Name: "Sizzle Pie Stage at the Eagles Lodge Closing Show",
@@ -4972,6 +4930,52 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     end_time: "2014-05-12T06:30:00.000Z",
     performers: [ "5805", "6727", "5728", "5951", "6861", "5739", "6608", "6723", "6833" ],
     emcees: [ 6699 ]
+}, {
+    EventId: "7913",
+    VenueId: "7615",
+    Name: "Hawthorne Theatre Closing Show",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "6409",
+    Cost: "$20",
+    ShowId: "",
+    id: "7913",
+    venue: "7615",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "6640", "6476", "6591", "6674", "6456", "6614", "6860", "7579" ],
+    emcees: [ 6409 ]
+}, {
+    EventId: "7914",
+    VenueId: "7618",
+    Name: "MailChimp Stage at the White Owl Social Club Closing Show",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "6144",
+    Cost: "$20",
+    ShowId: "",
+    id: "7914",
+    venue: "7618",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "6735", "7785", "6123", "6134", "6825", "6014", "6371", "6816" ],
+    emcees: [ 6144 ]
+}, {
+    EventId: "7661",
+    VenueId: "7611",
+    Name: "Prompter",
+    StartTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    EndTime: "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+    MCId: "7802",
+    Cost: "$20",
+    ShowId: "6891",
+    show: "6891",
+    id: "7661",
+    venue: "7611",
+    start_time: "2014-05-12T05:00:00.000Z",
+    end_time: "2014-05-12T06:30:00.000Z",
+    performers: [ "7775", "6858", "7595", "7883" ],
+    emcees: [ 7802 ]
 }, {
     EventId: "7728",
     VenueId: "7617",
@@ -5064,7 +5068,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 80,
     id: "7881",
     pageUrl: "7881-james-adomian",
-    events: [ "7645", "7744", "7783", "7796", "7804", "7806", "7807" ],
+    events: [ "7645", "7783", "7796", "7804", "7806", "7807", "8631" ],
     mc_events: []
 }, {
     Name: "Wil Anderson",
@@ -5115,6 +5119,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7803",
     pageUrl: "7803-paul-provenza",
     events: [ "7677" ],
+    mc_events: [ "7671" ]
+}, {
+    Name: "Sean Patton",
+    Bio: "<p>Sean Patton is a comedian based in Los Angeles and New York, by way of New Orleans. Sean began doing standup in the Crescent City, and has since performed in comedy clubs across the US and Canada. Sean also performed at The Melbourne International Comedy Festival (2011), and twice at Montreal’s Just for Laughs Comedy Festival (2008, 2010). In the TV world, Sean has appeared on Comedy Central's Live at Gotham (2009), Late night with Jimmy Fallon (2010), and twice on Conan (2011, 2013). 2013 also marked the release of his own Comedy Central Half Hour Special. As for acting, Sean played a guest starring role on IFC’s Maron and a co-starring role on Comedy Central’s Inside Amy Schumer. Sean also shot an unscripted travel pilot in 2013 for The Esquire Network, entitled Best Bars in America. The show has been picked up for 10 episodes and will shoot over spring 2014.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/seanpatton.jpg",
+    PerformerId: "6859",
+    SortOrder: 100,
+    id: "6859",
+    pageUrl: "6859-sean-patton",
+    events: [ "7622", "7659", "7671", "7703", "7742", "7805" ],
     mc_events: []
 }, {
     Name: "Lance Bangs",
@@ -5127,16 +5141,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7669", "7783" ],
     mc_events: []
 }, {
-    Name: "Sean Patton",
-    Bio: "<p>Sean Patton is a comedian based in Los Angeles and New York, by way of New Orleans. Sean began doing standup in the Crescent City, and has since performed in comedy clubs across the US and Canada. Sean also performed at The Melbourne International Comedy Festival (2011), and twice at Montreal’s Just for Laughs Comedy Festival (2008, 2010). In the TV world, Sean has appeared on Comedy Central's Live at Gotham (2009), Late night with Jimmy Fallon (2010), and twice on Conan (2011, 2013). 2013 also marked the release of his own Comedy Central Half Hour Special. As for acting, Sean played a guest starring role on IFC’s Maron and a co-starring role on Comedy Central’s Inside Amy Schumer. Sean also shot an unscripted travel pilot in 2013 for The Esquire Network, entitled Best Bars in America. The show has been picked up for 10 episodes and will shoot over spring 2014.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/seanpatton.jpg",
-    PerformerId: "6859",
-    SortOrder: 100,
-    id: "6859",
-    pageUrl: "6859-sean-patton",
-    events: [ "7622", "7659", "7671", "7703", "7742", "7805" ],
-    mc_events: []
-}, {
     Name: "Jamie Lee",
     Bio: "<p>Named one of the Top Five Comedians Who Should Be Movie Stars by Nerve.com and one of the Top 18 Women You Should Be Following On Twitter by Huffington Post, Jamie Lee is an unstoppable force in comedy, and a currently a cast member on the hit MTV series &quot;Girl Code&quot; and writer for the TBS late night show The Pete Holmes Show.</p>\n<p>Jamie’s standup appeared recently on TBS’s “Conan” and Comedy Central’s “John Oliver’s New York Stand Up Show”. Jamie was a semi-finalist on NBC&#039;s Last Comic Standing co-hosted the first annual Critics Choice Awards for Vh1.com and appeared on E!’s “Chelsea Lately”, TBS’s “The Pete Holmes Show”, Vh1’s &quot;Undateable&quot;, TruTV&#039;s &quot;World&#039;s Dumbest&quot;, MTV’s “Money From Strangers”, Yahoo’s “Mansome,” and performed stand-up on TV Guide&#039;s all-female comedy series &quot;Stand Up in Stilettos.&quot; She’s additionally written for Rob Dyrdek&#039;s MTV series Ridiculousness.</p>\n<p>Jamie&#039;s acting experience ranges from national commercials to web series to feature film. Kid Farm a parody of TLC&#039;s &quot;19 Kids and Counting&quot; that Lee created with Front Page Films, was featured on HuffingtonPost.com, ComedyCentral.com and BestWeekEver.tv - not to mention tweeted with praise by acclaimed screen writer Diablo Cody. It is now an original series on Comedy Central&#039;s CCstudios.com. Jamie will also be starring in the upcoming web series “Love’s A Bitch” for Official Comedy.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jamie_lee_girl_code_small.jpg",
@@ -5145,16 +5149,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6014",
     pageUrl: "6014-jamie-lee",
     events: [ "7645", "7663", "7749", "7796", "7914" ],
-    mc_events: []
-}, {
-    Name: "W. Kamau Bell",
-    Bio: "<p>Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour FX comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 and became a critically acclaimed but criminally short nightly show in September of 2013 on FX’s new comedy network FXX. The NY Times called Kamau “the most promising new talent in political comedy in many years.” The show was nominated for “Best Talk Series” at the 2012 NAACP Image Awards and Salon.com listed Kamau on their “Sexiest Men of 2012” list, calling the series “surreptitiously revolutionary in its effortless diversity and humanism.” The San Francisco Chronicle raved, “it makes The Daily Show seem like something your dad watches.” Totally Biased was executive produced by Chris Rock, who became a fan after seeing a performance of Kamau’s one man show.</p>\n<p>In 2010, Kamau released his second stand up album, Face Full of Flour, which was named one of the Top 10 Best Comedy Albums of the year by iTunes and Punchline Magazine. His first album One Night Only was released in 2007. Also in 2007 he developed his one-man show The W. Kamau Bell Curve: Ending Racism in About An Hour, which received rave reviews from audiences, critics, and industry insiders. The show was a comedy pick in The Guardian during its 2011 run at the Edinburgh Fringe Festival, a Time Out NY critic’s pick in the 2010 NY Comedy Festival, and played to sold-out audiences in the 2009 NY International Fringe Festival.</p>\n<p>Kamau sits on the board of Race Forward, a racial justice think tank and home for media and activism, and Hollaback, a non-profit and movement to end street harassment. He has been featured on several of the biggest comedy podcasts including WTF with Marc Maron, Comedy &amp; Everything Else, Citizen Radio, The Sound of Young America, and Jordan, Jesse, GO!, and is a regular correspondent on The War Room on Current TV.</p>\n<p>Praised by Punchline Magazine as “one of our nation’s most adept racial commentators with a blistering wit,” Kamau was voted San Francisco’s best comedian by the SF Weekly, the SF Bay Guardian, and 7×7 Magazine. Robin Williams calls Kamau “ferociously funny,” and Vernon Reid of the band Living Colour offers “W. Kamau Bell is in the vanguard of a new era of American comedy for an unsettling, troubling, and strangely hopeful time. Firmly in the fearless tradition of Mort Sahl, Lenny Bruce, Richard Pryor, and Chris Rock. Comedy as common sense purged of the absurd hypocrisy that is Our America.” The SF Weekly called Kamau “smart, stylish, and very much in the mold of politically outspoken comedians like Dave Chappelle,” though he was more excited that they called him “handsome.”</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kamaubell.jpg",
-    PerformerId: "7895",
-    SortOrder: 110,
-    id: "7895",
-    pageUrl: "7895-w-kamau-bell",
-    events: [ "7637", "7666", "7702", "7733" ],
     mc_events: []
 }, {
     Name: "Henry Phillips",
@@ -5167,6 +5161,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7621", "7624", "7625", "7651", "7734", "7810", "7913" ],
     mc_events: []
 }, {
+    Name: "W. Kamau Bell",
+    Bio: "<p>Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour FX comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 and became a critically acclaimed but criminally short nightly show in September of 2013 on FX’s new comedy network FXX. The NY Times called Kamau “the most promising new talent in political comedy in many years.” The show was nominated for “Best Talk Series” at the 2012 NAACP Image Awards and Salon.com listed Kamau on their “Sexiest Men of 2012” list, calling the series “surreptitiously revolutionary in its effortless diversity and humanism.” The San Francisco Chronicle raved, “it makes The Daily Show seem like something your dad watches.” Totally Biased was executive produced by Chris Rock, who became a fan after seeing a performance of Kamau’s one man show.</p>\n<p>In 2010, Kamau released his second stand up album, Face Full of Flour, which was named one of the Top 10 Best Comedy Albums of the year by iTunes and Punchline Magazine. His first album One Night Only was released in 2007. Also in 2007 he developed his one-man show The W. Kamau Bell Curve: Ending Racism in About An Hour, which received rave reviews from audiences, critics, and industry insiders. The show was a comedy pick in The Guardian during its 2011 run at the Edinburgh Fringe Festival, a Time Out NY critic’s pick in the 2010 NY Comedy Festival, and played to sold-out audiences in the 2009 NY International Fringe Festival.</p>\n<p>Kamau sits on the board of Race Forward, a racial justice think tank and home for media and activism, and Hollaback, a non-profit and movement to end street harassment. He has been featured on several of the biggest comedy podcasts including WTF with Marc Maron, Comedy &amp; Everything Else, Citizen Radio, The Sound of Young America, and Jordan, Jesse, GO!, and is a regular correspondent on The War Room on Current TV.</p>\n<p>Praised by Punchline Magazine as “one of our nation’s most adept racial commentators with a blistering wit,” Kamau was voted San Francisco’s best comedian by the SF Weekly, the SF Bay Guardian, and 7×7 Magazine. Robin Williams calls Kamau “ferociously funny,” and Vernon Reid of the band Living Colour offers “W. Kamau Bell is in the vanguard of a new era of American comedy for an unsettling, troubling, and strangely hopeful time. Firmly in the fearless tradition of Mort Sahl, Lenny Bruce, Richard Pryor, and Chris Rock. Comedy as common sense purged of the absurd hypocrisy that is Our America.” The SF Weekly called Kamau “smart, stylish, and very much in the mold of politically outspoken comedians like Dave Chappelle,” though he was more excited that they called him “handsome.”</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kamaubell.jpg",
+    PerformerId: "7895",
+    SortOrder: 110,
+    id: "7895",
+    pageUrl: "7895-w-kamau-bell",
+    events: [ "7637", "7702", "7733", "8632" ],
+    mc_events: []
+}, {
     Name: "Aparna Nancherla",
     Bio: "<p>Aparna started out doing comedy in her hometown of Washington, D.C. and currently resides in New York City, where most recently she was a writer and regular correspondent on FX’s &quot;Totally Biased with W. Kamau Bell.&quot;  She is an alumna of the NBC Stand Up for Diversity program, and in 2013 was one of the breakout New Faces at the prestigious Just For Laughs Festival in Montreal.  She has performed all over the US including Portland’s Bridgetown Comedy Festival, SF Sketchfest, Bentzen Ball, Aspen’s Rooftop Comedy Festival, and The Great American Comedy Festival.  She has also been a contributing writer for NPR, Reader’s Digest, The Huffington Post, The Washington Post Magazine, XM Radio, and Slate V.  She can regularly be seen performing at the Upright Citizen’s Brigade’s in LA and NYC.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/aparna_nancherla_headshot.jpg",
@@ -5175,6 +5179,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6823",
     pageUrl: "6823-aparna-nancherla",
     events: [ "7641", "7645", "7646", "7651", "7659", "7679", "7810" ],
+    mc_events: []
+}, {
+    Name: "Nate Bargatze",
+    Bio: "<p>Nate Bargatze has had two late night appearance on Late Night with Jimmy Fallon, four appearances on Conan and had his own Comedy Central Presents in 2011. He has written for Spike TV&#039;s Video Game Awards and received critical acclaim at the Montreal Comedy Festival multiple years. When he isn&#039;t winning comedy festivals in both New York and Boston, performing at Bonnaroo, or on tour with Jimmy Fallon&#039;s &quot;Clean Cut Comedy Tour,&quot; he might just be performing for troops in Iraq, which he has done five times. His debut comedy album &quot;Yelled at by a Clown&quot; reached #1 on the iTunes comedy charts.  Nate was also featured as one of Esquire&#039;s Best New Comedians of 2012, as one of Marc Maron&#039;s comedians to watch in Rolling Stone and in Paste Magazine, and as one of the 10 Comedians Who Deserve Their Own TV Show on CoolMaterial.com.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/nate_bargatze.jpg",
+    PerformerId: "6374",
+    SortOrder: 120,
+    id: "6374",
+    pageUrl: "6374-nate-bargatze",
+    events: [ "7645", "7695", "7699", "7749" ],
     mc_events: []
 }, {
     Name: "Alice Wetterlund",
@@ -5207,14 +5221,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7623", "7625", "7632", "7645", "7646", "7740" ],
     mc_events: []
 }, {
-    Name: "Nate Bargatze",
-    Bio: "<p>Nate Bargatze has had two late night appearance on Late Night with Jimmy Fallon, four appearances on Conan and had his own Comedy Central Presents in 2011. He has written for Spike TV&#039;s Video Game Awards and received critical acclaim at the Montreal Comedy Festival multiple years. When he isn&#039;t winning comedy festivals in both New York and Boston, performing at Bonnaroo, or on tour with Jimmy Fallon&#039;s &quot;Clean Cut Comedy Tour,&quot; he might just be performing for troops in Iraq, which he has done five times. His debut comedy album &quot;Yelled at by a Clown&quot; reached #1 on the iTunes comedy charts.  Nate was also featured as one of Esquire&#039;s Best New Comedians of 2012, as one of Marc Maron&#039;s comedians to watch in Rolling Stone and in Paste Magazine, and as one of the 10 Comedians Who Deserve Their Own TV Show on CoolMaterial.com.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/nate_bargatze.jpg",
-    PerformerId: "6374",
-    SortOrder: 120,
-    id: "6374",
-    pageUrl: "6374-nate-bargatze",
-    events: [ "7645", "7695", "7699", "7749" ],
+    Name: "Adam Newman",
+    Bio: "<p>Adam Newman is a New Hampshire-born, Georgia-schooled, Brooklyn-based comedian who has appeared on the Late Show with David Letterman and John Oliver&#039;s New York Stand-Up Show on Comedy Central. He was among Comedy Central&#039;s first class of &quot;Comics to Watch&quot; and later performed as a &quot;New Face&quot; at the prestigious Just for Laughs Comedy Festival in Montreal. His critically acclaimed debut stand-up CD, &quot;Not for Horses,&quot; was released by Rooftop Comedy. </p>\n<p>Adam&#039;s TV appearances include MTV&#039;s &quot;The CollegeHumor Show,&quot; various talking head shows on the TV Guide Network, the Tyra Banks Show (weird!), and dozens of CollegeHumor Originals on CollegeHumor.com.  Adam hosts the popular &quot;BIG LONG SETS&quot; at NYC&#039;s Upright Citizens Brigade Theatre, and &quot;Butt Talk,&quot; the world&#039;s #1 Number 2 podcast.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/newman_kylemakrauer.jpg",
+    PerformerId: "6069",
+    SortOrder: 125,
+    id: "6069",
+    pageUrl: "6069-adam-newman",
+    events: [ "7663", "7738", "7745", "7951" ],
     mc_events: []
 }, {
     Name: "Adrienne Iapalucci",
@@ -5224,17 +5238,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 125,
     id: "6611",
     pageUrl: "6611-adrienne-iapalucci",
-    events: [ "7627", "7652", "7915", "7919", "8579" ],
-    mc_events: []
-}, {
-    Name: "Adam Newman",
-    Bio: "<p>Adam Newman is a New Hampshire-born, Georgia-schooled, Brooklyn-based comedian who has appeared on the Late Show with David Letterman and John Oliver&#039;s New York Stand-Up Show on Comedy Central. He was among Comedy Central&#039;s first class of &quot;Comics to Watch&quot; and later performed as a &quot;New Face&quot; at the prestigious Just for Laughs Comedy Festival in Montreal. His critically acclaimed debut stand-up CD, &quot;Not for Horses,&quot; was released by Rooftop Comedy. </p>\n<p>Adam&#039;s TV appearances include MTV&#039;s &quot;The CollegeHumor Show,&quot; various talking head shows on the TV Guide Network, the Tyra Banks Show (weird!), and dozens of CollegeHumor Originals on CollegeHumor.com.  Adam hosts the popular &quot;BIG LONG SETS&quot; at NYC&#039;s Upright Citizens Brigade Theatre, and &quot;Butt Talk,&quot; the world&#039;s #1 Number 2 podcast.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/newman_kylemakrauer.jpg",
-    PerformerId: "6069",
-    SortOrder: 125,
-    id: "6069",
-    pageUrl: "6069-adam-newman",
-    events: [ "7663", "7738", "7745", "7951" ],
+    events: [ "7652", "7915", "7919", "8579", "8633" ],
     mc_events: []
 }, {
     Name: "Matt Kirshen",
@@ -5254,7 +5258,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 125,
     id: "6123",
     pageUrl: "6123-christian-duguay",
-    events: [ "7622", "7627", "7639", "7660", "7678", "7914" ],
+    events: [ "7622", "7639", "7660", "7678", "7914", "8633" ],
     mc_events: []
 }, {
     Name: "Jon Daly",
@@ -5274,7 +5278,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 125,
     id: "6835",
     pageUrl: "6835-hari-kondabolu",
-    events: [ "7666", "7688", "7740", "7749", "7916" ],
+    events: [ "7688", "7740", "7749", "7916", "8632" ],
     mc_events: []
 }, {
     Name: "Baron Vaughn",
@@ -5377,16 +5381,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7625", "7663", "7749", "7796", "7805", "7914" ],
     mc_events: []
 }, {
-    Name: "Dwight Slade",
-    Bio: '<p>Part man, part ageless boy; comedian Dwight Slade has the privilege of being a comedy legend in American stand up.  The winner of the 2008 Boston Comedy Festival, Slade combines an intelligent, raging voice of justice with the snickering attitude of a high school prankster. He gives the impression of a man on a journey who enjoys nothing more than making fun of everything along the way.</p>\n<p>The 90’s found Dwight moving into new arenas of creativity.  Radio station KXL-AM billed him as “The Northwest’s Most Dangerous Mind” as he became a noted talk radio personality who used humor instead of rage to engage listeners.  He released two comedy CD’s on Humor Ink recordings, "Weird State," and “Shut-up.”</p>\n<p>Slade’s feature film debut came in 2000 in the movie “Inconceivable,” which enjoyed a run on Showtime and Lifetime.  Slade also co-starred in the gritty family drama, “My Way Home” which won the Platinum Award at the 2001 Houston International Film Festival. Since then, Slade has made appearances in three feature films including the soon to be released James Westby film, “Rid Of Me.”</p>\n<p>In 2002, Slade became the first stand-up to make appearances at the three major North American Comedy Festivals: Aspen, Chicago and Montreal.  On the heels of his performances, Slade signed a development deal with Warner Brothers Television.  Slade was chosen to appear on HBO’s “Best of the US Comedy Arts Festival” and made an appearance on Comedy Central’s Premium Blend.</p>\n<p>Slade’s stand-up has gained international stature after earning a five star review from Scotland’s Minister of Culture at the prestigious Edinburgh Fringe Festival and appearances at the Montreal Just For Laughs Festival.   He followed this with a tour in Afghanistan performing for US Troops, a tour of Israel. After a stellar performance at the 2008 Comedy Festival in Las Vegas, Slade was chosen to appear on a Tonight Show feature. </p>\n<p>Slade’s comedy special “Right &amp; Raunch” is now available on DVD.</p>\n',
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dwightslade.jpg",
-    PerformerId: "6864",
-    SortOrder: 175,
-    id: "6864",
-    pageUrl: "6864-dwight-slade",
-    events: [ "7650", "7740", "7808", "7915" ],
-    mc_events: []
-}, {
     Name: "Mary Mack",
     Bio: "<p>Folk humorist and comedian Mary Mack is a favorite on radio shows and podcasts around the country, including Marc Maron&#039;s WTF Podcast, The Bob and Tom Show, and American Public Media&#039;s WITS live show and podcast.  Her comedy (spotted with occasional mandolin or clarinet outbursts) has  been seen in the Vancouver Comedy Fest, The Andy Kaufman Awards, Montreal’s Just For Laughs Festival, and the San Francisco Sketch Fest as one of &quot;The Dozen&quot; up and coming headliners designated by the festival.  She is a main voice on Fox&#039;s new late night ADHD cartoon &quot;Golan the Insatiable.&quot;  Mack divides her time among Los Angeles,  Minneapolis, and a camper in the woods in Northern Wisconsin.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/mary_mack.jpg",
@@ -5404,7 +5398,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 175,
     id: "6839",
     pageUrl: "6839-james-davis",
-    events: [ "7656", "7730", "7733" ],
+    events: [ "7703", "7730", "7733" ],
     mc_events: [ "7694" ]
 }, {
     Name: "Billy Wayne Davis",
@@ -5414,17 +5408,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 175,
     id: "6029",
     pageUrl: "6029-billy-wayne-davis",
-    events: [ "7623", "7627", "7699", "7737", "7951" ],
-    mc_events: []
-}, {
-    Name: "Amber Tozer ",
-    Bio: "<p>Amber Tozer is a stand up comic, writer, and actress living in Los Angeles.  She has built a Twitter following of over 35K users, and her witty tweets have been featured on shows such as Jimmy Fallon, and Ellen among others. She co-created #nitTWITS, a Twitter-based web series, which features writers and performers from SNL, Modern Family, The Office, and Conan. Amber has written for Cartoon Network&#039;s animated sketch series MAD, and Adult Swim&#039;s Moral Orel. Tozer has also made appearences on Last Comic Standing, and in the Montreal Just for Laughs Festival. She recently inked a development deal with FOX ADHD for an animated series based on her life!</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/ambertozer.jpg",
-    PerformerId: "6608",
-    SortOrder: 175,
-    id: "6608",
-    pageUrl: "6608-amber-tozer-",
-    events: [ "7621", "7687", "7752", "7916" ],
+    events: [ "7623", "7699", "7737", "7951", "8633" ],
     mc_events: []
 }, {
     Name: "Auggie Smith",
@@ -5437,6 +5421,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7658", "7690", "7702", "7734", "7746", "7808" ],
     mc_events: []
 }, {
+    Name: "Amber Tozer ",
+    Bio: "<p>Amber Tozer is a stand up comic, writer, and actress living in Los Angeles.  She has built a Twitter following of over 35K users, and her witty tweets have been featured on shows such as Jimmy Fallon, and Ellen among others. She co-created #nitTWITS, a Twitter-based web series, which features writers and performers from SNL, Modern Family, The Office, and Conan. Amber has written for Cartoon Network&#039;s animated sketch series MAD, and Adult Swim&#039;s Moral Orel. Tozer has also made appearences on Last Comic Standing, and in the Montreal Just for Laughs Festival. She recently inked a development deal with FOX ADHD for an animated series based on her life!</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/ambertozer.jpg",
+    PerformerId: "6608",
+    SortOrder: 175,
+    id: "6608",
+    pageUrl: "6608-amber-tozer-",
+    events: [ "7621", "7687", "7752", "7916" ],
+    mc_events: []
+}, {
     Name: "Tony Camin",
     Bio: "<p>Tony has appeared on Late Night with Conan O&#039;Brien, Jimmy Kimmel Live, Real Time with Bill Maher, and lots of other shows that have been cancelled. He&#039;s has performed at The Just For Laughs Festival in Montreal as well as The HBO US Comedy Arts Festival in Aspen, as well as the Melbourne Comedy festival in Australia. As an in-demand writer of awesome &quot;comedic&quot; humor, Tony has written on programs for NBC, VH1, and Comedy Central. All of which have been cancelled. He&#039;s is also a co-creator, and performer of the hit off -Broadway play, The Marijuana-Logues, and was recently seen as a ‎correspondent on The Media Project for IFC.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/_dsf0829nnnttt.jpg",
@@ -5447,16 +5441,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7628", "7679", "7694", "7915" ],
     mc_events: [ "7703" ]
 }, {
-    Name: "Mark Normand",
-    Bio: "<p>So far in 2013, Mark has appeared on TBS’s CONAN, Comedy Central’s INSIDE AMY SCHUMER, MTV Other’s INSIDE JOKE, TruTV’s WORLD’S DUMBEST, was named the Village Voice’s best comedian of 2013, won Carolines March Madness competition, beating out 63 other comedians, and taped a stand-up set at the Just For Laughs festival in Montreal as one of the festival’s New Faces. In 2012, Mark appeared on “John Oliver’s New York Standup Show” on Comedy Central, and taped the pilot of “Best Week Ever” for Vh1, and previously appeared on the most recent season of “Last Comic Standing” for NBC. Mark is also an accomplished writer, with recent shorts appearing on sites such as MSN and The Huffington Post.</p>\n<p>Mark was born and raised in New Orleans, LA to two surprisingly normal parents. As a kid he spent most of his time shooting short films and wetting the bed. Mark started doing comedy right after college and quickly moved to New York. Mark now does comedy clubs and colleges across the country and has been involved in many festivals including Portland, Seattle, DC, Boston, and was featured at the Montreal Comedy Festival.</p>\n<p>In NYC Mark now runs two comedy shows, one of which is recorded for a popular podcast called &#039;We&#039;re all Friends Here&#039; on Breakthruradio.com; the other “Hot Soup” runs at Irish Exit on the east side. Mark was named one of Comedy Central’s Comics To Watch for the 2011 New York Comedy Festival. Mark was also named to Esquire’s “Best New Comedians 2012”, Splitsider’s “Top 10 Up and Coming Comedians on Each Coast”, and Time Out New York’s “21 New York Comedy Scene Linchpins” and Paste Magazine’s #1 “Most Underrated Stand Up Comedian of 2013”.</p>\n<p>Mark still lives in New York City.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/mark-normand4074-2.jpg",
-    PerformerId: "6822",
-    SortOrder: 175,
-    id: "6822",
-    pageUrl: "6822-mark-normand",
-    events: [ "7624", "7746", "7796", "7918" ],
-    mc_events: []
-}, {
     Name: "Jesse Case",
     Bio: '<p>Jesse Case (1986-2053) was a well known professional comedian and amateur geneticist from Nashville, Tennessee. The son of a songwriter and a doctor, Case grew up with a love of word-play and bodily functions. In 2008 he appeared on then popular television series, “Last Comic Standing.” Shortly after, he won the Rocky Mountain Laugh-Off, and continued to tour around America. His comedy has been described by the press as "hilariously dark," with such highlights in print as "had me in tears from beginning to end" and "not for me. He doesn\'t do it right." In early 2010, he launched a podcast, "The Last Resort with Jesse Case," the first radio show in history to feature a robot co-host. Later that year he appeared at the Just For Laughs Comedy Festival in Montreal to rave reviews. The following Spring he became the first man to successfully breed a pig and a head of lettuce, which gave birth to a baby Chef\'s Salad. He is survived by 7 wives, 19 children, and 1 grandson, who is also his nephew. He will be missed.</p>\n',
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jessecase.jpg",
@@ -5464,7 +5448,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 175,
     id: "6861",
     pageUrl: "6861-jesse-case",
-    events: [ "7642", "7687", "7916", "7918" ],
+    events: [ "7642", "7654", "7687", "7916", "7918" ],
     mc_events: []
 }, {
     Name: "Ryan Sickler",
@@ -5477,6 +5461,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7668", "7679", "7749" ],
     mc_events: []
 }, {
+    Name: "Mark Normand",
+    Bio: "<p>So far in 2013, Mark has appeared on TBS’s CONAN, Comedy Central’s INSIDE AMY SCHUMER, MTV Other’s INSIDE JOKE, TruTV’s WORLD’S DUMBEST, was named the Village Voice’s best comedian of 2013, won Carolines March Madness competition, beating out 63 other comedians, and taped a stand-up set at the Just For Laughs festival in Montreal as one of the festival’s New Faces. In 2012, Mark appeared on “John Oliver’s New York Standup Show” on Comedy Central, and taped the pilot of “Best Week Ever” for Vh1, and previously appeared on the most recent season of “Last Comic Standing” for NBC. Mark is also an accomplished writer, with recent shorts appearing on sites such as MSN and The Huffington Post.</p>\n<p>Mark was born and raised in New Orleans, LA to two surprisingly normal parents. As a kid he spent most of his time shooting short films and wetting the bed. Mark started doing comedy right after college and quickly moved to New York. Mark now does comedy clubs and colleges across the country and has been involved in many festivals including Portland, Seattle, DC, Boston, and was featured at the Montreal Comedy Festival.</p>\n<p>In NYC Mark now runs two comedy shows, one of which is recorded for a popular podcast called &#039;We&#039;re all Friends Here&#039; on Breakthruradio.com; the other “Hot Soup” runs at Irish Exit on the east side. Mark was named one of Comedy Central’s Comics To Watch for the 2011 New York Comedy Festival. Mark was also named to Esquire’s “Best New Comedians 2012”, Splitsider’s “Top 10 Up and Coming Comedians on Each Coast”, and Time Out New York’s “21 New York Comedy Scene Linchpins” and Paste Magazine’s #1 “Most Underrated Stand Up Comedian of 2013”.</p>\n<p>Mark still lives in New York City.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/mark-normand4074-2.jpg",
+    PerformerId: "6822",
+    SortOrder: 175,
+    id: "6822",
+    pageUrl: "6822-mark-normand",
+    events: [ "7624", "7746", "7796", "7918" ],
+    mc_events: []
+}, {
     Name: "David Smithyman",
     Bio: "<p>Failing to ever fulfill his true potential as a child actor, David Smithyman moved from Australia to New York City in 2004. Since then, he has performed in numerous showcases for IFC, MTV, and Comedy Central, in addition to representing NBC, first as a finalist in 2013&#039;s Stand Up For Diversity competition in Los Angeles, and then as a touring member of Stand Up NBC&#039;s national college tour. Currently, he works helping kids write their own stand-up at Gotham Comedy club as part of the Kids ’n Comedy program.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_19.jpg",
@@ -5484,7 +5478,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 175,
     id: "6476",
     pageUrl: "6476-david-smithyman",
-    events: [ "7689", "7744", "7913", "7967" ],
+    events: [ "7689", "7913", "7967", "8631" ],
     mc_events: [ "7951" ]
 }, {
     Name: "Ian Karmel",
@@ -5497,24 +5491,24 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7645", "7646", "7648", "7667", "7783", "7807" ],
     mc_events: []
 }, {
-    Name: "Melissa Villasenor",
-    Bio: "<p>From Los Angeles, stand-up comedian and voice impressionist Melissa Villasenor is best known from Season 6 of &quot;America&#039;s Got Talent.&quot; She&#039;s done voices for &quot;Adventure Time&quot; and &quot;Family Guy.&quot; Her four song EP, &quot;Leap,&quot; is out on iTunes. Last year, her one person show &quot;Melissa!&quot; had a two month run at the Steve Allen Theater in Hollywood. It was directed and produced by comedian Ron Lynch.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/384251_513533271999012_1690821256_n.jpg",
-    PerformerId: "5998",
-    SortOrder: 200,
-    id: "5998",
-    pageUrl: "5998-melissa-villasenor",
-    events: [ "7638", "7675", "7740", "7741", "7804", "7809" ],
+    Name: "Dwight Slade",
+    Bio: '<p>Part man, part ageless boy; comedian Dwight Slade has the privilege of being a comedy legend in American stand up.  The winner of the 2008 Boston Comedy Festival, Slade combines an intelligent, raging voice of justice with the snickering attitude of a high school prankster. He gives the impression of a man on a journey who enjoys nothing more than making fun of everything along the way.</p>\n<p>The 90’s found Dwight moving into new arenas of creativity.  Radio station KXL-AM billed him as “The Northwest’s Most Dangerous Mind” as he became a noted talk radio personality who used humor instead of rage to engage listeners.  He released two comedy CD’s on Humor Ink recordings, "Weird State," and “Shut-up.”</p>\n<p>Slade’s feature film debut came in 2000 in the movie “Inconceivable,” which enjoyed a run on Showtime and Lifetime.  Slade also co-starred in the gritty family drama, “My Way Home” which won the Platinum Award at the 2001 Houston International Film Festival. Since then, Slade has made appearances in three feature films including the soon to be released James Westby film, “Rid Of Me.”</p>\n<p>In 2002, Slade became the first stand-up to make appearances at the three major North American Comedy Festivals: Aspen, Chicago and Montreal.  On the heels of his performances, Slade signed a development deal with Warner Brothers Television.  Slade was chosen to appear on HBO’s “Best of the US Comedy Arts Festival” and made an appearance on Comedy Central’s Premium Blend.</p>\n<p>Slade’s stand-up has gained international stature after earning a five star review from Scotland’s Minister of Culture at the prestigious Edinburgh Fringe Festival and appearances at the Montreal Just For Laughs Festival.   He followed this with a tour in Afghanistan performing for US Troops, a tour of Israel. After a stellar performance at the 2008 Comedy Festival in Las Vegas, Slade was chosen to appear on a Tonight Show feature. </p>\n<p>Slade’s comedy special “Right &amp; Raunch” is now available on DVD.</p>\n',
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dwightslade.jpg",
+    PerformerId: "6864",
+    SortOrder: 175,
+    id: "6864",
+    pageUrl: "6864-dwight-slade",
+    events: [ "7650", "7740", "7808", "7915" ],
     mc_events: []
 }, {
-    Name: "Byron Bowers",
-    Bio: "<p>Described by LA Weekly as “a comic who’s got big ideas and big plans to go big places,” Byron Bowers is a stand-up comedian and actor that has toured nationally with Dave Chappelle, Hannibal Buress, John Caparulo, and Eric Andre and The Eric Andre Show Live. </p>\n<p>He has appeared on the Eric Andre Show on Adult Swim, Comcast TV, and Comedy Central. His stand-up cable debut was on Comedy Central&#039;s &quot;Adam Devine&#039;s House Party&quot; and he can also be seen on the reboot of BET&#039;s &quot;Comic View&quot;. He has won the Big Sky International Comedy Competition and was named by LA Weekly as a “Comedy Act to Watch in 2013”. Byron was featured as New Face at the prestigious Just for Laughs Comedy Festival in 2013.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/byron_bowers_photo.jpg",
-    PerformerId: "6805",
+    Name: "Tim Harmston",
+    Bio: "<p>Acme early in his career, a well known headliner told him that &quot;You&#039;re kind of like an idiot, but with smart material&quot;. That winning combination has led to appearances on CBS’s Late Show with David Letterman, Comedy Central&#039;s Live at Gotham, the Bob and Tom radio show, and Wisconsin Public Radio. Tim has performed at the Rooftop Aspen Comedy Festival, the Great American Comedy Festival in Norfolk, NE, and the Laughing Skull Comedy Festival in Atlanta. Originally from Western Wisconsin, Tim now lives in Minneapolis. When he&#039;s not on stage, Tim enjoys making smart, idiotic videos for his website, timharmston.com.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/tim.harmston.image_.png",
+    PerformerId: "7568",
     SortOrder: 200,
-    id: "6805",
-    pageUrl: "6805-byron-bowers",
-    events: [ "7624", "7632", "7701", "7743", "7805" ],
+    id: "7568",
+    pageUrl: "7568-tim-harmston",
+    events: [ "7622", "7650", "7680", "7745" ],
     mc_events: []
 }, {
     Name: "Jensen Karp",
@@ -5527,15 +5521,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [],
     mc_events: [ "7639", "7645" ]
 }, {
-    Name: "Michael Busch",
-    Bio: "<p>Michael Busch is an actor/writer/producer originally from Mentor, Ohio. He is a regular performer at The Upright Citizens Brigade Theatre in Los Angeles and has also produced multiple shows including The Midnight Show and Nick's Big Talk Show with Nick Thune. Michael has written &amp; produced online content for sites including CC Studios, Above Average, College Humor, Nacho Punch, and Funny or Die. His acting credits include Human Giant, Community, Conan, Pretty Little Liars, and a series of Alltel commercials.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/michaelbusch.jpg",
-    PerformerId: "7773",
+    Name: "Dave Stone",
+    Bio: "<p>Based in Los Angeles by way of Atlanta, Dave made his television debut on “The Late Late Show with Craig Ferguson” in 2013, and in the same year was selected to the prestigious “New Faces” showcase at the Just For Laughs Comedy Festival in Montreal, as well as being named one of the “12 Comics to Watch” by L.A. Weekly Magazine. </p>\n<p>Dave can also be heard voicing several characters on Adult Swim’s hit animated series “Squidbillies” on the Cartoon Network and was a co-founding member of the nationally acclaimed “Beards of Comedy Tour”, who released their sophomore album “Cardio Mix” on Comedy Central Records in 2011. Since 2008, Dave has spent 175+ days a year on the road, sharing stages with some of the industry’s brightest stars, such as Brian Regan, Patton Oswalt, Maria Bamford, Marc Maron, Kyle Kinane and John Mulaney. Dave’s laid back and self-deprecating style make him a hit with a wide variety of audiences, transcending age, race, class, gender, height and weight.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dave_-_low-res_headshot.jpg",
+    PerformerId: "6325",
     SortOrder: 200,
-    id: "7773",
-    pageUrl: "7773-michael-busch",
-    events: [ "7741" ],
-    mc_events: []
+    id: "6325",
+    pageUrl: "6325-dave-stone",
+    events: [ "7622", "7697", "7745" ],
+    mc_events: [ "7916" ]
 }, {
     Name: "Mark Forward",
     Bio: "<p>From the start, comedian Mark Forward was a breakout talent. He was a finalist for the Phil Hartman Award for Best Up &amp; Coming Stand-up and Yuk Yuk’s Funniest New Comic in the year 2000. He kept on winning. He won the Canadian Comedy Award for Best Stand-up Newcomer in 2005 and the Homegrown Comic Competition at his first appearance at the prestigious Just For Laughs Festival in Montreal in 2006. In 2008 he won his second Canadian Comedy Award for Best Writing on a Series (The Jon Dore Television Show) and in 2012, he won his third Canadian Comedy Award, this time for Best Taped Live Performance (The Late Late Show with Craig Ferguson). This year he received two Canadian Comedy Award-nominations for Best Male Stand-up (his third nomination in this category) and Best Taped Live Performance and was nominated for NOW Magazine’s Best of Toronto Award for Best Male Stand-up.</p>\n<p>Forward is currently shooting his third season of &quot;Mr. D.&quot; He is a staff writer and plays the recurring character Mr. Leung on the hit CBC series. He wrapped production on the feature film &quot;No Stranger Than Love&quot; where he plays a principal role opposite Alison Brie, Justin Chatwin and Colin Hanks and is was featured on John Oliver’s New York Stand-Up Show (Comedy Central) and Just For Laughs: All Access (The Comedy Network) for which he received a Canadian Comedy Award-nomination.</p>\n<p>For two seasons, Forward was on the writing staff of &quot;The Jon Dore Television Show&quot; (The Comedy Network/IFC) and played a variety of characters on the show. </p>\n<p>Forward performs at festivals and headlines at clubs across the country including multiple appearances at the Just For Laughs Festival, the Ha!ifax ComedyFest and the Ottawa Blues Festival. </p>\n<p>He has appeared on The Late Late Show with Craig Ferguson (CBS), John Oliver New York Stand-Up show (Comedy Central) and starred in his own stand-up special Comedy Now! (CTV, The Comedy Network). He has made guest appearances on a number of television shows including Just for Laughs (CBC) for which he received a Canadian Comedy Award-nomination, Living in Your Car (TMN), Doc (PAX), The Newsroom (CBC) and Degrassi: The Next Generation (CTV). Selected film credits include The Rocker with Rainn Wilson, Josh Gad and Christina Applegate, Puck Hogs and Breakfast with Scott with Tom Cavanagh.</p>\n<p>Awards + Accolades<br />\n2013 Canadian Comedy Award-Nominee- Best Male Stand-up<br />\n2013 Canadian Comedy Award-Nominee-Best Taped Live Performance-Just for Laughs<br />\n2012 Canadian Comedy Award-Nominee-Best Male Stand-up<br />\n2012 Canadian Comedy Award Best Taped Live Performance -The Late Late Show<br />\n2011 NOMINATION: Canadian Comedy Award-nominee for Best Male Stand-up<br />\n2010 NOMINATION: Canadian Comedy Award-nominee for Best Taped Live Performance-Just For Laughs<br />\n2008: Canadian Comedy Award Best Writing Series-The Jon Dore Television Show<br />\n2006 WIN: Just For Laughs Homegrown Comic Competition<br />\n2005 WIN: Canadian Comedy Award for Best Stand-up Newcomer</p>\n",
@@ -5546,16 +5540,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "6614-mark-forward",
     events: [ "7624", "7658", "7743", "7913" ],
     mc_events: []
-}, {
-    Name: "Dave Stone",
-    Bio: "<p>Based in Los Angeles by way of Atlanta, Dave made his television debut on “The Late Late Show with Craig Ferguson” in 2013, and in the same year was selected to the prestigious “New Faces” showcase at the Just For Laughs Comedy Festival in Montreal, as well as being named one of the “12 Comics to Watch” by L.A. Weekly Magazine. </p>\n<p>Dave can also be heard voicing several characters on Adult Swim’s hit animated series “Squidbillies” on the Cartoon Network and was a co-founding member of the nationally acclaimed “Beards of Comedy Tour”, who released their sophomore album “Cardio Mix” on Comedy Central Records in 2011. Since 2008, Dave has spent 175+ days a year on the road, sharing stages with some of the industry’s brightest stars, such as Brian Regan, Patton Oswalt, Maria Bamford, Marc Maron, Kyle Kinane and John Mulaney. Dave’s laid back and self-deprecating style make him a hit with a wide variety of audiences, transcending age, race, class, gender, height and weight.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dave_-_low-res_headshot.jpg",
-    PerformerId: "6325",
-    SortOrder: 200,
-    id: "6325",
-    pageUrl: "6325-dave-stone",
-    events: [ "7622", "7697", "7745" ],
-    mc_events: [ "7916" ]
 }, {
     Name: "Erin Gibson",
     Bio: '<p>Erin Gibson is an expert at mixing social commentary, political satire, and frank sexual talk into nice, neat little comedy packages. Based in Los Angeles, she currently writes and directs for Funny or Die and co-hosts the award winning comedy podcast "Throwing Shade", which is now a web series on Funny or Die and an international touring live show. </p>\n<p>As an actress and comedian, she’s been seen on Chelsea Lately, The Kroll Show, Parks and Rec, Community, Key and Peele, and clip shows galore, but it was her stint as host and writer of "Modern Lady" on CurrentTV that she became involved in the fun world of gender politics. </p>\n<p>Please do not startle her. She will scream.</p>\n',
@@ -5584,7 +5568,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 200,
     id: "6646",
     pageUrl: "6646-karl-hess",
-    events: [ "7627", "7689", "7697" ],
+    events: [ "7689", "7697", "8633" ],
     mc_events: [ "7706" ]
 }, {
     Name: "Derek Smith",
@@ -5594,7 +5578,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 200,
     id: "6735",
     pageUrl: "6735-derek-smith",
-    events: [ "7685", "7688", "7706", "7914" ],
+    events: [ "7654", "7685", "7688", "7706", "7914" ],
     mc_events: []
 }, {
     Name: "Joselyn Hughes",
@@ -5604,7 +5588,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 200,
     id: "6205",
     pageUrl: "6205-joselyn-hughes",
-    events: [ "7622", "7632", "7742", "7815" ],
+    events: [ "7622", "7632", "7742", "7815", "8579" ],
     mc_events: []
 }, {
     Name: "Erin McGathy",
@@ -5625,7 +5609,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7802",
     pageUrl: "7802-troy-conrad",
     events: [],
-    mc_events: [ "7816", "7671", "7661" ]
+    mc_events: [ "8635", "7816", "7661" ]
 }, {
     Name: "Karinda Dobbins",
     Bio: "<p>Motor City native Karinda Dobbins was born into a politically active family of gifted storytellers and sharp wits. Her worldview was shaped by their accounts of protest, civil rights and empowerment, weighty subjects that were always leavened with humor. Whenever she heard the grownups laughing long past her bedtime, she took that as her cue to sneak out of her room and eavesdrop while they entertained themselves with Richard Pryor records. She not only listened, she learned, developing a relaxed style for delivering pungent commentary.</p>\n<p>Responding to a dare from a girlfriend who challenged her to try making the crowd laugh at an open mic, Karinda finally took the stage at Woody’s Café in Oakland, and killed. Sure, she tried to fill the seats with supportive family and friends, and true, she had no competition since nobody else had signed up for stage time, but everybody, from the show’s host to strangers in the audience, was amazed that she was able to do 15 funny minutes of stand-up material her first time onstage. (She’d shrewdly spent a month writing her act in preparation, never anticipating she’d be put under pressure to perform all of it at once.) </p>\n<p>Spurred on by the enthusiastic feedback, Karinda decided to see where comedy would take her and began honing her craft at more venues. To date, she has appeared at the Michigan Womyn’s Music Festival (MichFest); performed at Bay Area comedy clubs such as Tommy T’s, the Punch Line and Cobb’s; and headlined at San Francisco’s legendary Purple Onion. Karinda recently made her primetime national television debut on NickMom Night Out, a series of stand-up comedy showcases on Nickelodeon and she has opened for Greg Proops and W. Kamau Bell.</p>\n",
@@ -5634,27 +5618,17 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 200,
     id: "8015",
     pageUrl: "8015-karinda-dobbins",
-    events: [ "7666", "7711", "7733", "8579" ],
+    events: [ "7711", "7733", "8579", "8632" ],
     mc_events: []
 }, {
-    Name: "Bri Pruett",
-    Bio: "<p>Bri Pruett is a stand-up comic and improviser from Portland, Oregon.  She’s appeared at the Bridgetown Comedy Festival and the All Jane No Dick comedy festival.  She was recently named one of the &quot;Top 5 Funniest Comedians in Portland&quot; by Willamette Weekly.  In the fall of 2013, Bri was one of 35 comics selected from 1,300 applicants to perform in the Seattle International Comedy Competition.</p>\n<p>For eight years she’s worked with Action/Adventure Theater, a non-profit independent theater and black box venue that produced an original sketch show called &quot;Making Sex&quot; (in which The Portland Mercury said Bri showed, ”razor sharp comic timing”). She’s been the comedy sidekick and director and head writer for &quot;Late Night Action with Alex Falcone,&quot; a live, talk/variety show.</p>\n<p>She is a regular host and performer at Curious Comedy Theater and a regular player with improv singing-ensemble, Pipes.  Bri is the semi-weekly host of Curious Comedy’s Saturday Night showcase of Portland comics and special guests.  She is a regular MC for the Funhouse Follies Burlesque troupe.  She also writes a regular column for the Portland Mercury on sex and dating in Portland called, &quot;Let&#039;s Do It with Bri Pruett.&quot;</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/bricomedy10.jpg",
-    PerformerId: "6527",
+    Name: "Melissa Villasenor",
+    Bio: "<p>From Los Angeles, stand-up comedian and voice impressionist Melissa Villasenor is best known from Season 6 of &quot;America&#039;s Got Talent.&quot; She&#039;s done voices for &quot;Adventure Time&quot; and &quot;Family Guy.&quot; Her four song EP, &quot;Leap,&quot; is out on iTunes. Last year, her one person show &quot;Melissa!&quot; had a two month run at the Steve Allen Theater in Hollywood. It was directed and produced by comedian Ron Lynch.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/384251_513533271999012_1690821256_n.jpg",
+    PerformerId: "5998",
     SortOrder: 200,
-    id: "6527",
-    pageUrl: "6527-bri-pruett",
-    events: [ "7694", "7706", "7746", "7810" ],
-    mc_events: [ "8579", "7702" ]
-}, {
-    Name: "Laurie Kilmartin",
-    Bio: "<p>Laurie Kilmartin was a finalist on Last Comic Standing and has appeared on CONAN and Jimmy Kimmel Live. She is the co-author of the NYT bestseller &quot;Sh*tty Mom&quot; and is currently a staff writer on CONAN.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kilmartin_dion-1.jpg",
-    PerformerId: "7828",
-    SortOrder: 200,
-    id: "7828",
-    pageUrl: "7828-laurie-kilmartin",
-    events: [ "7672", "7734" ],
+    id: "5998",
+    pageUrl: "5998-melissa-villasenor",
+    events: [ "7638", "7675", "7740", "7741", "7804", "7809" ],
     mc_events: []
 }, {
     Name: "Kellen Erskine",
@@ -5667,24 +5641,24 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7623", "7752", "7919" ],
     mc_events: []
 }, {
-    Name: "Janet Varney",
-    Bio: "<p>Janet Varney is a comedian, actor, writer and producer. She spent seven wonderful years hosting TBS&#039;s &quot;Dinner and a Movie,” recurred on HBO&#039;s Entourage, was a series regular on the beloved E! and Yahoo series Burning Love seasons 1 and 3, and has made guest appearances in hit shows including How I Met Your Mother, Key and Peele, Psych, Bones, on the panel of Chelsea Lately, as a regular co-host on HuffPost Live, and has appeared in films such as Still Waiting, Drillbit Taylor and Judy Moody and the Not Bummer Summer. She is also the voice for the titular character on Nickelodeon&#039;s hit series The Legend of Korra. Janet is the host of the popular Nerdist podcast The JV Club and the co-founder, creative director and producer of SF Sketchfest, the San Francisco Comedy Festival, now in its 14th year.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/janet_headshot_2013.jpg",
-    PerformerId: "7820",
+    Name: "Bri Pruett",
+    Bio: "<p>Bri Pruett is a stand-up comic and improviser from Portland, Oregon.  She’s appeared at the Bridgetown Comedy Festival and the All Jane No Dick comedy festival.  She was recently named one of the &quot;Top 5 Funniest Comedians in Portland&quot; by Willamette Weekly.  In the fall of 2013, Bri was one of 35 comics selected from 1,300 applicants to perform in the Seattle International Comedy Competition.</p>\n<p>For eight years she’s worked with Action/Adventure Theater, a non-profit independent theater and black box venue that produced an original sketch show called &quot;Making Sex&quot; (in which The Portland Mercury said Bri showed, ”razor sharp comic timing”). She’s been the comedy sidekick and director and head writer for &quot;Late Night Action with Alex Falcone,&quot; a live, talk/variety show.</p>\n<p>She is a regular host and performer at Curious Comedy Theater and a regular player with improv singing-ensemble, Pipes.  Bri is the semi-weekly host of Curious Comedy’s Saturday Night showcase of Portland comics and special guests.  She is a regular MC for the Funhouse Follies Burlesque troupe.  She also writes a regular column for the Portland Mercury on sex and dating in Portland called, &quot;Let&#039;s Do It with Bri Pruett.&quot;</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/bricomedy10.jpg",
+    PerformerId: "6527",
     SortOrder: 200,
-    id: "7820",
-    pageUrl: "7820-janet-varney",
-    events: [ "7645", "7676" ],
-    mc_events: []
+    id: "6527",
+    pageUrl: "6527-bri-pruett",
+    events: [ "7694", "7706", "7746", "7810" ],
+    mc_events: [ "8579", "7702" ]
 }, {
-    Name: "Tim Harmston",
-    Bio: "<p>Acme early in his career, a well known headliner told him that &quot;You&#039;re kind of like an idiot, but with smart material&quot;. That winning combination has led to appearances on CBS’s Late Show with David Letterman, Comedy Central&#039;s Live at Gotham, the Bob and Tom radio show, and Wisconsin Public Radio. Tim has performed at the Rooftop Aspen Comedy Festival, the Great American Comedy Festival in Norfolk, NE, and the Laughing Skull Comedy Festival in Atlanta. Originally from Western Wisconsin, Tim now lives in Minneapolis. When he&#039;s not on stage, Tim enjoys making smart, idiotic videos for his website, timharmston.com.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/tim.harmston.image_.png",
-    PerformerId: "7568",
+    Name: "Michael Busch",
+    Bio: "<p>Michael Busch is an actor/writer/producer originally from Mentor, Ohio. He is a regular performer at The Upright Citizens Brigade Theatre in Los Angeles and has also produced multiple shows including The Midnight Show and Nick's Big Talk Show with Nick Thune. Michael has written &amp; produced online content for sites including CC Studios, Above Average, College Humor, Nacho Punch, and Funny or Die. His acting credits include Human Giant, Community, Conan, Pretty Little Liars, and a series of Alltel commercials.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/michaelbusch.jpg",
+    PerformerId: "7773",
     SortOrder: 200,
-    id: "7568",
-    pageUrl: "7568-tim-harmston",
-    events: [ "7622", "7650", "7680", "7745" ],
+    id: "7773",
+    pageUrl: "7773-michael-busch",
+    events: [ "7741" ],
     mc_events: []
 }, {
     Name: "Nick Rutherford",
@@ -5695,6 +5669,56 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6371",
     pageUrl: "6371-nick-rutherford",
     events: [ "7628", "7658", "7741", "7914" ],
+    mc_events: []
+}, {
+    Name: "Janet Varney",
+    Bio: "<p>Janet Varney is a comedian, actor, writer and producer. She spent seven wonderful years hosting TBS&#039;s &quot;Dinner and a Movie,” recurred on HBO&#039;s Entourage, was a series regular on the beloved E! and Yahoo series Burning Love seasons 1 and 3, and has made guest appearances in hit shows including How I Met Your Mother, Key and Peele, Psych, Bones, on the panel of Chelsea Lately, as a regular co-host on HuffPost Live, and has appeared in films such as Still Waiting, Drillbit Taylor and Judy Moody and the Not Bummer Summer. She is also the voice for the titular character on Nickelodeon&#039;s hit series The Legend of Korra. Janet is the host of the popular Nerdist podcast The JV Club and the co-founder, creative director and producer of SF Sketchfest, the San Francisco Comedy Festival, now in its 14th year.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/janet_headshot_2013.jpg",
+    PerformerId: "7820",
+    SortOrder: 200,
+    id: "7820",
+    pageUrl: "7820-janet-varney",
+    events: [ "7645", "7676" ],
+    mc_events: []
+}, {
+    Name: "Dave Anderson",
+    Bio: "<p>A nationally touring comedian, Dave Anderson has performed at the country’s premier comedy clubs, including the world famous Improv in Los Angeles. He has appeared on numerous television shows such as: “Star Search,” Showtime’s “Comedy Club Network,” and “An Evening at the Improv.” His comedy is heard around the world on Sirius and XM satellite radio. Most recently Dave was a contributing writer for the “Tonight Show with Jay Leno.”<br />\nDave is currently an Emmy award winning co-host of the long running morning television talk show “AM Northwest” on KATU TV and co- host of the  ”Mark and Dave Show” on AM 860 KPAM radio in Portland.</p>\n<p>Dave’s unique ability to blend clean, intelligent material with audience interaction has made him a favorite at corporate events and college campuses across America.</p>\n<p>The audience plays a major role in Dave’s show. He has an amazing ability to turn ordinary conversations into hilarious comedy routines while remaining clean and inoffensive. The Oregonian dubbed him “The quickest wit around.” The San Francisco Examiner said he was, “relaxed, likeable, and funny . . .” Willamette Week said, “He ad- libs better than most comedians write.” Because of his quick wit and audience rapport, no two shows are ever exactly alike.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dave_anderson_photo.jpg",
+    PerformerId: "7823",
+    SortOrder: 200,
+    id: "7823",
+    pageUrl: "7823-dave-anderson",
+    events: [ "7808" ],
+    mc_events: []
+}, {
+    Name: "Chris Locke",
+    Bio: "<p>Chris Locke is a stand up comedian, actor, and writer from Toronto, Canada. He performs stand up all over Canada and the U.S. at festivals, in comedy clubs, and independent shows. He was voted &quot;Best Stand Up 2012.&quot;</p>\n<p>Chris just finished performing as a headliner, one of the 42 for this year’s JFL42 festival in Toronto. Other comedy festivals of note that he has performed at are: Just For Laughs in Montreal,  SF Sketchfest in San Francisco, the Bridgetown Comedy Festival in Portland, and NXNE.</p>\n<p>With his unique style of stand up, Chris has opened for comedians such as Todd Barry, Hannibal Burress, Eugene Mirman, Pete Holmes, Todd Glass, and toured opening for Kyle Kinane. </p>\n<p>Chris has appeared on many television shows and is most recognized for his regular appearances on &quot;Showtown&quot; on MTV Canada. He has also appeared on &quot;The LA Complex&quot; on CTV and the CW, &quot;Scare Tactics&quot; on Much Music, &quot;Cock&#039;d Gunns&quot; on Showcase, &quot;Match Game&quot; and &quot;The Jon Dore Television Show&quot; on The Comedy Network, and has lent his distinct voice to CBC’s Radio One.</p>\n<p>Chris was also a key producer of one of Toronto&#039;s most well known weekly comedy shows, &quot;Laugh Sabbath,&quot; which took place at The Rivoli. His monthly Laugh Sabbath show with co-host Aaron Eves called, &quot;Let&#039;s Get Hot!&quot; ran for six years and introduced a combination of alternative and mainstream comedy to downtown audiences. The show featured recurring character pieces by Nathan Fielder, Kathleen Phillips, and Brian Barlow, as well as abstract comedy by artist Jon McCurley.</p>\n<p>Chris has written and performed in countless comedy shorts. They have been screened at Just For Laughs, TIFF, NFB&#039;s World of Shorts, CIFF (Calgary International Short Film Festival) and at live shows. His &quot;These Moments Too&quot; series which he co-produced with Nathan Fielder was a best of 2006 pick in NOW magazine.<br />\nHis success in comedy shorts has lead him to hosting and curating a night of independent comedy shorts for CFC&#039;s annual Worldwide Short Film Festival, which he did for Three years.</p>\n<p>In sketch comedy Chris’s sketch troupe with Brian Barlow called, &quot;The Gurg,&quot; was nominated for the prestigious Tim Sim’s Encouragement Fund in 2003, which lead to appearances on &quot;The Cream Of Comedy&quot; on Comedy Network and &quot;The Toronto Show.&quot; His other sketch troupe, Dinkus, which also featured Graham Wagner, Michael Balazo, Aaron Eves, Brian Barlow, was critically acclaimed and performed in New York, Montreal, and the Toronto Sketch Comedy Festival two years in a row.</p>\n<p>His written humor has been published in The Grid weekly, and ION magazine.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/chris_locke_colour_2.jpg",
+    PerformerId: "5889",
+    SortOrder: 200,
+    id: "5889",
+    pageUrl: "5889-chris-locke",
+    events: [ "7646", "7740", "7746" ],
+    mc_events: [ "7624" ]
+}, {
+    Name: "Laurie Kilmartin",
+    Bio: "<p>Laurie Kilmartin was a finalist on Last Comic Standing and has appeared on CONAN and Jimmy Kimmel Live. She is the co-author of the NYT bestseller &quot;Sh*tty Mom&quot; and is currently a staff writer on CONAN.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kilmartin_dion-1.jpg",
+    PerformerId: "7828",
+    SortOrder: 200,
+    id: "7828",
+    pageUrl: "7828-laurie-kilmartin",
+    events: [ "7672", "7734" ],
+    mc_events: []
+}, {
+    Name: "Byron Bowers",
+    Bio: "<p>Described by LA Weekly as “a comic who’s got big ideas and big plans to go big places,” Byron Bowers is a stand-up comedian and actor that has toured nationally with Dave Chappelle, Hannibal Buress, John Caparulo, and Eric Andre and The Eric Andre Show Live. </p>\n<p>He has appeared on the Eric Andre Show on Adult Swim, Comcast TV, and Comedy Central. His stand-up cable debut was on Comedy Central&#039;s &quot;Adam Devine&#039;s House Party&quot; and he can also be seen on the reboot of BET&#039;s &quot;Comic View&quot;. He has won the Big Sky International Comedy Competition and was named by LA Weekly as a “Comedy Act to Watch in 2013”. Byron was featured as New Face at the prestigious Just for Laughs Comedy Festival in 2013.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/byron_bowers_photo.jpg",
+    PerformerId: "6805",
+    SortOrder: 200,
+    id: "6805",
+    pageUrl: "6805-byron-bowers",
+    events: [ "7624", "7632", "7701", "7743", "7805" ],
     mc_events: []
 }, {
     Name: "Dan Levy",
@@ -5716,6 +5740,26 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "6284-andy-erikson",
     events: [ "7706", "7730", "7751" ],
     mc_events: []
+}, {
+    Name: "Art Krug",
+    Bio: "<p>Art Krug is an enigma, which is defined in the dictionary as: “a German built enciphering machine made for commercial use and later adapted for military use”. He is also a very funny comedian. Art Krug also writes about himself in the third person…like now for instance. He has appeared on television (Showtime, commercials), comedy club and college stages, boats, buses, and picnic tables since the ’80s. And people keep asking him back. So that’s good.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/art_8x10ish.jpg",
+    PerformerId: "7824",
+    SortOrder: 200,
+    id: "7824",
+    pageUrl: "7824-art-krug",
+    events: [],
+    mc_events: [ "7808" ]
+}, {
+    Name: "Sean Flannery",
+    Bio: "<p>The easiest way to describe Sean Flannery is: he&#039;s attended the wrong wedding (twice). That mostly sums it up.</p>\n<p>On stage, he shares wild, hilarious stories, while showing multimedia from the events: photos, videos, voicemails and more. He recently combined many of these stories into a sold-out, critically-acclaimed one man show, called &quot;Never Been to Paris,&quot; about the last 10 times he nearly killed himself by accident.</p>\n<p>He is also the creator and host of &quot;The Blackout Diaries,&quot; a show where comics plus &#039;real&#039; people (cops, priests, teachers, etc) share true drinking stories and answer questions from the audience.</p>\n<p>He has been named the best comic in Chicago by several publications and his live multimedia shows<br />\nroutinely sellout. He was a featured New Face at Just For Laughs Comedy Festival (Montreal)<br />\nand made his television debut last year, on Comedy Central&#039;s, ”Mashup”.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/seanflannery_headshot.jpg",
+    PerformerId: "6144",
+    SortOrder: 200,
+    id: "6144",
+    pageUrl: "6144-sean-flannery",
+    events: [ "7693", "7698" ],
+    mc_events: [ "7742", "7914" ]
 }, {
     Name: "Shane Torres",
     Bio: "<p>Shane Torres is a comedian originally from Texas, but started comedy in Portland, Oregon. In the six years he has been performing stand up, he has made some serious mistakes in his personal life, but has done OK in comedy. He was lucky enough to perform in the very first Bridgetown Comedy Festival and New Orleans Comedy and Arts Festival in his first year and second year of comedy. In 2012 he was chosen as on of Comedy Central&#039;s Comics to Watch and also competed in The Seattle International Comedy Competition.  2013 turned out to be a great year for Shane performing and winning The Funniest Person in Portland contest as well as being chosen by his peers as one of The Willamette Week&#039;s top 5 comics. He also took the stage at Seattle&#039;s Bumbershoot Festival that year. After all that he performed at the prestigious Montreal Just For Laugh&#039;s Comedy Festival as New Face where GQ called him best newcomer in an article where they mentioned much more famous comedians that Shane admires greatly. He really hopes you come out to see him and enjoy the show.</p>\n",
@@ -5747,46 +5791,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7675", "7685", "7915", "7918" ],
     mc_events: []
 }, {
-    Name: "Art Krug",
-    Bio: "<p>Art Krug is an enigma, which is defined in the dictionary as: “a German built enciphering machine made for commercial use and later adapted for military use”. He is also a very funny comedian. Art Krug also writes about himself in the third person…like now for instance. He has appeared on television (Showtime, commercials), comedy club and college stages, boats, buses, and picnic tables since the ’80s. And people keep asking him back. So that’s good.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/art_8x10ish.jpg",
-    PerformerId: "7824",
-    SortOrder: 200,
-    id: "7824",
-    pageUrl: "7824-art-krug",
-    events: [],
-    mc_events: [ "7808" ]
-}, {
-    Name: "Sean Flannery",
-    Bio: "<p>The easiest way to describe Sean Flannery is: he&#039;s attended the wrong wedding (twice). That mostly sums it up.</p>\n<p>On stage, he shares wild, hilarious stories, while showing multimedia from the events: photos, videos, voicemails and more. He recently combined many of these stories into a sold-out, critically-acclaimed one man show, called &quot;Never Been to Paris,&quot; about the last 10 times he nearly killed himself by accident.</p>\n<p>He is also the creator and host of &quot;The Blackout Diaries,&quot; a show where comics plus &#039;real&#039; people (cops, priests, teachers, etc) share true drinking stories and answer questions from the audience.</p>\n<p>He has been named the best comic in Chicago by several publications and his live multimedia shows<br />\nroutinely sellout. He was a featured New Face at Just For Laughs Comedy Festival (Montreal)<br />\nand made his television debut last year, on Comedy Central&#039;s, ”Mashup”.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/seanflannery_headshot.jpg",
-    PerformerId: "6144",
-    SortOrder: 200,
-    id: "6144",
-    pageUrl: "6144-sean-flannery",
-    events: [ "7693", "7698" ],
-    mc_events: [ "7742", "7914" ]
-}, {
-    Name: "Chris Locke",
-    Bio: "<p>Chris Locke is a stand up comedian, actor, and writer from Toronto, Canada. He performs stand up all over Canada and the U.S. at festivals, in comedy clubs, and independent shows. He was voted &quot;Best Stand Up 2012.&quot;</p>\n<p>Chris just finished performing as a headliner, one of the 42 for this year’s JFL42 festival in Toronto. Other comedy festivals of note that he has performed at are: Just For Laughs in Montreal,  SF Sketchfest in San Francisco, the Bridgetown Comedy Festival in Portland, and NXNE.</p>\n<p>With his unique style of stand up, Chris has opened for comedians such as Todd Barry, Hannibal Burress, Eugene Mirman, Pete Holmes, Todd Glass, and toured opening for Kyle Kinane. </p>\n<p>Chris has appeared on many television shows and is most recognized for his regular appearances on &quot;Showtown&quot; on MTV Canada. He has also appeared on &quot;The LA Complex&quot; on CTV and the CW, &quot;Scare Tactics&quot; on Much Music, &quot;Cock&#039;d Gunns&quot; on Showcase, &quot;Match Game&quot; and &quot;The Jon Dore Television Show&quot; on The Comedy Network, and has lent his distinct voice to CBC’s Radio One.</p>\n<p>Chris was also a key producer of one of Toronto&#039;s most well known weekly comedy shows, &quot;Laugh Sabbath,&quot; which took place at The Rivoli. His monthly Laugh Sabbath show with co-host Aaron Eves called, &quot;Let&#039;s Get Hot!&quot; ran for six years and introduced a combination of alternative and mainstream comedy to downtown audiences. The show featured recurring character pieces by Nathan Fielder, Kathleen Phillips, and Brian Barlow, as well as abstract comedy by artist Jon McCurley.</p>\n<p>Chris has written and performed in countless comedy shorts. They have been screened at Just For Laughs, TIFF, NFB&#039;s World of Shorts, CIFF (Calgary International Short Film Festival) and at live shows. His &quot;These Moments Too&quot; series which he co-produced with Nathan Fielder was a best of 2006 pick in NOW magazine.<br />\nHis success in comedy shorts has lead him to hosting and curating a night of independent comedy shorts for CFC&#039;s annual Worldwide Short Film Festival, which he did for Three years.</p>\n<p>In sketch comedy Chris’s sketch troupe with Brian Barlow called, &quot;The Gurg,&quot; was nominated for the prestigious Tim Sim’s Encouragement Fund in 2003, which lead to appearances on &quot;The Cream Of Comedy&quot; on Comedy Network and &quot;The Toronto Show.&quot; His other sketch troupe, Dinkus, which also featured Graham Wagner, Michael Balazo, Aaron Eves, Brian Barlow, was critically acclaimed and performed in New York, Montreal, and the Toronto Sketch Comedy Festival two years in a row.</p>\n<p>His written humor has been published in The Grid weekly, and ION magazine.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/chris_locke_colour_2.jpg",
-    PerformerId: "5889",
-    SortOrder: 200,
-    id: "5889",
-    pageUrl: "5889-chris-locke",
-    events: [ "7646", "7740", "7746" ],
-    mc_events: [ "7624" ]
-}, {
-    Name: "Dave Anderson",
-    Bio: "<p>A nationally touring comedian, Dave Anderson has performed at the country’s premier comedy clubs, including the world famous Improv in Los Angeles. He has appeared on numerous television shows such as: “Star Search,” Showtime’s “Comedy Club Network,” and “An Evening at the Improv.” His comedy is heard around the world on Sirius and XM satellite radio. Most recently Dave was a contributing writer for the “Tonight Show with Jay Leno.”<br />\nDave is currently an Emmy award winning co-host of the long running morning television talk show “AM Northwest” on KATU TV and co- host of the  ”Mark and Dave Show” on AM 860 KPAM radio in Portland.</p>\n<p>Dave’s unique ability to blend clean, intelligent material with audience interaction has made him a favorite at corporate events and college campuses across America.</p>\n<p>The audience plays a major role in Dave’s show. He has an amazing ability to turn ordinary conversations into hilarious comedy routines while remaining clean and inoffensive. The Oregonian dubbed him “The quickest wit around.” The San Francisco Examiner said he was, “relaxed, likeable, and funny . . .” Willamette Week said, “He ad- libs better than most comedians write.” Because of his quick wit and audience rapport, no two shows are ever exactly alike.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dave_anderson_photo.jpg",
-    PerformerId: "7823",
-    SortOrder: 200,
-    id: "7823",
-    pageUrl: "7823-dave-anderson",
-    events: [ "7808" ],
-    mc_events: []
-}, {
     Name: "Susan Rice",
     Bio: "<p>Susan Rice has never followed the rules where keeping quiet is concerned.  A chatterbox as a child, Rice turned her quirky sense of humor into her life long dream of making people laugh.  </p>\n<p>In 1983 Susan took the jump from professional actress to stand up comic. She moved to Los Angeles and soon found her self appearing on  Evening at the Improv,  Comedy Central as well as George Schlatter&#039; s  Comedy Club.  </p>\n<p>Rice has worked in every venue possible from bars to opening for Jerry Seinfeld, Paula Poundstone, and Rich Shydner.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/photo2.jpg",
@@ -5797,46 +5801,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7808" ],
     mc_events: []
 }, {
-    Name: "James Ball",
-    Bio: "<p>Dry, dark, and delightful, this Canadian comic has performed his laidback brand of one-liner standup on stages across Canada and in the UK. </p>\n<p>Watching him, you may be reminded of The Far Side, smooth jazz, and a book of insane haiku. </p>\n<p>Credits include Just For Laughs, the Halifax Comedy Festival, the Manchester Comedy Festival, and the Blue Bridge Comedy Festival. His half-hour Comedy Now TV special continues to air across Canada a little too frequently for his comfort. You can also hear him on XM Satellite radio from time to time. </p>\n<p>James was born and raised in Victoria BC, made his standup debut in Tokyo, and did his first paid gig in Alberta. He lives in Victoria today where he works in media and performs &amp; produces comedy shows up and down Vancouver Island. This is his first appearance in the States. </p>\n<p>Tall yet approachable, James is thrilled to be at Bridgetown. Ask him about motorcycles, the Toronto Raptors, his favorite podcasts, and Victoria&#039;s best microbrewed beers. He knows things.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/james_ball_-_headshot_.jpg",
-    PerformerId: "6305",
-    SortOrder: 250,
-    id: "6305",
-    pageUrl: "6305-james-ball",
-    events: [ "7641", "7656", "7730", "7743" ],
-    mc_events: []
-}, {
-    Name: "Sean Jordan",
-    Bio: "<p>Sean Jordan is a stand up comedian originally from Sioux Falls SD.  Sean started into comedy after seeing only one stand up show.  Getting his start in Sioux Falls after winning a local comedy contest, Sean became one of the house emcees at the comedy club in town.  This gave Sean the chance to perform 3-4 times a week for years on end.  That opportunity allowed Sean to grow as a comedian at a very rapid rate while at the same time giving him all the stage time needed to develop a healthy confidence while telling jokes.  </p>\n<p>After going as far as he could in Sioux Falls, Sean decided to move to Portland OR.  Quickly after moving he hopped right into the local scene advancing to the finals of the 2011 and 2012 Portland comedy competitions.  Sean was also voted one of Funny or Die and Splashlife magazines “30 Under 30” comedians to watch in 2011.  You have heard him as a repeat guest on Doug Bensons podcast “Doug Loves Movies” as well as “The Benson Interruption.”   You also may have seen him on Rooftop Comedy as a featured performer.  </p>\n<p>He has participated in the Bridgetown Comedy Festival the last 4 years running as well as the Bumbershoot Comedy and Arts Festival for the last 2.  The easy and comfortable style of Sean is sure to put any audience member in the right frame of mind to enjoy a stand up show and also provide them with a memorable experience to keep them coming back.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/flightclub.jpg",
-    PerformerId: "6408",
-    SortOrder: 250,
-    id: "6408",
-    pageUrl: "6408-sean-jordan",
-    events: [ "7621", "7650", "7752" ],
-    mc_events: [ "7667" ]
-}, {
-    Name: "Casey Ley",
-    Bio: "<p>Casey Ley’s comedy is silly. And smart. And dirty. And dark. And handsome. It’s a lot like him actually.  So it is also self-centered and flakey and relatively promiscuous.  He is the creator and host of the popular San Francisco comedy game show &quot;Tonic Trivia&quot; and stand-up show &quot;Some People Like Us.&quot;  He and his shows have appeared in comedy festivals like SF Sketchfest, Moontower Festival in Austin, TX, on the radio on the relatively popular NPR station, and he has shared the stage with comics you know like Hannibal Buress, Doug Benson, Laura Kightlinger and some other people you&#039;ve heard of if you like comedy.  The readers of SF Weekly voted him best comic in San Francisco in 2012 (which had nothing to do with his homosexuality), and in 2013 he was runner-up in The Advocate Magazine&#039;s Next Great Queer Comedy competition (which was wholly the result of his homosexuality).  Apparently he just wasn&#039;t quite gay enough.  Last year, at least.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/caseyley.jpg",
-    PerformerId: "6157",
-    SortOrder: 250,
-    id: "6157",
-    pageUrl: "6157-casey-ley",
-    events: [ "7678", "7698", "7740", "7744", "7750" ],
-    mc_events: [ "7632" ]
-}, {
-    Name: "Peggy O&#039;Leary",
-    Bio: "<p>Peggy O&#039;Leary is a stand up comedian based out of New York, but comes from the burbs of Philly, and thats very important for you to know.  Peggy tells jokes and stories about her fat girl past, her &quot;My Girl&quot; upbringing (minus the bee stings), and being completely weirded out about men and sex.  She performed at The Women in Comedy Festival in Boston and The Jersey City Comedy Festival, both in 2013. </p>\n<p>Her sketch group BLEAK! Comedy has performed all over the east coast, was featured at the Austin Sketch Festival, The National Comedy College Festival and performed BLEAK! Comedy: STOMACHTOWN at the UCB theatre in NYC.  Her stand up can be seen all over NYC at The Creek and The Cave, UCBTheatre, EastVille Comedy Club, The Village Lantern, and many bars and apartments all over the outer boroughs.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/peggy-oleary-6999-13-2.jpg",
-    PerformerId: "6058",
-    SortOrder: 250,
-    id: "6058",
-    pageUrl: "6058-peggy-o039leary",
-    events: [ "7663", "7680" ],
-    mc_events: [ "7699" ]
-}, {
     Name: "Randy Mendez",
     Bio: "<p>At the ripe young age of thirty-something, Portland comic Randy Mendez thought it&#039;d be the perfect time to go to college and to start a family. At the same time.</p>\n<p>Some years later now he&#039;s about to graduate and he&#039;s almost fully taught his three-year-old daughter to yell &quot;Fart!&quot; in public spaces. After taking third in the search for Portland&#039;s Funnies Person, the Portland Mercury described Randy as having &quot;a disarming, ebullient stage presence that calls to mind listening to a slightly manic, very inappropriate friend share stories about his fucked-up day.&quot; Randy is way too happy about the wrong parts of that statement.</p>\n<p>Randy has previously been seen at the Seattle International Comedy Competition, Helium Comedy Club, Funny Over Everything, They Mystery Box Show, No Pun Intendo, and many other shows that didn&#039;t pay well, but promised would look great in a bio.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshotlowres.jpg",
@@ -5846,6 +5810,26 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "6409-randy-mendez",
     events: [ "7680", "7689", "7751" ],
     mc_events: [ "7913" ]
+}, {
+    Name: "Casey Ley",
+    Bio: "<p>Casey Ley’s comedy is silly. And smart. And dirty. And dark. And handsome. It’s a lot like him actually.  So it is also self-centered and flakey and relatively promiscuous.  He is the creator and host of the popular San Francisco comedy game show &quot;Tonic Trivia&quot; and stand-up show &quot;Some People Like Us.&quot;  He and his shows have appeared in comedy festivals like SF Sketchfest, Moontower Festival in Austin, TX, on the radio on the relatively popular NPR station, and he has shared the stage with comics you know like Hannibal Buress, Doug Benson, Laura Kightlinger and some other people you&#039;ve heard of if you like comedy.  The readers of SF Weekly voted him best comic in San Francisco in 2012 (which had nothing to do with his homosexuality), and in 2013 he was runner-up in The Advocate Magazine&#039;s Next Great Queer Comedy competition (which was wholly the result of his homosexuality).  Apparently he just wasn&#039;t quite gay enough.  Last year, at least.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/caseyley.jpg",
+    PerformerId: "6157",
+    SortOrder: 250,
+    id: "6157",
+    pageUrl: "6157-casey-ley",
+    events: [ "7678", "7698", "7740", "7750", "8631" ],
+    mc_events: [ "7632" ]
+}, {
+    Name: "Carolyn Busa",
+    Bio: "<p>Carolyn Busa has performed on stages all over Philadelphia and New York City, as well as the Ladies are Funny Festival, the Bridgetown Comedy Festival, the Women in Comedy Festival, and the She-Devil Comedy Festival. She is the proud mother/co-creator of Laughs on Fairmount, one of Philly&#039;s longest running open mics.</p>\n<p>Carolyn’s awkwardly, disarming stage presence will charm your figurative pants off.  She continually hosts and features throughout the tri-state area; and contributes to local sketch and theater productions. She may have even unsuccessfully auditioned for &quot;America&#039;s Next Top Model.&quot; Twice.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_15.jpg",
+    PerformerId: "6315",
+    SortOrder: 250,
+    id: "6315",
+    pageUrl: "6315-carolyn-busa",
+    events: [ "7672", "7679", "7691", "7710" ],
+    mc_events: []
 }, {
     Name: "Aaron Weaver",
     Bio: "<p>Aaron Weaver started doing stand-up in Chicago in 2008, with a point-of-view so specific, so original, and so hilarious that the rest of the Chicago comedy scene quickly took notice. He rapidly became one of Chicago’s most heralded stand-ups, due to his custom brand of absurd soulfulness and his way of exploring all the smartest and stupidest thoughts that go through all of our heads. Aaron has performed regularly at every comedy club, showcase, and pancake house in Chicago, including the Laugh Factory, Zanies, and The Lincoln Lodge. He has also performed at the TBS Just For Laughs Festival (twice), as well as the Boston Comedy Festival.  Since moving to LA in 2013, he was named one of Comedy Central’s “Comics to Watch” by making it to the final round of their nationwide Up Next competition. Aaron’s positive stage persona is a breath of fresh air, particularly if you like breathing things that are really, really funny.</p>\n",
@@ -5867,15 +5851,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7646", "7667", "7671", "7739", "7741" ],
     mc_events: []
 }, {
-    Name: "Carolyn Busa",
-    Bio: "<p>Carolyn Busa has performed on stages all over Philadelphia and New York City, as well as the Ladies are Funny Festival, the Bridgetown Comedy Festival, the Women in Comedy Festival, and the She-Devil Comedy Festival. She is the proud mother/co-creator of Laughs on Fairmount, one of Philly&#039;s longest running open mics.</p>\n<p>Carolyn’s awkwardly, disarming stage presence will charm your figurative pants off.  She continually hosts and features throughout the tri-state area; and contributes to local sketch and theater productions. She may have even unsuccessfully auditioned for &quot;America&#039;s Next Top Model.&quot; Twice.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_15.jpg",
-    PerformerId: "6315",
+    Name: "Vince Averill",
+    Bio: "<p>Vince Averill is a Los Angeles based comedian. He has toured throughout North America and appeared on Comedy Central.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/vinceheadshot.jpg",
+    PerformerId: "6717",
     SortOrder: 250,
-    id: "6315",
-    pageUrl: "6315-carolyn-busa",
-    events: [ "7672", "7679", "7691", "7710" ],
-    mc_events: []
+    id: "6717",
+    pageUrl: "6717-vince-averill",
+    events: [ "7697", "7912", "7951" ],
+    mc_events: [ "7698" ]
 }, {
     Name: "David Foster",
     Bio: "<p>It’s possible David Foster is the only comedian from New York who’s appeared on HBO, MTV, and Showtime, has a Masters degree in Traditional Chinese Medicine, was arrested seven times as an adolescent, speaks Spanish fluently, performed &quot;Mama Said Knock You Out&quot; at his Bar-Mitzvah, has a black belt in karate and a daily meditation practice… though it’s true, you never know who else is out there. If that wasn’t too much to digest then you’re ready for David’s uniquely cerebral brand of humor. </p>\n<p>Born and raised in New York, David is one of the country&#039;’s funniest up and coming philosophers posing as a stand-up comic. In spite of his juvenile experimentation with graffiti, marijuana, and shoplifting he was a straight-A student, always on the honor roll. Around the legally transformative age of 18 he straightened out his act, and shortly thereafter discovered his act on stage. </p>\n<p>Success and recognition came quickly. His popular Manhattan public access talk show grabbed the attention of MTV, and by his fourth year in comedy he’d been featured on HBO, Showtime and MTV - many of his segments still being aired on VH-1’s Best Pranks. He won the 2011 Boston Comedy Festival’s New York Competition and was first runner up in the Comix at Foxwoods’ 2012 “Last Comix Standing” contest. He also consistently scripts one of the most popular philosophical blogs on stand-up comedy, davidfostercomedyblog.com. </p>\n<p>On stage David dissects the root causes of his anxieties and tells stories of how his adolescence staunchly contrasted with what his Jewish mother had envisioned for him. Philosophically he dissects the human stream of consciousness, criticizes our educational and medical systems, and refutes cynical perspectives, which is unique to what we hear from most stand-ups. While it’s become common for comedians to make fun of things like spiritual faith, hip hop white guys, and natural forms of medicine, David brilliantly conveys the opposite perspectives with a hilarious and unique charisma. Refreshing to listen to and an absolute pleasure to watch, his career has progressed reasonably fast.</p>\n",
@@ -5897,16 +5881,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7622", "7628", "7809" ],
     mc_events: [ "7692" ]
 }, {
-    Name: "Vince Averill",
-    Bio: "<p>Vince Averill is a Los Angeles based comedian. He has toured throughout North America and appeared on Comedy Central.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/vinceheadshot.jpg",
-    PerformerId: "6717",
-    SortOrder: 250,
-    id: "6717",
-    pageUrl: "6717-vince-averill",
-    events: [ "7697", "7912", "7951" ],
-    mc_events: [ "7698" ]
-}, {
     Name: "Kristine Levine ",
     Bio: "<p>Kristine Levine has been seen on IFC&#039;s &quot;Portlandia,&quot; and regularly tours with Doug Stanhope. She is a delight.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/600475_10200837691937142_519375149_n.jpg",
@@ -5914,7 +5888,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 250,
     id: "6723",
     pageUrl: "6723-kristine-levine-",
-    events: [ "7671", "7687", "7699", "7750", "7808" ],
+    events: [ "7671", "7687", "7699", "7750", "7808", "8579" ],
     mc_events: []
 }, {
     Name: "Nathan Brannon",
@@ -5947,16 +5921,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7652", "7690", "7701" ],
     mc_events: [ "7695" ]
 }, {
-    Name: "Charlie Rohrer",
-    Bio: "<p>Charlie Rohrer dropped out of college to tell jokes. Comedy just seemed more viable than a bachelor&#039;s degree in Fine Arts. Growing up the black sheep of an enormous Irish family in the South Suburbs of Chicago, his comedy mostly comes from self-reflection, tales from his awkward childhood, and his unique view on everyday life. </p>\n<p>He co-producers a very successful, independent show in Chicago called &quot;Congrats on Your Success,&quot; and has performed at Zanie’s, Chicago Underground Comedy, Gilda’s Laughfest, and more.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/charlierohrer.jpg",
-    PerformerId: "6203",
-    SortOrder: 250,
-    id: "6203",
-    pageUrl: "6203-charlie-rohrer",
-    events: [ "7692", "7737", "7911" ],
-    mc_events: [ "7730" ]
-}, {
     Name: "Richard Bain",
     Bio: "<p>Richard Bain started doing standup in North Carolina in 2003 and then moved to Portland, Oregon in 2005. After becoming one of Portland’s favorite comedians he decided to move to Los Angeles in 2011. When he’s not on stage making you laugh, he’s probably making videos with his friends better known as Decision Makers Penthouse. Their videos have been featured as Will Ferrell’s favorites on funnyordie.com, and Bain starred in one that was featured on The Tonight Show with Conan O’Brien. Richard has performed at the Laughing skull fest, Bumbershoot, and the LA Riot festival. He recently was featured in a Dead Kevin sketch for comedy central.com.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/screen_shot_2012-07-18_at_8.06.53_pm.png",
@@ -5967,6 +5931,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7622", "7625", "7711", "7752", "7967" ],
     mc_events: []
 }, {
+    Name: "Charlie Rohrer",
+    Bio: "<p>Charlie Rohrer dropped out of college to tell jokes. Comedy just seemed more viable than a bachelor&#039;s degree in Fine Arts. Growing up the black sheep of an enormous Irish family in the South Suburbs of Chicago, his comedy mostly comes from self-reflection, tales from his awkward childhood, and his unique view on everyday life. </p>\n<p>He co-producers a very successful, independent show in Chicago called &quot;Congrats on Your Success,&quot; and has performed at Zanie’s, Chicago Underground Comedy, Gilda’s Laughfest, and more.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/charlierohrer.jpg",
+    PerformerId: "6203",
+    SortOrder: 250,
+    id: "6203",
+    pageUrl: "6203-charlie-rohrer",
+    events: [ "7692", "7737", "7911" ],
+    mc_events: [ "7730" ]
+}, {
     Name: "Bob Khosravi",
     Bio: "<p>Bob Khosravi was born a baby, which his mother appreciated. A storyteller hailing from Austin, Texas Bob has performed all across the country as well as been a featured performer in the Moontower Comedy Festival, the Art Outside Comedy Festival, and was selected to compete in the San Francisco International Comedy Competition. An Austin favorite, Khosravi&#039;s comedy has been described as playful with a subtle sense of dark.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/photo.png",
@@ -5976,16 +5950,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "5856-bob-khosravi",
     events: [ "7663", "7691", "7710", "7743" ],
     mc_events: []
-}, {
-    Name: "Will Weldon",
-    Bio: "<p>Will Weldon is a comedian who currently resides in Los Angeles, California, home to such luminaries as Jeremy Piven and that&#039;s pretty much it. He has performed on such well known Los Angeles comedy shows as The Meltdown with Jonah and Kumail, Put Your Hands Together, and the now defunct (what a great word) Holy Fuck! He has toured across the country, as well as appearing at both the Bridgetown and Montreal Comedy festivals, where he was invited to perform on a “Best of the Fest” showcase. He has been written about in the kinds of online comedy magazines only other comedians ever read, and was catfished by someone he met on Twitter. Try to keep that last thing a secret, though.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/squish_face.jpg",
-    PerformerId: "5867",
-    SortOrder: 250,
-    id: "5867",
-    pageUrl: "5867-will-weldon",
-    events: [ "7624", "7678", "7703", "7919" ],
-    mc_events: [ "7708" ]
 }, {
     Name: "Emily Maya Mills",
     Bio: "<p>Emily Maya Mills is an actor, writer and stand-up comic based in Los Angeles. She&#039;s been seen on Parks and Recreation, Ellen, Childrens’ Hospital, Key and Peele, Harry&#039;s Law, Crash &amp; Bernstein, Comedy Bang Bang and The Birthday Boys, as well as many of television’s most humiliating commercials.</p>\n<p>A San Francisco native, Emily attended Emerson College and has been a regular performer at the Upright Citizens Brigade Theatre in Los Angeles since 2006. In 2013, her one woman show, God Hates Figs, received glowing reviews from the LA Weekly and played to sold out audiences over a six month run. Her three-woman sketch group, Birds of Prey, won Best Sketch Group in Punchline Magazine and she has been named an “Up-and-Coming Comedienne You Should Be Laughing At” by TheFrisky.com, &quot;2013&#039;s Comics to Watch&quot; by SOmagazine.com, and a “Funny Female to Follow on Twitter” by the Huffington Post. She holds a PhD in parallel parking. </p>\n<p>Emily Maya Mills was once a spokesmodel for cherry tomatoes and has a cat-like dog who walks like a pony.</p>\n",
@@ -6024,18 +5988,18 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 250,
     id: "6762",
     pageUrl: "6762-mary-van-note",
-    events: [ "7651", "7663", "7674", "7685", "7692" ],
+    events: [ "7651", "7663", "7674", "7685", "7692", "7912" ],
     mc_events: []
 }, {
-    Name: "Anthony Lopez",
-    Bio: "<p>Anthony Lopez has written for the Gotham Independent Film Awards, performed at Bumbershoot, Bridgetown, and is the co-host of the &quot;Free Chips and Salsa&quot; show at Action/Adventure Theater. Hailing from Portland Oregon, Anthony Lopez has been called &quot;One of the Comics to Watch&quot;  by the Portland Mercury, and he&#039;s had the privilege of featuring for such acts as Nick Kroll and The Whitest Kids You Know. Anthony has performed at UCB East, The Knitting Factory in NY, and the Tacoma Comedy Club and The Comedy Underground in Washington. He is regular host at Helium Comedy Club and other clubs in the Northwest. He spins long form stories with short one liners about everything from family to movies, comic books, drinking, and religion.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/anthony_headshot-2.jpg",
-    PerformerId: "6271",
+    Name: "Will Weldon",
+    Bio: "<p>Will Weldon is a comedian who currently resides in Los Angeles, California, home to such luminaries as Jeremy Piven and that&#039;s pretty much it. He has performed on such well known Los Angeles comedy shows as The Meltdown with Jonah and Kumail, Put Your Hands Together, and the now defunct (what a great word) Holy Fuck! He has toured across the country, as well as appearing at both the Bridgetown and Montreal Comedy festivals, where he was invited to perform on a “Best of the Fest” showcase. He has been written about in the kinds of online comedy magazines only other comedians ever read, and was catfished by someone he met on Twitter. Try to keep that last thing a secret, though.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/squish_face.jpg",
+    PerformerId: "5867",
     SortOrder: 250,
-    id: "6271",
-    pageUrl: "6271-anthony-lopez",
-    events: [ "7646", "7697", "7916" ],
-    mc_events: [ "7658" ]
+    id: "5867",
+    pageUrl: "5867-will-weldon",
+    events: [ "7624", "7678", "7703", "7919" ],
+    mc_events: [ "7708" ]
 }, {
     Name: "Jade Catta-Preta",
     Bio: "<p>Jade Catta-Preta was one boney baby, born in Sao Paulo, Brazil, then later raised in Virginia to ensure a future in comedy. She travels the country featuring for Bill Burr, Bobby Lee and Kevin Nealon, and is a paid regular at The Comedy Store, The Improv and the Laugh Factory. She recently filmed an improvised FOX pilot directed by Dan Mazer and produced by Ron Howard as well as an eight episode arc for next season of Showtime&#039;s &quot;Californication.&quot; You can catch her along side Steve Rannazzisi in &quot;Daddy Knows Best&quot; and the upcoming season of Nuvo&#039;s &quot;Standup and Deliver.&quot; Like the 1995 David Caruso porno thriller of the same name, Jade takes herself very seriously.</p>\n",
@@ -6044,18 +6008,18 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 250,
     id: "6674",
     pageUrl: "6674-jade-catta-preta",
-    events: [ "7627", "7645", "7665", "7913" ],
+    events: [ "7645", "7665", "7913", "8633" ],
     mc_events: [ "7621" ]
 }, {
-    Name: "Jim Hickox",
-    Bio: "<p>As one of the founding members of the revered Denver troupe The Grawlix, Jim was pivotal in the rise of the now revered Denver comedy scene.  No matter the show, Jim always leaves an impression with his quick wit and inventive approach to stand-up; audiences have never seen anything like it. The integration of his laptop into his act gives him unprecedented access to innovate and explore comedy, both the old tropes and the avant-garde. It&#039;s as funny as it is ingenious.  Jim is a headliner at Comedy Works in Denver and works around the country. In 2012 he performed for a month at the Edinburgh Fringe Festival. Most recently he performed at the inaugural High Plains Comedy Festival in Denver.</p>\n<p>He is unrepresented, and really needs something cool to happen soon.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/me_la_2013.jpg",
-    PerformerId: "6275",
+    Name: "Anthony Lopez",
+    Bio: "<p>Anthony Lopez has written for the Gotham Independent Film Awards, performed at Bumbershoot, Bridgetown, and is the co-host of the &quot;Free Chips and Salsa&quot; show at Action/Adventure Theater. Hailing from Portland Oregon, Anthony Lopez has been called &quot;One of the Comics to Watch&quot;  by the Portland Mercury, and he&#039;s had the privilege of featuring for such acts as Nick Kroll and The Whitest Kids You Know. Anthony has performed at UCB East, The Knitting Factory in NY, and the Tacoma Comedy Club and The Comedy Underground in Washington. He is regular host at Helium Comedy Club and other clubs in the Northwest. He spins long form stories with short one liners about everything from family to movies, comic books, drinking, and religion.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/anthony_headshot-2.jpg",
+    PerformerId: "6271",
     SortOrder: 250,
-    id: "6275",
-    pageUrl: "6275-jim-hickox",
-    events: [ "7665", "7708", "7737", "7748" ],
-    mc_events: []
+    id: "6271",
+    pageUrl: "6271-anthony-lopez",
+    events: [ "7646", "7697", "7912", "7916" ],
+    mc_events: [ "7658" ]
 }, {
     Name: "Amy Miller",
     Bio: "<p>Voted Portland&#039;s #1 Comedian in 2013 by a jury of her peers, aside from the cover of Willamette Week, Amy Miller has also been seen featuring for Maria Bamford, and at the following comedy places: San Francisco Sketchfest, Noise Pop Festival, SF Punchline, Cobb’s Comedy Club, Harvey’s Comedy Club Portland, Helium Comedy Club, The All Jane No Dick Festival, The Siren Nation Festival, Laugh Your Asheville Off, Mississippi Studios Portland, and as a regular headliner at the original Purple Onion. A lead producer/ host/ wrangler in Sylvan Productions, Amy produced a successful Oakland show series that featured Hannibal Buress, Moshe Kasher, Kyle Kinane, Rory Scovel and more.</p>\n<p>Amy Miller gets on stage to tell jokes, and you’re all like, well she doesn’t look funny at ALL. I hope she doesn’t blow this! Maybe I should go for a smoke break? 2 minutes in, your pants have been charmed off by her rosy cheeks and a delicate balance of self-deprecation and ego. 5 minutes in, you start to feel sad for her and sometimes feel the need to go “AWWW” out loud in the middle of her set or, occasionally “YOU’RE ADORABLE.” 10 minutes in you’re not sure if you want to have wild sex with her, or have her pretend to be your mom and tuck you into bed at night while lightly stroking your hair and singing You Are My Sunshine because she’s also an excellent singer. Any exposure above 15 minutes and your head is just a chaotic swirl of love feelings and a crippling fear of eventual heartbreak and rejection at the end of which you decide you should just be best friends. It’s fun!</p>\n<p>She has a podcast called &quot;Sorry About Your Dad.&quot; It’s about dad stuff.</p>\n",
@@ -6067,14 +6031,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7625", "7689", "7805" ],
     mc_events: [ "7710" ]
 }, {
-    Name: "Jesse Elias",
-    Bio: "<p>Jesse Elias is a comedian forged in the infernal flames of San Francisco. He draws creative inspiration from music and literature of the 19th century and cartoons and candy of the 1990s. Over the course of 2012 and 2013 he has performed in festivals such as Bridgetown, Outside Lands, LA Riot, and SF Sketchfest. He has written for the new season of &quot;The Eric Andre Show,&quot; currently airing on Adult Swim. Jesse is also proud of his many gross victories as a Competitive Erotic Fan Fiction writer, available via podcast on nerdist.com.  Jesse learned everything he knows about being funny by studying the comedies of the ancient masters Plautus and Terrence.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jesse-medium.jpg",
-    PerformerId: "6536",
+    Name: "Jim Hickox",
+    Bio: "<p>As one of the founding members of the revered Denver troupe The Grawlix, Jim was pivotal in the rise of the now revered Denver comedy scene.  No matter the show, Jim always leaves an impression with his quick wit and inventive approach to stand-up; audiences have never seen anything like it. The integration of his laptop into his act gives him unprecedented access to innovate and explore comedy, both the old tropes and the avant-garde. It&#039;s as funny as it is ingenious.  Jim is a headliner at Comedy Works in Denver and works around the country. In 2012 he performed for a month at the Edinburgh Fringe Festival. Most recently he performed at the inaugural High Plains Comedy Festival in Denver.</p>\n<p>He is unrepresented, and really needs something cool to happen soon.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/me_la_2013.jpg",
+    PerformerId: "6275",
     SortOrder: 250,
-    id: "6536",
-    pageUrl: "6536-jesse-elias",
-    events: [ "7623", "7646", "7651", "7919" ],
+    id: "6275",
+    pageUrl: "6275-jim-hickox",
+    events: [ "7665", "7708", "7737", "7748" ],
     mc_events: []
 }, {
     Name: "Sean Donnelly",
@@ -6097,6 +6061,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7701", "7815", "7916" ],
     mc_events: []
 }, {
+    Name: "Jesse Elias",
+    Bio: "<p>Jesse Elias is a comedian forged in the infernal flames of San Francisco. He draws creative inspiration from music and literature of the 19th century and cartoons and candy of the 1990s. Over the course of 2012 and 2013 he has performed in festivals such as Bridgetown, Outside Lands, LA Riot, and SF Sketchfest. He has written for the new season of &quot;The Eric Andre Show,&quot; currently airing on Adult Swim. Jesse is also proud of his many gross victories as a Competitive Erotic Fan Fiction writer, available via podcast on nerdist.com.  Jesse learned everything he knows about being funny by studying the comedies of the ancient masters Plautus and Terrence.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jesse-medium.jpg",
+    PerformerId: "6536",
+    SortOrder: 250,
+    id: "6536",
+    pageUrl: "6536-jesse-elias",
+    events: [ "7623", "7646", "7651", "7919" ],
+    mc_events: []
+}, {
     Name: "Matt Ingebretson",
     Bio: "<p>Matt Ingebretson is a writer and comedian. He performs all over LA and was featured on the standup compilation album, &quot;Holy Fuck.&quot; He has written for the Soup, the Onion, Funny or Die, and MTV. Also, he&#039;s worried his bio is too short so he tacked on this sentence to make it seem more substantial.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/matt_ingebretson_promo.jpg",
@@ -6104,7 +6078,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 250,
     id: "5894",
     pageUrl: "5894-matt-ingebretson",
-    events: [ "7627", "7655", "7919" ],
+    events: [ "7912", "7919", "8633" ],
     mc_events: [ "7660" ]
 }, {
     Name: "John F. O&#039;Donnell",
@@ -6116,16 +6090,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "6150-john-f-o039donnell",
     events: [ "7680", "7698", "7711" ],
     mc_events: [ "7911" ]
-}, {
-    Name: "David Cope",
-    Bio: "<p>David began performing stand up open mic in Portland, Oregon. It was way more fun than his call center job so he stuck with it. After living and performing in Portland and Seattle he moved to New York City. During his time there he was a semi finalist on Last Comic Standing 2010, nabbed the motion capture role of Jay Norris in Grand Theft Auto V, and co-produced The Hot Soup Comedy Show at the Upright Citizens Brigade Theater. His better half moved to L.A., so he did too and now engaged like proper adults they live together in Hollywood where he continues to write and perform comedy. David is a regular at The Portland Bridgetown Comedy Festival and The New York Underground Comedy Festival. He’s the co-creator and producer of No Pun Intendo, Nerdmelt Theater’s first in-house comedy video game competition and produces The Call Of The Blade, a gaming review web series featuring L.A. comedians.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/0711.jpg",
-    PerformerId: "6151",
-    SortOrder: 250,
-    id: "6151",
-    pageUrl: "6151-david-cope",
-    events: [ "7672", "7750", "7967" ],
-    mc_events: []
 }, {
     Name: "Janine Brito",
     Bio: "<p>JANINE BRITO is a stand up comic, and was a writer and on-air correspondent on the critically acclaimed FX series, Totally Biased with W. Kamau Bell, produced by Chris Rock. </p>\n<p>Janine started doing standup comedy in St. Louis and has performed at clubs and theaters throughout the US and Hong Kong. She is the winner of the 2009 SF Women&#039;s Comedy Competition, and recipient of Rooftop Comedy&#039;s 2010 Silver Nail Award. Praised by 7x7 Magazine as &quot;one of SF&#039;s more daring voices&quot; and one of &quot;the 7 funniest people in town,&quot; she was named the 2011 “Best Comedian with a Message” by the East Bay Express. Her recent festival appearances include Sketchfest, the Bridgetown Comedy Festival and the Glasgow International Comedy Festival.</p>\n<p>W. Kamau Bell calls her “a sarcastic, snarky smart bomb of comedy funk straight from the 80&#039;s,” and the SF Weekly says she’s “a mean lesbian,” but she’s pretty sure that they mean it in a good way.</p>\n",
@@ -6144,7 +6108,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 250,
     id: "6402",
     pageUrl: "6402-megan-koester",
-    events: [ "7678", "7753", "7811", "7815", "8579" ],
+    events: [ "7678", "7753", "7811", "7815" ],
     mc_events: [ "7918" ]
 }, {
     Name: "Lance Paullin",
@@ -6157,6 +6121,46 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7652", "7653", "7692", "7708" ],
     mc_events: []
 }, {
+    Name: "David Cope",
+    Bio: "<p>David began performing stand up open mic in Portland, Oregon. It was way more fun than his call center job so he stuck with it. After living and performing in Portland and Seattle he moved to New York City. During his time there he was a semi finalist on Last Comic Standing 2010, nabbed the motion capture role of Jay Norris in Grand Theft Auto V, and co-produced The Hot Soup Comedy Show at the Upright Citizens Brigade Theater. His better half moved to L.A., so he did too and now engaged like proper adults they live together in Hollywood where he continues to write and perform comedy. David is a regular at The Portland Bridgetown Comedy Festival and The New York Underground Comedy Festival. He’s the co-creator and producer of No Pun Intendo, Nerdmelt Theater’s first in-house comedy video game competition and produces The Call Of The Blade, a gaming review web series featuring L.A. comedians.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/0711.jpg",
+    PerformerId: "6151",
+    SortOrder: 250,
+    id: "6151",
+    pageUrl: "6151-david-cope",
+    events: [ "7672", "7750", "7967" ],
+    mc_events: []
+}, {
+    Name: "James Ball",
+    Bio: "<p>Dry, dark, and delightful, this Canadian comic has performed his laidback brand of one-liner standup on stages across Canada and in the UK. </p>\n<p>Watching him, you may be reminded of The Far Side, smooth jazz, and a book of insane haiku. </p>\n<p>Credits include Just For Laughs, the Halifax Comedy Festival, the Manchester Comedy Festival, and the Blue Bridge Comedy Festival. His half-hour Comedy Now TV special continues to air across Canada a little too frequently for his comfort. You can also hear him on XM Satellite radio from time to time. </p>\n<p>James was born and raised in Victoria BC, made his standup debut in Tokyo, and did his first paid gig in Alberta. He lives in Victoria today where he works in media and performs &amp; produces comedy shows up and down Vancouver Island. This is his first appearance in the States. </p>\n<p>Tall yet approachable, James is thrilled to be at Bridgetown. Ask him about motorcycles, the Toronto Raptors, his favorite podcasts, and Victoria&#039;s best microbrewed beers. He knows things.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/james_ball_-_headshot_.jpg",
+    PerformerId: "6305",
+    SortOrder: 250,
+    id: "6305",
+    pageUrl: "6305-james-ball",
+    events: [ "7641", "7656", "7730", "7743" ],
+    mc_events: []
+}, {
+    Name: "Sean Jordan",
+    Bio: "<p>Sean Jordan is a stand up comedian originally from Sioux Falls SD.  Sean started into comedy after seeing only one stand up show.  Getting his start in Sioux Falls after winning a local comedy contest, Sean became one of the house emcees at the comedy club in town.  This gave Sean the chance to perform 3-4 times a week for years on end.  That opportunity allowed Sean to grow as a comedian at a very rapid rate while at the same time giving him all the stage time needed to develop a healthy confidence while telling jokes.  </p>\n<p>After going as far as he could in Sioux Falls, Sean decided to move to Portland OR.  Quickly after moving he hopped right into the local scene advancing to the finals of the 2011 and 2012 Portland comedy competitions.  Sean was also voted one of Funny or Die and Splashlife magazines “30 Under 30” comedians to watch in 2011.  You have heard him as a repeat guest on Doug Bensons podcast “Doug Loves Movies” as well as “The Benson Interruption.”   You also may have seen him on Rooftop Comedy as a featured performer.  </p>\n<p>He has participated in the Bridgetown Comedy Festival the last 4 years running as well as the Bumbershoot Comedy and Arts Festival for the last 2.  The easy and comfortable style of Sean is sure to put any audience member in the right frame of mind to enjoy a stand up show and also provide them with a memorable experience to keep them coming back.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/flightclub.jpg",
+    PerformerId: "6408",
+    SortOrder: 250,
+    id: "6408",
+    pageUrl: "6408-sean-jordan",
+    events: [ "7621", "7650", "7752" ],
+    mc_events: [ "7667" ]
+}, {
+    Name: "Peggy O&#039;Leary",
+    Bio: "<p>Peggy O&#039;Leary is a stand up comedian based out of New York, but comes from the burbs of Philly, and thats very important for you to know.  Peggy tells jokes and stories about her fat girl past, her &quot;My Girl&quot; upbringing (minus the bee stings), and being completely weirded out about men and sex.  She performed at The Women in Comedy Festival in Boston and The Jersey City Comedy Festival, both in 2013. </p>\n<p>Her sketch group BLEAK! Comedy has performed all over the east coast, was featured at the Austin Sketch Festival, The National Comedy College Festival and performed BLEAK! Comedy: STOMACHTOWN at the UCB theatre in NYC.  Her stand up can be seen all over NYC at The Creek and The Cave, UCBTheatre, EastVille Comedy Club, The Village Lantern, and many bars and apartments all over the outer boroughs.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/peggy-oleary-6999-13-2.jpg",
+    PerformerId: "6058",
+    SortOrder: 250,
+    id: "6058",
+    pageUrl: "6058-peggy-o039leary",
+    events: [ "7654", "7663", "7680" ],
+    mc_events: [ "7699" ]
+}, {
     Name: "Rojo Perez",
     Bio: "<p>Rojo Perez is a New York based comedian. He grew up in Puerto Rico, which helped him form the humor you see in him today. After moving to Florida for college, he began doing stand up at the age of 20 in local clubs and small café’s in Central Florida. Since moving to the Northeast, Rojo has become a regular in the NY comedy scene and can usually be seen performing at The Creek and The Cave. He has also performed at Caroline’s, The Comedy Studio, The Improv, the UCB theaters and many other clubs around the US. He has appeared on &quot;Keith and The Girl&quot; and has been featured at the New York Comedy Festival and at the inaugural LA Riot Comedy Festival. His future plans include one day earning enough money that relatives will ask to borrow and continuing to spread laughter regardless of race, religion and gender.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/rojo-perez-111.jpg",
@@ -6167,25 +6171,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7679", "7753", "7912" ],
     mc_events: [ "7749" ]
 }, {
-    Name: "Tom Sibley",
-    Bio: "<p>Tom is a comedian living in Los Angeles, CA. He does two podcasts, one on the WestCast Network called Goof City (which is like Cheers meets Mean Girls) and We Watch Wrestling (a podcast about professional wrestling...seriously) He has appeared on BBC America, FKR.TV&#039;s Law of the Land, and countless television commercials. He currently lives in a makeshift Russian retirement community and thinks dogs are far better than people.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1393700_631839286867728_1805113915_n.jpg",
-    PerformerId: "6032",
+    Name: "Kortney Shane Williams",
+    Bio: "<p>Kortney Shane Williams is an international touring comedian that currently considers Seattle Washington to be his home. He has participated in Comedy Central’s, South Beach Comedy Festival, and has been featured on CBS.com. He was a 2012 Finalist in NBC’s Stand-Up for Diversity Showcase, and has opened for Dave Chappelle.</p>\n<p>Kortney’s unique, personable style of joke telling makes him a must see show. His most recent full length comedy album entitled, “I’m Right about This&quot; is available on iTunes.  He is also a writer and has been featured on Yahoo and FoxSports.com.  He is the founder and editor-in-chief of Comedic Prose, a comedy blog site that is regularly highlighted on Yardbarker. Currently he is working on a children’s comedy book that is slated to be finished in the winter of 2014.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kortneyshanewilliams_-_headshot1.jpg",
+    PerformerId: "6153",
     SortOrder: 300,
-    id: "6032",
-    pageUrl: "6032-tom-sibley",
-    events: [ "7663", "7692", "7708" ],
-    mc_events: [ "7685" ]
-}, {
-    Name: "Christian Van Wade Ricketts",
-    Bio: "<p>Christian is funny and his friends think so too, and so do a bunch of other people who he is not close friends with. He has been in Bridgetown several times and the Comedy &amp; Burrito Festival in San Francisco. He has been doing stand up for 5 years.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/btwon_sbumission_pho.jpg",
-    PerformerId: "6591",
-    SortOrder: 300,
-    id: "6591",
-    pageUrl: "6591-christian-van-wade-ricketts",
-    events: [ "7628", "7748", "7913" ],
-    mc_events: [ "7625" ]
+    id: "6153",
+    pageUrl: "6153-kortney-shane-williams",
+    events: [ "7656", "7672", "7689", "7733" ],
+    mc_events: []
 }, {
     Name: "Rob Haze",
     Bio: "<p>In a short amount of time, Rob Haze has become a rising star in stand up comedy.  The Atlanta native began his stand up journey while studying Political Science at the University of Georgia. There he would host and perform at many talent shows, pageants, and step shows. He went on to win the Athens Last Comic Standing contest. With a sense of humor that is full both of clever wordplay and references to popular culture, there is no wonder why Rob has become a favorite at the Laughing Skull Lounge, Punchline, and Uptown Comedy Corner.  Rob uses his gift to help others as well. In 2012, he won the Autism Laughs charity competition. He also was a writer and star of a (local) sketch comedy show called Cabbagetown. In 2012, Rob began to branch out from the Southeast, and was a finalist in the Bay Area Black Comedy Competition in Oakland, California.  He was a 2013 Finalist in the NBC Stand up for Diversity competition and is currently on their college tour. Rob has opened for many comics including Donnell Rawlins, Hannibal Buress, and most recently Dave Chappelle.</p>\n",
@@ -6197,15 +6191,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7701", "7702", "7710" ],
     mc_events: [ "7628" ]
 }, {
-    Name: "Will Smalley",
-    Bio: "<p>Fresh off the factory line with that “new car” smell, Comedian Will Smalley has readily established himself as a powerful voice and innovative joke writer in the Boston comedy scene. Will was a Finalist in the 2012 Boston Comedy Festival, has been featured in the Women In Comedy festival, and is a mainstay in the major comedy clubs and colleges across the Northeast. Will was selected in 2011 to be Comic In Residence and now hosts a monthly show at the renowned Comedy Studio in Cambridge.  Will has also been a writer for MY-TV Network.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/100114_will_029_webres.jpg",
-    PerformerId: "6699",
+    Name: "Adam Pasi",
+    Bio: "<p>Adam Pasi is a 33 year old comedian, who attempted and failed to grow up on both coasts and in 3 different countries, on account of his father being in the army.  To cope with being the chubby new kid almost every 3 years, he learned to depend on being funny when it came to making new friends.  While this didn&#039;t have him hoisted upon the shoulders of his classmates, he was able to develop some very meaningful friendships along the way.  </p>\n<p>Fast forward to adulthood (at least according to age) Adam has lived in Portland, Oregon for over a decade, and his sense of humor has led to him being the guy among his friends who tells everyone the usually dumb (yet funny) story of all the foolishness that happened the night before.  This led to him wanting to get on stage and tell anyone he could get to listen, all of the dumb (yet funny) stories about all of the foolishness that&#039;s ever happened to him ever, as well as a few of his observations on life, sexuality, Ke$ha, and pretty much whatever he finds amusing.  All from the perspective of a not quite grown up who claims that &quot;While I haven&#039;t matured to the point where I&#039;m behaving the way a man my age is supposed to, I have managed to build a life that&#039;s capable of withstanding my bullshit&quot; It&#039;s not like he&#039;s lived this outrageously unique adventure that you couldn&#039;t fathom without him explaining it to you. But he has enjoyed the usually dumb (yet funny) life that he&#039;s lived thus far, and he looks forward to enjoying sharing it with people.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/adamshot.jpg",
+    PerformerId: "6702",
     SortOrder: 300,
-    id: "6699",
-    pageUrl: "6699-will-smalley",
-    events: [ "7706", "7744", "7748" ],
-    mc_events: [ "7687" ]
+    id: "6702",
+    pageUrl: "6702-adam-pasi",
+    events: [ "7623", "7656", "7695", "7704" ],
+    mc_events: []
 }, {
     Name: "Gabe Dinger",
     Bio: "<p>Gabe Dinger is a stand-up comedian and improviser from Portland Oregon. The winner of 2006&#039;s CBS Radio Laff Off, and the first runner up in Helium Comedy Club&#039;s 2013 &quot;Portland&#039;s Funniest Person&quot; contest, Gabe has been described by The Portland Mercury &quot;one of Portland&#039;s most reliable comedians.&quot;</p>\n<p>While Gabe was the first comedian in Oregon to perform at the Oregon State Maximum Security Prison, he has also preformed at the Bridgetown Comedy Festival and SF Sketchfest. Along with stand-up and sketch writing, he is also an accomplished improviser. He is an instructor and regular performer at Curious Comedy Theater. He is a co-founder of the improv troupe Whiskey Tango, who have been featured at the Los Angeles Improv Festival,  The Vancouver International Improv Festival, and SF Skechfest.</p>\n",
@@ -6225,16 +6219,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7877",
     pageUrl: "7877-joel-warner",
     events: [],
-    mc_events: []
-}, {
-    Name: "Adam Pasi",
-    Bio: "<p>Adam Pasi is a 33 year old comedian, who attempted and failed to grow up on both coasts and in 3 different countries, on account of his father being in the army.  To cope with being the chubby new kid almost every 3 years, he learned to depend on being funny when it came to making new friends.  While this didn&#039;t have him hoisted upon the shoulders of his classmates, he was able to develop some very meaningful friendships along the way.  </p>\n<p>Fast forward to adulthood (at least according to age) Adam has lived in Portland, Oregon for over a decade, and his sense of humor has led to him being the guy among his friends who tells everyone the usually dumb (yet funny) story of all the foolishness that happened the night before.  This led to him wanting to get on stage and tell anyone he could get to listen, all of the dumb (yet funny) stories about all of the foolishness that&#039;s ever happened to him ever, as well as a few of his observations on life, sexuality, Ke$ha, and pretty much whatever he finds amusing.  All from the perspective of a not quite grown up who claims that &quot;While I haven&#039;t matured to the point where I&#039;m behaving the way a man my age is supposed to, I have managed to build a life that&#039;s capable of withstanding my bullshit&quot; It&#039;s not like he&#039;s lived this outrageously unique adventure that you couldn&#039;t fathom without him explaining it to you. But he has enjoyed the usually dumb (yet funny) life that he&#039;s lived thus far, and he looks forward to enjoying sharing it with people.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/adamshot.jpg",
-    PerformerId: "6702",
-    SortOrder: 300,
-    id: "6702",
-    pageUrl: "6702-adam-pasi",
-    events: [ "7623", "7656", "7695", "7704" ],
     mc_events: []
 }, {
     Name: "Brian Mitchell ",
@@ -6257,16 +6241,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7622", "7746", "7751", "7916" ],
     mc_events: []
 }, {
-    Name: "Katherine Williams",
-    Bio: "<p>Katherine Williams is a NYC – based stand-up comic, actor and playwright. She graduated from James Madison University in her native Virginia and attended the Atlantic conservatory (founded by David Mamet and William H. Macy) in New York. </p>\n<p>As a stand-up comic, Katherine is a chronic oversharer, from her awkward attempts at intimacy to quieting the paranoid voices in her head. The youngest child from a devout Irish Catholic family, she experiences soul-crushing guilt and constant shame on a near-daily basis.</p>\n<p>Six of her plays have been produced in Manhattan including My Dead Mother is Funnier Than You (Plaidbird Productions) and The Shih Tzu Doesn’t Like Lesbians (On the Leesh Productions).  Her comedic solo show, CALL ME, was accepted into three New York theater festivals in 2010 - 2011, including the Midtown International Theatre Festival. Katherine has performed in the New York Underground Comedy Festival (2009, 2010) and the New York International Fringe Festival (2009, in Meryl Cohn’s sold-out hit, And Sophie Comes Too). Her work has been reviewed by Show Business Weekly and nytheatre.com. She was recently interviewed for Morgan Spurlock’s latest venture, Failure Club, an online series for Yahoo.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_katherine_williams2_0.jpg",
-    PerformerId: "6163",
-    SortOrder: 300,
-    id: "6163",
-    pageUrl: "6163-katherine-williams",
-    events: [ "7691", "7698", "7743", "7809" ],
-    mc_events: []
-}, {
     Name: "Philip Schallberger",
     Bio: "<p>Philip Schallberger is Portland’s premier (only?) solo sketch-stand-up-whatever performer. He is a recurring guest in the Bridgetown Comedy Festival, and has recently been a part of the SLC Comedy Carnivale, Seattle Sketchfest, and San Francisco Sketchfest. Phil has been doing live comedy performance since 2007, and has only given up a bunch of times since then. The local papers seem to like what Phil does, and chances are you will as well. So give it a shot. Try Phil today.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/philip-schallberger.jpg",
@@ -6277,24 +6251,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7621", "7687", "7694", "7749" ],
     mc_events: []
 }, {
-    Name: "Gabriel Rutledge",
-    Bio: "<p>Since abandoning his successful pizza delivery career in 2000, Gabriel&#039;s talent, hard work, and lack of a fall back plan have made him into one of North America&#039;s finest touring comics.</p>\n<p>A past winner of the prestigious Seattle International Comedy Competition, Gabriel has made television appearances on Comedy Central&#039;s Live at Gotham, the nationally syndicated Comedy.TV, and Nickelodeon&#039;s Nickmom Night Out.</p>\n<p>He is also a frequent guest on the Bob and Tom radio show, heard in over 150 cities.</p>\n<p>Gabriel has performed at the HBO/TBS Comedy Festival in Las Vegas, the Laughing Skull Comedy Festival in Atlanta, and The Great American Comedy Festival held in Johnny Carson&#039;s home town of Norfolk Nebraska.</p>\n<p>He has made at least 4 people pee their pants.</p>\n<p>Gabriel&#039;s has released two albums; &quot;Sometimes Laughter Hurts&quot; and &quot;Breeder&quot; that can be heard on Sirius Satellite Radio, 24/7 Comedy Radio, and wherever you want if you buy one. Rutledge makes his home in one of the great entertainment capitals of the world; Olympia Washington.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/plaid_shirt_small.jpg",
-    PerformerId: "6174",
+    Name: "Katherine Williams",
+    Bio: "<p>Katherine Williams is a NYC – based stand-up comic, actor and playwright. She graduated from James Madison University in her native Virginia and attended the Atlantic conservatory (founded by David Mamet and William H. Macy) in New York. </p>\n<p>As a stand-up comic, Katherine is a chronic oversharer, from her awkward attempts at intimacy to quieting the paranoid voices in her head. The youngest child from a devout Irish Catholic family, she experiences soul-crushing guilt and constant shame on a near-daily basis.</p>\n<p>Six of her plays have been produced in Manhattan including My Dead Mother is Funnier Than You (Plaidbird Productions) and The Shih Tzu Doesn’t Like Lesbians (On the Leesh Productions).  Her comedic solo show, CALL ME, was accepted into three New York theater festivals in 2010 - 2011, including the Midtown International Theatre Festival. Katherine has performed in the New York Underground Comedy Festival (2009, 2010) and the New York International Fringe Festival (2009, in Meryl Cohn’s sold-out hit, And Sophie Comes Too). Her work has been reviewed by Show Business Weekly and nytheatre.com. She was recently interviewed for Morgan Spurlock’s latest venture, Failure Club, an online series for Yahoo.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_katherine_williams2_0.jpg",
+    PerformerId: "6163",
     SortOrder: 300,
-    id: "6174",
-    pageUrl: "6174-gabriel-rutledge",
-    events: [ "7680", "7704", "7738", "7752" ],
-    mc_events: []
-}, {
-    Name: "David Zoe Leon",
-    Bio: "<p>David Leon is a Chicago native who began his comedy career in Madison, WI. David has shared the stage with many talented performers such as Emo Phillips, TJ Miller, James Adomian and Joey Diaz. David Leon&#039;s style of comedy, best described by the Onion A.V. club, &quot;plays on the yearning sentimentalist and inner-creep&quot; with a &quot;kid-on-sugar-high stage presence.&quot; With a demented persona and unpredictable topics, David Leon puts on a show that demands intensity and imagination from his audience and leaves a smile in their heart.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/davidleon.jpg",
-    PerformerId: "6629",
-    SortOrder: 300,
-    id: "6629",
-    pageUrl: "6629-david-zoe-leon",
-    events: [ "7693", "7704", "7737", "7806" ],
+    id: "6163",
+    pageUrl: "6163-katherine-williams",
+    events: [ "7691", "7698", "7743", "7809" ],
     mc_events: []
 }, {
     Name: "Joshua Murphy",
@@ -6317,25 +6281,25 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7637", "7660", "7687" ],
     mc_events: [ "7751" ]
 }, {
-    Name: "Will Miles",
-    Bio: "<p>Will Miles is a New York stand up comedian.  After focusing on improvisation for two years at Chicago&#039;s ImprovOlympic, he began stand up comedy in 2007, and has been steadily working since he began.  After performing in the local stand up scene for a couple of years in Chicago, his first work came in the opportunity to feature for Hannibal Buress on his &quot;My Name Is Hannibal&quot; Tour. He is a regular at clubs, working the Midwest and East Coast. Aside from his stand up, Miles won runner up in Break.com&#039;s national &quot;Better Way Video&quot; contest and is a regular contributor on Chicago Public Radio&#039;s &quot;The Morning Amp&quot; radio show hosted by Brian Babylon and Molly Adams.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/image_6.jpg",
-    PerformerId: "6474",
+    Name: "Gabriel Rutledge",
+    Bio: "<p>Since abandoning his successful pizza delivery career in 2000, Gabriel&#039;s talent, hard work, and lack of a fall back plan have made him into one of North America&#039;s finest touring comics.</p>\n<p>A past winner of the prestigious Seattle International Comedy Competition, Gabriel has made television appearances on Comedy Central&#039;s Live at Gotham, the nationally syndicated Comedy.TV, and Nickelodeon&#039;s Nickmom Night Out.</p>\n<p>He is also a frequent guest on the Bob and Tom radio show, heard in over 150 cities.</p>\n<p>Gabriel has performed at the HBO/TBS Comedy Festival in Las Vegas, the Laughing Skull Comedy Festival in Atlanta, and The Great American Comedy Festival held in Johnny Carson&#039;s home town of Norfolk Nebraska.</p>\n<p>He has made at least 4 people pee their pants.</p>\n<p>Gabriel&#039;s has released two albums; &quot;Sometimes Laughter Hurts&quot; and &quot;Breeder&quot; that can be heard on Sirius Satellite Radio, 24/7 Comedy Radio, and wherever you want if you buy one. Rutledge makes his home in one of the great entertainment capitals of the world; Olympia Washington.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/plaid_shirt_small.jpg",
+    PerformerId: "6174",
     SortOrder: 300,
-    id: "6474",
-    pageUrl: "6474-will-miles",
-    events: [ "7641", "7685", "7701" ],
-    mc_events: [ "7652" ]
-}, {
-    Name: "Rob Gleeson",
-    Bio: "<p>Rob is an LA based stand up comedian. In addition to doing sets around Los Angeles, he regularly tours the college market where occasionally during his shows two kids seated in the back will start making out. They either find Rob&#039;s act to be incredibly erotic or insufferably boring. His acting work includes national commercials and roles on shows like &quot;How I Met Your Mother&quot; and &quot;Ben &amp; Kate.&quot; Currently, he recurs on the third season of Showtime&#039;s &quot;House of Lies.&quot;</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/gleeson.jpg",
-    PerformerId: "6189",
-    SortOrder: 300,
-    id: "6189",
-    pageUrl: "6189-rob-gleeson",
-    events: [ "7646", "7697", "7744", "7750" ],
+    id: "6174",
+    pageUrl: "6174-gabriel-rutledge",
+    events: [ "7680", "7704", "7738", "7752" ],
     mc_events: []
+}, {
+    Name: "David Zoe Leon",
+    Bio: "<p>David Leon is a Chicago native who began his comedy career in Madison, WI. David has shared the stage with many talented performers such as Emo Phillips, TJ Miller, James Adomian and Joey Diaz. David Leon&#039;s style of comedy, best described by the Onion A.V. club, &quot;plays on the yearning sentimentalist and inner-creep&quot; with a &quot;kid-on-sugar-high stage presence.&quot; With a demented persona and unpredictable topics, David Leon puts on a show that demands intensity and imagination from his audience and leaves a smile in their heart.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/davidleon.jpg",
+    PerformerId: "6629",
+    SortOrder: 300,
+    id: "6629",
+    pageUrl: "6629-david-zoe-leon",
+    events: [ "7693", "7704", "7737", "7806" ],
+    mc_events: [ "7912" ]
 }, {
     Name: "Nick Cobb",
     Bio: "<p>Hailing from Memphis, TN, Nick Cobb attended Indiana University where he majored in Psychology and learned to obsess over meaningless nonsense. This led him to work in his first comedy club, aptly named “The Looney Bin.”  It was at a tiny Beale Street bar where Nick won a stand-up competition, was bitten by the comedy bug and moved to New York to pursue The Dream.  While in New York, Nick was seen on Comedy Central’s &quot;Live at Gotham,&quot; VH1’s &quot;Morning Buzz,&quot; AMC’s &quot;Date Night&quot; as well as on NBC’s “Last Comic Standing” where he not only earned a spot in the semi-finals, but was also featured in a montage of comics recognized for having highly original material.  Less than a year ago, Nick took his talents to Los Angeles.  Since moving out West he won the March Madness Competition at the Hollywood Improv, appeared on Comedy Central’s &quot;Inside Amy Schumer,&quot; and had his late night debut on The Late Late Show with Craig Ferguson.  He also recently performed on AXS’s Gotham Comedy Live.  He also played the lead in the espn.com comedic web series “Team Players,” and has been seen in many commercials including Pepsi Max, Asthma.com, Joe’s Crab Shack, Carmax and starred in an e*Trade spot during halftime of the Super Bowl!  When not performing standup, Nick is brooding over that one guy in the crowd who was texting during his act.</p>\n",
@@ -6357,14 +6321,24 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7665", "7730", "7738" ],
     mc_events: []
 }, {
-    Name: "Peter McGraw",
-    Bio: "<p>Dr. Peter McGraw, a marketing and psychology professor at the University of Colorado Boulder, is an expert in the interdisciplinary fields of emotion and behavioral decision theory. His research examines the interrelationship of judgment, emotion, and choice, with a focus on consumer behavior and public policy. He is becoming a leading force in moving the science of humor from the niche to the mainstream. The advantage that McGraw has over his predecessors is his ability to conduct state-of-the-art experiments with the help of the team he directs at the Humor Research Lab (aka HuRL).McGraw received a B.A. in psychology and M.Ed. in educational psychology from Rutgers University and an M.S. and Ph.D. in quantitative psychology from The Ohio State University. His post-doctoral training was conducted at Princeton’s Woodrow Wilson School. His work has been covered by the BBC, MSNBC, Scientific American, Wall Street Journal, and the Financial Times. Most recently, McGraw made the 2013 Stylish Scientist List – probably because he likes to rock a sweater vest.</p>\n<p>McGraw is the co-author of The Humor Code: A Global Search for What Makes Things Funny.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/peter-mcgraw.jpg",
-    PerformerId: "7876",
+    Name: "Will Miles",
+    Bio: "<p>Will Miles is a New York stand up comedian.  After focusing on improvisation for two years at Chicago&#039;s ImprovOlympic, he began stand up comedy in 2007, and has been steadily working since he began.  After performing in the local stand up scene for a couple of years in Chicago, his first work came in the opportunity to feature for Hannibal Buress on his &quot;My Name Is Hannibal&quot; Tour. He is a regular at clubs, working the Midwest and East Coast. Aside from his stand up, Miles won runner up in Break.com&#039;s national &quot;Better Way Video&quot; contest and is a regular contributor on Chicago Public Radio&#039;s &quot;The Morning Amp&quot; radio show hosted by Brian Babylon and Molly Adams.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/image_6.jpg",
+    PerformerId: "6474",
     SortOrder: 300,
-    id: "7876",
-    pageUrl: "7876-peter-mcgraw",
-    events: [],
+    id: "6474",
+    pageUrl: "6474-will-miles",
+    events: [ "7641", "7685", "7701" ],
+    mc_events: [ "7652" ]
+}, {
+    Name: "Rob Gleeson",
+    Bio: "<p>Rob is an LA based stand up comedian. In addition to doing sets around Los Angeles, he regularly tours the college market where occasionally during his shows two kids seated in the back will start making out. They either find Rob&#039;s act to be incredibly erotic or insufferably boring. His acting work includes national commercials and roles on shows like &quot;How I Met Your Mother&quot; and &quot;Ben &amp; Kate.&quot; Currently, he recurs on the third season of Showtime&#039;s &quot;House of Lies.&quot;</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/gleeson.jpg",
+    PerformerId: "6189",
+    SortOrder: 300,
+    id: "6189",
+    pageUrl: "6189-rob-gleeson",
+    events: [ "7646", "7697", "7750", "8631" ],
     mc_events: []
 }, {
     Name: "Johan Miranda",
@@ -6387,6 +6361,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7665", "7695", "7748" ],
     mc_events: [ "7711" ]
 }, {
+    Name: "Christian Van Wade Ricketts",
+    Bio: "<p>Christian is funny and his friends think so too, and so do a bunch of other people who he is not close friends with. He has been in Bridgetown several times and the Comedy &amp; Burrito Festival in San Francisco. He has been doing stand up for 5 years.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/btwon_sbumission_pho.jpg",
+    PerformerId: "6591",
+    SortOrder: 300,
+    id: "6591",
+    pageUrl: "6591-christian-van-wade-ricketts",
+    events: [ "7628", "7748", "7913" ],
+    mc_events: [ "7625" ]
+}, {
     Name: "Caroline Bassett",
     Bio: "<p>Caroline Bassett is a young comic from Austin, Texas who intertwines bizarre storytelling with sardonic observational jokes.  She was a finalist in the 2013 Funniest Person in Austin Contest.  As a downstairs neighbor once asked her, &quot;Do you dance in the shower?&quot;</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1476023_10202546314805722_1681958827_n_0.jpg",
@@ -6394,7 +6378,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 300,
     id: "6647",
     pageUrl: "6647-caroline-bassett",
-    events: [ "7692", "7730", "7744" ],
+    events: [ "7692", "7730", "8631" ],
     mc_events: [ "7746" ]
 }, {
     Name: "Ivan Hernandez",
@@ -6407,16 +6391,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7622", "7752", "7806" ],
     mc_events: []
 }, {
-    Name: "Rebecca O&#039;Neal",
-    Bio: "<p>Rebecca O&#039;Neal is a Chicago based stand up comedian and writer/editor whose work can be read on/in Vanity Fair Magazine, Gawker.tv, Splitsider.com, The Rumpus, Death and Taxes Magazine, and more.  </p>\n<p>Since she began stand up comedy in early 2012, Rebecca has performed at Portland&#039;s 2013 Bridgetown Comedy Festival, Chicago Underground Comedy, Chicago Women&#039;s Funny Festival 2012 and headlined 2013, Queer Comedy at Zanies, The Comedy Shrine, The Laugh Factory, Zanies Rosemont, The Wasted Plains Rock and Roll Revival, The Ohio Lesbian Festival, Entertaining Julia, NPR&#039;s Brian Babylon&#039;s Bronzeville Comedy Show, Jokes and Notes, The Lincoln Lodge, Navy Pier&#039;s Beer Garden, headlining NERDGASM at The Drop Comedy Club in Southbend, Indiana, and many other showcases in and around Chicago. Rebecca is also one of the newest cast members of the 14th season of Chicago&#039;s historic Lincoln Lodge and a regular guest on Vocalo.org&#039;s morning amp and has appeared as a guest comedy commentator or WBEZ&#039;s Morning Shift with Tony Sarabia.</p>\n<p>She performed in a video for Just For Laughs Chicago 2012 and currently produces a monthly free, BYOB comedy showcase in Chicago called Congrats on Your Success (for which she does the promotion and public relations) that has been featured in/on WBEZ/NPR, The Huffington Post, Vocalo.org, The Chicago Reader, The Red Eye&#039;s Eat Drink Do column, Time Out Chicago, Gapers Block, Chicagoist, LoganSquarist, Chicago Now, ChooseChicago.com, AfterEllen.com and many local blogs and websites. She was also listed as one of the Huffington Post&#039;s 18 Funny Women To Follow on Twitter alongside Mindy Kaling - and in a second feature for Huffington Post Chicago.</p>\n<p>Rebecca O&#039;Neal is a hilariously cerebral and confessional young comic whose urban upbringing on Chicago&#039;s southside coupled with her expansive vocabulary and tendency toward introspection endear her to audiences of all backgrounds. By humorously mining her experiences, she makes the esoteric universal.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/fez_shot.jpg",
-    PerformerId: "5876",
-    SortOrder: 300,
-    id: "5876",
-    pageUrl: "5876-rebecca-o039neal",
-    events: [ "7688", "7703", "7733", "7744" ],
-    mc_events: []
-}, {
     Name: "T.J. Chambers",
     Bio: "<p>Distributor of high-fives, repository of whiskey, afraid of phones, spiders, and phone-using spiders.  T.J. Chambers is a Los Angeles-based writer and comedian whose work has appeared on NBC, MTV, Lifetime, and other television channels (but let&#039;s be honest we all mostly flip through those three).  As a live performer he has toured the country and graced (seriously, his movements are lithe as hell) every major and minor stage around LA.  Listeners have enjoyed a string of scintillating appearances on podcasts such as Put Your Hands Together, PodCrash, Probably Science, and maybe some others provided they start with &quot;P&quot;, because after all it&#039;s a fun letter with both straight and bendy parts.  Presumably he is also very happy to be making a return to the Bridgetown Comedy Festival, but to be honest we forgot to ask him.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/me_cropped_5.jpg",
@@ -6426,6 +6400,26 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     pageUrl: "5728-tj-chambers",
     events: [ "7687", "7745", "7748", "7915" ],
     mc_events: []
+}, {
+    Name: "Rebecca O&#039;Neal",
+    Bio: "<p>Rebecca O&#039;Neal is a Chicago based stand up comedian and writer/editor whose work can be read on/in Vanity Fair Magazine, Gawker.tv, Splitsider.com, The Rumpus, Death and Taxes Magazine, and more.  </p>\n<p>Since she began stand up comedy in early 2012, Rebecca has performed at Portland&#039;s 2013 Bridgetown Comedy Festival, Chicago Underground Comedy, Chicago Women&#039;s Funny Festival 2012 and headlined 2013, Queer Comedy at Zanies, The Comedy Shrine, The Laugh Factory, Zanies Rosemont, The Wasted Plains Rock and Roll Revival, The Ohio Lesbian Festival, Entertaining Julia, NPR&#039;s Brian Babylon&#039;s Bronzeville Comedy Show, Jokes and Notes, The Lincoln Lodge, Navy Pier&#039;s Beer Garden, headlining NERDGASM at The Drop Comedy Club in Southbend, Indiana, and many other showcases in and around Chicago. Rebecca is also one of the newest cast members of the 14th season of Chicago&#039;s historic Lincoln Lodge and a regular guest on Vocalo.org&#039;s morning amp and has appeared as a guest comedy commentator or WBEZ&#039;s Morning Shift with Tony Sarabia.</p>\n<p>She performed in a video for Just For Laughs Chicago 2012 and currently produces a monthly free, BYOB comedy showcase in Chicago called Congrats on Your Success (for which she does the promotion and public relations) that has been featured in/on WBEZ/NPR, The Huffington Post, Vocalo.org, The Chicago Reader, The Red Eye&#039;s Eat Drink Do column, Time Out Chicago, Gapers Block, Chicagoist, LoganSquarist, Chicago Now, ChooseChicago.com, AfterEllen.com and many local blogs and websites. She was also listed as one of the Huffington Post&#039;s 18 Funny Women To Follow on Twitter alongside Mindy Kaling - and in a second feature for Huffington Post Chicago.</p>\n<p>Rebecca O&#039;Neal is a hilariously cerebral and confessional young comic whose urban upbringing on Chicago&#039;s southside coupled with her expansive vocabulary and tendency toward introspection endear her to audiences of all backgrounds. By humorously mining her experiences, she makes the esoteric universal.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/fez_shot.jpg",
+    PerformerId: "5876",
+    SortOrder: 300,
+    id: "5876",
+    pageUrl: "5876-rebecca-o039neal",
+    events: [ "7688", "7703", "7733", "8631" ],
+    mc_events: []
+}, {
+    Name: "Anna Seregina",
+    Bio: "<p>Anna Seregina is a San Francisco-based stand-up comic and performer, described as having the &quot;worst aura.&quot; She was named a &quot;Comic to Watch in 2013&quot; by the SF Weekly, as well an &quot;Emerging Bay Area Comic in 2013&quot; by the Bold Italic. She is a regular performer of the San Francisco-based show &quot;the Business,&quot; and produces the show “Talkies.&quot; </p>\n<p>She has appeared in comedy festivals, hosted music festivals, told stories at storytelling shows, and done weird things on Public Access TV. She starred in Joey Izzo’s &quot;Stepsister,&quot; which screened at San Francisco International and the Cannes Film Festival in 2013. Most facts about her are true. Most truths about her are facts.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/image_17.jpg",
+    PerformerId: "6681",
+    SortOrder: 300,
+    id: "6681",
+    pageUrl: "6681-anna-seregina",
+    events: [ "7625", "7694", "7710" ],
+    mc_events: [ "7622" ]
 }, {
     Name: "Tony Sam",
     Bio: "<p>Winner of the 2007 Chicago Comedy Award for Most Innovative Comedian, Sam has been heralded by the press for his ability to make the quirky &quot;hysterical&quot;, and was described as a &quot;stalwart of the emerging Chicago underground comedy scene,&quot; by UR Chicago. Earning his chops at the Chicago Second City Training Center, and IO Chicago (formerly ImprovOlympic), Sam has taken his life experiences and molded them into charming, hilarious, and memorable characters that will have you repeating his lines well after the show. In addition to appearing on the G4 Network&#039;s &quot;Attack of the Show,&quot; he is currently a voice actor, commercial actor, and writer for &quot;Ridiculousness&quot; on MTV.</p>\n",
@@ -6447,25 +6441,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7641", "7693", "7704" ],
     mc_events: [ "7738" ]
 }, {
-    Name: "Anna Seregina",
-    Bio: "<p>Anna Seregina is a San Francisco-based stand-up comic and performer, described as having the &quot;worst aura.&quot; She was named a &quot;Comic to Watch in 2013&quot; by the SF Weekly, as well an &quot;Emerging Bay Area Comic in 2013&quot; by the Bold Italic. She is a regular performer of the San Francisco-based show &quot;the Business,&quot; and produces the show “Talkies.&quot; </p>\n<p>She has appeared in comedy festivals, hosted music festivals, told stories at storytelling shows, and done weird things on Public Access TV. She starred in Joey Izzo’s &quot;Stepsister,&quot; which screened at San Francisco International and the Cannes Film Festival in 2013. Most facts about her are true. Most truths about her are facts.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/image_17.jpg",
-    PerformerId: "6681",
+    Name: "Mike Lebovitz",
+    Bio: "<p>Mike entered comedy at the tender age of six with clowning classes at the local JCC. He’s been delighting and confounding audiences big and small with his accessibly off-beat brand of humor ever since. A father as well as a fat slob, Mike draws from a broad range of experiences in constructing his act, using outlandish viewpoints and subversive turns of phrase to highlight the inherent absurdity of being. He doesn’t point out life’s quirks; he rolls around and farts on them! A current member of Comedians You Should Know, Chicago’s premiere stand-up comedy collective, Mike is also curator and co-creator of Senorita Weiner&#039;s Top Secret Humor Experiment and Ice Cream Social Club, which is Chicago&#039;s longest-running clandestine comedy show in addition to being the original underground, members-only ice cream social. He is also starting to &quot;make it&quot; on TV where, if you look really closely, when the moon is just right, you may be able to catch a glimpse of tiny Lebo selling little bits of his integrity in order to hawk various products. A &quot;New Face&quot; at the 2013 Montreal Just For Laughs Comedy Festival, Mike has also made funny faces at the 2012 TBS Just For Laughs Festival (Chicago), the 2013 Montreux Comedy Festival (Switzerland) and weirded people out at the 2013 Gilda&#039;s Laughfest in Grand Rapids as well! Fun!</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/lebo_mirror_orig_copy.jpg",
+    PerformerId: "5739",
     SortOrder: 300,
-    id: "6681",
-    pageUrl: "6681-anna-seregina",
-    events: [ "7625", "7694", "7710", "8579" ],
-    mc_events: [ "7622" ]
-}, {
-    Name: "Kortney Shane Williams",
-    Bio: "<p>Kortney Shane Williams is an international touring comedian that currently considers Seattle Washington to be his home. He has participated in Comedy Central’s, South Beach Comedy Festival, and has been featured on CBS.com. He was a 2012 Finalist in NBC’s Stand-Up for Diversity Showcase, and has opened for Dave Chappelle.</p>\n<p>Kortney’s unique, personable style of joke telling makes him a must see show. His most recent full length comedy album entitled, “I’m Right about This&quot; is available on iTunes.  He is also a writer and has been featured on Yahoo and FoxSports.com.  He is the founder and editor-in-chief of Comedic Prose, a comedy blog site that is regularly highlighted on Yardbarker. Currently he is working on a children’s comedy book that is slated to be finished in the winter of 2014.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/kortneyshanewilliams_-_headshot1.jpg",
-    PerformerId: "6153",
-    SortOrder: 300,
-    id: "6153",
-    pageUrl: "6153-kortney-shane-williams",
-    events: [ "7656", "7672", "7689", "7733" ],
-    mc_events: []
+    id: "5739",
+    pageUrl: "5739-mike-lebovitz",
+    events: [ "7654", "7687", "7742", "7911", "8635" ],
+    mc_events: [ "7688" ]
 }, {
     Name: "Ben Bizuneh",
     Bio: '<p>Ben started doing stand-up in Bloomington, Indiana at the Comedy Attic while attending Indiana University. After graduating, he moved to Los Angeles, and can be seen performing wherever anyone will let him. He’s performed at the Limestone Comedy Festival, was a finalist in the Great American Comedy Festival, and has done no other festivals.</p>\n<p>He also makes videos in which he lies to people that have been featured on WorldStarHipHop, College Humor, What’s Trending, and The Bleacher Report. Ben hopes to one day be able to cry on command.</p>\n<p><a href="http://benbizuneh.tumblr.com">http://benbizuneh.tumblr.com</a><br />\n<a href="http://youtube.com/lieguys">http://youtube.com/lieguys</a></p>\n',
@@ -6474,18 +6458,18 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 300,
     id: "6134",
     pageUrl: "6134-ben-bizuneh",
-    events: [ "7656", "7693", "7701" ],
+    events: [ "7693", "7701", "7914" ],
     mc_events: [ "7680" ]
 }, {
-    Name: "Mike Lebovitz",
-    Bio: "<p>Mike entered comedy at the tender age of six with clowning classes at the local JCC. He’s been delighting and confounding audiences big and small with his accessibly off-beat brand of humor ever since. A father as well as a fat slob, Mike draws from a broad range of experiences in constructing his act, using outlandish viewpoints and subversive turns of phrase to highlight the inherent absurdity of being. He doesn’t point out life’s quirks; he rolls around and farts on them! A current member of Comedians You Should Know, Chicago’s premiere stand-up comedy collective, Mike is also curator and co-creator of Senorita Weiner&#039;s Top Secret Humor Experiment and Ice Cream Social Club, which is Chicago&#039;s longest-running clandestine comedy show in addition to being the original underground, members-only ice cream social. He is also starting to &quot;make it&quot; on TV where, if you look really closely, when the moon is just right, you may be able to catch a glimpse of tiny Lebo selling little bits of his integrity in order to hawk various products. A &quot;New Face&quot; at the 2013 Montreal Just For Laughs Comedy Festival, Mike has also made funny faces at the 2012 TBS Just For Laughs Festival (Chicago), the 2013 Montreux Comedy Festival (Switzerland) and weirded people out at the 2013 Gilda&#039;s Laughfest in Grand Rapids as well! Fun!</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/lebo_mirror_orig_copy.jpg",
-    PerformerId: "5739",
+    Name: "Peter McGraw",
+    Bio: "<p>Dr. Peter McGraw, a marketing and psychology professor at the University of Colorado Boulder, is an expert in the interdisciplinary fields of emotion and behavioral decision theory. His research examines the interrelationship of judgment, emotion, and choice, with a focus on consumer behavior and public policy. He is becoming a leading force in moving the science of humor from the niche to the mainstream. The advantage that McGraw has over his predecessors is his ability to conduct state-of-the-art experiments with the help of the team he directs at the Humor Research Lab (aka HuRL).McGraw received a B.A. in psychology and M.Ed. in educational psychology from Rutgers University and an M.S. and Ph.D. in quantitative psychology from The Ohio State University. His post-doctoral training was conducted at Princeton’s Woodrow Wilson School. His work has been covered by the BBC, MSNBC, Scientific American, Wall Street Journal, and the Financial Times. Most recently, McGraw made the 2013 Stylish Scientist List – probably because he likes to rock a sweater vest.</p>\n<p>McGraw is the co-author of The Humor Code: A Global Search for What Makes Things Funny.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/peter-mcgraw.jpg",
+    PerformerId: "7876",
     SortOrder: 300,
-    id: "5739",
-    pageUrl: "5739-mike-lebovitz",
-    events: [ "7687", "7742", "7911" ],
-    mc_events: [ "7688" ]
+    id: "7876",
+    pageUrl: "7876-peter-mcgraw",
+    events: [],
+    mc_events: []
 }, {
     Name: "Douglas Gale",
     Bio: "<p>Douglas Gale started doing comedy in Seattle in 2003 where he quickly became one of the newest comics in the scene. In the past few years, his comedy has become more personal. From stories about the time he tried to trade places with his reflection in a mirror (high on mushrooms) to his confusion about what is and is not cheese (arugula = not cheese).</p>\n<p>In the past year, he started expanding beyond straight standup and into the world of storytelling. He has won three Moth StorySLAMs in Seattle and competed in a Moth GrandSLAM in 2014. </p>\n<p>In 2013, he was the winner of the Competitive Erotic Fan Fiction show at Bumbershoot. </p>\n<p>He is currently the producer of the monthly Moth StorySLAM in Seattle</p>\n",
@@ -6507,16 +6491,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7695", "7697", "7748", "7951" ],
     mc_events: []
 }, {
-    Name: "Opeyemi Olagbaju",
-    Bio: "<p>Opeyemi &quot;Ope&quot; Olagbaju may be a young comic, but his love and commitment to stand up can always be seen on stage.  The OC/LAcomic. has been seen performing at various clubs(Irvine Improv, Ontario Improv, Brea improv, Spectacles Theater, Flappers) and colleges(UCSB, UCFC) throughout southern California.. Ope has  been noted for his observational humor and being able to craft hilarity from his own personal experiences of being an immigrant who assimilated into American culture and society. Through comedy Ope wants like to explore what makes us different and more importantly how these differences make us all the same.  His philosophy is that &quot;No matter where you&#039;re from, finding a way to laugh is a highly important component of the human experience and something we can all relate to. I&#039;m just glad I have been given the opportunity to make people laugh and share in that experience &quot;</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/ope_pic.jpg",
-    PerformerId: "6561",
-    SortOrder: 300,
-    id: "6561",
-    pageUrl: "6561-opeyemi-olagbaju",
-    events: [ "7711", "7733", "7743" ],
-    mc_events: [ "7748" ]
-}, {
     Name: "Martin Morrow",
     Bio: "<p>Martin Morrow is originally from Birmingham, AL where he started doing stand-up, improv, and belonged to an award winning sketch/stand-up hybrid &quot;Tubbi and Martin.&quot; He has performed in clubs, colleges, and festivals all over the country including Atlanta, Austin, Cleveland, Las Vegas, Los Angeles, New Orleans, and New York and has worked with some of the top names in comedy. </p>\n<p>Currently residing in Chicago, IL, Martin has performed in several shows with Second City as a part of their Outreach &amp; Diversity ensemble in addition to being a Second City PUMA scholarship recipient, and has put on several one man shows at The Playground Theater and MPaact Theater, and was a season 13 cast member of the longest running independent comedy showcase the Lincoln Lodge. His work has been featured on the Huffington Post, he was a finalist in the seventh season of the Impress These Apes comedy competition, and he performed in the 2013 TBS Just for Laughs Festival, but Martin is perhaps best known from his work in the 1953 Walt Disney classic Peter Pan as Peter Pan&#039;s shadow.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/mmmhs.jpg",
@@ -6527,6 +6501,36 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7653", "7733" ],
     mc_events: []
 }, {
+    Name: "Opeyemi Olagbaju",
+    Bio: "<p>Opeyemi &quot;Ope&quot; Olagbaju may be a young comic, but his love and commitment to stand up can always be seen on stage.  The OC/LAcomic. has been seen performing at various clubs(Irvine Improv, Ontario Improv, Brea improv, Spectacles Theater, Flappers) and colleges(UCSB, UCFC) throughout southern California.. Ope has  been noted for his observational humor and being able to craft hilarity from his own personal experiences of being an immigrant who assimilated into American culture and society. Through comedy Ope wants like to explore what makes us different and more importantly how these differences make us all the same.  His philosophy is that &quot;No matter where you&#039;re from, finding a way to laugh is a highly important component of the human experience and something we can all relate to. I&#039;m just glad I have been given the opportunity to make people laugh and share in that experience &quot;</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/ope_pic.jpg",
+    PerformerId: "6561",
+    SortOrder: 300,
+    id: "6561",
+    pageUrl: "6561-opeyemi-olagbaju",
+    events: [ "7711", "7733", "7743" ],
+    mc_events: [ "7748" ]
+}, {
+    Name: "Subhah Agarwal",
+    Bio: "<p>Subhah Agarwal is a stand up comedian currently working out of New York City. Subhah performs regularly at club across the city including but not limited to Stand Up New York, the Stand, Gotham, and New York Comedy Club. She has also performed in several prestigious alterative comedy venues including Hannibal Buress’s Knitting Factory, and Night Train with Wyatt Cenac. </p>\n<p>She recently showcased in the New York Comedy Festival and was featured on Scott Moran’s PBS documentary series “Modern Comedian.” She is known as one of the hardest working comedians. She has really been working to get her name out there so that one day she can write in a notebook without someone asking her if she’s doing homework.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/subhah-agarwal-0085-2.jpg",
+    PerformerId: "6298",
+    SortOrder: 300,
+    id: "6298",
+    pageUrl: "6298-subhah-agarwal",
+    events: [ "7637", "7706", "7738", "8632" ],
+    mc_events: []
+}, {
+    Name: "Tom Sibley",
+    Bio: "<p>Tom is a comedian living in Los Angeles, CA. He does two podcasts, one on the WestCast Network called Goof City (which is like Cheers meets Mean Girls) and We Watch Wrestling (a podcast about professional wrestling...seriously) He has appeared on BBC America, FKR.TV&#039;s Law of the Land, and countless television commercials. He currently lives in a makeshift Russian retirement community and thinks dogs are far better than people.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1393700_631839286867728_1805113915_n.jpg",
+    PerformerId: "6032",
+    SortOrder: 300,
+    id: "6032",
+    pageUrl: "6032-tom-sibley",
+    events: [ "7663", "7692", "7708" ],
+    mc_events: [ "7685" ]
+}, {
     Name: "Lisa Best",
     Bio: "<p>Lisa Best is one of the fresh faces to come out of the strong south Florida comedy scene.</p>\n<p>At the age of 15, Lisa pooped her pants and her classmate Billy Hidges called her a fartball. Since that pivotal moment of clarity and poo, Lisa began her training to turn embarrassing incidents into hilarity. No longer a novice, she skillfully sucks in her audiences with captivating vulnerability and story-telling flare. Now without pooping herself. </p>\n<p>Now 23 years old, Lisa Best currently resides in Los Angeles. She can be seen in Comedy Central&#039;s Dead Kevin sketch, &quot;Hot Girl Fail,&quot; starring in the film &quot;Something Funny,&quot; and also as a guest star in SyFy&#039;s hit Fangasm. She is also the creator and writer of the mockumentary-style webseries, &quot;The Apartment.&quot;</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot.png",
@@ -6534,7 +6538,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 300,
     id: "5906",
     pageUrl: "5906-lisa-best",
-    events: [ "7652", "7708", "7740", "7750" ],
+    events: [ "7652", "7656", "7708", "7740", "7750" ],
     mc_events: []
 }, {
     Name: "Andy Wood",
@@ -6547,35 +6551,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7642", "7697", "7810" ],
     mc_events: []
 }, {
-    Name: "Subhah Agarwal",
-    Bio: "<p>Subhah Agarwal is a stand up comedian currently working out of New York City. Subhah performs regularly at club across the city including but not limited to Stand Up New York, the Stand, Gotham, and New York Comedy Club. She has also performed in several prestigious alterative comedy venues including Hannibal Buress’s Knitting Factory, and Night Train with Wyatt Cenac. </p>\n<p>She recently showcased in the New York Comedy Festival and was featured on Scott Moran’s PBS documentary series “Modern Comedian.” She is known as one of the hardest working comedians. She has really been working to get her name out there so that one day she can write in a notebook without someone asking her if she’s doing homework.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/subhah-agarwal-0085-2.jpg",
-    PerformerId: "6298",
+    Name: "Will Smalley",
+    Bio: "<p>Fresh off the factory line with that “new car” smell, Comedian Will Smalley has readily established himself as a powerful voice and innovative joke writer in the Boston comedy scene. Will was a Finalist in the 2012 Boston Comedy Festival, has been featured in the Women In Comedy festival, and is a mainstay in the major comedy clubs and colleges across the Northeast. Will was selected in 2011 to be Comic In Residence and now hosts a monthly show at the renowned Comedy Studio in Cambridge.  Will has also been a writer for MY-TV Network.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/100114_will_029_webres.jpg",
+    PerformerId: "6699",
     SortOrder: 300,
-    id: "6298",
-    pageUrl: "6298-subhah-agarwal",
-    events: [ "7637", "7666", "7706", "7738" ],
-    mc_events: []
-}, {
-    Name: "Erin Dewey Lennox",
-    Bio: "<p>ERIN DEWEY LENNOX is a writer / comedian based in Los Angeles, CA.  She has performed at clubs, colleges, and alternative venues in over 30 states and at the Women in Comedy Festival, the Cape Fear Comedy Festival, the Out of Bounds Comedy Festival, and at an impromptu roast of her grandfather.  She has written for ESPN, MTV, NFL Gameday, and McSweeney&#039;s.  She also writes a lot of the commercials you fast forward through.  Erin studied journalism at the University of North Carolina Chapel Hill and drank a lot at football games.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/erinlennox.jpg",
-    PerformerId: "6456",
-    SortOrder: 350,
-    id: "6456",
-    pageUrl: "6456-erin-dewey-lennox",
-    events: [ "7730", "7743", "7913", "7916" ],
-    mc_events: [ "7623" ]
-}, {
-    Name: "Dina Hashem",
-    Bio: "<p>Dina Hashem first tried stand-up by auditioning for the 2010 New Jersey Comedy Festival at Rutgers University. After winning 1st place, she continued to pursue comedy and has since been performing regularly at clubs including Broadway Comedy Club, Caroline&#039;s, The Laughing Devil, Comic Strip Live, and The Stress Factory.</p>\n<p>Dina&#039;s memorable style contrasts a subtle delivery with witty observations and dark musings on her cultural upbringing. She was a semi-finalist in the She-Devil Comedy Festival and Laughing Devil Comedy Festival, and a participant of Gilda&#039;s Laugh Fest and the Jersey City Comedy Festival. Her writing has also been featured on the websites of Comedy Central and Nickelodeon.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dina-hashem-headshot.jpg",
-    PerformerId: "6640",
-    SortOrder: 350,
-    id: "6640",
-    pageUrl: "6640-dina-hashem",
-    events: [ "7911", "7913" ],
-    mc_events: [ "7690" ]
+    id: "6699",
+    pageUrl: "6699-will-smalley",
+    events: [ "7706", "7748", "8631" ],
+    mc_events: [ "7687" ]
 }, {
     Name: "Natasha Muse",
     Bio: "<p>Natasha Muse is funny. She began performing in 2001 as “Ginger” at AsiaSF. Her friends claimed she was much too shy to be a good performer, and the fact that they were right didn’t stop her from trying it anyway. But, eventually, she sorta proved them all wrong.</p>\n<p>In 2008, Natasha made the leap from lip-synching to stand-up comedy, and began to create a buzz in the San Francisco comedy scene. Her cerebral wit, whimsical wordplay, and unique perspective on life have earned her the adoration of audiences and the respect of her peers. She’s guaranteed to be at least the second-funniest transexual you know.</p>\n<p>Natasha performs all over the Bay Area, including Cobb’s Comedy, the SF Punchline, Harvey’s, and the Dark Room. She has worked with such people as Wyatt Cenac, Pete Holmes, Ron Lynch, and Laurie Kilmartin.</p>\n<p>In addition to stand-up, Natasha produced and hosted the monthly underground hit “A Funny Night for Comedy” at the Actors’ Theatre, the cult podcast “Too Soon,&quot; and writes and performs with the sketch group Femikaze. She has also been declared &quot;a force to be reckoned with on Twitter.&quot;</p>\n<p>In 2013 the SF Weekly said she was a &quot;Comedian to Watch,&quot; and in 2012 they chose her as &quot;The Funniest Tranny in SF.&quot; </p>\n<p>Natasha has performed in Sketchfest 2013 and 2014, Comedy Day 2012 and 2011, and the first and only SF Comedy and Burrito Festival in 2012. She is also the winner of the 2010 Battle of the Bay competition, Miss Toolbox 2011, and also took home the Miss Photogenic trophy in Model Search 2004.</p>\n",
@@ -6584,7 +6568,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 350,
     id: "6731",
     pageUrl: "6731-natasha-muse",
-    events: [ "7666", "7688", "7710", "7807" ],
+    events: [ "7688", "7710", "7807", "8632" ],
     mc_events: []
 }, {
     Name: "Barbara Holm ",
@@ -6597,6 +6581,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7648", "7679", "7734", "7807" ],
     mc_events: [ "7809" ]
 }, {
+    Name: "Dina Hashem",
+    Bio: "<p>Dina Hashem first tried stand-up by auditioning for the 2010 New Jersey Comedy Festival at Rutgers University. After winning 1st place, she continued to pursue comedy and has since been performing regularly at clubs including Broadway Comedy Club, Caroline&#039;s, The Laughing Devil, Comic Strip Live, and The Stress Factory.</p>\n<p>Dina&#039;s memorable style contrasts a subtle delivery with witty observations and dark musings on her cultural upbringing. She was a semi-finalist in the She-Devil Comedy Festival and Laughing Devil Comedy Festival, and a participant of Gilda&#039;s Laugh Fest and the Jersey City Comedy Festival. Her writing has also been featured on the websites of Comedy Central and Nickelodeon.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/dina-hashem-headshot.jpg",
+    PerformerId: "6640",
+    SortOrder: 350,
+    id: "6640",
+    pageUrl: "6640-dina-hashem",
+    events: [ "7911", "7913" ],
+    mc_events: [ "7690" ]
+}, {
     Name: "JoAnn Schinderle",
     Bio: "<p>JoAnn Schinderle hails from the upper Midwest and despite being a Portlander now, will probably never lose her “hot dish” accent. (Hotdish ingredients include but are not limited to: ground beef, canned vegetables, canned soup, cheese, and tater tots.) For the past year,  JoAnn has been making strides in Portland’s thriving comedy scene by way of stand-up and improv. Recently performing in the All Jane No Dick comedy festival and 2014&#039;s SF Sketchfest, as a stand-up her humor is relatable, snarky, and has a storytelling style that will make you feel like she’s your best friend letting you in on a secret. As an improviser and member of the Curious Comedy House Team ensemble, she creates big characters and will “yes and” the shit out of you. JoAnn’s performed both mediums at venues in Chicago (Second City Training Center) and all around Portland (Curious Comedy Theater, Brody Theater, and Funhouse Lounge.) If you enjoy friendly banter you can follow JoAnn on twitter @joannlizabeth</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/tumblr_mypy0mh21n1s46y2co2_r1_1280.jpg",
@@ -6604,7 +6598,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 350,
     id: "5983",
     pageUrl: "5983-joann-schinderle",
-    events: [ "7704", "7738", "7807" ],
+    events: [ "7704", "7738", "7807", "7912" ],
     mc_events: [ "7752" ]
 }, {
     Name: "Todd Masterson",
@@ -6644,18 +6638,8 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: 350,
     id: "6509",
     pageUrl: "6509-paul-jay",
-    events: [ "7665", "7739", "7751", "7753" ],
+    events: [ "7665", "7739", "7751", "7753", "8635" ],
     mc_events: []
-}, {
-    Name: "Nick Sahoyah",
-    Bio: '<p>Nick Sahoyah is a writer and comedy producer based out of Seattle, Washington.  In addition to performing at and hosting comedy showcases across Seattle, Nick co-produces the popular weekly comedy night at Scratch Deli on Capitol Hill.  His past production projects include organizing and emceeing the comedy stage at &#039;Mo Wave 2013 (Seattle&#039;s first all queer music and arts festival).  Shortly after, Nick co-produced and hosted Seattle Pride Week&#039;s biggest comedy show, &quot;Out &amp; In&quot; at the Neptune Theater; a benefit in partnership with Gay City Health Project.</p>\n<p>Apart from stand up, Nick produces the cult sketch/sitcom webshow &quot;Monsoon Season&quot; starring Jinkx Monsoon (winner of RuPaul&#039;s Drag Race Season 5), which he directs, co-writes, and co-stars in (<a href="http://www.funnyordie.com/monsoonseason">http://www.funnyordie.com/monsoonseason</a>), and hosts his own podcast, &quot;That&#039;s Provocative! with Nick Sahoyah&quot; (<a href="http://www.nicksahoyah.com">http://www.nicksahoyah.com</a>).</p>\n<p>Nick has previously performed stand up at Bumbershoot Music &amp; Arts Festival (2011/2012), &#039;Mo Wave (2013), Summer Meltdown Festival (2013), and Dallas Comedy Festival (2013).</p>\n',
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/sahoyah.jpg",
-    PerformerId: "5879",
-    SortOrder: 350,
-    id: "5879",
-    pageUrl: "5879-nick-sahoyah",
-    events: [ "7641", "7653", "7753" ],
-    mc_events: [ "7744" ]
 }, {
     Name: "Jeff Oliver",
     Bio: "<p>Jeff Oliver is a filmmaker, comedian, musician and writer. He has previously appeared at the 2012 Bridgetown Comedy Festival and has made appearances on Fox News’ Red Eye with Greg Gutfeld, NPR&#039;s Tell Me More, and on numerous podcasts.</p>\n<p>Jeff is a former writer for the web series The Spicy News and a former guitarist for The Arcadians. He co-directed, wrote and starred in the comedic short film &#039;Meta Feta&#039; which appeared at the DaVinci Days Film Festival in 2010.</p>\n<p>Originally from the Pacific Northwest he currently lives in New York City where he is directing his first feature film ‘A Summer To Discover.’ He is a contributor for Savage Henry Magazine.</p>\n",
@@ -6665,7 +6649,17 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "5999",
     pageUrl: "5999-jeff-oliver",
     events: [ "7632", "7698", "7733" ],
-    mc_events: [ "7627" ]
+    mc_events: [ "8633" ]
+}, {
+    Name: "Nick Sahoyah",
+    Bio: '<p>Nick Sahoyah is a writer and comedy producer based out of Seattle, Washington.  In addition to performing at and hosting comedy showcases across Seattle, Nick co-produces the popular weekly comedy night at Scratch Deli on Capitol Hill.  His past production projects include organizing and emceeing the comedy stage at &#039;Mo Wave 2013 (Seattle&#039;s first all queer music and arts festival).  Shortly after, Nick co-produced and hosted Seattle Pride Week&#039;s biggest comedy show, &quot;Out &amp; In&quot; at the Neptune Theater; a benefit in partnership with Gay City Health Project.</p>\n<p>Apart from stand up, Nick produces the cult sketch/sitcom webshow &quot;Monsoon Season&quot; starring Jinkx Monsoon (winner of RuPaul&#039;s Drag Race Season 5), which he directs, co-writes, and co-stars in (<a href="http://www.funnyordie.com/monsoonseason">http://www.funnyordie.com/monsoonseason</a>), and hosts his own podcast, &quot;That&#039;s Provocative! with Nick Sahoyah&quot; (<a href="http://www.nicksahoyah.com">http://www.nicksahoyah.com</a>).</p>\n<p>Nick has previously performed stand up at Bumbershoot Music &amp; Arts Festival (2011/2012), &#039;Mo Wave (2013), Summer Meltdown Festival (2013), and Dallas Comedy Festival (2013).</p>\n',
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/sahoyah.jpg",
+    PerformerId: "5879",
+    SortOrder: 350,
+    id: "5879",
+    pageUrl: "5879-nick-sahoyah",
+    events: [ "7641", "7653", "7753" ],
+    mc_events: [ "8631" ]
 }, {
     Name: "Katie Nguyen",
     Bio: "<p>Katie Nguyen is a Portland-based comedian and vending machine whisperer. She has performed at Curious Comedy Theater, taken part in Dis/orient/ed Comedy, and was a semifinalist in Helium Comedy Club&#039;s Portland&#039;s Funniest Person Contest. Katie’s style can be described as “comedy” and “style.” As an ensemble member at the Brody Theater, Katie performs in a variety of improv, stand-up, and sketch shows, and was once hired to play an Eastern European rhythmic gymnast for a barn full of teachers. Katie also writes sketch, performs, and wears vests with the group Vestivus. From ComedySportz to non-profit fundraisers to Chinese restaurants, Katie’s delighted folks and shamelessly laughed at her own jokes. Watch out for her— she&#039;s very short and easy to lose in crowds.</p>\n",
@@ -6675,16 +6669,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6686",
     pageUrl: "6686-katie-nguyen",
     events: [ "7654", "7704", "7745", "7809" ],
-    mc_events: []
-}, {
-    Name: "Matteo Lane",
-    Bio: "<p>Matteo Lane is a New York-based comedian, originally from Chicago.  Before starting stand up, Matteo lived in Italy as an oil painter and opera singer.  After realizing that he can’t become Maria Callas, Matteo began telling jokes to strangers in dark rooms.  Matteo has performed in the TBS Just for Laughs Festival, New York Comedy Festival, has been heard on SiriusXM and “Keith and the Girl,” and performs regularly at Caroline&#039;s on Broadway.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1391467_656707985592_454664785_n.jpg",
-    PerformerId: "5895",
-    SortOrder: 350,
-    id: "5895",
-    pageUrl: "5895-matteo-lane",
-    events: [ "7621", "7652", "7654", "7744" ],
     mc_events: []
 }, {
     Name: "Rhiannon Archer",
@@ -6707,14 +6691,14 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7653", "7702", "7809", "7815" ],
     mc_events: []
 }, {
-    Name: "Jackson Banks ",
-    Bio: "<p>A film major at the University of Utah,  Jackson Banks&#039; history is in comedy film making, and he has been doing stand up for a little under two years.  He enjoys visual, surreal joke telling.  He has recently participated in the Seattle International Comedy Competition, Salt Lake City&#039;s One Mic Stand, and Park City&#039;s Egyptian Theater Comedy Showcase.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jackson-banks-200x300_0.jpg",
-    PerformerId: "5777",
+    Name: "Matteo Lane",
+    Bio: "<p>Matteo Lane is a New York-based comedian, originally from Chicago.  Before starting stand up, Matteo lived in Italy as an oil painter and opera singer.  After realizing that he can’t become Maria Callas, Matteo began telling jokes to strangers in dark rooms.  Matteo has performed in the TBS Just for Laughs Festival, New York Comedy Festival, has been heard on SiriusXM and “Keith and the Girl,” and performs regularly at Caroline&#039;s on Broadway.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1391467_656707985592_454664785_n.jpg",
+    PerformerId: "5895",
     SortOrder: 350,
-    id: "5777",
-    pageUrl: "5777-jackson-banks-",
-    events: [ "7653", "7694", "7702", "7753" ],
+    id: "5895",
+    pageUrl: "5895-matteo-lane",
+    events: [ "7621", "7652", "7654", "8631" ],
     mc_events: []
 }, {
     Name: "Jordan Casner",
@@ -6727,15 +6711,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7628", "7637", "7746" ],
     mc_events: [ "7654" ]
 }, {
-    Name: "Zak Toscani",
-    Bio: "<p>Zak Toscani is a Portland based comedian who performs regularly in the Pacific Northwest (Helium Comedy Club Portland, Seattle&#039;s Comedy Underground, Bumbershoot, Funny Over Everything). His style melts like an artisan cheese into both the honest and the silly, much like Dom DeLuise&#039;s lasagna recipe.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/5853_570305192056_5104679_n_0.jpg",
-    PerformerId: "5919",
+    Name: "Jackson Banks ",
+    Bio: "<p>A film major at the University of Utah,  Jackson Banks&#039; history is in comedy film making, and he has been doing stand up for a little under two years.  He enjoys visual, surreal joke telling.  He has recently participated in the Seattle International Comedy Competition, Salt Lake City&#039;s One Mic Stand, and Park City&#039;s Egyptian Theater Comedy Showcase.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/jackson-banks-200x300_0.jpg",
+    PerformerId: "5777",
     SortOrder: 350,
-    id: "5919",
-    pageUrl: "5919-zak-toscani",
-    events: [ "7699", "7708", "7750" ],
-    mc_events: [ "7697" ]
+    id: "5777",
+    pageUrl: "5777-jackson-banks-",
+    events: [ "7653", "7694", "7702", "7753" ],
+    mc_events: []
 }, {
     Name: "Stephanie Hasz",
     Bio: "<p>Stephanie has performed at clubs including Zanies and the Laugh Factory; alternative rooms and venues such as the Upright Citizens Brigade Theatre, the Hideout, Chicago Underground Comedy, and The Creek and The Cave; and festivals including the Bentzen Ball, High Plains Comedy Festival, and Crom Fest. The AV Club called her one of “the city’s most exciting up-and-comers,” and Time Out Chicago described her as displaying “a fury and vulnerability rarely seen from female comics.” She has also been featured yelling about things in the Chicago Tribune and the Chicago RedEye.</p>\n",
@@ -6747,6 +6731,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7653", "7691", "7783" ],
     mc_events: [ "7693" ]
 }, {
+    Name: "Zak Toscani",
+    Bio: "<p>Zak Toscani is a Portland based comedian who performs regularly in the Pacific Northwest (Helium Comedy Club Portland, Seattle&#039;s Comedy Underground, Bumbershoot, Funny Over Everything). His style melts like an artisan cheese into both the honest and the silly, much like Dom DeLuise&#039;s lasagna recipe.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/5853_570305192056_5104679_n_0.jpg",
+    PerformerId: "5919",
+    SortOrder: 350,
+    id: "5919",
+    pageUrl: "5919-zak-toscani",
+    events: [ "7699", "7708", "7750" ],
+    mc_events: [ "7697" ]
+}, {
     Name: "Ryan Singer",
     Bio: "<p>Ryan Singer is the rarest of breeds: A comic’s comic who electrifies mainstream audiences with material that is both uncompromising and unpretentious.   LaughSpin says, “With his high-energy delivery and unpretentious leanings, there’s not a lot to dislike about comedian Ryan Singer. And it’s not just us saying it: In the last few years, he’s won over audiences headlining the nation’s finer comedy clubs and was hailed by Marc Maron in Rolling Stone as a comedian “who should be big.”</p>\n<p>Both his debut album and sophomore release COMEDY WONDER TOWN were selected as Top 10 Comedy CD’s of the year (2010 &amp; 2012).  He was selected by LA Weekly as one of “10 LA Comics to Watch” for 2014, was mentioned in NY Magazine as a “Comic to Watch,” was one of 4 finalist in CMT’s Next Big Comic Contest, is a frequent guest on the WTF Podcast w/Marc Maron and the Bob &amp; Tom Show, regularly heard on XM/Sirius Satellite Radio, and was a regional finalist in Comedy Central’s Open Mic Fight.  He was the winner of the Golden Shingle Award at the Rooftop Comedy Festival, an award given to the next rising star in comedy.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/ryan_singer_under_1mb.jpg",
@@ -6757,15 +6751,35 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7711", "7734", "7806", "7815" ],
     mc_events: [ "7915" ]
 }, {
-    Name: "Wilfred Padua",
-    Bio: "<p>Wilfred Padua is a comedian from Seattle, WA. He spent two years in Chicago getting an MFA in Writing only to come back to Seattle to do exactly what he was doing before he left. He has performed at Laff Hole, Bumbershoot Music Festival, and at Summer Meltdown Music Festival. He is also a coproducer of the monthly Seattle showcase, The Good Fun Show.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_22.jpg",
-    PerformerId: "6564",
+    Name: "Erin Dewey Lennox",
+    Bio: "<p>ERIN DEWEY LENNOX is a writer / comedian based in Los Angeles, CA.  She has performed at clubs, colleges, and alternative venues in over 30 states and at the Women in Comedy Festival, the Cape Fear Comedy Festival, the Out of Bounds Comedy Festival, and at an impromptu roast of her grandfather.  She has written for ESPN, MTV, NFL Gameday, and McSweeney&#039;s.  She also writes a lot of the commercials you fast forward through.  Erin studied journalism at the University of North Carolina Chapel Hill and drank a lot at football games.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/erinlennox.jpg",
+    PerformerId: "6456",
+    SortOrder: 350,
+    id: "6456",
+    pageUrl: "6456-erin-dewey-lennox",
+    events: [ "7730", "7743", "7913", "7916" ],
+    mc_events: [ "7623" ]
+}, {
+    Name: "Yogi Paliwal",
+    Bio: "<p>A standup comedian based out of Seattle,Yogi Paliwal has performed around the country at comedy clubs, theaters and festivals including the San Francisco and Seattle Sketch Fest, The Bridgetown Comedy Festival, and at the NBC Standup for diversity Showcase in Seattle. He’s written for IGN and Frank and Funny greeting cards.</p>\n<p>Carl Warmenhoven the manager of the Comedy Underground has said, “He has a youthness about him.” He enjoys the simple things in life, a grilled cheese sandwich, Bob Ross, whittling, and he gets bored writing his own bio.</p>\n<p>If you were to ask Yogi how he would describe his comedy, he would say it’s “Intellectual absurdity.” If you asked him what that means he would say, “My material isn’t smart, but you need to be smart to see how stupid the joke is.”</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1mb_mg_4142.jpg",
+    PerformerId: "6704",
     SortOrder: 400,
-    id: "6564",
-    pageUrl: "6564-wilfred-padua",
-    events: [ "7621", "7690", "7695" ],
-    mc_events: [ "7737" ]
+    id: "6704",
+    pageUrl: "6704-yogi-paliwal",
+    events: [ "7632", "7688", "8633" ],
+    mc_events: [ "7750" ]
+}, {
+    Name: "Jacob Christopher",
+    Bio: "<p>Half shark alligator, half man, Jacob Christopher has been seen and heard all across the Pacific NW, sharing his stories with the masses. Starting his comedy career in 2010, Jacob has become a regular working comic at Helium and Harveys, and has also been featured in many great Portland showcases such as Midnight Mass, Spicy News, Tonic, Fly Ass Jokes, and more. With his unique story telling, he shares tales of triumph and tragedy, good times and hardships, and takes the audience on an emotional roller coaster that will leave you wanting more. Please keep your arms and legs inside the ride and remain seated until he comes to a full stop. If you are breast feeding or pregnant, you may want to consult a physician prior to hearing him. You can check out his website @ Jacobchristophercomedy.com for upcoming shows and video clips, or look at his pics if you just want to bask in his ginger glory. </p>\n<p>Also, he is a big fan of karaoke.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/portland-photographer-jayesunn-xl4.jpg",
+    PerformerId: "6128",
+    SortOrder: 400,
+    id: "6128",
+    pageUrl: "6128-jacob-christopher",
+    events: [ "7672", "7691", "7737" ],
+    mc_events: [ "7704" ]
 }, {
     Name: "Steven Wilber",
     Bio: "<p>&quot;Offbeat,&quot; &quot;unexpected&quot; and &quot;clever&quot; are just three of literally hundreds of words used to describe the comedy-style stylings of Steven Wilber. Since starting stand-up in 2011, Steven has risen up in the Portland comedy scene to become a frequent performer at arcade bars, anarchist bookstores, Doctor Who-themed seafood restaurants and other typical comedy venues this city has to offer.</p>\n<p>Steven has shared the stage with Chris Hardwick, Mary Lynn Rajskub, Sean Patton and Ron Funches...whether they wanted him to or not. He has performed at Bumbershoot,  the Savage Henry comedy festival, has been featured on Bryan Cook&#039;s Competitive Erotic Fan Fiction podcast, and is a writer for The Spicy News web series.</p>\n<p>He also has over 23,000 Vine followers, which he&#039;s been told is a good thing to include in a bio.</p>\n",
@@ -6787,16 +6801,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7652", "7690", "7704" ],
     mc_events: [ "7743" ]
 }, {
-    Name: "Yogi Paliwal",
-    Bio: "<p>A standup comedian based out of Seattle,Yogi Paliwal has performed around the country at comedy clubs, theaters and festivals including the San Francisco and Seattle Sketch Fest, The Bridgetown Comedy Festival, and at the NBC Standup for diversity Showcase in Seattle. He’s written for IGN and Frank and Funny greeting cards.</p>\n<p>Carl Warmenhoven the manager of the Comedy Underground has said, “He has a youthness about him.” He enjoys the simple things in life, a grilled cheese sandwich, Bob Ross, whittling, and he gets bored writing his own bio.</p>\n<p>If you were to ask Yogi how he would describe his comedy, he would say it’s “Intellectual absurdity.” If you asked him what that means he would say, “My material isn’t smart, but you need to be smart to see how stupid the joke is.”</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/1mb_mg_4142.jpg",
-    PerformerId: "6704",
-    SortOrder: 400,
-    id: "6704",
-    pageUrl: "6704-yogi-paliwal",
-    events: [ "7627", "7632", "7688" ],
-    mc_events: [ "7750" ]
-}, {
     Name: "Anatoli Brant",
     Bio: "<p>Born and raised in former USSR, Anatoli moved to California at age of 23. He started comedy in 2002/2003 in San Francisco. He has performed comedy at the San Jose Improv, Punch Line San Francisco, Flappers Burbank as part of Recovering Communist Tour, and in New York at Gotham, Carolines and Standup NY.</p>\n<p>In 2010, he took third place in Battle of The Bay competition in San Francisco, and in 2013, he was a finalist in the Helium Funniest Person competition in Portland. He produces  Comedy Bull and 7 on 7 at Brody Theater in Portland, OR.</p>\n<p>Regardless of being foreigner - has strong command of English language and fresh and obscure points of view on life in US and in general :).</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/anatolihs.jpg",
@@ -6807,15 +6811,15 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7688", "7753", "7912" ],
     mc_events: [ "7807" ]
 }, {
-    Name: "Curtis Cook",
-    Bio: "<p>Curtis Cook is a comic from Cleveland, Ohio now living in Portland, Oregon.  He has performed in venues and festivals throughout the country, including the Cleveland Comedy Festival, Salt Lake City’s Comedy Carnivale, Bridgetown Comedy Festival, and San Francisco’s Sketchfest.</p>\n<p>Curtis doesn’t like a lot of things, and has been referred to as a “charming nihilist,” “the physical embodiment of insecurity,” and, “an existential crisis on stage.”  Those are almost nice things to say about a person. </p>\n<p>You can follow him on twitter at @Curtis_Cook.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_-_curtis_cook.jpg",
-    PerformerId: "6276",
+    Name: "Nariko Ott",
+    Bio: "<p>Phoenix escapee, Nariko Ott is the most tenacious thing to crawl out of the desert since that biker dude with the baby shoes from Raising Arizona.  Although not nearly as intimidating.  </p>\n<p>Since moving to Oregon in 2011, Nariko has been named Finalist in both the 2013 “Portland’s Funniest Person” contest and 2012 “Willamette Valley’s Funniest Person” contest.  Always working, Nariko has established himself in the comedy community by regularly hosting at Harvey’s Comedy Club as well as performing at Helium Comedy Club for their “Portland All-Stars” showcases.  He’s written for sketch comedy troupes “Bully Mammoth” and “Dr. Proof’s Whiz Bang Science Super Hour (More Than an Hour).”  Currently he travels as a feature comedian all along the west coast and is the Co-Creator/Producer of “Lex Hilaris” a Comedy &amp; Metal Showcase at the White Owl Social Club in his new hometown of Portland, Oregon.</p>\n<p>Nariko Ott was named in a “Who’s Who” of comedy article in the Portland Mercury (“Comedy Is OK”, August 28th, 2013) saying it best with, “Nariko Ott has decided that comedy can be metal.” A decision he still stands by.  He has very long hair.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot1_2.jpg",
+    PerformerId: "6542",
     SortOrder: 400,
-    id: "6276",
-    pageUrl: "6276-curtis-cook",
-    events: [ "7632", "7694", "7701" ],
-    mc_events: [ "7641" ]
+    id: "6542",
+    pageUrl: "6542-nariko-ott",
+    events: [ "7656", "7665", "7704" ],
+    mc_events: [ "7672" ]
 }, {
     Name: "Scott Losse",
     Bio: "<p>Scott Losse is a cat owner and stand-up comedian from Seattle, Washington. He has performed at Bumbershoot: Seattle&#039;s Music &amp; Arts Festival, The Seattle International Comedy Competition, Sketchfest, and lots of other places you&#039;ve never heard of. Scott&#039;s stand-up is smart, absurd, and at times dark. You would probably like it. Scott has appeared on Seattle&#039;s Evening Magazine and is the winner of the 2013 Wenatchee Comedy Festival. His cat&#039;s name is Kitty. She&#039;s a real asshole.</p>\n",
@@ -6827,25 +6831,25 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7672", "7697", "7806" ],
     mc_events: [ "7919" ]
 }, {
-    Name: "Jacob Christopher",
-    Bio: "<p>Half shark alligator, half man, Jacob Christopher has been seen and heard all across the Pacific NW, sharing his stories with the masses. Starting his comedy career in 2010, Jacob has become a regular working comic at Helium and Harveys, and has also been featured in many great Portland showcases such as Midnight Mass, Spicy News, Tonic, Fly Ass Jokes, and more. With his unique story telling, he shares tales of triumph and tragedy, good times and hardships, and takes the audience on an emotional roller coaster that will leave you wanting more. Please keep your arms and legs inside the ride and remain seated until he comes to a full stop. If you are breast feeding or pregnant, you may want to consult a physician prior to hearing him. You can check out his website @ Jacobchristophercomedy.com for upcoming shows and video clips, or look at his pics if you just want to bask in his ginger glory. </p>\n<p>Also, he is a big fan of karaoke.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/portland-photographer-jayesunn-xl4.jpg",
-    PerformerId: "6128",
+    Name: "Curtis Cook",
+    Bio: "<p>Curtis Cook is a comic from Cleveland, Ohio now living in Portland, Oregon.  He has performed in venues and festivals throughout the country, including the Cleveland Comedy Festival, Salt Lake City’s Comedy Carnivale, Bridgetown Comedy Festival, and San Francisco’s Sketchfest.</p>\n<p>Curtis doesn’t like a lot of things, and has been referred to as a “charming nihilist,” “the physical embodiment of insecurity,” and, “an existential crisis on stage.”  Those are almost nice things to say about a person. </p>\n<p>You can follow him on twitter at @Curtis_Cook.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_-_curtis_cook.jpg",
+    PerformerId: "6276",
     SortOrder: 400,
-    id: "6128",
-    pageUrl: "6128-jacob-christopher",
-    events: [ "7672", "7691", "7737" ],
-    mc_events: [ "7704" ]
+    id: "6276",
+    pageUrl: "6276-curtis-cook",
+    events: [ "7632", "7694", "7701" ],
+    mc_events: [ "7641" ]
 }, {
-    Name: "Nariko Ott",
-    Bio: "<p>Phoenix escapee, Nariko Ott is the most tenacious thing to crawl out of the desert since that biker dude with the baby shoes from Raising Arizona.  Although not nearly as intimidating.  </p>\n<p>Since moving to Oregon in 2011, Nariko has been named Finalist in both the 2013 “Portland’s Funniest Person” contest and 2012 “Willamette Valley’s Funniest Person” contest.  Always working, Nariko has established himself in the comedy community by regularly hosting at Harvey’s Comedy Club as well as performing at Helium Comedy Club for their “Portland All-Stars” showcases.  He’s written for sketch comedy troupes “Bully Mammoth” and “Dr. Proof’s Whiz Bang Science Super Hour (More Than an Hour).”  Currently he travels as a feature comedian all along the west coast and is the Co-Creator/Producer of “Lex Hilaris” a Comedy &amp; Metal Showcase at the White Owl Social Club in his new hometown of Portland, Oregon.</p>\n<p>Nariko Ott was named in a “Who’s Who” of comedy article in the Portland Mercury (“Comedy Is OK”, August 28th, 2013) saying it best with, “Nariko Ott has decided that comedy can be metal.” A decision he still stands by.  He has very long hair.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot1_2.jpg",
-    PerformerId: "6542",
+    Name: "Wilfred Padua",
+    Bio: "<p>Wilfred Padua is a comedian from Seattle, WA. He spent two years in Chicago getting an MFA in Writing only to come back to Seattle to do exactly what he was doing before he left. He has performed at Laff Hole, Bumbershoot Music Festival, and at Summer Meltdown Music Festival. He is also a coproducer of the monthly Seattle showcase, The Good Fun Show.</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshot_22.jpg",
+    PerformerId: "6564",
     SortOrder: 400,
-    id: "6542",
-    pageUrl: "6542-nariko-ott",
-    events: [ "7656", "7665", "7704" ],
-    mc_events: [ "7672" ]
+    id: "6564",
+    pageUrl: "6564-wilfred-padua",
+    events: [ "7621", "7690", "7695" ],
+    mc_events: [ "7737" ]
 }, {
     Name: "Monica Nevi",
     Bio: "<p>Monica Nevi is a native of the Seattle, Washington and the product of a wonderfully humorous family and diverse background. While earning her degree at Seattle University and losing her collegiate basketball player career to injuries, Monica decided to move forward with another untraditional path and pursue her strong interest in stand-up comedy. </p>\n<p>She has performed all over the West Coast, in the 2012 Bridgetown Comedy Festival, and in the 2013 Seattle International Comedy Competition. Monica is a regular at the Tacoma Comedy Club, and a drunk woman once told her she was the &quot;funniest skinny white girl&quot; she had ever seen.</p>\n",
@@ -6877,16 +6881,6 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7645", "7741", "7815" ],
     mc_events: []
 }, {
-    Name: "Whiskey Tango",
-    Bio: "<p>Whiskey Tango. Gentlemen… doing gentlemen’s improv. Out of Portland, Oregon, this dapper group of improvisers takes audience suggestions and weaves an elaborate tapestry of scenes, environments, and relationships. With a focus on realism, Whiskey Tango keeps audiences laughing on the edge of their seats.  Show is 25-30 minutes in length and features 4-5 performers. Recently accepted into the 2014 SF Sketchfest, Whiskey Tango has performed at the iO West LA Improv Comedy Festival, the Vancouver International Improv Festival, and are six-time winners of Friday Night Fights (Curious Comedy Theater, Portland OR). They are regular performers and instructors at theaters around Portland, and all around great guys. Collectively they are Whiskey Tango. Individually they are Gabe Dinger, Jed Arkley, Leon Anderson, Nathan Loveless, Samuel De Roest (gentleman on sabbatical) and Jake Michels.</p>\n<p>- Gabe Dinger (Curious Comedy Playas)<br />\n- Jed Arkley (Administration, Curious Comedy Playas, Improv Jones-Providence, RI)<br />\n- Leon Anderson (Curious Comedy Playas, Picture Start-IO West, Private Dancer-Second City LA, April&#039;s Fools, Acme Theater)<br />\n- Nathan Loveless (Curious Comedy Playas, Nate and Nathan, Absolute Improv-University of Oregon, ComedySportz)<br />\n- Samuel De Roest (Curious Comedy Playas)<br />\n- Jake Michels - (Curious Comedy Playas, Impulse, Balrog)</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/all-5-whiskey1_0.jpg",
-    PerformerId: "5811",
-    SortOrder: 900,
-    id: "5811",
-    pageUrl: "5811-whiskey-tango",
-    events: [ "7747" ],
-    mc_events: []
-}, {
     Name: "Whitney Streed",
     Bio: "<p>Whitney Streed is a comedian because if she was not, her incessant punning would have no artistic or monetary value whatsoever. She has opened for the likes of Maria Bamford, Rob Delaney and Jackie Kashian, and closed for JCPenney Portraits, but that was a long time ago. Whitney has performed in clubs, pride festivals and sketchy bars across the Pacific Northwest, as well as festivals including Portland’s Bridgetown Comedy Festival, Seattle SketchFest, and the Salt Lake City Comedy Carnivale. She can be seen playing a feminist in two seasons of IFC’s hit show Portlandia. In addition to doing stand-up, Whitney also produces comedy/variety shows, including the Weekly Recurring Humor Night (running since March 2011) and co-producing the satirical infotainment series known as CHAD Chats. She likes glitter.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/headshotsmaller.jpg",
@@ -6895,6 +6889,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "7785",
     pageUrl: "7785-whitney-streed",
     events: [ "7625", "7914" ],
+    mc_events: []
+}, {
+    Name: "Whiskey Tango",
+    Bio: "<p>Whiskey Tango. Gentlemen… doing gentlemen’s improv. Out of Portland, Oregon, this dapper group of improvisers takes audience suggestions and weaves an elaborate tapestry of scenes, environments, and relationships. With a focus on realism, Whiskey Tango keeps audiences laughing on the edge of their seats.  Show is 25-30 minutes in length and features 4-5 performers. Recently accepted into the 2014 SF Sketchfest, Whiskey Tango has performed at the iO West LA Improv Comedy Festival, the Vancouver International Improv Festival, and are six-time winners of Friday Night Fights (Curious Comedy Theater, Portland OR). They are regular performers and instructors at theaters around Portland, and all around great guys. Collectively they are Whiskey Tango. Individually they are Gabe Dinger, Jed Arkley, Leon Anderson, Nathan Loveless, Samuel De Roest (gentleman on sabbatical) and Jake Michels.</p>\n<p>- Gabe Dinger (Curious Comedy Playas)<br />\n- Jed Arkley (Administration, Curious Comedy Playas, Improv Jones-Providence, RI)<br />\n- Leon Anderson (Curious Comedy Playas, Picture Start-IO West, Private Dancer-Second City LA, April&#039;s Fools, Acme Theater)<br />\n- Nathan Loveless (Curious Comedy Playas, Nate and Nathan, Absolute Improv-University of Oregon, ComedySportz)<br />\n- Samuel De Roest (Curious Comedy Playas)<br />\n- Jake Michels - (Curious Comedy Playas, Impulse, Balrog)</p>\n",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/all-5-whiskey1_0.jpg",
+    PerformerId: "5811",
+    SortOrder: 900,
+    id: "5811",
+    pageUrl: "5811-whiskey-tango",
+    events: [ "7747" ],
     mc_events: []
 }, {
     Name: "Jacob Reed",
@@ -6907,13 +6911,13 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7739" ],
     mc_events: []
 }, {
-    Name: "Curious Comedy Playas",
-    Bio: "<p>The Curious Comedy Playas are the mainstage improv and sketch performance group at Curious Comedy Theater, focused primarily on long-form improv.</p>\n<p>The Curious Comedy improvised musical ensemble - Pipes - is back! If you haven't seen Pipes perform yet, then you have been missing out on one of Portland's most amazing improvised shows. Inspired by a suggestion from the audience, this ensemble of seasoned improv professionals will create an entirely improvised musical comedy right before your very eyes - from the story to the lyrics to music - all made up on the spot just for you.</p>\n",
-    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/cc-logo-for-website10.jpg",
+    Name: "Curious Comedy Players",
+    Bio: '<p>The Curious Comedy Players hail from Curious Comedy Theater - the first and only non-profit theater in Portland devoted entirely to the art of comedy. The theater has created more than 40 original sketch, improvised and stand-up comedy productions, regularly hosts touring national artists and produces the All Jane, No Dick Comedy Festival. The Curious Comedy Training Center offers classes and workshops across many comedic disciplines, including improv, sketch writing and stand-up comedy.  </p>\n<p>For more information, visit <a href="http://www.curiouscomedy.org">www.curiouscomedy.org</a>.</p>\n',
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/curiouslogo2014.jpg",
     PerformerId: "8578",
     SortOrder: 900,
     id: "8578",
-    pageUrl: "8578-curious-comedy-playas",
+    pageUrl: "8578-curious-comedy-players",
     events: [ "7747" ],
     mc_events: []
 } ], App.Show.FIXTURES = [ {
@@ -6975,7 +6979,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     SortOrder: "120",
     id: "6868",
     pageUrl: "6868-set-list-stand-up-without-a-net",
-    events: [ "7671" ]
+    events: [ "8635", "7671" ]
 }, {
     Name: "The Green Room with Paul Provenza",
     Copy: "Comedian and director of the obscenely hilarious hit film The Aristocrats, Paul Provenza invites some of the biggest names in stand-up to sit down and try to beat each other to the punch line. From politics and racism to sex and money, no topic is off limits in The Green Room. Roseanne Barr, Sandra Bernhard, Drew Carey, Andy Dick, Eddie Izzard, Penn Jillette and Bob Saget are just a few of Provenza&#039;s friends who have appeared in The Green Room to show what really goes on when comedians go off.",
@@ -7088,7 +7092,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     events: [ "7676" ]
 }, {
     Name: "This Feels Terrible",
-    Copy: "",
+    Copy: "Comedian and repeat relationship failure Erin McGathy talks love, sex and all matters of heartbreak in the podcast version of her live show originally performed at the Upright Citizen&#039;s Brigade Theatre. Each week features a revealing, intimate and joyfully-terrible conversation with a different comedian friend, famous-ish person or drunk ex-boyfriend. Let&#039;s get terrible.",
     Bio: "Comedian and repeat relationship failure Erin McGathy talks love, sex and all matters of heartbreak in the podcast version of her live show originally performed at the Upright Citizen&#039;s Brigade Theatre. Each week features a revealing, intimate and joyfully-terrible conversation with a different comedian friend, famous-ish person or drunk ex-boyfriend. Let&#039;s get terrible.",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/thisfeelsterrible.jpg",
     SubmittedId: "7779",
@@ -7239,7 +7243,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
 }, {
     Name: "All Jane, No Dick",
     Copy: "",
-    Bio: "All Jane, No Dick is a a carefully curated Portland festival that blends of the best up-and-coming comedic performers and nationally headlining comics from New York, Los Angeles, San Francisco, Austin, Chicago, and beyond. The goal of this festival is to celebrate the unique voices of women in comedy, providing inspiration and increasing visibility for the top performers of today and tomorrow. It encourages collaboration and dialogue and highlights the great diversity of artistic approaches amidst female comedic performers today. Programming for All Jane No Dick includes stand-up showcases, improv, sketches, podcasts, panel discussions, workshops, and documentaries. Find out more at http://www.alljanenodick.com/.\r\n\r\nThursday night&#039;s show will be held at Curious Comedy Theater, 5225 NE Martin Luther King Blvd., Portland, OR 97211.",
+    Bio: "All Jane, No Dick showcases the amazing talent and diversity of women in comedy. Curious Comedy Theater&#039;s annual All Jane, No Dick Comedy Festival began in 2012 with the mission of discovering, encouraging and promoting women in comedy. Women represent only 17% of the professionals working in the comedy industry today. Industry representatives claim they have difficulty finding women to hire. All Jane, No Dick curates the festival to show the best and most original female improvisers, sketch and stand up comedians to help bridge the gap between these talented performers and industry professionals while entertaining audiences in Portland, Oregon and beyond.",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/ajnd.jpg",
     SubmittedId: "8577",
     SortOrder: "900",
@@ -7276,6 +7280,16 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     id: "6846",
     pageUrl: "6846-comedy-grab-bag",
     events: [ "7952" ]
+}, {
+    Name: "Pivot Presents: W. Kamau Bell &amp; Friends",
+    Copy: "",
+    Bio: "Pivot is proud to present an evening with W. Kamau Bell &amp; Friends! The Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 to critical acclaim. Pivot and Kamau share an interest in showcasing socially relevant content and education through humor and storytelling: this one-of-a-kind event promises to be memorable! Want to find out if you get pivot? Go to GetPivot.tv!",
+    PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/bridgetown_01.jpg",
+    SubmittedId: "8634",
+    SortOrder: "900",
+    id: "8634",
+    pageUrl: "8634-pivot-presents-w-kamau-bell-amp-friends",
+    events: [ "8632" ]
 }, {
     Name: "Portland Masters",
     Copy: "What makes Portland such a legendary mecca for stand-up comedy?  Come find out as the comics that put Portland on the map come together for one unbelievable show. Emphasizing material that lampoons the City of Roses, these 7 legends demonstrate what it means to be a Master of the Craft. With Art Krug, Susan Rice, Dave Anderson, Nathan Brannon Kristine Levine, Auggie Smith and Dwight Slade. Possible drop-in guest stars!",
@@ -7329,13 +7343,13 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     VenueId: "7619",
     id: "7619",
     pageUrl: "7619-analog-theater",
-    events: [ "7704", "7747", "7699", "7741", "7811", "7808", "7744", "7627", "7746", "7738" ]
+    events: [ "7704", "7747", "7699", "7741", "7811", "7808", "8632", "8631", "7746", "7738" ]
 }, {
     Name: "Bar of the Gods",
     VenueId: "7610",
     id: "7610",
     pageUrl: "7610-bar-of-the-gods",
-    events: [ "7653", "7654", "7655", "7912", "7656" ]
+    events: [ "7653", "7654", "7912", "7656" ]
 }, {
     Name: "Bossanova",
     VenueId: "7611",
@@ -7353,7 +7367,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     VenueId: "7612",
     id: "7612",
     pageUrl: "7612-squarespace-stage-at-doug-fir",
-    events: [ "7663", "7810", "7665", "7624", "7667", "7668", "7669", "7670", "7671", "7666", "7672", "7675", "7674", "7676", "7662", "7783" ]
+    events: [ "7663", "7810", "7665", "7624", "7667", "7668", "7669", "7670", "7671", "8633", "7672", "7675", "7674", "7676", "7662", "7783" ]
 }, {
     Name: "Sizzle Pie Stage at Eagles Lodge",
     VenueId: "7613",
@@ -7371,7 +7385,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     VenueId: "7614",
     id: "7614",
     pageUrl: "7614-hawthorne-theatre-lounge",
-    events: [ "7688", "7689", "7690", "7691", "7692", "7693", "7694", "7695", "7809", "7697" ]
+    events: [ "7688", "7689", "8635", "7690", "7691", "7692", "7693", "7694", "7695", "7809", "7697" ]
 }, {
     Name: "Hawthorne Theatre Main",
     VenueId: "7615",
@@ -9131,7 +9145,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
 }), Ember.TEMPLATES.schedule_table_friday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var stack1, buffer = "";
-        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+        return data.buffer.push('\n   <tr>\n    <th colspan=2 style="font-size:1.3em;">'), 
+        stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},

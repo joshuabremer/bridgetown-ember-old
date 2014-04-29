@@ -103,6 +103,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    wkhtmltopdf: {
+      dev: {
+        src: 'thursday-schedule.html',
+        dest: 'pdf/thursday.pdf'
+      }
+    },
     shell: {
       gitpush: {
         command: function () {
@@ -142,6 +148,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-reload');
   grunt.loadNpmTasks('grunt-template');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-wkhtmltopdf');
 
   grunt.registerTask('default', ['clean','emberhandlebars','uglify','sass', 'template','cssmin']);
 
