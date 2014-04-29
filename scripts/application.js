@@ -7715,12 +7715,15 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         data.buffer.push("<span>Venues</span>");
     }
     function program11(depth0, data) {
-        data.buffer.push("<span>2013 Press</span>");
+        data.buffer.push("<span>FAQs</span>");
     }
     function program13(depth0, data) {
-        data.buffer.push("<span>Sponsors</span>");
+        data.buffer.push("<span>2013 Press</span>");
     }
     function program15(depth0, data) {
+        data.buffer.push("<span>Sponsors</span>");
+    }
+    function program17(depth0, data) {
         data.buffer.push("<span>Contact</span>");
     }
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
@@ -7791,7 +7794,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }, stack1 = helper ? helper.call(depth0, "press", options) : helperMissing.call(depth0, "link-to", "press", options), 
+    }, stack1 = helper ? helper.call(depth0, "faqs", options) : helperMissing.call(depth0, "link-to", "faqs", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n        <li class="header-color1 hidden-sm">'), 
     helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
         hash: {},
@@ -7802,7 +7805,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }, stack1 = helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "link-to", "sponsors", options), 
+    }, stack1 = helper ? helper.call(depth0, "press", options) : helperMissing.call(depth0, "link-to", "press", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n        <li class="header-color2 hidden-sm">'), 
     helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
         hash: {},
@@ -7813,6 +7816,17 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
+    }, stack1 = helper ? helper.call(depth0, "sponsors", options) : helperMissing.call(depth0, "link-to", "sponsors", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n        <li class="header-color3 hidden-sm">'), 
+    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(17, program17, data),
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
     }, stack1 = helper ? helper.call(depth0, "contact", options) : helperMissing.call(depth0, "link-to", "contact", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n        <li class="dropdown visible-sm ">\n          <a class="dropdown-toggle" data-toggle="dropdown" href="#">\n            More Info <span class="caret"></span>\n          </a>\n          <ul class="dropdown-menu">\n            <li class="header-color5">'), 
     helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
@@ -7820,7 +7834,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(11, program11, data),
+        fn: self.program(13, program13, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
@@ -7831,7 +7845,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(13, program13, data),
+        fn: self.program(15, program15, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
@@ -7842,11 +7856,22 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         hashTypes: {},
         hashContexts: {},
         inverse: self.noop,
-        fn: self.program(15, program15, data),
+        fn: self.program(17, program17, data),
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
     }, stack1 = helper ? helper.call(depth0, "contact", options) : helperMissing.call(depth0, "link-to", "contact", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n            <li class="header-color3">'), 
+    helper = helpers["link-to"] || depth0 && depth0["link-to"], options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        inverse: self.noop,
+        fn: self.program(11, program11, data),
+        contexts: [ depth0 ],
+        types: [ "STRING" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "faqs", options) : helperMissing.call(depth0, "link-to", "faqs", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n          </ul>\n        </li>\n      </ul>\n      <div class="navbar-form navbar-right">\n        <strong>\n          <a class="btn btn-default" target="_blank" href="http://bridgetown.laughstub.com/event.cfm?id=308381">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
     buffer;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
