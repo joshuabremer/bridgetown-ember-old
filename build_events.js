@@ -141,7 +141,6 @@ function addMCsIfTheyExist(filepath, callback) {
   for (var key in eventObj) {
     var MCId = eventObj[key].MCId;
     if (!doesPerformerExistForId(MCId)) {
-      console.log("Squelching MC: " + MCId);
       continue;
     }
     eventObj[key].MCId = eventObj[key].MCId;
