@@ -57,7 +57,7 @@ function addEventIds(filepath,callback) {
   for (var key in venueObj) {
     venueObj[key].events = getEventsForVenue(venueObj[key].id)
   }
-  fs.writeFile(filepath, JSON.stringify(venueObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(venueObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -99,7 +99,7 @@ function sanitizeData(filepath, callback) {
     console.log(venueObj[key])
   }
   //console.log(venueObj);
-  fs.writeFile(filepath, JSON.stringify(venueObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(venueObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });

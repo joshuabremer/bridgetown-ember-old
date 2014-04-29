@@ -65,7 +65,7 @@ function getScheduleData() {
 
 function stringifyEventJSON(filepath,callback) {
   var rawEventData = fs.readFileSync('assets/raw_events.json', 'utf8');
-  fs.writeFile(filepath, JSON.stringify(rawEventData), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(rawEventData, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -76,7 +76,7 @@ function createPageUrls(filepath,callback) {
   for (var key in eventObj) {
     eventObj[key].pageUrl = eventObj[key].id + '-' + convertToSlug(eventObj[key].Name);
   }
-  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(eventObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -92,7 +92,7 @@ function addPerformerIds(filepath,callback) {
   for (var key in eventObj) {
     eventObj[key].performers = getPerformersForEvents(eventObj[key].id)
   }
-  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(eventObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -128,7 +128,7 @@ function sanitizeData(filepath, callback) {
 
   eventObj = sortArray(eventObj,"start_time");
 
-  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(eventObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -148,7 +148,7 @@ function addMCsIfTheyExist(filepath, callback) {
     if (parseInt(eventObj[key].MCId,10)) eventObj[key].emcees.push(parseInt(eventObj[key].MCId,10))
   }
 
-  fs.writeFile(filepath, JSON.stringify(eventObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(eventObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });

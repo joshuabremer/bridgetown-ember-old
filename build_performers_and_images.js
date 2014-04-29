@@ -17,21 +17,18 @@ function getPerformerJSON(url, callback) {
     });
     response.on('end', function (data) {
       stringifyPerformerJSON("assets/raw_performers.json",function() {
-          sanitizeData("assets/raw_performers.json",function() {
-            console.log('Done replacing Apostrophes');
-              addEventIds("assets/raw_performers.json",function() {
-                console.log('Done adding Event IDs');
-                fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
-                fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
-                fs.appendFileSync("scripts/fixtures_performer.js",";");
-                console.log("Created: " + "scripts/fixtures_performer.js");
-                buildImages("assets/raw_performers.json","performer");
-              });
+      sanitizeData("assets/raw_performers.json",function() {
+        console.log('Done replacing Apostrophes');
+        addEventIds("assets/raw_performers.json",function() {
+          console.log('Done adding Event IDs');
+          fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
+          fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
+          fs.appendFileSync("scripts/fixtures_performer.js",";");
+          console.log("Created: " + "scripts/fixtures_performer.js");
+          buildImages("assets/raw_performers.json","performer");
+        });
         });
       });
-      
-      
-      
     });
   });
   request.on('error', function(e) {
@@ -65,7 +62,7 @@ function getScheduleData() {
 
 function stringifyPerformerJSON(filepath,callback) {
   var rawPerformerData = fs.readFileSync('assets/raw_performers.json', 'utf8');
-  fs.writeFile(filepath, JSON.stringify(rawPerformerData), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(rawPerformerData, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -79,7 +76,7 @@ function addEventIds(filepath,callback) {
     performerObj[key].events = getEventsForPerformer(performerObj[key].id)
     performerObj[key].mc_events = getMCEventsForPerformer(performerObj[key].id)
   }
-  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(performerObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -149,7 +146,7 @@ function sanitizeData(filepath, callback) {
 
   performerObj = sortArray(performerObj,"SortOrder");
 
-  fs.writeFile(filepath, JSON.stringify(performerObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(performerObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });

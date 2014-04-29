@@ -75,7 +75,7 @@ function createPageUrls(filepath,callback) {
   for (var key in showObj) {
     showObj[key].pageUrl = showObj[key].id + '-' + convertToSlug(showObj[key].Name);
   }
-  fs.writeFile(filepath, JSON.stringify(showObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(showObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -86,7 +86,7 @@ function replaceSubmittedIdWithId(filepath, callback) {
   for (var key in showObj) {
     showObj[key].id = showObj[key].SubmittedId;
   }
-  fs.writeFile(filepath, JSON.stringify(showObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(showObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });
@@ -99,7 +99,7 @@ function addEventIds(filepath,callback) {
   for (var key in showObj) {
     showObj[key].events = getEventsForShow(showObj[key].id)
   }
-  fs.writeFile(filepath, JSON.stringify(showObj), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(showObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
   });

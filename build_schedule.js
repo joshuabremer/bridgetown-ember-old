@@ -23,7 +23,7 @@ function getScheduleJSON(url, callback) {
 
 function stringifyScheduleJSON(filepath) {
   var rawEventData = fs.readFileSync('fixtures/festivalthing-schedule.json', 'utf8');
-  fs.writeFile(filepath, JSON.stringify(rawEventData), 'utf8', function (err) {
+  fs.writeFile(filepath, JSON.stringify(rawEventData, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
   });
 }
