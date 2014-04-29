@@ -1,3 +1,7 @@
+console.log("=================================");
+console.log("=== Building Venues ===");
+console.log("=================================");
+
 var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
@@ -21,7 +25,7 @@ function getVenueJSON(url, callback) {
         fs.writeFileSync("scripts/fixtures_venue.js","/*jshint -W100 */\nApp.Venue.FIXTURES = ",'utf8');
         fs.appendFileSync("scripts/fixtures_venue.js",getVenueData(),{encoding:'utf8'});
         fs.appendFileSync("scripts/fixtures_venue.js",";");
-        console.log("Created: " + "scripts/fixtures_venue.js");
+        console.log("Finished: " + "scripts/fixtures_venue.js");
         });
       });
       
@@ -96,9 +100,7 @@ function sanitizeData(filepath, callback) {
   for (var key in venueObj) {
     venueObj[key].id = venueObj[key].VenueId;
     venueObj[key].pageUrl = venueObj[key].id + '-' + convertToSlug(venueObj[key].Name);
-    console.log(venueObj[key])
   }
-  //console.log(venueObj);
   fs.writeFile(filepath, JSON.stringify(venueObj, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();

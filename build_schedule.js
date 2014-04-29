@@ -1,3 +1,7 @@
+console.log("=================================");
+console.log("=== Building Schedule ===");
+console.log("=================================");
+
 var http = require("http");
 var fs = require("fs");
 

@@ -1,3 +1,6 @@
+console.log("=================================");
+console.log("=== Building Events ===");
+console.log("=================================");
 var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
@@ -18,16 +21,13 @@ function getEventJSON(url, callback) {
     });
     response.on('end', function (data) {
     stringifyEventJSON("assets/raw_events.json",function() {
-      console.log("Stringified file");
       sanitizeData("assets/raw_events.json",function() {
-        console.log("Replaced event Ids");
         addPerformerIds("assets/raw_events.json",function() {
           addMCsIfTheyExist("assets/raw_events.json",function() {
-            console.log("Grabbed performers");
               fs.writeFileSync("scripts/fixtures_event.js","/*jshint -W100 */\nApp.Event.FIXTURES = ",'utf8');
               fs.appendFileSync("scripts/fixtures_event.js",getEventData(),{encoding:'utf8'});
               fs.appendFileSync("scripts/fixtures_event.js",";");
-              console.log("Created: " + "scripts/fixtures_event.js");
+              console.log("Finished: " + "scripts/fixtures_event.js");
             });
           });
         });

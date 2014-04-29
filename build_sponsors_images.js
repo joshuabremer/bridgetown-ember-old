@@ -1,3 +1,7 @@
+console.log("=================================");
+console.log("=== Building Sponsor Images ===");
+console.log("=================================");
+
 var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");

@@ -1,3 +1,6 @@
+console.log("=================================");
+console.log("=== Building Performers ===");
+console.log("=================================");
 var http = require("http");
 var fs = require("fs");
 var easyimg = require("easyimage");
@@ -18,13 +21,11 @@ function getPerformerJSON(url, callback) {
     response.on('end', function (data) {
       stringifyPerformerJSON("assets/raw_performers.json",function() {
       sanitizeData("assets/raw_performers.json",function() {
-        console.log('Done replacing Apostrophes');
         addEventIds("assets/raw_performers.json",function() {
-          console.log('Done adding Event IDs');
           fs.writeFileSync("scripts/fixtures_performer.js","/*jshint -W100 */\nApp.Performer.FIXTURES = ",'utf8');
           fs.appendFileSync("scripts/fixtures_performer.js",getPerformerData(),{encoding:'utf8'});
           fs.appendFileSync("scripts/fixtures_performer.js",";");
-          console.log("Created: " + "scripts/fixtures_performer.js");
+          console.log("Finished: " + "scripts/fixtures_performer.js");
           buildImages("assets/raw_performers.json","performer");
         });
         });
