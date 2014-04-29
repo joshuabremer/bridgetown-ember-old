@@ -2901,7 +2901,7 @@ FESTIVAL_START_TIMES.Saturday = "2014-05-10T20:00:00.000Z", FESTIVAL_START_TIMES
 
 var FESTIVAL_END_TIMES = {};
 
-FESTIVAL_END_TIMES.Thursday = "2014-05-09T08:30:00.000Z", FESTIVAL_END_TIMES.Friday = "2014-05-10T09:00:00.000Z", 
+FESTIVAL_END_TIMES.Thursday = "2014-05-09T08:30:00.000Z", FESTIVAL_END_TIMES.Friday = "2014-05-10T10:00:00.000Z", 
 FESTIVAL_END_TIMES.Saturday = "2014-05-11T10:00:00.000Z", FESTIVAL_END_TIMES.Sunday = "2014-05-12T08:00:00.000Z", 
 App.FixtureAdapter = DS.FixtureAdapter.extend({
     queryFixtures: function(records, query) {
@@ -9145,8 +9145,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
 }), Ember.TEMPLATES.schedule_table_friday = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     function program1(depth0, data) {
         var stack1, buffer = "";
-        return data.buffer.push('\n   <tr>\n    <th colspan=2 style="font-size:1.3em;">'), 
-        stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
+        return data.buffer.push("\n   <tr>\n    <th>"), stack1 = helpers._triageMustache.call(depth0, "venue.Name", {
             hash: {},
             hashTypes: {},
             hashContexts: {},
