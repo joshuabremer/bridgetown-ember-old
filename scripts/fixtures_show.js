@@ -1,6 +1,19 @@
 /*jshint -W100 */
 App.Show.FIXTURES = [
  {
+  "Name": "Lance Bangs Presents: Come Laugh With Us",
+  "Copy": "Filmmaker, documentarian, and music video director Lance Bangs&#039; comedy work includes directing David Cross&#039;s film Let America Laugh, as well as standup specials for Marc Maron, John Hodgman, Nick Thune, Todd Barry and Rob Delaney. Lance brings Come Laugh With Us back to Bridgetown for its fourth consecutive year, showcasing some of his favorite performers in the Bridgetown lineup and giving audiences a chance to see rare and unreleased comedy footage from his personal archives.\r\n",
+  "Bio": "Filmmaker, documentarian, and music video director Lance Bangs&#039; comedy work includes directing David Cross&#039;s film Let America Laugh, as well as standup specials for Marc Maron, John Hodgman, Nick Thune, Todd Barry and Rob Delaney. Lance brings Come Laugh With Us back to Bridgetown for its fourth consecutive year, showcasing some of his favorite performers in the Bridgetown lineup and giving audiences a chance to see rare and unreleased comedy footage from his personal archives.\r\n",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/comelaughsq.jpg",
+  "SubmittedId": "8678",
+  "SortOrder": "100",
+  "id": "8678",
+  "pageUrl": "8678-lance-bangs-presents-come-laugh-with-us",
+  "events": [
+   "7783"
+  ]
+ },
+ {
   "Name": "Nathan For You: Screening and Q&amp;A",
   "Copy": "Show creators Nathan Fielder and Michael Koman appear live and in person to give you a sneak peak of the upcoming season of Nathan For You. The screening will be followed by a Q&amp;A discussion that will include several off-the-cuff jokes by Fielder and Koman. (Refunds available if Fielder and Koman fail to amuse.)",
   "Bio": "Show creators Nathan Fielder and Michael Koman appear live and in person to give you a sneak peak of the upcoming season of Nathan For You. The screening will be followed by a Q&amp;A discussion that will include several off-the-cuff jokes by Fielder and Koman. (Refunds available if Fielder and Koman fail to amuse.)",
@@ -475,7 +488,7 @@ App.Show.FIXTURES = [
  {
   "Name": "Pivot Presents: W. Kamau Bell and Friends",
   "Copy": "Pivot is proud to present an evening with W. Kamau Bell and Friends! The Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 to critical acclaim. Pivot and Kamau share an interest in showcasing socially relevant content and education through humor and storytelling: this one-of-a-kind event promises to be memorable! Want to find out if you get pivot? Go to GetPivot.tv!",
-  "Bio": "Pivot is proud to present an evening with W. Kamau Bell and Friends! The Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 to critical acclaim. Pivot and Kamau share an interest in showcasing socially relevant content and education through humor and storytelling: this one-of-a-kind event promises to be memorable! Want to find out if you get pivot? Go to GetPivot.tv!",
+  "Bio": "Pivot, a new cable network from Participant Media that&#039;s all about changing things up, is proud to present an evening with W. Kamau Bell and Friends!  Pivot and Kamau share a passion for showcasing socially relevant content and education through humor and storytelling. Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy and was named an Ambassador of Racial Justice by the ACLU.  Want to find out if you get Pivot?  Go to GetPivot.tv!",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/bridgetown_01.jpg",
   "SubmittedId": "8634",
   "SortOrder": "900",
@@ -520,8 +533,6 @@ App.Show.FIXTURES = [
   "SortOrder": "900",
   "id": "7776",
   "pageUrl": "7776-whiskey-tango",
-  "events": [
-   "7747"
-  ]
+  "events": []
  }
 ];
