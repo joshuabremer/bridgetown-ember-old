@@ -53,30 +53,22 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7698",
-  "VenueId": "7615",
-  "Name": "Hawthorne Theatre Opening Show",
+  "EventId": "7657",
+  "VenueId": "7611",
+  "Name": "The Dead Authors Podcast",
   "StartTime": "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
   "EndTime": "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-  "MCId": "6717",
+  "MCId": "",
   "Cost": "$20",
-  "ShowId": "",
-  "id": "7698",
-  "venue": "7615",
+  "ShowId": "7782",
+  "show": "7782",
+  "id": "7657",
+  "venue": "7611",
   "start_time": "2014-05-09T03:00:00.000Z",
   "end_time": "2014-05-09T04:30:00.000Z",
   "performers": [
-   "5999",
-   "6144",
-   "6163",
-   "6157",
-   "6150",
-   "6365",
-   "7566",
-   "7581"
-  ],
-  "emcees": [
-   6717
+   "7588",
+   "6808"
   ]
  },
  {
@@ -230,22 +222,30 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7657",
-  "VenueId": "7611",
-  "Name": "The Dead Authors Podcast",
+  "EventId": "7698",
+  "VenueId": "7615",
+  "Name": "Hawthorne Theatre Opening Show",
   "StartTime": "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
   "EndTime": "2014-05-08 20:00:00 to 2014-05-08 21:30:00",
-  "MCId": "",
+  "MCId": "6717",
   "Cost": "$20",
-  "ShowId": "7782",
-  "show": "7782",
-  "id": "7657",
-  "venue": "7611",
+  "ShowId": "",
+  "id": "7698",
+  "venue": "7615",
   "start_time": "2014-05-09T03:00:00.000Z",
   "end_time": "2014-05-09T04:30:00.000Z",
   "performers": [
-   "7588",
-   "6808"
+   "5999",
+   "6144",
+   "6163",
+   "6157",
+   "6150",
+   "6365",
+   "7566",
+   "7581"
+  ],
+  "emcees": [
+   6717
   ]
  },
  {
@@ -275,32 +275,6 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7689",
-  "VenueId": "7614",
-  "Name": "Hawthorne Lounge Primetime",
-  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-  "MCId": "5973",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7689",
-  "venue": "7614",
-  "start_time": "2014-05-09T04:00:00.000Z",
-  "end_time": "2014-05-09T05:30:00.000Z",
-  "performers": [
-   "5806",
-   "6476",
-   "5730",
-   "6153",
-   "6409",
-   "6646",
-   "7566"
-  ],
-  "emcees": [
-   5973
-  ]
- },
- {
   "EventId": "7653",
   "VenueId": "7610",
   "Name": "Surprise Me! ",
@@ -326,39 +300,6 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7716",
-  "VenueId": "7617",
-  "Name": "Tanker Open Mic",
-  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
-  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
-  "MCId": "",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7716",
-  "venue": "7617",
-  "start_time": "2014-05-09T04:00:00.000Z",
-  "end_time": "2014-05-09T05:00:00.000Z",
-  "performers": []
- },
- {
-  "EventId": "7747",
-  "VenueId": "7619",
-  "Name": "Portland Improv w/ Curious Comedy Playas and Whiskey Tango",
-  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
-  "MCId": "",
-  "Cost": "$15",
-  "ShowId": "",
-  "id": "7747",
-  "venue": "7619",
-  "start_time": "2014-05-09T04:00:00.000Z",
-  "end_time": "2014-05-09T05:30:00.000Z",
-  "performers": [
-   "8578",
-   "5811"
-  ]
- },
- {
   "EventId": "7621",
   "VenueId": "7608",
   "Name": "Alhambra Lounge Primetime",
@@ -381,6 +322,66 @@ App.Event.FIXTURES = [
   ],
   "emcees": [
    6042
+  ]
+ },
+ {
+  "EventId": "7747",
+  "VenueId": "7619",
+  "Name": "Portland Improv w/ Curious Comedy Playas and Whiskey Tango",
+  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+  "MCId": "",
+  "Cost": "$15",
+  "ShowId": "7776",
+  "show": "7776",
+  "id": "7747",
+  "venue": "7619",
+  "start_time": "2014-05-09T04:00:00.000Z",
+  "end_time": "2014-05-09T05:30:00.000Z",
+  "performers": [
+   "8578",
+   "5811"
+  ]
+ },
+ {
+  "EventId": "7716",
+  "VenueId": "7617",
+  "Name": "Tanker Open Mic",
+  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
+  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:00:00",
+  "MCId": "",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7716",
+  "venue": "7617",
+  "start_time": "2014-05-09T04:00:00.000Z",
+  "end_time": "2014-05-09T05:00:00.000Z",
+  "performers": []
+ },
+ {
+  "EventId": "7689",
+  "VenueId": "7614",
+  "Name": "Hawthorne Lounge Primetime",
+  "StartTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+  "EndTime": "2014-05-08 21:00:00 to 2014-05-08 22:30:00",
+  "MCId": "5973",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7689",
+  "venue": "7614",
+  "start_time": "2014-05-09T04:00:00.000Z",
+  "end_time": "2014-05-09T05:30:00.000Z",
+  "performers": [
+   "5806",
+   "6476",
+   "5730",
+   "6153",
+   "6409",
+   "6646",
+   "7566"
+  ],
+  "emcees": [
+   5973
   ]
  },
  {
@@ -463,32 +464,19 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7622",
-  "VenueId": "7618",
-  "Name": "MailChimp Stage at the White Owl Social Club Primetime",
-  "StartTime": "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-  "EndTime": "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
-  "MCId": "6681",
-  "Cost": "$15",
+  "EventId": "7717",
+  "VenueId": "7617",
+  "Name": "Tanker Open Mic",
+  "StartTime": "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
+  "EndTime": "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
+  "MCId": "",
+  "Cost": "$10",
   "ShowId": "",
-  "id": "7622",
-  "venue": "7618",
+  "id": "7717",
+  "venue": "7617",
   "start_time": "2014-05-09T05:00:00.000Z",
-  "end_time": "2014-05-09T06:30:00.000Z",
-  "performers": [
-   "6162",
-   "6413",
-   "6325",
-   "6363",
-   "7568",
-   "6110",
-   "6123",
-   "6205",
-   "6859"
-  ],
-  "emcees": [
-   6681
-  ]
+  "end_time": "2014-05-09T06:00:00.000Z",
+  "performers": []
  },
  {
   "EventId": "7740",
@@ -544,19 +532,32 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7717",
-  "VenueId": "7617",
-  "Name": "Tanker Open Mic",
-  "StartTime": "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
-  "EndTime": "2014-05-08 22:00:00 to 2014-05-08 23:00:00",
-  "MCId": "",
-  "Cost": "$10",
+  "EventId": "7622",
+  "VenueId": "7618",
+  "Name": "MailChimp Stage at the White Owl Social Club Primetime",
+  "StartTime": "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+  "EndTime": "2014-05-08 22:00:00 to 2014-05-08 23:30:00",
+  "MCId": "6681",
+  "Cost": "$15",
   "ShowId": "",
-  "id": "7717",
-  "venue": "7617",
+  "id": "7622",
+  "venue": "7618",
   "start_time": "2014-05-09T05:00:00.000Z",
-  "end_time": "2014-05-09T06:00:00.000Z",
-  "performers": []
+  "end_time": "2014-05-09T06:30:00.000Z",
+  "performers": [
+   "6162",
+   "6413",
+   "6325",
+   "6363",
+   "7568",
+   "6110",
+   "6123",
+   "6205",
+   "6859"
+  ],
+  "emcees": [
+   6681
+  ]
  },
  {
   "EventId": "7810",
@@ -652,31 +653,6 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7690",
-  "VenueId": "7614",
-  "Name": "Hawthorne Lounge Early Show",
-  "StartTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-  "EndTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-  "MCId": "6640",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7690",
-  "venue": "7614",
-  "start_time": "2014-05-10T02:00:00.000Z",
-  "end_time": "2014-05-10T03:30:00.000Z",
-  "performers": [
-   "6483",
-   "5813",
-   "6564",
-   "6118",
-   "5962",
-   "6857"
-  ],
-  "emcees": [
-   6640
-  ]
- },
- {
   "EventId": "7915",
   "VenueId": "7615",
   "Name": "Hawthorne Theatre Early Show",
@@ -758,10 +734,10 @@ App.Event.FIXTURES = [
  {
   "EventId": "7639",
   "VenueId": "7609",
-  "Name": "Baby Talk with Dan Levy &amp; Jensen Karp",
+  "Name": "Baby Talk with Dan Levy and Jensen Karp",
   "StartTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
   "EndTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
-  "MCId": "7590",
+  "MCId": "7581",
   "Cost": "$15",
   "ShowId": "6300",
   "show": "6300",
@@ -770,12 +746,13 @@ App.Event.FIXTURES = [
   "start_time": "2014-05-10T02:00:00.000Z",
   "end_time": "2014-05-10T03:30:00.000Z",
   "performers": [
-   "7581",
+   "7590",
    "6123",
+   "6014",
    "6834"
   ],
   "emcees": [
-   7590
+   7581
   ]
  },
  {
@@ -801,6 +778,31 @@ App.Event.FIXTURES = [
   ],
   "emcees": [
    6134
+  ]
+ },
+ {
+  "EventId": "7690",
+  "VenueId": "7614",
+  "Name": "Hawthorne Lounge Early Show",
+  "StartTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+  "EndTime": "2014-05-09 19:00:00 to 2014-05-09 20:30:00",
+  "MCId": "6640",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7690",
+  "venue": "7614",
+  "start_time": "2014-05-10T02:00:00.000Z",
+  "end_time": "2014-05-10T03:30:00.000Z",
+  "performers": [
+   "6483",
+   "5813",
+   "6564",
+   "6118",
+   "5962",
+   "6857"
+  ],
+  "emcees": [
+   6640
   ]
  },
  {
@@ -928,32 +930,6 @@ App.Event.FIXTURES = [
   ],
   "emcees": [
    5889
-  ]
- },
- {
-  "EventId": "7702",
-  "VenueId": "7615",
-  "Name": "Hawthorne Theatre Primetime",
-  "StartTime": "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-  "EndTime": "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
-  "MCId": "6527",
-  "Cost": "$20",
-  "ShowId": "",
-  "id": "7702",
-  "venue": "7615",
-  "start_time": "2014-05-10T04:00:00.000Z",
-  "end_time": "2014-05-10T05:30:00.000Z",
-  "performers": [
-   "6215",
-   "6857",
-   "5777",
-   "5755",
-   "6808",
-   "7895",
-   "6791"
-  ],
-  "emcees": [
-   6527
   ]
  },
  {
@@ -1124,6 +1100,29 @@ App.Event.FIXTURES = [
   "performers": []
  },
  {
+  "EventId": "7702",
+  "VenueId": "7615",
+  "Name": "Hawthorne Theatre Primetime",
+  "StartTime": "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+  "EndTime": "2014-05-09 21:00:00 to 2014-05-09 22:30:00",
+  "MCId": "",
+  "Cost": "$20",
+  "ShowId": "",
+  "id": "7702",
+  "venue": "7615",
+  "start_time": "2014-05-10T04:00:00.000Z",
+  "end_time": "2014-05-10T05:30:00.000Z",
+  "performers": [
+   "6215",
+   "6857",
+   "5777",
+   "5755",
+   "6808",
+   "7895",
+   "6791"
+  ]
+ },
+ {
   "EventId": "7660",
   "VenueId": "7611",
   "Name": "IFC Presents Reggie Watts and Friends",
@@ -1146,6 +1145,21 @@ App.Event.FIXTURES = [
   "emcees": [
    5894
   ]
+ },
+ {
+  "EventId": "7720",
+  "VenueId": "7617",
+  "Name": "Tanker Open Mic",
+  "StartTime": "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
+  "EndTime": "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
+  "MCId": "",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7720",
+  "venue": "7617",
+  "start_time": "2014-05-10T05:00:00.000Z",
+  "end_time": "2014-05-10T06:00:00.000Z",
+  "performers": []
  },
  {
   "EventId": "7806",
@@ -1172,21 +1186,6 @@ App.Event.FIXTURES = [
   "emcees": [
    6042
   ]
- },
- {
-  "EventId": "7720",
-  "VenueId": "7617",
-  "Name": "Tanker Open Mic",
-  "StartTime": "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
-  "EndTime": "2014-05-09 22:00:00 to 2014-05-09 23:00:00",
-  "MCId": "",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7720",
-  "venue": "7617",
-  "start_time": "2014-05-10T05:00:00.000Z",
-  "end_time": "2014-05-10T06:00:00.000Z",
-  "performers": []
  },
  {
   "EventId": "7733",
@@ -1233,58 +1232,34 @@ App.Event.FIXTURES = [
   "performers": [
    "6687",
    "6834",
-   "7896"
+   "7896",
+   "6527"
   ]
  },
  {
-  "EventId": "7742",
-  "VenueId": "7609",
-  "Name": "The Blackout Diaries",
+  "EventId": "7804",
+  "VenueId": "7615",
+  "Name": "PERSONA! with Tony Sam",
   "StartTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
   "EndTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-  "MCId": "6144",
-  "Cost": "$15",
-  "ShowId": "6143",
-  "show": "6143",
-  "id": "7742",
-  "venue": "7609",
+  "MCId": "6130",
+  "Cost": "$20",
+  "ShowId": "6131",
+  "show": "6131",
+  "id": "7804",
+  "venue": "7615",
   "start_time": "2014-05-10T06:00:00.000Z",
   "end_time": "2014-05-10T07:30:00.000Z",
   "performers": [
-   "6858",
-   "6205",
-   "6859",
-   "5739"
+   "6804",
+   "5998",
+   "6659",
+   "7883",
+   "6425",
+   "7881"
   ],
   "emcees": [
-   6144
-  ]
- },
- {
-  "EventId": "7625",
-  "VenueId": "7613",
-  "Name": "Sizzle Pie Stage at the Eagles Lodge Late Show",
-  "StartTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-  "EndTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-  "MCId": "6591",
-  "Cost": "$15",
-  "ShowId": "",
-  "id": "7625",
-  "venue": "7613",
-  "start_time": "2014-05-10T06:00:00.000Z",
-  "end_time": "2014-05-10T07:30:00.000Z",
-  "performers": [
-   "6681",
-   "7785",
-   "5730",
-   "6825",
-   "6110",
-   "6065",
-   "6863",
-   "7579"
-  ],
-  "emcees": [
-   6591
+   6130
   ]
  },
  {
@@ -1355,29 +1330,54 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7804",
-  "VenueId": "7615",
-  "Name": "PERSONA! with Tony Sam",
+  "EventId": "7742",
+  "VenueId": "7609",
+  "Name": "The Blackout Diaries",
   "StartTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
   "EndTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
-  "MCId": "6130",
-  "Cost": "$20",
-  "ShowId": "6131",
-  "show": "6131",
-  "id": "7804",
-  "venue": "7615",
+  "MCId": "6144",
+  "Cost": "$15",
+  "ShowId": "6143",
+  "show": "6143",
+  "id": "7742",
+  "venue": "7609",
   "start_time": "2014-05-10T06:00:00.000Z",
   "end_time": "2014-05-10T07:30:00.000Z",
   "performers": [
-   "6804",
-   "5998",
-   "6659",
-   "7883",
-   "6425",
-   "7881"
+   "6858",
+   "6205",
+   "6859",
+   "5739"
   ],
   "emcees": [
-   6130
+   6144
+  ]
+ },
+ {
+  "EventId": "7625",
+  "VenueId": "7613",
+  "Name": "Sizzle Pie Stage at the Eagles Lodge Late Show",
+  "StartTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+  "EndTime": "2014-05-09 23:00:00 to 2014-05-10 00:30:00",
+  "MCId": "6591",
+  "Cost": "$15",
+  "ShowId": "",
+  "id": "7625",
+  "venue": "7613",
+  "start_time": "2014-05-10T06:00:00.000Z",
+  "end_time": "2014-05-10T07:30:00.000Z",
+  "performers": [
+   "6681",
+   "7785",
+   "5730",
+   "6825",
+   "6110",
+   "6065",
+   "6863",
+   "7579"
+  ],
+  "emcees": [
+   6591
   ]
  },
  {
@@ -1839,29 +1839,30 @@ App.Event.FIXTURES = [
   "performers": []
  },
  {
-  "EventId": "7751",
-  "VenueId": "7620",
-  "Name": "Analog Cafe Primetime",
+  "EventId": "7708",
+  "VenueId": "7616",
+  "Name": "Best Kept Secret",
   "StartTime": "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
   "EndTime": "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-  "MCId": "6727",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7751",
-  "venue": "7620",
+  "MCId": "5867",
+  "Cost": "$15",
+  "ShowId": "8580",
+  "show": "8580",
+  "id": "7708",
+  "venue": "7616",
   "start_time": "2014-05-11T04:00:00.000Z",
   "end_time": "2014-05-11T05:30:00.000Z",
   "performers": [
-   "6413",
-   "5806",
-   "6409",
-   "6118",
-   "6509",
-   "6284",
-   "6130"
+   "6032",
+   "5774",
+   "5906",
+   "5919",
+   "6275",
+   "5987",
+   "7566"
   ],
   "emcees": [
-   6727
+   5867
   ]
  },
  {
@@ -1940,30 +1941,29 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7708",
-  "VenueId": "7616",
-  "Name": "Best Kept Secret",
+  "EventId": "7751",
+  "VenueId": "7620",
+  "Name": "Analog Cafe Primetime",
   "StartTime": "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
   "EndTime": "2014-05-10 21:00:00 to 2014-05-10 22:30:00",
-  "MCId": "5867",
-  "Cost": "$15",
-  "ShowId": "8580",
-  "show": "8580",
-  "id": "7708",
-  "venue": "7616",
+  "MCId": "6727",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7751",
+  "venue": "7620",
   "start_time": "2014-05-11T04:00:00.000Z",
   "end_time": "2014-05-11T05:30:00.000Z",
   "performers": [
-   "6032",
-   "5774",
-   "5906",
-   "5919",
-   "6275",
-   "5987",
-   "7566"
+   "6413",
+   "5806",
+   "6409",
+   "6118",
+   "6509",
+   "6284",
+   "6130"
   ],
   "emcees": [
-   5867
+   6727
   ]
  },
  {
@@ -2061,53 +2061,29 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7685",
-  "VenueId": "7613",
-  "Name": "Sizzle Pie Stage at the Eagles Lodge Late Show",
+  "EventId": "8631",
+  "VenueId": "7619",
+  "Name": "The Show That Dare Not Speak Its Name",
   "StartTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
   "EndTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-  "MCId": "6032",
-  "Cost": "$15",
+  "MCId": "5879",
+  "Cost": "",
   "ShowId": "",
-  "id": "7685",
-  "venue": "7613",
+  "id": "8631",
+  "venue": "7619",
   "start_time": "2014-05-11T06:00:00.000Z",
   "end_time": "2014-05-11T07:30:00.000Z",
   "performers": [
-   "6735",
-   "6474",
-   "7580",
-   "6762",
-   "6004",
-   "6860"
+   "6699",
+   "6647",
+   "6476",
+   "6157",
+   "5876",
+   "6189",
+   "7881"
   ],
   "emcees": [
-   6032
-  ]
- },
- {
-  "EventId": "7628",
-  "VenueId": "7608",
-  "Name": "Alhambra Lounge Late Show",
-  "StartTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-  "EndTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-  "MCId": "5918",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7628",
-  "venue": "7608",
-  "start_time": "2014-05-11T06:00:00.000Z",
-  "end_time": "2014-05-11T07:30:00.000Z",
-  "performers": [
-   "6162",
-   "6049",
-   "6591",
-   "6392",
-   "5938",
-   "6371"
-  ],
-  "emcees": [
-   5918
+   5879
   ]
  },
  {
@@ -2178,70 +2154,54 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "8631",
-  "VenueId": "7619",
-  "Name": "The Show That Dare Not Speak Its Name",
+  "EventId": "7685",
+  "VenueId": "7613",
+  "Name": "Sizzle Pie Stage at the Eagles Lodge Late Show",
   "StartTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
   "EndTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
-  "MCId": "5879",
-  "Cost": "",
+  "MCId": "6032",
+  "Cost": "$15",
   "ShowId": "",
-  "id": "8631",
-  "venue": "7619",
+  "id": "7685",
+  "venue": "7613",
   "start_time": "2014-05-11T06:00:00.000Z",
   "end_time": "2014-05-11T07:30:00.000Z",
   "performers": [
-   "6699",
-   "6647",
-   "6476",
-   "6157",
-   "5876",
-   "6189",
-   "7881"
+   "6735",
+   "6474",
+   "7580",
+   "6762",
+   "6004",
+   "6860"
   ],
   "emcees": [
-   5879
+   6032
   ]
  },
  {
-  "EventId": "7815",
-  "VenueId": "7618",
-  "Name": "Blam! Blam! Blam! Presents &quot;Black Milk&quot;",
-  "StartTime": "2014-05-10 23:59:00 to 2014-05-11 01:30:00",
-  "EndTime": "2014-05-10 23:59:00 to 2014-05-11 01:30:00",
-  "MCId": "",
-  "Cost": "$20",
-  "ShowId": "7814",
-  "show": "7814",
-  "id": "7815",
-  "venue": "7618",
-  "start_time": "2014-05-11T06:59:00.000Z",
-  "end_time": "2014-05-11T08:30:00.000Z",
-  "performers": [
-   "7786",
-   "6659",
-   "5755",
-   "6795",
-   "6402",
-   "6319",
-   "6205",
-   "6849"
-  ]
- },
- {
-  "EventId": "7726",
-  "VenueId": "7617",
-  "Name": "Tanker Open Mic",
-  "StartTime": "2014-05-10 23:59:00 to 2014-05-11 01:00:00",
-  "EndTime": "2014-05-10 23:59:00 to 2014-05-11 01:00:00",
-  "MCId": "",
+  "EventId": "7628",
+  "VenueId": "7608",
+  "Name": "Alhambra Lounge Late Show",
+  "StartTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+  "EndTime": "2014-05-10 23:00:00 to 2014-05-11 00:30:00",
+  "MCId": "5918",
   "Cost": "$10",
   "ShowId": "",
-  "id": "7726",
-  "venue": "7617",
-  "start_time": "2014-05-11T06:59:00.000Z",
-  "end_time": "2014-05-11T08:00:00.000Z",
-  "performers": []
+  "id": "7628",
+  "venue": "7608",
+  "start_time": "2014-05-11T06:00:00.000Z",
+  "end_time": "2014-05-11T07:30:00.000Z",
+  "performers": [
+   "6162",
+   "6049",
+   "6591",
+   "6392",
+   "5938",
+   "6371"
+  ],
+  "emcees": [
+   5918
+  ]
  },
  {
   "EventId": "7796",
@@ -2292,6 +2252,46 @@ App.Event.FIXTURES = [
   ],
   "emcees": [
    6542
+  ]
+ },
+ {
+  "EventId": "7726",
+  "VenueId": "7617",
+  "Name": "Tanker Open Mic",
+  "StartTime": "2014-05-10 23:59:00 to 2014-05-11 01:00:00",
+  "EndTime": "2014-05-10 23:59:00 to 2014-05-11 01:00:00",
+  "MCId": "",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7726",
+  "venue": "7617",
+  "start_time": "2014-05-11T06:59:00.000Z",
+  "end_time": "2014-05-11T08:00:00.000Z",
+  "performers": []
+ },
+ {
+  "EventId": "7815",
+  "VenueId": "7618",
+  "Name": "Blam! Blam! Blam! Presents &quot;Black Milk&quot;",
+  "StartTime": "2014-05-10 23:59:00 to 2014-05-11 01:30:00",
+  "EndTime": "2014-05-10 23:59:00 to 2014-05-11 01:30:00",
+  "MCId": "",
+  "Cost": "$20",
+  "ShowId": "7814",
+  "show": "7814",
+  "id": "7815",
+  "venue": "7618",
+  "start_time": "2014-05-11T06:59:00.000Z",
+  "end_time": "2014-05-11T08:30:00.000Z",
+  "performers": [
+   "7786",
+   "6659",
+   "5755",
+   "6795",
+   "6402",
+   "6319",
+   "6205",
+   "6849"
   ]
  },
  {
@@ -2375,25 +2375,6 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7952",
-  "VenueId": "7608",
-  "Name": "Comedy Grab Bag",
-  "StartTime": "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
-  "EndTime": "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
-  "MCId": "",
-  "Cost": "$15",
-  "ShowId": "6846",
-  "show": "6846",
-  "id": "7952",
-  "venue": "7608",
-  "start_time": "2014-05-12T02:00:00.000Z",
-  "end_time": "2014-05-12T03:30:00.000Z",
-  "performers": [
-   "6425",
-   "6659"
-  ]
- },
- {
   "EventId": "7809",
   "VenueId": "7614",
   "Name": "All Jane, No Dick",
@@ -2448,28 +2429,22 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7656",
-  "VenueId": "7610",
-  "Name": "Surprise Me!",
-  "StartTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-  "EndTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-  "MCId": "6745",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7656",
-  "venue": "7610",
-  "start_time": "2014-05-12T03:00:00.000Z",
-  "end_time": "2014-05-12T04:30:00.000Z",
+  "EventId": "7952",
+  "VenueId": "7608",
+  "Name": "Comedy Grab Bag",
+  "StartTime": "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
+  "EndTime": "2014-05-11 19:00:00 to 2014-05-11 20:30:00",
+  "MCId": "",
+  "Cost": "$15",
+  "ShowId": "6846",
+  "show": "6846",
+  "id": "7952",
+  "venue": "7608",
+  "start_time": "2014-05-12T02:00:00.000Z",
+  "end_time": "2014-05-12T03:30:00.000Z",
   "performers": [
-   "6702",
-   "6542",
-   "5906",
-   "6410",
-   "6305",
-   "6153"
-  ],
-  "emcees": [
-   6745
+   "6425",
+   "6659"
   ]
  },
  {
@@ -2528,31 +2503,6 @@ App.Event.FIXTURES = [
   ]
  },
  {
-  "EventId": "7650",
-  "VenueId": "7615",
-  "Name": "Mary Mack&#039;s North Star Comedy Hour &amp; Meat Raffle",
-  "StartTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-  "EndTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
-  "MCId": "7566",
-  "Cost": "$20",
-  "ShowId": "6537",
-  "show": "6537",
-  "id": "7650",
-  "venue": "7615",
-  "start_time": "2014-05-12T03:00:00.000Z",
-  "end_time": "2014-05-12T04:30:00.000Z",
-  "performers": [
-   "6818",
-   "7568",
-   "6864",
-   "6408",
-   "6858"
-  ],
-  "emcees": [
-   7566
-  ]
- },
- {
   "EventId": "7737",
   "VenueId": "7618",
   "Name": "MailChimp Stage at the White Owl Social Club Early Show",
@@ -2575,6 +2525,31 @@ App.Event.FIXTURES = [
   ],
   "emcees": [
    6564
+  ]
+ },
+ {
+  "EventId": "7650",
+  "VenueId": "7615",
+  "Name": "Mary Mack&#039;s North Star Comedy Hour &amp; Meat Raffle",
+  "StartTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+  "EndTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+  "MCId": "7566",
+  "Cost": "$20",
+  "ShowId": "6537",
+  "show": "6537",
+  "id": "7650",
+  "venue": "7615",
+  "start_time": "2014-05-12T03:00:00.000Z",
+  "end_time": "2014-05-12T04:30:00.000Z",
+  "performers": [
+   "6818",
+   "7568",
+   "6864",
+   "6408",
+   "6858"
+  ],
+  "emcees": [
+   7566
   ]
  },
  {
@@ -2662,6 +2637,58 @@ App.Event.FIXTURES = [
   ]
  },
  {
+  "EventId": "7656",
+  "VenueId": "7610",
+  "Name": "Surprise Me!",
+  "StartTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+  "EndTime": "2014-05-11 20:00:00 to 2014-05-11 21:30:00",
+  "MCId": "6745",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7656",
+  "venue": "7610",
+  "start_time": "2014-05-12T03:00:00.000Z",
+  "end_time": "2014-05-12T04:30:00.000Z",
+  "performers": [
+   "6702",
+   "6542",
+   "5906",
+   "6410",
+   "6305",
+   "6153"
+  ],
+  "emcees": [
+   6745
+  ]
+ },
+ {
+  "EventId": "7632",
+  "VenueId": "7608",
+  "Name": "Alhambra Lounge Closing Show",
+  "StartTime": "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
+  "EndTime": "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
+  "MCId": "6157",
+  "Cost": "$15",
+  "ShowId": "",
+  "id": "7632",
+  "venue": "7608",
+  "start_time": "2014-05-12T04:00:00.000Z",
+  "end_time": "2014-05-12T05:30:00.000Z",
+  "performers": [
+   "5999",
+   "6276",
+   "5806",
+   "6065",
+   "6687",
+   "6704",
+   "6205",
+   "6805"
+  ],
+  "emcees": [
+   6157
+  ]
+ },
+ {
   "EventId": "7697",
   "VenueId": "7614",
   "Name": "Hawthorne Lounge Closing Show",
@@ -2715,71 +2742,6 @@ App.Event.FIXTURES = [
   "emcees": [
    6354
   ]
- },
- {
-  "EventId": "7632",
-  "VenueId": "7608",
-  "Name": "Alhambra Lounge Closing Show",
-  "StartTime": "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-  "EndTime": "2014-05-11 21:00:00 to 2014-05-11 22:30:00",
-  "MCId": "6157",
-  "Cost": "$15",
-  "ShowId": "",
-  "id": "7632",
-  "venue": "7608",
-  "start_time": "2014-05-12T04:00:00.000Z",
-  "end_time": "2014-05-12T05:30:00.000Z",
-  "performers": [
-   "5999",
-   "6276",
-   "5806",
-   "6065",
-   "6687",
-   "6704",
-   "6205",
-   "6805"
-  ],
-  "emcees": [
-   6157
-  ]
- },
- {
-  "EventId": "7783",
-  "VenueId": "7612",
-  "Name": "Lance Bangs Presents: Come Laugh With Us",
-  "StartTime": "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-  "EndTime": "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
-  "MCId": "",
-  "Cost": "$20",
-  "ShowId": "8678",
-  "show": "8678",
-  "id": "7783",
-  "venue": "7612",
-  "start_time": "2014-05-12T05:00:00.000Z",
-  "end_time": "2014-05-12T06:30:00.000Z",
-  "performers": [
-   "7882",
-   "6312",
-   "7896",
-   "6824",
-   "7881",
-   "7595"
-  ]
- },
- {
-  "EventId": "7727",
-  "VenueId": "7617",
-  "Name": "Tanker Open Mic",
-  "StartTime": "2014-05-11 22:00:00 to 2014-05-11 23:00:00",
-  "EndTime": "2014-05-11 22:00:00 to 2014-05-11 23:00:00",
-  "MCId": "",
-  "Cost": "$10",
-  "ShowId": "",
-  "id": "7727",
-  "venue": "7617",
-  "start_time": "2014-05-12T05:00:00.000Z",
-  "end_time": "2014-05-12T06:00:00.000Z",
-  "performers": []
  },
  {
   "EventId": "7687",
@@ -2939,6 +2901,44 @@ App.Event.FIXTURES = [
   "emcees": [
    6474
   ]
+ },
+ {
+  "EventId": "7783",
+  "VenueId": "7612",
+  "Name": "Lance Bangs Presents: Come Laugh With Us",
+  "StartTime": "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+  "EndTime": "2014-05-11 22:00:00 to 2014-05-11 23:30:00",
+  "MCId": "",
+  "Cost": "$20",
+  "ShowId": "8678",
+  "show": "8678",
+  "id": "7783",
+  "venue": "7612",
+  "start_time": "2014-05-12T05:00:00.000Z",
+  "end_time": "2014-05-12T06:30:00.000Z",
+  "performers": [
+   "7882",
+   "6312",
+   "7896",
+   "6824",
+   "7881",
+   "7595"
+  ]
+ },
+ {
+  "EventId": "7727",
+  "VenueId": "7617",
+  "Name": "Tanker Open Mic",
+  "StartTime": "2014-05-11 22:00:00 to 2014-05-11 23:00:00",
+  "EndTime": "2014-05-11 22:00:00 to 2014-05-11 23:00:00",
+  "MCId": "",
+  "Cost": "$10",
+  "ShowId": "",
+  "id": "7727",
+  "venue": "7617",
+  "start_time": "2014-05-12T05:00:00.000Z",
+  "end_time": "2014-05-12T06:00:00.000Z",
+  "performers": []
  },
  {
   "EventId": "7728",

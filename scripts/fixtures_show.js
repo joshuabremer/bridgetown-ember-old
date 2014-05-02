@@ -145,14 +145,27 @@ App.Show.FIXTURES = [
   ]
  },
  {
-  "Name": "Baby Talk with Dan Levy &amp; Jensen Karp",
-  "Copy": "",
+  "Name": "Baby Talk with Dan Levy and Jensen Karp",
+  "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_february.jpg",
   "SubmittedId": "6300",
   "SortOrder": "135",
   "id": "6300",
-  "pageUrl": "6300-baby-talk-with-dan-levy-amp-jensen-karp",
+  "pageUrl": "6300-baby-talk-with-dan-levy-and-jensen-karp",
+  "events": [
+   "7639"
+  ]
+ },
+ {
+  "Name": "Baby Talk with Dan Levy and Jensen Karp",
+  "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
+  "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_februaryfixed.jpg",
+  "SubmittedId": "6300",
+  "SortOrder": "135",
+  "id": "6300",
+  "pageUrl": "6300-baby-talk-with-dan-levy-and-jensen-karp",
   "events": [
    "7639"
   ]
@@ -432,7 +445,7 @@ App.Show.FIXTURES = [
  },
  {
   "Name": "All Jane, No Dick",
-  "Copy": "",
+  "Copy": "All Jane, No Dick showcases the amazing talent and diversity of women in comedy. Curious Comedy Theater&#039;s annual All Jane, No Dick Comedy Festival began in 2012 with the mission of discovering, encouraging and promoting women in comedy. Women represent only 17% of the professionals working in the comedy industry today. Industry representatives claim they have difficulty finding women to hire. All Jane, No Dick curates the festival to show the best and most original female improvisers, sketch and stand up comedians to help bridge the gap between these talented performers and industry professionals while entertaining audiences in Portland, Oregon and beyond.",
   "Bio": "All Jane, No Dick showcases the amazing talent and diversity of women in comedy. Curious Comedy Theater&#039;s annual All Jane, No Dick Comedy Festival began in 2012 with the mission of discovering, encouraging and promoting women in comedy. Women represent only 17% of the professionals working in the comedy industry today. Industry representatives claim they have difficulty finding women to hire. All Jane, No Dick curates the festival to show the best and most original female improvisers, sketch and stand up comedians to help bridge the gap between these talented performers and industry professionals while entertaining audiences in Portland, Oregon and beyond.",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/ajnd.jpg",
   "SubmittedId": "8577",
@@ -446,7 +459,7 @@ App.Show.FIXTURES = [
  },
  {
   "Name": "Best Kept Secret",
-  "Copy": "",
+  "Copy": "The Bridgetown selection committee got together and hand-picked the best and the brightest from this year&#039;s submissions. They may not be on your radar just yet, but keep an eye out for them. These comics may very well be the next big thing!",
   "Bio": "The Bridgetown selection committee got together and hand-picked the best and the brightest from this year&#039;s submissions. They may not be on your radar just yet, but keep an eye out for them. These comics may very well be the next big thing!",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/sound_recordings_and_containers_no_words.png",
   "SubmittedId": "8580",
@@ -461,7 +474,7 @@ App.Show.FIXTURES = [
  },
  {
   "Name": "Blam! Blam! Blam! Presents &quot;Black Milk&quot;",
-  "Copy": "",
+  "Copy": "Sprung from LA&#039;s 7 year-old comedy show &quot;Blam! Blam! Blam!&quot;, &quot;BLACK MILK&quot; (or &quot;Leite Preto&quot; in Portugese) is a delicious compendium of crisp  comedic  performances and surprising late-night weirdness. \r\n\r\nOn it&#039;s surface, here is a sturdy-walled show with a firm foundation -- solid pedigree. Inside however, it&#039;s Knucklehead City. Straight bananas. The walls will stay up and the roof won&#039;t come crashing but outside of that....\r\nSo, precisely what will go down?\r\nExactly.",
   "Bio": "Sprung from LA&#039;s 7 year-old comedy show &quot;Blam! Blam! Blam!&quot;, &quot;BLACK MILK&quot; (or &quot;Leite Preto&quot; in Portugese) is a delicious compendium of crisp  comedic  performances and surprising late-night weirdness. \r\n\r\nOn it&#039;s surface, here is a sturdy-walled show with a firm foundation -- solid pedigree. Inside however, it&#039;s Knucklehead City. Straight bananas. The walls will stay up and the roof won&#039;t come crashing but outside of that....\r\nSo, precisely what will go down?\r\nExactly.",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/bm_logo.jpg",
   "SubmittedId": "7814",
@@ -513,7 +526,7 @@ App.Show.FIXTURES = [
  },
  {
   "Name": "Voodoo Doughnut Recordings Presents Ian Karmel and Nathan Brannon",
-  "Copy": "",
+  "Copy": "Voodoo Doughnut Recordings is proud to present our first-ever comedy record, a 7&quot; split-single featuring comedians Ian Karmel and Nathan Brannon riffing irreverently on everything from doughnuts to the War on Terror to Talmudic law. Karmel&#039;s side, titled &quot;(Dilla) jokes&quot; was recorded before a live audience at Little Joy in L.A., where Karmel works as a writer and panelist on the show Chelsea Lately. Nathan Brannon&#039;s side, titled &quot;Doughnut Messaging&quot; was recorded before a live audience at Helium Comedy Club right here in Portland. The record (on limited-edition yellow vinyl!) will be out just in time for the 2014 Bridgetown Comedy Festival, where both Karmel and Brannon will be performing.",
   "Bio": "Voodoo Doughnut Recordings is proud to present our first-ever comedy record, a 7&quot; split-single featuring comedians Ian Karmel and Nathan Brannon riffing irreverently on everything from doughnuts to the War on Terror to Talmudic law. Karmel&#039;s side, titled &quot;(Dilla) jokes&quot; was recorded before a live audience at Little Joy in L.A., where Karmel works as a writer and panelist on the show Chelsea Lately. Nathan Brannon&#039;s side, titled &quot;Doughnut Messaging&quot; was recorded before a live audience at Helium Comedy Club right here in Portland. The record (on limited-edition yellow vinyl!) will be out just in time for the 2014 Bridgetown Comedy Festival, where both Karmel and Brannon will be performing.",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/vd_jacket_with_disc_005_a.jpg",
   "SubmittedId": "7790",
@@ -533,6 +546,8 @@ App.Show.FIXTURES = [
   "SortOrder": "900",
   "id": "7776",
   "pageUrl": "7776-whiskey-tango",
-  "events": []
+  "events": [
+   "7747"
+  ]
  }
 ];
