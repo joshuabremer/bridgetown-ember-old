@@ -10622,10 +10622,10 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     model: function(params) {
         var _this = this;
         return Ember.RSVP.hash({
-            shows: this.store.find("show"),
-            performers: this.store.find("performer"),
+            venues: this.store.find("venue"),
             events: this.store.find("event"),
-            venues: this.store.find("venue")
+            performers: this.store.find("performer"),
+            shows: this.store.find("show")
         }).then(function() {
             return _this.store.find("event", params.events_id);
         });
@@ -10654,13 +10654,14 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
             outlet: "jumbotron"
         });
     }
-}), App.NewspostsRoute = Ember.Route.extend({}), App.PerformerRoute = Ember.Route.extend({
+}), App.PerformerRoute = Ember.Route.extend({
     model: function(params) {
         var _this = this;
         return this.set("params_slug", params.slug), Ember.RSVP.hash({
             venues: this.store.find("venue"),
             performers: this.store.find("performer"),
-            events: this.store.find("event")
+            events: this.store.find("event"),
+            shows: this.store.find("show")
         }).then(function() {
             return _this.store.find("performer", params.pageUrl.split("-")[0]);
         });
@@ -10670,8 +10671,9 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     model: function() {
         return Ember.RSVP.hash({
             venues: this.store.find("venue"),
+            events: this.store.find("event"),
             performers: this.store.find("performer"),
-            events: this.store.find("event")
+            shows: this.store.find("show")
         }).then(function(data) {
             return data.performers;
         });

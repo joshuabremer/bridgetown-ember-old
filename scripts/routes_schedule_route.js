@@ -4,7 +4,7 @@ App.ScheduleRoute = Ember.Route.extend({
       venues: this.store.find('venue'),
       events: this.store.find('event'),
       performers: this.store.find('performer'),
-      shows: this.store.find('show'),
+      shows: this.store.find('show')
     });
   },
   title: 'Schedule'
