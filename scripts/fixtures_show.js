@@ -458,6 +458,17 @@ App.Show.FIXTURES = [
   ]
  },
  {
+  "Name": "Baron Vaughn Presents: The New Negroes",
+  "Copy": "The New Negroes is the name of the publication believed to have launched the Harlem Renaissance. In this same tradition, Baron Vaughn is ushering in a new era of black comedy. Never again shall it be the same. The end of black comedy as you know it is nigh! Repent. Repent your comedy ways! Ok, yes. You&#039;re right. That&#039;s a little much. Look, this is going to be a showcase of black comedians featured at Bridgetown this year. There is a great range from all these performers, and I (this blurb) think you&#039;ll have a great time and leave thinking new things. Wait. I KNOW you&#039;ll have a good time! Anyway, there are other blurbs for other shows I gotta finish. Just wanted to stop by at this one so I could speak my heart for a sec. Ok. Ta-ta!",
+  "Bio": "The New Negroes is the name of the publication believed to have launched the Harlem Renaissance. In this same tradition, Baron Vaughn is ushering in a new era of black comedy. Never again shall it be the same. The end of black comedy as you know it is nigh! Repent. Repent your comedy ways! Ok, yes. You&#039;re right. That&#039;s a little much. Look, this is going to be a showcase of black comedians featured at Bridgetown this year. There is a great range from all these performers, and I (this blurb) think you&#039;ll have a great time and leave thinking new things. Wait. I KNOW you&#039;ll have a good time! Anyway, there are other blurbs for other shows I gotta finish. Just wanted to stop by at this one so I could speak my heart for a sec. Ok. Ta-ta!",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/thenewnegroespic.jpg",
+  "SubmittedId": "8677",
+  "SortOrder": "900",
+  "id": "8677",
+  "pageUrl": "8677-baron-vaughn-presents-the-new-negroes",
+  "events": []
+ },
+ {
   "Name": "Best Kept Secret",
   "Copy": "The Bridgetown selection committee got together and hand-picked the best and the brightest from this year&#039;s submissions. They may not be on your radar just yet, but keep an eye out for them. These comics may very well be the next big thing!",
   "Bio": "The Bridgetown selection committee got together and hand-picked the best and the brightest from this year&#039;s submissions. They may not be on your radar just yet, but keep an eye out for them. These comics may very well be the next big thing!",
@@ -500,8 +511,8 @@ App.Show.FIXTURES = [
  },
  {
   "Name": "Pivot Presents: W. Kamau Bell and Friends",
-  "Copy": "Pivot is proud to present an evening with W. Kamau Bell and Friends! The Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy. Named an Ambassador of Racial Justice by the ACLU, his weekly half-hour comedy series, Totally Biased with W. Kamau Bell, premiered in August 2012 to critical acclaim. Pivot and Kamau share an interest in showcasing socially relevant content and education through humor and storytelling: this one-of-a-kind event promises to be memorable! Want to find out if you get pivot? Go to GetPivot.tv!",
-  "Bio": "Pivot, a new cable network from Participant Media that&#039;s all about changing things up, is proud to present an evening with W. Kamau Bell and Friends!  Pivot and Kamau share a passion for showcasing socially relevant content and education through humor and storytelling. Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy and was named an Ambassador of Racial Justice by the ACLU.  Want to find out if you get Pivot?  Go to GetPivot.tv!",
+  "Copy": "Pivot, a new cable network from Participant Media that&#039;s all about changing things up, is proud to present an evening with W. Kamau Bell and Friends!  Pivot and Kamau share a passion for showcasing socially relevant content and education through humor and storytelling. Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy and was named an Ambassador of Racial Justice by the ACLU.  Want to find out if you get Pivot?  Go to GetPivot.tv!",
+  "Bio": "Pivot, a new cable network from Participant Media that&#039;s all about changing things up, is proud to present an evening with W. Kamau Bell and Friends!  Pivot and Kamau share a passion for showcasing socially relevant content and education through humor and storytelling. Socio-political comedian W. Kamau Bell has emerged as the post-modern voice of comedy and was named an Ambassador of Racial Justice by the ACLU.  Want to find out if you get Pivot?  Go to GetPivot.tv!\r\n",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/bridgetown_01.jpg",
   "SubmittedId": "8634",
   "SortOrder": "900",

@@ -11,12 +11,5 @@ App.ApplicationView = Ember.View.extend({
       js.src = p + "://platform.twitter.com/widgets.js?" + new Date().getTime();
       fjs.parentNode.insertBefore(js, fjs);
     }
-
-    $('.navbar .nav a').on('click', function(){
-      if ($(window).width() <= 768) {
-        $(".navbar-toggle").click();
-      }
-    });
-
   }
 });

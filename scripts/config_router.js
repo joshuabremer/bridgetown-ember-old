@@ -85,6 +85,9 @@ Ember.Route.reopen({
     } else {
       document.title = 'Bridgetown Comedy Festival';
     }
+  },
+  deactivate: function() {
+      $(".navbar-toggle").not('.collapsed').click();
   }
 });
 
