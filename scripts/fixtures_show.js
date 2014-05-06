@@ -132,14 +132,14 @@ App.Show.FIXTURES = [
   ]
  },
  {
-  "Name": "Competitive Erotic Fan ",
+  "Name": "Competitive Erotic Fan Fiction",
   "Copy": "Competitive Erotic Fan Fiction is a live show (and popular podcast on the Nerdist Network) held every month at the Nerdmelt Theater in Los Angeles, created &amp; hosted by Bryan Cook. Each show features 10 comics, writing and performing Erotic Fan Fiction pieces, based upon their whims or audience suggestions. It&#039;s really stupid.\r\n\r\nCEFF tours nationally, year-round, and has been featured as part of:\r\nJust For Laughs (Chicago)\r\nBridgetown Comedy Festival (Portland)\r\nSan Francisco Sketchfest\r\nRiot LA (Los Angeles)  \r\nOutside Lands (San Francisco)\r\nBumbershoot (Seattle)\r\n\r\nCome see why Laughspin.Com said CEFF &quot;Might be one of my favorite comedy shows I’ve ever taken in. Period.&quot;",
   "Bio": "Fan Fiction by comedians",
   "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/ceff_podcast_logo.jpg",
   "SubmittedId": "5903",
   "SortOrder": "130",
   "id": "5903",
-  "pageUrl": "5903-competitive-erotic-fan-",
+  "pageUrl": "5903-competitive-erotic-fan-fiction",
   "events": [
    "7646"
   ]
@@ -148,7 +148,7 @@ App.Show.FIXTURES = [
   "Name": "Baby Talk with Dan Levy and Jensen Karp",
   "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
-  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_februaryfixed.jpg",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_february.jpg",
   "SubmittedId": "6300",
   "SortOrder": "135",
   "id": "6300",
@@ -161,7 +161,7 @@ App.Show.FIXTURES = [
   "Name": "Baby Talk with Dan Levy and Jensen Karp",
   "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
-  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_february.jpg",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_februaryfixed.jpg",
   "SubmittedId": "6300",
   "SortOrder": "135",
   "id": "6300",
