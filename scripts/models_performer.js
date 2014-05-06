@@ -10,6 +10,8 @@ App.Performer = DS.Model.extend({
 
   SortOrder: DS.attr('number'),
 
+  ExcludeFromList: DS.attr('boolean'),
+
   slug: function() {
     return sluggify(this.get('Name'));
   }.property('Name'),

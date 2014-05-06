@@ -148,7 +148,7 @@ App.Show.FIXTURES = [
   "Name": "Baby Talk with Dan Levy and Jensen Karp",
   "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
-  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_february.jpg",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_februaryfixed.jpg",
   "SubmittedId": "6300",
   "SortOrder": "135",
   "id": "6300",
@@ -161,7 +161,7 @@ App.Show.FIXTURES = [
   "Name": "Baby Talk with Dan Levy and Jensen Karp",
   "Copy": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
   "Bio": "Baby Talk is a hilarious multi-media live roundtable show built around comedian and new father Dan Levy’s quest to avoid scarring his new son’s fragile psyche. The funniest names in comedy, including Jensen Karp in the DJ role, come together with the cutest faces in childhood, as a real life 7-year-old will sit down with the group and help explain what it takes to be a cool dad (as if Dan could ever be that).",
-  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_februaryfixed.jpg",
+  "PhotoUrl": "http://bridgetown.festivalthing.com/sites/default/files/images/show-submissions/baby_talk_february.jpg",
   "SubmittedId": "6300",
   "SortOrder": "135",
   "id": "6300",
@@ -466,7 +466,10 @@ App.Show.FIXTURES = [
   "SortOrder": "900",
   "id": "8677",
   "pageUrl": "8677-baron-vaughn-presents-the-new-negroes",
-  "events": []
+  "events": [
+   "7701",
+   "7733"
+  ]
  },
  {
   "Name": "Best Kept Secret",

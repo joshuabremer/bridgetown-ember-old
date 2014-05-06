@@ -127,7 +127,7 @@ function sanitizeData(filepath, callback) {
 
     // Create page URLs
     performerObj[key].pageUrl = performerObj[key].id + '-' + convertToSlug(performerObj[key].Name);
-
+    performerObj[key].ExcludeFromList = (performerObj[key].ExcludeFromList === "Yes" ? true : false);
     performerObj[key].Bio = performerObj[key].Bio || "";
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2018/g, "&#x2018;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2019/g, "&#x2019;");
