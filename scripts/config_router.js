@@ -87,7 +87,9 @@ Ember.Route.reopen({
     }
   },
   deactivate: function() {
-      $(".navbar-toggle").not('.collapsed').click();
+    if ($(".navbar .navbar-collapse.collapse.in").length) {
+      $(".navbar-toggle").not(".collapsed").click();
+    }
   }
 });
 

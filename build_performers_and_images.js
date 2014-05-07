@@ -62,7 +62,8 @@ function getScheduleData() {
 }
 
 function stringifyPerformerJSON(filepath,callback) {
-  var rawPerformerData = fs.readFileSync('assets/raw_performers.json', 'utf8');
+
+  var rawPerformerData = getPerformerData().replace(/\\u2028/g, "");
   fs.writeFile(filepath, JSON.stringify(rawPerformerData, null, " "), 'utf8', function (err) {
      if (err) return console.log(err);
      callback();
@@ -129,6 +130,7 @@ function sanitizeData(filepath, callback) {
     performerObj[key].pageUrl = performerObj[key].id + '-' + convertToSlug(performerObj[key].Name);
     performerObj[key].ExcludeFromList = (performerObj[key].ExcludeFromList === "Yes" ? true : false);
     performerObj[key].Bio = performerObj[key].Bio || "";
+    performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2028/g, "");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2018/g, "&#x2018;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u2019/g, "&#x2019;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u201c/g, "&#x201c;");

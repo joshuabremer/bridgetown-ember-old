@@ -6056,7 +6056,7 @@ App.FixtureAdapter = DS.FixtureAdapter.extend({
     mc_events: []
 }, {
     Name: "Sean Donnelly",
-    Bio: "<p>When he’s not catching a nap with his bulldog, Rickles, Sean can be \nfound headlining clubs all over New York, including Caroline&#039;s, Gotham, Stand Up NY, and The Stand. He has appeared on MTV’s World of Jenks and The Late Show with David Letterman. Sean was a Comic Stand-Off finalist at the 2010 Magners \nComedy Festival, performed at the Bridgetown Comedy Festival in\n 2011 and 2012, was a semi-finalist in the 2012 Boston Comedy\nFestival competition, and performed at Comedy Central’s 2013 South \nBeach Comedy Festival. Sean was a Montreal Just For Laughs “New Face” in 2013.  He co-hosts the podcast &quot;My Dumb Friends\n&quot; with fellow comedian Dan St. Germain and hosts a weekly show at Alligator Lounge in\n Brooklyn. Sean can be seen regularly on the TruTV series &quot;World’s Dumbest&quot; and on the first season of &quot;Adam Devine’s House Party&quot; on Comedy Central.</p>\n",
+    Bio: "<p>When he’s not catching a nap with his bulldog, Rickles, Sean can be found headlining clubs all over New York, including Caroline&#039;s, Gotham, Stand Up NY, and The Stand. He has appeared on MTV’s World of Jenks and The Late Show with David Letterman. Sean was a Comic Stand-Off finalist at the 2010 Magners Comedy Festival, performed at the Bridgetown Comedy Festival in 2011 and 2012, was a semi-finalist in the 2012 Boston ComedyFestival competition, and performed at Comedy Central’s 2013 South Beach Comedy Festival. Sean was a Montreal Just For Laughs “New Face” in 2013.  He co-hosts the podcast &quot;My Dumb Friends&quot; with fellow comedian Dan St. Germain and hosts a weekly show at Alligator Lounge in Brooklyn. Sean can be seen regularly on the TruTV series &quot;World’s Dumbest&quot; and on the first season of &quot;Adam Devine’s House Party&quot; on Comedy Central.</p>\n",
     PhotoUrl: "http://bridgetown.festivalthing.com/sites/default/files/images/performers/sean_donnelly_2.jpg",
     PerformerId: "6004",
     SortOrder: 250,
@@ -9309,7 +9309,8 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [],
         types: [],
         data: data
-    }))), data.buffer.push(">\n\n  "), data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
+    }))), data.buffer.push('>\n\n<p><a target="_blank" href="https://www.google.com/calendar/embed?src=ij2h1kcsksapda46r4e8qr2atc%40group.calendar.google.com&ctz=America/Los_Angeles"><img src="/assets/add-to-google-calendar.gif" /></a></p>\n  '), 
+    data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
     options = {
         hash: {},
         hashTypes: {},
@@ -10759,7 +10760,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         this._super(), document.title = this.get("title") ? this.get("title") + " | Bridgetown Comedy Festival" : "Bridgetown Comedy Festival";
     },
     deactivate: function() {
-        $(".navbar-toggle").not(".collapsed").click();
+        $(".navbar .navbar-collapse.collapse.in").length && $(".navbar-toggle").not(".collapsed").click();
     }
 }), App.VenuesRoute = Ember.Route.extend({
     model: function() {
