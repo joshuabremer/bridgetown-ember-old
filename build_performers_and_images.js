@@ -141,7 +141,8 @@ function sanitizeData(filepath, callback) {
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e9/g, "&#x00e9;");
     performerObj[key].Bio = performerObj[key].Bio.replace(/\\u00e1/g, "&#x00e1;");
 
-    performerObj[key].SortOrder = parseInt(performerObj[key].SortOrder,10);
+
+    performerObj[key].SortOrder = parseInt(performerObj[key].SortOrder,10) || 99999;
 
   }
 
