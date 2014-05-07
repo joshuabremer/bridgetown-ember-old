@@ -8104,7 +8104,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var stack1, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression, self = this;
-    return data.buffer.push('<div class="schedule-list">\n  <div class="text-left">\n      <p><button type="button" class="btn btn-default" '), 
+    return data.buffer.push('<div class="schedule-list">\n  <div class="text-left">\n      <div class="container-fluid">\n        <div class="row">\n        <div class="col-xs-6 col-sm-3">\n          <button type="button" style="margin: 0em 0em 0.5em;" class="btn btn-default btn-block" '), 
     data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {
         hash: {},
         hashTypes: {},
@@ -8112,7 +8112,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push('>Thursday</button>\n      <button type="button" class="btn btn-default" '), 
+    }))), data.buffer.push('>Thursday</button>\n        </div>\n        <div class="col-xs-6 col-sm-3">\n          <button type="button" style="margin: 0em 0em 0.5em;" class="btn btn-default  btn-block" '), 
     data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterFriday", {
         hash: {},
         hashTypes: {},
@@ -8120,7 +8120,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push('>Friday</button>\n      <button type="button" class="btn btn-default" '), 
+    }))), data.buffer.push('>Friday</button>\n        </div>\n        <div class="col-xs-6 col-sm-3">\n          <button type="button" style="margin: 0em 0em 0.5em;" class="btn btn-default  btn-block" '), 
     data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {
         hash: {},
         hashTypes: {},
@@ -8128,7 +8128,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push('>Saturday</button>\n      <button type="button" class="btn btn-default" '), 
+    }))), data.buffer.push('>Saturday</button>\n        </div>\n        <div class="col-xs-6 col-sm-3">\n          <button type="button" style="margin: 0em 0em 0.5em;" class="btn btn-default  btn-block" '), 
     data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {
         hash: {},
         hashTypes: {},
@@ -8136,7 +8136,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         contexts: [ depth0 ],
         types: [ "STRING" ],
         data: data
-    }))), data.buffer.push('>Sunday</button>\n    </p>\n  </div>\n  <ul class="list-group">\n  '), 
+    }))), data.buffer.push('>Sunday</button>\n        </div>\n      </div>\n  </div>\n  <ul class="list-group">\n  '), 
     stack1 = helpers.each.call(depth0, "event", "in", "controller.events", {
         hash: {},
         hashTypes: {},

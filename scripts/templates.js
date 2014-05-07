@@ -211,15 +211,15 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<div class=\"schedule-list\">\n  <div class=\"text-left\">\n      <p><button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push("<div class=\"schedule-list\">\n  <div class=\"text-left\">\n      <div class=\"container-fluid\">\n        <div class=\"row\">\n        <div class=\"col-xs-6 col-sm-3\">\n          <button type=\"button\" style=\"margin: 0em 0em 0.5em;\" class=\"btn btn-default btn-block\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterThursday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Thursday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(">Thursday</button>\n        </div>\n        <div class=\"col-xs-6 col-sm-3\">\n          <button type=\"button\" style=\"margin: 0em 0em 0.5em;\" class=\"btn btn-default  btn-block\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterFriday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Friday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(">Friday</button>\n        </div>\n        <div class=\"col-xs-6 col-sm-3\">\n          <button type=\"button\" style=\"margin: 0em 0em 0.5em;\" class=\"btn btn-default  btn-block\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSaturday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Saturday</button>\n      <button type=\"button\" class=\"btn btn-default\" ");
+  data.buffer.push(">Saturday</button>\n        </div>\n        <div class=\"col-xs-6 col-sm-3\">\n          <button type=\"button\" style=\"margin: 0em 0em 0.5em;\" class=\"btn btn-default  btn-block\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "filterSunday", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Sunday</button>\n    </p>\n  </div>\n  <ul class=\"list-group\">\n  ");
+  data.buffer.push(">Sunday</button>\n        </div>\n      </div>\n  </div>\n  <ul class=\"list-group\">\n  ");
   stack1 = helpers.each.call(depth0, "event", "in", "controller.events", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </ul>\n");
