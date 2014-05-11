@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-05-08 */
+/*! bridgetowncomedy.com 2014-05-11 */
 function getTimeArray(day) {
     var timeArray = [], duration = moment(FESTIVAL_END_TIMES[day]).diff(FESTIVAL_START_TIMES[day], "hours");
     for (i = 0; 2 * duration > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
@@ -10913,7 +10913,14 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     title: "Show"
 }), App.ShowsRoute = Ember.Route.extend({
     model: function() {
-        return this.store.find("show");
+        return Ember.RSVP.hash({
+            venues: this.store.find("venue"),
+            events: this.store.find("event"),
+            performers: this.store.find("performer"),
+            shows: this.store.find("show")
+        }).then(function() {
+            return this.store.find("show");
+        });
     },
     title: "Shows"
 }), App.SundayScheduleRoute = Ember.Route.extend({
