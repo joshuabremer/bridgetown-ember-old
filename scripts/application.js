@@ -8741,6 +8741,15 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         types: [ "STRING", "ID" ],
         data: data
     }, stack1 = helper ? helper.call(depth0, "venue", "venue", options) : helperMissing.call(depth0, "link-to", "venue", "venue", options), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n          </p>\n          <p>\n            "), 
+    helper = helpers.googleMapLink || depth0 && depth0.googleMapLink, options = {
+        hash: {},
+        hashTypes: {},
+        hashContexts: {},
+        contexts: [ depth0 ],
+        types: [ "ID" ],
+        data: data
+    }, stack1 = helper ? helper.call(depth0, "venue.address", options) : helperMissing.call(depth0, "googleMapLink", "venue.address", options), 
     (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push("\n          </p>\n          \n          "), 
     stack1 = helpers["if"].call(depth0, "show", {
         hash: {},

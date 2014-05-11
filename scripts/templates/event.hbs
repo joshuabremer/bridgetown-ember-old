@@ -19,6 +19,9 @@
             <span class="schedule-list__item-venue-label label label-default">{{venue.Name}}</span>
             {{/link-to}}
           </p>
+          <p>
+            {{{ googleMapLink venue.address }}}
+          </p>
           
           {{#if show}}
           <div class="row">

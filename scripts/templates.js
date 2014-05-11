@@ -499,6 +499,9 @@ function program9(depth0,data) {
   data.buffer.push("</small>\n          </p>\n          <p>");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "venue", "venue", options) : helperMissing.call(depth0, "link-to", "venue", "venue", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n          </p>\n          <p>\n            ");
+  stack1 = (helper = helpers.googleMapLink || (depth0 && depth0.googleMapLink),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "venue.address", options) : helperMissing.call(depth0, "googleMapLink", "venue.address", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n          </p>\n          \n          ");
   stack1 = helpers['if'].call(depth0, "show", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
