@@ -4,6 +4,7 @@ App.Venue.FIXTURES = [
   "Name": "Alhambra Theater Lounge",
   "VenueId": "7608",
   "id": "7608",
+  "address": "4811 SE Hawthorne Blvd, Portland, OR 97215",
   "pageUrl": "7608-alhambra-theater-lounge",
   "events": [
    "7621",
@@ -20,6 +21,7 @@ App.Venue.FIXTURES = [
   "Name": "Taxi Magic Stage at Alhambra Theater Main",
   "VenueId": "7609",
   "id": "7609",
+  "address": "4811 SE Hawthorne Blvd, Portland, OR 97215",
   "pageUrl": "7609-taxi-magic-stage-at-alhambra-theater-main",
   "events": [
    "7637",
@@ -41,6 +43,7 @@ App.Venue.FIXTURES = [
   "Name": "Analog Cafe",
   "VenueId": "7620",
   "id": "7620",
+  "address": "720 SE Hawthorne Blvd, Portland, OR 97214",
   "pageUrl": "7620-analog-cafe",
   "events": [
    "7748",
@@ -56,6 +59,7 @@ App.Venue.FIXTURES = [
   "Name": "Analog Theater",
   "VenueId": "7619",
   "id": "7619",
+  "address": "720 SE Hawthorne Blvd, Portland, OR 97214",
   "pageUrl": "7619-analog-theater",
   "events": [
    "7704",
@@ -74,6 +78,7 @@ App.Venue.FIXTURES = [
   "Name": "Bar of the Gods",
   "VenueId": "7610",
   "id": "7610",
+  "address": "4801 SE Hawthorne Blvd, Portland, OR 97215",
   "pageUrl": "7610-bar-of-the-gods",
   "events": [
    "7653",
@@ -86,6 +91,7 @@ App.Venue.FIXTURES = [
   "Name": "Bossanova",
   "VenueId": "7611",
   "id": "7611",
+  "address": "722 East Burnside , Portland, OR 97214 ",
   "pageUrl": "7611-bossanova",
   "events": [
    "7657",
@@ -101,6 +107,7 @@ App.Venue.FIXTURES = [
   "Name": "Curious Comedy Theater",
   "VenueId": "8571",
   "id": "8571",
+  "address": "5225 NE Martin Luther King Jr Blvd, Portland, OR 97211",
   "pageUrl": "8571-curious-comedy-theater",
   "events": [
    "8579"
@@ -110,6 +117,7 @@ App.Venue.FIXTURES = [
   "Name": "Squarespace Stage at Doug Fir",
   "VenueId": "7612",
   "id": "7612",
+  "address": "830 E Burnside St, Portland, OR 97214",
   "pageUrl": "7612-squarespace-stage-at-doug-fir",
   "events": [
    "7663",
@@ -134,6 +142,7 @@ App.Venue.FIXTURES = [
   "Name": "Sizzle Pie Stage at Eagles Lodge",
   "VenueId": "7613",
   "id": "7613",
+  "address": "4904 SE Hawthorne Portland, OR 97215",
   "pageUrl": "7613-sizzle-pie-stage-at-eagles-lodge",
   "events": [
    "7679",
@@ -152,6 +161,7 @@ App.Venue.FIXTURES = [
   "Name": "Ground Kontrol",
   "VenueId": "7966",
   "id": "7966",
+  "address": "511 NW Couch St, Portland, OR 97209",
   "pageUrl": "7966-ground-kontrol",
   "events": [
    "7967"
@@ -161,6 +171,7 @@ App.Venue.FIXTURES = [
   "Name": "Hawthorne Theatre Lounge",
   "VenueId": "7614",
   "id": "7614",
+  "address": "1507 SE 39th Ave, Portland, OR 97214",
   "pageUrl": "7614-hawthorne-theatre-lounge",
   "events": [
    "7688",
@@ -180,6 +191,7 @@ App.Venue.FIXTURES = [
   "Name": "Hawthorne Theatre Main",
   "VenueId": "7615",
   "id": "7615",
+  "address": "1507 SE 39th Ave, Portland, OR 97214",
   "pageUrl": "7615-hawthorne-theatre-main",
   "events": [
    "7698",
@@ -195,6 +207,7 @@ App.Venue.FIXTURES = [
   "Name": "Jupiter Tent",
   "VenueId": "7616",
   "id": "7616",
+  "address": "800 E Burnside St, Portland, OR 97214",
   "pageUrl": "7616-jupiter-tent",
   "events": [
    "7739",
@@ -210,6 +223,7 @@ App.Venue.FIXTURES = [
   "Name": "The Tanker",
   "VenueId": "7617",
   "id": "7617",
+  "address": "4825 SE Hawthorne Blvd, Portland, OR 97215",
   "pageUrl": "7617-the-tanker",
   "events": [
    "7717",
@@ -229,6 +243,7 @@ App.Venue.FIXTURES = [
   "Name": "MailChimp Stage Stage at White Owl Social Club",
   "VenueId": "7618",
   "id": "7618",
+  "address": "1305 SE 8th Ave, Portland, OR 97214",
   "pageUrl": "7618-mailchimp-stage-stage-at-white-owl-social-club",
   "events": [
    "7730",

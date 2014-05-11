@@ -10,6 +10,25 @@ var smushit = require('node-smushit');
 getVenueJSON('http://bridgetown.festivalthing.com/export/venues/json');
 //getVenueJSON('http://127.0.0.1:8000/fixtures/festivalthing-venues.json');
 
+var addresses = {
+  "7608":{"Address":"4811 SE Hawthorne Blvd, Portland, OR 97215"},    
+  "7609":{"Address":"4811 SE Hawthorne Blvd, Portland, OR 97215"}  ,    
+  "7620":{"Address":"720 SE Hawthorne Blvd, Portland, OR 97214"}  ,    
+  "7619":{"Address":"720 SE Hawthorne Blvd, Portland, OR 97214"}  ,    
+  "7610":{"Address":"4801 SE Hawthorne Blvd, Portland, OR 97215"}  ,    
+  "7611":{"Address":"722 East Burnside , Portland, OR 97214 "}  ,    
+  "8571":{"Address":"5225 NE Martin Luther King Jr Blvd, Portland, OR 97211"}  ,    
+  "7612":{"Address":"830 E Burnside St, Portland, OR 97214"}  ,    
+  "7613":{"Address":"4904 SE Hawthorne Portland, OR 97215"}  ,    
+  "7966":{"Address":"511 NW Couch St, Portland, OR 97209"}  ,    
+  "7614":{"Address":"1507 SE 39th Ave, Portland, OR 97214"}  ,    
+  "7615":{"Address":"1507 SE 39th Ave, Portland, OR 97214"}  ,    
+  "7616":{"Address":"800 E Burnside St, Portland, OR 97214"}  ,    
+  "7617":{"Address":"4825 SE Hawthorne Blvd, Portland, OR 97215"}  ,    
+  "7618":{"Address":"1305 SE 8th Ave, Portland, OR 97214"}
+};
+
+
 function getVenueJSON(url, callback) {
   var file = fs.createWriteStream("assets/venues.json");
 
@@ -99,6 +118,7 @@ function sanitizeData(filepath, callback) {
 
   for (var key in venueObj) {
     venueObj[key].id = venueObj[key].VenueId;
+    venueObj[key].address = addresses[venueObj[key].id].Address;
     venueObj[key].pageUrl = venueObj[key].id + '-' + convertToSlug(venueObj[key].Name);
   }
   fs.writeFile(filepath, JSON.stringify(venueObj, null, " "), 'utf8', function (err) {
@@ -121,5 +141,12 @@ function convertToSlug(Text)
         .replace(/[^\w-]+/g,'')
         ;
 }
+
+
+/*jshint -W100 */
+
+
+
+
 
 

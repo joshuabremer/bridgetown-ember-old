@@ -4,6 +4,8 @@ App.Venue = DS.Model.extend({
 
   Name: DS.attr('string'),
 
+  address: DS.attr('string'),
+
   pageUrl: DS.attr('string'),
 
   thursdayEvents: function() {
