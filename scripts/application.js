@@ -2839,7 +2839,7 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     var badge = '<span class="badge">MC</span>';
     return performerId && eventEmcees && performerId !== eventEmcees ? "" : new Handlebars.SafeString(badge);
 }), Ember.Handlebars.registerBoundHelper("googleMapLink", function(address) {
-    var html = "Address: <a target='blank' href='http://maps.google.com/?q=1" + address + "'>" + address + " </a>";
+    var html = "Address: <a target='blank' href='http://maps.google.com/?q=" + address + "'>" + address + " </a>";
     return new Handlebars.SafeString(html);
 }), Ember.Handlebars.registerBoundHelper("fullDate", function(dateString) {
     return moment(dateString).zone("-07:00").calendar();
