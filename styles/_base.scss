@@ -22,6 +22,9 @@ $color5: rgba(#89e894,0.95);
 .row.sqs-row {
   margin:0;
 }
+[class*=sqs-col] .sqs-block {
+  padding:0;
+}
 
 html {
   min-height: 100%;
@@ -244,7 +247,7 @@ iframe, object, embed{max-width: 100%;}
   }
   .schedule-table__cell {
     background:#67923d;
-    color:white;  
+    color:white;
     border-radius: 5px;
     border: 1px solid #DDD;
     box-shadow:3px 3px 3px rgba(0,0,0,.2);
