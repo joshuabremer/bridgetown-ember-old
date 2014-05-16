@@ -1,4 +1,4 @@
-/*! bridgetowncomedy.com 2014-05-11 */
+/*! bridgetowncomedy.com 2014-05-16 */
 function getTimeArray(day) {
     var timeArray = [], duration = moment(FESTIVAL_END_TIMES[day]).diff(FESTIVAL_START_TIMES[day], "hours");
     for (i = 0; 2 * duration > i; i++) timeArray.push(moment(FESTIVAL_START_TIMES[day]).add(30 * i, "minutes"));
@@ -8945,7 +8945,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
     data = data || {};
     var helper, options, buffer = "", helperMissing = helpers.helperMissing, escapeExpression = this.escapeExpression;
-    return data.buffer.push('<div class="jumbotron jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img class="img-responsive" src="/assets/logo-long-inverse.png?1" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="main-content">\n<div class="container">\n  <div class="row centered">\n    <div class="col-sm-6">\n      \n      <h3>\n        <a href="http://bridgetown.laughstub.com/event.cfm?id=308381" class="btn btn-primary btn-lg btn-block" target="_blank">\n        Buy Tickets!</a>\n      </h3>\n      '), 
+    return data.buffer.push('<div class="jumbotron jumbotron-color-1 jumbotron-page-header">\n  <div class="container">\n    <div class="row centered">\n      <div class="col-lg-8 col-lg-offset-2 text-center">\n      <div class="header-logo"><img class="img-responsive" src="/assets/logo-long-inverse.png?1" /></div>\n      \n      <h3>Portland, OR</h3>\n      <h3>May 8th - May 11th</h3>\n      </div>\n    </div><!-- row -->\n  </div><!-- container -->\n</div><!-- headerwrap -->\n\n<div class="main-content">\n<div class="container">\n  <div class="row centered">\n    <div class="col-sm-6">\n\n      \n      <h3>Thank You!</h3>\n      '), 
     data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
     options = {
         hash: {},
@@ -8955,7 +8955,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         types: [ "STRING" ],
         data: data
     }, helper ? helper.call(depth0, "news", options) : helperMissing.call(depth0, "partial", "news", options)))), 
-    data.buffer.push('\n    </div><!-- col-lg-6 -->\n\n    <div class="col-sm-6">\n      <h3>@bridgetown</h3>\n      <div class="panel panel-default">\n\n        <div class="panel-body">\n          \n        '), 
+    data.buffer.push('\n    </div><!-- col-lg-6 -->\n\n    <div class="col-sm-6">\n      <h3>@bridgetown</h3>\n      <div class="panel panel-default">\n\n        <div class="panel-body">\n\n        '), 
     data.buffer.push(escapeExpression((helper = helpers.partial || depth0 && depth0.partial, 
     options = {
         hash: {},
