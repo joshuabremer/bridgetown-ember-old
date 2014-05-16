@@ -173,7 +173,7 @@ function program17(depth0,data) {
   data.buffer.push("</li>\n            <li class=\"header-color3\">");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "faqs", options) : helperMissing.call(depth0, "link-to", "faqs", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n          </ul>\n        </li>\n      </ul>\n      <div class=\"navbar-form navbar-right\">\n        <strong>\n          <a class=\"btn btn-default\" target=\"_blank\" href=\"http://bridgetown.laughstub.com/event.cfm?id=308381\">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n");
+  data.buffer.push("</li>\n          </ul>\n        </li>\n      </ul>\n      <div class=\"navbar-form navbar-right\">\n        \n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n");
   return buffer;
   
 });Ember.TEMPLATES['_news'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {

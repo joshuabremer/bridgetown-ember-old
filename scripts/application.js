@@ -8120,7 +8120,7 @@ App.PerformerController = Ember.ObjectController.extend({}), App.PerformersContr
         types: [ "STRING" ],
         data: data
     }, stack1 = helper ? helper.call(depth0, "faqs", options) : helperMissing.call(depth0, "link-to", "faqs", options), 
-    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n          </ul>\n        </li>\n      </ul>\n      <div class="navbar-form navbar-right">\n        <strong>\n          <a class="btn btn-default" target="_blank" href="http://bridgetown.laughstub.com/event.cfm?id=308381">Tickets</a>\n        </strong>\n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
+    (stack1 || 0 === stack1) && data.buffer.push(stack1), data.buffer.push('</li>\n          </ul>\n        </li>\n      </ul>\n      <div class="navbar-form navbar-right">\n        \n      </div>\n    </div><!--/.navbar-collapse -->\n  </div>\n</div>\n'), 
     buffer;
 }), Ember.TEMPLATES._news = Ember.Handlebars.template(function(Handlebars, depth0, helpers, partials, data) {
     this.compilerInfo = [ 4, ">= 1.0.0" ], helpers = this.merge(helpers, Ember.Handlebars.helpers), 
