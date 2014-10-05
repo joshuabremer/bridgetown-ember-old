@@ -3,8 +3,8 @@ App.ScheduleView = Ember.View.extend({
   didInsertElement:function(){
     Ember.run.scheduleOnce('afterRender', this, this.addListDividers);
     Ember.run.scheduleOnce('afterRender', this, this.addTableColspans);
-    Ember.run.scheduleOnce('afterRender', this, this.makeTableResponsive);
-    
+    //Ember.run.scheduleOnce('afterRender', this, this.makeTableResponsive);
+
   },
   addListDividers: function() {
     $('.schedule-list__spacer').remove();
@@ -60,23 +60,23 @@ App.ScheduleView = Ember.View.extend({
       // $(window).load(updateTables);
       // $(window).on("redraw",function(){switched=false;updateTables();}); // An event to listen for
       // $(window).on("resize", updateTables);
-       
-      
+
+
      function splitTable(original)
      {
        original.wrap("<div class='table-wrapper' />");
-        
+
        var copy = original.clone();
        copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
        copy.removeClass("responsive");
-        
+
        original.closest(".table-wrapper").append(copy);
        copy.wrap("<div class='pinned' />");
        original.wrap("<div class='scrollable' />");
 
         setCellHeights(original, copy);
      }
-      
+
      function unsplitTable(original) {
         original.closest(".table-wrapper").find(".pinned").remove();
         original.unwrap();

@@ -14,26 +14,27 @@ module.exports = function(grunt) {
       build: {
         src: [
           'vendor_responsive_tables.js',
-          'scripts/vendor_moment.js',
-          'scripts/vendor_spin.js',
-          'scripts/vendor_underscore-min.js',
-          'scripts/vendor_bootstrap.js',
-          'scripts/vendor_handlebars.js',
-          'scripts/vendor_jquery.lazyload.js',
-          //'scripts/vendor_jquery.js',
-          // 'scripts/vendor_ember.js',
-          // 'scripts/vendor_ember-data.js',
-          'scripts/helpers_*.js',
+          'scripts/vendor/moment.js',
+          'scripts/vendor/spin.js',
+          'scripts/vendor/underscore-min.js',
+          'scripts/vendor/bootstrap.js',
+          'scripts/vendor/handlebars.js',
+          'scripts/vendor/jquery.lazyload.js',
+          //'scripts/vendor/jquery.js',
+          // 'scripts/vendor/ember.js',
+          // 'scripts/vendor/ember-data.js',
+          'scripts/vendor/ember_cloaking.js',
+          'scripts/helpers/*.js',
           'scripts/config_adapter.js',
           'scripts/config_app.js',
-          'scripts/components_*.js',
-          'scripts/models_*.js',
-          'scripts/fixtures_*.js',
-          'scripts/controllers_*.js',
-          'scripts/views_*.js',
+          'scripts/components/*.js',
+          'scripts/models/*.js',
+          'scripts/fixtures/*.js',
+          'scripts/controllers/*.js',
+          'scripts/views/*.js',
           'scripts/templates.js',
           'scripts/config_router.js',
-          'scripts/routes_*.js'
+          'scripts/routes/*.js'
         ],
         dest: 'scripts/application.js'
       }
@@ -89,7 +90,9 @@ module.exports = function(grunt) {
           }
         },
         files: [
-          'scripts/templates/*.hbs'
+          'scripts/templates/*.hbs',
+          'scripts/templates/**/*.hbs',
+          'scripts/templates/partials/*.hbs'
         ],
         dest: 'scripts/templates.js'
       }
