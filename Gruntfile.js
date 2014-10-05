@@ -25,15 +25,15 @@ module.exports = function(grunt) {
           // 'scripts/vendor/ember-data.js',
           'scripts/vendor/ember_cloaking.js',
           'scripts/helpers/*.js',
-          'scripts/config_adapter.js',
-          'scripts/config_app.js',
+          'scripts/config/adapter.js',
+          'scripts/config/app.js',
           'scripts/components/*.js',
           'scripts/models/*.js',
           'scripts/fixtures/*.js',
           'scripts/controllers/*.js',
           'scripts/views/*.js',
           'scripts/templates.js',
-          'scripts/config_router.js',
+          'scripts/config/router.js',
           'scripts/routes/*.js'
         ],
         dest: 'scripts/application.js'
