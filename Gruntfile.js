@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: [
-          'vendor_responsive_tables.js',
+          'vendor/responsive_tables.js',
           'scripts/vendor/moment.js',
           'scripts/vendor/spin.js',
           'scripts/vendor/underscore-min.js',
