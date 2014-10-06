@@ -27,6 +27,7 @@ module.exports = function(grunt) {
           'scripts/helpers/*.js',
           'scripts/config/adapter.js',
           'scripts/config/app.js',
+          'scripts/mixins/*.js',
           'scripts/components/*.js',
           'scripts/models/*.js',
           'scripts/fixtures/*.js',
