@@ -4,20 +4,20 @@
      <div class="col-sm-4">
         <p class="lead">
           {{#if show}}
-            {{#link-to "show" show }}{{{ unbound show.Name }}}{{/link-to}}
+            {{#link-to "show" show }}{{{ show.Name }}}{{/link-to}}
           {{else}}
-            {{#link-to "event" event }}{{{ unbound Name }}}{{/link-to}}
+            {{#link-to "event" event }}{{{ Name }}}{{/link-to}}
           {{/if}}
           <br/>
           <small>({{getWeekday start_time}} <span style="white-space:nowrap">{{getTime start_time}} - </span>
           <span style="white-space:nowrap">{{getTime end_time}}</span>)</small>
         </p>
-        <p>Price: {{unbound Cost}}</p>
+        <p>Price: {{Cost}}</p>
       </div>
       <div class="col-xs-5 col-sm-4">
         <p>{{#link-to 'venue' venue.pageUrl}}
           <span class="schedule-list__item-venue-label label label-default">
-            {{unbound venue.Name}}
+            {{venue.Name}}
           </span>
           {{/link-to}}
         </p>

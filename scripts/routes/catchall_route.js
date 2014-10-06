@@ -1,4 +1,7 @@
-App.CatchAllRoute = Ember.Route.extend({
+(function(){
+  "use strict";
+
+  App.CatchAllRoute = Ember.Route.extend({
     model: function(a,b,c) {
       var host = 'http://www.bridgetowncomedy.com/';
       return Ember.$.ajax({
@@ -6,4 +9,5 @@ App.CatchAllRoute = Ember.Route.extend({
         dataType: 'JSONP'
       });
     }
-});
+  });
+}());

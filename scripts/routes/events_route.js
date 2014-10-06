@@ -1,9 +1,11 @@
-App.EventsRoute = Ember.Route.extend({
+(function(){
+  "use strict";
 
-  model: function() {
-    return Event.find();
-  }
-
-});
+  App.EventsRoute = Ember.Route.extend({
+    model: function() {
+      return Event.find();
+    }
+  });
+}());
 
 

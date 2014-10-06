@@ -448,8 +448,9 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression((helper = helpers['cloaked-collection'] || (depth0 && depth0['cloaked-collection']),options={hash:{
     'cloakView': ("App.ScheduleListItemView"),
     'content': ("controller.events"),
-    'preservesContext': (true)
-  },hashTypes:{'cloakView': "ID",'content': "ID",'preservesContext': "BOOLEAN"},hashContexts:{'cloakView': depth0,'content': depth0,'preservesContext': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "cloaked-collection", options))));
+    'preservesContext': (true),
+    'defaultHeight': (218)
+  },hashTypes:{'cloakView': "ID",'content': "ID",'preservesContext': "BOOLEAN",'defaultHeight': "INTEGER"},hashContexts:{'cloakView': depth0,'content': depth0,'preservesContext': depth0,'defaultHeight': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "cloaked-collection", options))));
   data.buffer.push("\n    </ul>\n\n  </div>\n</div>\n\n\n\n\n\n");
   return buffer;
   
@@ -1707,7 +1708,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 });Ember.TEMPLATES['partials/_schedule_list_item'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -1720,10 +1721,10 @@ function program1(depth0,data) {
   }
 function program2(depth0,data) {
   
-  var stack1;
-  stack1 = helpers.unbound.call(depth0, "show.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
+  
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "show.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   }
 
 function program4(depth0,data) {
@@ -1737,17 +1738,18 @@ function program4(depth0,data) {
   }
 function program5(depth0,data) {
   
-  var stack1;
-  stack1 = helpers.unbound.call(depth0, "Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
+  
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   }
 
 function program7(depth0,data) {
   
-  var buffer = '';
+  var buffer = '', stack1;
   data.buffer.push("\n          <span class=\"schedule-list__item-venue-label label label-default\">\n            ");
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  stack1 = helpers._triageMustache.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n          </span>\n          ");
   return buffer;
   }
@@ -1808,7 +1810,8 @@ function program13(depth0,data) {
   data.buffer.push(" - </span>\n          <span style=\"white-space:nowrap\">");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "end_time", options) : helperMissing.call(depth0, "getTime", "end_time", options))));
   data.buffer.push("</span>)</small>\n        </p>\n        <p>Price: ");
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  stack1 = helpers._triageMustache.call(depth0, "Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</p>\n      </div>\n      <div class=\"col-xs-5 col-sm-4\">\n        <p>");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "venue", "venue.pageUrl", options) : helperMissing.call(depth0, "link-to", "venue", "venue.pageUrl", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
@@ -1998,8 +2001,9 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression((helper = helpers['cloaked-collection'] || (depth0 && depth0['cloaked-collection']),options={hash:{
     'cloakView': ("App.ScheduleListItemView"),
     'content': ("controller.events"),
-    'preservesContext': (true)
-  },hashTypes:{'cloakView': "ID",'content': "ID",'preservesContext': "BOOLEAN"},hashContexts:{'cloakView': depth0,'content': depth0,'preservesContext': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "cloaked-collection", options))));
+    'preservesContext': (true),
+    'defaultHeight': (218)
+  },hashTypes:{'cloakView': "ID",'content': "ID",'preservesContext': "BOOLEAN",'defaultHeight': "INTEGER"},hashContexts:{'cloakView': depth0,'content': depth0,'preservesContext': depth0,'defaultHeight': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "cloaked-collection", options))));
   data.buffer.push("\n    </ul>\n\n  </div>\n</div>\n\n\n\n\n\n");
   return buffer;
   
@@ -2968,7 +2972,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 });Ember.TEMPLATES['partials/_schedule_list_item'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
@@ -2981,10 +2985,10 @@ function program1(depth0,data) {
   }
 function program2(depth0,data) {
   
-  var stack1;
-  stack1 = helpers.unbound.call(depth0, "show.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
+  
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "show.Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   }
 
 function program4(depth0,data) {
@@ -2998,17 +3002,18 @@ function program4(depth0,data) {
   }
 function program5(depth0,data) {
   
-  var stack1;
-  stack1 = helpers.unbound.call(depth0, "Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
+  
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "Name", {hash:{
+    'unescaped': ("true")
+  },hashTypes:{'unescaped': "STRING"},hashContexts:{'unescaped': depth0},contexts:[depth0],types:["ID"],data:data})));
   }
 
 function program7(depth0,data) {
   
-  var buffer = '';
+  var buffer = '', stack1;
   data.buffer.push("\n          <span class=\"schedule-list__item-venue-label label label-default\">\n            ");
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  stack1 = helpers._triageMustache.call(depth0, "venue.Name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n          </span>\n          ");
   return buffer;
   }
@@ -3069,7 +3074,8 @@ function program13(depth0,data) {
   data.buffer.push(" - </span>\n          <span style=\"white-space:nowrap\">");
   data.buffer.push(escapeExpression((helper = helpers.getTime || (depth0 && depth0.getTime),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "end_time", options) : helperMissing.call(depth0, "getTime", "end_time", options))));
   data.buffer.push("</span>)</small>\n        </p>\n        <p>Price: ");
-  data.buffer.push(escapeExpression(helpers.unbound.call(depth0, "Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  stack1 = helpers._triageMustache.call(depth0, "Cost", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</p>\n      </div>\n      <div class=\"col-xs-5 col-sm-4\">\n        <p>");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "venue", "venue.pageUrl", options) : helperMissing.call(depth0, "link-to", "venue", "venue.pageUrl", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
