@@ -1,55 +1,60 @@
-App.Venue = DS.Model.extend({
+(function(){
+  "use strict";
 
-  events: DS.hasMany('event', {async: true}),
+  App.Venue = DS.Model.extend({
 
-  Name: DS.attr('string'),
+    events: DS.hasMany('event', {async: true}),
 
-  address: DS.attr('string'),
+    Name: DS.attr('string'),
 
-  pageUrl: DS.attr('string'),
+    address: DS.attr('string'),
 
-  thursdayEvents: function() {
-    var events = this.get('events').toArray();
-    var thursdayEvents = [];
-    $.each(events,function(index,event) {
-      if (moment(event.get('start_time')).format('dddd') === 'Thursday') {
-        thursdayEvents.push(event);
-      }
-    })
-    return thursdayEvents;
-  }.property('events.@each.isLoaded'), 
+    pageUrl: DS.attr('string'),
 
-  fridayEvents: function() {
-    var events = this.get('events').toArray();
-    var fridayEvents = [];
-    $.each(events,function(index,event) {
-      if (moment(event.get('start_time')).format('dddd') === 'Friday') {
-        fridayEvents.push(event);
-      }
-    })
-    return fridayEvents;
-  }.property('events.@each.isLoaded') ,
+    thursdayEvents: function() {
+      var events = this.get('events').toArray();
+      var thursdayEvents = [];
+      $.each(events,function(index,event) {
+        if (moment(event.get('start_time')).format('dddd') === 'Thursday') {
+          thursdayEvents.push(event);
+        }
+      })
+      return thursdayEvents;
+    }.property('events.@each.isLoaded'),
 
-  saturdayEvents: function() {
-    var events = this.get('events').toArray();
-    var saturdayEvents = [];
-    $.each(events,function(index,event) {
-      if (moment(event.get('start_time')).format('dddd') === 'Saturday') {
-        saturdayEvents.push(event);
-      }
-    })
-    return saturdayEvents;
-  }.property('events.@each.isLoaded') ,
-  
-  sundayEvents: function() {
-    var events = this.get('events').toArray();
-    var sundayEvents = [];
-    $.each(events,function(index,event) {
-      if (moment(event.get('start_time')).format('dddd') === 'Sunday') {
-        sundayEvents.push(event);
-      }
-    })
-    return sundayEvents;
-  }.property('events.@each.isLoaded')  
+    fridayEvents: function() {
+      var events = this.get('events').toArray();
+      var fridayEvents = [];
+      $.each(events,function(index,event) {
+        if (moment(event.get('start_time')).format('dddd') === 'Friday') {
+          fridayEvents.push(event);
+        }
+      })
+      return fridayEvents;
+    }.property('events.@each.isLoaded') ,
 
-});
+    saturdayEvents: function() {
+      var events = this.get('events').toArray();
+      var saturdayEvents = [];
+      $.each(events,function(index,event) {
+        if (moment(event.get('start_time')).format('dddd') === 'Saturday') {
+          saturdayEvents.push(event);
+        }
+      })
+      return saturdayEvents;
+    }.property('events.@each.isLoaded') ,
+
+    sundayEvents: function() {
+      var events = this.get('events').toArray();
+      var sundayEvents = [];
+      $.each(events,function(index,event) {
+        if (moment(event.get('start_time')).format('dddd') === 'Sunday') {
+          sundayEvents.push(event);
+        }
+      })
+      return sundayEvents;
+    }.property('events.@each.isLoaded')
+
+  });
+
+}());

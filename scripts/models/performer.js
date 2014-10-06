@@ -1,63 +1,68 @@
-App.Performer = DS.Model.extend({
+(function(){
+  "use strict";
 
-  events: DS.hasMany('event', {async: true}),
+  App.Performer = DS.Model.extend({
 
-  mc_events:  DS.hasMany('event', {async: true}),
+    events: DS.hasMany('event', {async: true}),
 
-  Name: DS.attr('string'),
+    mc_events:  DS.hasMany('event', {async: true}),
 
-  PhotoUrl: DS.attr('string'),
+    Name: DS.attr('string'),
 
-  SortOrder: DS.attr('number'),
+    PhotoUrl: DS.attr('string'),
 
-  ExcludeFromList: DS.attr('boolean'),
+    SortOrder: DS.attr('number'),
 
-  slug: function() {
-    return sluggify(this.get('Name'));
-  }.property('Name'),
+    ExcludeFromList: DS.attr('boolean'),
 
-  Bio: DS.attr('string'),
+    slug: function() {
+      return sluggify(this.get('Name'));
+    }.property('Name'),
 
-  pageUrl: DS.attr('string'),
+    Bio: DS.attr('string'),
 
-  headshot300: function() {
-    return '/assets/performer-' + cleanStr(this.get('Name')) + '-300x300.jpg';
-  }.property('Name'),
+    pageUrl: DS.attr('string'),
 
-  backgroundImageCSS: function() {
-    return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
-  }.property("PhotoUrl"),
+    headshot300: function() {
+      return '/assets/performer-' + cleanStr(this.get('Name')) + '-300x300.jpg';
+    }.property('Name'),
 
-  isAnMC: function() {
-    return this.get('mc_events').get('length');
-  }.property('mc_events.@each.isLoaded'),
+    backgroundImageCSS: function() {
+      return "background-image:url('" + this.get("PhotoUrl") + "?format=300w')";
+    }.property("PhotoUrl"),
 
-  sortedEvents: function () {
-    var events = this.get('events').toArray();
-    return events.sort(function (lhs, rhs) {
-      return lhs.get('start_time') > rhs.get('start_time');
-    });
-  }.property('events.@each.isLoaded'),
+    isAnMC: function() {
+      return this.get('mc_events').get('length');
+    }.property('mc_events.@each.isLoaded'),
 
-  allSortedEvents: function () {
-    var events = this.get('events').toArray().slice(0);
-    var mc_events = this.get('mc_events').toArray();
-    var all_events = events.clone().concat(mc_events);
+    sortedEvents: function () {
+      var events = this.get('events').toArray();
+      return events.sort(function (lhs, rhs) {
+        return lhs.get('start_time') > rhs.get('start_time');
+      });
+    }.property('events.@each.isLoaded'),
 
-    return all_events.sort(function (lhs, rhs) {
-      return lhs.get('start_time') > rhs.get('start_time');
-    });
-  }.property('events.@each.isLoaded','mc_events.@each.isLoaded')
-});
+    allSortedEvents: function () {
+      var events = this.get('events').toArray().slice(0);
+      var mc_events = this.get('mc_events').toArray();
+      var all_events = events.clone().concat(mc_events);
 
-function sluggify(string) {
-  string = string || "";
-  return string.replace(/\W/g, '-').toLowerCase();
-}
+      return all_events.sort(function (lhs, rhs) {
+        return lhs.get('start_time') > rhs.get('start_time');
+      });
+    }.property('events.@each.isLoaded','mc_events.@each.isLoaded')
+  });
 
-function cleanStr(string) {
-  string = string || "";
-  return string.replace(/\W/g, '').toLowerCase();
-}
+  function sluggify(string) {
+    string = string || "";
+    return string.replace(/\W/g, '-').toLowerCase();
+  }
 
-Array.prototype.clone = function() { return this.slice(0); };
+  function cleanStr(string) {
+    string = string || "";
+    return string.replace(/\W/g, '').toLowerCase();
+  }
+
+  Array.prototype.clone = function() { return this.slice(0); };
+
+}());

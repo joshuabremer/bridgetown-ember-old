@@ -1,44 +1,49 @@
-App.Event = DS.Model.extend({
+(function(){
+  "use strict";
 
-  performers: DS.hasMany('performer', {async: true}),
+  App.Event = DS.Model.extend({
 
-  emcees: DS.hasMany('performer', {async: true}),
+    performers: DS.hasMany('performer', {async: true}),
 
-  venue: DS.belongsTo('venue', {async: true}),
+    emcees: DS.hasMany('performer', {async: true}),
 
-  show: DS.belongsTo('show', {async: true}),
+    venue: DS.belongsTo('venue', {async: true}),
 
-  Name: DS.attr('string'),
+    show: DS.belongsTo('show', {async: true}),
 
-  start_time: DS.attr('string'),
+    Name: DS.attr('string'),
 
-  end_time: DS.attr('string'),
+    start_time: DS.attr('string'),
 
-  Cost: DS.attr('string'),
+    end_time: DS.attr('string'),
 
-  duration: DS.attr('string'),
+    Cost: DS.attr('string'),
 
-  weekday: function() {
-    return moment(this.get("start_time")).zone('-07:00').format('dddd').toLowerCase();
-  }.property("start_time"),
+    duration: DS.attr('string'),
 
-  getPerformers: function() {
-    return this.get("performers").get('content');
-  }.property(),
+    weekday: function() {
+      return moment(this.get("start_time")).zone('-07:00').format('dddd').toLowerCase();
+    }.property("start_time"),
 
-  getPerformerCount: function() {
-    return this.get("performers");
-  }.property(),
+    getPerformers: function() {
+      return this.get("performers").get('content');
+    }.property(),
 
-  
+    getPerformerCount: function() {
+      return this.get("performers");
+    }.property(),
 
 
 
-  sortedPerformers: function () {
-    var performers = this.get('performers').toArray();
-    return performers.sort(function (lhs, rhs) {
-      return lhs.get('SortOrder') > rhs.get('SortOrder');
-    });
-  }.property('performers.@each.isLoaded')
 
-});
+
+    sortedPerformers: function () {
+      var performers = this.get('performers').toArray();
+      return performers.sort(function (lhs, rhs) {
+        return lhs.get('SortOrder') > rhs.get('SortOrder');
+      });
+    }.property('performers.@each.isLoaded')
+
+  });
+
+}());
