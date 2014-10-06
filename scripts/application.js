@@ -3045,6 +3045,19 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     });
 }(), function() {
     "use strict";
+    App.ScheduleGridMixin = Ember.Mixin.create({
+        addTableColspans: function() {
+            var scheduleDay = this.scheduleDay;
+            $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
+                var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
+                $(this).attr("colspan", duration);
+                var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES[scheduleDay], durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
+                0 >= durationBefore || $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
+            });
+        }.on("didInsertElement")
+    });
+}(), function() {
+    "use strict";
     App.XSpinnerComponent = Ember.Component.extend({
         lines: 12,
         length: 6,
@@ -7826,19 +7839,6 @@ window.Handlebars = Handlebars, function(Handlebars, undefined) {
     "use strict";
     App.SaturdayScheduleView = Ember.View.extend(App.ScheduleGridMixin, {
         scheduleDay: "Saturday"
-    });
-}(), function() {
-    "use strict";
-    App.ScheduleGridMixin = Ember.Mixin.create({
-        addTableColspans: function() {
-            var scheduleDay = this.scheduleDay;
-            $(".cell-spacer").remove(), $(".schedule-table__cell").each(function() {
-                var startTime = $(this).data("start-time"), endTime = $(this).data("end-time"), duration = moment(endTime).diff(moment(startTime), "minutes") / 30;
-                $(this).attr("colspan", duration);
-                var previousTime = $(this).prevAll(".schedule-table__cell:eq(0)").data("end-time") || FESTIVAL_START_TIMES[scheduleDay], durationBefore = moment(startTime).diff(moment(previousTime), "minutes") / 30;
-                0 >= durationBefore || $(this).before('<td class="cell-spacer" colspan="' + durationBefore + '" style="border:1px solid white;"></td>');
-            });
-        }.on("didInsertElement")
     });
 }(), function() {
     "use strict";
