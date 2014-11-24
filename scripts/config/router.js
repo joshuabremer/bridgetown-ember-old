@@ -35,11 +35,11 @@
     // end generated routes
 
     this.route('sponsors');
-    this.route('schedule');
-    this.route('thursday_schedule');
-    this.route('friday_schedule');
-    this.route('saturday_schedule');
-    this.route('sunday_schedule');
+    // this.route('schedule');
+    // this.route('thursday_schedule');
+    // this.route('friday_schedule');
+    // this.route('saturday_schedule');
+    // this.route('sunday_schedule');
 
     this.route('venues');
     this.resource('venue', {path: '/venue/:pageUrl'});
@@ -107,14 +107,9 @@
 
   App.VenuesRoute = Ember.Route.extend({
       // renderTemplate: function() {this.render('catch_all');},
-      model: function() {return this.retrievePageJSON('venues');},
+      model: function() {return {}},
+      //model: function() {return this.retrievePageJSON('venues');},
       title: 'Venues'
-  });
-
-  App.ShowsRoute = Ember.Route.extend({
-      // renderTemplate: function() {this.render('catch_all');},
-      model: function() {return this.retrievePageJSON('shows');},
-      title: 'Shows'
   });
 
   App.HistoryRoute = Ember.Route.extend({
